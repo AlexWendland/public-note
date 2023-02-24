@@ -1,0 +1,12 @@
+---
+type: blog
+publish: true
+created: 2023-02-24
+last_edited: 2023-02-24
+---
+# Wendland Weekly Index
+
+This is my vien attempt to publish a note once a week, about anything that takes my fancy that day! The point isn't to be good, just to break the barrier to just writing something.
+
+# List
+- [[2023-W08]]: Markdown actually learning it.
