@@ -1,6 +1,6 @@
 ---
 type: definition
-publish: false
+publish: true
 created: 2023-02-24
 last_edited: 2023-02-24
 tags: programming, language
