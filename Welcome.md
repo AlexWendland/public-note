@@ -10,7 +10,7 @@ This is very much an experiement. The purpose of this is to just [[Wendland Week
 
 So some things I am interested in to start: 
 - [[Data]]
-- [[Python]]
+- [[Programming]]
 - [[DevOps]]
 - [[Maths]]
 - [[Politics]]
