@@ -6,8 +6,10 @@ last_edited: 2023-02-25
 ---
 # Programming
 This is an index page for the notes that could broadly be grouped under this topic.
+# Index
 - [[Declarative Language]]
+- [[First-class object]]
 - [[Imperative Language]]
 - [[Markdown]]
 - [[Markup Language]]
-- [[programming/Python]]
+- [[python-template]]
