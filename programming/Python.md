@@ -11,3 +11,4 @@ I personally love python the simplicity and intuitive syntax makes it a pleasure
 # Index
 - [[Collections]]
 - [[Margic or dunder]]
+- [[Functions in Python]]
