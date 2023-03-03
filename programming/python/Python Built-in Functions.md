@@ -1,5 +1,5 @@
 ---
-type: function
+type: feature
 publish: true
 created: 2023-03-03
 last_edited: 2023-03-03
@@ -38,7 +38,7 @@ This will evaluate the expression as if it were python script and use the global
 If the first argument is a subtype of the second it returns true otherwise false. The second object can be a tuple of classes, then it returns true if it is a subtype of any of them. 
 
 ## len(object)
-The returns the length of the object, it calls the .\_\_len\_\_  [[Magic or dunder|special]] function of the object.
+The returns the length of the object, it calls the .\_\_len\_\_  [[Special functions|special]] function of the object.
 
 ## max(iterable, _default_, key=None) or min(iterable,  _default_, key=None)
 Will return the max/min of an iterable. You can provide a key function to evaluate items in the iterable (i.e. a certain value of a key in a dictionary). If you set a default value that will be returned if the list is empty, if you do not set it it will raise a [[Errors in Python|ValueError]] instead.
@@ -86,7 +86,7 @@ This will round a number to the nearest $10^{\mbox{ndigits}}$ where if ndigits i
 ## sorted(interable, key=None, reverse=False)
 This returns a sorted list from the objects in the interable object. You can provide a key to apply to each of the objects in the iterable objects to get the key (i.e. getting one item in a dictionary). If reverse is True it will reverse the list of the items.
 
-The sorting algorithm will use the .\_\_lt\_\_ [[Magic or dunder|special]] function to sort the list.
+The sorting algorithm will use the .\_\_lt\_\_ [[Special functions|special]] function to sort the list.
 
 ## sum(iterable, start=0)
 This will add the values in the iterable with the start value.
@@ -95,7 +95,7 @@ This will add the values in the iterable with the start value.
 Return a proxy object that delegates method calls to a parent or sibling class of _type_. This is useful for accessing inherited methods that have been overridden in a class.
 
 ## type(object)
-This returns the object type, which is generally the same as .\_\_class\_\_ [[Magic or dunder|special]] function (users can override the .\_\_class\_\_ function, which will cause this to differ). If you don't care about subtypes this is the best way to check an objects type.
+This returns the object type, which is generally the same as .\_\_class\_\_ [[Special functions|special]] function (users can override the .\_\_class\_\_ function, which will cause this to differ). If you don't care about subtypes this is the best way to check an objects type.
 
 If you provide it more than one argument, this can initiate an object. I have never done this before.
 
