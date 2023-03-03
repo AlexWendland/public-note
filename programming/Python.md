@@ -1,4 +1,5 @@
 ---
+aliases: [python]
 type: index
 publish: true
 created: 2023-02-25
@@ -17,3 +18,4 @@ I personally love python the simplicity and intuitive syntax makes it a pleasure
 - [[Keywords in Python]]
 - [[Classes in Python]]
 - [[Errors in Python]]
+- [[Pythonic]]
