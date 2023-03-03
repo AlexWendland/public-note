@@ -14,3 +14,6 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Markup Language]]
 - [[Anonymous Functions]]
 - [[Functional Programming]]
+- [[Methods]]
+- [[Classes]]
+- [[Standard In Out and Error]]
