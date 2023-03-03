@@ -13,4 +13,7 @@ I personally love python the simplicity and intuitive syntax makes it a pleasure
 - [[Margic or dunder]]
 - [[Functions in Python]]
 - [[Lambda functions]]
-- [[Python Builtin Functions]]
+- [[Python Built-in Functions]]
+- [[Keywords in Python]]
+- [[Classes in Python]]
+- [[Errors in Python]]
