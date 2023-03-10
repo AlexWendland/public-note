@@ -19,3 +19,4 @@ I personally love python the simplicity and intuitive syntax makes it a pleasure
 - [[Classes in Python]]
 - [[Errors in Python]]
 - [[Pythonic]]
+- [[Fast API]]
