@@ -20,3 +20,5 @@ I personally love python the simplicity and intuitive syntax makes it a pleasure
 - [[Errors in Python]]
 - [[Pythonic]]
 - [[Fast API]]
+- [[Flask]]
+- [[Decorators in Python]]
