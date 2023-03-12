@@ -25,3 +25,5 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Database]]
 - [[Operating Systems (OS)]]
 - [[GitHub]]
+- [[The 5S Philosophy]]
+- [[Clean Code]]
