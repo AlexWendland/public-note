@@ -28,3 +28,6 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[The 5S Philosophy]]
 - [[Clean Code]]
 - [[Naming conventions]]
+- [[Single Responsibility Principle (SRP)]]
+- [[The Open Closed Principle (OCP)]]
+- [[SOLID principles]]
