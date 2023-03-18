@@ -27,4 +27,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[GitHub]]
 - [[The 5S Philosophy]]
 - [[Clean Code]]
-- [[Naming variables]]
+- [[Naming conventions]]
