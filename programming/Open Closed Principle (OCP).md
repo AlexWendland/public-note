@@ -1,7 +1,7 @@
 ---
-aliases: [OCP, the Open Closed principle]
+aliases: [OCP, Open Closed principle]
 type: theory
-publish: true
+publish: false
 created: 2023-03-18
 last_edited: 2023-03-18
 tags: programming
@@ -15,5 +15,7 @@ This principle states:
 
 In other words 
 
+#todo 
+- [ ] Finish note on the [[Open Closed Principle (OCP)|OCP]]
 
 This is one of the [[SOLID principles]].  
