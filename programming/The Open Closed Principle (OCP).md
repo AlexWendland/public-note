@@ -11,7 +11,9 @@ tags: programming
 This principle states: 
 
 >[!quote] [[Bertrand Meyer]] - 
->"_software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification_"
+>software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification
+
+In other words 
 
 
-This is one of the 
+This is one of the [[SOLID principles]].  
