@@ -14,6 +14,7 @@ These are the following principles I try to follow:
 - [[Naming conventions#Use intention-revealing names|Use intention-revealing names]]
 - [[Naming conventions#Don't include the type in the name|Don't include the type in the name]]
 - [[Naming conventions#No two names should look a like|No two names should look a like]]
+- [[Naming conventions#Use pronounceable names|Use pronounceable names]]
 - 
 
 ## Use intention-revealing names
@@ -30,7 +31,7 @@ Following is a nice heuristic to see if you have succeeded.
 
 ## Don't include the type in the name
 
-Being predominantly a [[Python]] programmer working in [[Data]] it is awfully tempting to call something `df_football_results_data` here are some reasons to do this:
+Being predominantly a [[Python]] programmer working in [[Data]] it is awfully tempting to call something `df_football_results_data` here are some reasons to not do this:
 - The variable name should be indicative of what structure it is in.
 	- `df_football_results_data` if it was `football_results` would you not keep this in a data frame anyway? 
 - It makes the variable name harder to understand
@@ -52,6 +53,14 @@ This makes your code far easier to read, if they all have a different shape or i
 - Two names that look very similar due to a long prefix.
 	- e.g. `XYZControllerForEfficientHandlingOfStrings` and `XYZControllerForEfficientStorageOfStrings`
 - Adding numbers or noise words to variable names.
-	- e.g. `data1` and `data2` or `data_left` `data_right`
+	- e.g. `data1` and `data2` or `the_data` 
 - Using similar meaning words at the end.
 	- e.g. `ProductInfo` and `ProductData`
+
+# Use pronounceable names
+
+With modern IDE's there is no longer an excuse to use:
+- Single letter characters for variable names,
+- Acronyms for variable names, or
+- Abbreviations in variable names.
+If you name your variables pronounceable then when talking to others about your code, like in a code review, you can have a more meaningful conversation. 
