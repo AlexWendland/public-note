@@ -5,10 +5,11 @@ publish: true
 created: 2023-03-18
 last_edited: 2023-03-18
 tags: programming
+chatgpt: true
 ---
 # Single Responsibility Principle (SRP)
 
-The Single Responsibility Principle (SRP) is a fundamental concept in software engineering, emphasizing that:
+This is one of the [[SOLID principles]] and it states:
 
 >[!quote] [[Robert C. Martin]]
 >"A module should be responsible to one, and only one, actor."

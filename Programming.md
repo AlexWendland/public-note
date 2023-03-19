@@ -35,3 +35,6 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[User Interface (UI)]]
 - [[Linux]]
 - [[Secure Shell (SSH) key]]
+- [[Polymorphism]]
+- [[Liskov Substitution Principle (LSP)]]
+- [[Interface Segregation Principle (ISP)]]
