@@ -10,4 +10,5 @@ This is my vain attempt to publish a note once a week, about anything that takes
 
 # List
 - [[2023-W08]]: Markdown actually learning it.
+- [[2023-W09]]: First steps into a [[Fast API]] course.
 - [[2023-W11]]: Naming variables - my dilemma.
