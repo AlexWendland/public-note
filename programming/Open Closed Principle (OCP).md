@@ -13,7 +13,7 @@ This principle states:
 >[!quote] [[Bertrand Meyer]] - 
 >software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification
 
-In other words 
+In other words blah
 
 #todo 
 - [ ] Finish note on the [[Open Closed Principle (OCP)|OCP]]
