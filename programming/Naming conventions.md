@@ -3,8 +3,9 @@ aliases: [naming variables]
 type: notation
 publish: true
 created: 2023-03-18
-last_edited: 2023-03-18
+last_edited: 2023-03-19
 tags: programming
+chatgpt: true
 ---
 # Naming conventions
 
@@ -115,11 +116,35 @@ for index, football_team in enumerate(football_premiership_teams):
 
 ## Be consistent
 
-Use noun or noun phrases for class names and verb or verb phrases for method names.
+Consistency is key when naming classes, methods, and concepts in your code. Using a single word for an abstract concept and sticking to a naming convention for classes and methods ensures a better understanding of the code.
+
+Choose one word for each abstract concept and use it consistently throughout your code. Having multiple words for the same concept can be confusing. For example, using `fetch`, `retrieve`, and `get` as equivalent methods in different classes can make it difficult to remember which method belongs to which class.
+
+Class names should be nouns or noun phrases, such as `Customer`, `WikiPage`, `Account`, or `AddressParser`. Avoid using words like `Manager`, `Processor`, `Data`, or `Info` in class names, as they are less descriptive. A class name should not be a verb.
+
+Method names should be verbs or verb phrases, like `postPayment`, `deletePage`, or `save`. Accessors, mutators, and predicates should be named for their value and prefixed with `get`, `set`, and `is`.
+
+By maintaining consistency in your naming conventions, your code will be easier to read, understand, and maintain.
 
 ## Use solution and problem domain names
 
-Use computer science terms and pattern names when appropriate, and problem domain names when there's no suitable "programmer-eese" term.
+When naming variables, methods, and classes in your code, it's important to strike a balance between using solution domain names and problem domain names. This ensures that your code is both understandable to fellow programmers and accurately represents the real-world concepts it models.
+
+### Solution Domain Names
+
+Solution domain names come from computer science, algorithms, design patterns, and mathematics. They are familiar to programmers and help communicate the underlying structure and logic of your code. Don't shy away from using solution domain names, as they allow your colleagues to understand your code without needing to constantly ask for clarification.
+
+For example, use names like `Singleton`, `Factory`, or `Observer` when implementing design patterns, or `QuickSort` and `BinarySearch` for algorithms.
+
+### Problem Domain Names
+
+Problem domain names come from the specific field or industry your software is addressing, like finance, healthcare, or e-commerce. They represent the real-world concepts and entities your software is modelling.
+
+When there's no suitable solution domain name, use a problem domain name. This way, programmers who maintain your code can consult domain experts to understand the meaning behind these names.
+
+For instance, if you're building a finance application, you might use names like `InterestRate`, `LoanAmount`, or `MortgageCalculator`.
+
+By using both solution and problem domain names, your code will be more understandable and maintainable for your team, while also accurately representing the concepts and entities it models.
 
 ## Use the correct level of context
 
