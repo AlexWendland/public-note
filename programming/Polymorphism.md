@@ -1,6 +1,6 @@
 ---
 aliases: []
-type: str
+type: theory
 publish: true
 created: 2023-03-19
 last_edited: 2023-03-19

@@ -3,7 +3,7 @@ aliases: [SRP, single responsibility principle]
 type: theory
 publish: true
 created: 2023-03-18
-last_edited: 2023-03-18
+last_edited: 2023-03-19
 tags: programming
 chatgpt: true
 ---
