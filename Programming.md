@@ -33,3 +33,5 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Standard In Out and Error]]
 - [[The 5S Philosophy]]
 - [[User Interface (UI)]]
+- [[Linux]]
+- [[Secure Shell (SSH) key]]
