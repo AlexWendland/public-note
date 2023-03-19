@@ -1,7 +1,7 @@
 ---
 aliases: [git]
 type: index
-publish: false
+publish: true
 created: 2023-03-19
 last_edited: 2023-03-19
 tags: programming, git
