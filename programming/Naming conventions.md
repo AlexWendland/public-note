@@ -148,6 +148,14 @@ By using both solution and problem domain names, your code will be more understa
 
 ## Use the correct level of context
 
+When naming variables, methods, and classes in your code, it's essential to use the appropriate level of context. Providing the right amount of context helps make your code more readable and understandable, while avoiding unnecessary confusion or verbosity.
+
+In some cases, you may need to add context to your names to make them more meaningful. For example, if you have variables like `firstName`, `lastName`, `street`, `houseNumber`, `city`, `state`, and `zipcode`, it's clear they form an address when combined. However, when used individually, some variables might lose their context. To add context, you can use prefixes like `addrFirstName`, `addrLastName`, `addrState`, and so on.
+
+On the other hand, adding too much context can make your names unnecessarily long and harder to read. When naming variables, methods, or classes, only include the necessary context to make the name clear and understandable. For example, if you're working within a `Customer` class, it's unnecessary to prefix every variable with `customer`, such as `customerName`, `customerEmail`, etc. Instead, use simpler names like `name` and `email`, as the context is already provided by the class.
+
+Striking the right balance between context and readability is key. If a name is too short or lacks context, it becomes unclear and difficult to understand. If it's too long or includes too much context, it can be cumbersome and challenging to read.
+
 ## Don't be afraid to rename something
 
 If something is named poorly and when you come to the code base you don't understand it. Rename that variable!
