@@ -7,7 +7,7 @@ tags: programming, language
 ---
 # Markdown
 
-This is a [[Markup Language]] that is widely used, for example it is used in [[Github]] README pages and [[Obsidian]] notes. It has a fairly basic syntax, that I am going to have great fun describing in a [[Markdown]] file.
+This is a [[Markup Language]] that is widely used, for example it is used in [[GitHub]] README pages and [[Obsidian]] notes. It has a fairly basic syntax, that I am going to have great fun describing in a [[Markdown]] file.
 
 # Syntax
 I am sure there is more, but this is what I have found useful so far!
