@@ -8,18 +8,20 @@ tags: programming
 ---
 # Single Responsibility Principle (SRP)
 
-This principle tells us:
+The Single Responsibility Principle (SRP) is a fundamental concept in software engineering, emphasizing that:
 
 >[!quote] [[Robert C. Martin]]
 >"A module should be responsible to one, and only one, actor."
 
-In other words, there should only ever be one reason to change a module. 
+In simpler terms, a module should have only one reason to change.
 
 ## Example
 
-An example from the [wikipedia article](https://en.wikipedia.org/wiki/Single-responsibility_principle) about this is. If you have some code that compiles and then produces a report there might be two reasons you want to change the code.
-1. You want to change the content of the report.
-2. You want to change the format of the report.
-These should be separate modules. 
+Let's consider an example from the [Wikipedia article](https://en.wikipedia.org/wiki/Single-responsibility_principle) on SRP. Suppose you have some code that compiles and then produces a report. There might be two reasons for wanting to change the code:
 
-A hidden point in this example is that you will have to define an interface to work between these two that standardises how this information will be passed from one to another.
+1.  To modify the content of the report.
+2.  To alter the format of the report.
+
+According to SRP, these two functionalities should be implemented in separate modules.
+
+An important takeaway from this example is that you'll need to define an interface between the two modules. This interface standardizes how information is passed from one module to another, ensuring proper separation of concerns.
