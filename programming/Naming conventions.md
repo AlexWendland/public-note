@@ -10,12 +10,19 @@ tags: programming
 
 When coding we repeatedly have to name things. So having some go to standards for how to do this makes writing code quickly but it easier to read. The key thing is for the name to be fully expansive about what the variable is doing, if you can't do this maybe this variable is doing too much.
 
+> [!quote] [[Clean Code]]
+> One difference between a smart programmer and a professional programmer is that the professional understands that clarity is king. Professionals use their powers for good and write code that others can understand.
+
 These are the following principles I try to follow:
 - [[Naming conventions#Use intention-revealing names|Use intention-revealing names]]
 - [[Naming conventions#Don't include the type in the name|Don't include the type in the name]]
 - [[Naming conventions#No two names should look a like|No two names should look a like]]
 - [[Naming conventions#Use pronounceable names|Use pronounceable names]]
-- 
+- [[Naming conventions#Avoid mental mappings|Avoid mental mappings]]
+- [[Naming conventions#Be consistent|Be consistent]]
+- [[Naming conventions#Use solution and problem domain names|Use solution and problem domain names]]
+- [[Naming conventions#Use the correct level of context|Use the correct level of context]]
+- [[Naming conventions#Don't be afraid to rename something|Don't be afraid to rename something]]
 
 ## Use intention-revealing names
 
@@ -77,11 +84,47 @@ Using distinct variable names makes your code easier to read and scan. To preven
 
 By ensuring that variable names are distinct and easy to differentiate.
 
-# Use pronounceable names
+## Use pronounceable names
 
 Modern IDEs make it easy to work with longer, more descriptive variable names. Therefore, there's no need to use:
 1.  **Single-letter characters**: Avoid using single-letter characters for variable names, as they can be ambiguous and hard to discuss.
 2.  **Acronyms**: Using acronyms for variable names can be confusing and difficult to understand, especially for those unfamiliar with the acronym.
 3.  **Abbreviations**: Abbreviations in variable names can be unclear and challenging to pronounce.
+4. **Name hard coded variables**: If you turn numbers or strings into variables with pronounceable names, it will make the code easier to read, the variable more searchable, and easier to abstract. i.e. don't add a 7 to the code instead why not add ``DAYS_IN_THE_WEEK``.
 By using pronounceable names for your variables, you can facilitate more meaningful conversations when discussing your code with others, such as during code reviews.
 
+## Avoid mental mappings
+
+Mental mapping occurs when readers have to interpret or translate names in the code to understand their meaning. This makes the code harder to read and understand. To avoid mental mapping, use clear and descriptive names that don't require any additional interpretation. This includes not making in-jokes within the code or needing to have read your favourite reddit to understand what a variable is doing.
+
+Avoid vague words such as `thing`, acronyms, or single letter variables. For example:
+
+```python
+for i, fbt in enumerate(list_names):
+	value = do_thing(fbt)
+	print(f'Case {i} completed with {fbt} and output {value}')
+```
+
+Requires more context to know what is going on. You could use more descriptive names such as:
+
+```python
+for index, football_team in enumerate(football_premiership_teams):
+	average_goals_per_game = calculate_goals_per_game(football_team)
+	print(f'Team {index} completed with {football_team} and output {average_goals_per_game}') 
+```
+
+## Be consistent
+
+Use noun or noun phrases for class names and verb or verb phrases for method names.
+
+## Use solution and problem domain names
+
+Use computer science terms and pattern names when appropriate, and problem domain names when there's no suitable "programmer-eese" term.
+
+## Use the correct level of context
+
+## Don't be afraid to rename something
+
+If something is named poorly and when you come to the code base you don't understand it. Rename that variable!
+
+You should keep to the repositories standards but if you are worried about this, get the person who is maintaining this area to code review it and let them know in that why you are renaming it. (Worst case, you find out your understanding of the code was wrong.)
