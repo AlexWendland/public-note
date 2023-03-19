@@ -54,7 +54,7 @@ As a [[Python]] programmer working in [[Data]], it's tempting to include data ty
 
 There are several reasons to avoid this practice:
 
-1.  **Redundancy**: Variable names should be indicative of their structure. If you have `football_results`, it's likely you would store it in a DataFrame anyway, so specifying the type is unnecessary.
+1.  **Redundancy**: Variable names should be indicative of their structure. If you have `football_results`, it's likely you would store it in a DataFrame anyway, so specifying the type is unnecessary. There might be exceptions to this rule for example time being saved as a datetime object or unix timestamp (thus an integer).
 2.  **Confusion**: Including the type in a variable name can make it harder to understand. For example, `write_to_cloud_boolean` may lead to confusion about whether it represents a boolean variable or a storage account with a provider named "boolean".
 3.  **Misinformation**: Inconsistency in naming conventions can lead to misunderstandings. If you've been using types in variable names and someone else names a variable `accounts_list` when it's actually a dictionary, this can cause confusion for others working on the codebase.
 4.  **IDE Suggestions**: Including types in variable names can make it more challenging to find the desired variable in your IDE's suggestions, leading to extra clicks and wasted time.
@@ -77,11 +77,12 @@ Balancing these all against one another. I think it is best not to include the v
 Using distinct variable names makes your code easier to read and scan. To prevent confusion, avoid creating variable names that look similar in the following ways:
 
 1.  **Long prefixes**: Names that look similar due to long, shared prefixes can be confusing.
-    -   Example: `XYZControllerForEfficientHandlingOfStrings` and `XYZControllerForEfficientStorageOfStrings`
+    - Example: `XYZControllerForEfficientHandlingOfStrings` and `XYZControllerForEfficientStorageOfStrings`
 2.  **Numbers or noise words**: Adding numbers or noise words to variable names can make it difficult to differentiate between them.
-    -   Example: `data1` and `data2` or `the_data`
-3.  **Similar suffixes**: Using words with similar meanings at the end of variable names can cause confusion.
-    -   Example: `ProductInfo` and `ProductData`
+    - Example: `data1` and `data2` or `the_data`
+    - Example: having the root class as `ReaderBase` or `AbstractReader`, instead of using `Base` or `Abstract` why not specify the child classes further.
+1.  **Similar suffixes**: Using words with similar meanings at the end of variable names can cause confusion.
+    - Example: `ProductInfo` and `ProductData`
 
 By ensuring that variable names are distinct and easy to differentiate.
 
@@ -113,6 +114,9 @@ for index, football_team in enumerate(football_premiership_teams):
 	average_goals_per_game = calculate_goals_per_game(football_team)
 	print(f'Team {index} completed with {football_team} and output {average_goals_per_game}') 
 ```
+
+>[!warning] Include units in the variable name
+> You might know that all timestamps in your code are unix second timestamps. However you in 5 days or another coder might not. So instead of `start_time` why not `start_unix_timestamp_seconds` 
 
 ## Be consistent
 
