@@ -34,6 +34,12 @@ There are 5 levels of severity in the logging module:
 
 According to the [[pylint]] guidelines, the message should be formatted using the lazy % formatting. 
 
+You can set the level of the logger to filter messages of a lower level than set. 
+
+```python
+logger.setLevel(logging.INFO)
+```
+
 ## Basic Configuration
 
 You can call basicConfig before logging anything to construct the root logger and set some properties of it. You can straight out of the box set the level, write to a file, format the messages.
@@ -140,4 +146,76 @@ logger.critical("Hey") # This will be handled by both handler1 and 2.
 
 ## Advanced Configuration
 
-You can hand the configuration.
+Instead of defining the configuration in the code you can hand it in a file. The configuration can be passed by a dictionary - therefore you can define it in a yaml or json file - or a conf file. 
+
+### Conf file
+
+Here is an example of such a conf file.
+
+```conf
+# Define the names for the loggers you want to use.
+
+[loggers]
+
+keys=root,sampleLogger
+
+# Define the names of the handlers that output the logs
+
+[handlers]
+
+keys=consoleHandler,fileHandler
+
+# Define the formatters for the handlers
+
+[formatters]
+
+keys=simpleFormatter,verboseFormatter
+
+# The logger level will be the first filter that is applied.
+
+[logger_root]
+
+level=DEBUG
+
+handlers=consoleHandler
+
+# The qualname is the name of the logger that is used in the code.
+
+[logger_sampleLogger]
+
+level=DEBUG
+
+handlers=fileHandler
+
+qualname=sampleLogger
+
+# If you want to stream to the console you need to pass it the sys.stdout
+
+[handler_consoleHandler]
+
+class=StreamHandler
+
+level=DEBUG
+
+formatter=simpleFormatter
+
+args=(sys.stdout,)
+
+[handler_fileHandler]
+
+class=FileHandler
+
+level=INFO
+
+formatter=verboseFormatter
+
+args=('sample.log', 'a')
+
+[formatter_simpleFormatter]
+
+format=%(asctime)s - %(name)s - %(levelname)s - %(message)s
+
+[formatter_verboseFormatter]
+
+format=%(asctime)s - %(name)s - %(levelname)s - I love pie - %(message)s
+```
