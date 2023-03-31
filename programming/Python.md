@@ -22,3 +22,4 @@ I personally love python the simplicity and intuitive syntax makes it a pleasure
 - [[Fast API]]
 - [[Flask]]
 - [[Decorators in Python]]
+- [[logging python]]
