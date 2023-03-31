@@ -17,6 +17,8 @@ Some cool features it has is:
 - different handlers to post messages such as streamed, files, http and rotating, and
 - custom formatters for different handlers.
 
+This library was converted from [[Java]] which is why it does not conform to the python naming  
+
 ## Logging level
 
 There are 5 levels of severity in the logging module:
