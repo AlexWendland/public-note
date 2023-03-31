@@ -38,3 +38,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Polymorphism]]
 - [[Liskov Substitution Principle (LSP)]]
 - [[Interface Segregation Principle (ISP)]]
+- [[Singleton]]
