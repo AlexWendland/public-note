@@ -41,4 +41,6 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Interface Segregation Principle (ISP)]]
 - [[Singleton]]
 - [[Complementary binaries]]
-- [[Signed integers]]
+- [[Signed or unsigned integers]]
+- [[Bit]]
+- [[Byte]]
