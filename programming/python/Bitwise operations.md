@@ -9,4 +9,4 @@ chatgpt: false
 ---
 # Bitwise operations
 
-[[Integers]] in python have a [[Binary|binary]] representation
+[[Integer|Integers]] in python have a [[Binary|binary]] representation - in fact they use the 

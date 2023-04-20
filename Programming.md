@@ -9,6 +9,7 @@ This is an index page for the notes that could broadly be grouped under this top
 # Index
 - [[Anonymous Functions]]
 - [[Application Programming Interface (API)]]
+- [[Binary]]
 - [[Classes]]
 - [[Clean Code]]
 - [[CRUD API]]
@@ -39,3 +40,5 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Liskov Substitution Principle (LSP)]]
 - [[Interface Segregation Principle (ISP)]]
 - [[Singleton]]
+- [[Complementary binaries]]
+- [[Signed integers]]
