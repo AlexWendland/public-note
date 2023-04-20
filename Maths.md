@@ -10,4 +10,5 @@ chatgpt: false
 # Maths
 This is an index page for all notes that broadly could be grouped under Maths.
 # Index
-- 
+- [[Integer]]
+- [[Binary]]
