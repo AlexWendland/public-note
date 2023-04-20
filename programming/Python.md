@@ -23,3 +23,4 @@ I personally love python the simplicity and intuitive syntax makes it a pleasure
 - [[Flask]]
 - [[Decorators in Python]]
 - [[Logging in python]]
+- [[Bitwise operations]]
