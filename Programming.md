@@ -40,7 +40,7 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Liskov Substitution Principle (LSP)]]
 - [[Interface Segregation Principle (ISP)]]
 - [[Singleton]]
-- [[Complementary binaries]]
+- [[Two's complement]]
 - [[Signed or unsigned integers]]
 - [[Bit]]
 - [[Byte]]

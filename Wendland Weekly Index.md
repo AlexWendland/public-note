@@ -12,4 +12,5 @@ This is my vain attempt to publish a note once a week, about anything that takes
 - [[2023-W08]]: Markdown actually learning it.
 - [[2023-W09]]: First steps into a [[Fast API]] course.
 - [[2023-W11]]: Naming variables - my dilemma.
-- [[2023-W12]]: How to start with testing when you mainly right scripts.
+- [[2023-W13]]: Logging.
+- [[2023-W16]]: Why is ~10 = -11?
