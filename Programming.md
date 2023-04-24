@@ -44,4 +44,3 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Signed or unsigned integers]]
 - [[Bit]]
 - [[Byte]]
-- [[Pre-commit hooks]]

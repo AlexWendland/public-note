@@ -13,3 +13,4 @@ This is my preferred (well ... to be honest the only one I have used) version co
 Following is an index for things about Git:
 - [[GitHub]]
 - [[Using multiple git profiles]]
+- [[Pre-commit hooks]]
