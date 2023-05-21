@@ -1,0 +1,367 @@
+{
+  "choices": [
+    {
+      "id": "375738b0-d6f4-4d80-859a-2589afac216b",
+      "name": "Macro: Python",
+      "type": "Macro",
+      "command": true,
+      "macroId": "66425777-3635-4388-a07d-b7ccc350c9f3"
+    },
+    {
+      "id": "28fddc5b-71be-4ff6-a1f2-fc6037f31e91",
+      "name": "Macro: Programming",
+      "type": "Macro",
+      "command": true,
+      "macroId": "8334d105-6602-4369-9b97-12cd320aea91"
+    },
+    {
+      "id": "123c87a2-4619-4fd8-ab85-932feec401c2",
+      "name": "Macro: Git",
+      "type": "Macro",
+      "command": true,
+      "macroId": "fbcecf7b-3940-476d-93ea-a52582f5a2ac"
+    },
+    {
+      "id": "d785ee0a-0a23-449c-8554-207eb00af5af",
+      "name": "Macro: Maths",
+      "type": "Macro",
+      "command": true,
+      "macroId": "d052cbfc-d2bb-4e3c-b758-c01ba23fd158"
+    }
+  ],
+  "macros": [
+    {
+      "name": "Macro: Python",
+      "id": "66425777-3635-4388-a07d-b7ccc350c9f3",
+      "commands": [
+        {
+          "name": "Create file in python folder",
+          "type": "NestedChoice",
+          "id": "c540f9e9-b254-4390-8891-db4c37f7aa5b",
+          "choice": {
+            "id": "5d302cd0-43e4-45bb-bf58-7a5086c0b6a0",
+            "name": "Create file in python folder",
+            "type": "Template",
+            "command": false,
+            "templatePath": "templates/python-template.md",
+            "fileNameFormat": {
+              "enabled": true,
+              "format": "{{value:title}}"
+            },
+            "folder": {
+              "enabled": true,
+              "folders": [
+                "programming/python"
+              ],
+              "chooseWhenCreatingNote": false,
+              "createInSameFolderAsActiveFile": false,
+              "chooseFromSubfolders": false
+            },
+            "appendLink": false,
+            "openFileInNewTab": {
+              "enabled": false,
+              "direction": "vertical",
+              "focus": true
+            },
+            "openFile": true,
+            "openFileInMode": "default",
+            "fileExistsMode": "Increment the file name",
+            "setFileExistsBehavior": false
+          }
+        },
+        {
+          "name": "Add to Python Index",
+          "type": "NestedChoice",
+          "id": "642c30a1-3fc2-4891-9b53-d9d900c1ee4c",
+          "choice": {
+            "id": "0eb7f47b-8543-46b1-aaa1-8a5930e6f436",
+            "name": "Add to Python Index",
+            "type": "Capture",
+            "command": false,
+            "appendLink": false,
+            "captureTo": "programming/Python.md",
+            "captureToActiveFile": false,
+            "createFileIfItDoesntExist": {
+              "enabled": false,
+              "createWithTemplate": false,
+              "template": ""
+            },
+            "format": {
+              "enabled": true,
+              "format": "- [[{{value:title}}]]"
+            },
+            "insertAfter": {
+              "enabled": true,
+              "after": "# Index",
+              "insertAtEnd": true,
+              "createIfNotFound": true,
+              "createIfNotFoundLocation": "bottom"
+            },
+            "prepend": false,
+            "task": false,
+            "openFileInNewTab": {
+              "enabled": false,
+              "direction": "vertical",
+              "focus": true
+            },
+            "openFile": false,
+            "openFileInMode": "default"
+          }
+        }
+      ],
+      "runOnStartup": false
+    },
+    {
+      "name": "Macro: Programming",
+      "id": "8334d105-6602-4369-9b97-12cd320aea91",
+      "commands": [
+        {
+          "name": "Create file",
+          "type": "NestedChoice",
+          "id": "b42c1096-ae87-4768-89ec-6a8cb8cd8681",
+          "choice": {
+            "id": "9683f83a-296e-4698-ac4e-0a12f1129d51",
+            "name": "Create file",
+            "type": "Template",
+            "command": false,
+            "templatePath": "templates/programming-template.md",
+            "fileNameFormat": {
+              "enabled": true,
+              "format": "{{value:title}}"
+            },
+            "folder": {
+              "enabled": true,
+              "folders": [
+                "programming"
+              ],
+              "chooseWhenCreatingNote": false,
+              "createInSameFolderAsActiveFile": false,
+              "chooseFromSubfolders": false
+            },
+            "appendLink": false,
+            "openFileInNewTab": {
+              "enabled": false,
+              "direction": "vertical",
+              "focus": true
+            },
+            "openFile": true,
+            "openFileInMode": "default",
+            "fileExistsMode": "Increment the file name",
+            "setFileExistsBehavior": false
+          }
+        },
+        {
+          "name": "Add to index",
+          "type": "NestedChoice",
+          "id": "1373cacf-ce41-49a6-a0ec-9a8b9c7a85ac",
+          "choice": {
+            "id": "cd823b97-4112-4df8-8728-721b34cd87df",
+            "name": "Add to index",
+            "type": "Capture",
+            "command": false,
+            "appendLink": false,
+            "captureTo": "Programming.md",
+            "captureToActiveFile": false,
+            "createFileIfItDoesntExist": {
+              "enabled": false,
+              "createWithTemplate": false,
+              "template": ""
+            },
+            "format": {
+              "enabled": true,
+              "format": "- [[{{value:title}}]]"
+            },
+            "insertAfter": {
+              "enabled": true,
+              "after": "# Index",
+              "insertAtEnd": true,
+              "createIfNotFound": true,
+              "createIfNotFoundLocation": "bottom"
+            },
+            "prepend": false,
+            "task": false,
+            "openFileInNewTab": {
+              "enabled": false,
+              "direction": "vertical",
+              "focus": true
+            },
+            "openFile": false,
+            "openFileInMode": "default"
+          }
+        }
+      ],
+      "runOnStartup": false
+    },
+    {
+      "name": "Macro: Git",
+      "id": "fbcecf7b-3940-476d-93ea-a52582f5a2ac",
+      "commands": [
+        {
+          "name": "Add file to Git",
+          "type": "NestedChoice",
+          "id": "c32063ce-652b-4320-8edb-7f2ba2e64191",
+          "choice": {
+            "id": "7e0af9ac-5deb-40de-bf97-d0cc71ce2e2c",
+            "name": "Add file to Git",
+            "type": "Template",
+            "command": false,
+            "templatePath": "templates/git-template.md",
+            "fileNameFormat": {
+              "enabled": true,
+              "format": "{{value:title}}"
+            },
+            "folder": {
+              "enabled": true,
+              "folders": [
+                "programming/git"
+              ],
+              "chooseWhenCreatingNote": false,
+              "createInSameFolderAsActiveFile": false,
+              "chooseFromSubfolders": false
+            },
+            "appendLink": false,
+            "openFileInNewTab": {
+              "enabled": false,
+              "direction": "vertical",
+              "focus": true
+            },
+            "openFile": true,
+            "openFileInMode": "default",
+            "fileExistsMode": "Increment the file name",
+            "setFileExistsBehavior": false
+          }
+        },
+        {
+          "name": "Untitled Capture Choice",
+          "type": "NestedChoice",
+          "id": "80c51817-1c5c-4507-81b4-63c22fce6a4a",
+          "choice": {
+            "id": "e11ef32e-f65e-4185-97ce-72845c7eaccd",
+            "name": "Untitled Capture Choice",
+            "type": "Capture",
+            "command": false,
+            "appendLink": false,
+            "captureTo": "programming/Git.md",
+            "captureToActiveFile": false,
+            "createFileIfItDoesntExist": {
+              "enabled": false,
+              "createWithTemplate": false,
+              "template": ""
+            },
+            "format": {
+              "enabled": true,
+              "format": "- [[{{value:title}}]]"
+            },
+            "insertAfter": {
+              "enabled": true,
+              "after": "# Index",
+              "insertAtEnd": true,
+              "createIfNotFound": true,
+              "createIfNotFoundLocation": "bottom"
+            },
+            "prepend": false,
+            "task": false,
+            "openFileInNewTab": {
+              "enabled": false,
+              "direction": "vertical",
+              "focus": true
+            },
+            "openFile": false,
+            "openFileInMode": "default"
+          }
+        }
+      ],
+      "runOnStartup": false
+    },
+    {
+      "name": "Macro: Maths",
+      "id": "d052cbfc-d2bb-4e3c-b758-c01ba23fd158",
+      "commands": [
+        {
+          "name": "Add file to maths folder",
+          "type": "NestedChoice",
+          "id": "0708c3d2-f74b-4af4-8141-ef87d134b4d3",
+          "choice": {
+            "id": "36fb2340-2dd8-4284-9bfc-ee199ff1fb95",
+            "name": "Add file to maths folder",
+            "type": "Template",
+            "command": false,
+            "templatePath": "templates/maths-template.md",
+            "fileNameFormat": {
+              "enabled": true,
+              "format": "{{value:title}}"
+            },
+            "folder": {
+              "enabled": true,
+              "folders": [
+                "maths"
+              ],
+              "chooseWhenCreatingNote": false,
+              "createInSameFolderAsActiveFile": false,
+              "chooseFromSubfolders": false
+            },
+            "appendLink": false,
+            "openFileInNewTab": {
+              "enabled": false,
+              "direction": "vertical",
+              "focus": true
+            },
+            "openFile": true,
+            "openFileInMode": "default",
+            "fileExistsMode": "Nothing",
+            "setFileExistsBehavior": true
+          }
+        },
+        {
+          "name": "Add to index",
+          "type": "NestedChoice",
+          "id": "ae58c5ae-dc26-4f59-8740-68a5dc31416c",
+          "choice": {
+            "id": "8f66db82-86f2-4321-847e-baa876826df5",
+            "name": "Add to index",
+            "type": "Capture",
+            "command": false,
+            "appendLink": false,
+            "captureTo": "Maths.md",
+            "captureToActiveFile": false,
+            "createFileIfItDoesntExist": {
+              "enabled": false,
+              "createWithTemplate": false,
+              "template": ""
+            },
+            "format": {
+              "enabled": true,
+              "format": "- [[{{value:title}}]]"
+            },
+            "insertAfter": {
+              "enabled": true,
+              "after": "# Index",
+              "insertAtEnd": true,
+              "createIfNotFound": false,
+              "createIfNotFoundLocation": "top"
+            },
+            "prepend": false,
+            "task": false,
+            "openFileInNewTab": {
+              "enabled": false,
+              "direction": "vertical",
+              "focus": true
+            },
+            "openFile": false,
+            "openFileInMode": "default"
+          }
+        }
+      ],
+      "runOnStartup": false
+    }
+  ],
+  "inputPrompt": "single-line",
+  "devMode": false,
+  "templateFolderPath": "templates",
+  "migrations": {
+    "migrateToMacroIDFromEmbeddedMacro": true,
+    "useQuickAddTemplateFolder": true,
+    "incrementFileNameSettingMoveToDefaultBehavior": true,
+    "mutualExclusionInsertAfterAndWriteToBottomOfFile": true
+  }
+}
