@@ -72,13 +72,37 @@ def do_something_better{}:
 
 ## Function Arguments
 
-The best functions are ones with no arguments. This makes it easier to read as regularly arguments are at a different level of abstraction to the function. Also easier for [[Testing|testing]] as you don't have to try the function with multiple different arguments. 
+The best functions are ones with no arguments (niladic). This makes it easier to read as regularly arguments are at a different level of abstraction to the function. Also easier for [[Testing|testing]] as you don't have to try the function with multiple different arguments. 
 
+### Try to have less than 3 arguments
 
+It is best to avoid functions with more than 3 arguments. There are obvious exceptions like a point in 4 dimensional space but this is a rule of thumb.
+
+### Monadic functions
+
+Monadic functions are ones that have one input argument. There are a couple reasons to use these.
+
+#### Question
+
+Ask a question about an input variable, such as `does_this_file_exist(fileName)`
+
+#### Transformation
+
+Something that takes an input argument and transforms it somehow. Then returns the altered variable as a return variable.
+
+#### Event
+
+This is an event trigger, such as if someone failed there password a given number of times. 
+
+If the functions don't follow these sorts of patterns then it is unwise to use them.
 
 ### Make function variables instance variables
 
 The arguments you might want to pass to the function could be instance variables. (This is a very [[Object Oriented Programming (OOP)|object oriented]] approach.)
+
+### Don't use input arguments to output the result
+
+Most programmers won't expect the output to be given by an input variable such as using a [[Mutability|mutable]] variable. Provide the output as a new variable.
 
 ## Function organisation
 
