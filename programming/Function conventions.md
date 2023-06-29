@@ -96,13 +96,25 @@ This is an event trigger, such as if someone failed there password a given numbe
 
 If the functions don't follow these sorts of patterns then it is unwise to use them.
 
+### Dyadic functions
+
+A function with two arguments is harder to understand than one.
+
 ### Make function variables instance variables
 
 The arguments you might want to pass to the function could be instance variables. (This is a very [[Object Oriented Programming (OOP)|object oriented]] approach.)
 
+### Flag variables
+
+Flag variables should be avoided, they are an indicator that the function does more than one thing. They should either be an instance variable if it is effecting the class or hidden in one of the switch statements.
+
 ### Don't use input arguments to output the result
 
 Most programmers won't expect the output to be given by an input variable such as using a [[Mutability|mutable]] variable. Provide the output as a new variable.
+
+#### Don't pass in an object to write to
+
+This is a tempting practice but instead call the write function on an object that can write. Or make the writer an instance variable of the object that owns the function. This makes it much more clear what is doing the writing or being written to. 
 
 ## Function organisation
 
