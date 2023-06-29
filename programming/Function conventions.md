@@ -36,9 +36,21 @@ If your code goes into 3 levels of nesting - that seems like it is doing too muc
 #### Extractions
 Pulling code out into their own functions.
 
-```python
-def  
-```
-
 #### Inversion
 Flipping an if condition around for an early return.
+```python
+def do_something():
+	if a == b:
+		stuff_when_a_=_b()
+	else:
+		stuff_when_a_/=_b()
+	return the_thing
+
+def do_something_better{}:
+	if a != b:
+		stuff_when_a_/=_b()
+		return the_thing
+	stuff_when_a_=_b()
+	return the_thing
+```
+
