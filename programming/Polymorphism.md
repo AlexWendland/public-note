@@ -1,5 +1,5 @@
 ---
-aliases: []
+aliases: [polymorphic, Polymorphic, polymorphism]
 type: theory
 publish: true
 created: 2023-03-19
