@@ -72,7 +72,13 @@ def do_something_better{}:
 
 ## Function Arguments
 
-The best functions are ones with no arguments, 
+The best functions are ones with no arguments. This makes it easier to read as regularly arguments are at a different level of abstraction to the function. Also easier for [[Testing|testing]] as you don't have to try the function with multiple different arguments. 
+
+
+
+### Make function variables instance variables
+
+The arguments you might want to pass to the function could be instance variables. (This is a very [[Object Oriented Programming (OOP)|object oriented]] approach.)
 
 ## Function organisation
 
