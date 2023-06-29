@@ -45,3 +45,5 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Bit]]
 - [[Byte]]
 - [[Function conventions]]
+- [[Inheritance]]
+- [[Constructor Pattern]]

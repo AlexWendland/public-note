@@ -1,5 +1,5 @@
 ---
-aliases: [naming variables]
+aliases: [naming variables, naming conventions]
 type: notation
 publish: true
 created: 2023-03-18
