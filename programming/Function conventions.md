@@ -70,6 +70,10 @@ def do_something_better{}:
 	return the_thing
 ```
 
+### Have no side effects
+
+
+
 ## Function Arguments
 
 The best functions are ones with no arguments (niladic). This makes it easier to read as regularly arguments are at a different level of abstraction to the function. Also easier for [[Testing|testing]] as you don't have to try the function with multiple different arguments. 
@@ -96,9 +100,32 @@ This is an event trigger, such as if someone failed there password a given numbe
 
 If the functions don't follow these sorts of patterns then it is unwise to use them.
 
-### Dyadic functions
+### Dyadic and Triadic functions
 
-A function with two arguments is harder to understand than one.
+A function with two or more arguments is harder to understand than one, for 3 reasons: 
+- You have to spend some time understanding why each argument is taken by the function.
+- You have to order the inputs to function, and this should somehow seem clear.
+- You may have a variable to ignore, for example the file object in a writing function.
+
+#### You will have to write Dyadic or Triadic functions
+
+There are good reasons to have to write them, for example Cartesian coordinates. Or a comparison function, but that being said try to avoid it and when you do follow the advice below.
+
+#### Make the ordering of arguments clear
+
+When you have two or more arguments make it clear the ordering. For example rather than `assert_equals(actual, expected)` try `assert_actual_equals_exepcted(actual, expected)`.
+
+#### Remove inputs you ignore when you are reading the function
+
+The bits of the code you ignore is exactly where bugs will creep in. This is normally indicative of something needing to become an instance variable - such as a writer object in a function to output stuff to a log.
+
+#### Are the arguments really a class in themselves
+
+If the arguments are naturally grouped together, then may be indicative of being a class in themselves. If so this function could become a class function and take no arguments!
+
+#### Are you taking a list of arguments
+
+If you are taking a list of arguments for example using `args` (in python) to pass them in, consider passing a list instead. 
 
 ### Make function variables instance variables
 
@@ -119,12 +146,15 @@ This is a tempting practice but instead call the write function on an object tha
 ## Function organisation
 
 ### Use descriptive names
+
 The name of the function should tell you exactly what it does. Look at [[Naming conventions|naming conventions]] to see how to do it.
 
 #### Don't be afraid to use a long name
+
 Remember writing a function should be like reading a book, functions are the sentences.
 
 #### Start names with a Verb
+
 A function should do or answer something, this should be the most dominant word in the name of the function.
 
 ### Step down rule
