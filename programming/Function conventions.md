@@ -47,7 +47,7 @@ When reading your function, if you need to go into details - then that should be
 
 ### Functions shouldn't be too nested
 
-If your code goes into 3 levels of nesting - that seems like it is doing too much. [Here](https://www.youtube.com/watch?v=CFRhGnuXG-4&ab_channel=CodeAesthetic) is a nice video about how to not nest your code - There are 2 main methods to get around it. 
+If your code goes into 3 levels of nesting - that seems like it is doing too much. [Here](https://www.youtube.com/watch?v=CFRhGnuXG-4&ab_channel=CodeAesthetic) is a nice video about how to list[str]not nest your code - There are 2 main methods to get around it. 
 
 #### Extractions
 Pulling code out into their own functions.
@@ -72,7 +72,7 @@ def do_something_better{}:
 
 ### Have no side effects
 
-
+A side effect is a secondary effect not made clear by the functions name. For example checking if the function checked the state is in some position and then changed the state some how. This is bad practice as it makes it less clear to the user what they are doing and may have unexpected consequences.  
 
 ## Function Arguments
 
