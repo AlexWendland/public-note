@@ -1,6 +1,6 @@
 ---
 aliases: [function, functions, function convensions]
-type: convensions
+type: convention
 publish: true
 created: 2023-06-29
 last_edited: 2023-07-01
