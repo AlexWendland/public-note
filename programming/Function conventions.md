@@ -131,7 +131,7 @@ If you are taking a list of arguments for example using `args` (in python) to pa
 
 The arguments you might want to pass to the function could be instance variables. (This is a very [[Object Oriented Programming (OOP)|object oriented]] approach.)
 
-### Flag variables
+### Don't use flag variables
 
 Flag variables should be avoided, they are an indicator that the function does more than one thing. They should either be an instance variable if it is effecting the class or hidden in one of the switch statements.
 
