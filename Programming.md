@@ -51,3 +51,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Testing]]
 - [[Mutability]]
 - [[Comment conventions]]
+- [[Formatting conventions]]
