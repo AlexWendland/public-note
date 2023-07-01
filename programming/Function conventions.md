@@ -74,6 +74,10 @@ def do_something_better{}:
 
 A side effect is a secondary effect not made clear by the functions name. For example checking if the function checked the state is in some position and then changed the state some how. This is bad practice as it makes it less clear to the user what they are doing and may have unexpected consequences.  
 
+### Don't repeat yourself
+
+The DRY principle, if you are going to repeat yourself - why don't you make that a function?
+
 ## Function Arguments
 
 The best functions are ones with no arguments (niladic). This makes it easier to read as regularly arguments are at a different level of abstraction to the function. Also easier for [[Testing|testing]] as you don't have to try the function with multiple different arguments. 
@@ -143,6 +147,10 @@ Most programmers won't expect the output to be given by an input variable such a
 
 This is a tempting practice but instead call the write function on an object that can write. Or make the writer an instance variable of the object that owns the function. This makes it much more clear what is doing the writing or being written to. 
 
+### Don't return error codes from functions
+
+Throw exceptions, don't pass error codes from your function. It means when you get a return from a function you have to check it for a error type. As well as it makes typing harder to do. This also subtly breaks [[Function conventions#### Command Query separation|Command Query separation]] separation.
+
 ## Function organisation
 
 ### Use descriptive names
@@ -161,4 +169,8 @@ A function should do or answer something, this should be the most dominant word 
 
  > [!quote] [[Clean Code]]
 > We want the code to read like a top-down narrative. We want every function to be followed by those at the next level of abstraction so that we can read the program, descending one level of abstraction at a time as we read down the list of functions. 
+Obsidian
 
+### Get the function written before you clean them up
+
+It is best to write your functions first, then clean them up afterwards. Trying to do both at the same time is multitasking and is inefficient.
