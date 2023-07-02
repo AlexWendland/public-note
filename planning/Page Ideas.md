@@ -12,3 +12,4 @@ last_edited: 2023-07-02
 - Write summary of [[Our Python Monorepo]] medium article
 - Github actions
 - Read google [style guide](https://google.github.io/styleguide/pyguide.html) for python
+- Make a page on "The pledge" and why I committed to it. 
