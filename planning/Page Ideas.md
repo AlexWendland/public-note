@@ -13,3 +13,4 @@ last_edited: 2023-07-02
 - Github actions
 - Read google [style guide](https://google.github.io/styleguide/pyguide.html) for python
 - Make a page on "The pledge" and why I committed to it. 
+- The information about Consumer Price Index (CPI) is terribly presented. Could I research and write an article about it?
