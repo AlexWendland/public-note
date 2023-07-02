@@ -9,5 +9,6 @@ last_edited: 2023-07-02
 - [Poetry](https://python-poetry.org/) python module
 - [line-profiler](https://pypi.org/project/line-profiler/) python module
 - Look into [Dask](https://www.dask.org/) multiprocessing python
-- Write summary of [[Our Python Monorepo]] medium article.
+- Write summary of [[Our Python Monorepo]] medium article
 - Github actions
+- Read google [style guide](https://google.github.io/styleguide/pyguide.html) for python
