@@ -46,6 +46,8 @@ class point:
 
 	@classmethod
 	def from_polar(cls, radius: float, theta: float):
+		x, y = convert_polar_to_cartesian(radius, theta)
+		return cls(x,y)
 		
 
 	def convert_polar_to_cartesian(self, radius: float, theta: float)
