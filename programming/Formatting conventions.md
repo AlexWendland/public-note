@@ -4,7 +4,7 @@ type: convention
 publish: true
 created: 2023-07-01
 last_edited: 2023-07-11
-tags: programming, clean code, 
+tags: programming, clean code,
 chatgpt: false
 ---
 # Formatting conventions
@@ -17,11 +17,11 @@ The main metaphor used for formatting is a news paper. Nearly all code is read l
 
 Given you are keeping to the [[Class conventions]] your documents shouldn't be very long (between 500-800 lines).
 
-Documents should try to keep concepts that are related to one another, whilst separating out code that is nearly completely unrelated to the main point of the file. 
+Documents should try to keep concepts that are related to one another, whilst separating out code that is nearly completely unrelated to the main point of the file.
 
 ## Vertical space
 
-Each line should represent a single expression or clause. Every group lines should  represent a single concept or thought. Then you should separate each thought with a single line. 
+Each line should represent a single expression or clause. Every group lines should  represent a single concept or thought. Then you should separate each thought with a single line.
 
 The vertical distance between thoughts should represent (as much as possible) the level of relatedness of the concepts. If some code is completely unrelated to anything - it might not belong in this file.
 
@@ -31,13 +31,13 @@ Generic variables should be declare as close to their point of use as possible. 
 
 ## Functions
 
-Dependent functions should be below the function that calls them. This keeps to the newspaper metaphor, and means we descends in abstraction as the file goes on. 
+Dependent functions should be below the function that calls them. This keeps to the newspaper metaphor, and means we descends in abstraction as the file goes on.
 
 ## Horizontal space
 
 Historically there was a quite tight line limit to allow for smaller screens (80 characters). Whilst screens have now gotten bigger, having long lines is most probably indicative of a single line trying to do too much or excessive indentation. The normal cause of long times are [[Comment conventions|comments]] or strings, which should be broken up to make it easier to read. Trying to stick to 80 characters isn't hard and pretty standard in most code formatters. It also makes code easy to read on a side by side comparison which people will use for [[Pull Requests]] or handling [[Merge conflicts]].
 
-Some people like horizontal alignment of assignment of variables. Personally I don't and I think it takes more effort to maintain that benefit given to the reader. 
+Some people like horizontal alignment of assignment of variables. Personally I don't and I think it takes more effort to maintain that benefit given to the reader.
 
 ## Indentation
 
