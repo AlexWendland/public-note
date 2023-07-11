@@ -9,4 +9,51 @@ chatgpt: false
 ---
 # Object
 
-An object keeps data behind an interface. It makes its internal variables private. Then exposes setter functions that allow people to edit
+An object keeps data behind an interface. It makes its internal variables private. Then exposes setter functions that allow people to edit in there preferred ways. It also has getter functions to provide the methods to get at the data how they would like to access it.
+
+The following would be a [[Data structure|data structure]].
+```python
+class point:
+	x : float
+	y : float
+
+	def init(self, x: float, y: float):
+		self.x = x
+		self.y = y
+```
+
+Whereas the following would be an object.
+```python
+import math
+
+class point:
+	_x : float
+	_y : float
+
+	def init(self, x: float, y: float):
+		self.set_cartesian(x, y)
+
+	def set_cartesian(self, x: float, y: float):
+		self._x = x
+		self._y = y
+
+	@classmethod 
+	def from_cartesian(cls, x: float, y: float):
+		return cls(x,y)
+
+	def set_polar(self, radius: float, theta: float)
+		self._x, self._y = self.convert_polar_to_cartesian(radius, theta)
+
+	@classmethod
+	def from_polar(cls, radius: float, theta: float):
+		
+
+	def convert_polar_to_cartesian(self, radius: float, theta: float)
+		self._x = radius*math.sin(theta)
+		self._y = radius*math.cos(theta)
+
+	@classmethod
+	def 
+
+	def get_cartesian()
+```
