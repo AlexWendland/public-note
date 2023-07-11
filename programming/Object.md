@@ -41,6 +41,9 @@ class point:
 	def from_cartesian(cls, x: float, y: float):
 		return cls(x,y)
 
+	def get_cartesian(self):
+		return self._x, self._y
+
 	def set_polar(self, radius: float, theta: float)
 		self._x, self._y = self.convert_polar_to_cartesian(radius, theta)
 
@@ -54,8 +57,8 @@ class point:
 		self._x = radius*math.sin(theta)
 		self._y = radius*math.cos(theta)
 
-	@classmethod
-	def 
-
-	def get_cartesian()
+	def get_polar(self):
+		...
 ```
+
+Whilst this might look quite similar, the purpose of the class variables `_x` and `_y` is not to be accessed by code outside of the point class. You only access or edit data through the interface you define. 
