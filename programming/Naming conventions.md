@@ -1,6 +1,6 @@
 ---
 aliases: [naming variables, naming conventions]
-type: notation
+type: convention
 publish: true
 created: 2023-03-18
 last_edited: 2023-03-19

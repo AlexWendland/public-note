@@ -15,3 +15,4 @@ Whilst I have written summaries of the conventions from [[Clean Code]] and added
 - [[Function conventions]]
 - [[Comment conventions]]
 - [[Formatting conventions]]
+- [[Object and Data structure Conventions]]
