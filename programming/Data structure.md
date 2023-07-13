@@ -1,5 +1,5 @@
 ---
-aliases: [data structure]
+aliases: [data structure, Data structures, data structures]
 type: structure
 publish: true
 created: 2023-07-11
