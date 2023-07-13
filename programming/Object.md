@@ -1,5 +1,5 @@
 ---
-aliases: [object]
+aliases: [object, Objects, objects]
 type: str
 publish: true
 created: 2023-07-11
@@ -9,7 +9,7 @@ chatgpt: false
 ---
 # Object
 
-An object keeps data behind an interface. It makes its internal variables private. Then exposes setter functions that allow people to edit in there preferred ways. It also has getter functions to provide the methods to get at the data how they would like to access it.
+An object keeps data behind an interface. It makes its internal variables private. Then exposes setter functions that allow people to edit in there preferred way. It also has getter functions to provide the methods to get at the data how they would like to access it.
 
 The following would be a [[Data structure|data structure]].
 ```python
@@ -61,4 +61,4 @@ class point:
 		...
 ```
 
-Whilst this might look quite similar, the purpose of the class variables `_x` and `_y` is not to be accessed by code outside of the point class. You only access or edit data through the interface you define. 
+Whilst this might look quite similar, the purpose of the class variables `_x` and `_y` is not to be accessed by code outside of the point class. You only access or edit data through the interface you define. We do this so the interface can stay fixed but the implementation could change. In this example if we wanted to switch from storing points in cartesian to polar, we could do so without the user ever knowing.
