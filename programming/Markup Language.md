@@ -14,4 +14,4 @@ A [[Markup Language]] is text-encoding system that tells the computer how to dis
 
 # Difference from a [[Programming Language]]
 
-A [[Markup Language]] is a [[Declarative Language]] instead of a [[Programming Language]] which is an [[Imperative Language]]. This means is specifies an end state rather than a sequence of instructions to get there
+A [[Markup Language]] is a [[Declarative Language]] instead of a [[Programming Language]] which is an [[Imperative Programming|Imperative Language]]. This means is specifies an end state rather than a sequence of instructions to get there
