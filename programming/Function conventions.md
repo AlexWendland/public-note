@@ -1,5 +1,5 @@
 ---
-aliases: [function, functions, function convensions]
+aliases: [function, functions, function convensions, subroutines, subroutine]
 type: convention
 publish: true
 created: 2023-06-29

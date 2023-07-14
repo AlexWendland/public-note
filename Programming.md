@@ -59,3 +59,5 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Programming paradigms]]
 - [[Logical Programming]]
 - [[Imperative programming]]
+- [[Procedural Programming]]
+- [[Side effect]]
