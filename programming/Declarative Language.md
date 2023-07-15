@@ -13,4 +13,4 @@ This is a language that specifies the desired end state. So it is the picture on
 - [[Markup Language]]
 
 # Thoughts
-A good [[User Interface (UI)]] should be declarative with the system behind the scenes doing the leg work to get to that state. This paradigm is being applied more and more within [[DevOps]] or example [[Kubernetes]] and [[Terraform]] both you specify the end state and the program sorts altering the current state to match this.
+A good [[User Interface (UI)]] should be declarative with the system behind the scenes doing the leg work to get to that state. This paradigm is being applied more and more within [[DevOps]] for example [[Kubernetes]] and [[Terraform]] both you specify the end state and the program sorts altering the current state to match this.
