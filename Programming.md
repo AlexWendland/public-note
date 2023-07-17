@@ -62,3 +62,5 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Procedural Programming]]
 - [[Side effect]]
 - [[Passing variables to a function]]
+- [[Namespaces]]
+- [[Random Access Memory (RAM)]]
