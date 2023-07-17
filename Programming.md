@@ -61,3 +61,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Imperative programming]]
 - [[Procedural Programming]]
 - [[Side effect]]
+- [[Passing variables to a function]]
