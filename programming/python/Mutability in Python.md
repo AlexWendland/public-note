@@ -9,7 +9,7 @@ chatgpt: false
 ---
 # Mutability in Python
 
-In [[Python]] all [[Variables in python|variables]] are references to objects. These objects come with a [[Mutability]] property. Objects that are [[Mutability|mutable]] in python behave as you would expect. When a variable pointing to a mutable object is altered the object itself is altered.
+In [[Python]] all [[Variables in python|variables]] are references to objects. These objects come with a [[Mutability|mutability]] property. Objects that are [[Mutability|mutable]] in python behave as you would expect. When a variable pointing to a mutable object is altered the object itself is altered.
 
 ```python
 x = [1,2]
@@ -32,4 +32,6 @@ print(x, id(x)) # 2 140703625587648
 print(y, id(y)) # 1 140703625587616
 ```
 
-(The `id` function tells you the location in [[comp]])
+(The `id` function tells you the location in [[Random Access Memory (RAM)|computer memory]].)
+
+Another good example of this put into action is seeing how 
