@@ -22,10 +22,12 @@ a[1] = 1
 print(b) # [ [0,1], [0,1] ]
 ```
 
-Whereas
+whereas
 
 ```python
 a = (0,0)
 b = (a,a)
 a[1] = 1 # TypeError: 'tuple' object does not support item assignment
 ```
+
+though read more about this in [[Mutability in Python]].

@@ -24,3 +24,7 @@ I personally love python the simplicity and intuitive syntax makes it a pleasure
 - [[Decorators in Python]]
 - [[Logging in python]]
 - [[Bitwise operations in python]]
+- [[Variables in python]]
+- [[Reference counting in Python]]
+- [[Garbage collection in python]]
+- [[Mutability in Python]]

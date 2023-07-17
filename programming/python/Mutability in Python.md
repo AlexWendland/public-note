@@ -1,0 +1,35 @@
+---
+aliases: [mutability in Python]
+type: concept
+publish: true
+created: 2023-07-17
+last_edited: 2023-07-17
+tags: programming, python
+chatgpt: false
+---
+# Mutability in Python
+
+In [[Python]] all [[Variables in python|variables]] are references to objects. These objects come with a [[Mutability]] property. Objects that are [[Mutability|mutable]] in python behave as you would expect. When a variable pointing to a mutable object is altered the object itself is altered.
+
+```python
+x = [1,2]
+y = x
+x.append(3)
+print(y) # [1,2,3]
+```
+
+Here `x` and `y` point to the [[Mutability|mutable]] list object and when `x` is altered to add `3` to the list, as `y` points to the same object as `x` when you look at `y` it also has been changed.
+
+Whereas when a variable pointing to an [[Mutability|immutable]] object in [[Python]] is altered, it creates a new object for the altered variable to point to and leaves the rest of the variables pointing to the old object.
+
+```python
+x = 1
+y = x
+print(x, id(x)) # 1 140703625587616
+print(y, id(y)) # 1 140703625587616
+x += 1
+print(x, id(x)) # 2 140703625587648
+print(y, id(y)) # 1 140703625587616
+```
+
+(The `id` function tells you the location in [[comp]])
