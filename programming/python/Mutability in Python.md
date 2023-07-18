@@ -34,4 +34,42 @@ print(y, id(y)) # 1 140703625587616
 
 (The `id` function tells you the location in [[Random Access Memory (RAM)|computer memory]].)
 
-Another good example of this put into action is seeing how 
+## Passing arguments to functions
+
+In [[Python]] all arguments are [[Passing variables to a function|passed by reference]] to functions. Though the [[Mutability|mutability]] of that [[Variables in python|variable]] dictates how the object is treated by that function.
+
+For [[Mutability|immutable]] objects any alteration a function does to the object will not be reflected outside the scope of that function.
+
+```python
+def become_worldly(value):
+    value += ' world'
+    print("Inside function: ", value)
+
+greeting = 'Hello'
+print("Before function: ", greeting) # Before function: Hello
+become_worldly(greeting)             # Inside function: Hello world
+print("After function: ", greeting)  # After function: Hello
+```
+
+These essentially acts as if they have been [[Passing variables to a function|passed by value]], however this technique can reduce [[Random Access Memory (RAM)|computer memory]] usage if multiple variables hold the same value.
+
+For [[Mutability|mutable]] objects any alteration the function does to the passed object will be reflected outside the scope of that function.
+
+```python
+def become_worldly(value):
+    value.append('world')
+    print("Inside function: ", value)
+
+greeting = ['Hello']
+print("Before function: ", greeting) # Before function: ['Hello']
+become_worldly(greeting)             # Inside function: ['Hello', 'world']
+print("After function: ", greeting)  # After function: ['Hello', 'world']
+
+```
+
+> [!Warning] Beware [[Side effect|side effects]]!
+> When passing a [[Mutability|mutable]] argument to a function. This function can alter the argument causing an intended [[Side effect|side effect]] of that function. It is [[Function conventions#Have no side effects|good practice]] to not have [[Side effect|side effects]] of your function and to not use [[Function conventions#Don't use input arguments to output the result|input parameters as the functions output]]. 
+
+## Mutable and Immutable types in python
+
+In [[Python]], lists, sets and dictionaries are [[Mutability|mutable]] whereas numbers, strings, tuples and frozen sets are [[Mutability|immutable]]. User defined objects are by default [[Mutability|mutable]] however you can make them [[Mutability|immutable]] if you so wish. 
