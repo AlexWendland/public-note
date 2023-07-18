@@ -72,7 +72,7 @@ def do_something_better{}:
 
 ### Have no side effects
 
-A side effect is a secondary effect not made clear by the functions name. For example checking if the function checked the state is in some position and then changed the state some how. This is bad practice as it makes it less clear to the user what they are doing and may have unexpected consequences.  
+A [[Side effect|side effect]] is a secondary effect not made clear by the functions name. For example checking if the function checked the state is in some position and then changed the state some how. This is bad practice as it makes it less clear to the user what they are doing and may have unexpected consequences.  
 
 ### Don't repeat yourself
 
