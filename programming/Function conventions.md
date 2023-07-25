@@ -80,7 +80,7 @@ The DRY principle, if you are going to repeat yourself - why don't you make that
 
 ## Function Arguments
 
-The best functions are ones with no arguments (niladic). This makes it easier to read as regularly arguments are at a different level of abstraction to the function. Also easier for [[Testing|testing]] as you don't have to try the function with multiple different arguments. 
+The best functions are ones with no arguments (niladic). This makes it easier to read as regularly arguments are at a different level of abstraction to the function. Also easier for [[Testing conventions|testing]] as you don't have to try the function with multiple different arguments. 
 
 ### Try to have less than 3 arguments
 

@@ -60,7 +60,7 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Singleton]]
 - [[SOLID principles]]
 - [[Standard In Out and Error]]
-- [[Testing]]
+- [[Testing conventions]]
 - [[The 5S Philosophy]]
 - [[Two's complement]]
 - [[User Interface (UI)]]
