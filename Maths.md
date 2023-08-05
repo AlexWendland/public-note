@@ -1,7 +1,7 @@
 ---
-aliases: []
+aliases: [maths]
 type: str
-publish: false
+publish: true
 created: 2023-04-20
 last_edited: 2023-04-20
 tags: list[str]

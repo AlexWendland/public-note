@@ -1,7 +1,7 @@
 ---
 aliases: [programming paradigm, programming paradigms, Programming paradigm]
 type: paradigms
-publish: false
+publish: true
 created: 2023-07-13
 last_edited: 2023-07-13
 tags: programming
