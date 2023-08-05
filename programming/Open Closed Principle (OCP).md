@@ -1,7 +1,7 @@
 ---
 aliases: [OCP, Open Closed principle]
 type: theory
-publish: false
+publish: true
 created: 2023-03-18
 last_edited: 2023-03-19
 tags: programming

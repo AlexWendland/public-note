@@ -1,7 +1,7 @@
 ---
 aliases: [singleton]
 type: pattern
-publish: false
+publish: true
 created: 2023-03-31
 last_edited: 2023-03-31
 tags: programming

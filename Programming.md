@@ -67,3 +67,8 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Test Driven Development (TDD)]]
 - [[Cohesion]]
 - [[Refactored]]
+- [[Backwards compatibility]]
+- [[Deprecation]]
+- [[The Law of Demeter]]
+- [[Coding Principles]]
+- [[General Responsibility Assignment Software Patterns (GRASP)]]

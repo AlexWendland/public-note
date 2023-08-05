@@ -9,4 +9,4 @@ chatgpt: false
 ---
 # Refactored
 
-The process of refactoring is to review your code and make it more readable but breaking it down into smaller components.  
+The process of refactoring is to review your code and make it more readable by breaking it down into smaller components.  
