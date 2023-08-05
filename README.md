@@ -2,7 +2,8 @@
 type: readme
 publish: false
 created: 2023-02-22
-last_edited: 2023-02-22
+last_edited: 2023-08-05
 ---
 # public-note
-This is my notes that are avalible on my [website](https://publish.obsidian.md/awendland/Hello).
+
+This is my notes that are available on my [website](https://obsidian.awendland.co.uk/Welcome).

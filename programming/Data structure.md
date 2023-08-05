@@ -20,3 +20,5 @@ class point:
 	x : float
 	y : float
 ```
+
+Normally, a single data structure will have lots of implementations as it is just a way to group data together in a meaningful way.
