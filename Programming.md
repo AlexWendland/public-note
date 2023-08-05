@@ -72,3 +72,6 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[The Law of Demeter]]
 - [[Coding Principles]]
 - [[General Responsibility Assignment Software Patterns (GRASP)]]
+- [[Train Wrecks]]
+- [[Pipe]]
+- [[Coupling]]
