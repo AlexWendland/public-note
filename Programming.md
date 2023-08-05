@@ -65,3 +65,5 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Two's complement]]
 - [[User Interface (UI)]]
 - [[Test Driven Development (TDD)]]
+- [[Cohesion]]
+- [[Refactored]]
