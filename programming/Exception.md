@@ -16,3 +16,5 @@ Exceptions can be raised for various reasons, such as attempting to access an un
 Handling exceptions is typically done using "try-catch" blocks. The code inside the "try" block is executed until an exception is encountered. When that happens, the code inside the corresponding "catch" block is executed to manage the error.
 
 ![[When to Use Error Codes and Exceptions]]
+
+>[!Note] [[Checked exceptions]] are a way of declaring [[Exception|exceptions]] however you can have [[Exception|exceptions]] that are unchecked.
