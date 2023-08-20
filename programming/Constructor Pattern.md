@@ -1,6 +1,6 @@
 ---
 aliases: [constructor pattern]
-type: str
+type: design pattern
 publish: false
 created: 2023-06-29
 last_edited: 2023-06-29

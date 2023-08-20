@@ -1,6 +1,6 @@
 ---
 aliases: [SSH key, SSH keys]
-type: str
+type: tool
 publish: false
 created: 2023-03-19
 last_edited: 2023-03-19

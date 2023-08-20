@@ -1,6 +1,6 @@
 ---
 aliases: [OOP, object oriented, object oriented programming]
-type: str
+type: theory
 publish: false
 created: 2023-06-29
 last_edited: 2023-06-29
