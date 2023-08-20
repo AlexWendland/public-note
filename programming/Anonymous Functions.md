@@ -1,5 +1,5 @@
 ---
-type: str
+type: defintion
 publish: true
 created: 2023-02-26
 last_edited: 2023-02-26
