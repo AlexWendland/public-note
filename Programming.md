@@ -84,3 +84,5 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Checked exceptions]]
 - [[Wrap 3rd party libraries]]
 - [[Balance between library providers and users]]
+- [[Special case pattern]]
+- [[Design Patterns]]

@@ -23,4 +23,6 @@ Handling exceptions is typically done using "try-catch" blocks. The code inside 
 
 - **Provide context to an exception**: The only time an exception is going to be read is when something has gone wrong in the program. Therefore write enough context in the exception for the person to quickly identify the cause of the issue.
 - **Define exception classes in terms of the callers needs**: When considering how to define exceptions, via type of error or cause think about what will help the caller the most. This will likely be grouping errors based on how they will handle it.
-- **Wrap 3rd party libraries and group exceptions**: It is a good practice to [[Wrap 3rd party libraries|wrap 3rd party libraries]]  
+- **Wrap 3rd party libraries and group exceptions**: It is a good practice to [[Wrap 3rd party libraries|wrap 3rd party libraries]] and join up similar exceptions into one internally named exception. This saves people having to remember all the exceptions that can be thrown for a given library. 
+- **Only split exception classes if you want to handle them differently**: When deciding if a type of error needs its own class in your code, only choose to split it up if there are cases when you need to handle the two errors differently.
+- **Handle errors at the lowest possible level**: Try to avoid try-catch logic wherever possible. If you need to use an [[Exception|exception]] for a special cases consider using the [[Special case pattern]].

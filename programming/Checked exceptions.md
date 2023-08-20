@@ -1,7 +1,7 @@
 ---
-aliases: []
+aliases: [checked exceptions]
 type: str
-publish: false
+publish: true
 created: 2023-08-20
 last_edited: 2023-08-20
 tags: programming, clean-code
