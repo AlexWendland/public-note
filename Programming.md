@@ -81,3 +81,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[HTTP Protocol]]
 - [[When to Use Error Codes and Exceptions]]
 - [[Asynchronous programming]]
+- [[Checked exceptions]]
