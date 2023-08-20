@@ -1,5 +1,5 @@
 ---
-aliases: [function, functions, function convensions, subroutines, subroutine]
+aliases: [function, functions, function conventions, subroutines, subroutine]
 type: convention
 publish: true
 created: 2023-06-29
@@ -130,6 +130,10 @@ If the arguments are naturally grouped together, then may be indicative of being
 #### Are you taking a list of arguments
 
 If you are taking a list of arguments for example using `args` (in python) to pass them in, consider passing a list instead. 
+
+#### Don't pass in null
+
+Having to handle null input is ugly and unreadable and it is an indicator that your function is most probably having to do too much. Why do you need the null argument? If you have some conditional logic should the be split into separate functions and chosen via a [[Factory Pattern]].
 
 ### Make function variables instance variables
 
