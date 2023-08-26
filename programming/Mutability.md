@@ -1,5 +1,5 @@
 ---
-aliases: [mutable, Mutable, immutable, Immutable, mutability]
+aliases: [mutable, Mutable, immutable, Immutable, mutability, immutability, mutability]
 type: concept
 publish: true
 created: 2023-06-29
