@@ -86,3 +86,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Balance between library providers and users]]
 - [[Special case pattern]]
 - [[Design Patterns]]
+- [[Recursion]]
