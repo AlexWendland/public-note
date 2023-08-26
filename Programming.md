@@ -87,3 +87,8 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Special case pattern]]
 - [[Design Patterns]]
 - [[Recursion]]
+- [[Run time complexity]]
+- [[Spacial complexity]]
+- [[Trampolining]]
+- [[Dynamic Programming]]
+- [[Call Stack]]
