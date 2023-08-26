@@ -177,4 +177,6 @@ $X\_pos(k)$= the last position of the longest common substring with $\{x_i\}_{i=
 
 #### Step 2: define recursive relation
 
-$$X_len(k) = \begin{cases} 0 \mbox{ if } x_k \not \in Y\\ 1 + \max\{0, \}
+$$X\_len(k) = \begin{cases} 0 & \mbox{if } x_k \not \in Y\\ 1 + \max\{0, X\_len(j) \ \vert \ 1 \leq j \leq k \mbox{ and } x_k \in Y[X\_pos(j)+1:] \ \} & \mbox{otherwise} \end{cases}$$
+$$ X\_pos(k) = \begin{cases} 0 & \mbox{if } x_k \not \in Y\\ \min\{j | y_j = x_k\} & \mbox{if } X\_len(k) = 1\\ \min\{0, j \ \vert \ y_j = x_k \mbox{ and } \exists \ r \mbox{ such that } & \mbox{otherwise}\\ X\_len(k) = X\_len(r) + 1 \mbox{ and } j > X\_pos(r)\} & \end{cases}$$
+
