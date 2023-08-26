@@ -156,3 +156,25 @@ O(length\_of\_the\_longest\_increasing\_subsequence(n)) & = \sum_{k=0}^{n-1} O(k
 & = O(n^2)\end{align*}$$
 giving the run time of this algorithm to be $O(n^2)$.
 
+## Largest common subsequence (LCS)
+
+Given two [[Sequence|sequences]] $X =\{x_i\}_{i=1}^n$ and $Y = \{y_i\}_{i=1}^n$ the goals is to find the length of the longest [[Sequence|sequence]] which is a [[Subsequence|subsequence]] of both $X$ and $Y$.
+
+#### Example
+
+Let
+$$X = BCDBCDA, \mbox{ and } Y=ABECBAB.$$
+then the largest common subsequence is $BCBA$ of length 4.
+
+>[!Note] This is what the [[Unix]] command diff does to two files.
+
+### Design attempt for this problem
+
+#### Step 1: define subproblem in words
+
+$X\_len(k)$ = the longest common substring with $\{x_i\}_{i=1}^k$ and $Y$ using $x_i$.
+$X\_pos(k)$= the last position of the longest common substring with $\{x_i\}_{i=1}^k$ and $Y$ at $Y$.
+
+#### Step 2: define recursive relation
+
+$$X_len(k) = \begin{cases} 0 \mbox{ if } x_k \not \in Y\\ 1 + \max\{0, \}
