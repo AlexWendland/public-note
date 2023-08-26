@@ -7,6 +7,6 @@ last_edited: 2023-08-26
 tags: programming
 chatgpt: false
 ---
-# Online Masters of Science Computer Science, Georgia Tech (OMSCS)
+# Online Masters of Science in Computer Science, Georgia Tech (OMSCS)
 
-This masters 
+This [masters](https://omscs.gatech.edu/) course is aimed at  
