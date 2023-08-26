@@ -25,6 +25,14 @@
     {
       "folder": "programming",
       "template": "templates/programming.md"
+    },
+    {
+      "folder": "OMSCS",
+      "template": "templates/omscs-module.md"
+    },
+    {
+      "folder": "OMSCS/CS6200",
+      "template": "templates/omscs-lecture.md"
     }
   ],
   "syntax_highlighting": true,
