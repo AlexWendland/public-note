@@ -9,7 +9,7 @@ chatgpt: false
 ---
 # Trampolining
 
-When using [[Recursion|recursion]] you generate a large number of [[Namespaces|namespaces]] for each function call you make. To get around this instead of leaving the function open whilst you call itself again - you can instead return a function to be called with the parameters already inside it. The runner for a trampoline looks like the following.
+When using [[Recursion|recursion]] you generate a large number of [[Namespaces|namespaces]] for each function call you make. To get around this in the case of [[Recursion#Tail Recursion|tail recursion]] instead of leaving the function open whilst you call itself again - you can instead return a function to be called with the parameters already inside it. The runner for a trampoline looks like the following.
 
 ```python
 from typing import Callable, Union, Any
@@ -63,3 +63,6 @@ if __name__ == "__main__":
 
 ## Advantages
 
+This method will stop 
+
+## Limitations
