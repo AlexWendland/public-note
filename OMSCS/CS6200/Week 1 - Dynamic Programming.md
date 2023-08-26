@@ -112,17 +112,19 @@ We do this iteratively
 
 Therefore we work out that the LIS for this sequence is 6 as that is the maximum value of $L(i)$ and the LIS must end with some number!
 
+So lets write this as an algorithm.
+
 ```python
 def get_last_best_solution_less_than_current_value(
-	past_sequence: list, 
-	past_solutions:list, 
+	past_sequence: list,
+	past_solutions:list,
 	value: int
 ) -> int:
-	past_solutions = []
+	feasible_solutions = []
 	for solution, past_value in zip(past_solutions, past_sequence):
 		if past_value < value:
-			past_solutions.append(solution)
-	return max(past_solutions, default = 0)
+			feasible_solutions.append(solution)
+	return max(feasible_solutions, default = 0)
 	
 
 def length_of_the_longest_increasing_subsequence(sequence: list) -> int:
@@ -135,5 +137,22 @@ def length_of_the_longest_increasing_subsequence(sequence: list) -> int:
 		)
 		lis_solutions.append(next_solution)
 	return max(lis_solutions, default = 0)
-		
+
+if __name__ == "__main__":
+    lis_solution = length_of_the_longest_increasing_subsequence(
+	    [5, 7, 4, -3, 9, 1, 10, 4, 5, 8, 9, 3]
+	)
+	print("The length of the longest increasing subsequence is", lis_solution)
 ```
+
+### Run time of solution
+
+Now lets break these sub-functions into parts $get\_last\_best\_solution\_less\_than\_current\_value$ goes through all past entries and run some checks, then it takes a max over that set of entries. This takes at most $O(2k)$ operations so, 
+$$O(get\_last\_best\_solution\_less\_than\_current\_value(k)) = O(k)$$
+Now lets look at $length\_of\_the\_longest\_increasing\_subsequence(n)$ this loops through all $n$ elements running $get\_last\_best\_solution\_less\_than\_current\_value$ on a list of size $k$ where $k$ is the value of the element right now. Lastly it finds the max of a list of length $n$ which is $O(n)$, so:
+$$\begin{align*}
+O(length\_of\_the\_longest\_increasing\_subsequence(n)) & = \sum_{k=0}^{n-1} O(k) + O(n)\\ 
+& = O((n-1)n/2) + O(n)\\
+& = O(n^2)\end{align*}$$
+giving the run time of this algorithm to be $O(n^2)$.
+
