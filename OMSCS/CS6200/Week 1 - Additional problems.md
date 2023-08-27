@@ -103,5 +103,49 @@ $L(a) = \max\{p_a, L(i) + p_a | 1 \leq i < a \mbox{ if } m_a - m_i > k \}$
 This runs in $O(n^2)$ time.
 
 ```python
+from typing import List
 
+
+def solve_the_yuck_problem(distances: List[int], profits: List[int], space: int) -> int:
+    """
+    This function solves the yuck problem using dynamic programming.
+    """
+    solutions = []
+    for index, (distance, profit) in enumerate(zip(distances, profits)):
+        solutions.append(
+            max(
+                [
+                    solutions[i] + profit
+                    for i in range(index)
+                    if distance - distances[i] >= space
+                ]
+                + [profit]
+            )
+        )
+    print(solutions)
+    return max(solutions)
+
+
+if __name__ == "__main__":
+    distances = [0, 1, 2, 3, 4, 5, 6]
+    profits = [1, 1, 1, 1, 1, 1, 1]
+    space = 2
+    solution = solve_the_yuck_problem(distances, profits, space)
+    print(f"The maximum profit is {solution}.")
 ```
+
+> [!question] 6.4 String of words
+> You are given a string of $n$ characters $s[1 \ldots n]$, which you believe to be a corrupted text document in which all punctuation has vanished (so that it looks something like “itwasthebestoftimes...”). You wish to reconstruct the document using a dictionary, which is available in the form of a Boolean function $dict( \cdot )$ for any string $w$,
+> $$dict(w) = \begin{cases} true & \mbox{if w is a valid word}\\ false & \mbox{otherwise}\end{cases}.$$ 
+> 1. Give a dynamic programming algorithm that determines whether the string $s[\cdot]$ can be reconstituted as a sequence of valid words. The running time should be at most $O(n^2)$, assuming calls to $dict$ take unit time.
+> 2. In the event that the string is valid, make your algorithm output the corresponding sequence of words.
+
+Subproblem:
+Let $L(k)$ = whether the subword $s[1\ldots k]$ can be split into words.
+
+Solution:
+$L(n)$.
+
+Recursion:
+$L(k) = \bigwedge_{i=0}^k L(i) \land dict(s[i+1\ldots k])$
+where $L(0)$ is true.
