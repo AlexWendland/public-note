@@ -140,6 +140,8 @@ if __name__ == "__main__":
 > 1. Give a dynamic programming algorithm that determines whether the string $s[\cdot]$ can be reconstituted as a sequence of valid words. The running time should be at most $O(n^2)$, assuming calls to $dict$ take unit time.
 > 2. In the event that the string is valid, make your algorithm output the corresponding sequence of words.
 
+Question 1)
+
 Subproblem:
 Let $L(k)$ = whether the subword $s[1\ldots k]$ can be split into words.
 
@@ -149,3 +151,29 @@ $L(n)$.
 Recursion:
 $L(k) = \bigwedge_{i=0}^k L(i) \land dict(s[i+1\ldots k])$
 where $L(0)$ is true.
+
+```python
+from typing import Dict, List
+
+
+def string_of_words(word_dictionary: List, string: str) -> bool:
+    solution = []
+
+    for index in range(len(string)):
+        potenial_solutions = [
+            solution[i] and (string[i + 1 : index + 1] in word_dictionary)
+            for i in range(index)
+        ] + [string[: index + 1] in word_dictionary]
+
+        solution.append(any(potenial_solutions))
+
+    return solution[-1]
+
+
+if __name__ == "__main__":
+    word_dictionary = ["aba", "aa"]
+
+    print(string_of_words(word_dictionary, "abaabaaaba")) # False
+```
+
+Question 2)
