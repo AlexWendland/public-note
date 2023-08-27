@@ -97,3 +97,6 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Iterative algorithms]]
 - [[Parallelisation]]
 - [[Memoization]]
+- [[Big-O notation]]
+- [[Big-Theta notation]]
+- [[Big-Omega notation]]
