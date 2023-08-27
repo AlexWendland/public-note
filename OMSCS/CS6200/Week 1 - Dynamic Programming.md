@@ -214,8 +214,11 @@ def common_longest_subsequence(
 	first_sequence: List[Any], 
 	second_sequence: List[Any]
 ) -> int:
-	# Set the (n+1, m+1) matrix to all 0's first.
-	solutions = [[0] *(len(second_sequence)+1)]*(len(first_sequence)+1)
+	# Set the (n+1, m+1) matrix to all 0's first. (Some strang)
+	[
+		[0 for _ in range(len(second_sequence)+1)] 
+		for _ in range(len(first_sequence)+1)
+	]
 	# This is used to track the max
 	max_value = 0
 	for first_index in range(len(first_sequence)):
@@ -243,7 +246,7 @@ if __name__ == "__main__":
 	)
 ```
 
-The [[Run time complexity|runtime]] of my algorithm can be broken down into 2 main steps. (For this I assume the [[sequences]] are of the same length $n$). Setting up the matrix which is $n^2$ operations and running the main for loop which has $n^2$ steps and uses $O(1)$ operations in each step. Giving the [[Run time complexity|run time]] to be $O(n^2) + O(n^2) = O(n^2)$. 
+The [[Run time complexity|runtime]] of my algorithm can be broken down into 2 main steps. (For this I assume the [[Sequence|sequences]] are of the same length $n$). Setting up the matrix which is $n^2$ operations and running the main for loop which has $n^2$ steps and uses $O(1)$ operations in each step. Giving the [[Run time complexity|run time]] to be $O(n^2) + O(n^2) = O(n^2)$. 
 
 
 
