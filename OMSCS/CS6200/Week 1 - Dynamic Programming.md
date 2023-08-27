@@ -289,7 +289,7 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 > 2. In the event that the string is valid, make your algorithm output the corresponding sequence of words.
 
 >[!question] 6.11 Longest common **substring**) - altered
->Given two strings x = x1x2 · · · xn and y = y1y2 · · · ym, we wish to find the length of their longest common **substring**, that is, the largest k for which there are indices i and j with xi xi+1 · · · xi+k-1 = yj yj+1 · · · yj+k-1. Show how to do this, what is the time complexity of this?
+>Given two strings $x = x_1x_2 \ldots x_n$ and $y = y_1y_2 \ldots y_m$, we wish to find the length of their longest common **substring**, that is, the largest $k$ for which there are integers $i$ and $j$ with $x_{i+1} x_{i+2} \ldots x_{i+k} = y_{j+1} y_{j+2} \ldots y_{j+k}$. Show how to do this, what is the time complexity of this?
 
 ## Summary
 

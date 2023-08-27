@@ -153,7 +153,7 @@ $L(k) = \bigwedge_{i=0}^k L(i) \land dict(s[i+1\ldots k])$
 where $L(0)$ is true.
 
 ```python
-from typing import Dict, List
+from typing import List
 
 
 def string_of_words(word_dictionary: List, string: str) -> bool:
@@ -178,3 +178,76 @@ if __name__ == "__main__":
 
 Question 2)
 
+```python
+from typing import List, Optional
+
+
+def string_of_words(word_dictionary: List, string: str) -> Optional[str]:
+    solutions = []
+
+    for index in range(len(string)):
+        if string[: index + 1] in word_dictionary:
+            solutions.append([string[: index + 1]])
+        else:
+            solution = []
+            for i in range(index):
+                if (
+	                solutions[i] 
+	                and (string[i + 1 : index + 1] in word_dictionary)
+	            ):
+                    solution = solutions[i] + [string[i + 1 : index + 1]]
+                    break
+            solutions.append(solution)
+
+    return solutions[-1]
+
+
+if __name__ == "__main__":
+    word_dictionary = ["aba", "abaa"]
+
+    print(string_of_words(word_dictionary, "abaaaba"))
+```
+
+>[!question] 6.11 Longest common **substring**) - altered
+>Given two strings $x = x_1x_2 \ldots x_n$ and $y = y_1y_2 \ldots y_m$, we wish to find the length of their longest common **substring**, that is, the largest $k$ for which there are integers $i$ and $j$ with $x_{i+1} x_{i+2} \ldots x_{i+k} = y_{j+1} y_{j+2} \ldots y_{j+k}$. Show how to do this, what is the time complexity of this?
+
+Subproblem:
+Let $L(i,j)$ = the longest similar suffix of $x_1x_2 \ldots x_i$ and $y_1y_2 \ldots y_j$.
+
+Solution:
+$\max\{L(i,j) \vert 1 \leq i \leq n, \ 1 \leq j \leq m\}$
+
+Recursion:
+Let $L(i,0) = L(0,j) = 0$ then
+$$L(i,j) = \begin{cases} 0 & \mbox{if } x_i \not = y_j\\ 1 + L(i-1,j-1) & \mbox{otherwise}\end{cases}.$$
+```python
+from typing import List, Any
+
+
+def common_longest_subsequence(
+    first_sequence: List[Any], second_sequence: List[Any]
+) -> int:
+    # Set the (n+1, m+1) matrix to all 0's first.
+    solutions = [
+        [0] * (len(second_sequence) + 1) for _ in range(len(first_sequence) + 1)
+    ]
+    # This is used to track the max
+    max_value = 0
+    for first_index, first_value in enumerate(first_sequence):
+        for second_index, second_value in enumerate(second_sequence):
+            if first_value == second_value:
+                solution = 1 + solutions[first_index][second_index]
+                solutions[first_index + 1][second_index + 1] = solution
+                max_value = max(max_value, solution)
+    return max_value
+
+
+if __name__ == "__main__":
+    first_sequence = "BCDBABCDA"
+    second_sequence = "ABECBAB"
+    solution = common_longest_subsequence(first_sequence, second_sequence)
+    print(
+        f"The length of longest common substring of {first_sequence} "
+        f"and {second_sequence} is {solution}."
+    )
+```
