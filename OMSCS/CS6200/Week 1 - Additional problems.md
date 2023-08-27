@@ -56,3 +56,52 @@ $L(k) = \min \{ L(i) + (200 - (a_k-a_i))^2 \vert 1 \leq i \leq k \}$
 
 This runs in $O(n^2)$ time.
 
+```python
+from typing import List
+
+
+def minimum_hotel_cost(sequence: List[int]) -> int:
+    solutions = []
+
+    for index, value in enumerate(sequence):
+        best_solution = sequence[-1]**2
+        for i in range(index):
+            this_solution = 0
+            this_solution += solutions[i]
+            this_solution += (200 - (value - sequence[i])) ** 2
+            best_solution = min(best_solution, this_solution)
+        if index == 0:
+            best_solution = 0
+        solutions.append(best_solution)
+
+    return solutions[-1]
+
+
+if __name__ == "__main__":
+    sequence = [0, 200, 300, 400, 500, 600]
+    solution = minimum_hotel_cost(sequence)
+    print(f"The minimum cost of the hotel is {solution}.")
+```
+
+> [!question] 6.3 Yuckdonald's
+> Yuckdonald’s is considering opening a series of restaurants along Quaint Valley Highway (QVH). The $n$ possible locations are along a straight line, and the distances of these locations from the start of QVH are, in miles and in increasing order, $m_1 < m_2 \ldots  m_n$. The constraints are as follows: 
+> 
+> - At each location, Yuckdonald’s may open at most one restaurant. The expected profit from opening a restaurant at location $i$ is $p_i$ , where $p_i > 0$ and $i = 1, 2, . . . , n$.
+> - Any two restaurants should be at least $k$ miles apart, where $k$ is a positive integer.
+> 
+> Give an efficient algorithm to compute the maximum expected total profit subject to the given constraints.
+
+Subproblem:
+Let $L(k)$ = the maximum profit from opening restaurants in the first $k$ locations including opening one at $m_k$.
+
+Solution:
+The maximum of $L(k)$.
+
+Recursion:
+$L(a) = \max\{p_a, L(i) + p_a | 1 \leq i < a \mbox{ if } m_a - m_i > k \}$ 
+
+This runs in $O(n^2)$ time.
+
+```python
+
+```
