@@ -250,12 +250,46 @@ The [[Run time complexity|runtime]] of my algorithm can be broken down into 2 ma
 
 ## Further practice problems
 
-From DPV (course text book)
-- 6.1 (contiguous subsequence)
-- 6.2 (hotel stops)
-- 6.3 (Yuckdonald's)
-- 6.4 (strong of words)
-- 6.11 (longest common **substring**) - altered
+From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
+
+>[!question] 6.1 Contiguous Subsequence
+>A contiguous subsequence of a list $S$ is a subsequence made up of consecutive elements of $S$. 
+>
+>For instance, if $S$ is 
+>$$5, 15, −30, 10, −5, 40, 10,$$ 
+>then 15, −30, 10 is a contiguous subsequence but 5, 15, 40 is not. Give a linear-time algorithm for the following task: 
+>
+>Input: A list of numbers, $a_1, a_2, \ldots , a_n$. 
+>
+>Output: The contiguous subsequence of maximum sum (a subsequence of length zero has sum zero). 
+>
+>For the preceding example, the answer would be 10, −5, 40, 10, with a sum of 55.
+>
+>(Hint: For each $j \in \{1, 2, \ldots , n\}$, consider contiguous subsequence's ending exactly at position $j$.)
+
+>[!question] 6.2 hotel stops
+>You are going on a long trip. You start on the road at mile post 0. Along the way there are $n$ hotels, at mile posts $a_1 < a_2 < \ldots < a_n$, where each $a_i$ is measured from the starting point. The only places you are allowed to stop are at these hotels, but you can choose which of the hotels you stop at. You must stop at the final hotel (at distance $a_n$), which is your destination. 
+>
+>You’d ideally like to travel 200 miles a day, but this may not be possible (depending on the spacing of the hotels). If you travel $x$ miles during a day, the penalty for that day is $(200 − x)^2$. You want to plan your trip so as to minimize the total penalty —that is, the sum, over all travel days, of the daily penalties. 
+>
+>Give an efficient algorithm that determines the optimal sequence of hotels at which to stop.
+
+> [!question] 6.3 Yuckdonald's
+> Yuckdonald’s is considering opening a series of restaurants along Quaint Valley Highway (QVH). The n possible locations are along a straight line, and the distances of these locations from the start of QVH are, in miles and in increasing order, m1, m2, . . . , mn. The constraints are as follows: 
+> 
+> - At each location, Yuckdonald’s may open at most one restaurant. The expected profit from opening a restaurant at location i is pi , where pi > 0 and i = 1, 2, . . . , n.
+> - Any two restaurants should be at least k miles apart, where k is a positive integer.
+> 
+> Give an efficient algorithm to compute the maximum expected total profit subject to the given constraints.
+
+> [!question] 6.4 String of words
+> You are given a string of n characters s[1 . . . n], which you believe to be a corrupted text document in which all punctuation has vanished (so that it looks something like “itwasthebestoftimes...”). You wish to reconstruct the document using a dictionary, which is available in the form of a Boolean function dict(·): for any string w,
+> $$dict(w) = \begin{cases} true & \mbox{if w is a valid word}\\ false & \mbox{otherwise}\end{cases}.$$ 
+> 1. Give a dynamic programming algorithm that determines whether the string s[·] can be reconstituted as a sequence of valid words. The running time should be at most O(n 2 ), assuming calls to dict take unit time.
+> 2. In the event that the string is valid, make your algorithm output the corresponding sequence of words.
+
+>[!question] 6.11 Longest common **substring**) - altered
+>Given two strings x = x1x2 · · · xn and y = y1y2 · · · ym, we wish to find the length of their longest common **substring**, that is, the largest k for which there are indices i and j with xi xi+1 · · · xi+k-1 = yj yj+1 · · · yj+k-1. Show how to do this, what is the time complexity of this?
 
 ## Summary
 
