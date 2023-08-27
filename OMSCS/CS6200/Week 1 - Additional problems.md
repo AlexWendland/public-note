@@ -6,7 +6,7 @@ created: 2023-08-27
 last_edited: 2023-08-27
 tags: OMSCS
 course: [[CS6200 Introduction to Graduate Algorithms]]
-week: int
+week: 1
 chatgpt: false
 ---
 # Substring with max sum
