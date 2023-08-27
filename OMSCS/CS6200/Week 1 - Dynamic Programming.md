@@ -248,5 +248,24 @@ if __name__ == "__main__":
 
 The [[Run time complexity|runtime]] of my algorithm can be broken down into 2 main steps. (For this I assume the [[Sequence|sequences]] are of the same length $n$). Setting up the matrix which is $n^2$ operations and running the main for loop which has $n^2$ steps and uses $O(1)$ operations in each step. Giving the [[Run time complexity|run time]] to be $O(n^2) + O(n^2) = O(n^2)$. 
 
+## Further practice problems
 
+From DPV (course text book)
+- 6.1 (contiguous subsequence)
+- 6.2 (hotel stops)
+- 6.3 (Yuckdonald's)
+- 6.4 (strong of words)
+- 6.11 (longest common **substring**) - altered
 
+## Summary
+
+To approach [[Dynamic programming]] problems follow these steps
+
+1. Define a subproblem in words.
+	1. Set up an array to fill in with a clearly defined meaning. 
+2. Define recurrence relation.
+	1. This is where you define solving a higher case in terms of the smaller cases.
+3. Define how you get the overall solution from the subproblem you have defined.
+	1. You may need to take a max or just look at the last element.
+
+Note that sometimes you may need to increase the strength of the subproblem or increase it size. 
