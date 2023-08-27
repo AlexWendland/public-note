@@ -1,5 +1,5 @@
 ---
-aliases: [recursion, recursive]
+aliases: [recursion, recursive, recursively]
 type: algorithm
 publish: true
 created: 2023-08-26

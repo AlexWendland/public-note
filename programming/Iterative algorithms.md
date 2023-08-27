@@ -1,5 +1,5 @@
 ---
-aliases: [iterative algorithms, iterative]
+aliases: [iterative algorithms, iterative, iteratively]
 type: algorithm
 publish: true
 created: 2023-08-26

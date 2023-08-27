@@ -1,5 +1,5 @@
 ---
-aliases: [run time, run time complexity]
+aliases: [run time, run time complexity, runtime]
 type: str
 publish: false
 created: 2023-08-26
