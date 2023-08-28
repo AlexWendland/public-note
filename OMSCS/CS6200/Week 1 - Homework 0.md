@@ -86,3 +86,59 @@ If $a = -1$ then $g(n) = \frac{1 + (-1)^n}{2}$ so $g(n) = O(1)$.
 
 If $a < -1$ then $g(n)$ is divergent and we can't talk about run time.
 
+>[!question] Problem 3 (a)
+> For all parts, $G = (V, E)$ represents an undirected, simple [[Graph|graph]] (i.e.: no multiple edges and no loops).
+>   
+> Denote by deg(v), the degree of vertex v, the number of edges incident to v. Check that
+> $$ \sum_{v \in V} \mbox{deg}(v) = 2 \vert E \vert$$
+
+Lets prove this by induction on the number $\vert E \vert$ within a graph.
+
+Suppose a graph has no edges. Therefore $\deg(v) = 0$ for all $v \in V$ as there are no edges to be incident to $v$. Thus 
+$$\sum_{v \in V} \mbox{deg}(v) = 0 = 2 \vert E \vert.$$
+Suppose we have shown the statement true for all graphs where $\vert E \vert < k$ and suppose we have a graph with $\vert E \vert = k$. Pick any edge $e = (x,y)$ and remove it from the graph to get $G^{\ast} = (V, E^{\ast})$ . From the induction hypothesis we have
+$$ \sum_{v \in V} \mbox{deg}_{G^{\ast}}(v) = 2 (\vert E \vert - 1)$$
+Where $\mbox{deg}_{G^{\ast}}$ is the degree in $G^{\ast}$. Note that $\mbox{deg}_{G}(v) = \mbox{deg}_{G^{\ast}}(v)$ for all $v \in V \backslash \{x, y\}$. Whereas, $\mbox{deg}_{G^{\ast}}(v) + 1 = \mbox{deg}_{G}(v)$ for $v \in \{x,y\}$ (as it is incident to $e = (x,y)$ as well as all the edges in $E^{\ast}$). Therefore
+$$\begin{align*}
+\sum_{v \in V} \mbox{deg}_{G}(v) & = \sum_{v \in V \backslash \{x,y\}} \mbox{deg}_{G^{\ast}}(v) + \sum_{v \in \{x,y\}} (\mbox{deg}_{G}(v) + 1)\\
+& = 2 + \sum_{v \in V} \mbox{deg}_{G^{\ast}}(v) \\
+& = 2 + 2 (\vert E \vert - 1)\\
+& = 2 \vert E \vert. \end{align*}$$
+This shows the inductive case and proves the statement.
+
+>[!question] Problem 3 (b)
+> Review the concepts of path, cycle, connectivity.  
+
+![[Path (graph)]]
+
+![[Cycle (graph)|cycle]]
+
+![[Connected (graph)]]
+
+> [!question] Problem 3 (c)
+> $G$ is said to be a tree if it is connected and have no cycles. Think why the following three conditions are equivalent:  
+> 1. $G$ is a tree.  
+> 2. $G$ is connected and $\vert E \vert = \vert V \vert − 1$.  
+> 3. $G$ has no cycles and $\vert E \vert = \vert V \vert − 1$.  
+
+Proof of $(1) \Rightarrow (2)$.
+
+We prove this by induction on the number of vertices.
+
+Suppose $\vert V \vert = 1$ and set $V = \{v\}$ then if $G$ had an edge it must be $(v,v)$. However, we then have a cycle $(v,v)$ so it would not be a tree. So $\vert E \vert = 0 = \vert V \vert - 1$.
+
+Suppose the induction hypothesis is correct on all graphs with $\vert V \vert < k$ and let $G$ be a [[Graph|graph]] with $\vert V \vert = k$.
+
+As [[A finite tree that has more than one vertex must have at least two leaf vertices|a finite tree that has more than one vertex must have at least two leaf vertices]] let $v \in V$ be such a leaf vertex with single edge $e \in E$. Remove $v$ to form $G^{\ast} = (V \backslash \{v\}, E \backslash \{e\})$. Note that $G^{\ast}$ has to be a tree as if a [[Cycle (graph)|cycle]] existed in $G^{\ast}$ it would exist in $G$ and as $G$ was connected so is $G^{\ast}$ as no path would need to use $e$.
+
+By the induction hypothesis $\vert E \backslash \{e\}\vert = \vert V \backslash \{v\}\vert - 1$. Giving
+$$ \vert E \vert = \vert E \backslash \{e\}\vert + \vert \{e\} \vert = \vert V \backslash \{v\}\vert - 1 + 1 =  (\vert V \backslash \{v\}\vert + 1) - 1 = \vert V \vert - 1.$$
+
+
+> [!question] Problem 3 (d)
+> A vertex is called a leaf if it has degree one. Show that every tree has at least two leaves.  
+> Think of an example of a tree with exactly two leaves.
+
+![[A finite tree that has more than one vertex must have at least two leaf vertices]]
+
+The examples of graphs with exactly two [[Leaf (graph)|leaf vertices]] are the [[Path (graph)#The path graph|path graphs]].
