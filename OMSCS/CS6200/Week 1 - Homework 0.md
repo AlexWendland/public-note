@@ -70,3 +70,8 @@ Consider
 $$ (a - 1)g(n) = a \sum_{i=0}^n a^i - \sum_{i=0}^n a^i = \sum_{i=0}^n a^{i+1} - a^i = a^{n+1} - 1$$
 giving the hinted inequality
 $$g(n) =\frac{a^{n+1} - 1}{a-1}.$$
+Let $a > 1$ then
+$$g(n) = \frac{a^{n+1}}{a - 1} - \frac{1}{a-1} \leq \frac{a^{n+1}}{a-1} = \frac{a}{a-1} a^n.$$
+This gives $g(n) = O(a^n)$.
+
+Let $-1< a \leq 1$
