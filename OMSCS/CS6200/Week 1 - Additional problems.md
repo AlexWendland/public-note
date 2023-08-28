@@ -208,7 +208,7 @@ if __name__ == "__main__":
     print(string_of_words(word_dictionary, "abaaaba"))
 ```
 
->[!question] 6.11 Longest common **substring**) - altered
+>[!question] 6.11 Longest common **substring** - altered
 >Given two strings $x = x_1x_2 \ldots x_n$ and $y = y_1y_2 \ldots y_m$, we wish to find the length of their longest common **substring**, that is, the largest $k$ for which there are integers $i$ and $j$ with $x_{i+1} x_{i+2} \ldots x_{i+k} = y_{j+1} y_{j+2} \ldots y_{j+k}$. Show how to do this, what is the time complexity of this?
 
 Subproblem:
