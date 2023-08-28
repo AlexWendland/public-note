@@ -31,3 +31,5 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Leaf (graph)]]
 - [[Degree (graph)]]
 - [[Loop (graph)]]
+- [[Boolean function]]
+- [[Conjunctive normal form (CNF)]]

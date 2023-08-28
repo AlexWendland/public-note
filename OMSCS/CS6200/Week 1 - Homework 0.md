@@ -133,7 +133,33 @@ As [[A finite tree that has more than one vertex must have at least two leaf ver
 
 By the induction hypothesis $\vert E \backslash \{e\}\vert = \vert V \backslash \{v\}\vert - 1$. Giving
 $$ \vert E \vert = \vert E \backslash \{e\}\vert + \vert \{e\} \vert = \vert V \backslash \{v\}\vert - 1 + 1 =  (\vert V \backslash \{v\}\vert + 1) - 1 = \vert V \vert - 1.$$
+Thus proving our statement by induction.
 
+Proof of $(2) \Rightarrow (3)$.
+
+Suppose we have a graph $G$ that is connected and $\vert E \vert = \vert V \vert - 1$. Though $G$ has a [[Cycle (graph)|cycle]] in it. 
+
+Take a minimal, in terms of $\vert V \vert$, counter example.  
+
+Note that from problem 3(a) we have
+$$ \sum_{v \in V} \mbox{deg}(v) = 2 \vert E \vert = 2 \vert V \vert - 2$$
+that says one vertex in $V$ must have $\mbox{deg}(v) = 1$ (it has to be at least 1 as it is connected).
+
+As $v$ can't be in the [[Cycle (graph)|cycle]] (this would require degree 2), it must be outside. We can now remove this vertex and the remaining graph will still satisfy $(2)$ with the same [[Cycle (graph)|cycle]]. The new graph will be a smaller example and contradict its minimality.
+
+This proves the claim.
+
+Proof of $(3) \Rightarrow (1)$.
+
+Note all we need to show is that $G$ is connected. 
+
+Lets use proof be contradiction. Suppose $G$ satisfies $(3)$ but is not a tree, let $G$ be a minimal such example.
+
+If $G$ has a vertex of [[Degree (graph)|degree]] 1, we can remove it and find a smaller counter example. Therefore $G$ must not have any vertices of degree 1.
+
+Take a connected component of $G$, as it has no vertices of degree 1 they must have vertices of degree $2$ or more. Repeat the argument in [[A finite tree that has more than one vertex must have at least two leaf vertices|a finite tree that has more than one vertex must have at least two leaf vertices]], this shows that this connected component has a cycle it in. This contradicts $(3)$ so no such graph exists.
+
+This proves this claim and the equivalence.
 
 > [!question] Problem 3 (d)
 > A vertex is called a leaf if it has degree one. Show that every tree has at least two leaves.  
@@ -142,3 +168,21 @@ $$ \vert E \vert = \vert E \backslash \{e\}\vert + \vert \{e\} \vert = \vert V \
 ![[A finite tree that has more than one vertex must have at least two leaf vertices]]
 
 The examples of graphs with exactly two [[Leaf (graph)|leaf vertices]] are the [[Path (graph)#The path graph|path graphs]].
+
+> [!question] Problem 4
+> For each example below, decide which functions are in [[Conjunctive normal form (CNF)|CNF]] and find an assignment of the variables such that the corresponding function evaluates to true, if such assignment exists.  
+> - $(x \lor y \lor z) \land (x \lor w) \land (y \lor \lnot w)$
+> - $( \lnot x \lor  \lnot y) \land (x) \land (z \lor \lnot z)$
+> - $x \land (y \land (z \lor \lnot w))$ 
+
+For $(x \lor y \lor z) \land (x \lor w) \land (y \lor \lnot w)$.
+
+This is in [[Conjunctive normal form (CNF)|CNF]] and $x = y = z = w = 1$ evaluates to true.
+
+For $( \lnot x \lor  \lnot y) \land (x) \land (z \lor \lnot z)$.
+
+This is in [[Conjunctive normal form (CNF)|CNF]] and $x = z = 1$, and $y = 0$ evaluates to true.
+
+For $x \land (y \land (z \lor \lnot w))$.
+
+This in not in [[Conjunctive normal form (CNF)|CNF]] and $x = y = z = w = 1$ equates to true.
