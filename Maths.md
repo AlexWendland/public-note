@@ -19,3 +19,5 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Sequence]]
 - [[Subsequence]]
 - [[Increasing sequence]]
+- [[Logarithms]]
+- [[Taylor expansion]]
