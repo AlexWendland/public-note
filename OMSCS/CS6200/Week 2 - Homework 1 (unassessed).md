@@ -166,5 +166,7 @@ This takes $O(nv)$ time.
 >
 >Input: $x_1, \ldots , x_n; v$. 
 >Question: Is it possible to make change for $v$ using coins of denominations $x_1, \ldots , x_n$ only once?
+>
+>Show how to solve this problem in time O(nv).
 
 Let $T(i)$ be the set of coin permutations that make up $i$ (potentially empty). 
