@@ -74,4 +74,15 @@ Let $a > 1$ then
 $$g(n) = \frac{a^{n+1}}{a - 1} - \frac{1}{a-1} \leq \frac{a^{n+1}}{a-1} = \frac{a}{a-1} a^n.$$
 This gives $g(n) = O(a^n)$.
 
-Let $-1< a \leq 1$
+If $a = 1$ then $g(n) = n$ giving $g(n) = O(n)$.
+
+Let $-1< a < 1$ then note that
+$$ \vert a^{n+1} - 1 \vert < \vert a - 1 \vert$$
+so we have that 
+$$\vert g(n) \vert < 1$$
+giving the required $g(n) < 1$ and $g(n) = O(1)$.
+
+If $a = -1$ then $g(n) = \frac{1 + (-1)^n}{2}$ so $g(n) = O(1)$.
+
+If $a < -1$ then $g(n)$ is divergent and we can't talk about run time.
+
