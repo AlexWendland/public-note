@@ -21,6 +21,8 @@ There are different versions of this problem:
 - Where you can have at most a given number of each object, and
 - Where you can have an infinite amount of each object.
 
+We will focus on the first problem for the next sections.
+
 ## Greedy solution
 
 > [!example] Greed's downfall
@@ -38,9 +40,19 @@ In summary greedy algorithm will not work for this problem.
 
 ## Dynamic programming approach
 
-### Attempt 1
+Lets define a [[Dynamic programming|dynamic program]] for the single copy Knapsack problem.
 
-Let $K(i)$ be the max value using the first $i$ elements. 
+Let $K(i, b)$ be the max value using the first $0 \leq i \leq n$ objects with a bag of capacity $0 \leq b \leq B$. 
+
+The solution to the knapsack problem will then be $K(n,B)$.
+
+To define the [[Recursion|recursion]] for this problem first set the base case $K(0,b) = K(i,0) = 0$. More generically define,
+$$K(i,b) = \begin{cases} K(i-1,b) & \mbox{if } w_i > b\\ \max\{v_i + K(i-1,b-w_i), K(i-1,b)\} & \mbox{otherwise.} \end{cases}$$
+The code for this program would look as follows.
+
+```python
+
+```
 
 
 
