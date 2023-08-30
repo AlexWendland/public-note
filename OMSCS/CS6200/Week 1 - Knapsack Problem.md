@@ -51,7 +51,74 @@ $$K(i,b) = \begin{cases} K(i-1,b) & \mbox{if } w_i > b\\ \max\{v_i + K(i-1,b-w_i
 The code for this program would look as follows.
 
 ```python
+from typing import List
+from dataclasses import dataclass
 
+
+@dataclass
+class KnapsackItem:
+    weight: int
+    value: int
+
+
+class KnapsackSolver:
+    solution_array: List[List[int]]
+    items: List[KnapsackItem]
+    capacity: int
+
+    def solve(self, items: List[KnapsackItem], capacity: int) -> int:
+        self._setup_problem(items, capacity)
+        self._setup_solution_array()
+        for item_number in range(1, len(self.items) + 1):
+            for capacity_limit in range(1, self.capacity + 1):
+                self.solution_array[item_number][
+                    capacity_limit
+                ] = self._solve_for_single_value(item_number, capacity_limit)
+        return self.solution_array[-1][-1]
+
+    def _setup_problem(self, items: List[KnapsackItem], capacity: int) -> None:
+        self.items = items
+        self.capacity = capacity
+
+    def _setup_solution_array(self) -> None:
+        self.solution_array = [
+            [0 for _ in range(self.capacity + 1)] 
+            for _ in range(len(self.items) + 1)
+        ]
+
+    def _solve_for_single_value(
+	    self, 
+	    item_number: int, 
+	    capacity_limit: int) 
+	-> int:
+        current_item = self.items[item_number - 1]  # 0-indexed
+        previous_solution = self.solution_array[item_number - 1][
+	        capacity_limit
+        ]
+        if current_item.weight > capacity_limit:
+            return previous_solution
+        else:
+            return max(
+                [
+                    previous_solution,
+                    self.solution_array[item_number - 1][
+                        capacity_limit - current_item.weight
+                    ]
+                    + current_item.value,
+                ]
+            )
+
+
+if __name__ == "__main__":
+    items = [
+        KnapsackItem(weight=15, value=15),
+        KnapsackItem(weight=12, value=10),
+        KnapsackItem(weight=10, value=8),
+        KnapsackItem(weight=5, value=1),
+    ]
+    capacity = 22
+    solver = KnapsackSolver()
+    print(solver.solve(items, capacity))
 ```
 
 
