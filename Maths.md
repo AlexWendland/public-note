@@ -33,3 +33,6 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Loop (graph)]]
 - [[Boolean function]]
 - [[Conjunctive normal form (CNF)]]
+- [[Matrix]]
+- [[Associativity]]
+- [[Binary operation]]
