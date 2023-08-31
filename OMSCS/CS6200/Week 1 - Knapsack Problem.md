@@ -184,4 +184,3 @@ The run time of the algorithm is still $O(nb)$ but it's [[Spacial complexity|spa
 ## Tracing the solution
 
 You can alter the algorithm to store a second array $S$ which tracks the coin that was added to the solution to get the new optimum. The by back tracking and subtracting the weight you will rebuild the set of coins.
-
