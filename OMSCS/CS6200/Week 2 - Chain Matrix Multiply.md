@@ -18,7 +18,7 @@ Lets say we have [[Matrix|matrices]] $A$, $B$, $C$ and $D$ and they have differe
 ## Cost of multiplying two matrices
 
 Lets say with have two [[Matrix|matrices]] $W$ (of size $a \times b$) and $Y$ (of size $b \times c$) we set their product to be $Z = WY$ (of size $a \times c$). To calculate a single entry in $Z$ we need to multiply a row of $W$ (of size $b$) with a column of $Y$ (of size $b$)
-$$ z_{ij} = \sum_{k = 1}^b w_{ik}y_{kj}$$
+$$ z_{ij} = \sum_{k = 1}^b w_{ik} \ y_{kj}$$
 which takes $b$ multiplications and $b-1$ additions. As $Z$ has size $a \times c$ this involves $abc$ multiplications and $a(b-1)c$ additions.
 
 Here the multiplications are the more costly operations so this is what we will focus on for the cost of this single operation.
