@@ -5,7 +5,7 @@ publish: false
 created: 2023-08-28
 last_edited: 2023-08-28
 tags: OMSCS
-course: [[CS6200 Introduction to Graduate Algorithms]]
+course: "[[CS6200 Introduction to Graduate Algorithms]]"
 week: 2
 chatgpt: false
 ---
