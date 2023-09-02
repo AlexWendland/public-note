@@ -39,3 +39,121 @@ $$ C(i,j) = \min\{C(i,k) + C(k,j) + m_im_km_j \vert i < k < j\}.$$
 
 To calculate $C(i,j)$ we need to [[Iterative algorithms|iteratively]] increase the difference between $j - i$, the base case is $0$ the last case will be $n-1$.
 
+```python
+from typing import List
+
+
+class UpperDiagonalMatrix:
+    _matrix_size: int
+    _matrix_values: List
+
+    def __init__(self, matrix_size: int):
+        self._matrix_size = matrix_size
+        self._matrix_values = [0] * int((matrix_size * (matrix_size + 1)) / 2)
+
+    def get(self, row: int, column: int) -> int:
+        self._check_row_column(row, column)
+        return self._matrix_values[self._get_index(row, column)]
+
+    def set(self, row: int, column: int, value: int) -> None:
+        self._check_row_column(row, column)
+        self._matrix_values[self._get_index(row, column)] = value
+
+    def _get_index(self, row: int, column: int) -> int:
+        return self._get_column_offset(column) + (row - 1)
+
+    def _get_column_offset(self, column: int) -> int:
+        return int((column * (column - 1)) / 2)
+
+    def _check_row_column(self, row: int, column: int) -> None:
+        if row > column:
+            raise ValueError("Row must be less than or equal to column")
+        if row < 1:
+            raise ValueError("Row must be greater than or equal to 0")
+        if column > self._matrix_size:
+            raise ValueError("Column must be less than matrix size")
+
+
+class ChainMultiplySolver:
+    _solution_array: UpperDiagonalMatrix
+    _sizes: List[int]
+    _number_of_matrices: int
+
+    def solve(self, sizes: List[int]) -> int:
+        self._setup_problem(sizes)
+        self._fill_matrix_diagonally()
+        return self._solution_array.get(1, self._number_of_matrices)
+
+    def _setup_problem(self, sizes: List[int]) -> None:
+        self._sizes = sizes
+        self._number_of_matrices = len(sizes) - 1
+        self._solution_array = UpperDiagonalMatrix(self._number_of_matrices)
+
+    def _fill_matrix_diagonally(self) -> None:
+        for difference in range(1, self._number_of_matrices):
+            for lower_index in range(1, self._number_of_matrices-difference+1):
+                upper_index = lower_index + difference
+                self._solution_array.set(
+                    lower_index,
+                    upper_index,
+                    self._solve_for_single_value(lower_index, upper_index),
+                )
+
+    def _solve_for_single_value(
+	    self, 
+	    lower_index: int, 
+	    upper_index: int)
+	-> int:
+        return min(
+            [
+                self._solution_array.get(lower_index, split_index)
+                + self._solution_array.get(split_index + 1, upper_index)
+                + self._get_cost_of_multiplying_matrices(
+                    lower_index, split_index, upper_index
+                )
+                for split_index in range(lower_index, upper_index)
+            ]
+        )
+
+    def _get_cost_of_multiplying_matrices(
+        self, left_index: int, middle_index: int, right_index: int
+    ) -> int:
+        return (
+            self._sizes[left_index - 1]
+            * self._sizes[middle_index]
+            * self._sizes[right_index]
+        )
+
+
+if __name__ == "__main__":
+    sizes = [5, 10, 5, 10, 5, 10, 5]
+    solver = ChainMultiplySolver()
+    print(solver.solve(sizes))
+```
+
+Lets look at the run time of this algorithm, let the number of sizes be $n$. First `_setup_problem` takes $O(n^2)$ as we have to fill half a matrix. 
+
+Working inside out, `_get_cost_of_multiplying_matrices` takes $O(1)$.  Then `_solve_for_single_value` calls `_get_cost_of_multiplying_matrices` up to $n$ times so takes $O(n)$. Lastly `_fill_matrix_diagonally` has two for loops calling `_solve_for_single_value` up to $n$ times each giving the run time of `_fill_matrix_diagonally` to be $O(n^3)$. 
+
+So the cost of running `solve` $O(n^2) + O(n^3) = O(n^3)$. 
+
+## Further questions
+
+From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
+
+>[!question] 6.17 Making Change
+
+>[!question] 6.18 Making Change using each coin once
+
+>[!question] 6.17 Making Change using limited coins
+
+>[!question] 6.20 Optimal BST
+
+>[!question] 6.7 Palindrome subsequence
+
+>[!question] 6.7 Palindrome *substring* (altered)
+
+## Tips
+
+- First find a solution using substrings.
+- Then consider if substrings was necessary, could you use prefixes?
