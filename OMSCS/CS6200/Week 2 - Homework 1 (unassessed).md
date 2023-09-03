@@ -11,13 +11,10 @@ chatgpt: false
 ---
 # Week 2 - Homework 1 (unassessed)
 
-> [!question] 6.4 String of words
+> [!question] 6.4 String of words (part 1)
 > You are given a string of $n$ characters $s[1 \ldots n]$, which you believe to be a corrupted text document in which all punctuation has vanished (so that it looks something like “itwasthebestoftimes...”). You wish to reconstruct the document using a dictionary, which is available in the form of a Boolean function $dict( \cdot )$ for any string $w$,
 > $$dict(w) = \begin{cases} true & \mbox{if w is a valid word}\\ false & \mbox{otherwise}\end{cases}.$$ 
 > 1. Give a dynamic programming algorithm that determines whether the string $s[\cdot]$ can be reconstituted as a sequence of valid words. The running time should be at most $O(n^2)$, assuming calls to $dict$ take unit time.
-> 2. In the event that the string is valid, make your algorithm output the corresponding sequence of words.
-
-Question 1)
 
 Subproblem:
 Let $L(k)$ = whether the subword $s[1\ldots k]$ can be split into words.
@@ -53,7 +50,8 @@ if __name__ == "__main__":
     print(string_of_words(word_dictionary, "abaabaaaba")) # False
 ```
 
-Question 2)
+> [!question] 6.4 String of words (part 2)
+> 2. In the event that the string is valid, make your algorithm output the corresponding sequence of words.
 
 ```python
 from typing import List, Optional
@@ -169,4 +167,32 @@ This takes $O(nv)$ time.
 >
 >Show how to solve this problem in time O(nv).
 
-Let $T(i)$ be the set of coin permutations that make up $i$ (potentially empty). 
+....
+
+>[!question] 6.19 Making change III
+>Consider the following variation on the change-making problem (Exercise 6.17). Given coin denominations $x_1, x_2, \ldots , x_n$, we wish to make change for a value $v$ but you can only use a *at most $k$ coins* (with repeats). For instance, if the denominations are $5$, $10$ with $k=6$ then you can make change for 55 with $5 \times 10 + 1 \times 5$ but not $65$.
+>
+>Input: $x_1, \ldots , x_n; k; v$. 
+>Question: Is it possible to make change for $v$ using at most $k$ coins of denominations $x_1, \ldots , x_n$?
+
+...
+
+>[!question] 6.20 Optimal BST
+>Suppose you are given a list of words $w_1, w_2, \ldots, w_n$ and their frequencies $f_1, f_2, \ldots f_n$. We want to design a [[Binary search tree|binary search tree]] such that at any node with word $w$ on the tree all child nodes to the left of the node have words that are alphabetically lower than $w$ whereas all child nodes to the right of the node have words that are alphabetically greater than it. We want to design such a tree where the average access time with respect to $f_i$ is minimised. i.e. if word $w_i$ has depth $d_i$ we want to minimise
+>$$ \sum_{i = 1}^k d_i*f_i.$$
+>Write a dynamic program that solves this problem efficiently with the following:
+>
+>Input: words $w_1, \ldots, w_n$ (in sorted order); frequencies $f_1, \ldots, f_n$.
+>Output: The binary search tree of lowest cost.  (Not just the cost!)  
+
+...
+
+>[!question] 6.7 Palindrome subsequence
+>Given a sequence $a_1, a_2, \ldots, a_n$ devise an algorithm that returns the length of the longest [[Palindrome|palindromic]] [[Subsequence|subsequence]]. Its running time should be $O(n^2)$.
+
+...
+
+>[!question] 6.7 Palindrome *substring* (altered)
+>Given a sequence $a_1, a_2, \ldots, a_n$ devise an algorithm that returns the length of the longest [[Palindrome|palindromic]] [[Substring|substring]]. Its running time should be $O(n)$.
+
+...

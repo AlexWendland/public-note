@@ -36,3 +36,6 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Matrix]]
 - [[Associativity]]
 - [[Binary operation]]
+- [[Binary search tree]]
+- [[Palindrome]]
+- [[Substring]]
