@@ -167,16 +167,75 @@ This takes $O(nv)$ time.
 >
 >Show how to solve this problem in time O(nv).
 
-Let $T(i,k)$ be a [[Boolean variable|boolean]] on weather you can make $0 \leq k \leq v$ using the first $0 \leq i \leq n$ coins.
+Let $T(i,j)$ be a [[Boolean variable|boolean]] on weather you can make $0 \leq j \leq v$ using the first $0 \leq i \leq n$ coins.
 
-Base: Set $T(i,0) =$ True for $0 \leq i \leq n$ and $T(0,k) =$ false for $1 \leq k \leq v$.
+Base: Set $T(i,0) =$ True for $0 \leq i \leq n$ and $T(0,j) =$ false for $1 \leq j \leq v$.
 
 Recursion: Set 
-$$T(i,k) = \begin{cases} T(i-1, k) & \mbox{if } k < x_i\\ T(i-1, k) \lor T(i-1, k-x_i) & \mbox{otherwise} \end{cases}$$
+$$T(i,j) = \begin{cases} T(i-1, j) & \mbox{if } j < x_i\\ T(i-1, j) \lor T(i-1, j-x_i) & \mbox{otherwise} \end{cases}$$
 
 Solution: $T(n, v)$.
 
+```python
+from typing import List
 
+
+class Change2Solver:
+    _solution_array: List[List[int]]
+    _coins: List[int]
+    _number_of_coins: int
+    _value: int
+
+    def solve(self, coins: List[int], value: int) -> bool:
+        self._setup_problem(coins, value)
+        self._setup_solution_array()
+        self._fill_array()
+        return self._solution_array[-1][-1]
+
+    def _setup_problem(self, coins: List[int], value: int) -> None:
+        self._coins = coins
+        self._number_of_coins = len(coins)
+        self._value = value
+
+    def _setup_solution_array(self) -> None:
+        self._solution_array = [
+            ([True] + [False for _ in range(self._value)])
+            for _ in range(self._number_of_coins + 1)
+        ]
+
+    def _fill_array(self) -> None:
+        for coin_index in range(self._number_of_coins):
+            for sub_value in range(1, self._value + 1):
+                self._solution_array[coin_index + 1][
+                    sub_value
+                ] = self._solve_for_single_value(coin_index, sub_value)
+
+    def _solve_for_single_value(self, coin_index: int, sub_value: int) -> bool:
+        current_coin = self._coins[coin_index]
+        lower_solution = self._solution_array[coin_index][sub_value]
+        if current_coin > sub_value:
+            return lower_solution
+        else:
+            return any(
+                [
+                    lower_solution,
+                    self._solution_array[coin_index][sub_value - current_coin],
+                ]
+            )
+
+
+if __name__ == "__main__":
+    solver = Change2Solver()
+    assert solver.solve([1, 5, 10], 16)
+    assert solver.solve([1, 5, 10], 11)
+    assert not solver.solve([1, 5, 10], 12)
+```
+
+The function `_setup_problem` takes $O(1)$. Though `_setup_solution_array` takes $O(nv)$.
+
+As `_solve_for_single_value` just checks two values it is $O(1)$ with `_fill_array` running this function $nv$ times, making that $O(nv)$.
+
+This gives the overall run time to be $O(1) + O(nv) + O(nv) = O(nv)$.
 
 >[!question] 6.19 Making change III
 >Consider the following variation on the change-making problem (Exercise 6.17). Given coin denominations $x_1, x_2, \ldots , x_n$, we wish to make change for a value $v$ but you can only use a *at most $k$ coins* (with repeats). For instance, if the denominations are $5$, $10$ with $k=6$ then you can make change for 55 with $5 \times 10 + 1 \times 5$ but not $65$.
@@ -184,7 +243,17 @@ Solution: $T(n, v)$.
 >Input: $x_1, \ldots , x_n; k; v$. 
 >Question: Is it possible to make change for $v$ using at most $k$ coins of denominations $x_1, \ldots , x_n$?
 
-...
+Let $T(i,j)$ be a [[Boolean variable|boolean]] on weather you can make $0 \leq j \leq v$ using $0 \leq i \leq k$ coins.
+
+Base: Set $T(i,0) =$ True for $0 \leq i \leq n$ and $T(0,j) =$ False for $1 \leq j \leq v$.
+
+Recursion: Set 
+$$T(i,j) = T(i, j-1) \lor \bigvee_{\substack{\rho \in \{1,2, \ldots, n\}\\x_{\rho} \geq i}} T(i - x_{\rho}, j-1)$$
+
+Solution: $T(v, k)$.
+
+
+
 
 >[!question] 6.20 Optimal BST
 >Suppose you are given a list of words $w_1, w_2, \ldots, w_n$ and their frequencies $f_1, f_2, \ldots f_n$. We want to design a [[Binary search tree|binary search tree]] such that at any node with word $w$ on the tree all child nodes to the left of the node have words that are alphabetically lower than $w$ whereas all child nodes to the right of the node have words that are alphabetically greater than it. We want to design such a tree where the average access time with respect to $f_i$ is minimised. i.e. if word $w_i$ has depth $d_i$ we want to minimise
