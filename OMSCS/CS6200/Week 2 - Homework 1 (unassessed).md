@@ -169,7 +169,7 @@ This takes $O(nv)$ time.
 
 Let $T(i,k)$ be a [[Boolean variable|boolean]] on weather you can make $0 \leq k \leq v$ using the first $0 \leq i \leq n$ coins.
 
-Base: Set $T(i,0) = T(0,k) = 0$.
+Base: Set $T(i,0) =$ True for $0 \leq i \leq n$ and $T(0,k) =$ false for $1 \leq k \leq v$.
 
 Recursion: Set 
 $$T(i,k) = \begin{cases} T(i-1, k) & \mbox{if } k < x_i\\ T(i-1, k) \lor T(i-1, k-x_i) & \mbox{otherwise} \end{cases}$$
