@@ -55,7 +55,7 @@ $$s^{\ast} = \max\{T(k-3), T(k-2)\}.$$
 By appending house $k$ to $s^{\ast}$ have a solution to $T(k)$ and we have that
 $$s^{\ast} + p_k = \max\{T(k-3), T(k-2)\} + p_k \leq s.$$
 
-Suppose $s$ did not include house $k-2$ or $k-3$. Then I could append house $k-2$ to $s$ to get an profit of $s + p_{k-2} > s$ as we have assume $p_{k-2} > 0$. This contradicts the maximality of $s$ therefore $s$ includes house $k-2$ or $k-3$. So $s$ without house $k$ is a solution to either $T(k-3)$ or $T(k-2)$ so we have
+Suppose $s$ did not include house $k-2$ or $k-3$. Then I could append house $k-2$ to $s$ to get an profit of $s + p_{k-2} > s$ as we have assumed $p_{k-2} > 0$. This contradicts the maximality of $s$ therefore $s$ includes house $k-2$ or $k-3$. So $s$ without house $k$ is a solution to either $T(k-3)$ or $T(k-2)$ so we have
 $$ s - p_k \leq \max\{T(k-3), T(k-2)\}.$$
 
 Combining these inequalities we have that
@@ -95,7 +95,7 @@ The run time is $O(n)$.
 
 We do the following steps 
 - initialisation of the base case: $O(1)$,
-- the for loop: $O(n)$, and
-- calculating a max: $O(1)$.
+- the for loop has $n$ steps calculating a max of 2 variables and doing 1 addition which is $O(1)$ therefore overall this is: $O(n)$, and
+- calculating the solution is a max of 2 values which is: $O(1)$.
 
 So the run time of the algorithm is $O(1) + O(n) + O(1) = O(n)$.
