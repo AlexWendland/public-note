@@ -252,8 +252,72 @@ $$T(i,j) = T(i, j-1) \lor \bigvee_{\substack{\rho \in \{1,2, \ldots, n\}\\x_{\rh
 
 Solution: $T(v, k)$.
 
+```python
+from typing import List
 
 
+class Change3Solver:
+    _solution_array: List[List[int]]
+    _coins: List[int]
+    _number_of_coins: int
+    _value: int
+    _coin_limit: int
+
+    def solve(self, coins: List[int], coin_limit: int, value: int) -> bool:
+        self._setup_problem(coins, coin_limit, value)
+        self._setup_solution_array()
+        self._fill_array()
+        return self._solution_array[-1][-1]
+
+    def _setup_problem(self, coins: List[int], coin_limit: int, value: int):
+        self._coins = coins
+        self._number_of_coins = len(coins)
+        self._coin_limit = coin_limit
+        self._value = value
+
+    def _setup_solution_array(self):
+        self._solution_array = [
+            ([True] + [False for _ in range(self._value)])
+            for _ in range(self._coin_limit + 1)
+        ]
+
+    def _fill_array(self) -> None:
+        for sub_coin_limit in range(1, self._coin_limit + 1):
+            for sub_value in range(1, self._value + 1):
+                self._solution_array[sub_coin_limit][
+                    sub_value
+                ] = self._solve_for_single_value(sub_coin_limit, sub_value)
+
+    def _solve_for_single_value(
+	    self, 
+	    sub_coin_limit: int, 
+	    sub_value: int
+	) -> bool:
+        previous_solutions = self._solution_array[sub_coin_limit - 1]
+
+        if previous_solutions[sub_value]:
+            return True
+
+        return any(
+            [
+                previous_solutions[sub_value - current_coin]
+                for current_coin in self._coins
+                if current_coin <= sub_value
+            ]
+        )
+
+
+if __name__ == "__main__":
+    solver = Change3Solver()
+    assert solver.solve([5, 10], 6, 55)
+    assert not solver.solve([1, 5, 10], 6, 65)
+```
+
+The function `_setup_problem` takes $O(1)$. Though `_setup_solution_array` takes $O(nk)$.
+
+As `_solve_for_single_value` just checks at most $n$ values it is $O(n)$ with `_fill_array` running this function $nk$ times, making that $O(nvk)$.
+
+This gives the overall run time to be $O(1) + O(nk) + O(nvk) = O(nvk)$.
 
 >[!question] 6.20 Optimal BST
 >Suppose you are given a list of words $w_1, w_2, \ldots, w_n$ and their frequencies $f_1, f_2, \ldots f_n$. We want to design a [[Binary search tree|binary search tree]] such that at any node with word $w$ on the tree all child nodes to the left of the node have words that are alphabetically lower than $w$ whereas all child nodes to the right of the node have words that are alphabetically greater than it. We want to design such a tree where the average access time with respect to $f_i$ is minimised. i.e. if word $w_i$ has depth $d_i$ we want to minimise
@@ -263,7 +327,20 @@ Solution: $T(v, k)$.
 >Input: words $w_1, \ldots, w_n$ (in sorted order); frequencies $f_1, \ldots, f_n$.
 >Output: The binary search tree of lowest cost.  (Not just the cost!)  
 
-...
+Let $C(i,j)$ with $1 \leq i \leq j \leq n$ be the minimum cost of a binary search tree on $x_{i+1} x_{i} \ldots x_j$.
+
+The solution to the problem will be $C(0,n)$.
+
+The base case will be $C(i,i) = f_i$.
+
+The [[Recursion|recursion]] step will be
+$$ C(i,j) = \min\{C(i+1, j), \ C(i, j-1), \ C(i,k-1) + C(k+1,j) \ \vert \ i < k < j\} + \sum_{k = 1}^j f_k.$$
+To calculate $C(i,j)$ we need to [[Iterative algorithms|iteratively]] increase the difference between $j - i$, the base case is $0$ the last case will be $n-1$.
+
+> [!Note] This will solve for the cost
+> To get back the tree we will make $C(i,j)$ a tuple with the second coordinate being the break point. 
+
+
 
 >[!question] 6.7 Palindrome subsequence
 >Given a sequence $a_1, a_2, \ldots, a_n$ devise an algorithm that returns the length of the longest [[Palindrome|palindromic]] [[Subsequence|subsequence]]. Its running time should be $O(n^2)$.
