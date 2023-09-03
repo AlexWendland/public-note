@@ -184,3 +184,27 @@ The run time of the algorithm is still $O(nb)$ but it's [[Spacial complexity|spa
 ## Tracing the solution
 
 You can alter the algorithm to store a second array $S$ which tracks the coin that was added to the solution to get the new optimum. The by back tracking and subtracting the weight you will rebuild the set of coins.
+
+## Further question
+
+From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
+
+>[!question] 6.17 Making change I
+>Given an unlimited supply of coins of denominations $x_1, x_2, \ldots , x_n$, we wish to make change for a value $v$; that is, we wish to find a set of coins whose total value is $v$. This might not be possible: for instance, if the denominations are $5$ and $10$ then we can make change for $15$ but not for $12$. Give an $O(nv)$ dynamic-programming algorithm for the following problem. 
+>
+>Input: $x_1, \ldots , x_n; v$. 
+>Question: Is it possible to make change for $v$ using coins of denominations $x_1, \ldots , x_n$?
+
+>[!question] 6.18 Making change II
+>Consider the following variation on the change-making problem (Exercise 6.17). Given coin denominations $x_1, x_2, \ldots , x_n$, we wish to make change for a value $v$ but you are only allowed to use each denomination *at most once*. For instance, if the denominations are 1, 5, 10, 20, then you can make change for 16 = 1 + 15 and for 31 = 1 + 10 + 20 but not for 40 (because you can’t use 20 twice).
+>
+>Input: $x_1, \ldots , x_n; v$. 
+>Question: Is it possible to make change for $v$ using coins of denominations $x_1, \ldots , x_n$ only once?
+>
+>Show how to solve this problem in time O(nv).
+
+>[!question] 6.19 Making change III
+>Consider the following variation on the change-making problem (Exercise 6.17). Given coin denominations $x_1, x_2, \ldots , x_n$, we wish to make change for a value $v$ but you can only use a *at most $k$ coins* (with repeats). For instance, if the denominations are $5$, $10$ with $k=6$ then you can make change for 55 with $5 \times 10 + 1 \times 5$ but not $65$.
+>
+>Input: $x_1, \ldots , x_n; k; v$. 
+>Question: Is it possible to make change for $v$ using at most $k$ coins of denominations $x_1, \ldots , x_n$?

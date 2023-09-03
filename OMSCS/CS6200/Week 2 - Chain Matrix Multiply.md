@@ -142,17 +142,19 @@ So the cost of running `solve` $O(n^2) + O(n^3) = O(n^3)$.
 
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 
->[!question] 6.17 Making Change
-
->[!question] 6.18 Making Change using each coin once
-
->[!question] 6.17 Making Change using limited coins
-
 >[!question] 6.20 Optimal BST
+>Suppose you are given a list of words $w_1, w_2, \ldots, w_n$ and their frequencies $f_1, f_2, \ldots f_n$. We want to design a [[Binary search tree|binary search tree]] such that at any node with word $w$ on the tree all child nodes to the left of the node have words that are alphabetically lower than $w$ whereas all child nodes to the right of the node have words that are alphabetically greater than it. We want to design such a tree where the average access time with respect to $f_i$ is minimised. i.e. if word $w_i$ has depth $d_i$ we want to minimise
+>$$ \sum_{i = 1}^k d_i*f_i.$$
+>Write a dynamic program that solves this problem efficiently with the following:
+>
+>Input: words $w_1, \ldots, w_n$ (in sorted order); frequencies $f_1, \ldots, f_n$.
+>Output: The binary search tree of lowest cost.  (Not just the cost!)  
 
 >[!question] 6.7 Palindrome subsequence
+>Given a sequence $a_1, a_2, \ldots, a_n$ devise an algorithm that returns the length of the longest [[Palindrome|palindromic]] [[Subsequence|subsequence]]. Its running time should be $O(n^2)$.
 
 >[!question] 6.7 Palindrome *substring* (altered)
+>Given a sequence $a_1, a_2, \ldots, a_n$ devise an algorithm that returns the length of the longest [[Palindrome|palindromic]] [[Substring|substring]]. Its running time should be $O(n)$.
 
 ## Tips
 
