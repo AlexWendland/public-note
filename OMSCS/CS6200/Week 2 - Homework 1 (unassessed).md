@@ -337,10 +337,117 @@ The [[Recursion|recursion]] step will be
 $$ C(i,j) = \min\{C(i+1, j), \ C(i, j-1), \ C(i,k-1) + C(k+1,j) \ \vert \ i < k < j\} + \sum_{k = 1}^j f_k.$$
 To calculate $C(i,j)$ we need to [[Iterative algorithms|iteratively]] increase the difference between $j - i$, the base case is $0$ the last case will be $n-1$.
 
+```python
+from __future__ import annotations
+from typing import List, Optional
+from dataclasses import dataclass
+
+
+class UpperDiagonalMatrix:
+    _matrix_size: int
+    _matrix_values: List
+
+    def __init__(self, matrix_size: int):
+        self._matrix_size = matrix_size
+        self._matrix_values = [0] * int((matrix_size * (matrix_size + 1)) / 2)
+
+    def get(self, row: int, column: int) -> int:
+        self._check_row_column(row, column)
+        return self._matrix_values[self._get_index(row, column)]
+
+    def set(self, row: int, column: int, value: int) -> None:
+        self._check_row_column(row, column)
+        self._matrix_values[self._get_index(row, column)] = value
+
+    def _get_index(self, row: int, column: int) -> int:
+        return self._get_column_offset(column) + (row - 1)
+
+    def _get_column_offset(self, column: int) -> int:
+        return int((column * (column - 1)) / 2)
+
+    def _check_row_column(self, row: int, column: int) -> None:
+        if row > column:
+            raise ValueError("Row must be less than or equal to column")
+        if row < 1:
+            raise ValueError("Row must be greater than or equal to 0")
+        if column > self._matrix_size:
+            raise ValueError("Column must be less than matrix size")
+
+
+@dataclass
+class WordWithFrequency:
+    word: str
+    frequency: float
+
+
+class ChainMultiplySolver:
+    _solution_array: UpperDiagonalMatrix
+    _words: List[str]
+    _frequencies: List[float]
+    _number_of_words: int
+
+    def solve(self, words: List[WordWithFrequency]) -> Node:
+        self._setup_problem(words)
+        self._fill_matrix_diagonally()
+        return self._solution_array.get(1, self._number_of_words)
+
+    def _setup_problem(self, words: List[WordWithFrequency]) -> None:
+        self._words = words
+        self._number_of_words = len(words)
+        self._solution_array = UpperDiagonalMatrix(self._number_of_words)
+        for i in range(self._number_of_words):
+            self._solution_array.set(i + 1, i + 1, self._words[i].frequency)
+
+    def _fill_matrix_diagonally(self) -> None:
+        for difference in range(1, self._number_of_words):
+            for lower_index in range(1, self._number_of_words - difference + 1):
+                upper_index = lower_index + difference
+                self._solution_array.set(
+                    lower_index,
+                    upper_index,
+                    self._solve_for_single_value(lower_index, upper_index),
+                )
+
+    def _solve_for_single_value(self, lower_index: int, upper_index: int) -> float:
+        return self._get_sum_of_frequencies(
+            lower_index, upper_index
+        ) + self._get_minimum_cost_of_sub_binary_forest(lower_index, upper_index)
+
+    def _get_sum_of_frequencies(self, lower_index: int, upper_index: int) -> float:
+        return sum(
+            [word.frequency for word in self._words[lower_index - 1 : upper_index]]
+        )
+
+    def _get_minimum_cost_of_sub_binary_forest(
+        self, lower_index: int, upper_index: int
+    ) -> float:
+        return min(
+            [
+                self._solution_array.get(lower_index + 1, upper_index),
+                self._solution_array.get(lower_index, upper_index - 1),
+            ]
+            + [
+                self._solution_array.get(lower_index, split_index - 1)
+                + self._solution_array.get(split_index + 1, upper_index)
+                for split_index in range(lower_index + 1, upper_index)
+            ]
+        )
+
+
+if __name__ == "__main__":
+    words = [
+        WordWithFrequency("a", 0.25),
+        WordWithFrequency("b", 0.5),
+        WordWithFrequency("b", 0.25),
+    ]
+    solver = ChainMultiplySolver()
+    print(solver.solve(words))
+```
+
 > [!Note] This will solve for the cost
 > To get back the tree we will make $C(i,j)$ a tuple with the second coordinate being the break point. 
 
-
+The run time of this algorithm is $O(n^3)$.
 
 >[!question] 6.7 Palindrome subsequence
 >Given a sequence $a_1, a_2, \ldots, a_n$ devise an algorithm that returns the length of the longest [[Palindrome|palindromic]] [[Subsequence|subsequence]]. Its running time should be $O(n^2)$.
