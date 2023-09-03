@@ -457,4 +457,10 @@ The run time of this algorithm is $O(n^3)$.
 >[!question] 6.7 Palindrome *substring* (altered)
 >Given a sequence $a_1, a_2, \ldots, a_n$ devise an algorithm that returns the length of the longest [[Palindrome|palindromic]] [[Substring|substring]]. Its running time should be $O(n)$.
 
-...
+Let $L(i)$ be the longest palindrome substring in $a_1, a_2, \ldots, a_i$ ending with $a_i$.
+
+Base case: Set $L(0) = 0$.
+
+[[Recursion]] step: Let
+$L(i) = \begin{cases} L(i-1) + 2 & \mbox{if } L(i-1) < i - 1 \mbox{ and } a_{i - (L(i-1) + 2)}
+
