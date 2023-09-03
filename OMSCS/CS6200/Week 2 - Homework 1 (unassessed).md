@@ -167,7 +167,16 @@ This takes $O(nv)$ time.
 >
 >Show how to solve this problem in time O(nv).
 
-....
+Let $T(i,k)$ be a [[Boolean variable|boolean]] on weather you can make $0 \leq k \leq v$ using the first $0 \leq i \leq n$ coins.
+
+Base: Set $T(i,0) = T(0,k) = 0$.
+
+Recursion: Set 
+$$T(i,k) = \begin{cases} T(i-1, k) & \mbox{if } k < x_i\\ T(i-1, k) \lor T(i-1, k-x_i) & \mbox{otherwise} \end{cases}$$
+
+Solution: $T(n, v)$.
+
+
 
 >[!question] 6.19 Making change III
 >Consider the following variation on the change-making problem (Exercise 6.17). Given coin denominations $x_1, x_2, \ldots , x_n$, we wish to make change for a value $v$ but you can only use a *at most $k$ coins* (with repeats). For instance, if the denominations are $5$, $10$ with $k=6$ then you can make change for 55 with $5 \times 10 + 1 \times 5$ but not $65$.
