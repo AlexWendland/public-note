@@ -103,3 +103,5 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Boolean variable]]
 - [[NP-Complete]]
 - [[Dijkstra's algorithm]]
+- [[Bellman-Ford algorithm]]
+- [[Floyd-Warshall algorithm]]
