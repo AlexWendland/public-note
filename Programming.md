@@ -105,3 +105,5 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Dijkstra's algorithm]]
 - [[Bellman-Ford algorithm]]
 - [[Floyd-Warshall algorithm]]
+- [[Merge sort]]
+- [[Divide and conquer algorithms]]
