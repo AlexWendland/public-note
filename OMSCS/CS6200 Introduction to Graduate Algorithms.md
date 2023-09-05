@@ -20,3 +20,4 @@ This course is a graduate-level course in the design and analysis of algorithms.
 - [Central](https://www.omscentral.com/courses/introduction-to-graduate-algorithms/reviews)
 - [OMSCS page](https://omscs.gatech.edu/cs-6515-intro-graduate-algorithms)
 - [Course textbook](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf)
+- [[Week 2 - Shortest Paths]]

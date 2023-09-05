@@ -102,3 +102,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Big-Omega notation]]
 - [[Boolean variable]]
 - [[NP-Complete]]
+- [[Dijkstra's algorithm]]

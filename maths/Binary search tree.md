@@ -1,7 +1,7 @@
 ---
 aliases:
   - binary search tree
-type: str
+type: defintion
 publish: false
 created: 2023-09-03
 last_edited: 2023-09-03
