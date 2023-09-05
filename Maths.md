@@ -39,3 +39,5 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Binary search tree]]
 - [[Palindrome]]
 - [[Substring]]
+- [[Directed graph]]
+- [[Edge weights]]
