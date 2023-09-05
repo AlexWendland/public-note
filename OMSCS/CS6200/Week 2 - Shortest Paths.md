@@ -73,9 +73,9 @@ If we run to the $\vert V \vert$ case (note before we stopped at $\vert V \vert 
 > $$\mbox{dist}(y,z) = \min_{\substack{p \mbox{ path}\\ y \mbox{ to } z}} \sum_{e \in p} w(e)$$ 
 > where $p$ is a [[Path (graph)|path]] that starts at $y$ and ends at $z$.
 
-If you used the [[Bellman-Ford algorithm]] for each vertex this would take $O(\vert V \vert^2 \vert E \vert)$. Instead we will define the [[Floyd-Warshall algorithm]] which takes $O(\vert V \vert^3)$ run time - which is better than this as $\vert V \vert - 1 \leq \vert E \vert \leq \vert V \vert^2$ if it is connected without any double edges. 
+If you used the [[Bellman-Ford algorithm]] for each vertex this would take $O(\vert V \vert^2 \vert E \vert)$. Instead we will define the [[Floyd-Warshall algorithm]] which takes $O(\vert V \vert^3)$ run time - which at worst the same as the [[Bellman-Ford algorithm]] as $\vert V \vert - 1 \leq \vert E \vert \leq \vert V \vert^2$ if it is connected without any double edges. 
 
-Let $V = \{x_1, \ldots, x_n\}$ now set up a new subproblem.
+Let $V = \{x_1, \ldots, x_n\}$ in the set up of a new subproblem.
 
 Let $D(i,s,t)$ be the length of the shortest path $s$ to $t$ only using $\{x_1, \ldots, x_i\}$ as intermediate vertices.
 
@@ -83,3 +83,42 @@ Base case,
 $$D(0,s,t) = \begin{cases} w(s,t) & \mbox{if } (s,y) \in E\\ \infty & \mbox{otherwise}\end{cases}.$$
 The recursion set then is:
 $$D(i,s,t) = \min\{D(i,s,t), D(i-1,s,i) + D(i-1,i,t)\}.$$
+> [!question] Why do you only visit $i$ once?
+
+The pseudo code is as follows:
+
+```pseudo
+for s= 1 -> n:
+	for t= 1 -> n:
+		D(0,s,t) = inf
+for (x, y) in E:
+	D(0,x,y) = w(x,y)
+for i = 1 -> n:
+	for s = 1 -> n:
+		for t = 1 -> n:
+			D(i,s,t) = min(D(i-1,s,t), D(i-1, s, i) + D(i-1, i, t))
+return D(n, . , . )
+```
+
+The run time of this algorithm is $O(n^2) + O(\vert E \vert) + O(n^3)$ as $\vert E \vert \leq n^2$ we have that the run time is $O(n^3)$.
+
+## Negative weight cycles
+
+Within the [[Floyd-Warshall algorithm]] you detect negative weight cycles by looking at the values $D(n,x,x)$ if a negative weight cycle exists - this diagonal will have negative values.
+
+> [!warning] [[Bellman-Ford algorithm]] vs [[Floyd-Warshall algorithm]]
+> [[Bellman-Ford algorithm]] only finds negative weight cycles reachable from that start vertex. Whereas [[Floyd-Warshall algorithm]] will find any negative weight cycle in the graph.
+
+## Further questions
+
+From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
+
+>[!question] 4.21 Currency exchange
+>Shortest path algorithms can be applied in currency trading. Let $c_1, c_2, \ldots , c_n$ be various currencies; for instance, $c_1$ might be dollars, $c_2$ pounds, and $c_3$ lire. For any two currencies $c_i$ and $c_j$ , there is an exchange rate $r_{i,j}$ ; this means that you can purchase $r_{i,j}$ units of currency $c_j$ in exchange for one unit of $c_i$. These exchange rates satisfy the condition that $r_{i,j} \cdot r_{j,i} < 1$, so that if you start with a unit of currency $c_i$, change it into currency $c_j$ and then convert back to currency $c_i$, you end up with less than one unit of currency $c_i$ (the difference is the cost of the transaction). 
+>
+>(a) Give an efficient algorithm for the following problem: Given a set of exchange rates $r_{i,j}$, and two currencies $s$ and $t$, find the most advantageous sequence of currency exchanges for converting currency $s$ into currency $t$. Toward this goal, you should represent the currencies and rates by a graph whose edge lengths are real numbers. 
+>
+>The exchange rates are updated frequently, reflecting the demand and supply of the various currencies. Occasionally the exchange rates satisfy the following property: there is a sequence of currencies $c_{i_1} , c_{i_2} , \ldots , c_{i_k}$ such that $r_{i_1,i_2} \cdot r_{i_2,i_3} \ldots r_{i_{k−1},i_k} \cdot r_{i_k,i_1} > 1$. This means that by starting with a unit of currency $c_{i_1}$ and then successively converting it to currencies $c_{i_2} , c_{i_3} , \ldots , c_{i_k}$ , and finally back to $c_{i_1}$ , you would end up with more than one unit of currency $c_{i_1}$. Such anomalies last only a fraction of a minute on the currency exchange, but they provide an opportunity for risk-free profits. 
+>
+>(b) Give an efficient algorithm for detecting the presence of such an anomaly. Use the graph representation you found above.
+
