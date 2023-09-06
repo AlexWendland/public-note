@@ -35,7 +35,7 @@ $$(a + bi)(c + di) = ac - bd + ((a + b)(c+d) - bd - ac)i.$$
 Suppose we have $x$ and $y$ which are $2^k=n$-bit numbers. We cut $x$ and $y$ in half so 
 $$x = X_L2^{2^{k-1}} + X_R \mbox{ and } Y = Y_L2^{2^{k-1}} + Y_R.$$
 then there multiple is
-$$xy = X_LY_l2^{2^k} + (X_LY_R + X_RY_L)2^{2^{k-1}} + X_RY_R.$$
+$$xy = X_LY_L2^{2^k} + (X_LY_R + X_RY_L)2^{2^{k-1}} + X_RY_R.$$
 At which point we have broken the problem into sub-problems. We can then turn this into a [[Recursion|recursive]] algorithm.
 
 ```pseudo
@@ -57,3 +57,27 @@ $$T(n) = 4 T(n/2) + O(n) = O(n^2).$$
 
 ## Better approach
 
+This time we combine Gauss's trick with the [[Divide and conquer algorithms|divide and conquer]] approach to speed up this algorithm. 
+
+Suppose we have $x$ and $y$ which are $2^k=n$-bit numbers. We cut $x$ and $y$ in half so 
+$$x = X_L2^{2^{k-1}} + X_R \mbox{ and } Y = Y_L2^{2^{k-1}} + Y_R.$$
+then there multiple is
+$$xy = X_LY_L2^{2^k} + (X_LY_R + X_RY_L)2^{2^{k-1}} + X_RY_R.$$
+Which we now compute using
+$$X_LY_L, \  X_RY_R, \mbox{ and } (X_L + X_R)(Y_L + Y_R)
+
+At which point we have broken the problem into sub-problems. We can then turn this into a [[Recursion|recursive]] algorithm.
+
+```pseudo
+EasyMultiply(x,y):
+Input: n=2^k-bit integers x & y
+Output xy
+if k = 1:
+	return xy
+else:
+	X_L = 1st 2^(k-1)-bits of x, X_R = Last 2^(k-1)-bits of x
+	Y_L = 1st 2^(k-1)-bits of y, Y_R = Last 2^(k-1)-bits of y
+	A = EasyMultiply(X_L, Y_L), B = EasyMultiply(X_R, Y_L)
+	C = EasyMultiply(X_L, Y_R), D = EasyMultiply(X_R, Y_R)
+	return 2^nA + 2^(2^k-1)(B + C) + D
+```
