@@ -64,8 +64,9 @@ $$x = X_L2^{2^{k-1}} + X_R \mbox{ and } Y = Y_L2^{2^{k-1}} + Y_R.$$
 then there multiple is
 $$xy = X_LY_L2^{2^k} + (X_LY_R + X_RY_L)2^{2^{k-1}} + X_RY_R.$$
 Which we now compute using
-$$X_LY_L, \  X_RY_R, \mbox{ and } (X_L + X_R)(Y_L + Y_R)
-
+$$X_LY_L, \  X_RY_R, \mbox{ and } (X_L + X_R)(Y_L + Y_R).$$
+With the substitution
+$$(X_LY_R + X_RY_L) = (X_L + X_R)(Y_L + Y_R) - X_LY_L -  X_RY_R.$$
 At which point we have broken the problem into sub-problems. We can then turn this into a [[Recursion|recursive]] algorithm.
 
 ```pseudo
@@ -77,7 +78,9 @@ if k = 1:
 else:
 	X_L = 1st 2^(k-1)-bits of x, X_R = Last 2^(k-1)-bits of x
 	Y_L = 1st 2^(k-1)-bits of y, Y_R = Last 2^(k-1)-bits of y
-	A = EasyMultiply(X_L, Y_L), B = EasyMultiply(X_R, Y_L)
-	C = EasyMultiply(X_L, Y_R), D = EasyMultiply(X_R, Y_R)
-	return 2^nA + 2^(2^k-1)(B + C) + D
+	A = EasyMultiply(X_L, Y_L), B = EasyMultiply(X_R, Y_R)
+	C = EasyMultiply(X_L + X_R, Y_L + Y_R)
+	return 2^nA + 2^(2^k-1)(C - A - B) + B
 ```
+
+This works slightly faster with $O(n^{1.5})$. 
