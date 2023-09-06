@@ -472,3 +472,12 @@ Base case: Set $L(0) = 0$.
 >
 >(b) Give an efficient algorithm for detecting the presence of such an anomaly. Use the graph representation you found above.
 
+Dynamic Programming (Chapter 6)
+
+**6.1-6.3, 6.5** (these problems should be accesible, start here!)
+
+**6.6** (this problem is like the Matrix Multiplication! A Y/N table should do it, but it may help to add a third dimension accounting for the symbol you wish to reduce to).
+
+**6.7, 6.9, 6.11, 6.17** (the first making change problem)**, 6.22** (hint included in the problem).
+
+**6.25-6.30** Note: These are a bit harder, but definitely nice problems.
