@@ -107,3 +107,6 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Floyd-Warshall algorithm]]
 - [[Merge sort]]
 - [[Divide and conquer algorithms]]
+- [[Quick sort]]
+- [[Sorting problem]]
+- [[Pseudocode]]

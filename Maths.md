@@ -42,3 +42,4 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Directed graph]]
 - [[Edge weights]]
 - [[Complex Numbers]]
+- [[Median]]
