@@ -43,4 +43,12 @@ Select(A, k):
 5. Otherwise return Select(A_{>p}, k - (|A_{<p}| + |A_{=p}|))
 ```
 
-Though we have skipped how we choose a pivot.
+Though we have skipped how we choose a pivot. We need that pivot is close to the median to get a good running time. Lets assume the running time of this algorithm is $T(n)$ for input of size $n$.
+
+## Choosing the pivot
+
+We say a pivot is good if
+$$\vert A_{<p}\vert \leq \frac{3n}{4}, \mbox{ and } \vert A_{>p} \vert \leq \frac{3n}{4}.$$
+We want to find such a $p$ in $O(n)$ time. This will give us
+$$ T(n) = T(\frac{3n}{4}) + O(n),$$
+which by [[Masters theorem]] gives $T(n) = \Theta(n)$.
