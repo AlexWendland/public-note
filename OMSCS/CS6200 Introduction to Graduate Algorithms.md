@@ -22,3 +22,4 @@ This course is a graduate-level course in the design and analysis of algorithms.
 - [Course textbook](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf)
 - [[Week 2 - Shortest Paths]]
 - [[Week 3 - Fast Integer multiplication]]
+- [[Week 3 - Linear-Time Median]]
