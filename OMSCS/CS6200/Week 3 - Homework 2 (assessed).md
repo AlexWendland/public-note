@@ -85,5 +85,5 @@ $$T(k) = T\left (\frac{k + 2}{2}\right) + O(1) \mbox{ or } T(k) = T\left (\frac{
 
 As $k \geq 4$ we have the following inequalities
 $$ \frac{k}{2} \leq \frac{k}{2} < \frac{k+1}{2} < \frac{k + 2}{2} \leq \frac{3k}{4}.$$
-Using the fact that $T(n)$ is is montonically non-decreasing we have
+Using the fact that $T(n)$ is is monotonically non-decreasing we have
 $$T\left (\frac{k}{2}\right ) + O(1) \leq T(n) \leq T\left (\frac{3k}{4}\right) + O(1).$$
