@@ -21,6 +21,8 @@ chatgpt: false
 
 ## Algorithm
 
+This algorithm is essentially binary search, though you require to get the bottom of the tree to confirm you have found the replica.
+
 ### Subproblem 
 
 Consider the subproblem that we are given $S$ a monotonically non-decreasing list of natural numbers of size $k > 1$ with a single duplicate that uses the numbers from $a$ to $a + k - 2$. 
@@ -50,12 +52,30 @@ Given the lists $S_L$ and $S_R$ are overlapping by only the $p = \left \lceil \f
 
 If $S_L$ **does contain duplicates** then it has $p-1$ different elements making the $p$'th term $a + p - 2$. (The algorithm applies itself to the subproblem to $S_L$.) So $S_L$ is a monotonically non-decreasing list of natural numbers of size $p = \left \lceil \frac{k}{2} \right \rceil \geq \left \lceil \frac{4}{2} \right \rceil > 1$ with a single duplicate that uses the numbers from $a$ to $a + p - 2$. Therefore $S_L$ fits our subproblem and has size $p = \left \lceil \frac{k}{2} \right \rceil < k$ which our algorithm finishes correctly on. Therefore the algorithm on $S$ in this case returns the correct answer.
 
-If $S_L$ **does not contain duplicates** then it has $p$ different elements making the $p$'th term $a + p - 1$. (The algorithm applies itself to the subproblem $S_R$.) So $S_R$ is a monotonically non-decreasing list of natural numbers of size $k + 1 - p = \left \lceil \frac{2k + 2 - k}{2} \right \rceil \geq \left \lceil \frac{4 + 2}{2} \right \rceil > 1$ with a single duplicate that uses the numbers from $(a + p - 1)$ to $a + k - 1 = (a + p - 1) + (k + 1 - p) - 1$. There $S_R$ fits into our subproblem and has size $k + 1 - p < k$ as $k \geq 4$ so $p \geq 2$ so our subproblem solves correctly on $S_R$. Therefore the the algorithm on $S$ in this case returns the correct answer.
+If $S_L$ **does not contain duplicates** then it has $p$ different elements making the $p$'th term $a + p - 1$. (The algorithm applies itself to the subproblem $S_R$.) So $S_R$ is a monotonically non-decreasing list of natural numbers of size 
+$$\begin{align*} k + 1 - p & = k + 1 - \left \lceil \frac{k}{2} \right \rceil\\ & \geq 1 + \frac{k}{2} & \mbox{ as} \left \lceil \frac{k}{2} \right \rceil \geq \frac{k}{2}\\ & > 1 & \mbox{as } k > 2\end{align*}$$with a single duplicate that uses the numbers from $(a + p - 1)$ to 
+$$a + k - 1 = (a + p - 1) + (k + 1 - p) - 1.$$There $S_R$ fits into our subproblem and has size $k + 1 - p < k$ as $k \geq 4$ so $p \geq 2$ so our subproblem solves correctly on $S_R$. Therefore the the algorithm on $S$ in this case returns the correct answer.
 
 This proves that the algorithm returns correctly on list of size $k$. Therefore by induction our algorithm returns correctly for all cases.
 
 ## Run time
 
+The runtime of the algorithm will be $O(\log(n))$, as it is similar to binary search. 
 
+Let $T(n)$ be the run time of my algorithm. Here I assume reading an entry from an array and checking it against a deterministic formula is $O(1)$.
 
+### Base case
 
+Note $T(2) = T(3) = 1$ as we just return one entry in the array. 
+
+## Recursion
+
+Let $k > 3$. Note that in the recursion step we read 1 value from the array and compare this against a deterministic formula which is $O(1)$. Then we compute a subcase. 
+
+If $k$ is odd then $p = \left \lceil \frac{k}{2} \right \rceil = \frac{k+1}{2}$ so $\vert S_L \vert = \frac{k+1}{2}$ and 
+$$\vert S_R \vert = k + 1 - p = \frac{2k + 2 - (k + 1)}{2} = \frac{k + 1}{2}.$$So
+$$T(k) = T(\frac{k + 1}{2}) + O(1).$$
+
+If $k$ is even then $p = \left \lceil \frac{k}{2} \right \rceil = \frac{k}{2}$ so $\vert S_L \vert = \frac{k}{2}$ though in this case 
+$$\vert S_R \vert = k + 1 - p = \frac{2k + 2 - k}{2} = \frac{k + 2}{2}.$$
+So 
