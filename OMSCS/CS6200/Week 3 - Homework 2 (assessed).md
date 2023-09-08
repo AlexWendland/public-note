@@ -60,7 +60,7 @@ This proves that the algorithm returns correctly on list of size $k$. Therefore 
 
 ## Run time
 
-The runtime of the algorithm will be $O(\log(n))$, as it is similar to binary search. 
+The runtime of the algorithm will be $\Theta(\log(n))$, as it is similar to binary search but we have to reduce to a list of size $2$ or $3$. 
 
 For the formal proof, I am going to assume that $T(n)$ is monotonically non-decreasing. Intuitively this makes sense as you increase the size of the start list the size of the sub-list you are sorting increase also. Note that as it must terminate by reducing the size of the list to either 2 or 3 that will only increase the time for this to happen. (Though I appreciate this is not a formal proof.)
 
@@ -86,4 +86,12 @@ $$T(k) = T\left (\frac{k + 2}{2}\right) + O(1) \mbox{ or } T(k) = T\left (\frac{
 As $k \geq 4$ we have the following inequalities
 $$ \frac{k}{2} \leq \frac{k}{2} < \frac{k+1}{2} < \frac{k + 2}{2} \leq \frac{3k}{4}.$$
 Using the fact that $T(n)$ is is monotonically non-decreasing we have
-$$T\left (\frac{k}{2}\right ) + O(1) \leq T(n) \leq T\left (\frac{3k}{4}\right) + O(1).$$
+$$T\left (\frac{k}{2}\right ) + O(1) \leq T(k) \leq T\left (\frac{3k}{4}\right) + O(1).$$
+By recursively applying the lower bound $\log_2(k)$ times we have
+$$T(k) \geq T\left (\frac{k}{2^{\log_2(k)}}\right ) + \log_2(k) O(1) \geq \log_2(k)O(1) + O(1)$$
+Giving that $T(k) = \Omega(\log_2(k)) = \Omega(\log(k))$ (by the interchange of bases).
+
+Similarly by repeatedly applying the upper bound $\log_{1.5}(k)$ times we have
+$$T(k) \leq T\left ( \frac{k}{1.5^{\log_{1.5}(k)}}\right ) + \log_{1.5}(k)O(1) \leq O(1) + O(1)\log_{1.5}(k).$$Giving that $T(k) = O(\log_{1.5}(k)) = O(\log(k))$ (by the interchange of bases).
+
+This gives the result that $T(n) = \Theta(\log(n))$.
