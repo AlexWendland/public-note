@@ -62,6 +62,8 @@ This proves that the algorithm returns correctly on list of size $k$. Therefore 
 
 The runtime of the algorithm will be $O(\log(n))$, as it is similar to binary search. 
 
+For the formal proof, I am going to assume that $T(n)$ is monotonically non-decreasing. Intuitively this makes sense as you increase the size of the start list the size of the sub-list you are sorting increase also. Note that as it must terminate by reducing the size of the list to either 2 or 3 that will only increase the time for this to happen. (Though I appreciate this is not a formal proof.)
+
 Let $T(n)$ be the run time of my algorithm. Here I assume reading an entry from an array and checking it against a deterministic formula is $O(1)$.
 
 ### Base case
@@ -73,9 +75,15 @@ Note $T(2) = T(3) = 1$ as we just return one entry in the array.
 Let $k > 3$. Note that in the recursion step we read 1 value from the array and compare this against a deterministic formula which is $O(1)$. Then we compute a subcase. 
 
 If $k$ is odd then $p = \left \lceil \frac{k}{2} \right \rceil = \frac{k+1}{2}$ so $\vert S_L \vert = \frac{k+1}{2}$ and 
-$$\vert S_R \vert = k + 1 - p = \frac{2k + 2 - (k + 1)}{2} = \frac{k + 1}{2}.$$So
-$$T(k) = T(\frac{k + 1}{2}) + O(1).$$
+$$\vert S_R \vert = k + 1 - p = \frac{2k + 2 - (k + 1)}{2} = \frac{k + 1}{2}.$$So for odd $k$,
+$$T(k) = T\left (\frac{k + 1}{2} \right ) + O(1).$$
 
 If $k$ is even then $p = \left \lceil \frac{k}{2} \right \rceil = \frac{k}{2}$ so $\vert S_L \vert = \frac{k}{2}$ though in this case 
 $$\vert S_R \vert = k + 1 - p = \frac{2k + 2 - k}{2} = \frac{k + 2}{2}.$$
-So 
+So for even $k$,
+$$T(k) = T\left (\frac{k + 2}{2}\right) + O(1) \mbox{ or } T(k) = T\left (\frac{k}{2}\right ) + O(1).$$
+
+As $k \geq 4$ we have the following inequalities
+$$ \frac{k}{2} \leq \frac{k}{2} < \frac{k+1}{2} < \frac{k + 2}{2} \leq \frac{3k}{4}.$$
+Using the fact that $T(n)$ is is montonically non-decreasing we have
+$$T\left (\frac{k}{2}\right ) + O(1) \leq T(n) \leq T\left (\frac{3k}{4}\right) + O(1).$$
