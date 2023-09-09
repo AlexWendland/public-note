@@ -47,9 +47,9 @@ If $k = 3$, then either the first two entries are the duplicates or the last two
 
 ### Induction step
 
-Let $k > 3$ and suppose we have the subproblem returns the correct answer for all lists of size $i$ with $1 < i < k$ and we want to prove for a list $S$ of size $k$.
+Let $k > 3$ and suppose we have the subproblem returns the correct answer for all lists of size $i$ with $1 < i < k$ and we want to prove that it returns correctly for a list $S$ of size $k$.
 
-Given the lists $S_L$ and $S_R$ are overlapping by only the $p = \left \lceil \frac{k}{2} \right \rceil$'th element we know the duplicate adjacent entries are either both in exactly one of $S_L$ or $S_R$. (If they were in both the lists would overlap by two elements.) If there was exactly one in each of $S_L$ or $S_R$ due to their adjacency one of them must be the $p$'th element contradicting the initial claim.
+As $k > 3$ we split the list up into $S_L$ and $S_R$ as described above. Given the lists $S_L$ and $S_R$ are overlapping by only the $p = \left \lceil \frac{k}{2} \right \rceil$'th element and we know the duplicate are adjacent entries they are both in exactly one of $S_L$ or $S_R$. If they were in both the lists would overlap by two elements. If there was exactly one in each of $S_L$ or $S_R$ due to their adjacency one of them must be the $p$'th element contradicting the initial claim.
 
 If $S_L$ **does contain duplicates** then it has $p-1$ different elements making the $p$'th term $a + p - 2$. (The algorithm applies itself to the subproblem to $S_L$.) So $S_L$ is a monotonically non-decreasing list of natural numbers of size $p = \left \lceil \frac{k}{2} \right \rceil \geq \left \lceil \frac{4}{2} \right \rceil > 1$ with a single duplicate that uses the numbers from $a$ to $a + p - 2$. Therefore $S_L$ fits our subproblem and has size $p = \left \lceil \frac{k}{2} \right \rceil < k$ which our algorithm finishes correctly on. Therefore the algorithm on $S$ in this case returns the correct answer.
 
@@ -80,7 +80,7 @@ giving that $T(n) = \Theta(\log(n))$.
 
 Note $T(2) = T(3) = 1$ as we just return one entry in the array. This gives us the inequality for $n = 2, 3$.
 $$L(n) \leq T(n) \leq U(n).$$
-## Recursion
+### Recursion
 
 Let $k > 3$ and assume the inequality holds for all $i < k$. Note that in the recursion step we read 1 value from the array and compare this against a deterministic formula which is $O(1)$. Then we compute a subcase. 
 
