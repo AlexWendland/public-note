@@ -72,7 +72,7 @@ To prove the runtime of $T(n)$ I want to define two additional sequences $L(n)$ 
 $$L(n) = L\left (\frac{n}{2}\right ) + O(1) \mbox{ and } U(n) = U\left (\frac{3k}{4} \right ) + O(1).$$
 By masters theorem we have that $L(n) = \Theta(\log(n))$ and $U(n) = \Theta(\log(n))$.
 
-I will show by induction that This gives the
+I will show by induction that
 $$L(n) \leq T(n) \leq U(n).$$
 giving that $T(n) = \Theta(\log(n))$.
 
