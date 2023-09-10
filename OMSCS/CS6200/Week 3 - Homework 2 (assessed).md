@@ -63,10 +63,12 @@ This proves that the algorithm returns correctly on list of size $k$. Therefore 
 
 The runtime of the algorithm will be $\Theta(\log(n))$, as it is similar to binary search but we have to reduce to a list of size $2$ or $3$. 
 
+Let $T(n)$ be the run time of my algorithm on a list of size $n$. 
+
 > [!warning] For the formal proof, I am going to assume that $T(n)$ is monotonically non-decreasing. 
 > Intuitively this makes sense as you increase the size of the start list the size of the sub-list you are sorting increase also. Note that as it must terminate by reducing the size of the list to either 2 or 3 that will only increase the time for this to happen. (Though I appreciate this is not a formal proof.)
 
-Let $T(n)$ be the run time of my algorithm. Here I assume reading an entry from an array and checking it against a deterministic formula has cost $O(1)$ for some constant.
+Here I assume reading an entry from an array and checking it against a deterministic formula has cost $O(1)$ for some constant.
 
 To prove the runtime of $T(n)$ I want to define two additional sequences $L(n)$ and $U(n)$ such that $L(2) = L(3) = 1 = U(2) = U(3)$ and that
 $$L(n) = L\left (\frac{n}{2}\right ) + O(1) \mbox{ and } U(n) = U\left (\frac{3k}{4} \right ) + O(1).$$
@@ -98,5 +100,7 @@ $$ \frac{k}{2} \leq \frac{k}{2} < \frac{k+1}{2} < \frac{k + 2}{2} \leq \frac{3k}
 Using the fact that $T(n)$ is is monotonically non-decreasing we have
 $$T\left (\frac{k}{2}\right ) + O(1) \leq T(k) \leq T\left (\frac{3k}{4}\right) + O(1).$$
 As $\frac{k}{2} \leq \frac{3k}{4} < k$ the inequality holds for these values and we get
-$$L(k) = L\left (\frac{k}{2}\right ) + O(1) \leq T(k) \leq U\left (\frac{3k}{4}\right) + O(1) = U(k).$$
-Giving us the inequality for all $k$. Which gives us the desired run time.
+$$L(k) = L\left (\frac{k}{2}\right ) + O(1) \leq T\left (\frac{k}{2}\right ) + O(1) \leq T(k) \leq T\left (\frac{3k}{4}\right) + O(1) \leq U\left (\frac{3k}{4}\right) + O(1) = U(k).$$
+Giving us the inequality holds for $k$. 
+
+By induction this holds for all natural $n$ and we obtain the desired run time of $T(n) = \Theta(\log(n))$.
