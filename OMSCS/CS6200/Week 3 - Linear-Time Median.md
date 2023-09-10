@@ -60,3 +60,30 @@ $$\mathbb{P}(p \mbox{ is good}) = \frac{3n/4 - n/4}{n} = \frac{1}{2}$$
 It takes $O(n)$ time to check if $p$ is good and if we kept randomly drawing elements we have
 $$\mathbb{E}(\mbox{draws untill } p \mbox{ is good}) = 2.$$
 Therefore this algorithm has expected runtime of $2n$ - though this is not [[Big-O notation|worst case run time]]. 
+
+### Recursive piviot
+
+Instead of finding a median of $A$ we could instead aim for a median of a "representative sample".
+
+> [!info] Trick
+> Divide $A$ into sets of 5 and find the median of each of these sets. Call this set $S$. Then find the median of the set $S$.
+
+
+
+```pseudocode
+FastSelect(A,k):
+1. Break A into ceiling of n/5 groups, G_i with atmost 5 elements in.
+2. For i = 1 -> n/5 sort G_i and let m_i = median(G_i)
+3. Let S = {m_1, ..., m_{n/5}}
+4. Let p = FastSelect(S,n/10)
+5. Partition A into A_{<p}, A_{=p}, A_{>p}.
+6. Return based on the following conditions.
+	1. If k <= |A_{<p}| then return FastSelect(A_{<p}, k)
+	2. If k > |A_{<p}| + |A_{=p}| then return 
+	   FastSelect(A_{>p}, k - |A_{<p}| + |A_{=p}|)
+	3. Else return p.
+```
+
+Breaking $A$ into groups requires one sweep through $A$ so that takes us $O(n)$ time. 
+
+Sorting a single $G_i$ takes $s$ where $s$ is the constant runtime of your favourite sorting algorithm on 5 elements. over all this is $O(n)$. Finding the median of set $A$ takes $T(n/5)$. So finding this pivot takes $T\left ( \frac{n}{5}\right ) + O(n)$ time. 
