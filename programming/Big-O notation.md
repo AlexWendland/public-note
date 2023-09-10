@@ -1,10 +1,13 @@
 ---
-aliases: []
+aliases:
+  - worst case run time
 type: notation
 publish: true
 created: 2023-08-27
 last_edited: 2023-08-27
-tags: programming, maths
+tags:
+  - programming
+  - maths
 chatgpt: false
 ---
 # Big-O notation

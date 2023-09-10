@@ -52,3 +52,11 @@ $$\vert A_{<p}\vert \leq \frac{3n}{4}, \mbox{ and } \vert A_{>p} \vert \leq \fra
 We want to find such a $p$ in $O(n)$ time. This will give us
 $$ T(n) = T(\frac{3n}{4}) + O(n),$$
 which by [[Masters theorem]] gives $T(n) = \Theta(n)$.
+
+### Random pivot
+
+If I choose any random element $p \in A$ then it has
+$$\mathbb{P}(p \mbox{ is good}) = \frac{3n/4 - n/4}{n} = \frac{1}{2}$$
+It takes $O(n)$ time to check if $p$ is good and if we kept randomly drawing elements we have
+$$\mathbb{E}(\mbox{draws untill } p \mbox{ is good}) = 2.$$
+Therefore this algorithm has expected runtime of $2n$ - though this is not [[Big-O notation|worst case run time]]. 
