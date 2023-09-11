@@ -86,4 +86,19 @@ FastSelect(A,k):
 
 Breaking $A$ into groups requires one sweep through $A$ so that takes us $O(n)$ time. 
 
-Sorting a single $G_i$ takes $s$ where $s$ is the constant runtime of your favourite sorting algorithm on 5 elements. over all this is $O(n)$. Finding the median of set $A$ takes $T(n/5)$. So finding this pivot takes $T\left ( \frac{n}{5}\right ) + O(n)$ time. 
+Sorting a single $G_i$ takes $s$ where $s$ is the constant runtime of your favourite sorting algorithm on 5 elements. 
+
+We run this sort on $n/5$ elements giving step 2 takes $O(n)$ time. 
+
+We then run our algorithm on a subproblem of size $\frac{n}{5}$ having run time $T\left ( \frac{n}{5}\right )$.
+
+> [!note] Pivot runtime
+> So finding this pivot takes $T\left ( \frac{n}{5}\right ) + O(n)$ time. 
+
+Partitioning the set takes $O(n)$ time.
+
+The last step of the algorithm takes at most $T\left (\frac{3n}{4}\right ) + O(1)$ from the assumption about the good pivot.
+
+Combining this all together we have 
+$$T(n) = T\left (\frac{3n}{4}\right ) + T\left ( \frac{n}{5}\right ) + O(n) + O(n) + O(1) = T\left (\frac{3n}{4}\right ) + T\left ( \frac{n}{5}\right ) + O(1).$$
+As $\frac{3}{4} + \frac{1}{5} < 1$ we have that $T(n) = O(n)$.
