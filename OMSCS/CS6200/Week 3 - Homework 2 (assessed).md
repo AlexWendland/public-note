@@ -71,12 +71,13 @@ Let $T(n)$ be the run time of my algorithm on a list of size $n$.
 Here I assume reading an entry from an array and checking it against a deterministic formula has cost $O(1)$ for some constant.
 
 To prove the runtime of $T(n)$ I want to define two additional sequences $L(n)$ and $U(n)$ such that $L(2) = L(3) = 1 = U(2) = U(3)$ and that
-$$L(n) = L\left (\frac{n}{2}\right ) + O(1) \mbox{ and } U(n) = U\left (\frac{3k}{4} \right ) + O(1).$$
+$$L(n) = L\left (\frac{n}{2}\right ) + O(1) \mbox{ and } U(n) = U\left (\frac{3n}{4} \right ) + O(1).$$
 By masters theorem we have that $L(n) = \Theta(\log(n))$ and $U(n) = \Theta(\log(n))$.
 
-I will show by induction that
-$$L(n) \leq T(n) \leq U(n).$$
-giving that $T(n) = \Theta(\log(n))$.
+> [!important] Induction 
+> I will show by induction that
+> $$L(n) \leq T(n) \leq U(n).$$
+> giving that $T(n) = \Theta(\log(n))$.
 
 ### Base case
 
