@@ -110,3 +110,5 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Quick sort]]
 - [[Sorting problem]]
 - [[Pseudocode]]
+- [[Akra–Bazzi method]]
+- [[Recursion tree method]]
