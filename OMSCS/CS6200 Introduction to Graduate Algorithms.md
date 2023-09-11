@@ -23,3 +23,5 @@ This course is a graduate-level course in the design and analysis of algorithms.
 - [[Week 2 - Shortest Paths]]
 - [[Week 3 - Fast Integer multiplication]]
 - [[Week 3 - Linear-Time Median]]
+- [[Week 3 - Homework 2 (unassessed) ]]
+- [[Week 3 - Solving Recurrences]]

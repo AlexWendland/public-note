@@ -61,14 +61,16 @@ It takes $O(n)$ time to check if $p$ is good and if we kept randomly drawing ele
 $$\mathbb{E}(\mbox{draws untill } p \mbox{ is good}) = 2.$$
 Therefore this algorithm has expected runtime of $2n$ - though this is not [[Big-O notation|worst case run time]]. 
 
-### Recursive piviot
+### Recursive pivot
 
 Instead of finding a median of $A$ we could instead aim for a median of a "representative sample".
 
 > [!info] Trick
 > Divide $A$ into sets of 5 and find the median of each of these sets. Call this set $S$. Then find the median of the set $S$.
 
+Let $G_i$ be the sets of size $5$ and $1 \leq i \leq \frac{n}{5}$ (assume $n$ is a multiple of $5$). Then the median $m_i$ of $G_i$ each have 2 elements less than $m_1$ and 2 elements greater than $m_i$. Therefore the median of $S = \left \{m_i \vert 1 \leq i \leq \frac{n}{5} \right \}$  $p$ has $\frac{3n}{10}$ less than or equal to it and $\frac{3n}{10}$ elements greater or equal to it. 
 
+Which gives $\vert A_{>p} \vert \leq \frac{7n}{10}$ and $\vert A_{<p} \vert \leq \frac{7n}{10}$. This gives that $m$ is a good pivot from the definition.
 
 ```pseudocode
 FastSelect(A,k):
@@ -102,3 +104,13 @@ The last step of the algorithm takes at most $T\left (\frac{3n}{4}\right ) + O(1
 Combining this all together we have 
 $$T(n) = T\left (\frac{3n}{4}\right ) + T\left ( \frac{n}{5}\right ) + O(n) + O(n) + O(1) = T\left (\frac{3n}{4}\right ) + T\left ( \frac{n}{5}\right ) + O(1).$$
 As $\frac{3}{4} + \frac{1}{5} < 1$ we have that $T(n) = O(n)$.
+
+> [!Note] Why is this true?
+> I don't know, but this looks like it could be solved using [[Akra–Bazzi method]] or [[Recursion tree method]].
+
+## Further questions
+
+> [!question] Change 5 in the analysis
+> What happens to the run time if we switch out 5 for 3 or 7 in the analysis of this algorithm?
+
+
