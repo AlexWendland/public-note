@@ -38,3 +38,14 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 > [!question] 2.5 Solving recurrence
 > Lots of practice problems.
 
+**Divide and Conquer (Chapter 2)**
+
+2.4, 2.10, 2.12, 2.15, 2.16-2.20
+
+2.22 (you should come up with two solutions: a straightforward Median of medians application and a "merging" approach.)
+
+2.23 (part (a) should follow using a D&C standard, part (b) is more demanding)
+
+2.27-2.28 (if you are curious about further extensions of the Fast Multiplication Algorithm)
+
+2.32 (a very nice application of D&C in a geometric setting, this problem is harder and its runtime analysis is above what we had covered in class so far)
