@@ -32,9 +32,17 @@ chatgpt: false
 >[!Note] We can assume $k$ is a power of 2.
 >Let $k = 2^a$. As $S$ can be divided into $2^a$ pieces we can also assume $\vert S \vert = 2^a \cdot b$. 
 
-Broadly the algorithm will follow these steps. First calculate the median $m$ of $S$. If $k = 2$ return $m$. Otherwise partition the set into
+The algorithm will follow these steps. First calculate the median $m$ of $S$ using the median of medians approach laid out in the lectures.
+
+**Base Case:** If $k = 2$ return $m$. 
+
+**Induction Case:** Otherwise partition the set into
 $$S_{\leq m} = \{s \in S \vert s \leq m\} \mbox{ and } S_{>m} = \{s \in S \vert s > m\}.$$
 then run the algorithm again on $S_{\leq m}$ and $S_{>m}$ looking for the $k/2 = 2^{a-1}$-quartiles. Let $s_1', \ldots, s_{k/2-1}'$ be returned from $S_{\leq m}$ and $s_{k/2 + 1}', \ldots, s_{k-1}'$ be returned from $S_{>m}$. Then set $s_{k/2}' = m$ and return $s_1', \ldots, s_{k/2-1}', s_{k/2}', s_{k/2 + 1}', \ldots, s_{k-1}'$.
+
+## Correctness
+
+
 
 ## Run time
 
