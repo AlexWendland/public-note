@@ -10,7 +10,7 @@ course: "[[CS6200 Introduction to Graduate Algorithms]]"
 week: 3
 chatgpt: false
 ---
-# Week 2 - Homework 1 (assessed)
+# Week 3 - Homework 2 (assessed)
 
 >[!question] Question 
 >Brito's youngest kid is learning the natural numbers. To practice, he writes a list of natural numbers, starting from the number $1$. In doing so, he repeats exactly one, resulting in a list $A$ of $N$ numbers, such that there is exactly one repeated, and $A$ is non decreasingly sorted. Help Brito figure out which number is repeated.
