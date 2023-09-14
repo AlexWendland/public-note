@@ -25,4 +25,5 @@ chatgpt: false
 >
 >Design a Divide & Conquer algorithm to solve this problem.  Describe your algorithm in words (no pseudocode!) and justify its correctness. State and justify its runtime.  Faster (and correct) in asymptotic Big O notation is worth more credit.
 
-## 
+## Algorithm
+
