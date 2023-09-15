@@ -79,7 +79,9 @@ Therefore the output from the algorithm for $k = 2^a$ is correct and by inductio
 
 ## Run time
 
-Let $T(n, k)$ be the runtime of our algorithm.
+>[!important] We will find the run time of this algorithm is $O(\log(k)n)$. 
+
+To prove this let $T(n, k)$ be the runtime of our algorithm.
 
 To calculate the median takes $O(n)$ using the median of medians algorithm.
 
@@ -89,14 +91,15 @@ To partition the set into $S_{\leq m}$ and $S_{> m}$ takes $O(n)$ as we need to 
 
 Lastly running our algorithm on $S_{\leq m}$ and $S_{> m}$ takes $2T\left (\frac{n}{2}, \frac{k}{2}\right )$ giving us running time
 $$T(n,k) = 2T\left (\frac{n}{2}, \frac{k}{2}\right ) + O(n).$$
-Lets replace $O(n)$ with its definition then we have
+Lets replace $O(n)$ with its definition for some $c > 0$ then we have
 $$T(n,k) \leq 2 \ T\left (\frac{n}{2}, \frac{k}{2}\right ) + cn.$$
 As $k = 2^a$ lets keep reapplying this inequality $a = \log_2(k)$ times.
 $$\begin{align*}T(n,k) & \leq 2\left [2T\left (\frac{n}{2^2}, \frac{k}{2^2}\right ) + \frac{cn}{2}\right ] + cn\\ & \leq 2^2 \ T\left (\frac{n}{2^2}, \frac{k}{2^2}\right ) + 2cn\\
 & \leq 2^2\left [ 2T\left (\frac{n}{2^3}, \frac{k}{2^3}\right ) + \frac{cn}{2^2} \right ] + 2cn\\
 & \leq 2^3 \ T \left (\frac{n}{2^3}, \frac{k}{2^3}\right ) + 3cn\\
 & \cdots\\
-& \leq 2^{a - 1} \ T(2b, 2) \ + \ (a-1)cn\\
+& \leq 2^{a - 1} \ T(2b, 2) \ + \ (a-1)cn & \mbox{if we continue } (a-1) \mbox{ times}\\
 & \leq 2^{a} b + (a - 1)cn & \mbox{from the base case}\\
-& \leq c\log(k)n + n - c n & \mbox{as } b = \frac{n}{2^a} \mbox{ with } a = \log_2(k)\end{align*}$$
-which is dominated by $\log(k)n$ giving $T(n,k) = O(\log(k)n)$.
+& \leq c\log_2(k)n + n - c n & \mbox{as } b = \frac{n}{2^a} \mbox{ with } a = \log_2(k)\\
+& \leq (c+1)\log_2(k)n & \mbox{as } c > 0 \mbox{ and } \log_2(k) \geq 1\end{align*}$$
+giving $T(n,k) = O(\log(k)n)$.
