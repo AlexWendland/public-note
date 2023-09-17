@@ -10,3 +10,6 @@ chatgpt: false
 ---
 # Introduction to Statistical Learning in Python
 
+Book: statlearning
+Github: https://github.com/bomtall/islp
+
