@@ -18,7 +18,20 @@ Github: https://github.com/bomtall/islp
 
 ## Difference between Prediction and Inference
 
-[[Prediction]] - Is guessing what the variable will be in the future. I.e. given a function $f : X \rightarrow Y$ you have a guess at what of $f(x)$ would be. 
+Given a setting where $Y = f(X) + \epsilon$ then there.
 
-[[Inference]] - This is the process of understanding the relationship between relations.
+[[Prediction]] - Is building a blackbox $\hat{f}$  such that $\hat{f}(x)$ is close to $f(x)$ on a subdomain $\hat{X} \subset X$. For notation we have $\hat{Y} = \hat{f}(X)$.
 
+[[Inference]] - This is the process of understanding the true form of $f$.
+
+Reducable error - The difference between $\hat{f}(x) - f(x)$. 
+
+Irreducable error - The $\epsilon$ coming from measurement, inate randomness, ....
+
+## Why is irreducible error larger than zero?
+
+$$\mathbb{E}[(Y - \hat{Y})^2] = E(f(X) + \epsilon - \hat{f}(X)^2) = [f(X) - \hat{f}(X)] + Var(\epsilon)$$
+With the following assumptions.
+
+- $Y = f(X) + \epsilon$
+- 
