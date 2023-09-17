@@ -24,9 +24,11 @@ Given a setting where $Y = f(X) + \epsilon$ then there.
 
 [[Inference]] - This is the process of understanding the true form of $f$.
 
-Reducable error - The difference between $\hat{f}(x) - f(x)$. 
+## Accuracy
 
-Irreducable error - The $\epsilon$ coming from measurement, inate randomness, ....
+Reducible error - The difference between $\hat{f}(x) - f(x)$. 
+
+Irreducible error - The $\epsilon$ coming from measurement, innate randomness, ....
 
 ## Why is irreducible error larger than zero?
 
@@ -34,4 +36,14 @@ $$\mathbb{E}[(Y - \hat{Y})^2] = E(f(X) + \epsilon - \hat{f}(X)^2) = [f(X) - \hat
 With the following assumptions.
 
 - $Y = f(X) + \epsilon$
+- $\hat{Y} = \hat{f}(X)$
+- $\mathbb{E}(\hat{Y} - Y)$
+- $\mathbb{E}[\epsilon] = 0$
+
+Definition of mean squared error here:
+
+$$MSE(y, \hat{f}(x)) = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{f}(x_i))^2.$$
+## What is bias?
+
+
 - 
