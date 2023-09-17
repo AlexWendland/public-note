@@ -45,5 +45,7 @@ Definition of mean squared error here:
 $$MSE(y, \hat{f}(x)) = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{f}(x_i))^2.$$
 ## What is bias?
 
+How good can your model be given it is of a certain form.
+
 
 - 
