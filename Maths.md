@@ -47,3 +47,8 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Monotonicity]]
 - [[Prediction]]
 - [[Inference]]
+- [[Fast Fourier Transform]]
+- [[Complex Numbers]]
+- [[Polar Coordinates]]
+- [[Euler's formula]]
+- [[Roots of unity]]
