@@ -28,3 +28,18 @@ $$\begin{align*} T(n) \leq & cn \left ( \sum_{i=0}^{\log_2(n)-1} \left ( \frac{4
 \leq & O(n) O(n) + O(n^2)\\
 \leq & O(n^2).\end{align*}$$
 ## Geometric Series
+
+For constant $\alpha > 0$
+$$\sum_{j=0}^k \alpha^k = 1 + \alpha + \alpha^2 + \ldots + \alpha^k = \begin{cases} O(\alpha^k) & \mbox{if } \alpha > 1\\ O(k) & \mbox{if } \alpha = 1\\ O(1) & \mbox{if } \alpha < 1\end{cases}.$$
+
+## General case
+
+Let $a > 0$, $b > 1$, and suppose we have
+
+$$T(n) = a T\left (\frac{n}{b}\right ) + O(n).$$
+This expands out to be
+$$T(n) = cn\left [ 1 + \left(\frac{a}{b}\right) + \left(\frac{a}{b}\right)^2 + \ldots + \left(\frac{a}{b}\right)^{\log_b(n) - 1}\right] + a^{\log_b(n)}T(1).$$
+which we can solve generically as
+$$T(n) = \begin{cases} O(n^{\log_b(a)}) & \mbox{if } a>b\\ O(n\log(n)) & \mbox{if } a = b\\ O(n) & \mbox{if } a < b\end{cases}.$$
+
+To generically solve this look into [[Masters theorem]].
