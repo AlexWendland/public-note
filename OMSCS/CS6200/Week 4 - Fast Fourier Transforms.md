@@ -152,7 +152,17 @@ when $x_j = \omega_n^j$ we denote this as $A = M_n(\omega_n) a$. So computing th
 >$$M_n(\omega_n)^{-1} = \frac{1}{n} M_n(\omega_n^{-1}) = \frac{1}{n} M_n(\omega_n^{n-1})$$
 
 ### Proof
+Lets examine
+$$M_n(\omega_n^{-1}) M_n(\omega_n) := \{m_{i,j}\}.$$
+For these terms we have 
+$$ \begin{align*} m_{j,k} & = \left( 1, \omega_n^{-j}, \omega_n^{-2j}, \ldots, \omega_n^{-(n-1)j} \right ) \cdot \left( 1, \omega_n^{k}, \omega_n^{2k}, \ldots, \omega_n^{(n-1)k} \right )\\
+& = \sum_{i=0}^{n-1} \omega_n^{i(j-k)}\\
+& = \sum_{i=0}^{n-1} \left ( \omega_n^{j-k} \right )^n
+\end{align*}$$
+Which splits into cases if $j = k$ then $\omega_n^{j-k} = 1$ and we have this sum is $n$. Whereas if $j \not = k$ from the [[Lemma - Sum of roots of unity|sum of roots of unity]] we have this sum is 0. Therefore
+$$ M_n(\omega_n^{-1}) M_n(\omega_n) = n I_n$$
+giving us the desired result.
 
-
+$\square$ 
 
 Now the problem once again is of the form $n a = M_n(\omega_n^{n-1}) A$ we can use the [[Fast Fourier Transform|FFT]] algorithm detailed before to solve the inverse of the [[Fast Fourier Transform|FFT]]. 
