@@ -52,3 +52,5 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Polar Coordinates]]
 - [[Euler's formula]]
 - [[Roots of unity]]
+- [[Linear Algebra]]
+- [[Matrix]]
