@@ -1,5 +1,7 @@
 ---
-aliases: 
+aliases:
+  - roots of unity
+  - root of unity
 type: str
 publish: false
 created: 2023-09-18

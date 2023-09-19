@@ -97,7 +97,7 @@ which by masters theorem is $O(n\log(n))$.
 
 ## Complex numbers
 
-To achieve this we will need to look at the polynomials in the [[Complex Numbers|complex numbers]].  
+To achieve this we will need to look at the polynomials in the [[Complex Numbers|complex numbers]], which we denote as $\mathbb{C}$.  
 
 To work with complex numbers remember we set $i = \sqrt{-1}$ and think of them as sums $a + bi$. 
 
@@ -107,6 +107,31 @@ This can also be summaries using [[Euler's formula]] by saying
 $$a + bi = r(\cos{\theta} + i \sin(\theta)) = r e^{i\theta}.$$
 ## Roots of unity
 
+The $k$'th [[Roots of unity|roots of unity]] are those $z \in \mathbb{C}$  such that $z^k = 1$. For $k=2$ these are simply $1, -1$ however for $k=4$ they are $1, -1, i, -i$.
 
+More generically these are $e^{\frac{j2\pi}{k} i}$ for $0 \leq j < k$. In the notation of this course set $\omega_k = e^{\frac{2 \pi}{k} i}$ and express the roots of unity as $\omega_k^j$ for $0 \leq j <k$.
 
+> [!note] Properties of use
+> When $k = 2n$ is even note that $\omega_k^2 = \omega_n$ as well as $\omega_k^j = - \omega_k^{j + n}$ as $\omega_k^n = -1$.
 
+This means that even powers of the [[Roots of unity|roots of unity]] are perfect choices for our $x_i$ in the [[Fast Fourier Transform|fast Fourier transform]] algorithm. 
+
+## Pseudocode for FFT
+
+``` pseudocode
+FFT(a, w):
+	input: coefficents a = (a_0, a_1, ..., a_{n-1}) for polynomial A(x) where 
+		n is a power of 2 and w is a nth root of unity.
+	output: A(w^0), A(w), A(w^2), ...., A(w^{n-1})
+	if n = 1
+		return A(1)
+	Let A_even = (a_0, a_2, ..., a_n-2) and A_odd = (a_1, a_3, ..., a_{n-1})
+	A_even(w^0), A_even(w^2), ..., A_even(w^{n-2}) = FFT(A_even, w^2)
+	A_odd(w^0), A_odd(w^2), ..., A_odd(w^{n-2}) = FFT(A_odd, w^2)
+	Set:
+	A(w^j) = A_even(w^2j) + w^j A_odd(w^2j)
+	A(w^{n/2 + j}) = A_even(w^2j) - w^j A_odd(w^2j)
+	Return (A(w^0), A(w^1), ..., A(w^{n-1}))
+```
+
+If $T(n)$ is the run time of our algorithm - lets analyse this. The steps to split up the polynomial and glue the answers back together takes $O(n)$ for each of them. Then we make two recursive calls that both take $T(n/2)$ so the run time is $T(n) = 2T(n/2) + O(n)$ like we said above.  
