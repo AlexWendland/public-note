@@ -1,6 +1,6 @@
 ---
-aliases: []
-type: lecture
+aliases: 
+type: exercise
 publish: false
 created: 2023-09-11
 last_edited: 2023-09-11
