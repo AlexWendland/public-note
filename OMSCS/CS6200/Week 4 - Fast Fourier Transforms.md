@@ -135,3 +135,24 @@ FFT(a, w):
 ```
 
 If $T(n)$ is the run time of our algorithm - lets analyse this. The steps to split up the polynomial and glue the answers back together takes $O(n)$ for each of them. Then we make two recursive calls that both take $T(n/2)$ so the run time is $T(n) = 2T(n/2) + O(n)$ like we said above.  
+
+> [!question] How do we go backwards?
+
+## Linear algebra of FFT
+
+The [[Linear Algebra|linear algebra]] of what we are doing here is important to how we compute the inverse. 
+
+For a point $x_j$ we have 
+$$A(x_j) = \sum_{i=0}^{n-1} a_i x_j^i = (1, x_j, \ldots, x_j^{n-1}) \cdot (a_0, a_1, \ldots, a_{n-1}).$$
+So to compute it for points $x_0, \ldots, x_{n-1}$ we do this via [[Matrix|matrices]] using the following form
+$$ \left [ \begin{array} \ A(x_0)\\ A(x_1)\\ \vdots \\ A(x_{n-1}) \end{array} \right] = \left [ \begin{array} \ 1 & x_0 & x_0^2 & \cdots & x_0^{n-1}\\ 1 & x_1 & x_1^2 & \cdots & x_1^{n-1}\\ \vdots & \vdots & \vdots & \ddots & \vdots\\ 1 & x_{n-1} & x_{n-1}^2 & \cdots & x_{n-1}^{n-1} \end{array} \right ]  \left [ \begin{array} \ a_0 \\ a_1\\ \vdots \\ a_{n-1} \end{array} \right]$$
+when $x_j = \omega_n^j$ we denote this as $A = M_n(\omega_n) a$. So computing the inverse of the [[Fast Fourier Transform|FFT]] is simply calculating $M_n(\omega_n)^{-1} A = a$, 
+
+>[!important] Lemma
+>$$M_n(\omega_n)^{-1} = \frac{1}{n} M_n(\omega_n^{-1}) = \frac{1}{n} M_n(\omega_n^{n-1})$$
+
+### Proof
+
+
+
+Now the problem once again is of the form $n a = M_n(\omega_n^{n-1}) A$ we can use the [[Fast Fourier Transform|FFT]] algorithm detailed before to solve the inverse of the [[Fast Fourier Transform|FFT]]. 
