@@ -166,3 +166,21 @@ giving us the desired result.
 $\square$ 
 
 Now the problem once again is of the form $n a = M_n(\omega_n^{n-1}) A$ we can use the [[Fast Fourier Transform|FFT]] algorithm detailed before to solve the inverse of the [[Fast Fourier Transform|FFT]]. 
+
+## Pseudocode for Polynomial Multiply
+
+``` pseudocode
+FFT(a, w):
+	input: coefficents a = (a_0, a_1, ..., a_{n-1}) for polynomial A(x) and
+		coefficents b = (b_0, b_1, ..., b_{n-1}) for polynomial B(x)
+	output: coefficents c = (c_0, c_1, ..., c_{2n-2}) for polynomial C(x) =
+		A(x) B(x)
+	Let w_{2n} be the first 2n'th root of unity
+	(r_0, r_1, ..., r_{2n - 1}) = FFT(a, w_{2n})
+	(s_0, s_1, ..., s_{2n - 1}) = FFT(b, w_{2n})
+	for j = 0 -> 2n-1
+		t_j = r_j x s_j
+	(c_0, c_1, ..., c_2n-1) = 1/2n FFT(t, w_{2n}^{2n-1})
+```
+
+The running time of this algorithm is $O(2n\log(2n)) = O(n \log(n))$ for the three FFT steps. then $O(n)$ for calculating the entries for $t_j$ giving that it runs in $O(n\log(n))$.
