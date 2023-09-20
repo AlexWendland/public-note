@@ -15,15 +15,21 @@ chatgpt: false
 > [!question] From [[Week 3 - Linear-Time Median]]  change 5 in the analysis
 > What happens to the run time if we switch out 5 for 3 or 7 in the analysis of this algorithm?
 
-
+3 leads to $O(n\log(n))$ whereas 7 is still $O(n)$.
 
 >[!question] Smallest missing natural number
 >Design an $O(\log(n))$ algorithm to find the smallest missing natural number in a given sorted array. The given array only has natural numbers. For example, the smallest missing natural number from $A = \{3, 4, 5\}$ is $1$ and from $A = \{1, 3, 4, 6\}$ is $2$.
+
+
+
+---
 
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 
 > [!question] 4.11 Length of the shortest cycle
 > Give an algorithm that takes as input a directed graph with positive edge lengths, and returns the length of the shortest cycle in the graph (if the graph is acyclic, it should say so). Your algorithm should take time at most $O(\vert V \vert^3)$.
+
+
 
 >[!question] 4.21 Currency exchange
 >Shortest path algorithms can be applied in currency trading. Let $c_1, c_2, \ldots , c_n$ be various currencies; for instance, $c_1$ might be dollars, $c_2$ pounds, and $c_3$ lire. For any two currencies $c_i$ and $c_j$ , there is an exchange rate $r_{i,j}$ ; this means that you can purchase $r_{i,j}$ units of currency $c_j$ in exchange for one unit of $c_i$. These exchange rates satisfy the condition that $r_{i,j} \cdot r_{j,i} < 1$, so that if you start with a unit of currency $c_i$, change it into currency $c_j$ and then convert back to currency $c_i$, you end up with less than one unit of currency $c_i$ (the difference is the cost of the transaction). 
