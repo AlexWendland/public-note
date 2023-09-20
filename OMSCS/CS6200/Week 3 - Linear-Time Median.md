@@ -108,6 +108,26 @@ As $\frac{3}{4} + \frac{1}{5} < 1$ we have that $T(n) = O(n)$.
 > [!Note] Why is this true?
 > I don't know, but this looks like it could be solved using [[Akra–Bazzi method]] or [[Recursion tree method]].
 
+### Useful discussion about this
+
+Let me see if I can help explain this. I find the best way to solve recurrences with multiple sub-problems is to think in terms of the "recursive tree".
+
+For the recurrence $T(n) = T\left(\frac{3n}{4}\right) + T\left(\frac{n}{5}\right) + O(n)$ what do we know? We know there is $O(n)$ work at each level, and that we generate two recursive calls, each with a shrinking portion of $n$. At the first level of recursion we have two sub-problems, one of size $\frac{3n}{4}$, and a second of size $\frac{n}{5}$​, so the total work at that level is ${n}{0.95}$. What about the second level down? Let's visualize it:
+
+![[Pasted image 20230920085450.png]]
+
+And the work at this second level? Sum up the four leaves, and you get:
+$$0.75^2n + 2*0.2*0.75n + 0.2^2n = 0.9025n.$$
+So the amount of work at each level is shrinking! This tells us that the work at the top level, O(n), dominates.
+
+Now, what happens with the recurrence $T(n) = T\left(\frac{3n}{4}\right) + T\left(\frac{n}{3}\right) + O(n)$? Draw the tree, do the math:
+
+![[Pasted image 20230920085511.png]]
+
+Now we see that at each level the work increases, so we no longer have a linear overall run time. The work at the bottom of the recursive stack will dominate the overall runtime.
+
+What's the intuition behind this? The overall number of operations at each level is bounded by the total n at that level. As you make successive recursive calls, does n shrink? does it grow? or is it held constant?
+
 ## Further questions
 
 > [!question] Change 5 in the analysis
@@ -116,4 +136,6 @@ As $\frac{3}{4} + \frac{1}{5} < 1$ we have that $T(n) = O(n)$.
 If we use $7$ instead of $5$ the run time is the same.
 $$T(n) = T\left(\frac{9n}{14}\right) + T(\frac{n}{7}) + O(n).$$
 If we use $3$ instead of 5 we get
-$$T(n) = T\left(\frac{4n}{6}\right) + T\left(\frac{n}{3}\right) + O(n).$$
+$$T(n) = T\left(\frac{4n}{6}\right) + T\left(\frac{n}{3}\right) + O(n) = O(n\log(n)).$$
+
+
