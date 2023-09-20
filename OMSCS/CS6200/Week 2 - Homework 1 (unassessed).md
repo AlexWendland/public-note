@@ -467,9 +467,9 @@ $$A(i,j) = \begin{cases} 2 + A(i+1, j-1) & \mbox{if } a_i = a_j\\ \max\{A(i+1,j)
 >[!question] 6.7 Palindrome *substring* (altered)
 >Given a sequence $a_1, a_2, \ldots, a_n$ devise an algorithm that returns the length of the longest [[Palindrome|palindromic]] [[Substring|substring]]. Its running time should be $O(n)$.
 
-Let $L(i,j)$ be true if $a_i \ldots a_j$ is a palindrome.
+Let $L(i)$ be the longest palindrome in $a_1 \ldots a_i$ ending in $a_i$.
 
-Base case: Set $L(0) = 0$.
+Base case: Set $L(1) = 1$.
 
 [[Recursion]] step: Let
 
