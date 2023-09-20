@@ -68,9 +68,9 @@ Instead of finding a median of $A$ we could instead aim for a median of a "repre
 > [!info] Trick
 > Divide $A$ into sets of 5 and find the median of each of these sets. Call this set $S$. Then find the median of the set $S$.
 
-Let $G_i$ be the sets of size $5$ and $1 \leq i \leq \frac{n}{5}$ (assume $n$ is a multiple of $5$). Then the median $m_i$ of $G_i$ each have 2 elements less than $m_1$ and 2 elements greater than $m_i$. Therefore the median of $S = \left \{m_i \vert 1 \leq i \leq \frac{n}{5} \right \}$  $p$ has $\frac{3n}{10}$ less than or equal to it and $\frac{3n}{10}$ elements greater or equal to it. 
+Let $G_i$ be the sets of size $5$ and $1 \leq i \leq \frac{n}{5}$ (assume $n$ is a multiple of $5$). Then the median $m_i$ of $G_i$ each have 2 elements less than $m_i$ and 2 elements greater than $m_i$. Therefore the median of $S = \left \{m_i \vert 1 \leq i \leq \frac{n}{5} \right \}$  $p$ has $\frac{3n}{10}$ less than or equal to it and $\frac{3n}{10}$ elements greater or equal to it. 
 
-Which gives $\vert A_{>p} \vert \leq \frac{7n}{10}$ and $\vert A_{<p} \vert \leq \frac{7n}{10}$. This gives that $m$ is a good pivot from the definition.
+Which gives $\vert A_{>p} \vert \leq \frac{7n}{10}$ and $\vert A_{<p} \vert \leq \frac{7n}{10}$. This gives that $p$ is a good pivot from the definition.
 
 ```pseudocode
 FastSelect(A,k):
@@ -102,7 +102,7 @@ Partitioning the set takes $O(n)$ time.
 The last step of the algorithm takes at most $T\left (\frac{3n}{4}\right ) + O(1)$ from the assumption about the good pivot.
 
 Combining this all together we have 
-$$T(n) = T\left (\frac{3n}{4}\right ) + T\left ( \frac{n}{5}\right ) + O(n) + O(n) + O(1) = T\left (\frac{3n}{4}\right ) + T\left ( \frac{n}{5}\right ) + O(1).$$
+$$T(n) = T\left (\frac{3n}{4}\right ) + T\left ( \frac{n}{5}\right ) + O(n) + O(n) + O(1) = T\left (\frac{3n}{4}\right ) + T\left ( \frac{n}{5}\right ) + O(n).$$
 As $\frac{3}{4} + \frac{1}{5} < 1$ we have that $T(n) = O(n)$.
 
 > [!Note] Why is this true?
@@ -113,4 +113,7 @@ As $\frac{3}{4} + \frac{1}{5} < 1$ we have that $T(n) = O(n)$.
 > [!question] Change 5 in the analysis
 > What happens to the run time if we switch out 5 for 3 or 7 in the analysis of this algorithm?
 
-
+If we use $7$ instead of $5$ the run time is the same.
+$$T(n) = T\left(\frac{9n}{14}\right) + T(\frac{n}{7}) + O(n).$$
+If we use $3$ instead of 5 we get
+$$T(n) = T\left(\frac{4n}{6}\right) + T\left(\frac{n}{3}\right) + O(n).$$
