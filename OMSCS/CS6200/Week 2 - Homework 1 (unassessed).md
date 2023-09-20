@@ -459,7 +459,7 @@ Algorithm:
 Define an array $A(i,j)$ which will be the longest Palindromic subsequence in $a_i, a_{i+1}, \ldots, a_{j}$.
 
 Base case: $A(i,i) = 0$ and
-$$A(i,i+1) = \begin{cases} 2 & \mbox{if } a_i = a_{i+1}\\ 0 & \mbox{otherwise}\end{cases}.$$
+$$A(i,i+1) = \begin{cases} 2 & \mbox{if } a_i = a_{i+1}\\ 1 & \mbox{otherwise}\end{cases}.$$
 
 Iterative step: Recursively calculate $A(i,j)$ by increasing $j-i$. Set
 $$A(i,j) = \begin{cases} 2 + A(i+1, j-1) & \mbox{if } a_i = a_j\\ \max\{A(i+1,j), A(i,j-1)\} & \mbox{otherwise}\end{cases}.$$
