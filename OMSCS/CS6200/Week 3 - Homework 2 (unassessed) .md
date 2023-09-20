@@ -15,6 +15,8 @@ chatgpt: false
 > [!question] From [[Week 3 - Linear-Time Median]]  change 5 in the analysis
 > What happens to the run time if we switch out 5 for 3 or 7 in the analysis of this algorithm?
 
+
+
 >[!question] Smallest missing natural number
 >Design an $O(\log(n))$ algorithm to find the smallest missing natural number in a given sorted array. The given array only has natural numbers. For example, the smallest missing natural number from $A = \{3, 4, 5\}$ is $1$ and from $A = \{1, 3, 4, 6\}$ is $2$.
 
