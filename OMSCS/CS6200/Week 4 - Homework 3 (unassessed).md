@@ -17,6 +17,9 @@ chatgpt: false
 > a. What is $A_{odd}(y)$ and $A_{even}(y)?
 > b. What is the appropriate root of unity to use?
 
+a. $A_{even}(x) = 1 - 2x$ and $A_{odd} = -2 + x$.
+b. $i$
+
 >[!question] FFT as a black box
 >Design an algorithm that takes as input a set $S = \{s_1, s_2, \ldots, s_n\}$ of distinct natural numbers such that $0 \leq s_i \leq 100n$, and a natural number $N$, and outputs True if the equation $s_i + s_j + s_k = N$ has at least one solution, and return False otherwise. There is a simple solution that runs in $O(n^3)$ time (can you find an $O(n^2)$ solution?), but you can improve on these times using FFT!
 >
@@ -26,6 +29,8 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 
 > [!question] Problem 2.7 Sum and product of roots of unity
 > What is the sum of the $n$'th roots of unity? What is their product if $n$ is odd? If $n$ is even?
+
+
 
 >[!question] Problems 2.8 Practice with the fast Fourier transform.
 >a. What is the FFT of $(1,0,0,0)$? What is the appropiate value of $\omega$ in this case? And which sequence is $(1,0,0,0)$ the FFT?
