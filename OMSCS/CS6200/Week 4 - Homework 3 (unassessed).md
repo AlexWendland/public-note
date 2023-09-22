@@ -36,6 +36,34 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 >a. What is the FFT of $(1,0,0,0)$? What is the appropiate value of $\omega$ in this case? And which sequence is $(1,0,0,0)$ the FFT?
 >b. Repeat for $(1,0,1,-1)$.
 
+## a) FFT of (1,0,0,0) = 1
+
+$A^1_{even} = (1, 0)$ and $A^1_{odd} = (0,0)$ 
+
+### FFT of (1,0)
+
+$A^2_{even} = (1)$ whereas $A^2_{odd}$ = (0) so FFT($A^2_{even}$, 1) = 1 and FFT($A^2_{odd}, 1) = 0$ so
+
+$A^1_{even}(1)$ = 1 + 0
+
+$A^1_{even}(-1) = 1 - 0$
+
+Giving $FFT(A^1_{even}, -1) = (1,1)$
+
+Similarly $FFT(A^1_{odd}, -1) = (0,0)$
+
+So $A(1) = 1 + 1 \cdot 0 = 1$ and $A(i) = 1 + i \cdot 0$  whereas $A(-1) = 1 - 1 \cdot 0 = 1$ and $A(-i) = 1 - i \cdot 0 = 1$.
+
+Giving $FFT(A, i) = (1,1,1,1)$ as expected.
+
+## b) FFT of (1,0,1,-1)
+
+
+
 >[!question] 2.9 (a) Practice with polynomial multiplication by FFT.
 >a. Suppose that you want to multiply the two polynomials $x + 1$ and $x^2 + 1$ using the FFT. Choose an appropriate power of two, find the FFT of the two sequences, multiply the results component wise, and compute the inverse FFT to get the final result.
 >b. Repeat for the pair of polynomials $1 + x + 2x^2$ and $2 + 3x$.
+
+a. $x+1 = (1, 1, 0, 0)$ and $x^2+1 = (1, 0, 1, 0)$ we will want to evaluate this around the 8'th roots of unity. 
+### FFT for $x + 1$
+
