@@ -45,6 +45,8 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 >[!question] 2.1 Practice Fast Multiplication
 >Use the divide-and-conquer integer multiplication algorithm to multiply the two binary integers 10011011 and 10111010.
 
+
+
 > [!question] 2.5 Solving recurrence
 > Lots of practice problems.
 

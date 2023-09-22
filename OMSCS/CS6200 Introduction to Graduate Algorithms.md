@@ -16,13 +16,15 @@ This course is a graduate-level course in the design and analysis of algorithms.
 
 - [[Week 1 - Dynamic Programming]]
 - [[Week 1 - Knapsack Problem]]
-- [[Week 2 - Chain Matrix Multiply]]## Links
-- [Central](https://www.omscentral.com/courses/introduction-to-graduate-algorithms/reviews)
-- [OMSCS page](https://omscs.gatech.edu/cs-6515-intro-graduate-algorithms)
-- [Course textbook](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf)
+- [[Week 2 - Chain Matrix Multiply]]
 - [[Week 2 - Shortest Paths]]
 - [[Week 3 - Fast Integer multiplication]]
 - [[Week 3 - Linear-Time Median]]
-- [[Week 3 - Homework 2 (unassessed) ]]
 - [[Week 3 - Solving Recurrences]]
 - [[Week 4 - Fast Fourier Transforms]]
+
+## Links
+
+- [Central](https://www.omscentral.com/courses/introduction-to-graduate-algorithms/reviews)
+- [OMSCS page](https://omscs.gatech.edu/cs-6515-intro-graduate-algorithms)
+- [Course textbook](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf)
