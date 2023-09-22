@@ -25,8 +25,7 @@ b. $i$
 >
 > Example: For $N = 6$ and $S = \{ 1, 2, 3, 5, 10 \}$ your design should output True since $1+2+3 = 6$. For $N = 20$ and the same set $S$ the answer should be True again since $5+5+10 = 20$ (yes, you can have $s_i = s_j = s_k$) but for $N = 19$ the answer is False since no three numbers add up to $19$.
 
-
-
+This is really big brain stuff ... use polynomial exponents in place for integer sums. 
 
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 
