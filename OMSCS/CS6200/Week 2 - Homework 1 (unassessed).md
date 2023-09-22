@@ -467,7 +467,7 @@ $$A(i,j) = \begin{cases} 2 + A(i+1, j-1) & \mbox{if } a_i = a_j\\ \max\{A(i+1,j)
 >[!question] 6.7 Palindrome *substring* (altered)
 >Given a sequence $a_1, a_2, \ldots, a_n$ devise an algorithm that returns the length of the longest [[Palindrome|palindromic]] [[Substring|substring]]. Its running time should be $O(n)$.
 
-
+Manacher's algorithm .. big brain shit.
 
 >[!question] 4.21 Currency exchange
 >Shortest path algorithms can be applied in currency trading. Let $c_1, c_2, \ldots , c_n$ be various currencies; for instance, $c_1$ might be dollars, $c_2$ pounds, and $c_3$ lire. For any two currencies $c_i$ and $c_j$ , there is an exchange rate $r_{i,j}$ ; this means that you can purchase $r_{i,j}$ units of currency $c_j$ in exchange for one unit of $c_i$. These exchange rates satisfy the condition that $r_{i,j} \cdot r_{j,i} < 1$, so that if you start with a unit of currency $c_i$, change it into currency $c_j$ and then convert back to currency $c_i$, you end up with less than one unit of currency $c_i$ (the difference is the cost of the transaction). 
@@ -478,6 +478,8 @@ $$A(i,j) = \begin{cases} 2 + A(i+1, j-1) & \mbox{if } a_i = a_j\\ \max\{A(i+1,j)
 >
 >(b) Give an efficient algorithm for detecting the presence of such an anomaly. Use the graph representation you found above.
 
+Duplicate in [[Week 3 - Homework 2 (unassessed)]]
+
 Dynamic Programming (Chapter 6)
 
 6.5
@@ -487,3 +489,5 @@ Dynamic Programming (Chapter 6)
 6.7, 6.9, 6.22 (hint included in the problem).
 
 **6.25-6.30** Note: These are a bit harder, but definitely nice problems.
+
+Duplicate in [[Week 3 - Homework 2 (unassessed)]]

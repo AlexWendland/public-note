@@ -40,15 +40,29 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 >
 >(b) Give an efficient algorithm for detecting the presence of such an anomaly. Use the graph representation you found above.
 
+
+
 >[!question] 2.1 Practice Fast Multiplication
 >Use the divide-and-conquer integer multiplication algorithm to multiply the two binary integers 10011011 and 10111010.
 
 > [!question] 2.5 Solving recurrence
 > Lots of practice problems.
 
-**Divide and Conquer (Chapter 2)**
+## Dynamic Programming (Chapter 6) - filtered
 
-2.4, 2.10, 2.12, 2.15, 2.16-2.20
+6.5
+
+**6.6** (this problem is like the Matrix Multiplication! A Y/N table should do it, but it may help to add a third dimension accounting for the symbol you wish to reduce to).
+
+6.7, 6.9, 6.22 (hint included in the problem).
+
+**6.25-6.30** Note: These are a bit harder, but definitely nice problems.
+
+## Divide and Conquer (Chapter 2)
+
+2.4 (recurrences), 2.10 (FFT), 2.12 (recurrences), 2.15 (strange ... skip?), 2.16 (hw 2), 2.17 (D&C) 2.18(theory), 2.19 (merge d&c), 2.20(Sorting algorithm)
+
+- Look into sorting algorithms more generally.
 
 2.22 (you should come up with two solutions: a straightforward Median of medians application and a "merging" approach.)
 
