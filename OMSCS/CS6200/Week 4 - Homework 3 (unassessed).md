@@ -27,12 +27,15 @@ b. $i$
 
 
 
+
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 
 > [!question] Problem 2.7 Sum and product of roots of unity
 > What is the sum of the $n$'th roots of unity? What is their product if $n$ is odd? If $n$ is even?
 
+![[Sum of roots of unity|sum of roots of unity]]
 
+![[Product of roots of unity]]
 
 >[!question] Problems 2.8 Practice with the fast Fourier transform.
 >a. What is the FFT of $(1,0,0,0)$? What is the appropiate value of $\omega$ in this case? And which sequence is $(1,0,0,0)$ the FFT?
@@ -174,7 +177,7 @@ $C^0(-1) = 20 + 2 = 22$
 $C^1 = C_{odd} = (-5 -i, -5 + i)$
 
 $C^1(1) = -10$
-$C^1(-1) = -2i$
+$C^1(-1) = -2i$ <- think this should be 2i ... don't know why it isn't.
 
 $C(1) = 18 - 10 = 8$
 $C(i) = 24$

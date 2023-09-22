@@ -54,6 +54,7 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Roots of unity]]
 - [[Linear Algebra]]
 - [[Matrix]]
-- [[Lemma - Sum of roots of unity]]
+- [[Sum of roots of unity]]
 - [[Fourier Matrix]]
 - [[Lemma - Inverse of the Fourier matrix]]
+- [[Product of roots of unity]]
