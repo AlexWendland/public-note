@@ -40,6 +40,17 @@ Run the [[Floyd-Warshall algorithm]] and return the length of the minimum entry 
 >
 >(b) Give an efficient algorithm for detecting the presence of such an anomaly. Use the graph representation you found above.
 
+Define a graph with vertices $V = \{1,\ldots, n\}$  and let the edges be $e_{i,j} = -\log(r_{i,j})$ then run the [[Bellman-Ford algorithm]] on this graph starting at vertex $s$. This will produce the shortest path $p$ to vertex $t$. $P = e_{v_0v_1} \ldots e_{v_kv_{k+1}}$ with $v_0 = s$ and $v_{k+1} = t$. Which has weight
+$$- \sum_{i=0}^k \log(r_{v_i,v_{i+1}}) = - \log\left ( \prod_{i=0}^k r_{v_iv_{i+1}} \right )$$
+
+Suppose there was a route $d_0 \ldots d_{w+1}$ such that
+$$\prod_{i=0}^k r_{v_iv_{i+1}} < \prod_{i=0}^w r_{d_id_{i+1}} $$
+however this would lead to
+$$ - \sum_{i=0}^k \log(r_{v_i,v_{i+1}}) > - \sum_{i=0}^w \log(r_{d_i,d_{i+1}})$$
+contradicting the output of the algorithm. 
+
+This takes time $O(n^3)$.
+
 
 
 >[!question] 2.1 Practice Fast Multiplication
@@ -170,7 +181,7 @@ T(n) & = 7^2T(n/5^2) + n^{3/2}\log(n)\\
 
 > [!question] 2.5 Solving recurrence
 > Solve the following recurrence relations and give a $\Theta$ bound for each of them.
-> g) $T(n) = T(n − 1) + 2$
+> h) $T(n) = T(n − 1) + 2$
 
 $T(n) = 2n + T(0) = O(n)$.
 
@@ -178,8 +189,25 @@ $T(n) = 2n + T(0) = O(n)$.
 > Solve the following recurrence relations and give a $\Theta$ bound for each of them.
 > g) $T(n) = T(n − 1) + n^c$ , where $c \geq 1$ is a constant.
 
-$T(n) = T(0) + \sum_{k=1}^n k^c = O(n^c)$
+$T(n) = T(0) + \sum_{k=1}^n k^c = O(n^{c+1})$
 
+> [!question] 2.5 Solving recurrence
+> Solve the following recurrence relations and give a $\Theta$ bound for each of them.
+> i) $T(n) = T(n − 1) + c^n$ , where $c > 1$ is a constant.
+
+$T(n) = T(-1) + \sum_{k=0}^n c^k = T(-1) + \frac{c^{n+1} - 1}{c - 1} = O(c^n)$
+
+> [!question] 2.5 Solving recurrence
+> Solve the following recurrence relations and give a $\Theta$ bound for each of them.
+> j) $T(n) = 2T(n − 1) + 1$.
+
+$T(n) = \sum_{k=0}^{n} 2^k = 2^{n+1} = O(2^n)$
+
+> [!question] 2.5 Solving recurrence
+> Solve the following recurrence relations and give a $\Theta$ bound for each of them.
+> k) $T(n) = T(\sqrt{n}) + 1$.
+
+$T(n) = k + T(b)$ where $n^{1/2^k} < b$ so $k = \log_2(\log(b))$ therefore $T(n) = O(\log(\log(n)))$. 
 
 ## Dynamic Programming (Chapter 6) - filtered
 
