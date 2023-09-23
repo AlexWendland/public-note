@@ -47,7 +47,7 @@ If we are solving the subproblem the size of the list $A_{left}$ and $A_{right}$
 
 $T(n) = T(n/2) + 2$
 
-In this case we have $T(n) = O(\log_2(n))$ 
+In this case we have $T(n) = O(\log_2(n))$, with $T(n) = \Omega(1)$.
 
 ---
 
@@ -77,8 +77,6 @@ $$ - \sum_{i=0}^k \log(r_{v_i,v_{i+1}}) > - \sum_{i=0}^w \log(r_{d_i,d_{i+1}})$$
 contradicting the output of the algorithm. 
 
 This takes time $O(n^3)$.
-
-
 
 >[!question] 2.1 Practice Fast Multiplication
 >Use the divide-and-conquer integer multiplication algorithm to multiply the two binary integers 10011011 and 10111010.
