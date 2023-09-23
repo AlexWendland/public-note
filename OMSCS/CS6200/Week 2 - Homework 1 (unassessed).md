@@ -458,7 +458,7 @@ Algorithm:
 
 Define an array $A(i,j)$ which will be the longest Palindromic subsequence in $a_i, a_{i+1}, \ldots, a_{j}$.
 
-Base case: $A(i,i) = 0$ and
+Base case: $A(i,i) = 1$ and
 $$A(i,i+1) = \begin{cases} 2 & \mbox{if } a_i = a_{i+1}\\ 1 & \mbox{otherwise}\end{cases}.$$
 
 Iterative step: Recursively calculate $A(i,j)$ by increasing $j-i$. Set
@@ -480,14 +480,142 @@ Manacher's algorithm .. big brain shit.
 
 Duplicate in [[Week 3 - Homework 2 (unassessed)]]
 
-Dynamic Programming (Chapter 6)
+## Dynamic Programming (Chapter 6) - filtered
 
-6.5
+> [!question] 6.5 Pebbling a checkerboard.
+> We are given a checkerboard which has $4$ rows and $n$ columns, and has an integer written in each square. We are also given a set of $2n$ pebbles, and we want to place some or all of these on the checkerboard (each pebble can be placed on exactly one square) so as to maximize the sum of the integers in the squares that are covered by pebbles. There is one constraint: for a placement of pebbles to be legal, no two of them can be on horizontally or vertically adjacent squares (diagonal adjacency is fine). 
+> 
+> (a) Determine the number of legal patterns that can occur in any column (in isolation, ignoring the pebbles in adjacent columns) and describe these patterns. 
+> 
+> Call two patterns compatible if they can be placed on adjacent columns to form a legal placement. Let us consider subproblems consisting of the first $k$ columns $1 \leq k \leq n$. Each subproblem can be assigned a type, which is the pattern occurring in the last column. 
+> 
+> (b) Using the notions of compatibility and type, give an $O(n)$-time dynamic programming algorithm for computing an optimal placement.
 
-**6.6** (this problem is like the Matrix Multiplication! A Y/N table should do it, but it may help to add a third dimension accounting for the symbol you wish to reduce to).
+a) There are 7 legal positions of pebbles. We represent the positions by the row numbers with a pebble, they are $P = \{p_{\emptyset}, p_{0}, p_{1}, p_2, p_3, p_{0,2}, p_{1,3}\}$. Then the legal following positions given the column to the right are
+
+$$P_p = \begin{cases} P & \mbox{if } p = p_{\emptyset}\\ P \backslash \{p_i, p_{i, i\pm2}\} & \mbox{if } p = p_i\\ P \backslash\{p_{i,j}, p_i, p_j\} & \mbox{if } p = p_{i,j}\end{cases}.$$
+b) Suppose we have a weight function $\hat{W}: [1, \ldots, n] \times [1,2,3,4] \rightarrow \mathbb{Z}$ which describes the weights, with $w(i,j)$ being the number on the $(i,j)$ checkerboard. Define a function $W: [1, \ldots, n] \times P \rightarrow \mathbb{Z}$ where $W(i,p_S) = \sum_{j \in S} \hat{W}(j)$.
+
+Define $T(i,p)$ with $i \in [1, \ldots, n]$ and $p \in P$ to be a maximum value in the checkerboard using the first $i$ columns with position $p$ in the $i$'th column.
+
+Base case: Set $T(1,p) = W(1,p)$.
+
+Recursion: Set $T(i,p) = \max_{q \in P_p}\{T(i-1,q)\} + W(i,p)$ for $1 < i \leq n$ and $p \in P$.
+
+Solution: $\max_{p \in P} \{T(n,p)\}$  
+
+## Correctness
+
+Prove by induction. 
+
+If $i =1$ then $T(1,p)$ as it has to use $p$ in the first column and that is the only column it is $W(1,p)$.
+
+Suppose it is true for $k-1$ lets prove for $k$.
+
+As $T(k,p)$ must use $p$ in the $k$'th column the solution is going to be $W(k,p)$ with a solution to the $k-1$'th problem.
+
+The only valid possibilities for the $k-1$'th column are $P_p$ therefore it must use a maximal solution to $k-1$'th problem with one of the $q \in P_p$ in that column. These are exactly $T(i-1,q)$ by the induction hypothesis. 
+
+So
+$$T(k,p) = \max_{q \in P_p}\{T(i-1,q)\} + W(i,p)$$
+giving the correctness of our solution at the $k$'th column.
+
+By induction $T(i,p)$ is correct for all columns.
+
+The correct solution to the problem must use one of $p \in P$ for the $n$'th column. Which would mean it would be a maximal solution for the $k$'th problem.
+
+Therefore this is one of $T(n,p)$ by the correctness of $T$ giving our algorithm is correct on the whole problem.
+
+## Pseudocode
+
+```pseudocode
+Checkerboard solver
+Input: Function W: [1..n] x [1..4] -> Z.
+Output: The maximum value putting the stones on the board.
+	Define P to be the set of valid position
+	Define P_p to be the set of compatible positions for an adjacent column 
+		when it is next to a column with p in P in it.
+	Set up T as a map from [1..n], P into Z.
+	Set T[1,p] = sum_(i in p) W(1,i)
+	for i = 2 -> n
+		for p in P
+			T[i, p] = sum_(j in p) W(i,j) + max_q in P_p T[i-1,q]
+	return max_p in P T[n,p]
+```
+
+Lets analyse the run time of this algorithm.
+
+Making the sets $P$ and $P_p$ take $O(1)$ time as they are the same for every run.
+
+Defining $T[1,p]$ for each $p$ takes at most 2 looks ups and this is carried out $7$ times so takes $O(1)$ time.
+
+We loop over $i$ being $2$ to $n$ which is $n-1$ steps. We loop over $p \in P$ which is 7 steps. We calculate the sum of elements in $p$ which takes at most 2 loops ups. Then we calculate the max over $P_p$ which takes at most $7$ look ups.
+
+In total this loop is at most $(n-1) \cdot 7 \cdot (2 + 7)$ look ups which is $O(n)$.
+
+Returning the solution involves $7$ look ups which is $O(1)$.
+
+The run time of this algorithm is $O(1) + O(1) + O(n) + O(1) = O(n)$.
+
+> [!question] 6.6 Multiplication operation
+> Let us define a multiplication operation on three symbols $a, b, c$ according to the following table; thus $ab = b,\ ba = c$, and so on. Notice that the multiplication operation defined by the table is neither associative nor commutative.
+> $$\begin{array}{c|ccc} \cdot & a & b & c\\\hline a & b & b & a\\ b & c & b & a\\ c & a & c & c \end{array}$$
+> Find an efficient algorithm that examines a string of these symbols, say $bbbbac$, and decides whether or not it is possible to parenthesize the string in such a way that the value of the resulting expression is $a$. For example, on input $bbbbac$ your algorithm should return yes because $((b(bb))(ba))c = a$.
+
+Take input a sequence $a_i$ for $1 \leq i \leq n$ of symbols. 
+
+## Algorithm
+
+Let $T(i,j,s)$ record if it is possible with sequence $a_i, a_{i+1}, \ldots, a_j$ it is possible to make $s$.
+
+Define the an upper diagonal table $T(i,j,s)$ where $1 \leq i \leq j \leq n$ and $s \in S :=\{a,b,c\}$ which has values $True$ and $False$. Let the table start with all values being $False$. 
+
+Let $T(i,i,a_i)$ be True.
+
+Iteratively fill $T(i,j,s)$ based on the difference between $i,j$ starting with $j - i = 1$.
+
+For some $k$ such that $i \leq k < j$  let 
+$$S_{Left} = \{s \in S \vert T(i,k,s)\} \mbox{ and } S_{Right} = \{s \in S \vert T(k+1,j,s)\}.$$
+Then set $T(i,j,s_{left} \cdot s_{right})$ True for all $s_{left} \in S_{Left}$ and $s_{right} \in S_{Right}$. 
+
+Return $T(1,n,a)$. 
+
+## Correctness
+
+We prove $T(i,j,s)$ is correct by induction on $j-i$. 
+
+Note that as $T(i,i,s)$ records if $a_i$ can be bracketed to make $s$ the only correct solution is $a_i$.
+
+Suppose $T(i,j,s)$ is correct for all $j-i < k$. 
+
+Suppose we pick $i < j$ such that $j-i = k$. 
+
+Note that if $T(i',j',s)$ is correct when $j'-i' < k$. Then $T(i,j,s)$ can never be True when there is no bracketing of $a_i, \ldots a_j$ that equals $s$ as by definition it can only be true when $T(i,k,s_{left})$ and $T(k+1,j,s_{right})$ are true and $s = s_{left} \cdot s_{right}$.
+
+Similarly if there is some bracketing of $a_i, \ldots, a_j$ such that it equals $s$ there must be some outer bracket that partitions $a_i, \ldots, a_k$ and $a_{k+1}, \ldots, a_j$ such that the bracketing on the left equals $s_{left}$ and the right $s_{right}$ with $s_{left} \cdot s_{right} = s$ with $i \leq k < j$. Therefore as $T(i,k,s_{right})$ is all correct and $T(k+1,j,s_{left})$ is all correct we have these must be $True$ and so $T(i,j,s)$ is True.
+
+This shows by induction each $T(i,j,s)$ is correct.
+
+The final solution is correct as $a$ would have to be some bracketing of $a_1, \ldots a_n$ to make $a$ which is exactly $T(1,n,a)$.
+
+## Running time
+
+Making the table initially takes $O(n^2)$ time as there are $3 \cdot n(n+1)/2$ entries to fill.
+
+Filling the bottom row takes $O(n)$ time as there are $n$ entries to fill one for each $a_i$.
+
+Filling entries $T(i,j,s)$ for all $s \in S$ takes $(j-i) \cdot 3^2 \cdot 2$ checks for each $i \leq k < j$ you need to check each pair of elements and compute the multiplication. This is $O(n)$.
+
+There are $O(n^2)$ entries in the table as explained in the first step.
+
+Therefore filling the table takes $O(n^2)O(n)$ steps making it $O(n^3)$.
+
+Returning the value is a single look up so is $O(1)$.
+
+Thus making the algorithmic look up time $O(n^2) + O(n) + O(n^3) + O(1) = O(n^3)$.
+
+## UNSOLVED PROBLEMS
 
 6.7, 6.9, 6.22 (hint included in the problem).
 
 **6.25-6.30** Note: These are a bit harder, but definitely nice problems.
-
-Duplicate in [[Week 3 - Homework 2 (unassessed)]]
