@@ -95,7 +95,7 @@ $$\begin{align*} T(n) & = 2T(n/3) + 1\\
 \end{align*}$$
 > [!question] 2.5 Solving recurrence
 > Solve the following recurrence relations and give a $\Theta$ bound for each of them.
-> a) $T(n) = 5T(n/4) + n$
+> b) $T(n) = 5T(n/4) + n$
 
 By masters theorem as $n = O(n)$ and $1 < \log_4(5)$ we have $T(n) = O(n^{\log_4(5)})$
 
@@ -108,10 +108,34 @@ T(n) & = 5T(n/4) + n\\
 & = 5^{k} T(n/4^k) + n \sum_{i=0}^{k-1} (5/4)^i\\
 & = 5^k T(n/4^k) + n \frac{1 - (5/4)^{k-1}}{1-(5/4)}\\
 & = 5^k T(n/4^k) + n(5/4)^{k-1}/4 - n/4\\
-& = 5^{\log_4(n)} T(1) + n 5^{\log_4(n) - 1}/4 - n/4\\
-& = n^{\log_4(5)} T(1) + n n^{\log_4(5)} - n/4\\
+& = 5^{\log_4(n)} T(1) + n (5/4)^{\log_4(n) - 1}/4 - n/4\\
+& = n^{\log_4(5)} T(1) + n^{\log_4(5)}/4 - n/4\\
 & = O(n^{\log_4(5)})
 \end{align*}$$
+
+> [!question] 2.5 Solving recurrence
+> Solve the following recurrence relations and give a $\Theta$ bound for each of them.
+> c) $T(n) = 7T(n/7) + n$
+
+By masters theorem as $n = O(n)$ and $7/7 = 1$ we should have $O(T(n)) = n\log(n)$.
+
+$$\begin{align*} 
+T(n) & = 7T(n/7) + n\\
+& = 7 [7T(n/7^2) + n/7] + n\\
+& = 7^2T(n/7^2) + 2n\\
+& = 7^2[7T(n/7^3) + n/7^2] + 2n\\
+& = 7^k T(n/7^k) + kn\\
+& = 7^{\log_7(n)} T(1) + n\log_7(n)\\
+& = n T(1) + n\log_7(n)\\
+& = O(n\log_7(n))
+\end{align*}$$
+> [!question] 2.5 Solving recurrence
+> Solve the following recurrence relations and give a $\Theta$ bound for each of them.
+> d) $T(n) = 9T(n/3) + n^2$
+
+By masters theorem as $n^2 = O(n^2)$ and $\log_3(9) = 2$ we should have $O(T(n)) = n^2 \log(n)$
+
+
 
 ## Dynamic Programming (Chapter 6) - filtered
 
