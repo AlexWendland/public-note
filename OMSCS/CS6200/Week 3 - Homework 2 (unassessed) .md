@@ -20,7 +20,7 @@ chatgpt: false
 >[!question] Smallest missing natural number
 >Design an $O(\log(n))$ algorithm to find the smallest missing natural number in a given sorted array. The given array only has natural numbers. For example, the smallest missing natural number from $A = \{3, 4, 5\}$ is $1$ and from $A = \{1, 3, 4, 6\}$ is $2$.
 
-If the first element of $A$ is greater than 1 return 1. If the last element of $A$ is $n$ return $n+1$. This leaves the case where the missing element is in $A$. Then we are in the following subproblem.
+If the first element of $A$ is greater than 1 return 1. If the last element of $A$ is $n$ return $n+1$. This leaves the case where the missing element is in $A$. Then we are in the following subproblem and will run the algorithm to solve that subproblem on the list $A$. 
 
 ## Subproblem
 
@@ -28,7 +28,26 @@ Suppose you are given a list $L$ of natural numbers of length $n > 1$ with the f
 
 ## Algorithm to solve this by D&C
 
-Divide the list $L$ into the first $\lceil \frac{n}{2} \rceil$ elements $A_{left}$ and the rest $A_{right}$.  
+If the list is of length $2$ then we know the answer is $a + 1$. If the list is of length $3$ then we only check the second element. If this element is $a + 1$ we return $a+2$, if it is not we return $a+1$. 
+
+If the list is of length greater than 3. Divide the list $L$ into the first $\lceil \frac{n}{2} \rceil$ elements $A_{left}$ and the rest $A_{right}$.
+
+If the last element of $A_{left}$ is $a + \lceil \frac{n}{2} \rceil - 1$ then run the algorithm on $A_{right}$ if not then run it on $A_{left}$. 
+
+## Run time
+
+Let $T(n)$ represent the running time of this algorithm.
+
+Note if $n=1$ then either $A = [1]$ and we return 2 or we return 1.  If $n = 2$ we check the highest and lowest element to determine if our return is 1, 2 or 3. If $n = 3$ at worst we check all 3 elements to return 1,2,3 or 4,
+This takes 1 check so $T(1) = 1$
+
+For the general case, either it takes 2 checks to return or we are solving the subproblem.
+
+If we are solving the subproblem the size of the list $A_{left}$ and $A_{right}$ is at most $n/2$. So we have run time
+
+$T(n) = T(n/2) + 2$
+
+In this case we have $T(n) = O(\log_2(n))$ 
 
 ---
 
