@@ -237,7 +237,102 @@ $T(n) = k + T(b)$ where $n^{1/2^k} < b$ so $k = \log_2(\log(b))$ therefore $T(n)
 > [!question] 2.17 Index matching
 > Given a sorted array of distinct integers $A[1, \ldots , n]$, you want to find out whether there is an index $i$ for which $A[i] = i$. Give a divide-and-conquer algorithm that runs in time $O(\log(n))$.
 
+First lest examine a subproblem.
 
+## Subproblem
+
+Given an array $B[1, \ldots, k]$ with $k \geq 2$ and a value $a$ where $B[1] \leq a$ and $B[k] > a+k$ is there an index $i$ such that $a + i = B[i]$. If not return False, if there is return $a+k$. 
+
+## Algorithm
+
+Define this algorithm as $Sub(B,a)$.
+
+If $k = 2$ return False. If $k = 3$ return $a + 2$ if $B[2] = a + 2$ otherwise return False.  
+
+Examine the middle element $m = \lceil \frac{k}{2} \rceil$ if $B[m] = a + m$ return $a + m$. 
+
+If $B[m] < a + m$ return $Sub(B[m, \ldots, k], a + m - 1)$ else return $Sub(B[1, \ldots, m], a)$. 
+
+## Overall Algorithm
+
+If $A[1]$ is greater than $1$, return False. If it is equal to 1 return 1.
+
+If $A[n]$ is less than $n$, return False. If it is equal to $n$ return $n$.
+
+Otherwise return $Sub(A, 0)$. 
+
+## Correctness
+
+First prove a sublemma
+
+> [!important] Lemma
+> If $A[i] = i$ then for all $k > 1$ we have $A[i + k] \geq i + k$ and $A[i - k] \leq i - k$.
+
+As $A$ is sorted and contains distinct integers we have that $A[j+1] \geq A[j] + 1$ which can be expanded to $A[j + k] \geq A[j] + k$ similarly $A[j - k] \leq A[k] - k$ for $k \geq 1$. 
+
+Therefore as $A[i] = i$ we get $A[i + k] \geq A[i] + k = i + k$ similarly $A[i - k] \leq A[i] - k = i - k$. Giving the desired result.
+
+$\square$
+
+### Sub problem
+
+First lets prove $Sub(B,a)$ is correct. We prove this by induction on $k$.
+
+If $k = 2$ as $B[1] \leq a$ and $B[2] > a + 2$ then neither element satisfies $B[i] = a + i$. So it is correct to return False. 
+
+If $k = 3$ by the argument of $k=2$ the only element that can satisfy $B[i] = a+i$ is $i=2$ which it checks. So it returns the correct result in this case.
+
+Suppose it is true for all $k < t$.
+
+Let $B$ have size $t > 3$.
+
+If the $m$'th element satisfies $B[m] = i + m$ then we need to return it which we do.
+
+Suppose $B[m] < i + m$. 
+
+If $B[i] = i + a$ for $1 \leq i < m$ then $B[m] \geq i + m$ by the lemma. Therefore $B[i] \not = i + a$ for $1 \leq i <m$. So we are safe to discount these elements and only look at $B[m, \ldots, k]$.
+
+Note that $B[m, \ldots, k]$ now satisfies the requirements of the sub problem with $a + m - 1$. 
+1. $B[k] > a + k = (a + m - 1) + (k - m + 1)$,
+2. $B[m] \leq a + m - 1$,
+3. $k - m + 1 \geq k/2 + 1 \geq 2$ as $k \geq 4$. 
+So by the induction hypothesis the solution to $Sub(B[m, \ldots, k], a + m - 1)$ is the solution we desire.
+
+Suppose $B[m] > i + m$.
+
+We can now discount the elements $B[m, \ldots, k]$ similarly to the logic above.
+
+Note the $B[1, \ldots, m]$ now satisfies the requirements of the sub problem with $a$.
+1. $B[1] \leq a$ from before,
+2. $B[m] > i + m$,
+3. m \geq k/2 \geq 2$ as $k \geq 4$. 
+So by the induction hypothesis the solution to $Sub(B[1, \ldots, m], a)$ is the required solution.
+
+Therefore we have the correct solution on $B$ of size $t$ and from induction it $Sub$ correctly solves the subproblem.
+
+### Full algorithm
+
+Note from the lemma if $A[1] > 1$ or $A[n] < n$ then there is no correct solution.
+
+If $k = 1$ or $k = 2$ we have checked both elements of being the correct form, so we have solved the problem. Therefore we will terminate here in this case.
+
+Note $A$ with 0 now satisfies the subproblem as
+1. $A[1] \leq 0$
+2. $A[n] > n$,
+3. $k > 2$
+So $Sub(A,0)$ returns the correct result. 
+
+## Run time analysis
+
+Let $T(n)$ be the run time of this algorithm. For $T(1)$ and $T(2)$ it takes 2 checks so $T(1) = T(2) = 2$. 
+
+For larger $n$ either it takes $2$ check and we terminate immediately or we run $Sub$.
+
+Functionally $Sub$ is just binary search so $Sub$ takes $O(\log(n))$ time. 
+
+This gives $T(n) = O(\log(n))$.
+
+# UNSOLVED QUESTIONS
 
 ## Divide and Conquer (Chapter 2)
 
