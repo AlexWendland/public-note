@@ -20,7 +20,15 @@ chatgpt: false
 >[!question] Smallest missing natural number
 >Design an $O(\log(n))$ algorithm to find the smallest missing natural number in a given sorted array. The given array only has natural numbers. For example, the smallest missing natural number from $A = \{3, 4, 5\}$ is $1$ and from $A = \{1, 3, 4, 6\}$ is $2$.
 
+If the first element of $A$ is greater than 1 return 1. If the last element of $A$ is $n$ return $n+1$. This leaves the case where the missing element is in $A$. Then we are in the following subproblem.
 
+## Subproblem
+
+Suppose you are given a list $L$ of natural numbers of length $n > 1$ with the first element being $a$ and the last element being $b > a + n - 1$ find the smallest natural number $c$ such that $a < c < b$ is not in the list $L$.
+
+## Algorithm to solve this by D&C
+
+Divide the list $L$ into the first $\lceil \frac{n}{2} \rceil$ elements $A_{left}$ and the rest $A_{right}$.  
 
 ---
 
