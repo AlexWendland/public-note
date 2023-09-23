@@ -7,7 +7,7 @@ last_edited: 2023-09-11
 tags:
   - OMSCS
 course: "[[CS6200 Introduction to Graduate Algorithms]]"
-week: int
+week: "3"
 chatgpt: false
 ---
 # Week 3 - Homework 2 (unassessed) 
