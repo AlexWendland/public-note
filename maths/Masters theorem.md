@@ -1,10 +1,11 @@
 ---
-aliases: []
+aliases: 
 type: str
 publish: false
 created: 2023-09-07
 last_edited: 2023-09-07
-tags: maths, list[str]
+tags:
+  - maths
 chatgpt: false
 ---
 >[!important] Masters theorem

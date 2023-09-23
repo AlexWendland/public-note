@@ -76,7 +76,42 @@ $0011 \cdot 0101 = 000000 + (110 - 00 - 11) \cdot 100 + 11 = 1100 + 11 = 1111$
 So $X_L \cdot Y_L = 1000000 + (1111 - 100 - 11) \cdot 100 + 11 = 1000000 + 100000 + 11 = 1100011$
 
 > [!question] 2.5 Solving recurrence
-> Lots of practice problems.
+> Solve the following recurrence relations and give a $\Theta$ bound for each of them.
+> a) $T(n) = 2T(n/3) + 1$
+
+By masters theorem the recursion dominates and $T(n) = \theta(n^{\log_3(2)})$
+
+$$\begin{align*} T(n) & = 2T(n/3) + 1\\
+& = 2 (2T(n/3^2) + 1) + 1\\
+& = 2^2T(n/3^2) + 2 + 1\\
+& = 2^2[2T(n/3^3) + 1] + 2 + 1\\
+& = 2^3 T(n/3^3) + \sum_{i=0}^2 2^i\\
+& = 2^{k} T(n/3^k) + \sum_{i=0}^{k-1} 2^i\\
+& = 2^k T(n/3^k) + \frac{1 - 2^{k-1}}{1-2}\\
+& = 2^k T(n/3^k) + 2^{k-1} - 1\\
+& = 2^{\log_3(n)} T(1) + 2^{\log_3(n) - 1} - 1\\
+& = n^{\log_3(2)} T(1) + n^{\log_3(2)} / 2 - 1\\
+& = O(n^{\log_3(2)})
+\end{align*}$$
+> [!question] 2.5 Solving recurrence
+> Solve the following recurrence relations and give a $\Theta$ bound for each of them.
+> a) $T(n) = 5T(n/4) + n$
+
+By masters theorem as $n = O(n)$ and $1 < \log_4(5)$ we have $T(n) = O(n^{\log_4(5)})$
+
+$$\begin{align*} 
+T(n) & = 5T(n/4) + n\\
+& = 5 [5T(n/4^2) + n/4] + n\\
+& = 5^2T(n/4^2) + 5n/4 + n\\
+& = 5^2[5T(n/4^3) + n/4^2] + 5n/4 + n\\
+& = 5^3 T(n/4^3) + n \sum_{i=0}^2 (5/4)^i\\
+& = 5^{k} T(n/4^k) + n \sum_{i=0}^{k-1} (5/4)^i\\
+& = 5^k T(n/4^k) + n \frac{1 - (5/4)^{k-1}}{1-(5/4)}\\
+& = 5^k T(n/4^k) + n(5/4)^{k-1}/4 - n/4\\
+& = 5^{\log_4(n)} T(1) + n 5^{\log_4(n) - 1}/4 - n/4\\
+& = n^{\log_4(5)} T(1) + n n^{\log_4(5)} - n/4\\
+& = O(n^{\log_4(5)})
+\end{align*}$$
 
 ## Dynamic Programming (Chapter 6) - filtered
 
