@@ -142,7 +142,7 @@ Let $T(i)$ be true or false if we can make $i$ using the coins $x_i$.
 
 Base: Set $T(-i)$ = False for $1 \leq i \leq \max\{x_i \ \vert \ 1 \leq i \leq n\}$. With $T(0)$ = True.
 
-Recursion: Set $T(j) = \bigvee_{i} T(j - i)$.
+Recursion: Set $T(j) = \bigvee_{i} T(j - x_i)$.
 
 Solution: $T(v)$.
 
