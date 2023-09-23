@@ -135,6 +135,50 @@ T(n) & = 7T(n/7) + n\\
 
 By masters theorem as $n^2 = O(n^2)$ and $\log_3(9) = 2$ we should have $O(T(n)) = n^2 \log(n)$
 
+$$\begin{align*} 
+T(n) & = 9T(n/3) + n^2\\
+& = 9 [9T(n/3^2) + n^2/9] + n^2\\
+& = 9^2T(n/3^2) + 2n^2\\
+& = 9^2[7T(n/3^3) + n^2/9^2] + 2n^2\\
+& = 9^k T(n/3^k) + kn^2\\
+& = 9^{\log_3(n)} T(1) + n^2\log_3(n)\\
+& = n^2 T(1) + n^2\log_3(n)\\
+& = O(n^2\log_3(n))
+\end{align*}$$
+> [!question] 2.5 Solving recurrence
+> Solve the following recurrence relations and give a $\Theta$ bound for each of them.
+> e) $T(n) = 8T(n/2) + n^3$
+
+By masters theorem as $n^3 = O(n^3)$ and $\log_2(8) = 3$ we have $\Theta(T(n)) = n^3\log(n)$.
+
+> [!question] 2.5 Solving recurrence
+> Solve the following recurrence relations and give a $\Theta$ bound for each of them.
+> f) $T(n) = 49T(n/25) + n^{3/2}\log(n)$
+
+By masters theorem as $\log_{5^2}(7^2) = \log(7)/\log(5) < 1.5$ then $n^{3/2}\log(n) = \Omega(n^{3/2})$ this gives $T(n) = \Theta(n^{3/2}\log(n))$.
+
+$$\begin{align*} 
+T(n) & = 7^2T(n/5^2) + n^{3/2}\log(n)\\
+& = 7^2[7^2T(n/5^4) + (n/5^2)^{3/2}\log(n/5^2)] + n^{3/2}\log(n)\\
+& = 7^4T(n/5^2) + n^{3/2}\log(n)(7^2/5^3) + n^{3/2}\log(n) - n^{3/2}2\log(5)(7^2/5^3)\\
+& = 7^4\left[7^2T(n/5^6) + (n/5^4)^{3/2}\log(n/5^4) \right] + n^{3/2}\log(n)(7^2/5^3) + n^{3/2}\log(n) - n^{3/2}2\log(5)(7^2/5^3)\\
+& = 7^6T(n/5^6) + n^{3/2}\log(n)(7^4/5^6) + n^{3/2}\log(n)(7^2/5^3) + n^{3/2}\log(n) - n^{3/2}\log(5)(2^27^4/5^6) - n^{3/2}\log(5)(27^2/5^3)\\
+& = 7^{2k}T(n/5^{2k}) + n^{3/2}\log(n)\left ( \sum_{i=0}^{k-1} (49/125)^k \right ) - n^{3/2}\log(5)\left( \sum_{i=1}^{k-1} (98/125)^k \right )\\
+& = 7^{2k}T(n/5^{2k}) + n^{3/2}\log(n)\frac{1 - (49/125)^{k-1}}{1 - (49/125)} -  n^{3/2}\log(5)\frac{1 - (98/125)^{k-1}}{1 - (98/125)}\\
+& = n^{\log_{25}(49)}T(1) + n^{3/2}\log(n) c + n^{3/2} d
+\end{align*}$$
+
+> [!question] 2.5 Solving recurrence
+> Solve the following recurrence relations and give a $\Theta$ bound for each of them.
+> g) $T(n) = T(n − 1) + 2$
+
+$T(n) = 2n + T(0) = O(n)$.
+
+> [!question] 2.5 Solving recurrence
+> Solve the following recurrence relations and give a $\Theta$ bound for each of them.
+> g) $T(n) = T(n − 1) + n^c$ , where $c \geq 1$ is a constant.
+
+$T(n) = T(0) + \sum_{k=1}^n k^c = O(n^c)$
 
 
 ## Dynamic Programming (Chapter 6) - filtered
