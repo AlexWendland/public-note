@@ -234,9 +234,14 @@ $T(n) = \sum_{k=0}^{n} 2^k = 2^{n+1} = O(2^n)$
 
 $T(n) = k + T(b)$ where $n^{1/2^k} < b$ so $k = \log_2(\log(b))$ therefore $T(n) = O(\log(\log(n)))$. 
 
+> [!question] 2.17 Index matching
+> Given a sorted array of distinct integers $A[1, \ldots , n]$, you want to find out whether there is an index $i$ for which $A[i] = i$. Give a divide-and-conquer algorithm that runs in time $O(\log(n))$.
+
+
+
 ## Divide and Conquer (Chapter 2)
 
-2.4 (recurrences), 2.10 (FFT), 2.12 (recurrences), 2.15 (strange ... skip?), 2.16 (hw 2), 2.17 (D&C) 2.18(theory), 2.19 (merge d&c), 2.20(Sorting algorithm)
+2.4 (recurrences), 2.10 (FFT), 2.12 (recurrences), 2.15 (strange ... skip?), 2.18(theory), 2.19 (merge d&c), 2.20(Sorting algorithm)
 
 - Look into sorting algorithms more generally.
 
