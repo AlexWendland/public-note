@@ -313,8 +313,9 @@ The run time of this algorithm is $O(1) + O(1) + O(n) + O(1) = O(n)$.
 
 > [!question] 6.6 Multiplication operation
 > Let us define a multiplication operation on three symbols $a, b, c$ according to the following table; thus $ab = b,\ ba = c$, and so on. Notice that the multiplication operation defined by the table is neither associative nor commutative.
+> $$\begin{tabular}{c|ccc} & a & b & c\\\hline a & b & b & a\\ b & c & b & a\\ c & a & c & c \end{tabular}$$
 > 
-
+ 
 **6.6** (this problem is like the Matrix Multiplication! A Y/N table should do it, but it may help to add a third dimension accounting for the symbol you wish to reduce to).
 
 6.7, 6.9, 6.22 (hint included in the problem).
