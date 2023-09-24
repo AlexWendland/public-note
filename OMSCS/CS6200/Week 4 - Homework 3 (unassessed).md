@@ -7,7 +7,7 @@ last_edited: 2023-09-11
 tags:
   - OMSCS
 course: "[[CS6200 Introduction to Graduate Algorithms]]"
-week: int
+week: "4"
 chatgpt: false
 ---
 # Week 4 - Homework 3 (unassessed) 
@@ -183,8 +183,10 @@ $C(i) = 24$
 $C(-1) = 18 + 10 = 28$
 $C(-i) = 20$
 
-$(8, 24, 28, 20) / 4$
-$(2, 6, 7, 5)$
-$2 + 6x + 7x^2 + 5x^3$
+As we use $FFT((20, -5 - i, -2, -5 + i), -i)$ we have 
 
-(2, 5, 7, 6)
+$(8, 20, 28, 24) / 4$
+$(2, 5, 7, 6)$
+$2 + 5x + 7x^2 + 6x^3$
+
+As desired!
