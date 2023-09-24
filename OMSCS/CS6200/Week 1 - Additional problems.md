@@ -149,7 +149,7 @@ Solution:
 $L(n)$.
 
 Recursion:
-$L(k) = \bigwedge_{i=0}^k L(i) \land dict(s[i+1\ldots k])$
+$L(k) = \bigwedge_{i=0}^{k-1} L(i) \land dict(s[i+1\ldots k])$
 where $L(0)$ is true.
 
 ```python
