@@ -82,7 +82,7 @@ Let $D(i,s,t)$ be the length of the shortest path $s$ to $t$ only using $\{x_1, 
 Base case,
 $$D(0,s,t) = \begin{cases} w(s,t) & \mbox{if } (s,y) \in E\\ \infty & \mbox{otherwise}\end{cases}.$$
 The recursion set then is:
-$$D(i,s,t) = \min\{D(i,s,t), D(i-1,s,i) + D(i-1,i,t)\}.$$
+$$D(i,s,t) = \min\{D(i-1,s,t), D(i-1,s,i) + D(i-1,i,t)\}.$$
 > [!question] Why do you only visit $i$ once?
 
 The pseudo code is as follows:
