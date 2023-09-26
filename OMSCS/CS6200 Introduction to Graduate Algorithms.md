@@ -22,7 +22,7 @@ This course is a graduate-level course in the design and analysis of algorithms.
 - [[Week 3 - Linear-Time Median]]
 - [[Week 3 - Solving Recurrences]]
 - [[Week 4 - Fast Fourier Transforms]]
-
+- [[Week 6 - Graph algorithms - strongly connected components]]
 ## Links
 
 - [Central](https://www.omscentral.com/courses/introduction-to-graduate-algorithms/reviews)
