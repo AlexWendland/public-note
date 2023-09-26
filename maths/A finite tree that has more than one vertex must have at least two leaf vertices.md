@@ -10,6 +10,8 @@ chatgpt: false
 >[!important] Proposition 
 >A finite [[Graph|graph]] who has more than one vertex that is a [[Tree (graph)|tree]] must have at least two leaf vertex.
 
+## Proof
+
 Proof by contradiction. 
 
 Suppose this is not the case, then if it has a single vertex of degree one start a path at this vertex. Otherwise pick a random vertex to start the path at. As the tree is connected and has more than one vertex the [[Degree (graph)|degree]] of the chosen vertex is at least 1. It then has an edge to another vertex or itself.

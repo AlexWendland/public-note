@@ -112,3 +112,5 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Pseudocode]]
 - [[Akra–Bazzi method]]
 - [[Recursion tree method]]
+- [[Depth-first search (DFS)]]
+- [[Directed acyclic graph (DAG)]]

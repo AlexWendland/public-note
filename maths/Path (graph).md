@@ -1,10 +1,14 @@
 ---
-aliases: [path]
+aliases:
+  - path
+  - paths
 type: definition
 publish: true
 created: 2023-08-28
 last_edited: 2023-08-28
-tags: maths, graph-theory
+tags:
+  - maths
+  - graph-theory
 chatgpt: false
 ---
 # Path (graph)
