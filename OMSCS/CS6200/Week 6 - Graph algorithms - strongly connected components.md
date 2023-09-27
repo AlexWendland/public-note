@@ -71,3 +71,46 @@ Explore(z)
 	post(z) = clock, clock++
 ```
 
+### Example
+
+Suppose we have the following graph and let $B$ be the root node. Suppose we explore edges alphabetically and lets run the algorithm above on it. 
+
+![[dfs_example.png]]
+
+As we are using [[Depth-first search (DFS)|DFS]] we explore far first and then slowly come back. Which gives us the following [[DFS tree (algorithm)|DFS tree]] with the pre/post numbers.
+
+![[pre_post_calculation_example.png]]
+
+| Letter | Pre | Post |
+| ------ | --- | ---- |
+| A      | 2   | 11   |
+| B      | 1   | 16   |
+| C      | 12  | 15   |
+| D      | 3   | 10   |
+| E      | 4   | 7    |
+| F      | 13  | 15   |
+| G      | 5   | 6    |
+| H      | 8   | 9    |
+
+Lets try and classify the edges $(z,w)$ in this graph
+
+- [[DFS tree (algorithm)|Tree edges]]
+	- First explored edges (black) that form a [[Spanning subgraph|spanning]] [[Subgraph|subgraph]].
+	- Examples: $B \rightarrow A$, $A \rightarrow D$
+	- $post(z) > post(w)$
+- [[DFS tree (algorithm)|Back edges]]
+	- Edges going from a node further out from the root (in the black edges) to a node closer to it but still in the same branch.
+	- Examples $E \rightarrow A$, $F \rightarrow B$
+	- $post(z) < post(w)$
+- [[DFS tree (algorithm)|Forward edges]]
+	- Edges that go further down the tree.
+	- Examples: $B \rightarrow E$, $D \rightarrow G$
+	- $post(z) > post(w)$
+- [[DFS tree (algorithm)|Cross edges]]
+	- Edges that go from one branch to another.
+	- Examples: $F \rightarrow H$, $H \rightarrow G$
+	- $post(z) > post(w)$
+
+Note here there the only type of edges to have $post(z) < post(w)$ are back edges.
+
+
