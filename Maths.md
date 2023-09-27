@@ -70,3 +70,5 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Topological sorting (DAG)]]
 - [[Strongly connected (directed graphs)]]
 - [[Strongly connected components (directed graphs)]]
+- [[Strongly connected component graph (directed graph)]]
+- [[The strongly connected component graph is a DAG]]
