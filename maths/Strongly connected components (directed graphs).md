@@ -1,6 +1,7 @@
 ---
 aliases:
   - strongly connected components
+  - strongly connected component
 type: definition
 publish: true
 created: 2023-09-27

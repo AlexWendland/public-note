@@ -133,3 +133,32 @@ Given a linear ordering we know the minimal vertex is a source and the maximal v
 1. Find a sink vertex, label it and then delete it.
 2. Repeat (1) until the graph is empty
 
+## Strongly connected components
+
+Recall the definitions
+
+![[Strongly connected (directed graphs)|strongly connected]]
+
+![[Strongly connected components (directed graphs)|strongly connected components]]
+
+Then we can define the [[Strongly connected component graph (directed graph)|strongly connected component graph]]
+
+![[Strongly connected component graph (directed graph)|strongly connected component graph]]
+
+Which we can show is a [[DAG]]. 
+
+![[The strongly connected component graph is a DAG]]
+
+## Strongly connected component algorithm
+
+The idea of the algorithm is the following:
+
+- Find a sink [[Strongly connected components (directed graphs)|strongly connected component]],
+- Remove it,
+- Repeat!
+
+We use sinks as if we start a [[Depth-first search (DFS)|DFS]] algorithm in a sink [[Strongly connected components (directed graphs)|strongly connected component]] we only discover vertices in that [[Strongly connected components (directed graphs)|strongly connected component]]. 
+
+This is not true for source [[Strongly connected components (directed graphs)|strongly connected components]], here we discover everything.
+
+## Finding a vertex in a sink SCC
