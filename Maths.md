@@ -67,3 +67,6 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Forest (graph)]]
 - [[DFS tree (algorithm)]]
 - [[Cycles in a graph via the DFS tree]]
+- [[Topological sorting (DAG)]]
+- [[Strongly connected (directed graphs)]]
+- [[Strongly connected components (directed graphs)]]
