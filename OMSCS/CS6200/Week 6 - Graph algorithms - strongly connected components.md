@@ -113,4 +113,23 @@ Lets try and classify the edges $(z,w)$ in this graph
 
 Note here there the only type of edges to have $post(z) < post(w)$ are back edges.
 
+![[Cycles in a graph via the DFS tree]]
+
+## Topological sorting
+
+![[Topological sorting (DAG)]]
+
+Suppose we have a [[Directed acyclic graph (DAG)|DAG]] $D$ from [[Cycles in a graph via the DFS tree|the lemma above]] we can run a [[Depth-first search (DFS)|DFS]] algorithm starting at the root of $D$ and the post ordering will provide a [[Topological sorting (DAG)|topological sorting]] of the vertices of $D$.
+
+## Vertices in a [[DAG]]
+
+We can classify special vertices in a [[Directed acyclic graph (DAG)|DAG]]
+
+- Source vertices: These have no incoming edges
+- Sink vertices: no outgoing edges
+
+Given a linear ordering we know the minimal vertex is a source and the maximal vertex is a sink. This gives us another algorithm to find a [[Topological sorting (DAG)|topologically sorting]]:
+
+1. Find a sink vertex, label it and then delete it.
+2. Repeat (1) until the graph is empty
 

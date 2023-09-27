@@ -23,4 +23,6 @@ All other vertices $x_i$ must be below $x_k$ and contained in its branch. Theref
 
 ### $\Leftarrow$
 
-Suppose we have some back edge $(a, b) \in E$. By the definition of back edge $(a,b) \not \in E'$ 
+Suppose we have some back edge $(a, b) \in E$. By the definition of back edge $(a,b) \not \in E'$ but $a$ and $b$ are in the same branch in $T$.
+
+Therefore there are edges $e_1, \ldots e_n$ connecting $b$ to $a$ in $T$ making $e_1, \ldots, e_n, (a,b)$ a cycle.
