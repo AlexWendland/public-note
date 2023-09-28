@@ -1,7 +1,7 @@
 ---
 aliases: 
 type: lecture
-publish: false
+publish: true
 created: 2023-09-26
 last_edited: 2023-09-26
 tags:
@@ -14,7 +14,9 @@ chatgpt: false
 
 ## DFS - not the sofa seller!
 
-Recall the definition of [[Depth-first search (DFS)]] in the note. We used it there to find the [[Connected components (graph)|connected components]] of a graph. We will show another application where we find the paths in a graph.
+Recall the definition of [[Depth-first search (DFS)]] in the note. We used it there to find the [[Connected components (graph)|connected components]] of a graph.
+
+![[DFS to find connected components in an undirected graph]]
 
 ## Finding paths in an [[Graph|undirected graph]] via [[Depth-first search (DFS)|DFS]]
 
@@ -162,3 +164,49 @@ We use sinks as if we start a [[Depth-first search (DFS)|DFS]] algorithm in a si
 This is not true for source [[Strongly connected components (directed graphs)|strongly connected components]], here we discover everything.
 
 ## Finding a vertex in a sink SCC
+
+We have the following two statements in a [[Directed acyclic graph (DAG)|DAG]]:
+- The vertex with the lowest postorder number is a sink.
+- Then vertex with the highest postorder number is a source.
+
+We would hope for the analogous statements in a general [[Directed graph|directed graph]]:
+- The vertex with the lowest post order number is in a sink [[Strongly connected components (directed graphs)|strongly connected component]]
+- The vertex with the highest post order number is in a source [[Strongly connected components (directed graphs)|strongly connected component]]
+
+The first statement is false consider the following counter example.
+
+![[sink_counter_example]]
+
+If we run a [[Depth-first search (DFS)|DFS]] algorithm starting at $A$ using an alphabetical ordering on the vertices then $B$ has the lowest post order number but is in the source [[Strongly connected components (directed graphs)|strongly connected component]].
+
+![[A vertex with the highest post order number lies in a source SCC]]
+
+Suppose we a directed graph $G$ define the [[Reverse directed graph|reverse directed graph]] $G^R$. Now observe
+
+![[The strongly connected components are the same in a directed graph and its reverse]]
+
+Moverover we have.
+
+![[Taking the reverse respects going to the strongly connected component graph]]
+
+Therefore if we can find a source vertex in $S_{G^R}$ then we have found a sink vertex in $S_G$. This is exactly what our algorithm will depend on.
+
+## Algorithm for finding the strongly connected components
+
+```pseudocode
+SCC(G):
+	Input: directed graph G = (V,E) in adjacency list
+	Output: labeling of V by strongly connected component
+		1. Construct G^R
+		2. Run DFS on G^R
+		3. Order V by decreasing post order number.
+		4. Run undirected connected components alg on G
+```
+
+## WARNING
+
+In the middle of writing 
+- [[Depth-first search (DFS)|DFS]]
+- [[Find path in a direct graph]] (extract notes above into DFS algorithm)
+- [[Find path in undirected graph]] (extract notes above into DFS algorithm)
+- [[A vertex with the highest post order number lies in a source SCC]] (from lectures)

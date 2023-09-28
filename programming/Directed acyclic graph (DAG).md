@@ -5,7 +5,7 @@ aliases:
   - directed acyclic graph
   - Directed acyclic graph
 type: definition
-publish: false
+publish: true
 created: 2023-09-26
 last_edited: 2023-09-26
 tags:

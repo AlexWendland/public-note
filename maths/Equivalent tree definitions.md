@@ -1,7 +1,7 @@
 ---
 aliases: 
-type: str
-publish: false
+type: lemma
+publish: true
 created: 2023-09-26
 last_edited: 2023-09-26
 tags:

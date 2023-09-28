@@ -114,3 +114,7 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Recursion tree method]]
 - [[Depth-first search (DFS)]]
 - [[Directed acyclic graph (DAG)]]
+- [[Find connected components in a undirected graph]]
+- [[DFS to find connected components in an undirected graph]]
+- [[Find path in undirected graph]]
+- [[Find path in a direct graph]]

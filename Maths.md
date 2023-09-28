@@ -72,3 +72,7 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Strongly connected components (directed graphs)]]
 - [[Strongly connected component graph (directed graph)]]
 - [[The strongly connected component graph is a DAG]]
+- [[A vertex with the highest post order number lies in a source SCC]]
+- [[Reverse directed graph]]
+- [[The strongly connected components are the same in a directed graph and its reverse]]
+- [[Taking the reverse respects going to the strongly connected component graph]]
