@@ -76,3 +76,4 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Reverse directed graph]]
 - [[The strongly connected components are the same in a directed graph and its reverse]]
 - [[Taking the reverse respects going to the strongly connected component graph]]
+- [[How post order relates to strongly connected components]]

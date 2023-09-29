@@ -202,11 +202,3 @@ SCC(G):
 		3. Order V by decreasing post order number.
 		4. Run undirected connected components alg on G
 ```
-
-## WARNING
-
-In the middle of writing 
-- [[Depth-first search (DFS)|DFS]]
-- [[Find path in a directed graph]] (extract notes above into DFS algorithm)
-- [[Find path in undirected graph]] (extract notes above into DFS algorithm)
-- [[A vertex with the highest post order number lies in a source SCC]] (from lectures)
