@@ -15,5 +15,6 @@ chatgpt: false
 
 ## Solutions
 
-- 
+- [[DFS for finding strongly connected components]]
 	- This runs in $O(\vert V \vert \cdot \vert E \vert)$ time. 
+	- It also outputs the strongly connected components in a reverse [[Topological sorting (DAG)|topologically sort]].
