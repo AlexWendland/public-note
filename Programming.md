@@ -125,3 +125,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Min-heap]]
 - [[Breath-first search (BFS)]]
 - [[Queue]]
+- [[Priority queue]]
