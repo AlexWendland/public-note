@@ -117,4 +117,6 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Find connected components in a undirected graph]]
 - [[DFS to find connected components in an undirected graph]]
 - [[Find path in undirected graph]]
-- [[Find path in a direct graph]]
+- [[Find path in a directed graph]]
+- [[DFS to find path in a directed graph]]
+- [[DFS to find path in an undirected graph]]
