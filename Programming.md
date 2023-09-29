@@ -121,3 +121,7 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[DFS to find path in a directed graph]]
 - [[DFS to find path in an undirected graph]]
 - [[Find strongly connected components for an undirected graph]]
+- [[DFS for finding strongly connected components]]
+- [[Min-heap]]
+- [[Breath-first search (BFS)]]
+- [[Queue]]
