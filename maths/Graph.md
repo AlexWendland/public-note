@@ -5,6 +5,7 @@ aliases:
   - Graphs
   - undirected graph
   - Undirected graph
+  - undirected graphs
 type: definition
 publish: true
 created: 2023-08-28
