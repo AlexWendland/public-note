@@ -120,3 +120,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Find path in a directed graph]]
 - [[DFS to find path in a directed graph]]
 - [[DFS to find path in an undirected graph]]
+- [[Find strongly connected components for an undirected graph]]

@@ -39,4 +39,4 @@ Explore(z)
         Explore(w)
 ```
 
-As we run through every vertex once and then every edge twice we have $O(\vert V \vert \cdot \vert E \vert)$. 
+As we run through every vertex once and then every edge twice we have $O(\vert V \vert + \vert E \vert)$. 
