@@ -15,4 +15,6 @@ chatgpt: false
 
 ## Solutions
 
-- 
+- [[DFS to find path in a directed graph]] 
+	- Runs in $O(\vert V \vert \cdot \vert E \vert)$ 
+	- Unweighted.

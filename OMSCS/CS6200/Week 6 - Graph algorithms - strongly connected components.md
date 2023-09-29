@@ -207,6 +207,6 @@ SCC(G):
 
 In the middle of writing 
 - [[Depth-first search (DFS)|DFS]]
-- [[Find path in a direct graph]] (extract notes above into DFS algorithm)
+- [[Find path in a directed graph]] (extract notes above into DFS algorithm)
 - [[Find path in undirected graph]] (extract notes above into DFS algorithm)
 - [[A vertex with the highest post order number lies in a source SCC]] (from lectures)
