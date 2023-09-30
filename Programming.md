@@ -126,3 +126,5 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Breath-first search (BFS)]]
 - [[Queue]]
 - [[Priority queue]]
+- [[Satisfiability problem (SAT problem)]]
+- [[k-satisfiability problem (k-SAT problem)]]
