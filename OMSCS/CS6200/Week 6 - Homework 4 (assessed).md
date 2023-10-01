@@ -33,9 +33,9 @@ My algorithm is defined by the following steps.
 
 ## Correctness
 
-Suppose there is a path between $s$ and $t$ that uses edges $p$. If this uses only one colour then for all $e \in p$ $c(e) = colour$ for $colour \in \{white, gold\}$. Therefore $p \subset E_{colour}$ giving $d_{colour}(t) \leq \vert p \vert$. Therefore my algorithm will return true in this case.
+Suppose there is a path between $s$ and $t$ that uses edges $p$. If this uses only one $colour \in \{white, gold\}$ then for all $e \in p$ $c(e) = colour$. Therefore $p \subset E_{colour}$ giving $dist_{colour}(t) \leq \vert p \vert$. Therefore my algorithm will return true in this case.
 
-Suppose no path exists between $s$ and $t$ that uses edges from one colour. As $G_{colour}$ only has edges from one colour no path can exists between $s$ and $t$ in it. Therefore $d_{colour}(t) = \infty$ and my algorithm will return that no path exists.
+Suppose no path exists between $s$ and $t$ that uses edges from one colour. As $G_{colour}$ only has edges from one colour no path can exists between $s$ and $t$ in it. Therefore $dist_{colour}(t) = \infty$ and my algorithm will return that no path exists.
 
 ## Run time
 
@@ -43,7 +43,7 @@ The run time is $O(\vert V \vert + \vert E \vert)$, with the explanation below.
 
 Dividing the edges up takes $O(\vert E \vert)$ time, as we require to run through each edge. 
 
-As BFS stakes $O(\vert V \vert + \vert E \vert)$ running BFS on $G_{white}$ takes $O(\vert V \vert + \vert E_{gold} \vert) = O(\vert V \vert + \vert E \vert)$ time.
+As BFS takes $O(\vert V \vert + \vert E \vert)$ running BFS on $G_{white}$ takes $O(\vert V \vert + \vert E_{gold} \vert) = O(\vert V \vert + \vert E \vert)$ time.
 
 I assume checking in an array is constant time O(1).
 
@@ -62,7 +62,7 @@ My algorithm is defined by the following steps.
 2. Run Breath-first search on $G_{white} = (V, E_{white})$ starting at $s$ returning $dist_{white}$.
 4. Run Breath-first search on $G_{gold} = (V, E_{gold})$ starting at $t$ returning $dist_{gold}$.
 5. Run through each vertex $v \in V$ 
-	1. if $dist_{white}(v) < \infty$ and $dist_{gold}(v) < \infty$ return that such a path does exist. 
+	1. if $dist_{white}(v) < \infty$ and $dist_{gold}(v) < \infty$ output that such a path does exist. 
 6. If no such $v$ matches that condition return that no such path exists.
 
 ## Correctness
@@ -81,7 +81,7 @@ Therefore there is some $v \in V$ such that $dist_{white}(v) = k < \infty$ so th
 
 Equally as $dist_{gold}(v) = n < \infty$ so there exists some path $f_1f_2 \ldots f_n$ between $t$ and $v$ such that $c(f_i) = \ gold$.
 
-As $G$ is undirected the path $e_1e_2 \ldots e_kf_n \ldots f_2 f_1$ is a path between $s$ and $t$ where all white edges appear before gold edges. 
+As $G$ is undirected, $e_1e_2 \ldots e_kf_n \ldots f_2 f_1$ is a path between $s$ and $t$ where all white edges appear before gold edges. 
 
 This gives that our algorithm says there is a path if and only if such a path exists - proving it is correct.
 
