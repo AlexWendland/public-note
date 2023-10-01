@@ -37,3 +37,10 @@ The only problem is keeping track of the edges that are valid to include.
 ![[Kruskal's algorithm#Run time]]
 
 ![[Kruskal's algorithm#Correctness]]
+
+So the only think left to prove [[Kruskal's algorithm]] is correct is the proof of the cut property.
+
+![[Cut property]]
+
+## Prim's algorithm
+

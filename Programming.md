@@ -132,3 +132,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Minimum Spanning Tree problem (MST)]]
 - [[Kruskal's algorithm]]
 - [[Disjoint set]]
+- [[Cut property]]
