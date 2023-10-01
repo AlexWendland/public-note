@@ -30,3 +30,10 @@ The greedy approach of just starting with an empty graph and keep adding valid e
 
 The only problem is keeping track of the edges that are valid to include. 
 
+## Kruskal's Algorithm
+
+![[Kruskal's algorithm#Pseudocode]]
+
+![[Kruskal's algorithm#Run time]]
+
+![[Kruskal's algorithm#Correctness]]

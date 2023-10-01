@@ -1,6 +1,7 @@
 ---
-aliases: []
-type: str
+aliases:
+  - merge sort
+type: algorithm
 publish: false
 created: 2023-09-05
 last_edited: 2023-09-05
