@@ -131,3 +131,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[2-SAT algorithm using SCC]]
 - [[Minimum Spanning Tree problem (MST)]]
 - [[Kruskal's algorithm]]
+- [[Disjoint set]]
