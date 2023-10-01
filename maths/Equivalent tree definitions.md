@@ -1,5 +1,6 @@
 ---
-aliases: 
+aliases:
+  - equivalent tree definitions
 type: lemma
 publish: true
 created: 2023-09-26

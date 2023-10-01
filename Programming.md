@@ -128,3 +128,6 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Priority queue]]
 - [[Satisfiability problem (SAT problem)]]
 - [[k-satisfiability problem (k-SAT problem)]]
+- [[2-SAT algorithm using SCC]]
+- [[Minimum Spanning Tree problem (MST)]]
+- [[Kruskal's algorithm]]
