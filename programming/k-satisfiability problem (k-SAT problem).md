@@ -19,7 +19,7 @@ chatgpt: false
 >Given a [[Boolean function|boolean function]] $f$ in [[Conjunctive normal form (CNF)|CNF]] with $n$ variables and $m$ clauses of size at most $k$. Is there a true/false assignment to the $n$ variables that satisfies $f$. If yes then output it, otherwise say no.
 
 # Solutions
-
+ - 
 
 # Related
 - [[Satisfiability problem (SAT problem)|SAT problem]]

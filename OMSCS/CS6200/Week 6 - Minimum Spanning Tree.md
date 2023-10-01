@@ -1,0 +1,32 @@
+---
+aliases: 
+type: lecture
+publish: true
+created: 2023-10-01
+last_edited: 2023-10-01
+tags:
+  - OMSCS
+course: "[[CS6200 Introduction to Graduate Algorithms]]"
+week: 6
+chatgpt: false
+---
+# Week 6 - Minimum Spanning Tree
+
+![[Minimum Spanning Tree problem (MST)#Statement]]
+
+## Tree properties
+
+It is useful to remind ourselves of some [[Tree (graph)|tree]] properties:
+
+1. Tree on $n$ vertices has $n-1$ edges.
+2. In a tree, there is exactly one path between every pair of vertices.
+3. Any connected $G = (V,E)$ with $\vert E \vert = \vert V \vert - 1$ is a tree.
+
+These are all proved by the [[Equivalent tree definitions|equivalent tree definitions]].
+
+## Greed is good ... in this case
+
+The greedy approach of just starting with an empty graph and keep adding valid edges of minimum weight, solves the [[Minimum Spanning Tree problem (MST)|MST]] problem.
+
+The only problem is keeping track of the edges that are valid to include. 
+
