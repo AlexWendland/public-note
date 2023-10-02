@@ -17,3 +17,7 @@ chatgpt: false
 >$$w(T) = \sum_{e \in E'} w(e).$$ 
 
 # Solutions
+- [[Kruskal's algorithm]]
+	- It takes $O(\vert E \vert \log(\vert V \vert))$.
+- [[Prim's algorithm]]
+	- It takes $O((\vert V \vert + \vert E \vert) \log(\vert V \vert))$.

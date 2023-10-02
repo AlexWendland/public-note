@@ -133,3 +133,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Kruskal's algorithm]]
 - [[Disjoint set]]
 - [[Cut property]]
+- [[Prim's algorithm]]
