@@ -79,3 +79,4 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[How post order relates to strongly connected components]]
 - [[Cut (graph)]]
 - [[Partition (set)]]
+- [[Residual Network (flow)]]
