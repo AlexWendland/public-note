@@ -134,3 +134,6 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Disjoint set]]
 - [[Cut property]]
 - [[Prim's algorithm]]
+- [[Max flow problem]]
+- [[Flow network]]
+- [[Flow]]
