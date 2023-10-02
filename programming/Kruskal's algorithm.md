@@ -15,7 +15,7 @@ This is an algorithm to solve the [[Minimum Spanning Tree problem (MST)|MST]] pr
 ## Pseudocode
 
 ```pseudocode
-Kruskal's(G):
+Kruskal's(G,w):
 	Input: undirected graph G=(V,E) with weights w(e).
 	Output: MST edges X
 1. Sort E by weights, smallest to largest
