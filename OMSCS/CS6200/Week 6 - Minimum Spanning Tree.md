@@ -44,3 +44,6 @@ So the only think left to prove [[Kruskal's algorithm]] is correct is the proof 
 
 ## Prim's algorithm
 
+![[Prim's algorithm#Algorithm]]
+
+![[Prim's algorithm#Correctness]]
