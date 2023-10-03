@@ -1,10 +1,14 @@
 ---
-aliases: [error code, Error codes, error codes]
+aliases:
+  - error code
+  - Error codes
+  - error codes
 type: definition
 publish: true
 created: 2023-08-20
 last_edited: 2023-08-20
-tags: programming, list[str]
+tags:
+  - programming
 chatgpt: true
 ---
 # Error code

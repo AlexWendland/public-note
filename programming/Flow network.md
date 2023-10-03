@@ -1,7 +1,6 @@
 ---
 aliases:
   - flow network
-  - flow
 type: definition
 publish: true
 created: 2023-10-02
