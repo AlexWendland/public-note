@@ -227,6 +227,55 @@ This is exactly how our algorithm will go as well.
 
 ## 2-Sat algorithm
 
+Without the simplification step we have the following algorithm
+
+```pseudocode
+2SAT-simplified(f):
+	Input: 2-SAT problem on n variables with m clauses where each clause has 2 variables.
+	Output: Assignment from n variables satisfying f or saying no assignment is possible.
+1. Construct graph G for f'.
+2. Run SCC algorithm on S.
+3. If any variable and its complement are in the same SCC return no assignment possible.
+4. While still SCC left.
+	1. Take sink SCC S,
+	2. Set the clauses in S to true (and thier complements to false)
+	3. Remove S & \overline{S}
+7. Return assignment.
+```
+
+Constructing the graph takes $O(m)$ steps. Then running the [[2-SAT algorithm using SCC|SCC algorithm]] takes $O(n + m)$. Lastly filtering the [[Strongly connected components (directed graphs)|strongly connected components]] takes at most $O(n)$ steps as we have to run through the list of variables and their complements. (Note the ordering [[2-SAT algorithm using SCC|SCC algorithm]] algorithm returns in is a [[Topological sorting (DAG)|topologically sort]] so it isn't hard to identify sink components.)
+
+All together this runs in $O(n + m)$ time. However the algorithm with the above simplification
+
+```pseudocode
+2SAT(f):
+	Input: 2-SAT problem on n variables with m clauses.
+	Output: Assignment from n variables satisfying f or saying no assignment is possible.
+1. Set f' = f
+2. While f' has a unit clauses:
+	1. Find a unit clause c.
+	2. Assign c to True.
+	3. If \overline{c} is a unity clause return no assignment possible.
+	4. Remove clauses with c in and remove occurances of \overline{c}.
+	5. Set this new statement to f'.
+3. Construct graph G for f'.
+4. Run SCC algorithm on S.
+5. If any variable and its complement are in the same SCC return no assignment possible.
+6. While still SCC left.
+	1. Take sink SCC S,
+	2. Set the clauses in S to true (and thier complements to false)
+	3. Remove S & \overline{S}
+7. Return assignment.
+```
+
+Takes $O(nm)$ time to simplify the algorithm. As we require to simplify f' multiple times until there are no unit clauses. 
+
+Instead we can expand the problem to get a better $O$ run time. The pseudo code is below.
+
 ![[2-SAT algorithm using SCC#2-SAT algorithm using SCC]]
+
+The solution to $f'$ is valid for $f$ - as for any unit clause in $f$ $u_i$ we have $(u_i \lor Y) \land (u_i \lor \overline{Y})$ meaning regardless of the value of $Y$ $u_i$ has to be true. Then correctness follows from the proof above.
+
+This also has run time $O(n + m)$. The simplification takes $O(m)$ time which produces a problem with $n+1$ variables and at most $2m$ clauses. So from above this solves in $O(n+1 + 2m) = O(n + m)$. Giving an overall run time of $O(n + m)$.
 
 ![[2-SAT algorithm using SCC#Run time]]
