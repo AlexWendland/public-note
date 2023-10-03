@@ -69,5 +69,9 @@ Now consider edge $(l,r) \in E$ with $l \in L^{\ast}$ and $r \in R^{\ast}$ as th
 Similarly for edges $(r,l) \in E$ with $l \in L^{\ast}$ and $r \in R^{\ast}$ as there is no edge $(l,r) \in E^{f^{\ast}}$ we have $f^{\ast}(r,l) = 0$.
 
 From [[Max-flow min-cut Theorem#Claim 1|Claim 1]] we have
-$$
+$$\begin{align*}size(f^{\ast}) & = (f^{\ast})^{out}(L) + (f^{\ast})^{in}(L)\\
+& =  \sum_{\substack{(l,r) \in E\\ l \in L, r \in R}} f^{\ast}(l,r) + \sum_{\substack{(r,l) \in E\\ l \in L, r \in R}} f^{\ast}(r,l)\\ 
+& = \sum_{\substack{(l,r) \in E\\ l \in L, r \in R}} c(l,r)\\
+& = capacity(L^{\ast}, R^{\ast}).\end{align*}$$
+
 
