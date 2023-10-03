@@ -80,3 +80,4 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Cut (graph)]]
 - [[Partition (set)]]
 - [[Residual Network (flow)]]
+- [[Flows are maximal if there is no augmenting path]]

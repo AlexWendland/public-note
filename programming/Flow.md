@@ -1,5 +1,6 @@
 ---
-aliases: 
+aliases:
+  - flow
 type: definition
 publish: true
 created: 2023-10-02
@@ -14,5 +15,7 @@ chatgpt: false
 >- capacity constraint: $f(e) \leq c(e)$ for all $e \in E$, and
 >- conservation of flow: $\sum_{(a,v) \in E} f(a,v) = \sum_{(v,b)} f(v,b)$ for all $v \in V \backslash \{s, t\}$.
 >
->The value of this flow is $\sum_{(s,a) \in E} f(s,a) = \sum_{(b,t) \in E} f(b,t)$.
+>The size of this flow is $size(f) = \sum_{(s,a) \in E} f(s,a) = \sum_{(b,t) \in E} f(b,t)$.
+
+
 

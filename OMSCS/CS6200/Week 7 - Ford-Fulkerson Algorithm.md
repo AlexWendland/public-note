@@ -34,5 +34,7 @@ We may have to backtrack on previous chosen paths if it means we can increase th
 
 ![[Residual Network (flow)]]
 
+This allows us to define the idea for the algorithm.
 
-
+![[Ford-Fulkerson Algorithm#Algorithm]]
+![[Ford-Fulkerson Algorithm#Run time]]

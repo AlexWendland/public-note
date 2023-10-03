@@ -30,3 +30,4 @@ This course is a graduate-level course in the design and analysis of algorithms.
 - [Course textbook](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf)
 - [[Week 6 - Minimum Spanning Tree]]
 - [[Week 7 - Ford-Fulkerson Algorithm]]
+- [[Week 7 - Max-Flow Min-Cut]]
