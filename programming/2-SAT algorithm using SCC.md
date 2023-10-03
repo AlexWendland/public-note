@@ -13,23 +13,19 @@ chatgpt: false
 ```pseudocode
 2SAT(f):
 	Input: 2-SAT problem on n variables with m clauses.
-	Output: Assignment from n variables to m clauses satisfying f of no
-		assignment possible.
-1. Set f' = f
-2. While f' has a unit clauses:
-	1. Find a unit clause c.
-	2. Assign c to True.
-	3. If \overline{c} is a unity clause return no assignment possible.
-	4. Remove clauses with c in and remove occurances of \overline{c}.
-	5. Set this new statement to f'.
+	Output: Assignment from n variables satisfying f or saying no assignment is possible.
+1. Find all the unit clauses u_i in f.
+2. Make a dummy variable Y. And set f' = f
+	1. Replace the unit clauses in f' by u_i \lor Y.
+	2. Add new clauses to f' of u_i \lor \overline{Y}. 
 3. Construct graph G for f'.
 4. Run SCC algorithm on S.
 5. If any variable and its complement are in the same SCC return no assignment possible.
 6. While still SCC left.
 	1. Take sink SCC S,
-	2. Set the variables in S to true (and thier complements to false)
-	3. Remove S & S
-7. Return assignment.
+	2. Set the clauses in S to true (and thier complements to false)
+	3. Remove S & \overline{S}
+7. Return assignment without the value for Y.
 ```
 
 # Correctness
@@ -38,4 +34,6 @@ See [[Week 6 - 2-Satisfiability]] for the correctness of this algorithm.
 
 # Run time
 
-The run time of this algorithm is $O(nm)$ to simplify the clause with the algorithm on $G$ running in $O(n + m)$ time. 
+This has run time $O(n + m)$. 
+
+The simplification takes $O(m)$ time which produces a problem with $n+1$ variables and at most $2m$ clauses. The later half of the algorithm solves in $O(n+1 + 2m) = O(n + m)$. Giving an overall run time of $O(n + m)$.
