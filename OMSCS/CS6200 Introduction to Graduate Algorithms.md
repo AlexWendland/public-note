@@ -31,3 +31,4 @@ This course is a graduate-level course in the design and analysis of algorithms.
 - [[Week 6 - Minimum Spanning Tree]]
 - [[Week 7 - Ford-Fulkerson Algorithm]]
 - [[Week 7 - Max-Flow Min-Cut]]
+- [[Week 7 - Image Segmentation]]
