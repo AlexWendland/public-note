@@ -144,3 +144,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[st-cut]]
 - [[Min st-cut problem]]
 - [[Max-flow min-cut Theorem]]
+- [[Image Segmentation]]
