@@ -1,35 +1,18 @@
 ---
 aliases: 
-type: lecture
+type: algorithm
 publish: true
-created: 2023-10-04
-last_edited: 2023-10-04
+created: 2023-10-05
+last_edited: 2023-10-05
 tags:
-  - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
-week: 7
+  - programming
 chatgpt: false
 ---
-# Week 7 - Image Segmentation
+# Image segmentation by max flow
 
-Given an image, we would like to separate it into its distinct components. Such as the subject and background. 
+## Theory
 
-
-## Formulation
-
-Suppose we have picture $P$ which is a grid of different pixels. Define a [[Graph|undirected graph]] $G = (V, E)$ where $V$ is the set of pixels and $E$ is neighbouring pixels. Suppose in addition we are provided:
-
-- $f(v)$ is the likelihood $v \in V$ is in the foreground (assume $f(v) \geq 0$),
-- $b(v)$ is the likelihood $v \in V$ is in the background (assume $b(v) \geq 0$), and
-- $p(u,v)$ is the separation penalty for separating $u,v \in V$ for $(u,v) \in E$ (assume $p(u,v) \geq 0$).
-
-Then for any [[Cut (graph)|cut]] of $V$ into $V = F \cup B$, foreground and background, we define a weight:
-$$w(F,B) = \sum_{v \in F} f(v) + \sum_{u \in B} b(u) - \sum_{(v,u) \in cut(F,B)} p(u,v).$$
-The goal is to find the [[Cut (graph)|cut]] of $V$ with maximum weight.
-
-![[Image Segmentation#Statement]]
-
-## Reformulation
+### Reformulation
 
 Right now we have two problems, it is a maximalisation problem and the weights might not be non-negative.
 
@@ -40,7 +23,7 @@ $$\begin{align*}w(F,B) & = \sum_{v \in F} f(v) + \sum_{u \in B} b(u) - \sum_{(v,
 & = L - \sum_{u \in B} f(u) - \sum_{v \in F} b(v) - \sum_{(v,u) \in cut(F,B)} p(u,v)\end{align*}$$
 Therefore to maximise $w(F,B)$ we could instead minimise
 $$w'(F,B) = \sum_{u \in B} f(u) + \sum_{v \in F} b(v) + \sum_{(v,u) \in cut(F,B)} p(u,v).$$
-## New problem
+### New problem
 
 >[!tldr] Image segmentation altered 
 >Given an undirected graph $G = (V,E)$ with weights:
@@ -49,7 +32,7 @@ $$w'(F,B) = \sum_{u \in B} f(u) + \sum_{v \in F} b(v) + \sum_{(v,u) \in cut(F,B)
 >We we find [[Cut (graph)|cut]] $V = F \cup B$ that minimises
 >$$w'(F,B) = \sum_{u \in B} f(u) + \sum_{v \in F} b(v) + \sum_{(v,u) \in cut(F,B)} p(u,v).$$
 
-## Making a flow network
+### Making a flow network
 
 Define directed graph $G' = (V', E')$ where $V' = V \cup \{s,t\}$ and
 $$E' = \{ (u,v), (v,u), (s,x), (x,t) \vert (u,v) \in E, x \in V \}.$$
@@ -63,9 +46,7 @@ $$\begin{align*} capacity(F \cup \{s\}, B \cup \{t\}) & = \sum_{\substack{(v,w) 
 & = \sum_{u \in B} f(u) + \sum_{v \in F} b(v) + \sum_{\substack{(v,w) \in E\\ v \in F, w \in B}} p(v,w)\\
 & = w'(F,B).
 \end{align*}$$
-## Algorithm
-
-### pseudocode
+## Pseudo code 
 
 ```pseudocode
 Image_segmentation(G,f,b,p):
@@ -76,6 +57,6 @@ Image_segmentation(G,f,b,p):
 3. return F, b.
 ```
 
-### Runtime
+## Runtime
 
 Defining the graph takes at most $O(\vert V \vert + \vert E \vert)$ so the algorithm is dominated by the solution to your flow network problem. 

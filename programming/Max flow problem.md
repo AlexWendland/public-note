@@ -23,3 +23,4 @@ chatgpt: false
 # Theory
 
 - [[Max-flow min-cut Theorem]]
+	- This says the solutions are the same as the [[Min st-cut problem|min st-cut]] problems.

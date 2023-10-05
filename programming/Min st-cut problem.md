@@ -16,8 +16,12 @@ chatgpt: false
 
 # Solutions
 
+- [[Ford-Fulkerson Algorithm]]
+	- $O(C \vert E \vert)$ where $C$ is the min cut.
+	- This is only guaranteed to terminate for integer flows. 
 - 
 
 # Theory
 
 - [[Max-flow min-cut Theorem]]
+	- This says the solutions are the same as the [[Max flow problem|max flow]] problems.
