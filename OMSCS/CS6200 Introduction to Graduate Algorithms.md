@@ -32,3 +32,4 @@ This course is a graduate-level course in the design and analysis of algorithms.
 - [[Week 7 - Ford-Fulkerson Algorithm]]
 - [[Week 7 - Max-Flow Min-Cut]]
 - [[Week 7 - Image Segmentation]]
+- [[Week 7 - Edmonds-Karp algorithm]]
