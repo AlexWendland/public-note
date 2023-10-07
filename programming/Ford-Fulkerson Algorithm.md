@@ -10,17 +10,19 @@ chatgpt: false
 ---
 # Ford-Fulkerson Algorithm
 
-This is the naïve solution to the [[Max flow problem]]. It runs in [[Pseudo-polynomial time|pseudo-polynomial time]] depending on the size of the solution.
+This is the naïve solution to the [[Max flow problem]]. It runs in [[Pseudo-polynomial time|pseudo-polynomial time]] depending on the size of the solution. A more developed algorithm that uses the same design is the [[Edmonds-Karp algorithm]].
+
+Their main difference is that [[Edmonds-Karp algorithm]] must use [[Breath-first search (BFS)|BFS]] whereas [[Ford-Fulkerson Algorithm]] can use [[Depth-first search (DFS)|DFS]] also. For a runtime bound we require [[Ford-Fulkerson Algorithm]] to use integer capacities.
 
 ## Algorithm
 
 ```pseudocode
 ford_fulkerson(G, c, s, t)
-	Input: A flow network.
+	Input: A flow network with integer capacities.
 	Output: A max flow on the network.
 1. Set f(e) = 0 for all e in E.
 2. Build the residual network G^f for the current flow f.
-3. Check for any s-t paths p in G^f using BFS.
+3. Check for any s-t paths p in G^f using BFS (or DFS).
 	1. If no such path then output f.
 4. Given p let c(p) = min_{e in p} c^f(e).
 5. Augment f by c(p) units along p.
@@ -31,6 +33,7 @@ ford_fulkerson(G, c, s, t)
 
 ## Correctness
 
+This is proven as [[Flows are maximal if there is no augmenting path|flows are maximal if there is no augmenting path in the residual graph]]. The proof of this follows from the [[Max-flow min-cut Theorem]].
 
 ## Run time
 
