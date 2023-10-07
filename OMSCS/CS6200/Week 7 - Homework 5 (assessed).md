@@ -21,14 +21,14 @@ chatgpt: false
 
 ## Algorithm
 
-1. Filter through $e \in E$ and selected edges $E' = \{e \in E \vert w(e) < w(e^{\ast})\}$.
+1. Filter through $e \in E$ and select edges $E' = \{e \in E \vert w(e) < w(e^{\ast})\}$.
 2. Run [[Breath-first search (BFS)|Breath-first search]] on $G' = (V,E')$ starting at $x$ returning $dist: V \rightarrow \mathbb{R}_{\geq 0}$ (a function telling us the minimum length of a path from $x$ to $v$ with $dist(v) = \infty$ if no such path exists).
 3. If $dist(y) < \infty$ output that $e^{\ast}$ is not in an [[MST]].
 4. Otherwise output that is it. 
 
 ## Correctness
 
-There are two cases if the algorithm returns $e^{\ast}$ is in an [[MST]] or when it is not. If we show correctness in these two cases we have the algorithm as a whole is correct. 
+There are two cases if the algorithm returns $e^{\ast}$ is in an [[MST]] or if it does not. If we show correctness in these two cases then we have the algorithm as a whole is correct. 
 
 ### Suppose the algorithm returns that $e^{\ast}$ is in an [[Minimum Spanning Tree problem (MST)|MST]]
 
