@@ -79,7 +79,7 @@ $$\begin{align*} \sum_{(u,s) \in E'} f'(u,s) & = \sum_{(s,w) \in E} f(s,w) & \mb
 & = \left ( \sum_{(s,w) \in E} f(s,w) - d(s,w) \right ) + \sum_{(s,w) \in E} d(s,w) \\
 & = \sum_{(s,w) \in E'} f'(s,w)\end{align*}$$
 similarly for $t$
-$$\begin{align*} \sum_{(t,w) \in E'} f'(t,w) & = \sum_{(u,t) \in E} f(u,t) & \mbox{from } f'(t',s')\\
+$$\begin{align*} \sum_{(t,w) \in E'} f'(t,w) & = \sum_{(u,t) \in E} f(u,t) & \mbox{from } f'(s',t')\\
 & = \left ( \sum_{(u,t) \in E} f(u,t) - d(u,t) \right ) + \sum_{(u,t) \in E} d(u,t) \\
 & = \sum_{(u,t) \in E'} f'(u,t)\end{align*}$$
 giving us validity.
