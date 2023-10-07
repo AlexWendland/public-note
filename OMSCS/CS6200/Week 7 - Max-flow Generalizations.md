@@ -55,3 +55,10 @@ This gives us validity of $f$ from the validity of $f'$.
 
 ### $\Rightarrow$
 
+Define
+$$f'(e) = \begin{cases} 
+f(e) - d(e) & \mbox{if } e \in E\\
+\sum_{(u,v) \in E} d(u,v) & \mbox{if } e = (s', v)\\
+\sum_{(v,w) \in E} d(v,w) & \mbox{if } e = (v, t')\\
+capacity(f) & \mbox{if } e = (t', s')
+\end{cases}$$
