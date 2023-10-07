@@ -22,7 +22,7 @@ chatgpt: false
 ## Algorithm
 
 1. Filter through $e \in E$ and select edges $E' = \{e \in E \vert w(e) < w(e^{\ast})\}$.
-2. Run [[Breath-first search (BFS)|Breath-first search]] on $G' = (V,E')$ starting at $x$ returning $dist: V \rightarrow \mathbb{R}_{\geq 0}$ (a function telling us the minimum length of a path from $x$ to $v$ with $dist(v) = \infty$ if no such path exists).
+2. Run [[Breath-first search (BFS)|Breath-first search]] on $G' = (V,E')$ starting at $x$ returning $dist: V \rightarrow \mathbb{N} \cup \{\infty\}$ (a function telling us the minimum number of edges in a path from $x$ to $v$ with $dist(v) = \infty$ if no such path exists).
 3. If $dist(y) < \infty$ output that $e^{\ast}$ is not in an [[MST]].
 4. Otherwise output that is it. 
 

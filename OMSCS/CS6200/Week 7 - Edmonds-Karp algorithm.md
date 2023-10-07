@@ -12,3 +12,4 @@ chatgpt: false
 ---
 # Week 7 - Edmonds-Karp algorithm
 
+This algorithm is essentially the same as [[Ford-Fulkerson Algorithm]] but we use [[Breath-first search (BFS)|BFS]] instead of [[Depth-first search (DFS)|DFS]] to find the augmenting path in the [[Residual Network (flow)|residual network]].
