@@ -10,6 +10,7 @@ course: "[[CS6200 Introduction to Graduate Algorithms]]"
 week: 7
 chatgpt: false
 ---
+# Week 6 - Homework 4 (assessed)
 # Week 7 - Max-Flow Min-Cut
 
 This lecture we want to show correctness of [[Ford-Fulkerson Algorithm]].
