@@ -18,7 +18,9 @@ chatgpt: false
 - [[Ford-Fulkerson Algorithm]]
 	- $O(C \vert E \vert)$ where $C$ is the max flow.
 	- This is only guaranteed to terminate for integer flows. 
-- 
+- [[Edmonds-Karp algorithm]]
+	- $O(\vert E \vert^2 \cdot \vert V \vert)$ run time.
+	- Assumes positive flow values.
 
 # Theory
 
