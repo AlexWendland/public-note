@@ -147,3 +147,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Image Segmentation]]
 - [[Image segmentation by max flow]]
 - [[Edmonds-Karp algorithm]]
+- [[Neighbourhood (graph)]]
