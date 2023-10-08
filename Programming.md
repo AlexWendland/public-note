@@ -148,3 +148,6 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Image segmentation by max flow]]
 - [[Edmonds-Karp algorithm]]
 - [[Neighbourhood (graph)]]
+- [[Graph representations]]
+- [[Adjacency matrix format (graph)]]
+- [[Edge list format (graph)]]

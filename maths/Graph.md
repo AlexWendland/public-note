@@ -26,6 +26,4 @@ chatgpt: false
 > This graph would have formal definition 
 > $$V = \{1,2,3,4\} \ \mbox{ and } \ E = \{(1,2), (1,3), (2,3), (3,4)\}.$$
 
-When storing it in a computer we have multiple different formats:
-- [[Adjacency list format (graph)|Adjacency list]]
-- 
+For representations in computer look at [[Graph representations|graph representations]].
