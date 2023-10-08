@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "obsidian-helper"
+version = "0.1.0"
+description = ""
+authors = ["Alex Wendland <a.p.wendland@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pyyaml = "^6.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.0.292"
+pytest = "^7.4.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+select = ["E", "F", "I", "W"]
