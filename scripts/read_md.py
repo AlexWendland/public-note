@@ -1,5 +1,6 @@
 import os
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
+import io
 
 import pydantic
 import yaml
@@ -24,11 +25,15 @@ class ObsidianFile(pydantic.BaseModel):
     metadata: Dict[str, Any]
     sections: List[MarkdownSection]
 
-
-def get_metadata_line_end(file_lines: List[str]) -> Optional[int]:
-    if file_lines[0].strip() != "---":
-        return None
-    return file_lines.index("---\n", 1)
+    @pydantic.root_validator(pre=True)
+    @classmethod
+    def check_sections(cls, values):
+        if len(values.get("sections")) > 0:
+            for section in values.get("sections")[1:]:
+                if section.title is None:
+                    raise ValueError(
+                        "All sections after the first section must have a title."
+                    )
 
 
 def read_metadata_from_obsidian_file(metadata_lines: List[str]) -> Dict[str, Any]:
@@ -47,6 +52,7 @@ def read_metadata_from_obsidian_file(metadata_lines: List[str]) -> Dict[str, Any
 
     return metadata
 
+
 def read_obsidian_file(file_name: str) -> ObsidianFile:
     """
     Reads a markdown file and returns an ObsidianFile object.
@@ -58,21 +64,92 @@ def read_obsidian_file(file_name: str) -> ObsidianFile:
     - ObsidianFile: An ObsidianFile object containing the file's metadata and sections.
     """
     with open(file_name, "r") as file:
-        file_lines = file.readlines()
+        first_line = next(file, None).strip()
+        if first_line is None:
+            return ObsidianFile(file_name=file_name, metadata={}, sections=[])
 
-    metadata_line_end = get_metadata_line_end(file_lines)
+        if first_line == "---":
+            metadata = extract_metadata(file)
 
-    if metadata_line_end is None:
-        metadata = {}
-        sections = [MarkdownSection(content="".join(file_lines))]
-    else:
-        metadata_lines = file_lines[1:metadata_line_end]
-        metadata = read_metadata_from_obsidian_file(metadata_lines)
-        sections = [
-            MarkdownSection(content="".join(file_lines[metadata_line_end + 1 :]))
-        ]
+        sections = []
 
-    return ObsidianFile(file_name=file_name, metadata=metadata, sections=sections
+        while True:
+            next_first_line, next_section = extract_section(first_line, file)
+            sections.append(next_section)
+            if next_first_line is None:
+                break
+
+        return ObsidianFile(file_name=file_name, metadata=metadata, sections=sections)
+
+
+def extract_metadata(file: io.TextIO) -> Dict[str, Any]:
+    """
+    Extracts YAML metadata from a markdown file.
+    """
+    metadata = ""
+    while True:
+        line = next(file, None)
+        if line is None:
+            raise ValueError("No end to metadata found.")
+        if line.strip() == "---":
+            break
+        metadata += line
+    return yaml.safe_load(metadata)
+
+
+def extract_section(first_line: str, file: io.TextIO) -> MarkdownSection:
+    """
+    Extracts a section from a markdown file.
+    """
+    if first_line is None:
+        raise ValueError("No section found.")
+
+    title, depth = parse_section_title(first_line)
+
+    content = ""
+
+    if title is None:
+        content += first_line
+
+    while True:
+        line = next(file, None)
+        if line is None or is_title(line):
+            break
+        content += line
+
+    return line, MarkdownSection(title=title, depth=depth, content=content)
+
+
+def parse_section_title(
+    line: str,
+) -> Tuple[Optional[str], Optional[pydantic.PositiveInt]]:
+    """
+    Parses a section title.
+    """
+    if not is_title(line):
+        return None, None
+    depth = 0
+    for char in line:
+        if char == "#":
+            depth += 1
+        else:
+            break
+    title = line[depth:].strip()
+    return title, depth
+
+
+def is_title(line: str) -> bool:
+    """
+    Checks if a line is a section title.
+    """
+    if len(line) < 2:
+        return False
+    if line[0] != "#":
+        return False
+    if line[1] not in ["#", " "]:
+        return False
+    return True
+
 
 if __name__ == "__main__":
     current_file_directory = os.path.dirname(os.path.abspath(__file__))
