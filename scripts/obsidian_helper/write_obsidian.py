@@ -33,8 +33,8 @@ def write_section(file: io.StringIO, section: MarkdownSection) -> None:
     if section.title:
         file.write("#" * section.depth + " " + section.title + "\n")
     if section.lines:
-        file.writelines(section.lines)
-    file.write("\n")
+        for line in section.lines:
+            file.write(line + "\n")
 
 if __name__ == "__main__":
     obsidian_file = ObsidianFile(
