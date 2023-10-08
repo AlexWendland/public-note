@@ -1,39 +1,9 @@
-import os
-from typing import Any, Dict, List, Optional, Tuple
 import io
+from typing import Any, Dict, List, Optional, Tuple
 
 import pydantic
 import yaml
-
-
-class MarkdownSection(pydantic.BaseModel):
-    title: Optional[str]
-    depth: Optional[pydantic.PositiveInt]
-    content: str
-
-    @pydantic.root_validator(pre=True)
-    @classmethod
-    def check_title_and_depth(cls, values):
-        if (values.get("title") is None and values.get("depth") is not None) or (
-            values.get("title") is not None and values.get("depth") is None
-        ):
-            raise ValueError("Must must provide a title and depth or neither.")
-
-
-class ObsidianFile(pydantic.BaseModel):
-    file_name: str
-    metadata: Dict[str, Any]
-    sections: List[MarkdownSection]
-
-    @pydantic.root_validator(pre=True)
-    @classmethod
-    def check_sections(cls, values):
-        if len(values.get("sections")) > 0:
-            for section in values.get("sections")[1:]:
-                if section.title is None:
-                    raise ValueError(
-                        "All sections after the first section must have a title."
-                    )
+from models import MarkdownSection, ObsidianFile
 
 
 def read_metadata_from_obsidian_file(metadata_lines: List[str]) -> Dict[str, Any]:
@@ -63,26 +33,28 @@ def read_obsidian_file(file_name: str) -> ObsidianFile:
     Returns:
     - ObsidianFile: An ObsidianFile object containing the file's metadata and sections.
     """
-    with open(file_name, "r") as file:
+    with open(file_name, "r", errors="ignore") as file:
         first_line = next(file, None).strip()
         if first_line is None:
             return ObsidianFile(file_name=file_name, metadata={}, sections=[])
 
+        metadata = {}
         if first_line == "---":
             metadata = extract_metadata(file)
+            first_line = next(file, None)
 
         sections = []
 
         while True:
-            next_first_line, next_section = extract_section(first_line, file)
+            first_line, next_section = extract_section(first_line, file)
             sections.append(next_section)
-            if next_first_line is None:
+            if first_line is None:
                 break
 
         return ObsidianFile(file_name=file_name, metadata=metadata, sections=sections)
 
 
-def extract_metadata(file: io.TextIO) -> Dict[str, Any]:
+def extract_metadata(file: io.StringIO) -> Dict[str, Any]:
     """
     Extracts YAML metadata from a markdown file.
     """
@@ -97,7 +69,7 @@ def extract_metadata(file: io.TextIO) -> Dict[str, Any]:
     return yaml.safe_load(metadata)
 
 
-def extract_section(first_line: str, file: io.TextIO) -> MarkdownSection:
+def extract_section(first_line: str, file: io.StringIO) -> Tuple[str, MarkdownSection]:
     """
     Extracts a section from a markdown file.
     """
@@ -106,18 +78,18 @@ def extract_section(first_line: str, file: io.TextIO) -> MarkdownSection:
 
     title, depth = parse_section_title(first_line)
 
-    content = ""
+    lines = []
 
     if title is None:
-        content += first_line
+        lines.append(first_line.strip())
 
     while True:
         line = next(file, None)
         if line is None or is_title(line):
             break
-        content += line
+        lines.append(line.strip())
 
-    return line, MarkdownSection(title=title, depth=depth, content=content)
+    return line, MarkdownSection(title=title, depth=depth, lines=lines)
 
 
 def parse_section_title(
@@ -149,15 +121,3 @@ def is_title(line: str) -> bool:
     if line[1] not in ["#", " "]:
         return False
     return True
-
-
-if __name__ == "__main__":
-    current_file_directory = os.path.dirname(os.path.abspath(__file__))
-    metadata_test_file = os.path.join(
-        current_file_directory, "example_with_metadata.md"
-    )
-    no_metadata_test_file = os.path.join(
-        current_file_directory, "example_with_no_metadata.md"
-    )
-    print(read_metadata_from_obsidian_file(metadata_test_file))
-    print(read_metadata_from_obsidian_file(no_metadata_test_file))
