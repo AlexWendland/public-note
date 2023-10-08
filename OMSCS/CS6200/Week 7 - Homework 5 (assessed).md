@@ -57,7 +57,7 @@ From the correctness of [[Kruskal's algorithm]], we know $X \cup \{e^{\ast}\}$ i
 
 For a contradiction suppose instead we have an [[Minimum Spanning Tree problem (MST)|MST]] $T^{\ast} = (V, E^{\ast})$ where $e^{\ast} \in E^{\ast}$.
 
-As $T^{\ast}$ is a connected tree we know by removing $e^{\ast}$ this separates $T^{\ast}$ into two connected components $X,Y \subset V$ where $x \in X$ and $y \in Y$. Let $B = E^{\ast} \backslash \{e^{\ast}\}$.    
+As $T^{\ast}$ is a connected tree we know by removing $e^{\ast}$ this separates $T^{\ast}$ into two connected components $X,Y \subset V$ where $x \in X$ and $y \in Y$. Define $B := E^{\ast} \backslash \{e^{\ast}\}$.    
 
 Now recall the cut property, reworded in our context. 
 
@@ -70,10 +70,10 @@ By the definition $e \in E'$ if $w(e) < w(e^{\ast})$ therefore the minimum weigh
 
 By the [[Cut property]] $B \cup \{e'\}$ is part of a [[Minimum Spanning Tree problem (MST)|MST]] $T$. Note 
 $$\vert B \cup \{e'\}\vert = \vert ( E^{\ast} \backslash \{e^{\ast}\} ) \cup \{e'\} \vert = \vert E^{\ast} \vert - 1 + 1 = \vert E^{\ast} \vert = \vert V \vert - 1$$
-as $T^{\ast} = (V,E^{\ast})$ is a [[Tree (graph)|tree]]. Giving that $T = (V, B \cup \{e'\})$ as a tree has $\vert V \vert - 1$ edges.
+as $T^{\ast} = (V,E^{\ast})$ is a [[Tree (graph)|tree]]. Giving that $T = (V, B \cup \{e'\})$ as a connected tree has $\vert V \vert - 1$ edges.
 
 However 
-$$w(T) = w(B) + w(e') < w(B) + w(e^{\ast}) = W(T^{\ast})$$
+$$w(T) = w(B) + w(e') < w(B) + w(e^{\ast}) = w(T^{\ast})$$
 contradicting $T^{\ast}$ was an [[Minimum Spanning Tree problem (MST)|MST]] in the first place. 
 
 Therefore no such $T^{\ast}$ exists and our algorithm is correct. 
@@ -84,7 +84,7 @@ The overall run time is $O(\vert E \vert + \vert V \vert)$, with explanation bel
 
 Step 1 involves going through the list of edges and checking their weights. This takes $O(\vert E \vert)$ steps.
 
-Step 2 involves running [[Breath-first search (BFS)|Breath-first search]] on a graph with $\vert V \vert$ vertices and $< \vert E \vert$ edges so this takes at most $O(\vert V \vert + \vert E \vert)$ time.
+Step 2 involves running [[Breath-first search (BFS)|Breath-first search]] on a graph with $\vert V \vert$ vertices and $< \vert E \vert$ edges so this takes $O(\vert V \vert + \vert E \vert)$ time.
 
 Step 3 and 4 involves checking one value so is $O(1)$.
 
