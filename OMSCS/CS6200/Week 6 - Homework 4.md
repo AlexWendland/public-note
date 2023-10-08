@@ -162,7 +162,18 @@ We only need to add 1 edge $(D,A)$.
 >The [[Reverse directed graph|reverse]] of a [[Directed graph|directed graph]] $G = (V,E)$ is another directed graph $G^R = (V, E^R)$ on the same vertex set, but with all edges revered; that is $E^R = \{(v,u) \vert (u,v \in E\}$.
 >Give a linear-time algorithm for computing the reverse of a graph in [[Adjacency list format (graph)|adjacency list]] format?
 
+```pseudocode
+reverse(V, E):
+	Input: A graph G = (V,E) in adacency list format E(v).
+	Ouput: The graph G^R = (V, E^R) in adacency list format.
+1. Intialise lists E^R(v) for v in V
+2. For each vertex v in V
+	2.1. for each u in E(v)
+		2.1.1 add v to E^R(u)
+3. Output E^R(v)
+```
 
+Initialising the lists takes $O(\vert V \vert)$ time. As there are $\vert E \vert$ edges represented in $E(v)$, going through all of them takes $O(\vert E \vert)$ time. Giving the run time is $O(\vert V \vert + \vert E \vert$).
 
 >[!question] Problem 3.15 Computopia
 >The police department in the city of Computopia has made all streets one-way. The mayor contends that there is still a way to drive legally from any intersection in the city to any other intersection, but the opposition is not convinced. A computer program is needed to determine whether the mayor is right. However, the city elections are coming up soon, and there is just enough time to run a linear-time algorithm.
@@ -170,6 +181,8 @@ We only need to add 1 edge $(D,A)$.
 >(a) Formulate this problem graph-theoretically, and explain why it can indeed be solved in linear time. 
 >
 >(b) Suppose it now turns out that the mayor’s original claim is false. She next claims something weaker: if you start driving from town hall, navigating one-way streets, then no matter where you reach, there is always a way to drive legally back to the town hall. Formulate this weaker property as a graph-theoretic problem, and carefully show how it too can be checked in linear time.
+
+
 
 >[!question] Problem 4.14 Shortest path through a given vertex
 >You are given a strongly connected directed graph $G = (V,E)$ with positive edge weights along with a particular node $v_0 \in V$ . Give an efficient algorithm for finding shortest paths between all pairs of nodes, with the one restriction that these paths must all pass through $v_0$.
