@@ -53,21 +53,116 @@ There are 8 orderings where you can switch the positions of $G$ and $H$, $D$ and
 >Run the [[Strongly connected components (directed graphs)|strongly connected components]] algorithm on the following directed graphs $G$. When doing [[Depth-first search (DFS)|DFS]] on $G^R$: whenever there is a choice of vertices to explore, always pick the one that is alphabetically first. 
 >In each case answer the following questions:
 >1. In what order are the strongly connected components found?
->2. Which are the source SCCs and which are the sing SCCs?
+>2. Which are the source SCCs and which are the sink SCCs?
 >3. Draw the metagraph.
 >4. What is the minimum number of edges you must add to this graph to make it strongly connected?
 
 We are running the [[DFS for finding strongly connected components]].
 
+```pseudocode
+SCC(G):
+	Input: directed graph G = (V,E) in adjacency list
+	Output: labeling of V by strongly connected component
+		1. Construct G^R
+		2. Run DFS on G^R
+		3. Order V by decreasing post order number.
+		4. Run directed DFS on G using the vertex ordering from before and 
+		   label the connected components we reach.
+```
+
+## Example 1
+
 ![[ex_3_4_1]]
 
+## Step 1 & 2
 
+| Vertex | pre | post |
+| ------ | --- | ---- |
+| A      | 1   | 6    |
+| B      | 2   | 3    |
+| C      | 7   | 20   |
+| D      | 10  | 11   |
+| E      | 4   | 5    |
+| F      | 9   | 18   |
+| G      | 14  | 15   |
+| H      | 12  | 17    |
+| I      | 13   | 16   |
+| J      | 8   | 19   |
+
+## Step 3
+
+C, J, F, H, I, G, D, A, E, B
+
+## Step 4
+
+| Vertex | pre | post | Strongly connected component |
+| ------ | --- | ---- | ---------------------------- |
+| A      | 15  | 16   | 3                            |
+| B      | 19  | 20   | 5                            |
+| C      | 1   | 8    | 1                            |
+| D      | 2   | 7    | 1                            |
+| E      | 17  | 18   | 4                            |
+| F      | 3   | 6    | 1                            |
+| G      | 10  | 13   | 2                            |
+| H      | 9   | 14   | 2                            |
+| I      | 11  | 12   | 2                            |
+| J      | 4   | 5    | 1                            |
+
+Source SCC's are B, E and the sink is the SCC containing C
+
+The meta graph is
+
+![[meta_3_4_1]]
+
+We would need to add 2 edges to make it [[Strongly connected (directed graphs)|strongly connected]] $(c,b)$ and $(c,e)$.
+
+## Example 2
 
 ![[ex_3_4_2]]
+
+## Step 1 & 2
+
+| Vertex | pre | post |
+| ------ | --- | ---- |
+| A      | 1   | 6    |
+| B      | 3   | 4    |
+| C      | 7   | 8    |
+| D      | 9   | 18   |
+| E      | 2   | 5    |
+| F      | 13  | 14   |
+| G      | 10  | 17   |
+| H      | 11  | 16   |
+| I      | 12  | 15   |
+
+## Step 3
+
+D, G, H, I, F, C, A, E, B
+
+## Step 4
+
+| Vertex | pre | post | Strongly connected component |
+| ------ | --- | ---- | ---------------------------- |
+| A      | 13  | 18   | 3                             |
+| B      | 14  | 17   | 3                             |
+| C      | 11  | 12   | 2                            |
+| D      | 1   | 10   | 1                            |
+| E      | 15  | 16   | 3                             |
+| F      | 3   | 6    | 1                            |
+| G      | 7   | 8    | 1                            |
+| H      | 2   | 9    | 1                            |
+| I      | 4   | 5    | 1                            |
+
+Soruce is $A$, sink is $D$. 
+
+![[meta_3_4_2]]
+
+We only need to add 1 edge $(D,A)$.
 
 >[!question] Problem 3.5 Reverse of graphs
 >The [[Reverse directed graph|reverse]] of a [[Directed graph|directed graph]] $G = (V,E)$ is another directed graph $G^R = (V, E^R)$ on the same vertex set, but with all edges revered; that is $E^R = \{(v,u) \vert (u,v \in E\}$.
 >Give a linear-time algorithm for computing the reverse of a graph in [[Adjacency list format (graph)|adjacency list]] format?
+
+
 
 >[!question] Problem 3.15 Computopia
 >The police department in the city of Computopia has made all streets one-way. The mayor contends that there is still a way to drive legally from any intersection in the city to any other intersection, but the opposition is not convinced. A computer program is needed to determine whether the mayor is right. However, the city elections are coming up soon, and there is just enough time to run a linear-time algorithm.
