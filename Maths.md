@@ -87,3 +87,5 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Uniqueness of inverses]]
 - [[Euclid's rule]]
 - [[Extended Euclidean algorithm]]
+- [[Fermat's little theorem]]
+- [[Euler's theorem (modular arithmetic)]]
