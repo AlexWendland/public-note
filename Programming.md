@@ -151,3 +151,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Graph representations]]
 - [[Adjacency matrix format (graph)]]
 - [[Edge list format (graph)]]
+- [[Modular exponent problem]]

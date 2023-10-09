@@ -82,3 +82,8 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Residual Network (flow)]]
 - [[Flows are maximal if there is no augmenting path]]
 - [[Modular arithmetic]]
+- [[Greatest common divisor]]
+- [[Modular multiplicative inverse existance]]
+- [[Uniqueness of inverses]]
+- [[Euclid's rule]]
+- [[Extended Euclidean algorithm]]
