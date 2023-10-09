@@ -37,3 +37,7 @@ If $x$ and $y$ are $n$-bit integers then calculating $x$ mod $y$ takes $O(n^2)$ 
 If $y \leq x/2$ then $x$ mod $y$ $\leq y -1 < y \leq x/2$.
 
 If $y > x/2$ then $x$ mod $y$ = $x - y < x - x/2 \leq x/2$.
+
+## Correctness
+
+This follows from [[Euclid's rule]].

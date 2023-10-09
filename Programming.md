@@ -152,3 +152,6 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Adjacency matrix format (graph)]]
 - [[Edge list format (graph)]]
 - [[Modular exponent problem]]
+- [[Modular exponent algorithm]]
+- [[Modular inverse problem]]
+- [[Modular inverse algorithm (extended Euclidean algorithm)]]

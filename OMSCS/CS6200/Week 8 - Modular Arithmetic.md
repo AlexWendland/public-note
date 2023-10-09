@@ -1,13 +1,13 @@
 ---
 aliases: 
 type: lecture
-publish: false
+publish: true
 created: 2023-10-09
 last_edited: 2023-10-09
 tags:
   - OMSCS
 course: "[[CS6200 Introduction to Graduate Algorithms]]"
-week: 
+week: 8
 chatgpt: false
 ---
 # Week 8 - Modular Arithmetic
@@ -18,7 +18,7 @@ First lets remind ourselves of the definition of [[Modular arithmetic|modular ar
 
 Within a computers architecture as numbers are stored in [[Binary|binary]] calculating mod $2^k$ is simple as taking the $k$ least significant bits. Therefore it is quite cheap. However, when the value is not $2^k$ it can get harder.
 
-## General problem
+## Exponent problem
 
 ![[Modular exponent problem#Statement]]
 
@@ -26,22 +26,47 @@ This is the problem we want to solve in the next step. We would like an algorith
 
 It is quite easy to calculate $x^{2k}$ (mod $N$) as you recursively calculate $(x^{2i})^2$ (mod $N$). Using this idea we get a first attempt at solving the above problem.
 
-```pseudocode
-resursive_mod_exp(x,y,N):
-	Input: n-bit integers x,y,N >= 0
-	Ouput: x^y mod N
-1. if y = 0, return 1
-2. z = resursive_mod_exp(x, floor(y/2), N)
-3. if y is even return z^2 mod N
-4. if y is off return xz^2 mod N
-```
+![[Modular exponent algorithm]]
 
-## Multiplicative inverse
+## Multiplicative inverse problem
 
 >[!tldr] Modular multiplicative inverses
 >The multiplicative inverse of $z$ mod $N$ is $0 \leq x < N$ such that $x \cdot z = 1$.
 
 This may not exist if $N$ is not prime.
 
+![[Modular multiplicative inverse existance]]
 
+Though knowing an inverse exists isn't helpful algorithmically.
+
+![[Modular inverse problem#Statement]]
+
+Let's first look at a helpful rule for finding this.
+
+![[Euclid's rule]]
+
+We can use this rule to calculate [[Greatest common divisor|greatest common divisors]].
+
+![[Euclidean algorithm]]
+
+Moreover we can extend this to calculate the inverse.
+
+![[Extended Euclidean algorithm]]
+
+## Example
+
+To compute $7^{-1}$ mod $360$  we run the [[Extended Euclidean algorithm]] on $7$ and $360$.
+
+| x   | y   | c    | a   | b   |
+| --- | --- | ---- | --- | --- |
+| 360 | 7   | 51   | -2   | 103 |
+| 7   | 3   | 2    | 1   | -2   |
+| 3   | 1   | 3    | 0   | 1   |
+| 1   | 0   | -    | 1   | 0   |
+
+First calculate the $x$, $y$ and $c$ columns going downwards. Where $x_i = y_i \cdot c_i + y_{i+1}$ with $x_{i+1} = y_i$.
+
+Second calculate $a_i$ and $b_i$ starting form the bottom where $a_{i-1} = b_i$ and $b_{i-1} = a_{i} - c_{i-1} \cdot b_i$. Note $d = min_i \ x_i$.
+
+Then as $1 = -2 \cdot 360 + 103 \cdot 7$ we have that $103 = 7^{-1}$ mod $360$.
 
