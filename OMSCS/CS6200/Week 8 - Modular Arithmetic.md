@@ -35,7 +35,7 @@ It is quite easy to calculate $x^{2k}$ (mod $N$) as you recursively calculate $(
 
 This may not exist if $N$ is not prime.
 
-![[Modular multiplicative inverse existance]]
+![[Modular multiplicative inverse existence]]
 
 Though knowing an inverse exists isn't helpful algorithmically.
 

@@ -155,3 +155,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Modular exponent algorithm]]
 - [[Modular inverse problem]]
 - [[Modular inverse algorithm (extended Euclidean algorithm)]]
+- [[Rivest-Shamir-Adleman algorithm (RSA algorithm)]]

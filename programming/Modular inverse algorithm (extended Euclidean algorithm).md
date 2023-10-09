@@ -29,6 +29,6 @@ As the [[Extended Euclidean algorithm]] takes $O(n^3)$ so does this algorithm.
 
 # Correctness
 
-From the [[Modular multiplicative inverse existance]] lemma we know the inverse only exists if the [[Greatest common divisor]] between $x$ and $N$ is 1.
+From the [[Modular multiplicative inverse existence]] lemma we know the inverse only exists if the [[Greatest common divisor]] between $x$ and $N$ is 1.
 
 As $1 = d = a \cdot x + N \cdot b$ looking at this all mod $N$ we have $a \cdot x = 1$ (mod $N$).
