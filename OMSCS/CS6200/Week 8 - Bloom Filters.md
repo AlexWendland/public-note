@@ -25,5 +25,22 @@ by [[Stirling's approximation|Stirling's formula]] and the definition of the [[B
 
 So by letting $n > 2^{11}$ we can further say
 $$\mathbb{P}(\geq log(n) \mbox{ balls are ssigned to } B_i) \leq \frac{1}{n^2}.$$
-Using this we can bound the max load
-$$
+Using this as there are $n$ bins we can bound the max load
+$$\mathbb{P}(\mbox{max load } < \log(n)) \geq 1 - \frac{1}{n}.$$
+Infact further analysis can show that [[Happens with high probability|with high probability]] max load = $\Theta(\frac{\log(n)}{\log\log(n)})$.
+
+## Best of 2 approach
+
+```pseudocode
+Best of 2(n)
+	Input: positive integer n
+	Output: allocation of n balls to n bins
+1. For i = 1 -> n
+	2. Randomly select two bins j & k.
+	3. If load(j) < load(k) assign ball to bin j
+	4. Otherwise assign ball to bin k
+```
+
+In this approach we get the max load is $O(\log \log n)$ [[Happens with high probability|with high probability]]. 
+
+Note if we increase 2 to $d > 2$ then we only get a slight decrease in max load to $O(\frac{\log \log(n)}{\log(d)})$ [[Happens with high probability|with high probability]]. 
