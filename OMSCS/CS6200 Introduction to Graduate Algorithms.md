@@ -36,3 +36,4 @@ This course is a graduate-level course in the design and analysis of algorithms.
 - [[Week 7 - Max-flow Generalizations]]
 - [[Week 8 - Modular Arithmetic]]
 - [[Week 8 - RSA]]
+- [[Week 8 - Bloom Filters]]

@@ -97,3 +97,7 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Chinese remainder theorem]]
 - [[Pairwise coprime]]
 - [[Bijection]]
+- [[Fermat witness]]
+- [[Existence of a Fermat witness if and only if composite]]
+- [[Carmichael number]]
+- [[Non-trivial Fermat witnesses are dense]]
