@@ -23,11 +23,7 @@ This course is a graduate-level course in the design and analysis of algorithms.
 - [[Week 3 - Solving Recurrences]]
 - [[Week 4 - Fast Fourier Transforms]]
 - [[Week 6 - Graph algorithms - strongly connected components]]
-- [[Week 6 - 2-Satisfiability]]## Links
-
-- [Central](https://www.omscentral.com/courses/introduction-to-graduate-algorithms/reviews)
-- [OMSCS page](https://omscs.gatech.edu/cs-6515-intro-graduate-algorithms)
-- [Course textbook](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf)
+- [[Week 6 - 2-Satisfiability]]
 - [[Week 6 - Minimum Spanning Tree]]
 - [[Week 7 - Ford-Fulkerson Algorithm]]
 - [[Week 7 - Max-Flow Min-Cut]]
@@ -37,3 +33,9 @@ This course is a graduate-level course in the design and analysis of algorithms.
 - [[Week 8 - Modular Arithmetic]]
 - [[Week 8 - RSA]]
 - [[Week 8 - Bloom Filters]]
+
+## Links
+
+- [Central](https://www.omscentral.com/courses/introduction-to-graduate-algorithms/reviews)
+- [OMSCS page](https://omscs.gatech.edu/cs-6515-intro-graduate-algorithms)
+- [Course textbook](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf)

@@ -156,3 +156,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Modular inverse problem]]
 - [[Modular inverse algorithm (extended Euclidean algorithm)]]
 - [[Rivest-Shamir-Adleman algorithm (RSA algorithm)]]
+- [[Hash function]]
