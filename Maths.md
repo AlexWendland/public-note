@@ -101,3 +101,5 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Existence of a Fermat witness if and only if composite]]
 - [[Carmichael number]]
 - [[Non-trivial Fermat witnesses are dense]]
+- [[Stirling's approximation]]
+- [[Binomial coefficient]]
