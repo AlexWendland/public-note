@@ -8,10 +8,12 @@ tags:
   - maths
 chatgpt: false
 ---
+# Statement
+
 >[!important] Lemma
 >For $x, N \in \mathbb{Z}$ there exists $y \in \mathbb{Z}$ where $0 < y < N$ such that $x \cdot y = 1$ (mod $N$) if and only if $gcd(x,N) = 1$.
 
-## Proof
+# Proof
 
 ## $\Rightarrow$
 
