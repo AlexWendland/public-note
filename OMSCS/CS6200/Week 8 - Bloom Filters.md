@@ -11,3 +11,8 @@ week: 8
 chatgpt: false
 ---
 # Week 8 - Bloom Filters
+
+This week we will be focusing on [[Hash function|hash functions]]. First we will look at a probability question.
+
+If you randomly throw $n$ identical balls in $n$ identical bins $B_i$ for $1 \leq i \leq n$ where each throw is independent of on another. Define $load(i) =$ number of balls in bin $B_i$. How large is the max load = $\max_i load(i)$?
+
