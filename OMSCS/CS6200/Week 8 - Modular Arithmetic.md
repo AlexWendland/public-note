@@ -69,4 +69,3 @@ First calculate the $x$, $y$ and $c$ columns going downwards. Where $x_i = y_i \
 Second calculate $a_i$ and $b_i$ starting form the bottom where $a_{i-1} = b_i$ and $b_{i-1} = a_{i} - c_{i-1} \cdot b_i$. Note $d = min_i \ x_i$.
 
 Then as $1 = -2 \cdot 360 + 103 \cdot 7$ we have that $103 = 7^{-1}$ mod $360$.
-
