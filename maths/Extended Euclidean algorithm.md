@@ -1,5 +1,6 @@
 ---
-aliases: 
+aliases:
+  - extended Euclidean algorithm
 type: algorithm
 publish: false
 created: 2023-10-09
