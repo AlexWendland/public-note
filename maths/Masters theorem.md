@@ -1,6 +1,6 @@
 ---
 aliases: 
-type: str
+type: lemma
 publish: false
 created: 2023-09-07
 last_edited: 2023-09-07

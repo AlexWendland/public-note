@@ -1,10 +1,13 @@
 ---
-aliases: [dynamic programming, dynamic programs]
+aliases:
+  - dynamic programming
+  - dynamic programs
 type: technique
-publish: false
+publish: true
 created: 2023-08-26
 last_edited: 2023-08-26
-tags: programming
+tags:
+  - programming
 chatgpt: true
 ---
 # Dynamic programming

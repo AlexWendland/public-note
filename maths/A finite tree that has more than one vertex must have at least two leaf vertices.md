@@ -1,10 +1,11 @@
 ---
-aliases: []
-type: str
-publish: false
+aliases: 
+type: lemma
+publish: true
 created: 2023-08-28
 last_edited: 2023-08-28
-tags: maths, list[str]
+tags:
+  - maths
 chatgpt: false
 ---
 >[!important] Proposition 

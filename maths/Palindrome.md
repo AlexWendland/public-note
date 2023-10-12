@@ -2,8 +2,8 @@
 aliases:
   - palindrome
   - palindromic
-type: str
-publish: false
+type: defintion
+publish: true
 created: 2023-09-03
 last_edited: 2023-09-03
 tags:

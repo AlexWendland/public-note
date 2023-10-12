@@ -3,7 +3,7 @@ aliases:
   - prime
   - primes
 type: defintion
-publish: false
+publish: true
 created: 2023-10-10
 last_edited: 2023-10-10
 tags:
