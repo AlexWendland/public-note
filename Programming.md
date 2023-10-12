@@ -160,3 +160,5 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Chain Hashing]]
 - [[Array (data structure)]]
 - [[Linked lists]]
+- [[Hash table]]
+- [[Associative array]]
