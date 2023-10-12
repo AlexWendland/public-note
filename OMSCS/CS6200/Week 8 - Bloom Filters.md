@@ -44,3 +44,13 @@ Best of 2(n)
 In this approach we get the max load is $O(\log \log n)$ [[Happens with high probability|with high probability]]. 
 
 Note if we increase 2 to $d > 2$ then we only get a slight decrease in max load to $O(\frac{\log \log(n)}{\log(d)})$ [[Happens with high probability|with high probability]]. 
+
+## Hashing
+
+>[!example] Unacceptable passwords
+>We want to check a user doesn't put in a password that is considered unacceptable.
+>We have a huge universe of possible passwords $U$. We want to maintain $S \subset U$ of unacceptable passwords.
+>
+>For a given password $x \in U$ we want to be able to answer is $x \in S$?
+
+In [[Chain Hashing]]
