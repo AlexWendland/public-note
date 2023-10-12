@@ -53,4 +53,6 @@ Note if we increase 2 to $d > 2$ then we only get a slight decrease in max load 
 >
 >For a given password $x \in U$ we want to be able to answer is $x \in S$?
 
-In [[Chain Hashing]]
+In [[Chain Hashing]], we use a [[Hash table|hash table]] ($A$, $h: U \rightarrow A$) of a given size $n$. Where the entries in $A$ the [[Associative array|associative array]] are [[Linked lists|linked lists]] that handle collisions.
+
+For notation let $\vert U \vert =: N$ and have $\vert S \vert =: m$ then ideally we will have $N >> n >= m$.
