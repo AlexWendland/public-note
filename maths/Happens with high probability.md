@@ -2,7 +2,7 @@
 aliases:
   - with high probability
 type: definition
-publish: false
+publish: true
 created: 2023-10-10
 last_edited: 2023-10-10
 tags:

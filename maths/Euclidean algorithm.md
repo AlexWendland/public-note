@@ -1,7 +1,7 @@
 ---
 aliases: 
 type: algorithm
-publish: false
+publish: true
 created: 2023-08-26
 last_edited: 2023-08-26
 tags:

@@ -1,10 +1,11 @@
 ---
-aliases: []
-type: str
-publish: false
+aliases: 
+type: design pattern
+publish: true
 created: 2023-08-20
 last_edited: 2023-08-20
-tags: programming, list[str]
+tags:
+  - programming
 chatgpt: false
 ---
 # Design Patterns

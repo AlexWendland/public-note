@@ -2,7 +2,7 @@
 aliases:
   - extended Euclidean algorithm
 type: algorithm
-publish: false
+publish: true
 created: 2023-10-09
 last_edited: 2023-10-09
 tags:
