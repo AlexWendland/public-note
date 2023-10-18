@@ -31,3 +31,19 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 
 >[!question] Problem 7.19 verify max-flow
 >Suppose someone presents you with a solution to a max-flow problem on some network. Give a linear time algorithm to determine whether the solution does indeed give a maximum flow.
+
+## [[Depth-first search (DFS)|DFS]] and [[Strongly connected components (directed graphs)|Strongly Connected Component]]
+
+Problems 3.1-3.5, 3.7, 3.8, 3.11, 3.15, 3.16, 3.22, 3.24.
+
+## [[Breath-first search (BFS)|BFS]] and Shortest path problems
+
+Problems 4.1-4.3, 4.8, 4.11, 4.12-4.14, 4.20, 4,21.
+
+## [[Minimum Spanning Tree problem (MST)]]
+
+Problems 5.1, 5.2, 5.5, 5.6, 5,7, 5.9, 5.20, 5.22, 5.23.
+
+## Flow problems
+
+Problems 7.18, 7.19, 7.21, 7.22, 7.24(\*), 7.28(\*)
