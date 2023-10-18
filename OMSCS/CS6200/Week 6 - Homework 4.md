@@ -182,10 +182,43 @@ Initialising the lists takes $O(\vert V \vert)$ time. As there are $\vert E \ver
 >
 >(b) Suppose it now turns out that the mayor’s original claim is false. She next claims something weaker: if you start driving from town hall, navigating one-way streets, then no matter where you reach, there is always a way to drive legally back to the town hall. Formulate this weaker property as a graph-theoretic problem, and carefully show how it too can be checked in linear time.
 
+**Part a**
 
+>[!note] Formulation
+>Given a [[Directed graph|directed graph]] $G = (V,E)$, do the vertices form a single strongly connected component?
+
+Run the [[DFS for finding strongly connected components]] to check if all vertices are in a single strongly connected component.
+
+**Part b**
+
+>[!note] Formulation 
+>Given a [[Directed graph|directed graph]] $G = (V, E)$ and a vertex $x \in V$ is $x$ in a sink vertex of the [[Strongly connected component graph (directed graph)|strongly connected component graph]].
+
+Run the [[DFS for finding strongly connected components]] to form the meta graph and then see if $x$ belongs to a sink vertex.
 
 >[!question] Problem 4.14 Shortest path through a given vertex
 >You are given a strongly connected directed graph $G = (V,E)$ with positive edge weights along with a particular node $v_0 \in V$ . Give an efficient algorithm for finding shortest paths between all pairs of nodes, with the one restriction that these paths must all pass through $v_0$.
+
+**Algorithm**
+
+Run [[Dijkstra's algorithm]] on $G$ starting a $v_0 \in V$ and return not only the shortest path lengths but also the `prev` array. This gives us paths $p^{out}_y$ from $v_0$ to $y \in V$ for every $y \in V$ as the graph is strongly connected. Then take the [[Reverse directed graph|reverse directed graph]] $G^R$ and run [[Dijkstra's algorithm]] again starting at $v_0 \in V$. This gives us paths in $G$ $p^{in}_x$ from $x \in V$ to $v_0$ for every $x \in V$ by inverting the paths we got in $G^R$. For any two points $x,y \in V$ the shortest path to get from $x$ to $y$ via $v_0$ is then $p^{in}_xp^{out}_y$.
+
+**Correctness**
+
+Note $p^{in}_xp^{out}_y$ is a path from $x$ to $y$ via $v_0$. Suppose we have another path $p$ from $x$ to $y$ via $v_0$ so we can separate it into $p_xp_y$ where $p_x$ is a path from $x$ to $v_0$ and $p_y$ is a path from $v_0$ to $y$. Due to the definition of $p^{in}_x$ and $p^{out}_y$ we have $dist(p^{in}_x) \leq dist(p_x)$ and $dist(p^{out}_y) \leq dist(p_y)$ therefore
+$$dist(p^{in}_xp^{out}_y) = dist(p^{in}_x) + dist(p^{out}_y) \leq dist(p_x) + dist(p_y) = dist(p).$$
+This gives it is the shortest such path.
+
+**Runtime**
+
+The both runs of [[Dijkstra's algorithm]] takes $O(\vert E \vert \log(\vert V \vert))$.
+
+Calculating the reverse graph takes $O(\vert E \vert)$.
+
+Concatenating the paths together takes $O(\vert V \vert^2)$ time.
+
+Therefore the run time takes $O(\vert V \vert^2 + \vert E \vert \log(\vert V \vert))$.
+
 
 >[!question] Problem 5.1 MST design
 >Consider the following graph.
@@ -197,6 +230,22 @@ Initialising the lists takes $O(\vert V \vert)$ time. As there are $\vert E \ver
 >(c) Suppose Kruskal’s algorithm is run on this graph. In what order are the edges added to the MST? For each edge in this sequence, give a cut that justifies its addition.
 
 ![[ex_5_1]]
+
+**Part a**
+
+The MST is given by
+
+![[ex_5_1_mst]]
+
+which has weight 19. 
+
+**Part b**
+
+It has 2, with the second replacing $(E,B)$ by $(B,F)$.
+
+**Part c**
+
+
 
 >[!question] Problem 5.2 MST design
 >Suppose we want to find the minimum spanning tree of the following graph.
