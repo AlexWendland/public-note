@@ -227,7 +227,7 @@ Therefore the run time takes $O(\vert V \vert^2 + \vert E \vert \log(\vert V \ve
 >
 >(b) How many minimum spanning trees does it have? 
 >
->(c) Suppose Kruskal’s algorithm is run on this graph. In what order are the edges added to the MST? For each edge in this sequence, give a cut that justifies its addition.
+>(c) Suppose [[Kruskal's algorithm]] is run on this graph. In what order are the edges added to the MST? For each edge in this sequence, give a cut that justifies its addition.
 
 ![[ex_5_1]]
 
@@ -245,16 +245,60 @@ It has 2, with the second replacing $(E,B)$ by $(B,F)$.
 
 **Part c**
 
-
+| edge  | cutset              |
+| ----- | ------------------- |
+| (A,E) | A                   |
+| (E,F) | A, E                |
+| (E,B) | A, E, F             |
+| (F,G) | A, B, E, F          |
+| (G,H) | A, B, E, F, G       |
+| (C,G) | A, B, E, F, G, H    |
+| (D,G) | A, B, C, E, F, G, H |
 
 >[!question] Problem 5.2 MST design
 >Suppose we want to find the minimum spanning tree of the following graph.
 >
->(a) Run Prim’s algorithm; whenever there is a choice of nodes, always use alphabetic ordering (e.g., start from node A). Draw a table showing the intermediate values of the cost array. 
+>(a) Run [[Prim's algorithm]]; whenever there is a choice of nodes, always use alphabetic ordering (e.g., start from node A). Draw a table showing the intermediate values of the cost array. 
 >
->(b) Run Kruskal’s algorithm on the same graph. Show how the disjoint-sets data structure looks at every intermediate stage (including the structure of the directed trees), assuming path compression is used.
+>(b) Run [[Kruskal's algorithm]] on the same graph. Show how the disjoint-sets data structure looks at every intermediate stage (including the structure of the directed trees), assuming path compression is used.
 
 ![[ex_5_2]]
+
+**part a)**
+
+| Iteration | A      | B      | C      | D      | E      | F      | G      | H      |
+| --------- | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| 0         | 0      | inf    | inf    | inf    | inf    | inf    | inf    | inf    |
+| 1         | - (\*) | 1 (A)  | inf    | inf    | 4 (A)  | 8 (A)  | inf    | inf    |
+| 2         | -      | A (\*) | 2 (B)  | inf    | 4 (A)  | 6 (B)  | 6 (B)  | inf    |
+| 3         | -      | A      | B (\*) | 3 (C)  | 4 (A)  | 6 (B)  | 2 (C)  | inf    |
+| 4         | -      | A      | B      | 1 (G)  | 4 (A)  | 1 (G)  | C (\*) | 1 (G)  |
+| 5         | -      | A      | B      | G (\*) | 4 (A)  | 1 (G)  | C      | 1 (G)  |
+| 6         | -      | A      | B      | G      | 4 (A)  | G (\*) | C      | 1 (G)  |
+| 7         | -      | A      | B      | G      | 4 (A)  | G      | C      | G (\*) |
+| 8         | -      | A      | B      | G      | A (\*) | G      | C      | G      |
+| 9         | -      | A      | B      | G      | A      | G      | C      | G      |
+
+This gives the following MST
+
+![[ex_5_2_mst]]
+
+**part b)**
+
+| Iteration    | A     | B     | C     | D     | E     | F     | G     | H     |
+| ------------ | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| -            | A (1) | B (1) | C (1) | D (1) | E (1) | F (1) | G (1) | H (1) |
+| (A,B) 1 (\*) | A (2) | A (1) | C (1) | D (1) | E (1) | F (1) | G (1) | H (1) |
+| (D,G) 1 (\*) | A (2) | A (1) | C (1) | D (2) | E (1) | F (1) | D (1) | H (1) |
+| (F,G) 1 (\*) | A (2) | A (1) | C (1) | D (2) | E (1) | D (1) | D (1) | G (1) |
+| (G,H) 1 (\*) | A (2) | A (1) | C (1) | D (2) | E (1) | D (1) | D (1) | D (1) |
+| (B,C) 2 (\*) | A (2) | A (1) | A (1) | D (2) | E (1) | D (1) | D (1) | D (1) |
+| (C,G) 2 (\*) | A (3) | A (1) | A (1) | A (2) | E (1) | D (1) | A (1) | D (1) |
+| (C,D) 3      | A (3) | A (1) | A (1) | A (2) | E (1) | D (1) | A (1) | D (1) |
+| (A,E) 4 (\*) | A (3) | A (1) | A (1) | A (2) | A (1) | D (1) | A (1) | D (1) |
+| (D,H) 4      | A (3) | A (1) | A (1) | A (2) | A (1) | D (1) | A (1) | A (1) |
+| (E,F) 5      | A (3) | A (1) | A (1) | A (2) | A (1) | A (1) | A (1) | A (1) |
+
 
 >[!question] Problem 5.9 MST statements
 >The following statements may or may not be correct. In each case, either prove it (if it is correct) or give a counterexample (if it isn’t correct). Always assume that the graph $G = (V, E)$ is undirected. Do not assume that edge weights are distinct unless this is specifically stated.
@@ -269,3 +313,48 @@ It has 2, with the second replacing $(E,B)$ by $(B,F)$.
 >(i) [[Prim's algorithm]] works correctly when there are negative edges. 
 >(j) (For any $r > 0$, define an $r$-path to be a path whose edges all have weight $< r$.) If $G$ contains an $r$-path from node $s$ to $t$, then every [[Minimum Spanning Tree problem (MST)|MST]] of $G$ must also contain an $r$-path from node $s$ to node $t$.
 >
+
+a) False
+![[5_9_a]]
+
+b) True
+
+In [[Kruskal's algorithm]] by the time it got to that edge it would have considered if all the rest of the cycle were in connected components and if not joined them. At this point they are all part of the same connected component.
+
+C) True
+
+It could always be the first edge we consider in [[Kruskal's algorithm]].
+
+D) True
+
+By the [[Cut property]].
+
+E) True
+
+By the [[Cut property]]
+
+F) False
+
+Consider the blue cycle in the graph below.
+
+![[5_9_f]]
+
+G) False,
+
+Starting at $v$ below you will construct the blue tree as these edges minimise the distance to $v$.
+
+![[5_9_g]]
+
+H) False,
+
+Consider the two vertices connected by the edge of weight 3 below
+
+![[5_9_f]]
+
+I) True,
+
+There is no restriction on the edge weights for [[Prim's algorithm]].
+
+J) True,
+
+If not there must be some path between $s$ and $t$ remove one of the edges of weight greater than $r$ then you could add one of the edges in the $r$-path between $s$ and $t$ to reconnect the tree. This would reduce the weight of the path.
