@@ -35,7 +35,7 @@ This has max capacity 13 with the min-cut being $\{S, C, F\}$ with $\{A, B, D, E
 
 ![[ex_7_17]]
 
-**Part a)**
+## **Part a)**
 
 The [[Flow|flow]] is in red below.
 
@@ -43,25 +43,25 @@ The [[Flow|flow]] is in red below.
 
 A minimum cut is $\{S, A, B\}$ $\{C, D, T\}$ with another one being $\{S, A, B, D\}$ $\{C, T\}$.
 
-**Part b)**
+## **Part b)**
 
 This has [[Residual Network (flow)|residual network]] as follows. It has purple nodes that are reachable from $S$ and orange nodes with can reach $T$.
 
 ![[ex_7_17_res]]
 
-**Part c)**
+## **Part c)**
 
 The Bottleneck edges are $(A,C)$ and $(B,C)$.
 
-**Part d)**
+## **Part d)**
 
 ![[ex_7_17_bottleneck_counter_example]]
 
 The max [[Flow|flow]] is 1. If we increase the value of $(S,A)$ or $(A,T)$ then the max flow is still only 1.
 
-**Part e)**
+## **Part e)**
 
-**Algorithm**
+### **Algorithm**
 
 ```Pseudocode
 1. Find a maxflow f using Edmond's-Karp algorithm.
@@ -72,11 +72,31 @@ The max [[Flow|flow]] is 1. If we increase the value of $(S,A)$ or $(A,T)$ then 
 6. Return edges (a,b) with a in A and B in B.
 ```
 
-**Correctness**
+### **Correctness**
 
+Recall that for a [[Max flow problem|max flow]] $f$ we have [[Every min-cut is at full capacity in a max-flow|every min-cut is at full capacity in a max-flow]] moreover [[Every min-cut has no flow going backwards along it in a max-flow|every min-cut has no flow going backwards along it in a max-flow]]. Therefore for any [[Min st-cut problem|min st-cut]] $(S,T)$ in the [[Residual Network (flow)|residual network]] $G^f$. We only have edges going from $T$ to $S$.
 
+#### Claim 1
 
-**Run Time**
+>[!important] Claim 1
+>The bottleneck edges are exactly
+>$$\bigcap_{(S,T) \ min \ st-cut} cut(S,T).$$
+
+#### Proof of Claim 1
+
+By the [[Max-flow min-cut Theorem]] we know that $value(f) = capacity(S,T)$ for any $(S,T)$ a [[Min st-cut problem|min st-cut]]. 
+
+If $e$ is a bottleneck edge then increasing $c(e)$ increases the max flow in the [[Flow network|flow network]]. Therefore $capacity(S,T)$ must increase for each $(S,T)$ a [[Min st-cut problem|min st-cut]] in the original graph. For e to effect $capacity(S,T)$ it must lie in $cut(S,T)$.
+
+This gives all bottleneck edges must lie in every [[Min st-cut problem|min st-cut]].
+
+If $e$ lies in $cut(S,T)$ for every [[Min st-cut problem|min st-cut]] if I increase $c(e)$ the $capacity(S,T)$ rises for every [[Min st-cut problem|min st-cut]]. By the [[Max-flow min-cut Theorem]] this must increase the [[Max flow problem|max flow]] of the [[Flow network|flow network]].
+
+Therefore any edge that lies in every [[Min st-cut problem|min st-cut]] is a bottleneck edge.
+
+This gives the equality in claim 1.
+
+### **Run Time**
 
 The overall run time is limited by that of [[Edmonds-Karp algorithm]] $O(\vert E \vert^2 \cdot \vert V \vert)$ as I show below.
 

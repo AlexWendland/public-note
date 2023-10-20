@@ -34,6 +34,110 @@
       "type": "Macro",
       "command": true,
       "macroId": "737e038d-0f9b-40bb-a443-1b26ca771b12"
+    },
+    {
+      "id": "5935a661-fe4b-401f-a873-03dd50db9185",
+      "name": "Template: Add definition",
+      "type": "Template",
+      "command": true,
+      "templatePath": "templates/definition-template.md",
+      "fileNameFormat": {
+        "enabled": false,
+        "format": ""
+      },
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "general"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "openFileInNewTab": {
+        "enabled": false,
+        "direction": "vertical",
+        "focus": true
+      },
+      "openFile": true,
+      "openFileInMode": "default",
+      "fileExistsMode": "Nothing",
+      "setFileExistsBehavior": true
+    },
+    {
+      "id": "bcb6a3c5-1910-4592-80e9-f15ba9fe19da",
+      "name": "Macro: Add Maths lemma",
+      "type": "Macro",
+      "command": true,
+      "macroId": "168d495d-43ab-4166-8c16-e5886371655b"
+    },
+    {
+      "id": "cbde78c1-5a54-46ea-866e-c5ef133b2593",
+      "name": "Macro: Add Programming Problem",
+      "type": "Macro",
+      "command": true,
+      "macroId": "5008599c-c771-4046-bd6d-c641df508951"
+    },
+    {
+      "id": "dd098572-465a-41b5-92e1-fd37579c9734",
+      "name": "Template: Add lemma",
+      "type": "Template",
+      "command": true,
+      "templatePath": "templates/lemma-template.md",
+      "fileNameFormat": {
+        "enabled": false,
+        "format": ""
+      },
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "general"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "openFileInNewTab": {
+        "enabled": false,
+        "direction": "vertical",
+        "focus": true
+      },
+      "openFile": true,
+      "openFileInMode": "default",
+      "fileExistsMode": "Nothing",
+      "setFileExistsBehavior": true
+    },
+    {
+      "id": "85b85337-64b5-4d60-aef1-0fcc512c0c4d",
+      "name": "Template: Add Problem",
+      "type": "Template",
+      "command": true,
+      "templatePath": "templates/problem-template.md",
+      "fileNameFormat": {
+        "enabled": false,
+        "format": ""
+      },
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "general"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "openFileInNewTab": {
+        "enabled": false,
+        "direction": "vertical",
+        "focus": true
+      },
+      "openFile": true,
+      "openFileInMode": "default",
+      "fileExistsMode": "Nothing",
+      "setFileExistsBehavior": true
     }
   ],
   "macros": [
@@ -439,7 +543,7 @@
       "runOnStartup": false
     },
     {
-      "name": "Macro: Lemma",
+      "name": "Macro: Maths Lemma",
       "id": "168d495d-43ab-4166-8c16-e5886371655b",
       "commands": [
         {
@@ -520,26 +624,28 @@
       "runOnStartup": false
     },
     {
-      "name": "Macro: Definition",
+      "name": "Macro: Programming Problem",
       "id": "5008599c-c771-4046-bd6d-c641df508951",
       "commands": [
         {
-          "name": "Untitled Template Choice",
+          "name": "Add problem to general folder",
           "type": "NestedChoice",
           "id": "66240eec-c0ea-4da0-859c-63c296cee6bc",
           "choice": {
             "id": "71f78db2-f595-406f-abd3-c12dde669680",
-            "name": "Untitled Template Choice",
+            "name": "Add problem to general folder",
             "type": "Template",
             "command": false,
-            "templatePath": "",
+            "templatePath": "templates/problem-template.md",
             "fileNameFormat": {
               "enabled": false,
               "format": ""
             },
             "folder": {
-              "enabled": false,
-              "folders": [],
+              "enabled": true,
+              "folders": [
+                "general"
+              ],
               "chooseWhenCreatingNote": false,
               "createInSameFolderAsActiveFile": false,
               "chooseFromSubfolders": false
@@ -550,10 +656,49 @@
               "direction": "vertical",
               "focus": true
             },
-            "openFile": false,
+            "openFile": true,
             "openFileInMode": "default",
-            "fileExistsMode": "Increment the file name",
-            "setFileExistsBehavior": false
+            "fileExistsMode": "Nothing",
+            "setFileExistsBehavior": true
+          }
+        },
+        {
+          "name": "Add to programming index ",
+          "type": "NestedChoice",
+          "id": "c6138c47-7a92-4b45-ad50-5a65fea2d338",
+          "choice": {
+            "id": "8aea1ba7-3565-4acd-afb6-50986f226476",
+            "name": "Add to programming index ",
+            "type": "Capture",
+            "command": false,
+            "appendLink": false,
+            "captureTo": "",
+            "captureToActiveFile": false,
+            "createFileIfItDoesntExist": {
+              "enabled": false,
+              "createWithTemplate": false,
+              "template": ""
+            },
+            "format": {
+              "enabled": true,
+              "format": "- [[{{value:title}}]]"
+            },
+            "insertAfter": {
+              "enabled": true,
+              "after": "# Index",
+              "insertAtEnd": true,
+              "createIfNotFound": false,
+              "createIfNotFoundLocation": "top"
+            },
+            "prepend": false,
+            "task": false,
+            "openFileInNewTab": {
+              "enabled": false,
+              "direction": "vertical",
+              "focus": true
+            },
+            "openFile": false,
+            "openFileInMode": "default"
           }
         }
       ],
