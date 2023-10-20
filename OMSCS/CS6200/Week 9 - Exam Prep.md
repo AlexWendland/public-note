@@ -107,23 +107,41 @@ So $5 \cdot 14 = 1$ mod $23$.
 > [!question] Problem 1.22
 > Prove or disprove: If $a$ has an inverse modulo $b$, then $b$ has an inverse modulo $a$.
 
-Inverse existance followed by Euclids rule.
+If $a$ has an inverse mod $b$ then $gcd(a,b) = 1$ by the [[Modular multiplicative inverse existence|modular multiplicative inverse existence lemma]]. Which is the required property for $b$ to have an inverse modulo $a$. 
 
 > [!question] Problem 1.24
 > If $p$ is prime, how many elements of $\{0,1, \ldots, p^n-1\}$ have an inverse mod $p^n$?
 
+For the elements to have an inverse mod $p^n$ we know then need $gcd(e,p^n) = 1$. Therefor this is simply [[Euler's totient function]] $\phi(p^n) = (p-1)p^{n-1}$. 
 
 > [!question] Problem 1.25
 > Calculate $2^{125}$ mod $127$ using any method you choose?
 
+As $127$ is prime we have $2^{126} =_{127} 1$ so $2^{125} = 2^{-1}$ mod $127$.
+
+| x   | y   | c   | a   | b   |
+| --- | --- | --- | --- | --- |
+| 127 | 2   | 63  | 1   | -63 | 
+| 2   | 1   | 1   | 0   | 1   |
+| 1   | 0   | -   | 1   | 0   |
+
+so $2^{-1} = 64$ mod 127.
 
 > [!question] Problem 1.26
 > What is the least significate decimal digit of $17^{17^{17}}
+
+We need to calculate $17^{17^{17}}$ mod 10. Therefore we need to calculate $17^{17}$ mod $4$. Which involves finding $17$ mod $2$. So $17^{17} = 1^{1} = 1$ mod $4$ giving $17^1 = 7$ mod $10$. 
 
 > [!question] Problem 1.27
 > Consider an [[Rivest-Shamir-Adleman algorithm (RSA algorithm)|RSA]] key set with $p=17$, $q=23$, $N=391$, and $e=3$. 
 > a) What is the value of $d$ to make this a secrete key?
 > b) What is the encryption of the message $M = 41$?
+
+To find $d$ we need to find $e = 3$'s inverse mod $(17-1) \cdot (23-1) = 352$
+
+| x   | y   | c   | a   | b   |
+| --- | --- | --- | --- | --- |
+|     |     |     |     |     |
 
 > [!question] Problem 1.28
 > In an [[Rivest-Shamir-Adleman algorithm (RSA algorithm)|RSA]] crypto system, $p=7$ and $q=11$. Find appropriate exponents $d$ and $e$.
