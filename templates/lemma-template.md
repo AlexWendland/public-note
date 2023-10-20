@@ -10,7 +10,7 @@ chatgpt: false
 ---
 # Statement
 
-> [!important] <% tp.file.title %>
-> Statement
+> [!important] Lemma
+> <% tp.file.title %>
 
 # Proof
