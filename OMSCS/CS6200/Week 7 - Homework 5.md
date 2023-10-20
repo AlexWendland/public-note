@@ -19,6 +19,8 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 
 ![[ex_7_10]]
 
+
+
 >[!question] Problem 7.17 Bottleneck edges
 >Consider the following network (the numbers are edge capacities).
 >(a) Find the maximum flow $f$ and a minimum cut. 
