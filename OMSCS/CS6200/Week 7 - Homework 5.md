@@ -37,7 +37,7 @@ This has max capacity 13 with the min-cut being $\{S, C, F\}$ with $\{A, B, D, E
 
 **Part a)**
 
-The flow is in red below.
+The [[Flow|flow]] is in red below.
 
 ![[ex_7_17_flow]]
 
@@ -45,6 +45,23 @@ A minimum cut is $\{S, A, B\}$ $\{C, D, T\}$ with another one being $\{S, A, B, 
 
 **Part b)**
 
+This has [[Residual Network (flow)|residual network]] as follows. It has purple nodes that are reachable from $S$ and orange nodes with can reach $T$.
+
+![[ex_7_17_res]]
+
+**Part c)**
+
+The Bottleneck edges are $(A,C)$ and $(B,C)$.
+
+**Part d)**
+
+![[ex_7_17_bottleneck_counter_example]]
+
+The max [[Flow|flow]] is 1. If we increase the value of $(S,A)$ or $(A,T)$ then the max flow is still only 1.
+
+**Part e)**
+
+Algorithm to identify bottleneck edges. 
 
 
 
