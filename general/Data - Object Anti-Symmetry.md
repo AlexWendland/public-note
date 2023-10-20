@@ -16,7 +16,7 @@ When we make objects we should have in mind whether this is simply a grouping of
 
 ## Hybrids
 
-In [[Python]] especially this might seem more like a spectrum than an anti-symmetry. However, a mid point tends to be bad practice and indicative that you may have low [[Cohesion]] in your code. 
+In [[Python Index]] especially this might seem more like a spectrum than an anti-symmetry. However, a mid point tends to be bad practice and indicative that you may have low [[Cohesion]] in your code. 
 
 ## [[Procedural Programming]] vs [[Object Oriented Programming (OOP)]]
 

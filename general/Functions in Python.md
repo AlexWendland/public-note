@@ -7,12 +7,12 @@ tags: programming, python
 ---
 # Functions in Python
 
-[[Functions]] in [[Python]] are a class and have type 'function'. i.e.
+[[Functions]] in [[Python Index]] are a class and have type 'function'. i.e.
 
 >\>\>\> type(my_function)
 >\<class 'function'\>
 
-They have their own [[Namespaces|namespace]] that gets destroyed once the function call has ended. In [[Python]] functions are [[First-class object|First-class objects]], meaning they can be assigned to variables. 
+They have their own [[Namespaces|namespace]] that gets destroyed once the function call has ended. In [[Python Index]] functions are [[First-class object|First-class objects]], meaning they can be assigned to variables. 
 
 You can see this in the below example.
 

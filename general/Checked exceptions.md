@@ -61,4 +61,4 @@ While checked exceptions aim to improve software robustness by enforcing explici
     
 4. **Reduced Flexibility**: The strict contract imposed by checked exceptions may sometimes limit the flexibility to change how errors are handled at runtime.
 
-Because of these limitations, some modern languages like [[C#]], [[Python]], and [[Go]] avoid the concept of checked exceptions altogether. Nevertheless, when used judiciously, checked exceptions can be a useful feature for building reliable and maintainable software.
+Because of these limitations, some modern languages like [[C#]], [[Python Index]], and [[Go]] avoid the concept of checked exceptions altogether. Nevertheless, when used judiciously, checked exceptions can be a useful feature for building reliable and maintainable software.

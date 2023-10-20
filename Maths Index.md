@@ -1,10 +1,11 @@
 ---
-aliases: [maths]
+aliases:
+  - maths
 type: index
 publish: true
 created: 2023-04-20
-last_edited: 2023-04-20
-tags: list[str]
+last_edited: 2023-10-20
+tags: 
 chatgpt: false
 ---
 # Maths

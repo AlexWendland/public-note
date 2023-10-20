@@ -50,7 +50,7 @@ Remember this heuristic to evaluate if you've chosen a good name:
 
 ## Don't include the type in the name
 
-As a [[Python]] programmer working in [[Data]], it's tempting to include data types in variable names, such as `df_football_results_data`. 
+As a [[Python Index]] programmer working in [[Data]], it's tempting to include data types in variable names, such as `df_football_results_data`. 
 
 There are several reasons to avoid this practice:
 

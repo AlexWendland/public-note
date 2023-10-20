@@ -11,7 +11,7 @@ chatgpt: false
 
 An [[Object|object]] is considered *mutable* if if can be changed after it is created, whereas it is *immutable* if it can not be changed. If you change a mutable object all references to that object will also be changed.
 
-In [[Python]], lists, sets and dictionaries are *mutable* whereas numbers, strings, tuples and frozen sets are *immutable*.
+In [[Python Index]], lists, sets and dictionaries are *mutable* whereas numbers, strings, tuples and frozen sets are *immutable*.
 
 This is commonly used in interview questions, for example:
 

@@ -9,7 +9,7 @@ chatgpt: false
 ---
 # Mutability in Python
 
-In [[Python]] all [[Variables in python|variables]] are references to objects. These objects come with a [[Mutability|mutability]] property. Objects that are [[Mutability|mutable]] in python behave as you would expect. When a variable pointing to a mutable object is altered the object itself is altered.
+In [[Python Index]] all [[Variables in python|variables]] are references to objects. These objects come with a [[Mutability|mutability]] property. Objects that are [[Mutability|mutable]] in python behave as you would expect. When a variable pointing to a mutable object is altered the object itself is altered.
 
 ```python
 x = [1,2]
@@ -20,7 +20,7 @@ print(y) # [1,2,3]
 
 Here `x` and `y` point to the [[Mutability|mutable]] list object and when `x` is altered to add `3` to the list, as `y` points to the same object as `x` when you look at `y` it also has been changed.
 
-Whereas when a variable pointing to an [[Mutability|immutable]] object in [[Python]] is altered, it creates a new object for the altered variable to point to and leaves the rest of the variables pointing to the old object.
+Whereas when a variable pointing to an [[Mutability|immutable]] object in [[Python Index]] is altered, it creates a new object for the altered variable to point to and leaves the rest of the variables pointing to the old object.
 
 ```python
 x = 1
@@ -36,7 +36,7 @@ print(y, id(y)) # 1 140703625587616
 
 ## Passing arguments to functions
 
-In [[Python]] all arguments are [[Passing variables to a function|passed by reference]] to functions. Though the [[Mutability|mutability]] of that [[Variables in python|variable]] dictates how the object is treated by that function.
+In [[Python Index]] all arguments are [[Passing variables to a function|passed by reference]] to functions. Though the [[Mutability|mutability]] of that [[Variables in python|variable]] dictates how the object is treated by that function.
 
 For [[Mutability|immutable]] objects any alteration a function does to the object will not be reflected outside the scope of that function.
 
@@ -72,4 +72,4 @@ print("After function: ", greeting)  # After function: ['Hello', 'world']
 
 ## Mutable and Immutable types in python
 
-In [[Python]], lists, sets and dictionaries are [[Mutability|mutable]] whereas numbers, strings, tuples and frozen sets are [[Mutability|immutable]]. User defined objects are by default [[Mutability|mutable]] however you can make them [[Mutability|immutable]] if you so wish. 
+In [[Python Index]], lists, sets and dictionaries are [[Mutability|mutable]] whereas numbers, strings, tuples and frozen sets are [[Mutability|immutable]]. User defined objects are by default [[Mutability|mutable]] however you can make them [[Mutability|immutable]] if you so wish. 

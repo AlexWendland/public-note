@@ -11,7 +11,7 @@ chatgpt: false
 
 A sequence is a list of objects, potentially finite or infinite. 
 
-In [[Maths]] for a finite sequence of length $n$ this will be denotes by 
+In [[Maths Index]] for a finite sequence of length $n$ this will be denotes by 
 $$a_1, a_2, \ldots a_n$$ which secretly is a function 
 $$a: [1,n] \rightarrow D$$ where $D$ is your domain of interest. 
 

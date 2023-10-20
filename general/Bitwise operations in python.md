@@ -11,8 +11,8 @@ chatgpt: false
 
 Bitwise operations can apply to the [[Binary|binary]] data type but also [[Integer|integers]].
 
- > [!Note] Representation of integers in [[Python]]
- > In [[Python|python]] integers are [[Signed or unsigned integers|unsigned]] and stored using [[Two's complement]].
+ > [!Note] Representation of integers in [[Python Index]]
+ > In [[Python Index|python]] integers are [[Signed or unsigned integers|unsigned]] and stored using [[Two's complement]].
  
 The operations in python are as follows (applied to x = 11 or `0000 1011` and y = 6 or `0000 0110`)
 

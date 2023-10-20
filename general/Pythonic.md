@@ -24,6 +24,6 @@ for item in some_list:
 	item.do_something()
 ```
 
-would be as it uses the built in iteration of the [[Python|python]] language.
+would be as it uses the built in iteration of the [[Python Index|python]] language.
 
 [^1]:https://stackoverflow.com/questions/25011078/what-does-pythonic-mean

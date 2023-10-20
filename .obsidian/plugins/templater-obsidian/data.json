@@ -23,10 +23,6 @@
       "template": "templates/wendland-weekly.md"
     },
     {
-      "folder": "programming",
-      "template": "templates/programming.md"
-    },
-    {
       "folder": "OMSCS",
       "template": "templates/omscs-module.md"
     },
