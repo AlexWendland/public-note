@@ -61,12 +61,36 @@ The max [[Flow|flow]] is 1. If we increase the value of $(S,A)$ or $(A,T)$ then 
 
 **Part e)**
 
-Algorithm to identify bottleneck edges. 
+**Algorithm**
 
 ```Pseudocode
-1. Find a maxflow
+1. Find a maxflow f using Edmond's-Karp algorithm.
+2. Calculate the resuide graph G^f.
+3. Run BFS on G^f starting at S to find all the vertices accessible from S call these A.
+4. Calculate the reverse of resuide graph G^f called (G^f)^R.
+5. Run BFS on (G^f)^R starting at T to find all vertices that can access T call these B.
+6. Return edges (a,b) with a in A and B in B.
 ```
 
+**Correctness**
+
+
+
+**Run Time**
+
+The overall run time is limited by that of [[Edmonds-Karp algorithm]] $O(\vert E \vert^2 \cdot \vert V \vert)$ as I show below.
+
+Step 1 takes the time of [[Edmonds-Karp algorithm]] $O(\vert E \vert^2 \cdot \vert V \vert)$ to produce the [[Max flow problem|max flow]] $f$.
+
+Step 2 takes $O(\vert E \vert)$ as we need to go through all the edges of $G$ which are in $f$ to create $G^f$.
+
+Step 3 and 5 runs the [[Breath-first search (BFS)|BFS]] algorithm which takes $O(\vert V \vert + \vert E \vert) = O(\vert E \vert)$ as $G$ is connected (note this is ran on $G^f$ or $(G^f)^R$ but that has at most $2 \vert E \vert$ edges).
+
+Step 4 takes $O(\vert E \vert)$ as we need to invert each edge of $G^f$ (of which there is at most $2 \vert E \vert$ edges.
+
+Step 5 takes $O(\vert E \vert \cdot \vert V \vert)$ as for each edge we need to check if its start vertex lies in $A$ and its end vertex lies in $\vert B \vert$. As $A$ and $B$ are disjoin we know this will take at most $\vert V \vert$ checks. 
+
+All together this takes $O(\vert E \vert^2 \cdot \vert V \vert) + 4 O(\vert E \vert) + O(\vert E \vert \cdot \vert V \vert) = O(\vert E \vert^2 \cdot \vert V \vert)$. 
 
 
 >[!question] Problem 7.19 verify max-flow

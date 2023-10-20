@@ -10,9 +10,9 @@ This is very much an experiment. The purpose of this is to just [[Wendland Weekl
 
 So some things I am interested in to start: 
 - [[Data]]
-- [[Programming]]
+- [[Programming Index]]
 - [[DevOps]]
-- [[Maths]]
+- [[Maths Index]]
 - [[Politics]]
 - [[Philosophy]]
 

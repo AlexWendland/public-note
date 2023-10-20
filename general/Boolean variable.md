@@ -11,4 +11,4 @@ chatgpt: false
 
 A *Boolean variable* is one that takes the value `True` or `False` it is a basic type in most programming languages.
 
-In [[Maths]] the `True` or `False` value is regularly replaced with `1` or `0` respectively. This is similar to the representation that variable would have in memory. 
+In [[Maths Index]] the `True` or `False` value is regularly replaced with `1` or `0` respectively. This is similar to the representation that variable would have in memory. 

@@ -42,12 +42,12 @@
       "id": "66425777-3635-4388-a07d-b7ccc350c9f3",
       "commands": [
         {
-          "name": "Create file in python folder",
+          "name": "Create file in general folder",
           "type": "NestedChoice",
           "id": "c540f9e9-b254-4390-8891-db4c37f7aa5b",
           "choice": {
             "id": "5d302cd0-43e4-45bb-bf58-7a5086c0b6a0",
-            "name": "Create file in python folder",
+            "name": "Create file in general folder",
             "type": "Template",
             "command": false,
             "templatePath": "templates/python-template.md",
@@ -57,9 +57,7 @@
             },
             "folder": {
               "enabled": true,
-              "folders": [
-                "programming/python"
-              ],
+              "folders": [],
               "chooseWhenCreatingNote": false,
               "createInSameFolderAsActiveFile": false,
               "chooseFromSubfolders": false
@@ -86,7 +84,7 @@
             "type": "Capture",
             "command": false,
             "appendLink": false,
-            "captureTo": "programming/Python.md",
+            "captureTo": "Python Index.md",
             "captureToActiveFile": false,
             "createFileIfItDoesntExist": {
               "enabled": false,
@@ -123,12 +121,12 @@
       "id": "8334d105-6602-4369-9b97-12cd320aea91",
       "commands": [
         {
-          "name": "Create file",
+          "name": "Create file in general folder",
           "type": "NestedChoice",
           "id": "b42c1096-ae87-4768-89ec-6a8cb8cd8681",
           "choice": {
             "id": "9683f83a-296e-4698-ac4e-0a12f1129d51",
-            "name": "Create file",
+            "name": "Create file in general folder",
             "type": "Template",
             "command": false,
             "templatePath": "templates/programming-template.md",
@@ -139,7 +137,7 @@
             "folder": {
               "enabled": true,
               "folders": [
-                "programming"
+                "general"
               ],
               "chooseWhenCreatingNote": false,
               "createInSameFolderAsActiveFile": false,
@@ -167,7 +165,7 @@
             "type": "Capture",
             "command": false,
             "appendLink": false,
-            "captureTo": "Programming.md",
+            "captureTo": "Programming Index.md",
             "captureToActiveFile": false,
             "createFileIfItDoesntExist": {
               "enabled": false,
@@ -204,12 +202,12 @@
       "id": "fbcecf7b-3940-476d-93ea-a52582f5a2ac",
       "commands": [
         {
-          "name": "Add file to Git",
+          "name": "Add file to general folder",
           "type": "NestedChoice",
           "id": "c32063ce-652b-4320-8edb-7f2ba2e64191",
           "choice": {
             "id": "7e0af9ac-5deb-40de-bf97-d0cc71ce2e2c",
-            "name": "Add file to Git",
+            "name": "Add file to general folder",
             "type": "Template",
             "command": false,
             "templatePath": "templates/git-template.md",
@@ -219,9 +217,7 @@
             },
             "folder": {
               "enabled": true,
-              "folders": [
-                "programming/git"
-              ],
+              "folders": [],
               "chooseWhenCreatingNote": false,
               "createInSameFolderAsActiveFile": false,
               "chooseFromSubfolders": false
@@ -239,16 +235,16 @@
           }
         },
         {
-          "name": "Untitled Capture Choice",
+          "name": "Add to git Index",
           "type": "NestedChoice",
           "id": "80c51817-1c5c-4507-81b4-63c22fce6a4a",
           "choice": {
             "id": "e11ef32e-f65e-4185-97ce-72845c7eaccd",
-            "name": "Untitled Capture Choice",
+            "name": "Add to git Index",
             "type": "Capture",
             "command": false,
             "appendLink": false,
-            "captureTo": "programming/Git.md",
+            "captureTo": "Git Index.md",
             "captureToActiveFile": false,
             "createFileIfItDoesntExist": {
               "enabled": false,
@@ -285,12 +281,12 @@
       "id": "d052cbfc-d2bb-4e3c-b758-c01ba23fd158",
       "commands": [
         {
-          "name": "Add file to maths folder",
+          "name": "Add file to general folder",
           "type": "NestedChoice",
           "id": "0708c3d2-f74b-4af4-8141-ef87d134b4d3",
           "choice": {
             "id": "36fb2340-2dd8-4284-9bfc-ee199ff1fb95",
-            "name": "Add file to maths folder",
+            "name": "Add file to general folder",
             "type": "Template",
             "command": false,
             "templatePath": "templates/maths-template.md",
@@ -301,7 +297,7 @@
             "folder": {
               "enabled": true,
               "folders": [
-                "maths"
+                "general"
               ],
               "chooseWhenCreatingNote": false,
               "createInSameFolderAsActiveFile": false,
@@ -320,16 +316,16 @@
           }
         },
         {
-          "name": "Add to index",
+          "name": "Add to Maths index",
           "type": "NestedChoice",
           "id": "ae58c5ae-dc26-4f59-8740-68a5dc31416c",
           "choice": {
             "id": "8f66db82-86f2-4321-847e-baa876826df5",
-            "name": "Add to index",
+            "name": "Add to Maths index",
             "type": "Capture",
             "command": false,
             "appendLink": false,
-            "captureTo": "Maths.md",
+            "captureTo": "Maths Index.md",
             "captureToActiveFile": false,
             "createFileIfItDoesntExist": {
               "enabled": false,
@@ -437,6 +433,127 @@
             },
             "openFile": false,
             "openFileInMode": "default"
+          }
+        }
+      ],
+      "runOnStartup": false
+    },
+    {
+      "name": "Macro: Lemma",
+      "id": "168d495d-43ab-4166-8c16-e5886371655b",
+      "commands": [
+        {
+          "name": "Make lemma note in general folder",
+          "type": "NestedChoice",
+          "id": "35de4ffc-d693-4361-a49c-e0b9f9abd136",
+          "choice": {
+            "id": "ff2d50c1-fecd-428d-9bae-4edfb32f9f5e",
+            "name": "Make lemma note in general folder",
+            "type": "Template",
+            "command": false,
+            "templatePath": "templates/lemma-template.md",
+            "fileNameFormat": {
+              "enabled": false,
+              "format": ""
+            },
+            "folder": {
+              "enabled": true,
+              "folders": [
+                "general"
+              ],
+              "chooseWhenCreatingNote": false,
+              "createInSameFolderAsActiveFile": false,
+              "chooseFromSubfolders": false
+            },
+            "appendLink": false,
+            "openFileInNewTab": {
+              "enabled": false,
+              "direction": "vertical",
+              "focus": true
+            },
+            "openFile": true,
+            "openFileInMode": "default",
+            "fileExistsMode": "Nothing",
+            "setFileExistsBehavior": true
+          }
+        },
+        {
+          "name": "Add to maths index",
+          "type": "NestedChoice",
+          "id": "cfbec4f8-ffa0-4118-b53a-2e87f017e9cb",
+          "choice": {
+            "id": "2da36558-e3ed-4a18-b9d0-0f7ccb9d539e",
+            "name": "Add to maths index",
+            "type": "Capture",
+            "command": false,
+            "appendLink": false,
+            "captureTo": "Maths Index.md",
+            "captureToActiveFile": false,
+            "createFileIfItDoesntExist": {
+              "enabled": false,
+              "createWithTemplate": false,
+              "template": ""
+            },
+            "format": {
+              "enabled": true,
+              "format": "- [[{{value:title}}]]"
+            },
+            "insertAfter": {
+              "enabled": true,
+              "after": "# Index",
+              "insertAtEnd": true,
+              "createIfNotFound": false,
+              "createIfNotFoundLocation": "top"
+            },
+            "prepend": false,
+            "task": false,
+            "openFileInNewTab": {
+              "enabled": false,
+              "direction": "vertical",
+              "focus": true
+            },
+            "openFile": false,
+            "openFileInMode": "default"
+          }
+        }
+      ],
+      "runOnStartup": false
+    },
+    {
+      "name": "Macro: Definition",
+      "id": "5008599c-c771-4046-bd6d-c641df508951",
+      "commands": [
+        {
+          "name": "Untitled Template Choice",
+          "type": "NestedChoice",
+          "id": "66240eec-c0ea-4da0-859c-63c296cee6bc",
+          "choice": {
+            "id": "71f78db2-f595-406f-abd3-c12dde669680",
+            "name": "Untitled Template Choice",
+            "type": "Template",
+            "command": false,
+            "templatePath": "",
+            "fileNameFormat": {
+              "enabled": false,
+              "format": ""
+            },
+            "folder": {
+              "enabled": false,
+              "folders": [],
+              "chooseWhenCreatingNote": false,
+              "createInSameFolderAsActiveFile": false,
+              "chooseFromSubfolders": false
+            },
+            "appendLink": false,
+            "openFileInNewTab": {
+              "enabled": false,
+              "direction": "vertical",
+              "focus": true
+            },
+            "openFile": false,
+            "openFileInMode": "default",
+            "fileExistsMode": "Increment the file name",
+            "setFileExistsBehavior": false
           }
         }
       ],

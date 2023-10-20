@@ -9,4 +9,4 @@ tags: programming
 These are functions that are not named. They are usually used when you are using a function once and don't want to clutter up the name space. 
 
 ## Examples
-In [[Python]] these are implemented in by [[Lambda functions]] but these are explicitly for functions that can be defined in the [[Functional Programming]] paradigm.
+In [[Python Index]] these are implemented in by [[Lambda functions]] but these are explicitly for functions that can be defined in the [[Functional Programming]] paradigm.

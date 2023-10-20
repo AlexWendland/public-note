@@ -9,7 +9,7 @@ chatgpt: false
 ---
 # Reference counting in Python
 
-In [[Python]] when objects are created, it also stores the number of references there are to that object. This is what we mean when we say the reference count of an object.
+In [[Python Index]] when objects are created, it also stores the number of references there are to that object. This is what we mean when we say the reference count of an object.
 
 You can access this reference count by using the `sys` library with the function `sys.getrefcount`.
 

@@ -6,7 +6,7 @@ last_edited: 2023-03-03
 tags: programming, python
 ---
 # Python Builtin Functions
-[[Python]] has some built in functions that make using the language slightly easier. You can find a full list of these in the [python documentation](https://docs.python.org/3/library/functions.html).
+[[Python Index]] has some built in functions that make using the language slightly easier. You can find a full list of these in the [python documentation](https://docs.python.org/3/library/functions.html).
 
 # Functions
 ## callable(object)

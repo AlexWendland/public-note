@@ -12,4 +12,4 @@ This is an entity that can be:
 - Passed as an argument to a function, and
 - Returned as the result of a function.
 
-In [[Python]] most data types are First-class objects such as [[Integers]], [[Floats]], [[Dictionaries]], [[Lists]] and [[Functions]].
+In [[Python Index]] most data types are First-class objects such as [[Integers]], [[Floats]], [[Dictionaries]], [[Lists]] and [[Functions]].

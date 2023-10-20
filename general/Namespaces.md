@@ -15,7 +15,7 @@ In other words, namespaces provide a way to disambiguate identifiers that might 
 
 ## Example
 
-In [[Python]], namespaces are implemented as dictionaries that map names to objects, and they have different lifetimes depending on where they are declared. For example, a local namespace in a function is created when the function is called and deleted when the function returns; a module's namespace lasts as long as the module is in memory; and the built-in namespace that contains Python's built-in functions exists for the life of the program.
+In [[Python Index]], namespaces are implemented as dictionaries that map names to objects, and they have different lifetimes depending on where they are declared. For example, a local namespace in a function is created when the function is called and deleted when the function returns; a module's namespace lasts as long as the module is in memory; and the built-in namespace that contains Python's built-in functions exists for the life of the program.
 
 ``` python
 # In the global namespace

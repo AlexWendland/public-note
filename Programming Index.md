@@ -2,7 +2,7 @@
 type: index
 publish: true
 created: 2023-02-24
-last_edited: 2023-02-25
+last_edited: 2023-10-20
 ---
 # Programming
 This is an index page for the notes that could broadly be grouped under this topic.
@@ -27,7 +27,7 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Formatting conventions]]
 - [[Functional Programming]]
 - [[Function conventions]]
-- [[Git]]
+- [[Git Index]]
 - [[GitHub]]
 - [[Imperative Programming]]
 - [[Imperative programming]]
@@ -163,3 +163,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Hash table]]
 - [[Associative array]]
 - [[Bloom filters]]
+- [[Every min-cut is at full capacity in a max-flow]]
