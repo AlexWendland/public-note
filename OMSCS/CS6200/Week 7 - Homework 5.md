@@ -124,3 +124,32 @@ All together this takes $O(\vert E \vert^2 \cdot \vert V \vert) + 4 O(\vert E \v
 >[!question] Problem 7.19 verify max-flow
 >Suppose someone presents you with a solution to a max-flow problem on some network. Give a linear time algorithm to determine whether the solution does indeed give a maximum flow.
 
+## Algorithm
+
+Do the following steps:
+
+1. Build the [[Residual Network (flow)|residual network]] for [[Flow|flow]] $f$, $G^f$.
+2. Run [[BFS]] on $G^f$ starting at $s$.
+3. If $t$ is accessible then it is not a maximum flow otherwise return true.
+
+## Correctness
+
+Note our algorithm is just one step of the [[Ford-Fulkerson Algorithm]]. If it terminates with no path then starting [[Ford-Fulkerson Algorithm]] at $f$ would return $f$ which we have proven is a [[Max flow problem|max flow]].
+
+If there is an augmenting path in $G^f$ then we can increase value of $f$.
+
+Therefore either state returns correctly.
+
+## Run time
+
+The run time of this is $O(\vert E \vert)$.
+
+As we have a [[Flow network|flow network]] the graph is connected so we can assume $\vert V \vert = O(\vert E \vert)$.
+
+Step one takes $O(\vert E \vert)$ steps.
+
+Step two takes $O(\vert V \vert + \vert E \vert) = O(\vert E \vert)$
+
+Step three takes $O(1)$ as it is just checking a single value in a dictionary. 
+
+This gives $2O(\vert E \vert) + O(1) = O(\vert E \vert)$.
