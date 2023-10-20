@@ -35,19 +35,79 @@ Note 31 is prime and $30,000 = 0$ mod $30$ and $123456 = 6$ mod $30$ so this pro
 > [!question] Problem 1.14
 > Suppose you wish to compute the $n$th [[Fibonacci sequence|Fibonacci number]] $F_n$, modulo an integer $p$. Can you find an efficient way to do this?
 
+Given there are only $p^2$ possible combinations of $(a,b)$ mod $p$ within the first $p^2$ $F_n$ there must be a repeating pattern $F_i, F_{i+1}$ and $F_j, F_{j+1}$ for $0 \leq i < j < p^2$.
 
+1. Calculate up to the first $p^2$ values until we find repeating pattern $F_i, F_{i+1}$ and $F_j, F_{j+1}$ for $0 \leq i < j < p^2$.
+2. If $n \leq j + 1$ output $F_n$.
+3. Calculate $n - i = k$ mod $(j-i)$.
+4. Return $F_{i+k}$ 
 
 > [!question] Problem 1.18
 > Compute $gcd(210,588)$ two different ways: by finding the factorisation of each number, and by the [[Euclidean algorithm]].
 
+Way 1,
+
+$210 = 21 \times 10 = 3 \times 7 \times 2 \times 5 = 2 \cdot 3 \cdot 5 \cdot 7$ 
+$588 = 294 \times 2 = 2^2 \times 147 = 2^2 \times 3 \times 49 = 2^2 \times 3 \times 7^2$ 
+
+so $gcd(210,588) = 2 \cdot 3 \cdot 7 = 42$.
+
+Way 2,
+
+| a   | b   | c   |
+| --- | --- | --- |
+| 588 | 210 | 2   |
+| 210 | 168 | 1   |
+| 168 | 42  | 4   |
+| 42  | 0   | -   |
+
+So $gcd(210,588) = 42$.
 
 > [!question] Problem 1.20
 > Find the inverse of 20 mod 79, 3 mod 62, 21 mod 91, and 5 mod 23.
 
+We do this via the [[Extended Euclidean algorithm]]
+
+| x   | y   | c   | a   | b   |
+| --- | --- | --- | --- | --- |
+| 79  | 20  | 3   | -1  | 4   |
+| 20  | 19  | 1   | 1   | -1  |
+| 19  | 1   | 19  | 0   | 1   |
+| 1   | 0   | -   | 1   | 0   |
+
+so $4 \times 20 = 1$ mod $79$.
+
+| x   | y   | c   | a   | b   |
+| --- | --- | --- | --- | --- |
+| 62  | 3   | 20  | -1  | 21  |
+| 3   | 2   | 1   | 1   | -1  |
+| 2   | 1   | 2   | 0   | 1   |
+| 1   | 0   | -   | 1   | 0   |
+
+so $3 \times 21 = 1$ mod $62$.
+
+| x   | y   | c   | a   | b   |
+| --- | --- | --- | --- | --- |
+| 91  | 21  | 4   | 1   | -4  |
+| 21  | 7   | 3   | 0   | 1   |
+| 7   | 0   | -   | 1   | 0   |
+
+So there is no inverse.
+
+| x   | y   | c   | a   | b   |
+| --- | --- | --- | --- | --- |
+| 23  | 5   | 4   | 2   | -9    |
+| 5   | 3   | 1   | -1  | 2   |
+| 3   | 2   | 1   | 1   | -1  |
+| 2   | 1   | 2   | 0   | 1   |
+| 1   | 0   | -   | 1   | 0   |
+
+So $5 \cdot 14 = 1$ mod $23$.
 
 > [!question] Problem 1.22
 > Prove or disprove: If $a$ has an inverse modulo $b$, then $b$ has an inverse modulo $a$.
 
+Inverse existance followed by Euclids rule.
 
 > [!question] Problem 1.24
 > If $p$ is prime, how many elements of $\{0,1, \ldots, p^n-1\}$ have an inverse mod $p^n$?
