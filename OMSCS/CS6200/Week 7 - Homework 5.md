@@ -37,6 +37,15 @@ This has max capacity 13 with the min-cut being $\{S, C, F\}$ with $\{A, B, D, E
 
 **Part a)**
 
+The flow is in red below.
+
+![[ex_7_17_flow]]
+
+A minimum cut is $\{S, A, B\}$ $\{C, D, T\}$ with another one being $\{S, A, B, D\}$ $\{C, T\}$.
+
+**Part b)**
+
+
 
 
 >[!question] Problem 7.19 verify max-flow
