@@ -11,3 +11,4 @@ chatgpt: false
 ---
 >[!tldr] Carmichael number
 >A $z \in \mathbb{N}$ is called a *Carmichael number* if it is not [[Prime|prime]] and has no [[Fermat witness|non-trivial Fermat witness]].
+

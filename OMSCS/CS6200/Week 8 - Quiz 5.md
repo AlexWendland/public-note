@@ -104,6 +104,6 @@ So his message was 131.
 >[!question] Question 10
 >Using p = 3, q = 11, d = 7 and e = 3 in the RSA algorithm, provide the result of encrypting the number 5. (Provide an integer value)
 
-The public key would be $(33, 3)$ so to encode the message $5$ we look at $3^5$ mod $33$.
-$$ 3^5 = 9 * 27 = 9 * -6 = -6 * -2 = 12 \ (mod \ 33).$$
-So the encrypted value is 12.
+The public key would be $(33, 3)$ so to encode the message $5$ we look at $5^3$ mod $33$.
+$$ 5^3 = 125 = 26 \ (mod \ 33).$$
+So the encrypted value is 26.
