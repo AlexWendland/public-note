@@ -63,6 +63,10 @@ The max [[Flow|flow]] is 1. If we increase the value of $(S,A)$ or $(A,T)$ then 
 
 Algorithm to identify bottleneck edges. 
 
+```Pseudocode
+1. Find a maxflow
+```
+
 
 
 >[!question] Problem 7.19 verify max-flow
