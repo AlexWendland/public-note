@@ -66,15 +66,23 @@ The max [[Flow|flow]] is 1. If we increase the value of $(S,A)$ or $(A,T)$ then 
 ```Pseudocode
 1. Find a maxflow f using Edmond's-Karp algorithm.
 2. Calculate the resuide graph G^f.
-3. Run BFS on G^f starting at S to find all the vertices accessible from S call these A.
+3. Run BFS on G^f starting at s to find all the vertices accessible from s call these A.
 4. Calculate the reverse of resuide graph G^f called (G^f)^R.
-5. Run BFS on (G^f)^R starting at T to find all vertices that can access T call these B.
-6. Return edges (a,b) with a in A and B in B.
+5. Run BFS on (G^f)^R starting at t to find all vertices that can access t call these B.
+6. Return edges (a,b) in G with a in A and B in B.
 ```
 
 ### **Correctness**
 
-Recall that for a [[Max flow problem|max flow]] $f$ we have [[Every min-cut is at full capacity in a max-flow|every min-cut is at full capacity in a max-flow]] moreover [[Every min-cut has no flow going backwards along it in a max-flow|every min-cut has no flow going backwards along it in a max-flow]]. Therefore for any [[Min st-cut problem|min st-cut]] $(S,T)$ in the [[Residual Network (flow)|residual network]] $G^f$. We only have edges going from $T$ to $S$.
+We know $(A, V \backslash A =: \overline{A})$ and $(B, V \backslash B =: \overline{B})$ are both [[Min st-cut problem|min st-cuts]]. From [[Week 7 - Homework 5#Claim 1|Claim 1]] any bottleneck edge must lie in $cut(A, \overline{A}) \cap cut(B, \overline{B})$. Therefore our algorithm returns all bottleneck edges.
+
+Suppose our algorithm returns an edge $(a,b)$. 
+
+By the definition of $A$ we have a $s-a$ path in $G^f$. By the definition of $B$ we have a $b-t$ path in $G^f$ by increasing the capacity at $(a,b)$ this gives us a graph $\tilde{G}$ with an $(a,b)$ edge in $\tilde{G}^f$. Therefore we can augment $f$ along this $s-t$ path to increase the flow in $\tilde{G}$.
+
+Therefore by definition $(a,b)$ is a bottleneck edge.
+
+So our algorithm returns the correct result. 
 
 #### Claim 1
 
@@ -115,3 +123,4 @@ All together this takes $O(\vert E \vert^2 \cdot \vert V \vert) + 4 O(\vert E \v
 
 >[!question] Problem 7.19 verify max-flow
 >Suppose someone presents you with a solution to a max-flow problem on some network. Give a linear time algorithm to determine whether the solution does indeed give a maximum flow.
+
