@@ -19,7 +19,11 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 
 ![[ex_7_10]]
 
+Find the below flow in red
 
+![[ex_7_10_flow]]
+
+This has max capacity 13 with the min-cut being $\{S, C, F\}$ with $\{A, B, D, E, G, T\}$.
 
 >[!question] Problem 7.17 Bottleneck edges
 >Consider the following network (the numbers are edge capacities).
@@ -30,6 +34,10 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 >(e) Give an efficient algorithm to identify all bottleneck edges in a network. (Hint: Start by running the usual network flow algorithm, and then examine the residual graph.)
 
 ![[ex_7_17]]
+
+**Part a)**
+
+
 
 >[!question] Problem 7.19 verify max-flow
 >Suppose someone presents you with a solution to a max-flow problem on some network. Give a linear time algorithm to determine whether the solution does indeed give a maximum flow.
