@@ -14,7 +14,7 @@ chatgpt: false
 
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 
-## [[Modular arithmetic]]
+# [[Modular arithmetic]]
 
 > [!question] Problem 1.11 
 > Is $4^{1536} - 9^{4824}$ divisible by 35?
@@ -139,28 +139,116 @@ We need to calculate $17^{17^{17}}$ mod 10. Therefore we need to calculate $17^{
 
 To find $d$ we need to find $e = 3$'s inverse mod $(17-1) \cdot (23-1) = 352$
 
-| x   | y   | c   | a   | b   |
-| --- | --- | --- | --- | --- |
-|     |     |     |     |     |
+| x   | y   | c   | a   | b    |
+| --- | --- | --- | --- | ---- |
+| 352 | 3   | 117 | 1   | -117 |
+| 3   | 1   | 3   | 0   | 1    |
+| 1   | 0   | -   | 1   | 0    |
+
+So $235 \cdot 3 = 1$ mod $352$. So we have $d = 235$.
+
+This is $M = 41^3 = 105$ mod 391. Which successfully decrypts as $105^{235} = 41$ mod 391.
 
 > [!question] Problem 1.28
 > In an [[Rivest-Shamir-Adleman algorithm (RSA algorithm)|RSA]] crypto system, $p=7$ and $q=11$. Find appropriate exponents $d$ and $e$.
 
+Note $(7-1) \times (11 - 1) = 60$ so we can't use 3, 5 but we could use 7.
+
+| x   | y   | c   | a   | b   |
+| --- | --- | --- | --- | --- |
+| 60  | 7   | 8   | 2   | -17 | 
+| 7   | 4   | 1   | -1  | 2   |
+| 4   | 3   | 1   | 1   | -1  |
+| 3   | 1   | 1   | 0   | 1   |
+
+Therefore we have inverse $60 - 17 = 43 = d$. 
+
 > [!question] Problem 1.42
 > Suppose that instead of using a composite $N = pq$ in the [[Rivest-Shamir-Adleman algorithm (RSA algorithm)|RSA]] cryptosystem, we simply use a prime modulus $p$. As in [[Rivest-Shamir-Adleman algorithm (RSA algorithm)|RSA]], we would have an encryption exponent $e$, and the encryption of a message $m$ mod $p$ would be $m^e$ mod $p$. Prove that this new cryptosystem is not secure, by giving an efficient algorithm to decrypt: that is, an algorithm that given $p$, $e$, and $m^e$ mod $p$ as input, computes $m$ mod $p$. Justify the correctness and analyze the running time of your decryption algorithm.
 
-## [[Depth-first search (DFS)|DFS]] and [[Strongly connected components (directed graphs)|Strongly Connected Component]]
+1. Find $d := e^{-1}$ mod $p-1$ using [[Modular inverse algorithm (extended Euclidean algorithm)]].
+2. Calculate $(m^e)^d = m$ mod $p$ using [[Modular exponent algorithm]].
 
-Problems 3.1-3.5, 3.7, 3.8, 3.11, 3.15, 3.16, 3.22, 3.24.
+The correctness follows from [[Fermat's little theorem]].
 
-## [[Breath-first search (BFS)|BFS]] and Shortest path problems
+If $p$ is an $n$-digit number so is $e$ and $d$. Therefore step 1 and 2 has run time $O(n^3)$ giving the overall run time as $O(n^3)$. 
+
+# [[Depth-first search (DFS)|DFS]] and [[Strongly connected components (directed graphs)|Strongly Connected Component]]
+
+> [!question] Problem 3.1/2
+> Perform a [[Depth-first search (DFS)|DFS]] on the following graphs; whenever there’s a choice of vertices, pick the one that is alphabetically first. Classify each edge as a [[DFS tree (algorithm)|Tree edge]] or [[DFS tree (algorithm)|Back edge]], and give the pre and post number of each vertex.
+
+## 3.1
+
+![[ex_3_1]]
+
+| vertex | pre | post |
+| ------ | --- | ---- |
+| A      | 1   | 12   |
+| B      | 2   | 11   |
+| C      | 3   | 10   |
+| D      | 13  | 18   |
+| E      | 5   | 6    |
+| F      | 4   | 9    |
+| G      | 14  | 17   |
+| H      | 15  | 16   |
+| I      | 7   | 8    |
+
+We get the follow [[DFS tree (algorithm)|DFS tree]] with black [[DFS tree (algorithm)|tree edges]] and orange [[DFS tree (algorithm)|back edges]].
+
+![[ex_3_1_dfs]]
+
+## 3.2.a
+
+![[ex_3_2_a]]
+
+| vertex | pre | post |
+| ------ | --- | ---- |
+| A      | 1   | 16   | 
+| B      | 2   | 15   |
+| C      | 3   | 14   |
+| D      | 4   | 13   |
+| E      | 8   | 9    |
+| F      | 7   | 10   |
+| G      | 6   | 11   |
+| H      | 5   | 12   |
+
+We get the following [[DFS tree (algorithm)|DFS tree]] with [[DFS tree (algorithm)|tree edges]] as black, [[DFS tree (algorithm)|back edges]] as orange and [[DFS tree (algorithm)|forward edges]] as purple.
+
+![[ex_3_2_a_dfs]]
+
+## 3.2.b
+
+![[ex_3_2_b]]
+
+| vertex | pre | post |
+| ------ | --- | ---- |
+| A      | 1   | 16   | 
+| B      | 2   | 11   |
+| C      | 4   | 5    |
+| D      | 6   | 9    |
+| E      | 7   | 8    |
+| F      | 3   | 10   |
+| G      | 13  | 14   |
+| H      | 12  | 15   |
+
+We get the following [[DFS tree (algorithm)|DFS tree]] with [[DFS tree (algorithm)|tree edges]] as black, [[DFS tree (algorithm)|back edges]] as orange, [[DFS tree (algorithm)|forward edges]] as purple, and [[DFS tree (algorithm)|cross edges]] in green.
+
+![[ex_3_2_b_dfs]]
+
+> [!question] Problem 3.7
+> Perform a [[Depth-first search (DFS)|DFS]] on the following graphs; whenever there’s a choice of vertices, pick the one that is alphabetically first. Classify each edge as a [[DFS tree (algorithm)|Tree edge]] or [[DFS tree (algorithm)|Back edge]], and give the pre and post number of each vertex.
+
+Problems 3.7, 3.8, 3.11, 3.15, 3.16, 3.22, 3.24.
+
+# [[Breath-first search (BFS)|BFS]] and Shortest path problems
 
 Problems 4.1-4.3, 4.8, 4.11, 4.12-4.14, 4.20, 4,21.
 
-## [[Minimum Spanning Tree problem (MST)]]
+# [[Minimum Spanning Tree problem (MST)]]
 
 Problems 5.1, 5.2, 5.5, 5.6, 5,7, 5.9, 5.20, 5.22, 5.23.
 
-## Flow problems
+# Flow problems
 
 Problems 7.18, 7.19, 7.21, 7.22, 7.24(\*), 7.28(\*)

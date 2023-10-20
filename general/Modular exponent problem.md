@@ -16,5 +16,5 @@ chatgpt: false
 
 # Solutions
 
-- [[Modular exponent problem]]
+- [[Modular exponent algorithm]]
 	- This runs in $O(n^3)$.
