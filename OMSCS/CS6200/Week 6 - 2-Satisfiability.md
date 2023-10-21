@@ -268,9 +268,38 @@ All together this runs in $O(n + m)$ time. However the algorithm with the above 
 7. Return assignment.
 ```
 
-Takes $O(nm)$ time to simplify the algorithm. As we require to simplify f' multiple times until there are no unit clauses. 
+This looks like it takes $O(nm)$ time to simplify the algorithm. However, clever use of data structures can help us here.
 
-Instead we can expand the problem to get a better $O$ run time. The pseudo code is below.
+```psuedocode
+simplify(f) 
+	Input: 2-sat potenially with unit litterals. 
+	Output: Either there is not solution to the input, or a 2-sat that has 2 variables in every clause and a partial solution to f. 
+1. Define U and C_v to be list where v in variables 
+2. for clause c in f (let c be some positional variable not the expression of the clause) 
+	2.1. if c unit so f(c) = x, not x 
+		2.1.1. add c to C_x (position) 
+		2.1.2. add x or not x to U (variable) 
+	2.2. else f(c) = (not) x or (not) y 
+		2.2.1. add c to C_x and C_y (position) 
+3. Let f' = f (pick a data structure where looking up clauses is O(1) from a positional arguement) 
+4. While U not empty 
+	4.1. x or not x (set this to X) be the next value in U - removing it 
+		in the process 
+	4.2. if C_x exists 
+		4.2.1. for c in C_x 
+			4.2.1.1. if f'(c) contains X in f' remove it from f'. 
+			4.2.1.2. if f'(c) is (not X) in f' output that f has no solution 
+			4.2.1.3. if f'(c) contains not X (so f'(c) = not X or Y) 
+				4.2.1.3.1. remove not X from f'(c) 
+				4.2.1.3.2. append Y to U 
+		4.2.2. set X to true in our partial solution 
+		4.2.3. Remove C_x 
+5. output f' and partial solution to f.
+```
+
+This takes $O(n + m)$ as we have $n$ lists we make and we visit each clause at most 3 times during the algorithm. 
+
+We can instead expand the problem for a simpler algorithm. The pseudo code is below.
 
 ![[2-SAT algorithm using SCC#2-SAT algorithm using SCC]]
 
