@@ -3,14 +3,14 @@ aliases:
 type: exercise
 publish: false
 created: 2023-10-18
-last_edited: 2023-10-18
+last_edited: 2023-10-21
 tags:
   - OMSCS
 course: "[[CS6200 Introduction to Graduate Algorithms]]"
-week: 8
+week: 9
 chatgpt: false
 ---
-# Week 8 - Exam Prep (unassessed) 
+# Week 9 - Exam Prep (unassessed) 
 
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 
