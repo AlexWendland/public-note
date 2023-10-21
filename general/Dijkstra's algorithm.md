@@ -16,20 +16,19 @@ This is an algorithm to solve the [[Find path in undirected graph|shortest path 
 Dijkstra(G,w,s):
 	Input: graph G=(V,E) with weights w(e) and a start vertex s.
 	Output: For all vertices reachable from s a shortest path length dist
-for all u in V
-	dist(u) = inf
-	prev(u) = nil
-dist(s) = 0
-
-H = makequeue(V)
-while H is not empty:
-	v = deletemin(H)
-	for each {v,z} in E:
-		if dist(z) > dist(v) + w(v,z):
-			dist(z) = dist(v) + w(v,z)
-			prev(z) = v
-			decreasekey(H,z)
-output dist
+1. for all u in V
+	1.1 dist(u) = inf
+	1.2 prev(u) = nil
+2. dist(s) = 0
+3. H = makequeue(V)
+4. while H is not empty:
+	4.1 v = deletemin(H)
+	4.2 for each {v,z} in E:
+		4.2.1 if dist(z) > dist(v) + w(v,z):
+			4.2.1.1 dist(z) = dist(v) + w(v,z)
+			4.2.1.2 prev(z) = v
+			4.2.1.3 decreasekey(H,z)
+5. output dist
 ```
 
 ## Correctness

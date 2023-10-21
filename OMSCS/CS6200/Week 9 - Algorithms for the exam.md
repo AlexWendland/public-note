@@ -1,6 +1,6 @@
 ---
 aliases: 
-type: exercise
+type: revision
 publish: false
 created: 2023-10-21
 last_edited: 2023-10-21
