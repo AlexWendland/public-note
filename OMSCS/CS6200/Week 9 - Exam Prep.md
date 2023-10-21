@@ -299,9 +299,121 @@ Run [[Breath-first search (BFS)|BFS]] on the graph.
 
 ## Part c)
 
+Did it ... it took a while.
+
+> [!question] Problem 3.11
+> Design a linear-time algorithm which, given an undirected graph $G$ and a particular edge $e \in E$, determines whether $G$ has a cycle containing $e$.
+
+## Algorithm
+
+Let $e = (u,v)$
+
+1. Define $G' = (V, E \backslash \{e\})$
+2. Run [[Breath-first search (BFS)|BFS]] starting at $u$.
+3. If $v$ is in $u$'s branch return true else false.
+
+## Correctness
+
+If it returns true there is a path from $u$ to $v$ in $G$ without $e$. So we have a cycle involving $e$.
+
+If we had a cycle involving $e$ then removing it from the cycle gives us a path from $u$ to $v$ in $G'$.
+
+## Runtime
+
+Step 1 and 3 are $O(\vert E \vert)$ and $O(\vert V \vert)$ as they are removing or looking up an element of an array of length at most $\vert E \vert$ or $\vert V \vert$.
+
+Step 2 is [[Breath-first search (BFS)|BFS]] which takes $O(\vert E \vert + \vert V \vert)$
+
+All together this gives $O(\vert E \vert)$ + $O(\vert  V \vert)$ + $O(\vert E \vert + \vert V \vert)$ = $O(\vert E \vert + \vert V \vert)$.
+
+> [!question] Problem 3.16
+> Suppose a CS curriculum consists of $n$ courses, all of them mandatory. The prerequisite graph $G$ has a node for each course, and an edge from course $v$ to course $w$ if and only if $v$ is a prerequisite for $w$. Find an algorithm that works directly with this graph representation, and computes the minimum number of semesters necessary to complete the curriculum (assume that a student can take any number of courses in one semester). The running time of your algorithm should be linear.
+
+Note if the graph is not a [[Directed acyclic graph (DAG)|dag]] then can't complete the course.
+
+1. Run the [[DFS for finding strongly connected components]]
+2. If any strongly connected components are larger than 1 return that the course is impossible to pass.
+3. Define function $f: V \rightarrow \mathbb{N}$ 
+4. Run through the vertices in the [[Topological sorting (DAG)|topological sorting]].
+	1. If the vertex is a leaf node set $f(v) = 1.
+	2. Otherwise set $f(v) = 1 + \max_{(u,v) \in E} f(u)$.
+5. Return $\max_{v \in V} f(v)$
+
+## Correctness
+
+We know [[DFS for finding strongly connected components]] is correct.
+
+If any connected component is larger than 1 then we have circular dependencies so we can't complete the course.
+
+Note $f(v)$ is the maximum number of vertices between that vertex and a leaf node. Including itself. Therefore you will need at least $f(v)$ semesters to complete the course. 
+
+Therefore the maximum number of semesters you need to complete all courses is the maximum over $f(v)$.
+
+## Run time
+
+The run times is $O(\vert V \vert + \vert E \vert)$.
+
+Step 1 takes $O(\vert V \vert + \vert E \vert)$.
+
+Step 2 takes $O(\vert V \vert)$ to check the sizes of the return connected components.
+
+Step 3 takes $O(\vert V \vert)$
+
+Step 4 runs through all vertices. In the process of going through all vertices it looks at all edges once. This step takes $O(\vert V \vert + \vert E \vert)$.
+
+Step 5 takes $O(\vert V \vert)$.
+
+Altogether this takes $2O(\vert V \vert + \vert E \vert) + 3 O(\vert V \vert) = O(\vert V \vert + \vert E \vert)$.
+
+> [!question] Problem 3.22
+> Give an efficient algorithm which takes as input a [[Directed graph|directed graph]] $G = (V, E)$, and determines whether or not there is a vertex $s \in V$ from which all other vertices are reachable.
+
+## Algorithm
+
+1. Run [[Depth-first search (DFS)|DFS]] starting at any vertex in $V$.
+2. Run [[Depth-first search (DFS)|DFS]] starting at the vertex with the highest post order from the previous run.
+3. If the same vertex has the highest post order again - return true. Otherwise return false.
+
+## Correctness
+
+If the algorithm returns true then on the second run of the [[Depth-first search (DFS)|DFS]] algorithm from the vertex we started at we visited every other vertex before finishing at that vertex. Therefore we have the required statement.
+
+If the algorithm returns false. Then we know there is a second source component in the [[Strongly connected component graph (directed graph)|strongly connected component graph]] and by [[Week 9 - Exam Prep#Claim 1|Claim 1]] we have that no such vertex exists.
+
+### Claim 1
+
+>[!important] Claim 1
+>A [[Directed graph|directed graph]] has a vertex from which all other vertices are reachable if and only if it has one source vertex in it's [[Strongly connected component graph (directed graph)|strongly connected component graph]].
+
+### Proof of Claim 1
+
+If a vertex $v \in V$ has a path to every other vertex. Then any[[Strongly connected components (directed graphs)|strongly connected component]] not containing $v$ has a path from the [[Strongly connected components (directed graphs)|strongly connected component]] containing $v$. Therefore it is not a source [[Strongly connected components (directed graphs)|strongly connected component]]. As the graph must have a source vertex, it is the one contain $v$.
+
+If [[Strongly connected component graph (directed graph)|strongly connected component graph]] has only one source vertex $S$ then from [[Week 9 - Exam Prep#Claim 2|Claim 2]] there exists a path from $S$ to all other [[Strongly connected components (directed graphs)|strongly connected components]]. Therefore any vertex $v \in S$ has a path to all other vertices.
+
+### Claim 2
+
+>[!important] Claim 2
+>If a [[Directed acyclic graph (DAG)]] $G = (V,E)$ has only one source vertex $s \in V$. Then $s$ has a path to every other vertex $v \in V$.
+
+Take any vertex $v \in V$ and set $v_0 := v$.
+
+If $v_i$ is not a source vertex, choose a parent and define $v_{i+1}$ such that $(v_{i+1}, v_i) \in E$. As $G$ is finite there is some $0 \leq k < \vert V \vert$  such that $v_k$ is a source vertex. By our assumption $v_k = s$ and we have a path from $s$ to $v$, namely $(s, v_{k-1}) \ldots (v_1, v)$.
+
+## Run time
+
+Steps 1 and 2 take $O(\vert V \vert + \vert E \vert)$.
+
+Step 3 takes $O(\vert V \vert)$ at worst
+
+Overall this takes $2O(\vert V \vert + \vert E \vert) + O(\vert V \vert) = O(\vert V \vert + \vert E \vert)$. 
+
+> [!question] Problem 3.24
+> Give a linear-time algorithm for the following task. 
+> Input: A [[Directed acyclic graph (DAG)|directed acyclic graph]] $G$ 
+> Question: Does $G$ contain a directed path that touches every vertex exactly once?
 
 
-Problems 3.8, 3.11, 3.15, 3.16, 3.22, 3.24.
 
 # [[Breath-first search (BFS)|BFS]] and Shortest path problems
 
