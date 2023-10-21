@@ -413,11 +413,33 @@ Overall this takes $2O(\vert V \vert + \vert E \vert) + O(\vert V \vert) = O(\ve
 > Input: A [[Directed acyclic graph (DAG)|directed acyclic graph]] $G$ 
 > Question: Does $G$ contain a directed path that touches every vertex exactly once?
 
+## Algorithm
 
+1. Run [[Depth-first search (DFS)|DFS]] starting at any vertex.
+2. Run [[Depth-first search (DFS)|DFS]] starting at the vertex of largest post order from the last run.
+3. Order the edges $v_i$ with $v_1$ having the smallest post order and $v_n$ having the largest.
+4. Check if edges $(v_{i+1}, v_i) \in E$ if not return false.
+
+## Correctness
+
+If it returns true, then $(v_{i+1}, v_i)$ is exactly the path that runs through every vertex exactly once.
+
+If it returns false, then we are missing some edge $(v_{j+1}, v_j)$ this means we have two possible [[Topological sorting (DAG)|topological sorting]] $v_{i + 1} < v_i$ for all $i$ and $v_{i + 1} < v_i$ for all $i \not = j$ and $v_j < v_{j+1}$. Which by [[Week 9 - Exam Prep#Claim 3|Claim 3]] gives that this graph has no such path.  
+
+### Claim 3
+
+> [!important] Claim 3
+> A [[Directed acyclic graph (DAG)|dag]] has a path that touches every vertex exactly once if and only if it has a unique [[Topological sorting (DAG)|topological sorting]].
+
+If a [[Directed acyclic graph (DAG)|dag]] has a path $(v_1, v_2) \ldots (v_{n-1}, v_n)$ that touches every vertex exactly once, then $v_i < v_{i+1}$ for $1 \leq i < n$. Fixing the [[Topological sorting (DAG)|topological sorting]].
+
+If the [[Topological sorting (DAG)|topological sorting]] $v_i$ (with $v_i < v_j$ for $i < j$) of the vertices is unique then any switch $v_i$ for $v_{i+1}$ is invalid therefore there must be an edge $(v_i, v_{i+1})$. These edges form this path.   
 
 # [[Breath-first search (BFS)|BFS]] and Shortest path problems
 
 Problems 4.1-4.3, 4.8, 4.11, 4.12-4.14, 4.20, 4,21.
+
+
 
 # [[Minimum Spanning Tree problem (MST)]]
 
