@@ -437,13 +437,78 @@ If the [[Topological sorting (DAG)|topological sorting]] $v_i$ (with $v_i < v_j$
 
 # [[Breath-first search (BFS)|BFS]] and Shortest path problems
 
-Problems 4.1-4.3, 4.8, 4.11, 4.12-4.14, 4.20, 4,21.
-
 > [!question] Problem 4.1
 > Run [[Dijkstra's algorithm]] on the following graph tracking all the intermediate distances and return the path. 
 
+![[ex_4_1]]
+
+| Round | A       | B       | C       | D       | E       | F       | G       | H       |
+| ----- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
+| 0     | 0 (-)   | -       | -       | -       | -       | -       | -       | -       |
+| 1     | - (0\*) | 1 (A)   | -       | -       | 4 (A)   | 8 (A)   | -       | -       |
+| 2     | - (0)   | A (1\*) | 3 (B)   | -       | 4 (A)   | 7 (B)   | 6 (G)   | -       |
+| 3     | - (0)   | A (1)   | B (3\*) | 4 (C)   | 4 (A)   | 7 (B)   | 5(C)    | -       |
+| 4     | - (0)   | A (1)   | B (3)   | C (4\*) | 4 (A)   | 7 (B)   | 5 (C)   | 8 (D)   |
+| 5     | - (0)   | A (1)   | B (3)   | C (4)   | A (4\*) | 7 (b)   | 5 (C)   | 8 (D)   |
+| 6     | - (0)   | A (1)   | B (3)   | C (4)   | A (4)   | 6 (G)   | C (5\*) | 6 (G)   |
+| 7     | - (0)   | A (1)   | B (3)   | C (4)   | A (4)   | G (6\*) | C (5)   | 6 (G)   |
+| 8     | - (0)   | A (1)   | B (3)   | C (4)   | A (4)   | G (6)   | C (5)   | G (6\*) |
+
+![[ex_4_1_tree]]
+
+> [!question] Problem 4.2
+> Run [[Bellman-Ford algorithm]] on the following graph tracking all the intermediate distances and return the path.
+
+![[ex_4_2]]
+
+| Iteration | A   | B   | C   | D   | E   | F   | G   | H   | I   | S   |
+| --------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0         | -   | -   | -   | -   | -   | -   | -   | -   | -   | 0   |
+| 1         | 7   | -   | 6   | -   | 6   | 5   | -   | -   | -   | 0   |
+| 2         | 7   | 11  | 5   | 8   | 6   | 4   | -   | 9   | -   | 0   |
+| 3         | 7   | 11  | 5   | 7   | 6   | 4   | 9   | 7   | -   | 0   |
+| 4         | 7   | 11  | 5   | 7   | 6   | 4   | 8   | 7   | -   | 0   |
+| 5         | 7   | 11  | 5   | 7   | 6   | 4   | 8   | 7   | -   | 0    |
+
+> [!question] Problem 4.3
+> Squares. Design and analyze an algorithm that takes as input an undirected graph $G = (V, E)$ and determines whether $G$ contains a simple cycle (that is, a cycle which doesn’t intersect itself) of length four. Its running time should be at most $O(\vert V \vert^3)$. You may assume that the input graph is represented either as an adjacency matrix or with adjacency lists, whichever makes your algorithm simpler.
+
+## Algorithm
+
+We will use a graph in [[Adjacency list format (graph)|adjacency list]] format where for all $v \in V$ we have $U_v \subset V$ being all vertices that are adjacent to $v$. Further more we will assume $U_v$ is ordered for some ordering on $V$ (this only takes $O(\log(\vert V \vert)\vert V \vert^2$ time).
+
+1. For all $u, v \in V$ $u \not = v$
+	1. Check $\vert U_u \cap U_v \backslash \{u,v\} \vert > 1$ if so return true
+	2. Otherwise continue
+2. Return False
+
+## Correctness
+
+For a square to exist it needs 4 vertices $a, b, c, d$ with edges $(a,b)(b,c)(c,d)(d,a)$. Then $b,d \in U_a \cap U_c \backslash \{a,c\}$ making it of size greater than 2. Conversely if $b,d \in U_a \cap U_c \backslash \{a,c\}$ then there exists square $(a,b)(b,c)(c,d)(d,a)$.
+
+## Run time
+
+Step 1 iterates twice over the vertices of $G$ so this is $\vert V \vert^2$ steps. 
+
+Calculating $U_u \cap U_v \backslash \{u,v\}$ with $U_u$ and $U_v$ is order takes $O(\vert V \vert)$ time as we can iterate through both sets incrementing the lesser of the two and taking common elements. So this takes $O(\vert V \vert)$ time.
+
+All together this takes $O(\vert V \vert^3)$ time.
+
+> [!question] Problem 4.8
+> Professor F. Lake suggests the following algorithm for finding the shortest path from node $s$ to node $t$ in a directed graph with some negative edges: add a large constant to each edge weight so that all the weights become positive, then run [[Dijkstra's algorithm]] starting at node $s$, and return the shortest path found to node $t$.
+> Is this a valid method? Either prove that it works correctly or give a counter example.
+
+It doesn't work. Consider the following counter example with original weights in black and altered weights in red.
+
+![[ex_4_8_cex]]
+
+In the black values the distance from $S$ to $T$ is 0 following the top path. The bottom path takes distance 0.5.
+
+In the altered weights the distance along the top path is 3 whereas on the bottom it is 2.5. Therefore it will pick this path over the top.
 
 
+
+Problems: 4.11, 4.12-4.14, 4.20, 4,21.
 
 # [[Minimum Spanning Tree problem (MST)]]
 
