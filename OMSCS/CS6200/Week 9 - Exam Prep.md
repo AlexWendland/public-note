@@ -517,8 +517,8 @@ Problems: 4.12-4.14, 4.20, 4,21.
 
 # [[Minimum Spanning Tree problem (MST)]]
 
-Problems 5.1, 5.2, 5.5, 5.6, 5,7, 5.9, 5.20, 5.22, 5.23.
+Problems 5.5, 5.6, 5,7, 5.20, 5.22, 5.23.
 
 # Flow problems
 
-Problems 7.18, 7.19, 7.21, 7.22, 7.24(\*), 7.28(\*)
+Problems 7.18, 7.21, 7.22, 7.24(\*), 7.28(\*)
