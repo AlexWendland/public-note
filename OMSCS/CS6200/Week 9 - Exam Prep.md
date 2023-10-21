@@ -439,6 +439,9 @@ If the [[Topological sorting (DAG)|topological sorting]] $v_i$ (with $v_i < v_j$
 
 Problems 4.1-4.3, 4.8, 4.11, 4.12-4.14, 4.20, 4,21.
 
+> [!question] Problem 4.1
+> Run [[Dijkstra's algorithm]] on the following graph tracking all the intermediate distances and return the path. 
+
 
 
 # [[Minimum Spanning Tree problem (MST)]]
