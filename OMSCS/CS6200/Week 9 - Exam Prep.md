@@ -10,7 +10,7 @@ course: "[[CS6200 Introduction to Graduate Algorithms]]"
 week: 8
 chatgpt: false
 ---
-# Week 8 - Exam Prepr (unassessed) 
+# Week 8 - Exam Prep (unassessed) 
 
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 
