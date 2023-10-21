@@ -1,7 +1,7 @@
 ---
-aliases: []
+aliases: 
 type: lecture
-publish: false
+publish: true
 created: 2023-09-30
 last_edited: 2023-09-30
 tags:
