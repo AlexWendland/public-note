@@ -30,6 +30,7 @@ For example if $n$ was a prime power we would have.
 ![[Eulers product formula (totient function)#Proof of Claim 2]]
 
 For [[Rivest-Shamir-Adleman algorithm (RSA algorithm)|RSA]] it is also good to know
+
 ![[Eulers product formula (totient function)#Claim 1]]
 ![[Eulers product formula (totient function)#Proof of Claim 1]]
 
