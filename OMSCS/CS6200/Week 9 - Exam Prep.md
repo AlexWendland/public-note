@@ -506,9 +506,14 @@ In the black values the distance from $S$ to $T$ is 0 following the top path. Th
 
 In the altered weights the distance along the top path is 3 whereas on the bottom it is 2.5. Therefore it will pick this path over the top.
 
+> [!question] Problem 4.11
+> Give an algorithm that takes as input a directed graph with positive edge lengths, and returns the length of the shortest cycle in the graph (if the graph is acyclic, it should say so). Your algorithm should take time at most $O(\vert V \vert^3)$.
+
+Run [[Floyd-Warshall algorithm]] and return the minimum $D(\vert V \vert,i,i)$ for all $i \in V$.
 
 
-Problems: 4.11, 4.12-4.14, 4.20, 4,21.
+
+Problems: 4.12-4.14, 4.20, 4,21.
 
 # [[Minimum Spanning Tree problem (MST)]]
 
