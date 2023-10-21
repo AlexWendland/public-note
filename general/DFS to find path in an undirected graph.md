@@ -35,3 +35,9 @@ Explore(z)
         previous(w) = z
         Explore(w)
 ```
+
+# Correctness
+
+# Runtime
+
+$O(\vert V \vert + \vert E \vert)$ 
