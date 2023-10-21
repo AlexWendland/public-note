@@ -18,18 +18,18 @@ This is a method for exploring a tree. Lets say you have a vertex $v \in E$ and 
 ```pseudocode
  BFS(G, root):
 	Input: Graph G = (V,E) and root in V
-	Output: Shortest paths to the root.
-	let Q be a queue
-	label root as explored
-	Q.enqueue(root)
-	while Q is not empty
-		v = Q.dequeue()
-		for all edges from v to w in G.adjacentEdges(v)
-			if w is not labeled as explored:
-				label w as explored
-					w.parent := v
-					Q.enqueue(w)
-	return parent
+	Output: Shortest paths to the root in a tree.
+1. let Q be a queue
+2. label root as explored
+3. Que the root node on Q.
+4. while Q is not empty
+	4.1. v = Q.dequeue()
+	4.2. for all edges (v,w) in E
+		4.2.1. if w is not labeled as explored:
+			4.2.1.1. label w as explored
+			4.2.1.2. set v to be the parent of w.
+			4.2.1.3. Que w on Q.
+5. return parent arrray
 ```
 
 This runs in $O(\vert V \vert + \vert E \vert)$ as we run over each edge once (or twice if undirected) and visit each vertex once.

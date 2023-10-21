@@ -237,9 +237,71 @@ We get the following [[DFS tree (algorithm)|DFS tree]] with [[DFS tree (algorith
 ![[ex_3_2_b_dfs]]
 
 > [!question] Problem 3.7
-> Perform a [[Depth-first search (DFS)|DFS]] on the following graphs; whenever there’s a choice of vertices, pick the one that is alphabetically first. Classify each edge as a [[DFS tree (algorithm)|Tree edge]] or [[DFS tree (algorithm)|Back edge]], and give the pre and post number of each vertex.
+> A [[Bipartite graph|bipartite graph]] is a graph $G = (V, E)$ whose vertices can be [[Partition (set)|partitioned]] into two sets ($V = V_1 \cup V_2$ and $V_1 \cap V_2 = \emptyset$) such that there are no edges between vertices in the same set (for instance, if $u, v \in V_1$, then $(u,v), (v,u) \not \in E$).
+> a) Give a linear-time algorithm to determine whether an undirected graph is bipartite.
+> b) There are many other ways to formulate this property. For instance, an undirected graph is bipartite if and only if it can be colored with just two colors. Prove the following formulation: an undirected graph is bipartite if and only if it contains no cycles of odd length
+> c) At most how many colors are needed to color in an undirected graph with exactly one odd length cycle?
 
-Problems 3.7, 3.8, 3.11, 3.15, 3.16, 3.22, 3.24.
+### Part a
+
+Use [[Depth-first search (DFS)|DFS]] where you update a mapping $m: V \rightarrow \{-,0,1\}$. Start by assigning the first vertex $0$. If you explore a vertex $u$ from $v$ and $m(v) = -$ then set $m(v) =_2 m(u) + 1$ if $m(v) =_2 m(u) + 1$ continue exploring $u$ and if $m(v) = m(u)$ return that it is not bipartite. Once we have explored every vertex return $m$. 
+
+The run time is the same as that of [[Depth-first search (DFS)|DFS]] so $O(\vert V \vert + \vert E \vert)$.
+
+If it returns $m$ then for all edges $(u,v) \in E$ we have checked $m(u) =_2 m(v) + 1$ so it is a [[Bipartite graph|bipartite graph]].
+
+If we return false but it was bipartite with $V_0 \cup V_1 = V$. For simplicity lets say $V$ is connected (if it is disconnected apply this argument to the [[Connected components (graph)|connected component]] we found the error in). Let $v$ be the start vertex and without loss of generality assume $v \in V_0$. Therefore $v \in V_{m(v)}$. We can prove this generally by induction on the size of explored $v$. Therefore for the contradiction edge $(u,v) \in V$ we would have $u \in V_{m(u)}$ so by the rules of a [[Bipartite graph|bipartite graph]] $v \in V_{m(u) + 1}$ however $v \in V_{m(u)}$ meaning the original [[Bipartite graph|bipartition]] was not valid. Therefore, we are correct to say it can't be a [[Bipartite graph|bipartite graph]].
+
+## Part b
+
+Suppose we had a [[Bipartite graph|bipartite graph]] with an odd length cycle 
+$$(v_1, v_2) \ldots (v_{2k}, v_{2k+1}), (v_{2k+1}, v_1)$$
+Let $V_0 \cup V_1$ be the [[Bipartite graph|bipartition]] without loss of generality assume $v_1 \in V_1$. Then as $(v_i, v_{i+1}) \in E$ we know $v_i \in V_{i \ mod \ 2}$ so $v_{i+1} \in V_{i + 1 \ mod \ 2}$. However as $(v_{2k+1}, v_1) \in E$ with $v_1, v_{2k+1} \in V_{2k+1 = 1 \ mod \ 2}$ we know no such odd cycle can exist.
+
+Suppose we have no odd cycles and run the algorithm in part a. Suppose we have some contradiction edge $(u,v)$ with $u, v = m(u)$ follow [[DFS tree (algorithm)|tree edges]] taken back to the common parent $x \in V$. This will give us
+$$(u, u_1), \ldots, (u_{k-1}, x) \mbox{ and } (v, v_1) \ldots, (v_{t-1}, x).$$
+We have that
+$$ m(u) + k = m(x) = m(v) + t \mbox{ mod } 2.$$
+therefore we have a cycle of length
+$$
+k + t + 1 = 2k + 1 = 1 \mbox{ mod } 2
+$$
+contradicting our original assumption. Therefore no such contradiction edge exists and we have that it is a [[Bipartite graph|bipartite graph]].
+
+## Part c)
+
+We need 3.
+
+Remove a single edge from the odd length cycle. The new graph has no odd length cycles as otherwise there would have been more than one in the original graph.
+
+As this new graph has no odd length cycles it is a [[Bipartite graph|bipartite graph]] and we can colour it using 2 colours. To reintroduce the edge colour one of the end vertices with the colour 3.
+
+> [!question] Problem 3.8
+> Pouring water. We have three containers whose sizes are 10 pints, 7 pints, and 4 pints, respectively. The 7-pint and 4-pint containers start out full of water, but the 10-pint container is initially empty. We are allowed one type of operation: pouring the contents of one container into another, stopping only when the source container is empty or the destination container is full. We want to know if there is a sequence of pourings that leaves exactly 2 pints in the 7- or 4-pint container.
+> a) Model this as a graph problem: give a precise definition of the graph involved and state the specific question about this graph that needs to be answered.
+> b) What algorithm should be applied to solve the problem?
+> c) Find the answer by applying the algorithm.
+
+## Part a)
+
+Define our vertex set as 
+$$V = \{(a, b, c) \vert 0 \leq a \leq 10, \ 0 \leq b \leq 7, \ 0 \leq c \leq 4, \ a + b + c = 11  \}$$
+Then we have edge set
+$$
+E = \left \{ \begin{array} \ ((a,b,c), (a - m,b + m, c)) \\ ((a,b,c), (a - n,b, c + n)) \\ ((a,b,c), (a + o,b - o, c)) \\ ((a,b,c), (a,b - p, c + p)) \\ ((a,b,c), (a + q,b, c - q)) \\ ((a,b,c), (a,b + r, c - r))  \end{array} \Big \vert\begin{array} \ m = \min\{a, 7 - b\} \mbox{ if } m > 0 \\ n = \min\{a, 4 - c\} \mbox{ if } n > 0 \\ o = \min\{b, 10 - a\} \mbox{ if } o > 0\\ p = \min\{b, 4 - c\} \mbox{ if } p > 0 \\ q = \min\{c, 10 - a\} \mbox{ if } q > 0 \\ r = \min\{c, 7-b\} \mbox{ if } r > 0  \end{array}, \ (a,b,c) \in V  \right \}
+$$
+
+We need to find a path between $(0, 7, 4)$ and $(a,2,c)$ or $(a,b,2)$.
+
+## Part b)
+
+Run [[Breath-first search (BFS)|BFS]] on the graph.
+
+## Part c)
+
+
+
+Problems 3.8, 3.11, 3.15, 3.16, 3.22, 3.24.
 
 # [[Breath-first search (BFS)|BFS]] and Shortest path problems
 

@@ -2,6 +2,7 @@
 aliases:
   - partition
   - Partition
+  - partitioned
 type: definition
 publish: true
 created: 2023-10-01
