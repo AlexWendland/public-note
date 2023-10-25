@@ -164,3 +164,5 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Associative array]]
 - [[Bloom filters]]
 - [[Every min-cut is at full capacity in a max-flow]]
+- [[Polynomial time is a subset of NP-complete]]
+- [[P equals NP or P not equals NP]]

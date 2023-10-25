@@ -11,4 +11,5 @@ chatgpt: false
 ---
 > [!tldr] Polynomial time
 > An algorithm runs in *polynomial time* if its running time is polynomial in the length of the input.
+> A problem is *polynomial time* if it can be solved using a *polynomial time* algorithm.
 

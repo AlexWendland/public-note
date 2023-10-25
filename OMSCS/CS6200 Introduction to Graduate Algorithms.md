@@ -33,7 +33,7 @@ This course is a graduate-level course in the design and analysis of algorithms.
 - [[Week 8 - Modular Arithmetic]]
 - [[Week 8 - RSA]]
 - [[Week 8 - Bloom Filters]]
-
+- [[Week 10 - NP-complete overview]]
 ## Links
 
 - [Central](https://www.omscentral.com/courses/introduction-to-graduate-algorithms/reviews)
