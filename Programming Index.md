@@ -101,7 +101,7 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Big-Theta notation]]
 - [[Big-Omega notation]]
 - [[Boolean variable]]
-- [[NP-Complete]]
+- [[Nondeterministic Polynomial time (NP)]]
 - [[Dijkstra's algorithm]]
 - [[Bellman-Ford algorithm]]
 - [[Floyd-Warshall algorithm]]
@@ -166,3 +166,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Every min-cut is at full capacity in a max-flow]]
 - [[Polynomial time is a subset of NP-complete]]
 - [[P equals NP or P not equals NP]]
+- [[NP-Complete]]

@@ -14,7 +14,7 @@ chatgpt: false
 
 ## Complexity classes
 
-![[NP-Complete]]
+![[Nondeterministic Polynomial time (NP)]]
 
 In this class we use the [[Search problems|search problem]] definition.
 
