@@ -118,7 +118,13 @@ To reduce the independent set problem to the star search problem we have to show
 
 Below is the statement of the independent set problem.
 
->[!tldr] Independent set problem 
+>[!tldr] Independent set problem
+>Input: An [[Graph|undirected graph]] $G = (V,E)$ and an integer $k$.
+>
+>Output: An independent set $X \subset V$ of size $k$ or reports NO independent set of size $k$ exists in $G$.
 
 ### Independent set problem to star problem
 
+Suppose we are given $G = (V,E)$ and $k$ for the independent set problem. 
+
+Let $x \not \in V$ then define the [[Graph|undirected graph]]  $G' = (V \cup \{x\}, E \cup \{(x,v) \vert v \in V\})$. Run the 
