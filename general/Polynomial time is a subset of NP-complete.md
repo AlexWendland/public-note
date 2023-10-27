@@ -11,7 +11,7 @@ chatgpt: false
 # Statement
 
 >[!important] Lemma
->The class of [[Polynomial time]] problems is a subset of [[NP-Complete]].
+>The class of [[Polynomial time]] problems is a subset of [[Nondeterministic Polynomial time (NP)]].
 
 # Proof
 

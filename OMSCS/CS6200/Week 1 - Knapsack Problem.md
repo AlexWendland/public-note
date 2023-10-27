@@ -138,7 +138,7 @@ Combining these we have `solve` has run time $O(1) + O(nB) + O(nB) = O(nB)$.
 
 Even though $O(nB)$ is polynomial in $n$ and $B$ - the space it takes to represent $B$ is $\log_2(B)$. If we set $\overline{B} = \log_2(B)$ then the input size is $n, \overline{B}$ and the run time of this algorithm is $O(n 2^{\overline{B}})$ which is exponential. 
 
-The Knapsack is [[NP-complete]], meaning there is no polynomial algorithm for the knapsack problem.
+The Knapsack is [[Nondeterministic Polynomial time (NP)]], meaning there is no polynomial algorithm for the knapsack problem.
 
 ## Dynamic programming approach (multi version)
 
