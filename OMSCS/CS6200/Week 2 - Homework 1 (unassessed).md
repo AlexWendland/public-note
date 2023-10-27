@@ -9,7 +9,7 @@ course: "[[CS6200 Introduction to Graduate Algorithms]]"
 week: 2
 chatgpt: false
 ---
-# Week 2 - Homework 1 (unassessed)
+r# Week 2 - Homework 1 (unassessed)
 
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 
