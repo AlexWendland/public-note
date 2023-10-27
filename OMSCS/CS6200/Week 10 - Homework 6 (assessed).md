@@ -123,8 +123,20 @@ Below is the statement of the independent set problem.
 >
 >Output: An independent set $X \subset V$ of size $k$ or reports NO independent set of size $k$ exists in $G$.
 
-### Independent set problem to star problem
+### Independent set problem to star search problem
 
 Suppose we are given $G = (V,E)$ and $k$ for the independent set problem. 
 
-Let $x \not \in V$ then define the [[Graph|undirected graph]]  $G' = (V \cup \{x\}, E \cup \{(x,v) \vert v \in V\})$. Run the 
+Let $x \not \in V$ then define the [[Graph|undirected graph]]  $G' = (V \cup \{x\}, E \cup \{(x,v) \vert v \in V\})$.
+
+Then run the star search algorithm on $G'$ and $k$.
+
+It takes $O(\vert V \vert)$ to produce $G'$ and $G'$ has size polynomial in the size of $G$.
+
+### Star search problem solution to Independent set solution
+
+Suppose we are given a solution $X$ of size $k+1$ to the star search problem.
+
+If $k=1$ $X$ will have 2 vertices - return a single vertex in $\{x \in X \vert x \in V\}$.
+
+If $k \geq 2$ let $v \in X$ be the 
