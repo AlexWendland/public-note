@@ -13,7 +13,7 @@ chatgpt: false
 # Week 10 - Homework 6 (assessed)
 
 >[!question] Question
->A start of size $N$ is a graph with exactly $N+1$ vertices such that one vertex is connected to all other vertices and no other edges exists in the graph. Consider the star-search problem:
+>A star of size $N$ is a graph with exactly $N+1$ vertices such that one vertex is connected to all other vertices and no other edges exists in the graph. Consider the star-search problem:
 > 
 > Input: [[Graph|Undirected graph]] $G = (V,E)$ and a natural number $k > 0$.
 > Output: A set $X$ of $k+1$ vertices such that the [[Induced subgraph|induced subgraph]] on $X$ is a star, or report NO if such a set does not exist.
@@ -174,4 +174,8 @@ As we showed in the note above if $x \in X$ then $v = x$. Giving $X \backslash \
 
 From the definition of a star we know that the induced graph on $X$ is 
 $$(X , \{(u,v)  \vert u \in X \backslash \{v\}\}).$$
-Therefore the induced graph on $X \backslash \{v\}$ is an independent set. We have $\vert X \backslash \{v\} \vert = k$ so $X \backslash \{v\}$ is a solution to the independent set problem of size $k$.
+Therefore the induced graph on $X \backslash \{v\} \subset V$ is an independent set in $G'$ and therefore an independent graph in $G$. We have $\vert X \backslash \{v\} \vert = k$ so $X \backslash \{v\}$ is a solution to the independent set problem of size $k$ in $G$.
+
+## Summary
+
+I have shown that the star search problem has complexity class [[Nondeterministic Polynomial time (NP)|NP]]. Moreover, we can reduce the independent set problem of size $k$ to the star search problem of size $k$. As the independent set problem is [[NP-Complete]] this gives us that the star search problem is also [[NP-Complete]].
