@@ -152,3 +152,26 @@ Finding $v \in X$ takes $O(\vert E \vert)$, so converting the solution of the st
 
 ### A solution for the independent set problem exists if and only if a solution to the star problem exists
 
+Suppose we are given a graph $G = (V,E)$ and positive integer $k \geq 1$.
+
+Suppose a solution for the independent set problem exists, $Y \subset V$ - where the induced graph on $Y$ is an independent set and $\vert Y \vert = k$.
+
+Then our reduction defines graph 
+$$G' = (V \cup \{x\}, E \cup \{(x,v) \vert v \in V\}).$$
+Note that $G'$ has a star of size $k$ defined by $X := Y \cup \{x\}$.
+
+As $Y$ is an independent set in $G$ the induced edges of $X$ on $G'$ are $\{(x,y) \vert y \in Y\}$. This gives a star of size $k$ from the definition.
+
+So the star search problem on $G'$ with size $k$ has a solution.
+
+Suppose the star search problem on $G'$ with size $k$ has a solution $X$ - where the induced graph on $X$ is a star of size $k$ and $\vert X \vert = k+1$.
+
+If $k = 1$ then any vertex $v \in V$ is a solution - therefore $v \in X \cap V$ is a solution.
+
+If $k \geq 2$ then let $v \in X$ be non-leaf node in the induced graph $I$ of $X$ in $G'$.
+
+As we showed in the note above if $x \in X$ then $v = x$. Giving $X \backslash \{v\} \subset V$. 
+
+From the definition of a star we know that the induced graph on $X$ is 
+$$(X , \{(u,v)  \vert u \in X \backslash \{v\}\}).$$
+Therefore the induced graph on $X \backslash \{v\}$ is an independent set. We have $\vert X \backslash \{v\} \vert = k$ so $X \backslash \{v\}$ is a solution to the independent set problem of size $k$.
