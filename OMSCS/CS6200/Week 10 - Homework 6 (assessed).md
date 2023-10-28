@@ -10,7 +10,7 @@ course: "[[CS6200 Introduction to Graduate Algorithms]]"
 week: 10
 chatgpt: false
 ---
-# Week 7 - Homework 5 (assessed)
+# Week 10 - Homework 6 (assessed)
 
 >[!question] Question
 >A start of size $N$ is a graph with exactly $N+1$ vertices such that one vertex is connected to all other vertices and no other edges exists in the graph. Consider the star-search problem:
@@ -139,4 +139,16 @@ Suppose we are given a solution $X$ of size $k+1$ to the star search problem.
 
 If $k=1$ $X$ will have 2 vertices - return a single vertex in $\{x \in X \vert x \in V\}$.
 
-If $k \geq 2$ let $v \in X$ be the 
+If $k \geq 2$ let $v \in X$ be the vertex such that in induced graph $I = (X, \{(a,b) \in E' \vert a,b \in X \}$ the degree of $v$ in $I$ is greater than 1 (the non-leaf node).
+
+Then return the set $X \backslash \{v\}$.
+
+Finding $v \in X$ takes $O(\vert E \vert)$, so converting the solution of the star problem to the solution of the independent set solution takes polynomial time.
+
+>[!Note] The return set $X \backslash \{v\} \subset V$ is in the correct domain
+>We know $\vert X \vert = k + 1 \geq 3$ (as the $k=1$ case is handled differently). 
+>Suppose $x \in X$, then there is another two distinct vertices $a,b \in X$ ($a \not = b$) such that $a,b \in V$. From the definition of $G'$ then we have $(x,a), (x,b) \in E'$ meaning the degree of $x$ in the induced graph $I$ is greater than 1. Giving $v := x$ by the definition of $v$.
+>This gives $x \not \in X \backslash \{v\}$ and we have $X \backslash \{v\} \subset V$.
+
+### A solution for the independent set problem exists if and only if a solution to the star problem exists
+
