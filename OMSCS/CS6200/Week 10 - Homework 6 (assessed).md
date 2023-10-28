@@ -20,7 +20,7 @@ chatgpt: false
 > 
 > Show the star-search problem is [[NP-Complete]].
 
-To show that star-search problem is [[NP-Complete]] I will need to do the following:
+To show that star-search problem is [[NP-Complete]] I will do the following:
 
 1. Demonstrate that the star search problem is in the class of [[Nondeterministic Polynomial time (NP)|NP]] problems. 
 	1. Show the star search problem is of the correct form to be a [[Search problems|search problem]]. 
@@ -78,7 +78,7 @@ Suppose $X \subset V$ passes the algorithm.
 
 From step 1, $X$ must be of size $k+1$. 
 
-From step 3.1, we know the induced graph $I$ has $k$ vertices.
+From step 3.1, we know the induced graph $I$ has $k$ edges.
 
 Let $v \in X$ be the vertex found in step $3.2$.
 
@@ -131,11 +131,11 @@ Let $x \not \in V$ then define the [[Graph|undirected graph]]  $G' = (V \cup \{x
 
 Then run the star search algorithm on $G'$ and $k$.
 
-It takes $O(\vert V \vert)$ to produce $G'$ and $G'$ has size polynomial in the size of $G$.
+It takes $O(\vert V \vert)$ to produce $G'$ and $G'$ has polynomial size in the size of $G$.
 
 ### Star search problem solution to Independent set solution
 
-Suppose we are given a solution $X$ of size $k+1$ to the star search problem.
+Suppose we are given a solution $X$ to the star search problem of size $k$.
 
 If $k=1$ $X$ will have 2 vertices - return a single vertex in $\{x \in X \vert x \in V\}$.
 
@@ -143,7 +143,7 @@ If $k \geq 2$ let $v \in X$ be the vertex such that in induced graph $I = (X, \{
 
 Then return the set $X \backslash \{v\}$.
 
-Finding $v \in X$ takes $O(\vert E \vert)$, so converting the solution of the star problem to the solution of the independent set solution takes polynomial time.
+Finding $v \in X$ takes $O(\vert E \vert + \vert V \vert)$ as we have to search all edges in $\vert E' \vert$. So converting the solution of the star problem to the solution of the independent set solution takes polynomial time.
 
 >[!Note] The return set $X \backslash \{v\} \subset V$ is in the correct domain
 >We know $\vert X \vert = k + 1 \geq 3$ (as the $k=1$ case is handled differently). 
@@ -153,6 +153,8 @@ Finding $v \in X$ takes $O(\vert E \vert)$, so converting the solution of the st
 ### A solution for the independent set problem exists if and only if a solution to the star problem exists
 
 Suppose we are given a graph $G = (V,E)$ and positive integer $k \geq 1$.
+
+#### $\Rightarrow$
 
 Suppose a solution for the independent set problem exists, $Y \subset V$ - where the induced graph on $Y$ is an independent set and $\vert Y \vert = k$.
 
@@ -164,7 +166,9 @@ As $Y$ is an independent set in $G$ the induced edges of $X$ on $G'$ are $\{(x,y
 
 So the star search problem on $G'$ with size $k$ has a solution.
 
-Suppose the star search problem on $G'$ with size $k$ has a solution $X$ - where the induced graph on $X$ is a star of size $k$ and $\vert X \vert = k+1$.
+#### $\Leftarrow$
+
+Suppose the star search problem on $G'$ with size $k$ has a solution $X$ - where the induced graph on $X$ is a star of size $k$ with $\vert X \vert = k+1$.
 
 If $k = 1$ then any vertex $v \in V$ is a solution - therefore $v \in X \cap V$ is a solution.
 
@@ -174,7 +178,9 @@ As we showed in the note above if $x \in X$ then $v = x$. Giving $X \backslash \
 
 From the definition of a star we know that the induced graph on $X$ is 
 $$(X , \{(u,v)  \vert u \in X \backslash \{v\}\}).$$
-Therefore the induced graph on $X \backslash \{v\} \subset V$ is an independent set in $G'$ and therefore an independent graph in $G$. We have $\vert X \backslash \{v\} \vert = k$ so $X \backslash \{v\}$ is a solution to the independent set problem of size $k$ in $G$.
+Therefore the induced graph on $X \backslash \{v\} \subset V$ is an independent set in $G'$ and therefore an independent set in graph $G$. 
+
+We have $\vert X \backslash \{v\} \vert = k$ so $X \backslash \{v\}$ is a solution to the independent set problem of size $k$ in $G$.
 
 ## Summary
 
