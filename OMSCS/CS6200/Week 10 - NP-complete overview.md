@@ -66,8 +66,32 @@ Here instead of having to check if a solution is maximal we can instead just che
 
 ![[Knapsack-search is NP]]
 
-## Revisit [[P equals NP or P not equals NP]]
+## [[Polynomial time]] and [[Nondeterministic Polynomial time (NP)|Nondeterministic Polynomial time]]
 
+Note that [[Nondeterministic Polynomial time (NP)|NP]] isn't Not [[Polynomial time]]. In fact we have the following result.
 
+![[Polynomial time is a subset of NP-complete]]
+
+![[P_vs_NP.png]]
+
+The question is, are there problems that are in [[Nondeterministic Polynomial time (NP)|NP]] but are not in [[Polynomial time|P]]?
+
+## NP-complete
+
+If [[P equals NP or P not equals NP|P not equal to NP]] then we would have a problem in [[Nondeterministic Polynomial time (NP)|NP]] that didn't lie in [[Polynomial time|P]]. Therefore the green region above would be non-empty.
+
+![[P_not_equal_to_NP.png]]
+
+Therefore lets look at the hardest problems in [[Nondeterministic Polynomial time (NP)|NP]].
+
+![[NP-hard]]
+
+We define a [[Many-one reduction (problem)|many-one reduction]] as bellow. 
+
+![[Many-one reduction (problem)|Many-one reduction]]
+
+However, we want to look at the hardest problems in [[Nondeterministic Polynomial time (NP)|NP]].
+
+![[NP-Complete]]
 
 
