@@ -11,5 +11,5 @@ tags:
 chatgpt: false
 ---
 >[!tldr] Many-one reduction
->Definition here
+> There is a *many-one reduction* of problem $A$ to $B$ ($A \rightarrow B$ or $A \leq B$) if a [[Polynomial time|polynomial time]] algorithm to solve $B$ would also solve $A$ in [[Polynomial time|polynomial time]]. 
 
