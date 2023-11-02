@@ -20,5 +20,5 @@ If you are given an integer input $n \in \mathbb{Z}$. If you can solve a problem
 # Examples
 
 - [[Ford-Fulkerson Algorithm]]
-- [[Knapsack problem]]
+- [[Knapsack problem (without repetition)]]
 
