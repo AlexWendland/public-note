@@ -22,3 +22,7 @@ chatgpt: false
 # Related
 - [[k-satisfiability problem (k-SAT problem)]]
 	- This is a limited form of this problem
+
+# Theory
+
+- [[The Satisfiability problem is in NP]]

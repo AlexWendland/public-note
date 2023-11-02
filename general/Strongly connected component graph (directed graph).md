@@ -1,7 +1,7 @@
 ---
 aliases:
   - strongly connected component graph
-type: defintion
+type: definition
 publish: true
 created: 2023-09-27
 last_edited: 2023-09-27

@@ -5,7 +5,7 @@ aliases:
   - trivial Fermat witness
   - Non-trivial Fermat witness
   - Trivial Fermat witness
-type: defintion
+type: definition
 publish: true
 created: 2023-10-10
 last_edited: 2023-10-10

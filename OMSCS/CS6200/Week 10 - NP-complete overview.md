@@ -30,9 +30,17 @@ There is an open problem.
 
 ## Satisfiability
 
-![[Satisfiability problem (SAT problem)|SAT problem]]
+![[Satisfiability problem (SAT problem)#Statement|SAT problem]]
 
-We will show this problem is in [[Nondeterministic Polynomial time (NP)|NP]].
+![[The Satisfiability problem is in NP]]
 
-First note that it is in the form of a [[Search problems|search problem]] as it either provides you with a satisfying assignment to the $n$ variables or says one doesn't exist.
+## k-colourings problem
+
+![[k-colourings problem (graphs)#Statement]]
+
+![[The k-colourings problem is in NP]]
+
+## [[Minimum Spanning Tree problem (MST)|MST]]
+
+![[Minimum Spanning Tree problem (MST)#Statement|MST]]
 

@@ -2,7 +2,7 @@
 aliases:
   - prime
   - primes
-type: defintion
+type: definition
 publish: true
 created: 2023-10-10
 last_edited: 2023-10-10
