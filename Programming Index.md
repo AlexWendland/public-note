@@ -139,7 +139,7 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Flow]]
 - [[Ford-Fulkerson Algorithm]]
 - [[Pseudo-polynomial time]]
-- [[Knapsack problem]]
+- [[Knapsack problem (without repetition)]]
 - [[Polynomial time]]
 - [[st-cut]]
 - [[Min st-cut problem]]
