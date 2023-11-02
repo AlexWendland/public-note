@@ -1,6 +1,7 @@
 ---
 aliases:
   - polynomial time
+  - P
 type: definition
 publish: true
 created: 2023-10-03
