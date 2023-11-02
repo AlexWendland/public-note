@@ -1,7 +1,7 @@
 ---
 aliases:
   - substring
-type: defintion
+type: definition
 publish: true
 created: 2023-09-03
 last_edited: 2023-09-03

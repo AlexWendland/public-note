@@ -1,7 +1,7 @@
 ---
 aliases:
   - NP-complete
-type: defintion
+type: definition
 publish: false
 created: 2023-10-27
 last_edited: 2023-10-27

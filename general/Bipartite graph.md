@@ -1,7 +1,7 @@
 ---
 aliases:
   - bipartite graph
-type: defintion
+type: definition
 publish: true
 created: 2023-10-21
 last_edited: 2023-10-21

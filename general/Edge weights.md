@@ -1,7 +1,7 @@
 ---
 aliases:
   - edge weights
-type: defintion
+type: definition
 publish: true
 created: 2023-09-05
 last_edited: 2023-09-05

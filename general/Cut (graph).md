@@ -2,7 +2,7 @@
 aliases:
   - cut
   - cut edge
-type: defintion
+type: definition
 publish: true
 created: 2023-10-01
 last_edited: 2023-10-01

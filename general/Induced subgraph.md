@@ -1,7 +1,7 @@
 ---
 aliases:
   - induced subgraph
-type: defintion
+type: definition
 publish: true
 created: 2023-10-27
 last_edited: 2023-10-27

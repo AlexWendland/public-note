@@ -2,7 +2,7 @@
 aliases:
   - decision problems
   - decision problem
-type: defintion
+type: definition
 publish: false
 created: 2023-10-24
 last_edited: 2023-10-24

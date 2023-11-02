@@ -1,10 +1,15 @@
 ---
-aliases: [boolean, boolean variable, Boolean]
-type: defintion
+aliases:
+  - boolean
+  - boolean variable
+  - Boolean
+type: definition
 publish: true
 created: 2023-08-28
 last_edited: 2023-08-28
-tags: programming, maths
+tags:
+  - programming
+  - maths
 chatgpt: false
 ---
 # Boolean variable

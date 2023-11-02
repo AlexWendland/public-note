@@ -1,7 +1,7 @@
 ---
 aliases:
   - Fourier matrix
-type: defintion
+type: definition
 publish: true
 created: 2023-09-19
 last_edited: 2023-09-19

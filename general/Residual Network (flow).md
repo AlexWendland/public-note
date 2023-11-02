@@ -1,7 +1,7 @@
 ---
 aliases:
   - residual network
-type: defintion
+type: definition
 publish: true
 created: 2023-10-02
 last_edited: 2023-10-02

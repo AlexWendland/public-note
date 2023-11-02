@@ -2,7 +2,7 @@
 aliases:
   - forest
   - Forest
-type: defintion
+type: definition
 publish: true
 created: 2023-09-26
 last_edited: 2023-09-26
