@@ -28,4 +28,11 @@ There is an open problem.
 
 ![[P equals NP or P not equals NP#P equals NP or P not equals NP]]
 
-## Satisfiability 
+## Satisfiability
+
+![[Satisfiability problem (SAT problem)|SAT problem]]
+
+We will show this problem is in [[Nondeterministic Polynomial time (NP)|NP]].
+
+First note that it is in the form of a [[Search problems|search problem]] as it either provides you with a satisfying assignment to the $n$ variables or says one doesn't exist.
+
