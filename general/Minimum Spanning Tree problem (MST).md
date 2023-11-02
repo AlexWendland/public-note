@@ -21,3 +21,7 @@ chatgpt: false
 	- It takes $O(\vert E \vert \log(\vert V \vert))$.
 - [[Prim's algorithm]]
 	- It takes $O((\vert V \vert + \vert E \vert) \log(\vert V \vert))$.
+
+# Theory
+- [[Minimum Spanning Tree problem is in NP]]
+- 
