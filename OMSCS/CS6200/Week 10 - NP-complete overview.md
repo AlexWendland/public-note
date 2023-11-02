@@ -44,3 +44,6 @@ There is an open problem.
 
 ![[Minimum Spanning Tree problem (MST)#Statement|MST]]
 
+![[Minimum Spanning Tree problem is in NP]]
+
+This proof was relatively easy as [[Minimum Spanning Tree problem (MST)|MST]] is a [[Polynomial time|polynomial time]] problem.
