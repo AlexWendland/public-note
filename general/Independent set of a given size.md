@@ -20,3 +20,9 @@ chatgpt: false
 
 # Theory
 
+- [[Independent set of a given size is in NP]]
+- [[Independent set of a given size is NP-complete]]
+
+# Related problems
+
+- [[Max independent set problem (graph)]]
