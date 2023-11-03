@@ -1,5 +1,8 @@
 ---
-aliases: 
+aliases:
+  - Independent set problem
+  - max independent set problem
+  - independent set problem
 type: problem
 publish: false
 created: 2023-11-03
@@ -20,3 +23,9 @@ chatgpt: false
 
 # Theory
 
+- [[Max independent set problem is NP-hard]]
+
+# Related problems
+
+- [[Independent set of a given size]]
+- [[Max clique size problem (graph)]]
