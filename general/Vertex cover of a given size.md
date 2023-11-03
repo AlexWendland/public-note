@@ -18,6 +18,10 @@ chatgpt: false
 
 # Theory
 
+- [[Vertex cover of a given size is NP]]
+- [[Vertex cover of a given size is NP-complete]]
+
 # Related problems
 
 - [[Minimum vertex cover problem]]
+- [[Independent set of a given size]]
