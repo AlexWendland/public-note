@@ -28,4 +28,4 @@ chatgpt: false
 # Related problems
 
 - [[Independent set of a given size]]
-- [[Max clique size problem (graph)]]
+- [[Max clique problem (graph)]]

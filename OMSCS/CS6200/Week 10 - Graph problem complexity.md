@@ -40,7 +40,7 @@ More over we have it is [[NP-Complete]].
 
 So similarly with the [[Max independent set problem (graph)|Independent set problem]] we can define two problems.
 
-![[Max clique size problem (graph)#Statement]]
+![[Max clique problem (graph)#Statement]]
 
 ![[Clique of a given size problem#Statement]]
 
@@ -56,4 +56,25 @@ This is formalised through the following lemma.
 
 ![[Cliques in G are independent sets in the complement]]
 
+So we can easily show [[Clique of a given size problem]] is [[NP-Complete|NP-complete]] by finding a [[Many-one reduction (problem)|many-one reduction]] of [[Independent set of a given size]].
+
+![[Clique of a given size problem is NP-complete]]
+
+We get a similar result for the max problem.
+
+![[Max clique problem is NP-hard]]
+
+## Vertex cover problem
+
+First we define a new concept.
+
+![[Vertex cover]]
+
+Then similarly to before we get two logical problems.
+
+![[Minimum vertex cover problem#Statement]]
+
+![[Vertex cover of a given size#Statement]]
+
+Like before the minimum problem is not known to be in [[Nondeterministic Polynomial time (NP)|NP]], however the second is.
 
