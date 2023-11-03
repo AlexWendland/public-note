@@ -10,7 +10,7 @@ course: "[[CS6200 Introduction to Graduate Algorithms]]"
 week: 10
 chatgpt: false
 ---
-# Week 10 - NP-complete overview
+# Week 10 - NP overview
 
 ## Complexity classes
 

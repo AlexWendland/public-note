@@ -29,5 +29,7 @@ chatgpt: false
 	- The more general form of this problem
 
 # Theory
-- $k$-SAT for $k \geq 3$ is NP-complete.
-- $2-SAT$ runs in polynomial time.
+- $k$-SAT for $k \geq 3$ is [[NP-Complete]].
+- $2-SAT$ runs in [[Polynomial time|polynomial time]].
+- [[k-SAT is in NP]]
+- 

@@ -26,3 +26,4 @@ chatgpt: false
 # Theory
 
 - [[The Satisfiability problem is in NP]]
+- [[SAT is NP-complete]]
