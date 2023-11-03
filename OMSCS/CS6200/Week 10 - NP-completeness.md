@@ -36,3 +36,15 @@ We need to do the following to show this:
 
 ![[3-SAT is NP-complete]]
 
+Though this has shown us even more than just [[k-satisfiability problem (k-SAT problem)|3-SAT]].
+
+![[k-SAT is NP-complete for k greater than or equal to 3]]
+
+## Practice problems
+
+From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
+
+>[!question] 8.3 Stingy SAT
+
+>[!question] 8.8 Exact 4-SAT
+
