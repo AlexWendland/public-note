@@ -86,3 +86,9 @@ The [[Vertex cover|vertex cover]] is closely related to the [[Independent set (g
 
 So we can prove [[Vertex cover of a given size]] is [[NP-Complete|NP-complete]] by finding a [[Many-one reduction (problem)|many-one reduction]] of [[Independent set of a given size]] to it.
 
+![[Vertex cover of a given size is NP-complete]]
+
+From this we get the [[Minimum vertex cover problem]] is [[NP-hard]].
+
+![[Minimum vertex cover problem is NP-hard]]
+
