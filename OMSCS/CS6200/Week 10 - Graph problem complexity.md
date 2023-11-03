@@ -78,3 +78,5 @@ Then similarly to before we get two logical problems.
 
 Like before the minimum problem is not known to be in [[Nondeterministic Polynomial time (NP)|NP]], however the second is.
 
+![[Vertex cover of a given size is NP]]
+
