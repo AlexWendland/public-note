@@ -23,3 +23,4 @@ For a [[Graph|undirected graph]] $G = (V,E)$ if we are provided with a purposed 
 - Check for every edge $(u,v) \in E$ that $u \in S$ or $v \in S$, that takes $O(\vert E \vert \cdot \vert V \vert)$.
 Therefore checking a solution takes [[Polynomial time|polynomial time]] in the input size.
 
+This gives that the [[Vertex cover of a given size]] is in [[Nondeterministic Polynomial time (NP)|NP]].
