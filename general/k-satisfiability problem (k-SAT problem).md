@@ -5,6 +5,7 @@ aliases:
   - 2-SAT
   - k-SAT problem
   - 2-SAT problem
+  - 3-SAT
 type: problem
 publish: true
 created: 2023-09-30
@@ -29,7 +30,7 @@ chatgpt: false
 	- The more general form of this problem
 
 # Theory
-- $k$-SAT for $k \geq 3$ is [[NP-Complete]].
-- $2-SAT$ runs in [[Polynomial time|polynomial time]].
+- [[k-satisfiability problem (k-SAT problem)|2-SAT]] runs in [[Polynomial time|polynomial time]].
 - [[k-SAT is in NP]]
-- 
+- [[3-SAT is NP-complete]]
+- [[k-SAT is NP-complete for k greater than or equal to 3]]
