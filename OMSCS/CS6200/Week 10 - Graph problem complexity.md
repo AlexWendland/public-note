@@ -80,3 +80,9 @@ Like before the minimum problem is not known to be in [[Nondeterministic Polynom
 
 ![[Vertex cover of a given size is NP]]
 
+The [[Vertex cover|vertex cover]] is closely related to the [[Independent set (graph)|independent set]]. 
+
+![[Vertex cover if and only if the complement is an independent set]]
+
+So we can prove [[Vertex cover of a given size]] is [[NP-Complete|NP-complete]] by finding a [[Many-one reduction (problem)|many-one reduction]] of [[Independent set of a given size]] to it.
+
