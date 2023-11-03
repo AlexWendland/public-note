@@ -19,9 +19,9 @@ chatgpt: false
 # Theory
 
 - [[Clique of a given size problem is in NP]]
-- 
+- [[Clique of a given size problem is NP-complete]]
 
 # Related problems
 
-- [[Max clique size problem (graph)]]
+- [[Max clique problem (graph)]]
 - [[Independent set of a given size]]

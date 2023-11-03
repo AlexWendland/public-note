@@ -1,5 +1,6 @@
 ---
-aliases: 
+aliases:
+  - Max clique problem
 type: problem
 publish: true
 created: 2023-11-03
@@ -16,8 +17,9 @@ chatgpt: false
 
 # Theory
 
-
+- [[Max clique problem is NP-hard]]
 
 # Related problems
 
 - [[Max independent set problem (graph)]]
+- [[Clique of a given size problem]]
