@@ -63,7 +63,7 @@ For each $union(\overline{s}, t)$ ran in step 2 for $s \in S$ and $t \in T$ we r
 
 ## Run time
 
-The run time is ... so it runs in [[Polynomial time|polynomial time]] - this is proved below.
+The run time is $O((n + m)\log(n))$ so it runs in [[Polynomial time|polynomial time]] - this is proved below.
 
 Step 1 takes $O(n)$ to initialise the data structure.
 
@@ -73,7 +73,10 @@ Step 3 runs 2n find operations each taking $O(log(2n))$ time. So this step takes
 
 In Step 4 there are at most $2n$ sets and we need to run through them all so this takes $O(n)$.
 
-In Step 
+In Step 5 involves assigning a value to each of the $n$ variables which takes $O(n)$ time.
+
+All in all this takes
+$$3O(n) + O(m\log(n)) + O(n \log(n)) = O((n + m)\log(n)).$$
 
 >[!question] Question (b)
 >Now consider a new variant of 3-SAT, we will call the **3-at most-3-SAT**:
@@ -83,4 +86,35 @@ In Step
 >**Output**: An assignment of the variables such that the boolean formula returns True, or report NO if such assignment does not exist.
 >
 >Prove that the **3-at most-3-SAT** problem is NP-complete.
+
+To prove 3-at most-3-SAT is [[NP-Complete|NP-complete]] I will show 2 things.
+
+1. Demonstrate that 3-at most-3-SAT is in the class of [[Nondeterministic Polynomial time (NP)|NP]] problems. 
+2. Then demonstrate that the 3-at most-3-SAT problem is at least as hard as the 3-SAT - which is known to be [[NP-Complete]]. The specific steps are as follows:
+	1. Show how an instance of the [[k-satisfiability problem (k-SAT problem)|3-SAT]] problem is converted to an instance of the  3-at most-3-SAT problem, in polynomial time.
+	2. Show how a solution the 3-at most-3-SAT can be converted to a solution for the [[k-satisfiability problem (k-SAT problem)|3-SAT]] problem, again in polynomial time.
+	3. Show that a solution for the [[k-satisfiability problem (k-SAT problem)|3-SAT]] exists if and only if a solution to the 3-at most-3-SAT exists.
+
+## 3-at most-3-SAT is [[Nondeterministic Polynomial time (NP)|NP]]
+
+Note that 3-at most-3-SAT is in the correct form to be a [[Search problems|search problem]], we either return an correct solution or we say that no such solution exists.
+
+Suppose we have $f$ a [[Conjunctive normal form (CNF)|CNF]] that is an instance 3-at most-3-SAT problem with $n$ variables and $m$ ($\leq 3n$) literals and an assignment $a$ to the $n$ variables.
+
+To check the solution we go through each clause and check one of the 3 literals is true - if any are not we say this solution is not valid otherwise if all clauses are passed we say the solution is valid. This takes at most $m \leq 3n$ steps checking $3$ values in each step. Therefore takes $O(n)$. 
+
+As this is in the form of a [[Search problems|search problem]] and verifying a solution takes [[Polynomial time|polynomial time]], we have that 3-at most-3-SAT is in [[Nondeterministic Polynomial time (NP)|NP]]. 
+
+## Reduction of 3-SAT to 3-at most-3-SAT
+
+Suppose we have $f$ a [[Conjunctive normal form (CNF)|CNF]] that is an instance of the [[k-satisfiability problem (k-SAT problem)|3-SAT]] problem. Therefore each clause of $f$ has at-most 3 literals in.
+
+To reduce $f$ to an instance of 3-at most-3-SAT $f'$, first set $f' = f$ then do the following for each variable $x_i$ with $1 \leq i \leq n$:
+- Suppose there are $k$ literals $x_i$ or $\overline{x_i}$ in $f'$.
+- Make $k$ new variables $x_i^j$ with $1 \leq j \leq k$.
+- Replace every literal $x_i$ or $\overline{x_i}$ in $f'$ with a distinct $x^j_i$ or $\overline{x^j_i}$ respectively. So each $x_i^j$ is used exactly once and no $x_i$ or $\overline{x_i}$ literals exist in $f'$.
+- Append to $f'$
+$$\bigwedge_{j = 1}^{k-1} (x_i^j \lor \overline{x_i^{j+1}}) \land (\overline{x_i^j} \lor x_i^{j+1}).$$
+
+
 
