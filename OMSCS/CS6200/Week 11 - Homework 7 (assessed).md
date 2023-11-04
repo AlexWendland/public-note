@@ -110,11 +110,87 @@ As this is in the form of a [[Search problems|search problem]] and verifying a s
 Suppose we have $f$ a [[Conjunctive normal form (CNF)|CNF]] that is an instance of the [[k-satisfiability problem (k-SAT problem)|3-SAT]] problem. Therefore each clause of $f$ has at-most 3 literals in.
 
 To reduce $f$ to an instance of 3-at most-3-SAT $f'$, first set $f' = f$ then do the following for each variable $x_i$ with $1 \leq i \leq n$:
-- Suppose there are $k$ literals $x_i$ or $\overline{x_i}$ in $f'$.
-- Make $k$ new variables $x_i^j$ with $1 \leq j \leq k$.
+- Suppose there are $k_i$ literals $x_i$ or $\overline{x_i}$ in $f'$.
+- Make $k_i$ new variables $x_i^j$ with $1 \leq j \leq k$.
 - Replace every literal $x_i$ or $\overline{x_i}$ in $f'$ with a distinct $x^j_i$ or $\overline{x^j_i}$ respectively. So each $x_i^j$ is used exactly once and no $x_i$ or $\overline{x_i}$ literals exist in $f'$.
-- Append to $f'$
-$$\bigwedge_{j = 1}^{k-1} (x_i^j \lor \overline{x_i^{j+1}}) \land (\overline{x_i^j} \lor x_i^{j+1}).$$
+- If $k \geq 1$ then append to $f'$
+$$f_i := (x_i^{k_i} \lor \overline{x_i^1}) \land \bigwedge_{j = 1}^{k_i-1} (x_i^j \lor \overline{x_i^{j+1}}).$$
+
+Every variable $x_i^j$ appears in at most 3 literals of $f'$, once where it is replaced in the original formula then twice in $f_i$ (if $f_i$ is appended).
+
+As $f$ has clauses of at-most 3 literals and the $f_i$ has only clauses of size 2. All the clauses of $f'$ have size at-most 3.
+
+Combined this gives that $f'$ is a valid 3-at most-3-SAT formula, so we can solve it a valid algorithm for 3-at most-3-SAT.
+
+The transformation of $f$ to $f'$ involves going through the variables one by one, then replacing up to $nm$ instances of that variable and appending a formula of length up to $nm$. Therefore it takes us $O(n^2m)$ and so is in [[Polynomial time|polynomial time]] in the size of the input.
+
+If there is no valid assignment to $f'$ say there is none to $f$.
+
+If there is a valid assignment to $f'$, make assignment for $f$ by setting $x_i = x_i^1$ and return that.
+
+This involves assigning each variable that takes $O(n)$, so this transformation can be done in [[Polynomial time|polynomial time]].
+
+Suppose there is a valid assignment for $f'$. 
+
+Then we have made assignment $x_i = x_i^1$ for $f$.
+
+From [[Week 11 - Homework 7 (assessed)#Claim 2|Claim 2]] we know for any $1 \leq i \leq n$ that all $x^i_j$ have the same value - so they all have the same assignment as $x_i$. 
+
+As $f$ is a subset of $f'$ with each $x_i$ replaced with $x_i^j$ for some $1 \leq j \leq k_i$ but each of the $x_i^j$ have the same assignment as $x_i$ and $f'$ has a valid assignment then $f$ with this assignment is valid.
+
+Suppose $f$ has some valid assignment.
+
+Then create assignment for $f'$ by setting $x_i^j = x_i$.
+
+As this assignment is valid for $f$ it is valid for the component of $f'$ that comes from $f$.
+
+For any $i$ we have $x_i^j$ have the same assignment, so by [[Week 11 - Homework 7 (assessed)#Claim 3|Claim 3]] this is a valid assignment for $f_i$.
+
+Therefore every component of $f'$ has a valid assignment, giving this assignment is valid for $f'$. 
+
+Therefore this reduction is valid and 3-at most-3-SAT [[NP-Complete|NP-complete]] as it is in [[Nondeterministic Polynomial time (NP)|NP]] and [[k-satisfiability problem (k-SAT problem)|3-SAT]] is [[NP-Complete|NP-complete]].
+
+### Claim 2
+
+>[!important] Claim 2
+>In a valid assignment for $f'$ for all $1 \leq i \leq n$ we have that $x_i^j$ have the same value for $1 \leq j \leq k_i$.  
+
+### Proof of Claim 2
+
+Let $1 \leq i \leq n$.
+
+If $k_i = 1$ then there is only one variable $x_i^1$ and so the claim holds.
+
+If $k_i \geq 2$ then we have appended $f_i$ to $f'$ and so this assignment is valid for $f_i$ also. By [[Week 11 - Homework 7 (assessed)#Claim 3|Claim 3]] all $x_i^j$ have the same value and so the claim holds. 
+
+### Claim 3
+
+>[!important] Claim 3
+>$f_i$ has a valid assignment if and only if all $x_i^j$ have the same value.
+
+### Proof of Claim 3
+
+We only define $f_i$ if $k_i \geq 2$ so suppose this.
+
+Suppose we have a valid assignment for $f_i$.
+
+For $1 \leq j \leq k_i$,
+- as we have clause $(x_i^{j-1} \lor \overline{x_i^j})$ if $x_i^j$ is True then $x^{j-1}_i$ has to be True, and
+- as we have clause $(x_i^{j} \lor \overline{x_i^{j+1}})$ if $x_i^j$ is False then $x^{j+1}_i$ has to be False.
+(Where $x_i^0 := x_i^{k_i}$ and $x_i^{k_i + 1} := x_i^1$.)
+
+If $x^1_i$ is True then $x_i^{k_i}, x_i^{k_i-1}, \ldots, x^2_i$ must all be True.
+
+If $x^1_i$ is False then $x_i^2, x_i^3, \ldots, x_i^{k_i}$ must all be False.
+
+Therefore all $x_i^j = x_i^1$ and all $x_i^j$ have the same value.
+
+Suppose all $x^j_i$ have the same value.
+
+If they are all true, as every clause of $f_i$ contains an $x_i^j$ this is a valid assignment for $f_i$.
+
+If they are all false, as every clause of $f_i$ contains an $\overline{x^j_i}$ this is a valid assignment for $f_i$.
+
 
 
 
