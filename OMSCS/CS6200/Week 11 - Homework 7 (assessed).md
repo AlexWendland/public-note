@@ -101,7 +101,7 @@ Note that 3-at most-3-SAT is in the correct form to be a [[Search problems|searc
 
 Suppose we have $f$ a [[Conjunctive normal form (CNF)|CNF]] that is an instance 3-at most-3-SAT problem with $n$ variables and $m$ ($\leq 3n$) literals and an assignment $a$ to the $n$ variables.
 
-To check the solution we go through each clause and check one of the 3 literals is true - if any are not we say this solution is not valid otherwise if all clauses are passed we say the solution is valid. This takes at most $m \leq 3n$ steps checking $3$ values in each step. Therefore takes $O(n)$. 
+To check the solution we go through each clause and check one of the 3 literals is true - if any are not we say this solution is not valid otherwise if all clauses are passed we say the solution is valid. This takes at most $m \leq 3n$ steps checking $3$ values in each step. Therefore takes $O(m) = O(n)$. 
 
 As this is in the form of a [[Search problems|search problem]] and verifying a solution takes [[Polynomial time|polynomial time]], we have that 3-at most-3-SAT is in [[Nondeterministic Polynomial time (NP)|NP]]. 
 
@@ -109,26 +109,33 @@ As this is in the form of a [[Search problems|search problem]] and verifying a s
 
 Suppose we have $f$ a [[Conjunctive normal form (CNF)|CNF]] that is an instance of the [[k-satisfiability problem (k-SAT problem)|3-SAT]] problem. Therefore each clause of $f$ has at-most 3 literals in.
 
+### Transformation from 3-SAT to 3-at most-3-SAT
+
 To reduce $f$ to an instance of 3-at most-3-SAT $f'$, first set $f' = f$ then do the following for each variable $x_i$ with $1 \leq i \leq n$:
 - Suppose there are $k_i$ literals $x_i$ or $\overline{x_i}$ in $f'$.
-- Make $k_i$ new variables $x_i^j$ with $1 \leq j \leq k$.
+- Make $k_i$ new variables $x_i^j$ with $1 \leq j \leq k_i$.
 - Replace every literal $x_i$ or $\overline{x_i}$ in $f'$ with a distinct $x^j_i$ or $\overline{x^j_i}$ respectively. So each $x_i^j$ is used exactly once and no $x_i$ or $\overline{x_i}$ literals exist in $f'$.
-- If $k \geq 1$ then append to $f'$
+- If $k_i \geq 1$ then append to $f'$
 $$f_i := (x_i^{k_i} \lor \overline{x_i^1}) \land \bigwedge_{j = 1}^{k_i-1} (x_i^j \lor \overline{x_i^{j+1}}).$$
+Therefore $f'$ is now a [[Conjunctive normal form (CNF)|CNF]] with $n' := \sum_{i=1}^n k_i$ variables $x^j_i$ with $1 \leq i \leq n$ and $1 \leq j \leq k_i$ and at most $m + n'$ clauses.  
 
 Every variable $x_i^j$ appears in at most 3 literals of $f'$, once where it is replaced in the original formula then twice in $f_i$ (if $f_i$ is appended).
 
 As $f$ has clauses of at-most 3 literals and the $f_i$ has only clauses of size 2. All the clauses of $f'$ have size at-most 3.
 
-Combined this gives that $f'$ is a valid 3-at most-3-SAT formula, so we can solve it a valid algorithm for 3-at most-3-SAT.
+Combined this gives that $f'$ is a valid 3-at most-3-SAT formula, so we can solve it using a valid algorithm for the 3-at most-3-SAT problem.
 
 The transformation of $f$ to $f'$ involves going through the variables one by one, then replacing up to $nm$ instances of that variable and appending a formula of length up to $nm$. Therefore it takes us $O(n^2m)$ and so is in [[Polynomial time|polynomial time]] in the size of the input.
+
+### Transformation of the solution to 3-at most-3-SAT to a solution to 3-SAT
 
 If there is no valid assignment to $f'$ say there is none to $f$.
 
 If there is a valid assignment to $f'$, make assignment for $f$ by setting $x_i = x_i^1$ and return that.
 
-This involves assigning each variable that takes $O(n)$, so this transformation can be done in [[Polynomial time|polynomial time]].
+This involves assigning each variable that takes $O(n)$, so this transformation can be done in [[Polynomial time|polynomial time]] in the size of the input $f$.
+
+### Correctness of the reduction
 
 Suppose there is a valid assignment for $f'$. 
 
@@ -190,7 +197,3 @@ Suppose all $x^j_i$ have the same value.
 If they are all true, as every clause of $f_i$ contains an $x_i^j$ this is a valid assignment for $f_i$.
 
 If they are all false, as every clause of $f_i$ contains an $\overline{x^j_i}$ this is a valid assignment for $f_i$.
-
-
-
-
