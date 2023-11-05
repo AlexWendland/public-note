@@ -92,3 +92,15 @@ From this we get the [[Minimum vertex cover problem]] is [[NP-hard]].
 
 ![[Minimum vertex cover problem is NP-hard]]
 
+## Practice problems
+
+From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
+
+>[!question] 8.4 NP-completeness error
+
+>[!question] 8.10 Proof by generalisation
+
+>[!question] 8.14 Clique + Independent set (HW 6 assessed)
+
+>[!question] 8.19 Kite
+
