@@ -105,3 +105,4 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Stirling's approximation]]
 - [[Binomial coefficient]]
 - [[Happens with high probability]]
+- [[Linear function]]
