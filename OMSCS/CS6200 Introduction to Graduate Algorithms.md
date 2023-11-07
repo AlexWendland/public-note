@@ -40,3 +40,4 @@ This course is a graduate-level course in the design and analysis of algorithms.
 - [OMSCS page](https://omscs.gatech.edu/cs-6515-intro-graduate-algorithms)
 - [Course textbook](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf)
 - [[Week 10 - Graph problem complexity]]
+- [[Week 11 - Linear Programming]]
