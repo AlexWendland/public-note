@@ -36,3 +36,38 @@ It helps to standardise this into the following form. Note the use of [[Matrix|m
 We can convert all [[Linear programme|linear programmes]] into standard form using the following Lemma.
 
 ![[All linear programmes can be represented in standard form]]
+
+## Geometric view
+
+From now on we just consider [[Linear programme standard form|linear programmes in standard form]].
+
+We can consider the *feasible* $x$ such that $x \geq 0$ and $x^T A \leq b$.
+
+As there are $n$ variables we know $x \in \mathbb{R}^n$, more over as $x \geq 0$ we have that it lies in the positive region on $\mathbb{R}^n$.
+
+Each row of $Ax \leq b$ defines a half space, so the feasible $x$ lie in the positive region of $x \in \mathbb{R}^n$ cut out by these half spaces.
+
+>[!example] 2D-example
+>Suppose we have the linear programme
+>$$\max_x x_1 + 6 x_2$$
+>with respect to $x \geq 0$ and
+>$$ x_1 \leq 300, \ x_2 \leq 200, \mbox{ and } x_1 + 3 x_2 \leq 700.$$
+>This region can be visualised as follows.
+>
+>![[2d_feasible_region]]
+
+So the feasible region is cut out by $n + m$ half spaces in $\mathbb{R}^n$.
+
+The *vertices* in this feasible space are ones that lie on a 0-dimensional intersection of the boundary of the half spaces. In the example above these would be
+$$(0,0), (0,200), (100,200), (300,0), \mbox{ and } (300, 133.33..).$$
+
+## Linear programme solvers
+
+When it comes to solving a linear programming problem.
+
+![[Linear programme problem#Statement]]
+
+There are [[Polynomial time|polynomial time]] algorithms like the [[Ellipsoid method (linear programming)|ellipsoid method]] and [[Interior-point method (linear programme)|interior-point method]] but in practice these can be slower than the much more widely used [[Simplex method (linear programme)|simplex method]] which can be exponential in its worst cases.
+
+## Simplex method
+

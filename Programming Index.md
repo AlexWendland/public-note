@@ -167,3 +167,6 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Polynomial time is a subset of NP-complete]]
 - [[P equals NP or P not equals NP]]
 - [[NP-Complete]]
+- [[Ellipsoid method (linear programming)]]
+- [[Interior-point method (linear programme)]]
+- [[Simplex method (linear programme)]]
