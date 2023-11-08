@@ -71,3 +71,28 @@ There are [[Polynomial time|polynomial time]] algorithms like the [[Ellipsoid me
 
 ## Simplex method
 
+As vertices are extremal points with regards to the constraints we have that if the maximum of the objective function exists then it must be achieved on one of the vertices. Therefore the idea of the simplex algorithm is to start at a vertex then compare the objective function to all other vertices connecting to it.
+
+So in short
+
+```pseudocode
+1. Start at x = 0, if that is feasible.
+2. Find all vertices adjacent to x along an edge.
+3. compare the objective function of all vertices and
+	1. If the current x is highest return that value.
+	2. Switch x to be the highest of the objective functions found around x.
+4. Go to step 2.
+```
+
+This only works if there is a point in the feasible region that achieves this maximum. Here we have 2 constraints:
+- There is a point in the feasible region.
+- That some point achieves a maximum - this happens when the region is bounded and has finite volume.
+
+These are summarised by the two types of linear programme.
+
+![[Infeasible linear programme]]
+
+![[Unbounded linear programme]]
+
+## Determining if a [[Linear programme|linear programme]] is infeasible
+
