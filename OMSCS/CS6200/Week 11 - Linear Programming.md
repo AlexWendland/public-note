@@ -162,3 +162,18 @@ We call the initial [[Linear programme|linear programme]] the *primal linear pro
 
 ## Weak duality
 
+The intuition behind the [[Dual linear programme|dual linear programme]] was that it bounded the objective function. So lets check if that is true.
+
+![[Weak duality theorem (linear programme)]]
+
+This means the example above gives us a good way to check for optimal points.
+
+![[If a point in a linear programme has equal objective function to a point in its dual linear programme they are both optimal]]
+
+## Check for unbounded linear programme
+
+Another corollary of the [[Weak duality theorem (linear programme)|Weak duality theorem]] helps us identify when we have [[Unbounded linear programme|unbounded linear programmes]]. 
+
+![[Unbounded linear programmes have infeasible duals]]
+
+Note that as [[The dual dual linear programme is the original linear programme|the dual dual linear programme is the original linear programme]] this also gives us that 
