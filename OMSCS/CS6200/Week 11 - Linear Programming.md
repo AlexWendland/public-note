@@ -145,5 +145,20 @@ How do we get which linear combinations will be "optimal"?
 Define $y_i$ for $1 \leq i \leq m$ and take $y_i \geq 0$ linear combinations of each of the constraints defined by
 $$\sum_j a_{i,j} x_j \leq b_i.$$
 With the goal to finish with an equation of the form
-$$\sum_j c_j x_j \leq C.$$
-To do this define a new [[Linear programme|linear programme]] 
+$$ \sum_j c_j x_j \leq \sum_i y_i \left ( \sum_j a_{i,j} x_j \right ) = \sum_j \left ( \sum_i y_i a_{i,j} \right ) x_j \leq C = \sum_i y_i b_i.$$
+For the optimum bound we would like to minimise the quantity on the right.
+
+To do this define a new [[Linear programme|linear programme]].
+
+![[Dual linear programme]]
+
+If in the original [[Linear programme|linear programme]] we have $n$ variables and $m$ constraints. In the [[Dual linear programme|dual linear programme]] we have $m$ variables and $n$ constraints.
+
+We call the initial [[Linear programme|linear programme]] the *primal linear programme* however we will try not to use that term.
+
+## Dual of a Dual
+
+![[The dual dual linear programme is the original linear programme]]
+
+## Weak duality
+
