@@ -140,3 +140,6 @@ Though I picked some values for the linear combination, how do we more generical
 
 ## Dual linear programme
 
+How do we get which linear combinations will be "optimal"?
+
+Define $y_i$ for $1 \leq i \leq m$ and take $y_i \geq 0$ linear combinations   
