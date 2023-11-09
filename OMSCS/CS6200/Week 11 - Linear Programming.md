@@ -142,4 +142,8 @@ Though I picked some values for the linear combination, how do we more generical
 
 How do we get which linear combinations will be "optimal"?
 
-Define $y_i$ for $1 \leq i \leq m$ and take $y_i \geq 0$ linear combinations   
+Define $y_i$ for $1 \leq i \leq m$ and take $y_i \geq 0$ linear combinations of each of the constraints defined by
+$$\sum_j a_{i,j} x_j \leq b_i.$$
+With the goal to finish with an equation of the form
+$$\sum_j c_j x_j \leq C.$$
+To do this define a new [[Linear programme|linear programme]] 
