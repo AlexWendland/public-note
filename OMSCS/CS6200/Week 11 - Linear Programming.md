@@ -96,3 +96,19 @@ These are summarised by the two types of linear programme.
 
 ## Determining if a [[Linear programme|linear programme]] is infeasible
 
+Suppose we have a [[Linear programme standard form|linear programme in standard form]] which may or may not be a [[Infeasible linear programme]]. For any inequality and $x \in \mathbb{R}^n$
+$$ \sum_i a_{i,j} x_j \leq b_i$$
+we can satisfy it by adding an arbitrarily small $z \in \mathbb{R}$ to the left hand side
+$$ z + \sum_i a_{i,j} x_j \leq b_i.$$
+If $z \geq 0$ we now that the original  $x \in \mathbb{R}^n$ satisfied the inequality.
+
+In summary from our original [[Linear programme|linear programme]] we can extend it to include an $n+1$'th variable $z$. We augment the $m$ constraints to include this variable $z$ on the left hand side. This is now a [[Infeasible linear programme|feasible linear programme]].
+
+Moreover, we can change the objective function of the linear programme to simply maximise $z$ and if that value is positive we have a feasible point in the original [[Linear programme|linear programme]].
+
+![[Checking if a linear programme is feasible]]
+
+## Aside: How to verify solutions?
+
+
+

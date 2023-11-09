@@ -1,5 +1,7 @@
 ---
-aliases: 
+aliases:
+  - infeasible linear programme
+  - feasible linear programme
 type: definition
 publish: true
 created: 2023-11-08
