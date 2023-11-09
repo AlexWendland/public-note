@@ -176,4 +176,4 @@ Another corollary of the [[Weak duality theorem (linear programme)|Weak duality 
 
 ![[Unbounded linear programmes have infeasible duals]]
 
-Note that as [[The dual dual linear programme is the original linear programme|the dual dual linear programme is the original linear programme]] this also gives us that 
+Note that as [[The dual dual linear programme is the original linear programme|the dual dual linear programme is the original linear programme]] this also gives us that if the [[Dual linear programme|dual linear programme]] is unbounded then the original [[Linear programme|linear programme]] is [[Infeasible linear programme|infeasible]]. 
