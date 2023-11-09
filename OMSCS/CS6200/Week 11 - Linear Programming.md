@@ -110,5 +110,33 @@ Moreover, we can change the objective function of the linear programme to simply
 
 ## Aside: How to verify solutions?
 
+>[!example] Is a point optimal?
+>Define a [[Linear programme|linear programme]] where we need to
+>$$ \max x_1 + 6 x_2 + 10 x_3 $$
+>with constraints
+>$$ 
+>\begin{align*} 
+>x_1 & \leq 300\\
+>x_2 & \leq 200\\
+>x_1 + 3 x_2 + 2 x_3 & \leq 1000\\
+>x_2 + 3 x_3 & \leq 500\\
+>x_1, x_2, x_3 & \geq 0
+>\end{align*}
+>$$
+>this uses 3 variables and 4 constraints. If will tell you the point $(200, 200, 100)$ achieves a score of 2400 and is this point optimal?
 
+Lets try to upper bound the objective function $x_1 + 6 x_2 + 10 x_3$, we will do this with linear combinations of the inequalities. Lets consider the following
+
+$$
+\begin{align*} 
+(x_2) * 1/3 + (x_1 + 3x_2 + 2 x_3) + (x_2 + 3x_3) * 8/3 & \leq 200 * 1/3 + 1000 + 500 * 8/3\\
+x_1 + x_2(1/3 + 1 + 8/3) + x_3 (2 + 3 * 8/3) & \leq 2400\\
+x_1 + 6 x_2 + 10 x_3 \leq 2400
+\end{align*}
+$$
+This then gives that the objective function is bounded above 2400, so the point provided must be optimal as we can never get a larger objective score.
+
+Though I picked some values for the linear combination, how do we more generically find them and when will I know the bound is low enough?
+
+## Dual linear programme
 
