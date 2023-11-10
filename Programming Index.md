@@ -171,3 +171,4 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Interior-point method (linear programme)]]
 - [[Simplex method (linear programme)]]
 - [[Checking if a linear programme is feasible]]
+- [[Check if a linear programme is solvable]]

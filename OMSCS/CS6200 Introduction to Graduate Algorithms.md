@@ -41,3 +41,4 @@ This course is a graduate-level course in the design and analysis of algorithms.
 - [Course textbook](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf)
 - [[Week 10 - Graph problem complexity]]
 - [[Week 11 - Linear Programming]]
+- [[Week 12 - Max-SAT approximation algorithm]]

@@ -177,3 +177,20 @@ Another corollary of the [[Weak duality theorem (linear programme)|Weak duality 
 ![[Unbounded linear programmes have infeasible duals]]
 
 Note that as [[The dual dual linear programme is the original linear programme|the dual dual linear programme is the original linear programme]] this also gives us that if the [[Dual linear programme|dual linear programme]] is unbounded then the original [[Linear programme|linear programme]] is [[Infeasible linear programme|infeasible]]. 
+
+This gives us a nice check for if a [[Linear programme|linear programme]] is [[Unbounded linear programme|unbounded]]. As we know [[Checking if a linear programme is feasible]] can be done, we just need to check if the [[Dual linear programme|dual linear programme]] is feasible - if it is then the original [[Linear programme|linear programme]] is bounded. If the [[Dual linear programme|dual linear programme]] is not [[Infeasible linear programme|feasible]] then we still need to check if the original [[Linear programme|linear programme]] is [[feasible]] or not (note a [[Linear programme|linear programme]]  can't be both [[Infeasible linear programme|infeasible]] and [[Unbounded linear programme|unbounded]]). 
+
+Therefore we have a nice algorithm to check if we have a solvable [[Linear programme|linear programme]].
+
+![[Check if a linear programme is solvable#Algorithm]]
+
+## Strong duality theorem
+
+![[Strong duality theorem (linear programme)]]
+
+This can be reformulated in terms of optimal points.
+
+![[Strong duality theorem optimum (linear programme)]]
+
+As a cool corollary we can use this to prove [[Max-flow min-cut Theorem]] using the restatement of the problems in terms of [[Linear programme|linear programmes]].
+
