@@ -23,7 +23,7 @@ type: algorithm
 5. If any variable and its complement are in the same SCC return no assignment possible.
 6. While still SCC left.
 	1. Take sink SCC S,
-	2. Set the clauses in S to true (and thier complements to false)
+	2. Set the clauses in S to true (and their complements to false)
 	3. Remove S & \overline{S}
 7. Return assignment without the value for Y.
 ```
