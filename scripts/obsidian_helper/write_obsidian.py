@@ -23,15 +23,12 @@ def write_obsidian_file(obsidian_file:models.ObsidianFile):
             write_metadata(file, obsidian_file.metadata)
 
         for section in obsidian_file.sections:
-            write_section(file, section)
+            file.write(turn_section_to_string(section))
 
 def write_metadata(file: io.StringIO, metadata: Dict[str, Any]) -> None:
     file.write("---\n")
     yaml.dump(metadata, file, Dumper=IndentedDumper)
     file.write("---\n")
-
-def write_section(file: io.StringIO, section: models.MarkdownSection) -> None:
-    file.write(turn_section_to_string(section))
 
 def turn_section_to_string(section: models.MarkdownSection) -> str:
     section_string = ""
