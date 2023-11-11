@@ -1,10 +1,10 @@
 ---
 aliases: []
-type: str
-publish: false
+chatgpt: false
 created: 2023-08-26
 last_edited: 2023-08-26
+publish: false
 tags: programming, list[str]
-chatgpt: false
+type: str
 ---
 # Heap

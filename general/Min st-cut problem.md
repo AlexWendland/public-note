@@ -1,13 +1,13 @@
 ---
 aliases:
   - min st-cut
-type: problem
-publish: true
+chatgpt: false
 created: 2023-10-03
 last_edited: 2023-10-03
+publish: true
 tags:
   - programming
-chatgpt: false
+type: problem
 ---
 # Statement
 
@@ -18,8 +18,8 @@ chatgpt: false
 
 - [[Ford-Fulkerson Algorithm]]
 	- $O(C \vert E \vert)$ where $C$ is the min cut.
-	- This is only guaranteed to terminate for integer flows. 
-- 
+	- This is only guaranteed to terminate for integer flows.
+-
 
 # Theory
 

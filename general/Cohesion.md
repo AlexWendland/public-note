@@ -1,11 +1,11 @@
 ---
 aliases: []
-type: meta
-publish: true
+chatgpt: false
 created: 2023-08-05
 last_edited: 2023-08-05
+publish: true
 tags: programming
-chatgpt: false
+type: meta
 ---
 # Cohesion
 
@@ -18,4 +18,4 @@ Which really does define what cohesion within code means. A class is highly cohe
 
 ## Heuristic for determining Cohesion
 
-Whenever two variables are used in the same line of code - consider these cohesive. They belong together. So if you can split your variables up based on whether they are in the same line of code your class or function has low cohesion. Normally this is indictive that your function or class can be [[Refactored]]. 
+Whenever two variables are used in the same line of code - consider these cohesive. They belong together. So if you can split your variables up based on whether they are in the same line of code your class or function has low cohesion. Normally this is indictive that your function or class can be [[Refactored]].

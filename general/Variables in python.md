@@ -1,11 +1,12 @@
 ---
-aliases: [variables]
-type: fundamentals
-publish: true
+aliases:
+  - variables
+chatgpt: true
 created: 2023-07-17
 last_edited: 2023-07-17
+publish: true
 tags: programming, python
-chatgpt: true
+type: fundamentals
 ---
 # Variables in python
 
@@ -34,11 +35,11 @@ print(id(y)) #140703625587904
 ```python
 print(locals())
 # {
-#   '__name__' : '__main__',
-#   ...
-#   '__cached__' : None,
-#   'x' : 10,
-#   'y' : 10
+# '__name__' : '__main__',
+# ...
+# '__cached__' : None,
+# 'x' : 10,
+# 'y' : 10
 # }
 ```
 

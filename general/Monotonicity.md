@@ -3,13 +3,13 @@ aliases:
   - montonic
   - monotone
   - monotonically
-type: definition
-publish: false
+chatgpt: false
 created: 2023-09-07
 last_edited: 2023-09-07
+publish: false
 tags:
   - maths
   - list[str]
-chatgpt: false
+type: definition
 ---
 # Monotonic

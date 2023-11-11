@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: algorithm
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-11-09
 last_edited: 2023-11-09
+publish: true
 tags:
   - programming
-chatgpt: false
+type: algorithm
 ---
 # Checking if a linear programme is feasible
 
@@ -20,7 +20,7 @@ feasibility_check(A, b):
 	Output: If the linear programme is feasible.
 1. Extend A with a column of 1's and another column of -1's at the end, making A' size m x (n+2).
 2. Set objective function c = (0, 0, ..., 0, 1, -1) of length n+2.
-3. Run linear_programme_solver(A', b, c). 
+3. Run linear_programme_solver(A', b, c).
 4. If the value of the objective function is positive output it is feasible.
 5. Otherwise say it is not.
 ```

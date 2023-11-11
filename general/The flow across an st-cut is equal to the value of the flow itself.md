@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: false
+aliases: null
+chatgpt: false
 created: 2023-10-20
 last_edited: 2023-10-20
+publish: false
 tags:
   - programming
-chatgpt: false
+type: lemma
 ---
 # Statement
 
@@ -43,7 +43,7 @@ $$
 $$
 giving
 $$
-\sum_{\substack{(s',s^{\ast}) \in E\\ s' \in S'}} f(s',s^{\ast}) - \sum_{\substack{(s^{\ast}, s') \in E\\ s' \in S'}} f(s^{\ast}, s') = \sum_{\substack{(s^{\ast}, t') \in E\\ t' \in T}} f(s^{\ast}, t') - \sum_{\substack{(t',s^{\ast}) \in E\\ t' \in T}} f(t',s^{\ast}) 
+\sum_{\substack{(s',s^{\ast}) \in E\\ s' \in S'}} f(s',s^{\ast}) - \sum_{\substack{(s^{\ast}, s') \in E\\ s' \in S'}} f(s^{\ast}, s') = \sum_{\substack{(s^{\ast}, t') \in E\\ t' \in T}} f(s^{\ast}, t') - \sum_{\substack{(t',s^{\ast}) \in E\\ t' \in T}} f(t',s^{\ast})
 $$
 As $\vert S' \vert = \vert S \vert - 1 < \vert S \vert$ by induction we have
 $$
@@ -56,6 +56,6 @@ size(f) & = \left ( \sum_{\substack{(s',t') \in E\\ s' \in S', t' \in T'}} f(s',
 & = flow(S,T)
 \end{align*}
 $$
-giving the desired result for $(S, T)$. 
+giving the desired result for $(S, T)$.
 
 So by induction we have the result holds in general.

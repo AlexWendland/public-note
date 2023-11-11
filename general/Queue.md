@@ -1,12 +1,12 @@
 ---
 aliases:
   - queue
-type: data structure
-publish: false
+chatgpt: false
 created: 2023-09-29
 last_edited: 2023-09-29
+publish: false
 tags:
   - programming
-chatgpt: false
+type: data structure
 ---
 # Queue

@@ -1,10 +1,11 @@
 ---
-aliases: [Taylor series]
-type: str
-publish: false
+aliases:
+  - Taylor series
+chatgpt: false
 created: 2023-08-28
 last_edited: 2023-08-28
+publish: false
 tags: maths, list[str]
-chatgpt: false
+type: str
 ---
 # Taylor expansion

@@ -1,11 +1,13 @@
 ---
-aliases: [coupling, coupled]
-type: meta
-publish: true
+aliases:
+  - coupling
+  - coupled
+chatgpt: false
 created: 2023-08-05
 last_edited: 2023-08-05
+publish: true
 tags: programming
-chatgpt: false
+type: meta
 ---
 # Coupling
 
@@ -15,4 +17,4 @@ There are lots of methods to decrease coupling, such as introducing [[Interface|
 
 Decreasing coupling also makes it easier to [[Testing conventions|test]] your applications as you need to mock/patch out less of your code.
 
-This is a **key concept** in good system design. 
+This is a **key concept** in good system design.

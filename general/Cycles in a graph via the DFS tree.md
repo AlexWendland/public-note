@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-09-27
 last_edited: 2023-09-27
+publish: true
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
 > [!important] Lemma
 > A [[Directed graph|directed graph]] $G$ has a cycle if and only if its [[DFS tree (algorithm)|DFS tree]] has a back edge.

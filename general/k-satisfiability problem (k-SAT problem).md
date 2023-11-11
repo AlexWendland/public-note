@@ -6,13 +6,13 @@ aliases:
   - k-SAT problem
   - 2-SAT problem
   - 3-SAT
-type: problem
-publish: true
+chatgpt: false
 created: 2023-09-30
 last_edited: 2023-09-30
+publish: true
 tags:
   - programming
-chatgpt: false
+type: problem
 ---
 # Statement
 
@@ -23,7 +23,7 @@ chatgpt: false
  - [[2-SAT algorithm using SCC]]
 	 - This runs in $O(n + m)$.
 	 - Only solves problems with clauses of size at most 2.
-- 
+-
 
 # Related
 - [[Satisfiability problem (SAT problem)|SAT problem]]

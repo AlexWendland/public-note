@@ -2,14 +2,14 @@
 aliases:
   - connected component
   - connected components
-type: definition
-publish: true
+chatgpt: false
 created: 2023-09-26
 last_edited: 2023-09-26
+publish: true
 tags:
   - maths
   - graph-theory
-chatgpt: false
+type: definition
 ---
 > [!tldr] Connected components
 > In a [[Graph|graph]] a connected components is a maximal [[Connected (graph)|connected]] [[Subgraph|subgraph]] $G'$ of $G$.

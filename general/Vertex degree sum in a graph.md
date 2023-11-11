@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-09-26
 last_edited: 2023-09-26
+publish: true
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
 > [!important] Lemma
 > Let $G = (V, E)$ represents a [[Graph|undirected simple graph]]. Let $\mbox{deg}(v)$ be the [[Degree (graph)|degree]] of vertex $v \in V$. Then
@@ -16,7 +16,7 @@ chatgpt: false
 
 Lets prove this by induction on the number $\vert E \vert$ within a graph.
 
-Suppose a graph has no edges. Therefore $\deg(v) = 0$ for all $v \in V$ as there are no edges to be incident to $v$. Thus 
+Suppose a graph has no edges. Therefore $\deg(v) = 0$ for all $v \in V$ as there are no edges to be incident to $v$. Thus
 $$\sum_{v \in V} \mbox{deg}(v) = 0 = 2 \vert E \vert.$$
 Suppose we have shown the statement true for all graphs where $\vert E \vert < k$ and suppose we have a graph with $\vert E \vert = k$. Pick any edge $e = (x,y)$ and remove it from the graph to get $G^{\ast} = (V, E^{\ast})$ . From the induction hypothesis we have
 $$ \sum_{v \in V} \mbox{deg}_{G^{\ast}}(v) = 2 (\vert E \vert - 1)$$

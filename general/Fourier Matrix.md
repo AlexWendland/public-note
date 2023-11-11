@@ -1,14 +1,14 @@
 ---
 aliases:
   - Fourier matrix
-type: definition
-publish: true
+chatgpt: false
 created: 2023-09-19
 last_edited: 2023-09-19
+publish: true
 tags:
   - maths
   - programming
-chatgpt: false
+type: definition
 ---
 # Fourier Matrix
 

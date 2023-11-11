@@ -1,11 +1,11 @@
 ---
-aliases: 
-type: str
-publish: false
+aliases: null
+chatgpt: false
 created: 2023-09-18
 last_edited: 2023-09-18
+publish: false
 tags:
   - maths
-chatgpt: false
+type: str
 ---
 # Polar Coordinates

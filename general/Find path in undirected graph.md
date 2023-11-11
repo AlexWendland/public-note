@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: problem
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-09-28
 last_edited: 2023-09-28
+publish: true
 tags:
   - programming
-chatgpt: false
+type: problem
 ---
 # Statement
 

@@ -1,14 +1,14 @@
 ---
 aliases:
   - vertex colouring
-type: definition
-publish: true
+chatgpt: false
 created: 2023-11-02
 last_edited: 2023-11-02
+publish: true
 tags:
   - maths
   - graph-theory
-chatgpt: false
+type: definition
 ---
 >[!tldr] Vertex Colouring
 > Given an [[Graph|undirected graph]] a $G = (V,E)$ a *vertex colouring* using $D$ is a map $c: V \rightarrow D$.

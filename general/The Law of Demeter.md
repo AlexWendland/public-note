@@ -1,11 +1,11 @@
 ---
 aliases: []
-type: principle
-publish: true
+chatgpt: false
 created: 2023-08-05
 last_edited: 2023-08-05
+publish: true
 tags: programming, clean-code
-chatgpt: false
+type: principle
 ---
 # The Law of Demeter
 
@@ -18,7 +18,7 @@ A method `f` of an object `C` should only call the methods of the following:
 
 It should explicitly not call methods on objects that are returned by any of the allowed functions.
 
-You know this has been violated this when you see [[Train Wrecks]] in the code. 
+You know this has been violated this when you see [[Train Wrecks]] in the code.
 
 ## Why should I follow this
 

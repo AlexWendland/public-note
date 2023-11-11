@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-11-03
 last_edited: 2023-11-03
+publish: true
 tags:
   - programming
-chatgpt: false
+type: lemma
 ---
 # Statement
 
@@ -31,9 +31,9 @@ Then we add $C'$ to $f'$.
 
 As each clause in $f'$ has at most 3 literals $f'$ is in [[k-satisfiability problem (k-SAT problem)|3-SAT]].
 
-[[3-SAT is NP-complete#Clause reduction|Clause reduction]] takes $O(n)$ as each clause can have length at most $n$ (if it has more it either has repeating terms which can be truncated or contradicting terms which means we can return early saying false). We apply [[3-SAT is NP-complete#Clause reduction|clause reduction]] at most $m$ times so this reduction takes $O(nm)$ polynomial time. 
+[[3-SAT is NP-complete#Clause reduction|Clause reduction]] takes $O(n)$ as each clause can have length at most $n$ (if it has more it either has repeating terms which can be truncated or contradicting terms which means we can return early saying false). We apply [[3-SAT is NP-complete#Clause reduction|clause reduction]] at most $m$ times so this reduction takes $O(nm)$ polynomial time.
 
-We then solve $f'$ using [[k-satisfiability problem (k-SAT problem)|3-SAT]], if there is no solution we return that otherwise we return whatever assignment there was to the original $n$ variables. This takes $O(1)$ time. 
+We then solve $f'$ using [[k-satisfiability problem (k-SAT problem)|3-SAT]], if there is no solution we return that otherwise we return whatever assignment there was to the original $n$ variables. This takes $O(1)$ time.
 
 From [[3-SAT is NP-complete#Claim 1|Claim 1]] we know for each clause $C$ of $f$ is satisfiable if its [[3-SAT is NP-complete#Clause reduction|clause reduction]] $C'$ is satisfiable. Therefore as $f'$ is the set of [[3-SAT is NP-complete#Clause reduction|clause reduction]]'s of the clauses of $f$, we have that $f'$ is satisfiable if and only if $f$ is satisfiable.
 
@@ -61,7 +61,7 @@ All in all this shows that [[k-satisfiability problem (k-SAT problem)|3-SAT]] is
 
 Suppose we have some assignment to the variables $n$ variables such that $C$ is satisfied. Then we know at least one literal $l_a$ is true.
 
-To make a satisfying assignment for $C'$ first keep the assignment the same for the original $n$ variables and 
+To make a satisfying assignment for $C'$ first keep the assignment the same for the original $n$ variables and
 - set $y_i$ to be true for all $i \leq a - 2$, and
 - set $y_i$ to be false for all $i \geq a - 1$.
 

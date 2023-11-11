@@ -1,11 +1,12 @@
 ---
-aliases: [conventions]
-type: convention
-publish: true
+aliases:
+  - conventions
+chatgpt: false
 created: 2023-07-11
 last_edited: 2023-07-11
+publish: true
 tags: programming, clean-code
-chatgpt: false
+type: convention
 ---
 # Conventions
 

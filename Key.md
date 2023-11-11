@@ -1,11 +1,11 @@
 ---
 aliases: []
-type: key
-publish: true
+chatgpt: false
 created: 2023-08-29
 last_edited: 2023-08-29
+publish: true
 tags: reference
-chatgpt: false
+type: key
 ---
 # Key
 
@@ -21,7 +21,7 @@ I am using obsidian callouts, which is a nice feature. I am trying to stay consi
 > Something that is deduced, normally with a proof below.
 
 > [!note] Key point
-> An important point to note. 
+> An important point to note.
 
 > [!question] Exercise question
 > A problem related to the material.

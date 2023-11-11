@@ -1,12 +1,12 @@
 ---
 aliases:
   - maths
-type: index
-publish: true
+chatgpt: false
 created: 2023-04-20
 last_edited: 2023-10-20
-tags: 
-chatgpt: false
+publish: true
+tags: null
+type: index
 ---
 # Maths
 This is an index page for all notes that broadly could be grouped under Maths.

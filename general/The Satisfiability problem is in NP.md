@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-11-02
 last_edited: 2023-11-02
+publish: true
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
 # Statement
 
@@ -21,4 +21,4 @@ All that is left to show is that we can verify an answer in [[Polynomial time]].
 
 Given an assignment of values to the $n$-variables. To check one clause is satisfied takes $O(n)$ time. There are $m$ clauses, so this in total takes $O(nm)$ time.
 
-This is polynomial so the [[Satisfiability problem (SAT problem)|Satisfiability problem]] is in [[Nondeterministic Polynomial time (NP)|NP]]. 
+This is polynomial so the [[Satisfiability problem (SAT problem)|Satisfiability problem]] is in [[Nondeterministic Polynomial time (NP)|NP]].

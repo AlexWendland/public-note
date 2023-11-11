@@ -1,11 +1,16 @@
 ---
-aliases: [function, functions, function conventions, subroutines, subroutine]
-type: convention
-publish: true
+aliases:
+  - function
+  - functions
+  - function conventions
+  - subroutines
+  - subroutine
+chatgpt: false
 created: 2023-06-29
 last_edited: 2023-07-01
-tags: programming, clean-code, 
-chatgpt: false
+publish: true
+tags: programming, clean-code,
+type: convention
 ---
 # Function conventions
 
@@ -27,7 +32,7 @@ Testing for an exception for another function call is one thing, then you can ma
 
 #### Switch statements are one thing
 
-[[Switch statements]] are one thing and should appear only once. Normally these switch statements will be used to create a [[Polymorphism|polymorphic]] object and are hidden behind an [[Inheritance|inheritance]] relationship so the rest of the system can't see it. Look at the [[Constructor Pattern|constructor pattern]] to see example. 
+[[Switch statements]] are one thing and should appear only once. Normally these switch statements will be used to create a [[Polymorphism|polymorphic]] object and are hidden behind an [[Inheritance|inheritance]] relationship so the rest of the system can't see it. Look at the [[Constructor Pattern|constructor pattern]] to see example.
 
 #### Gluing functions together is one thing
 
@@ -35,11 +40,11 @@ A function can just be at a higher level of abstraction and just glue other func
 
 ### Functions should be short
 
-Functions should be short, ideally under about 20 lines long. If you are needing to go longer think to yourself if you are doing too much within this function. 
+Functions should be short, ideally under about 20 lines long. If you are needing to go longer think to yourself if you are doing too much within this function.
 
 ### Functions should read like a book
 
-The function should read like a book, top down. In fact all your code should do this. 
+The function should read like a book, top down. In fact all your code should do this.
 
 ### Functions should stay at one level of abstraction
 
@@ -47,7 +52,7 @@ When reading your function, if you need to go into details - then that should be
 
 ### Functions shouldn't be too nested
 
-If your code goes into 3 levels of nesting - that seems like it is doing too much. [Here](https://www.youtube.com/watch?v=CFRhGnuXG-4&ab_channel=CodeAesthetic) is a nice video about how to list[str]not nest your code - There are 2 main methods to get around it. 
+If your code goes into 3 levels of nesting - that seems like it is doing too much. [Here](https://www.youtube.com/watch?v=CFRhGnuXG-4&ab_channel=CodeAesthetic) is a nice video about how to list[str]not nest your code - There are 2 main methods to get around it.
 
 #### Extractions
 Pulling code out into their own functions.
@@ -72,7 +77,7 @@ def do_something_better{}:
 
 ### Have no side effects
 
-A [[Side effect|side effect]] is a secondary effect not made clear by the functions name. For example checking if the function checked the state is in some position and then changed the state some how. This is bad practice as it makes it less clear to the user what they are doing and may have unexpected consequences.  
+A [[Side effect|side effect]] is a secondary effect not made clear by the functions name. For example checking if the function checked the state is in some position and then changed the state some how. This is bad practice as it makes it less clear to the user what they are doing and may have unexpected consequences.
 
 ### Don't repeat yourself
 
@@ -80,7 +85,7 @@ The DRY principle, if you are going to repeat yourself - why don't you make that
 
 ## Function Arguments
 
-The best functions are ones with no arguments (niladic). This makes it easier to read as regularly arguments are at a different level of abstraction to the function. Also easier for [[Testing conventions|testing]] as you don't have to try the function with multiple different arguments. 
+The best functions are ones with no arguments (niladic). This makes it easier to read as regularly arguments are at a different level of abstraction to the function. Also easier for [[Testing conventions|testing]] as you don't have to try the function with multiple different arguments.
 
 ### Try to have less than 3 arguments
 
@@ -100,13 +105,13 @@ Something that takes an input argument and transforms it somehow. Then returns t
 
 #### Event
 
-This is an event trigger, such as if someone failed there password a given number of times. 
+This is an event trigger, such as if someone failed there password a given number of times.
 
 If the functions don't follow these sorts of patterns then it is unwise to use them.
 
 ### Dyadic and Triadic functions
 
-A function with two or more arguments is harder to understand than one, for 3 reasons: 
+A function with two or more arguments is harder to understand than one, for 3 reasons:
 - You have to spend some time understanding why each argument is taken by the function.
 - You have to order the inputs to function, and this should somehow seem clear.
 - You may have a variable to ignore, for example the file object in a writing function.
@@ -129,7 +134,7 @@ If the arguments are naturally grouped together, then may be indicative of being
 
 #### Are you taking a list of arguments
 
-If you are taking a list of arguments for example using `args` (in python) to pass them in, consider passing a list instead. 
+If you are taking a list of arguments for example using `args` (in python) to pass them in, consider passing a list instead.
 
 #### Don't pass in null
 
@@ -149,7 +154,7 @@ Most programmers won't expect the output to be given by an input variable such a
 
 #### Don't pass in an object to write to
 
-This is a tempting practice but instead call the write function on an object that can write. Or make the writer an instance variable of the object that owns the function. This makes it much more clear what is doing the writing or being written to. 
+This is a tempting practice but instead call the write function on an object that can write. Or make the writer an instance variable of the object that owns the function. This makes it much more clear what is doing the writing or being written to.
 
 ### Don't return error codes from functions
 
@@ -172,7 +177,7 @@ A function should do or answer something, this should be the most dominant word 
 ### Step down rule
 
  > [!quote] [[Clean Code]]
-> We want the code to read like a top-down narrative. We want every function to be followed by those at the next level of abstraction so that we can read the program, descending one level of abstraction at a time as we read down the list of functions. 
+> We want the code to read like a top-down narrative. We want every function to be followed by those at the next level of abstraction so that we can read the program, descending one level of abstraction at a time as we read down the list of functions.
 Obsidian
 
 ### Get the function written before you clean them up

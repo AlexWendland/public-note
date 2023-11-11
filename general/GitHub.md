@@ -1,9 +1,10 @@
 ---
-aliases: [github]
-type: application
-publish: false
+aliases:
+  - github
 created: 2023-03-10
 last_edited: 2023-03-10
+publish: false
 tags: programming, incomplete
+type: application
 ---
 # GitHub

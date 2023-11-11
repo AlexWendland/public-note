@@ -1,11 +1,11 @@
 ---
 aliases: []
-type: tool
-publish: true
+chatgpt: false
 created: 2023-04-24
 last_edited: 2023-04-24
+publish: true
 tags: programming, git
-chatgpt: false
+type: tool
 ---
 # Pre-commit hooks
 
@@ -58,9 +58,9 @@ repos:
     rev: 23.3.0
     hooks:
       - id: black
-  - repo: https://github.com/pycqa/isort 
-    rev: 5.11.2 
+  - repo: https://github.com/pycqa/isort
+    rev: 5.11.2
     hooks:
-     - id: isort 
+     - id: isort
        name: isort (python)
 ```
