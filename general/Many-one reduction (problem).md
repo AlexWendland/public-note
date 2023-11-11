@@ -2,7 +2,7 @@
 aliases:
   - Many-one reduction
   - many-one reduction
-chatgpt: false
+checked: false
 created: 2023-11-02
 last_edited: 2023-11-02
 publish: true

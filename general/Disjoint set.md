@@ -3,7 +3,7 @@ aliases:
   - disjoint set
   - union-find
   - Union-find
-chatgpt: false
+checked: false
 created: 2023-10-01
 last_edited: 2023-10-01
 publish: false

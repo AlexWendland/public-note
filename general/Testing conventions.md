@@ -4,7 +4,7 @@ aliases:
   - testing
   - testing conventions
   - test conventions
-chatgpt: false
+checked: false
 created: 2023-06-29
 last_edited: 2023-06-29
 publish: true

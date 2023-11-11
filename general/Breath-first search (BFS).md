@@ -3,7 +3,7 @@ aliases:
   - BFS
   - Breath-first search
   - breath-first search
-chatgpt: false
+checked: false
 created: 2023-09-29
 last_edited: 2023-09-29
 publish: true

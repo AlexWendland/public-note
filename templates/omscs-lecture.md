@@ -1,6 +1,6 @@
 ---
 aliases: null
-chatgpt: false
+checked: false
 course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: <% tp.file.creation_date("YYYY-MM-DD") %>
 last_edited: <% tp.file.creation_date("YYYY-MM-DD") %>

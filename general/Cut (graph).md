@@ -2,7 +2,7 @@
 aliases:
   - cut
   - cut edge
-chatgpt: false
+checked: false
 created: 2023-10-01
 last_edited: 2023-10-01
 publish: true

@@ -4,7 +4,7 @@ aliases:
   - DAG
   - directed acyclic graph
   - Directed acyclic graph
-chatgpt: false
+checked: false
 created: 2023-09-26
 last_edited: 2023-09-26
 publish: true

@@ -4,6 +4,7 @@ aliases:
   - operating system
   - Operating systems
   - operating systems
+checked: false
 created: 2023-03-10
 last_edited: 2023-03-10
 publish: false

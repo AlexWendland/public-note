@@ -3,7 +3,7 @@ aliases:
   - linear programme
   - linear programming
   - linear programmes
-chatgpt: false
+checked: false
 created: 2023-11-07
 last_edited: 2023-11-07
 publish: true

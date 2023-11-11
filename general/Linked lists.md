@@ -4,7 +4,7 @@ aliases:
   - linked lists
   - double linked list
   - double linked lists
-chatgpt: false
+checked: false
 created: 2023-10-12
 last_edited: 2023-10-12
 publish: true

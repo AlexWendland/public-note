@@ -1,7 +1,7 @@
 ---
 aliases:
   - singleton
-chatgpt: true
+checked: false
 created: 2023-03-31
 last_edited: 2023-03-31
 publish: true

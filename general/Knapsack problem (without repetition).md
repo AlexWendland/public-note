@@ -1,7 +1,7 @@
 ---
 aliases:
   - Knapsack problem
-chatgpt: false
+checked: false
 created: 2023-10-03
 last_edited: 2023-10-03
 publish: true

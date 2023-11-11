@@ -4,7 +4,7 @@ aliases:
   - RAM
   - Random access memory
   - random access memory
-chatgpt: false
+checked: false
 created: 2023-07-17
 last_edited: 2023-07-17
 publish: false

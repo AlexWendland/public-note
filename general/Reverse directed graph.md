@@ -2,7 +2,7 @@
 aliases:
   - reverse
   - reverse directed graph
-chatgpt: false
+checked: false
 created: 2023-09-28
 last_edited: 2023-09-28
 publish: true

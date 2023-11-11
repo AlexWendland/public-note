@@ -2,7 +2,7 @@
 aliases:
   - reference count
   - reference counting
-chatgpt: false
+checked: false
 created: 2023-07-17
 last_edited: 2023-07-17
 publish: true

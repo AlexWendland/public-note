@@ -1,7 +1,7 @@
 ---
 aliases:
   - sum of roots of unity
-chatgpt: false
+checked: false
 created: 2023-09-19
 last_edited: 2023-09-19
 publish: true

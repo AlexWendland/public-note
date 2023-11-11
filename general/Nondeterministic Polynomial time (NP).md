@@ -4,7 +4,7 @@ aliases:
   - NP complexity
   - Nondeterministic Polynomial time
   - nondeterministic polynomial time
-chatgpt: false
+checked: false
 created: 2023-08-30
 last_edited: 2023-08-30
 publish: true

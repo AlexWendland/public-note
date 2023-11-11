@@ -2,7 +2,7 @@
 aliases:
   - decision problems
   - decision problem
-chatgpt: false
+checked: false
 created: 2023-10-24
 last_edited: 2023-10-24
 publish: false

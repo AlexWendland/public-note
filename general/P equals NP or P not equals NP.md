@@ -4,7 +4,7 @@ aliases:
   - P /= NP
   - P equals NP
   - P not equal to NP
-chatgpt: false
+checked: false
 created: 2023-10-24
 last_edited: 2023-10-24
 publish: true

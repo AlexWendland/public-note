@@ -1,7 +1,7 @@
 ---
 aliases:
   - dual linear programme
-chatgpt: false
+checked: false
 created: 2023-11-09
 last_edited: 2023-11-09
 publish: true

@@ -1,7 +1,7 @@
 ---
 aliases:
   - bipartite graph
-chatgpt: false
+checked: false
 created: 2023-10-21
 last_edited: 2023-10-21
 publish: true

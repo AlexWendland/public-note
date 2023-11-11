@@ -1,7 +1,7 @@
 ---
 aliases:
   - vertex cover
-chatgpt: false
+checked: false
 created: 2023-11-03
 last_edited: 2023-11-03
 publish: true

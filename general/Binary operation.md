@@ -1,7 +1,7 @@
 ---
 aliases:
   - binary operation
-chatgpt: false
+checked: false
 created: 2023-08-31
 last_edited: 2023-08-31
 publish: true
