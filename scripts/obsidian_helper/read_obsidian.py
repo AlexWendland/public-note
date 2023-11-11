@@ -125,15 +125,29 @@ def is_title(line: str) -> bool:
         return False
     return True
 
-def get_obsidian_files() -> Generator[str, None, None]:
+EXCLUDED_DIRECTORIES = [
+    'Excalidraw',
+    'scripts',
+    '.obsidian',
+]
+
+def get_obsidian_files(templates: bool = True) -> Generator[str, None, None]:
     """
     Gets all obsidian files in the vault. It skips over some common files you will want to ignore.
 
+    Parameters:
+        templates (bool,optional): Whether to include templates in the search. Defaults to True.
+
     Yields:
-        Generator[str, None, None]: _description_
+        Generator[str, None, None]: The files in the vault.
     """
     directory = Path(OBSIDIAN_DIR)
 
-    for file in directory.rglob('**/[!.obsidian,!.Excalidraw,!.scripts]*.md'):
-        if file.is_file() and file.suffix == '.md':
-            yield str(file)
+    excluded_directories = EXCLUDED_DIRECTORIES.copy()
+    if not templates:
+        excluded_directories.append("templates")
+
+    for file in directory.rglob("*.md"):
+        if any(excluded in file.parts for excluded in excluded_directories):
+            continue
+        yield str(file)
