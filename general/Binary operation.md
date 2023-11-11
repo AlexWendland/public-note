@@ -3,7 +3,7 @@ aliases:
   - binary operation
 checked: false
 created: 2023-08-31
-last_edited: 2023-08-31
+last_edited: 2023-11-11
 publish: true
 tags: maths
 type: definition
