@@ -8,7 +8,8 @@ checked: false
 created: 2023-07-17
 last_edited: 2023-11-11
 publish: false
-tags: programming, list[str]
+tags:
+  - programming
 type: hardware
 ---
 # Random Access Memory (RAM)

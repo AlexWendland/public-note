@@ -4,7 +4,9 @@ checked: false
 created: 2023-08-27
 last_edited: 2023-11-11
 publish: true
-tags: programming, maths
+tags:
+  - programming
+  - maths
 type: notation
 ---
 # Big-Omega notation

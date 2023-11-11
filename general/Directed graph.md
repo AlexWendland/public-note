@@ -8,7 +8,6 @@ last_edited: 2023-11-11
 publish: true
 tags:
   - maths
-  - list[str]
 type: definition
 ---
 > [!tldr] Directed graph

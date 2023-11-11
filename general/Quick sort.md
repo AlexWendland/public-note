@@ -7,7 +7,6 @@ last_edited: 2023-11-11
 publish: true
 tags:
   - programming
-  - list[str]
 type: algorithm
 ---
 # Quick Sort

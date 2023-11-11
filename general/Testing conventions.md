@@ -8,7 +8,9 @@ checked: false
 created: 2023-06-29
 last_edited: 2023-11-11
 publish: true
-tags: programming, clean-code
+tags:
+  - programming
+  - clean-code
 type: conventions
 ---
 # Testing conventions
