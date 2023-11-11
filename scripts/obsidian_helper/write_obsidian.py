@@ -36,14 +36,3 @@ def write_section(file: io.StringIO, section: MarkdownSection) -> None:
     if section.lines:
         for line in section.lines:
             file.write(line + "\n")
-
-if __name__ == "__main__":
-    obsidian_file = ObsidianFile(
-        file_name="test.md",
-        metadata={"title": "Test", "tags": ["test", "test2"]},
-        sections=[
-            MarkdownSection(title="Test", depth=1, lines=["This is a test.", "", "This is another line."]),
-            MarkdownSection(title="Test 2", depth=2, lines=["This is another test."]),
-        ],
-    )
-    write_obsidian_file(obsidian_file)
