@@ -3,7 +3,7 @@ aliases:
   - Max clique problem
 checked: false
 created: 2023-11-03
-last_edited: 2023-11-03
+last_edited: 2023-11-11
 publish: true
 tags:
   - programming

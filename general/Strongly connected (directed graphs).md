@@ -3,7 +3,7 @@ aliases:
   - strongly connected
 checked: false
 created: 2023-09-27
-last_edited: 2023-09-27
+last_edited: 2023-11-11
 publish: true
 tags:
   - maths

@@ -4,7 +4,7 @@ aliases:
   - naming conventions
 checked: false
 created: 2023-03-18
-last_edited: 2023-03-19
+last_edited: 2023-11-11
 publish: true
 tags: programming
 type: convention

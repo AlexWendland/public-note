@@ -3,7 +3,7 @@ aliases:
   - maths
 checked: false
 created: 2023-04-20
-last_edited: 2023-10-20
+last_edited: 2023-11-11
 publish: true
 tags: null
 type: index

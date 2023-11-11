@@ -5,7 +5,7 @@ aliases:
   - imperative language
 checked: false
 created: 2023-02-24
-last_edited: 2023-07-14
+last_edited: 2023-11-11
 publish: true
 tags: programming, language
 type: paradigm
