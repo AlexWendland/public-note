@@ -1,3 +1,4 @@
+import os
 from typing import Any, Dict, List, Optional
 
 import pydantic
@@ -19,17 +20,16 @@ class MarkdownSection(pydantic.BaseModel):
 
 
 class ObsidianFile(pydantic.BaseModel):
-    file_name: str
+    file_path: str
     metadata: Dict[str, Any]
     sections: List[MarkdownSection]
 
-    @pydantic.model_validator(mode='before')
-    @classmethod
-    def check_title_and_depth(cls, values: Dict[str, Any]) -> Dict[str, Any]:
-        title = values.get("title")
-        depth = values.get("depth")
+    @property
+    def file_name(self) -> str:
+        return os.path.splitext(os.path.basename(self.file_path))[0]
 
-        if (title is None and depth is not None) or (title is not None and depth is None):
-            raise ValueError("Must provide both a title and depth or neither.")
-
-        return values
+    @pydantic.validator('file_path')
+    def filepath_be_a_markdown_file(cls, value: str):
+        if not value.endswith('.md'):
+            raise ValueError('file_path must be a markdown (.md) file.')
+        return value

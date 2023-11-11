@@ -26,7 +26,7 @@ def read_metadata_from_obsidian_file(metadata_lines: List[str]) -> Dict[str, Any
     return metadata
 
 
-def read_obsidian_file(file_name: str) -> ObsidianFile:
+def read_obsidian_file(file_path: str) -> ObsidianFile:
     """
     Reads a markdown file and returns an ObsidianFile object.
 
@@ -36,10 +36,10 @@ def read_obsidian_file(file_name: str) -> ObsidianFile:
     Returns:
     - ObsidianFile: An ObsidianFile object containing the file's metadata and sections.
     """
-    with open(file_name, "r", errors="ignore") as file:
+    with open(file_path, "r", errors="ignore") as file:
         first_line = next(file, None).strip()
         if first_line is None:
-            return ObsidianFile(file_name=file_name, metadata={}, sections=[])
+            return ObsidianFile(file_path=file_path, metadata={}, sections=[])
 
         metadata = {}
         if first_line == "---":
@@ -54,7 +54,7 @@ def read_obsidian_file(file_name: str) -> ObsidianFile:
             if first_line is None:
                 break
 
-        return ObsidianFile(file_name=file_name, metadata=metadata, sections=sections)
+        return ObsidianFile(file_path=file_path, metadata=metadata, sections=sections)
 
 
 def extract_metadata(file: io.StringIO) -> Dict[str, Any]:
