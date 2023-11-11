@@ -1,10 +1,10 @@
 ---
 aliases: []
-type: theory
-publish: false
+chatgpt: true
 created: 2023-03-19
 last_edited: 2023-03-19
+publish: false
 tags: programming
-chatgpt: true
+type: theory
 ---
 # Liskov Substitution Principle (LSP)

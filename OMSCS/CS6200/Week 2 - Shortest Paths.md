@@ -1,27 +1,27 @@
 ---
 aliases: []
-type: lecture
-publish: true
+chatgpt: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-09-05
 last_edited: 2023-09-05
+publish: true
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
-week: "2"
-chatgpt: false
+type: lecture
+week: '2'
 ---
 # Week 2 - Shortest Paths
 
 > [!tldr] Shortest path problem
 > Given a [[Directed graph|directed graph]] $(V, E)$ with [[Edge weights|edge weights]] $w: E \rightarrow \mathbb{R}$ and a start vertex $s \in V$ - the shortest path problem is to find the shortest distance between $s \in V$ and $z \in V$ for every $x$. This is called $\mbox{dist}(z)$ with the formal definition
-> $$\mbox{dist}_s(z) = \min_{\substack{p \mbox{ path}\\ s \mbox{ to } z}} \sum_{e \in p} w(e)$$ 
+> $$\mbox{dist}_s(z) = \min_{\substack{p \mbox{ path}\\ s \mbox{ to } z}} \sum_{e \in p} w(e)$$
 > where $p$ is a [[Path (graph)|path]] that starts at $s$ and ends at $z$.
 
 The classic solution to this is [[Dijkstra's algorithm]] which runs in $O((\vert V \vert + \vert E \vert)\log(\vert V \vert))$ time - however this requires that $w(e) > 0$ for all $e \in E$. We are looking at a more generic problem.
 
 ## Negative weight cycles
 
-If there is a [[Cycle (graph)|cycle]] that has negative total weight then the problem is not well defined as you can always extend you path with another loop of the cycle to reduce your weight. 
+If there is a [[Cycle (graph)|cycle]] that has negative total weight then the problem is not well defined as you can always extend you path with another loop of the cycle to reduce your weight.
 
 The first step of our algorithm will be looking up if there is such a cycle.
 
@@ -31,7 +31,7 @@ In this case you can guarantee that paths will only visit each vertex at most on
 
 Let $D(i,z)$ be the length of the shortest path between $s$ and $z$ that use at most $0 \leq i \leq n-1$ edges.
 
-Base case: $D(0,s) = 0$ with $D(0,z) = \infty$ for $z \in V \backslash \{s\}$. 
+Base case: $D(0,s) = 0$ with $D(0,z) = \infty$ for $z \in V \backslash \{s\}$.
 
 [[Recursion]]: Let $D(i,z) = \min\{D(i-1,z), \min_{y \in V, (y,z) \in E} \{D(i-1, y) + w(y,z)\}\}$.
 
@@ -47,7 +47,7 @@ for i=1 -> n-1
 		D(i,z) = D(i-1,z)
 		for (y,z) in E:
 			D(i,z) = min(D(i,z), w(y,z) + D(i-1,y))
-return D(n-1, . )	
+return D(n-1, . )
 ```
 
 This takes $O(\vert V \vert \vert E \vert)$ as you could rewrite this psudo-code like this:
@@ -59,10 +59,10 @@ for i=1 -> n-1
 	D(i,z) = D(i-1,z) for all z
 	for all (x,y) in E
 		D(i,y) = min(D(i,y), w(x,y) + D(i-1,x))
-return D(n-1, . )	
+return D(n-1, . )
 ```
 
-## Case 2: Negative weight cycles 
+## Case 2: Negative weight cycles
 
 If we run to the $\vert V \vert$ case (note before we stopped at $\vert V \vert - 1$) if any weights decrease then there was a shorter path visiting a vertex twice. This implies there is a negative weight cycle.
 
@@ -70,10 +70,10 @@ If we run to the $\vert V \vert$ case (note before we stopped at $\vert V \vert 
 
 > [!tldr] Shortest path problem (all pairs)
 > Given a [[Directed graph|directed graph]] $(V, E)$ with [[Edge weights|edge weights]] $w: E \rightarrow \mathbb{R}$  - the shortest path problem is to find the shortest distance between $y,z \in V$ for every $y,z$. This is called $\mbox{dist}(y,z)$ with the formal definition
-> $$\mbox{dist}(y,z) = \min_{\substack{p \mbox{ path}\\ y \mbox{ to } z}} \sum_{e \in p} w(e)$$ 
+> $$\mbox{dist}(y,z) = \min_{\substack{p \mbox{ path}\\ y \mbox{ to } z}} \sum_{e \in p} w(e)$$
 > where $p$ is a [[Path (graph)|path]] that starts at $y$ and ends at $z$.
 
-If you used the [[Bellman-Ford algorithm]] for each vertex this would take $O(\vert V \vert^2 \vert E \vert)$. Instead we will define the [[Floyd-Warshall algorithm]] which takes $O(\vert V \vert^3)$ run time - which at worst the same as the [[Bellman-Ford algorithm]] as $\vert V \vert - 1 \leq \vert E \vert \leq \vert V \vert^2$ if it is connected without any double edges. 
+If you used the [[Bellman-Ford algorithm]] for each vertex this would take $O(\vert V \vert^2 \vert E \vert)$. Instead we will define the [[Floyd-Warshall algorithm]] which takes $O(\vert V \vert^3)$ run time - which at worst the same as the [[Bellman-Ford algorithm]] as $\vert V \vert - 1 \leq \vert E \vert \leq \vert V \vert^2$ if it is connected without any double edges.
 
 Let $V = \{x_1, \ldots, x_n\}$ in the set up of a new subproblem.
 
@@ -114,11 +114,11 @@ Within the [[Floyd-Warshall algorithm]] you detect negative weight cycles by loo
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 
 >[!question] 4.21 Currency exchange
->Shortest path algorithms can be applied in currency trading. Let $c_1, c_2, \ldots , c_n$ be various currencies; for instance, $c_1$ might be dollars, $c_2$ pounds, and $c_3$ lire. For any two currencies $c_i$ and $c_j$ , there is an exchange rate $r_{i,j}$ ; this means that you can purchase $r_{i,j}$ units of currency $c_j$ in exchange for one unit of $c_i$. These exchange rates satisfy the condition that $r_{i,j} \cdot r_{j,i} < 1$, so that if you start with a unit of currency $c_i$, change it into currency $c_j$ and then convert back to currency $c_i$, you end up with less than one unit of currency $c_i$ (the difference is the cost of the transaction). 
+>Shortest path algorithms can be applied in currency trading. Let $c_1, c_2, \ldots , c_n$ be various currencies; for instance, $c_1$ might be dollars, $c_2$ pounds, and $c_3$ lire. For any two currencies $c_i$ and $c_j$ , there is an exchange rate $r_{i,j}$ ; this means that you can purchase $r_{i,j}$ units of currency $c_j$ in exchange for one unit of $c_i$. These exchange rates satisfy the condition that $r_{i,j} \cdot r_{j,i} < 1$, so that if you start with a unit of currency $c_i$, change it into currency $c_j$ and then convert back to currency $c_i$, you end up with less than one unit of currency $c_i$ (the difference is the cost of the transaction).
 >
->(a) Give an efficient algorithm for the following problem: Given a set of exchange rates $r_{i,j}$, and two currencies $s$ and $t$, find the most advantageous sequence of currency exchanges for converting currency $s$ into currency $t$. Toward this goal, you should represent the currencies and rates by a graph whose edge lengths are real numbers. 
+>(a) Give an efficient algorithm for the following problem: Given a set of exchange rates $r_{i,j}$, and two currencies $s$ and $t$, find the most advantageous sequence of currency exchanges for converting currency $s$ into currency $t$. Toward this goal, you should represent the currencies and rates by a graph whose edge lengths are real numbers.
 >
->The exchange rates are updated frequently, reflecting the demand and supply of the various currencies. Occasionally the exchange rates satisfy the following property: there is a sequence of currencies $c_{i_1} , c_{i_2} , \ldots , c_{i_k}$ such that $r_{i_1,i_2} \cdot r_{i_2,i_3} \ldots r_{i_{k−1},i_k} \cdot r_{i_k,i_1} > 1$. This means that by starting with a unit of currency $c_{i_1}$ and then successively converting it to currencies $c_{i_2} , c_{i_3} , \ldots , c_{i_k}$ , and finally back to $c_{i_1}$ , you would end up with more than one unit of currency $c_{i_1}$. Such anomalies last only a fraction of a minute on the currency exchange, but they provide an opportunity for risk-free profits. 
+>The exchange rates are updated frequently, reflecting the demand and supply of the various currencies. Occasionally the exchange rates satisfy the following property: there is a sequence of currencies $c_{i_1} , c_{i_2} , \ldots , c_{i_k}$ such that $r_{i_1,i_2} \cdot r_{i_2,i_3} \ldots r_{i_{k−1},i_k} \cdot r_{i_k,i_1} > 1$. This means that by starting with a unit of currency $c_{i_1}$ and then successively converting it to currencies $c_{i_2} , c_{i_3} , \ldots , c_{i_k}$ , and finally back to $c_{i_1}$ , you would end up with more than one unit of currency $c_{i_1}$. Such anomalies last only a fraction of a minute on the currency exchange, but they provide an opportunity for risk-free profits.
 >
 >(b) Give an efficient algorithm for detecting the presence of such an anomaly. Use the graph representation you found above.
 

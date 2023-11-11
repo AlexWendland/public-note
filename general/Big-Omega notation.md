@@ -1,11 +1,11 @@
 ---
 aliases: []
-type: notation
-publish: true
+chatgpt: false
 created: 2023-08-27
 last_edited: 2023-08-27
+publish: true
 tags: programming, maths
-chatgpt: false
+type: notation
 ---
 # Big-Omega notation
 

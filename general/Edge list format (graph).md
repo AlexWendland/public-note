@@ -1,12 +1,12 @@
 ---
 aliases:
   - Edge list
-type: data structure
-publish: false
+chatgpt: false
 created: 2023-10-08
 last_edited: 2023-10-08
+publish: false
 tags:
   - programming
-chatgpt: false
+type: data structure
 ---
 # Edge list format (graph)

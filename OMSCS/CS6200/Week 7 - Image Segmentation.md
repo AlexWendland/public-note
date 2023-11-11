@@ -1,18 +1,18 @@
 ---
-aliases: 
-type: lecture
-publish: true
+aliases: null
+chatgpt: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-10-04
 last_edited: 2023-10-04
+publish: true
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+type: lecture
 week: 7
-chatgpt: false
 ---
 # Week 7 - Image Segmentation
 
-Given an image, we would like to separate it into its distinct components. Such as the subject and background. 
+Given an image, we would like to separate it into its distinct components. Such as the subject and background.
 
 
 ## Formulation
@@ -42,7 +42,7 @@ Therefore to maximise $w(F,B)$ we could instead minimise
 $$w'(F,B) = \sum_{u \in B} f(u) + \sum_{v \in F} b(v) + \sum_{(v,u) \in cut(F,B)} p(u,v).$$
 ## New problem
 
->[!tldr] Image segmentation altered 
+>[!tldr] Image segmentation altered
 >Given an undirected graph $G = (V,E)$ with weights:
 >- for each $v \in V$, $f(v), b(v) \geq 0$, and
 >- for each $e \in E$, $p(e) \geq 0$.
@@ -78,4 +78,4 @@ Image_segmentation(G,f,b,p):
 
 ### Runtime
 
-Defining the graph takes at most $O(\vert V \vert + \vert E \vert)$ so the algorithm is dominated by the solution to your flow network problem. 
+Defining the graph takes at most $O(\vert V \vert + \vert E \vert)$ so the algorithm is dominated by the solution to your flow network problem.

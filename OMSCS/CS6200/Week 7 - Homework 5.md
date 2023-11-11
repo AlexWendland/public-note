@@ -1,16 +1,16 @@
 ---
-aliases: 
-type: exercise
-publish: false
+aliases: null
+chatgpt: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-09-30
 last_edited: 2023-09-30
+publish: false
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+type: exercise
 week: 7
-chatgpt: false
 ---
-# Week 7 - Homework 5 (unassessed) 
+# Week 7 - Homework 5 (unassessed)
 
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 
@@ -27,10 +27,10 @@ This has max capacity 13 with the min-cut being $\{S, C, F\}$ with $\{A, B, D, E
 
 >[!question] Problem 7.17 Bottleneck edges
 >Consider the following network (the numbers are edge capacities).
->(a) Find the maximum flow $f$ and a minimum cut. 
->(b) Draw the residual graph $G^f$ (along with its edge capacities). In this residual network, mark the vertices reachable from $S$ and the vertices from which $T$ is reachable. 
->(c) An edge of a network is called a bottleneck edge if increasing its capacity results in an increase in the maximum flow. List all bottleneck edges in the above network. 
->(d) Give a very simple example (containing at most four nodes) of a network which has no bottleneck edges. 
+>(a) Find the maximum flow $f$ and a minimum cut.
+>(b) Draw the residual graph $G^f$ (along with its edge capacities). In this residual network, mark the vertices reachable from $S$ and the vertices from which $T$ is reachable.
+>(c) An edge of a network is called a bottleneck edge if increasing its capacity results in an increase in the maximum flow. List all bottleneck edges in the above network.
+>(d) Give a very simple example (containing at most four nodes) of a network which has no bottleneck edges.
 >(e) Give an efficient algorithm to identify all bottleneck edges in a network. (Hint: Start by running the usual network flow algorithm, and then examine the residual graph.)
 
 ![[ex_7_17]]
@@ -76,13 +76,13 @@ The max [[Flow|flow]] is 1. If we increase the value of $(S,A)$ or $(A,T)$ then 
 
 We know $(A, V \backslash A =: \overline{A})$ and $(B, V \backslash B =: \overline{B})$ are both [[Min st-cut problem|min st-cuts]]. From [[Week 7 - Homework 5#Claim 1|Claim 1]] any bottleneck edge must lie in $cut(A, \overline{A}) \cap cut(B, \overline{B})$. Therefore our algorithm returns all bottleneck edges.
 
-Suppose our algorithm returns an edge $(a,b)$. 
+Suppose our algorithm returns an edge $(a,b)$.
 
 By the definition of $A$ we have a $s-a$ path in $G^f$. By the definition of $B$ we have a $b-t$ path in $G^f$ by increasing the capacity at $(a,b)$ this gives us a graph $\tilde{G}$ with an $(a,b)$ edge in $\tilde{G}^f$. Therefore we can augment $f$ along this $s-t$ path to increase the flow in $\tilde{G}$.
 
 Therefore by definition $(a,b)$ is a bottleneck edge.
 
-So our algorithm returns the correct result. 
+So our algorithm returns the correct result.
 
 #### Claim 1
 
@@ -92,7 +92,7 @@ So our algorithm returns the correct result.
 
 #### Proof of Claim 1
 
-By the [[Max-flow min-cut Theorem]] we know that $value(f) = capacity(S,T)$ for any $(S,T)$ a [[Min st-cut problem|min st-cut]]. 
+By the [[Max-flow min-cut Theorem]] we know that $value(f) = capacity(S,T)$ for any $(S,T)$ a [[Min st-cut problem|min st-cut]].
 
 If $e$ is a bottleneck edge then increasing $c(e)$ increases the max flow in the [[Flow network|flow network]]. Therefore $capacity(S,T)$ must increase for each $(S,T)$ a [[Min st-cut problem|min st-cut]] in the original graph. For e to effect $capacity(S,T)$ it must lie in $cut(S,T)$.
 
@@ -116,9 +116,9 @@ Step 3 and 5 runs the [[Breath-first search (BFS)|BFS]] algorithm which takes $O
 
 Step 4 takes $O(\vert E \vert)$ as we need to invert each edge of $G^f$ (of which there is at most $2 \vert E \vert$ edges.
 
-Step 5 takes $O(\vert E \vert \cdot \vert V \vert)$ as for each edge we need to check if its start vertex lies in $A$ and its end vertex lies in $\vert B \vert$. As $A$ and $B$ are disjoin we know this will take at most $\vert V \vert$ checks. 
+Step 5 takes $O(\vert E \vert \cdot \vert V \vert)$ as for each edge we need to check if its start vertex lies in $A$ and its end vertex lies in $\vert B \vert$. As $A$ and $B$ are disjoin we know this will take at most $\vert V \vert$ checks.
 
-All together this takes $O(\vert E \vert^2 \cdot \vert V \vert) + 4 O(\vert E \vert) + O(\vert E \vert \cdot \vert V \vert) = O(\vert E \vert^2 \cdot \vert V \vert)$. 
+All together this takes $O(\vert E \vert^2 \cdot \vert V \vert) + 4 O(\vert E \vert) + O(\vert E \vert \cdot \vert V \vert) = O(\vert E \vert^2 \cdot \vert V \vert)$.
 
 
 >[!question] Problem 7.19 verify max-flow
@@ -150,6 +150,6 @@ Step one takes $O(\vert E \vert)$ steps.
 
 Step two takes $O(\vert V \vert + \vert E \vert) = O(\vert E \vert)$
 
-Step three takes $O(1)$ as it is just checking a single value in a dictionary. 
+Step three takes $O(1)$ as it is just checking a single value in a dictionary.
 
 This gives $2O(\vert E \vert) + O(1) = O(\vert E \vert)$.

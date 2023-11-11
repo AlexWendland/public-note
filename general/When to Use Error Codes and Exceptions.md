@@ -1,11 +1,11 @@
 ---
 aliases: []
-type: opinion
-publish: true
+chatgpt: false
 created: 2023-08-20
 last_edited: 2023-08-20
+publish: true
 tags: programming
-chatgpt: false
+type: opinion
 ---
 ## When to Use Error Codes and Exceptions
 
@@ -18,11 +18,11 @@ In the [[HTTP Protocol|HTTP protocol]], status codes serve as a standardized way
 In contrast, within your own program, using [[Exception|exceptions]] over [[Error code|error codes]] can be more beneficial for several reasons:
 
 1. **Readability**: Using [[Exception|exceptions]] makes it easier to follow the program's logic. You can write the main path of execution in a straightforward manner without littering the code with error-checking conditionals.
-    
+
 2. **Maintainability**: With [[Exception|exceptions]], you separate the error-handling code from the regular code, making it easier to update or extend functionality without risking the introduction of errors.
-    
+
 3. **Rich Context**: [[Exception|Exceptions]] can carry more context about the error, as they can include not just a status but also additional metadata. This can be helpful for debugging or for providing more descriptive error messages.
-    
+
 4. **Stack Unwinding**: When an exception is thrown, the runtime system searches back through the call stack to find the nearest enclosing [[Error Handling|exception handler]]. This makes it easier to handle errors at the appropriate level of abstraction.
 ## Hybrid Approaches
 

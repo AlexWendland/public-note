@@ -1,14 +1,14 @@
 ---
 aliases:
   - neighbourhood
-type: definition
-publish: true
+chatgpt: false
 created: 2023-10-08
 last_edited: 2023-10-08
+publish: true
 tags:
   - programming
   - graph-theory
-chatgpt: false
+type: definition
 ---
 >[!tldr] Neighbourhood
 >For a [[Graph|undirected graph]] $G = (V,E)$ the *neighbourhood* of $X \subset V$ is $N_G(X) = \{u \in V \vert (x,u) \in E, x \in X\}$ ($\backslash X$, $\cup X$). Sometimes this will be defined to include $X$ or exclude $X$ - this is called open and closed neighbourhoods.

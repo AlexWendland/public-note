@@ -2,15 +2,15 @@
 aliases:
   - search problems
   - search problem
-type: definition
-publish: true
+chatgpt: false
 created: 2023-10-24
 last_edited: 2023-10-24
-tags: 
-chatgpt: false
+publish: true
+tags: null
+type: definition
 ---
 >[!tldr] Search problem
->A problem is a *search problem* if we can verify a solution in [[Polynomial time|polynomial time]]. 
+>A problem is a *search problem* if we can verify a solution in [[Polynomial time|polynomial time]].
 >
 >Formally:
 >
@@ -18,5 +18,5 @@ chatgpt: false
 >- find a solution $S$ for $I$ if one exists, or
 >- output no if $I$ has no solutions.
 >
->Then this problem is a *search problem* if given an instance $I$ and a solution $S$ then we can verify that $S$ is a solution to $I$ in [[Polynomial time|polynomial time]] in $\vert I \vert$. 
+>Then this problem is a *search problem* if given an instance $I$ and a solution $S$ then we can verify that $S$ is a solution to $I$ in [[Polynomial time|polynomial time]] in $\vert I \vert$.
 

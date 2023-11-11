@@ -1,10 +1,11 @@
 ---
-aliases: [equivalence relation]
-type: str
-publish: false
+aliases:
+  - equivalence relation
+chatgpt: false
 created: 2023-08-28
 last_edited: 2023-08-28
+publish: false
 tags: maths, list[str]
-chatgpt: false
+type: str
 ---
 # Equivalence relation

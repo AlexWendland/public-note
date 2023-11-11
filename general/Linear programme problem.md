@@ -1,17 +1,17 @@
 ---
-aliases: 
-type: problem
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-11-07
 last_edited: 2023-11-07
+publish: true
 tags:
   - programming
-chatgpt: false
+type: problem
 ---
 # Statement
 
 >[!tldr] Linear programme problem
->Given a [[Linear programme|linear programme]] what is an $x$ that achieves an optimal solution if it exists. 
+>Given a [[Linear programme|linear programme]] what is an $x$ that achieves an optimal solution if it exists.
 
 # Solutions
 

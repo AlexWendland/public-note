@@ -1,11 +1,12 @@
 ---
-aliases: [singleton]
-type: pattern
-publish: true
+aliases:
+  - singleton
+chatgpt: true
 created: 2023-03-31
 last_edited: 2023-03-31
+publish: true
 tags: programming
-chatgpt: true
+type: pattern
 ---
 # Singleton
 

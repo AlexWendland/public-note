@@ -1,10 +1,12 @@
 ---
-aliases: [interface, interfaces]
-type: definition
-publish: true
+aliases:
+  - interface
+  - interfaces
 created: 2023-03-10
 last_edited: 2023-03-10
+publish: true
 tags: programming, incomplete
+type: definition
 ---
 # Interface
 

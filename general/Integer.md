@@ -1,10 +1,14 @@
 ---
-aliases: [int, integer, integers, Integers]
-type: object
-publish: false
+aliases:
+  - int
+  - integer
+  - integers
+  - Integers
+chatgpt: false
 created: 2023-04-20
 last_edited: 2023-04-20
+publish: false
 tags: maths
-chatgpt: false
+type: object
 ---
 # Integer

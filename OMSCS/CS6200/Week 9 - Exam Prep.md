@@ -1,35 +1,35 @@
 ---
-aliases: 
-type: exercise
-publish: false
+aliases: null
+chatgpt: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-10-18
 last_edited: 2023-10-21
+publish: false
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+type: exercise
 week: 9
-chatgpt: false
 ---
-# Week 9 - Exam Prep (unassessed) 
+# Week 9 - Exam Prep (unassessed)
 
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 
 # [[Modular arithmetic]]
 
-> [!question] Problem 1.11 
+> [!question] Problem 1.11
 > Is $4^{1536} - 9^{4824}$ divisible by 35?
 
-Note that $1536*2 = 0$ mod $(5-1) \times (7-1) = 24$ and $4824*2 = 0$ mod $24$. So the question resolves to is $2^{0} - 3^{0} = 0$ mod $35$ which it is!   
+Note that $1536*2 = 0$ mod $(5-1) \times (7-1) = 24$ and $4824*2 = 0$ mod $24$. So the question resolves to is $2^{0} - 3^{0} = 0$ mod $35$ which it is!
 
-> [!question] Problem 1.12 
+> [!question] Problem 1.12
 > What is $2^{2^{2006}}$ (mod 3)?
 
 1
 
-> [!question] Problem 1.13 
+> [!question] Problem 1.13
 > Is the difference of $5^{30,000}$ and $6^{123,456}$ a multiple of 31?
 
-Note 31 is prime and $30,000 = 0$ mod $30$ and $123456 = 6$ mod $30$ so this problem boils down to $5^0 - 6^6 = 0$ mod $31$. $(6^2)^3 = 36^3 = 5^3 = 125 = 1$ mod $31$. So the answer is yes. 
+Note 31 is prime and $30,000 = 0$ mod $30$ and $123456 = 6$ mod $30$ so this problem boils down to $5^0 - 6^6 = 0$ mod $31$. $(6^2)^3 = 36^3 = 5^3 = 125 = 1$ mod $31$. So the answer is yes.
 
 
 > [!question] Problem 1.14
@@ -40,15 +40,15 @@ Given there are only $p^2$ possible combinations of $(a,b)$ mod $p$ within the f
 1. Calculate up to the first $p^2$ values until we find repeating pattern $F_i, F_{i+1}$ and $F_j, F_{j+1}$ for $0 \leq i < j < p^2$.
 2. If $n \leq j + 1$ output $F_n$.
 3. Calculate $n - i = k$ mod $(j-i)$.
-4. Return $F_{i+k}$ 
+4. Return $F_{i+k}$
 
 > [!question] Problem 1.18
 > Compute $gcd(210,588)$ two different ways: by finding the factorisation of each number, and by the [[Euclidean algorithm]].
 
 Way 1,
 
-$210 = 21 \times 10 = 3 \times 7 \times 2 \times 5 = 2 \cdot 3 \cdot 5 \cdot 7$ 
-$588 = 294 \times 2 = 2^2 \times 147 = 2^2 \times 3 \times 49 = 2^2 \times 3 \times 7^2$ 
+$210 = 21 \times 10 = 3 \times 7 \times 2 \times 5 = 2 \cdot 3 \cdot 5 \cdot 7$
+$588 = 294 \times 2 = 2^2 \times 147 = 2^2 \times 3 \times 49 = 2^2 \times 3 \times 7^2$
 
 so $gcd(210,588) = 2 \cdot 3 \cdot 7 = 42$.
 
@@ -107,12 +107,12 @@ So $5 \cdot 14 = 1$ mod $23$.
 > [!question] Problem 1.22
 > Prove or disprove: If $a$ has an inverse modulo $b$, then $b$ has an inverse modulo $a$.
 
-If $a$ has an inverse mod $b$ then $gcd(a,b) = 1$ by the [[Modular multiplicative inverse existence|modular multiplicative inverse existence lemma]]. Which is the required property for $b$ to have an inverse modulo $a$. 
+If $a$ has an inverse mod $b$ then $gcd(a,b) = 1$ by the [[Modular multiplicative inverse existence|modular multiplicative inverse existence lemma]]. Which is the required property for $b$ to have an inverse modulo $a$.
 
 > [!question] Problem 1.24
 > If $p$ is prime, how many elements of $\{0,1, \ldots, p^n-1\}$ have an inverse mod $p^n$?
 
-For the elements to have an inverse mod $p^n$ we know then need $gcd(e,p^n) = 1$. Therefor this is simply [[Euler's totient function]] $\phi(p^n) = (p-1)p^{n-1}$. 
+For the elements to have an inverse mod $p^n$ we know then need $gcd(e,p^n) = 1$. Therefor this is simply [[Euler's totient function]] $\phi(p^n) = (p-1)p^{n-1}$.
 
 > [!question] Problem 1.25
 > Calculate $2^{125}$ mod $127$ using any method you choose?
@@ -121,7 +121,7 @@ As $127$ is prime we have $2^{126} =_{127} 1$ so $2^{125} = 2^{-1}$ mod $127$.
 
 | x   | y   | c   | a   | b   |
 | --- | --- | --- | --- | --- |
-| 127 | 2   | 63  | 1   | -63 | 
+| 127 | 2   | 63  | 1   | -63 |
 | 2   | 1   | 1   | 0   | 1   |
 | 1   | 0   | -   | 1   | 0   |
 
@@ -130,10 +130,10 @@ so $2^{-1} = 64$ mod 127.
 > [!question] Problem 1.26
 > What is the least significate decimal digit of $17^{17^{17}}
 
-We need to calculate $17^{17^{17}}$ mod 10. Therefore we need to calculate $17^{17}$ mod $4$. Which involves finding $17$ mod $2$. So $17^{17} = 1^{1} = 1$ mod $4$ giving $17^1 = 7$ mod $10$. 
+We need to calculate $17^{17^{17}}$ mod 10. Therefore we need to calculate $17^{17}$ mod $4$. Which involves finding $17$ mod $2$. So $17^{17} = 1^{1} = 1$ mod $4$ giving $17^1 = 7$ mod $10$.
 
 > [!question] Problem 1.27
-> Consider an [[Rivest-Shamir-Adleman algorithm (RSA algorithm)|RSA]] key set with $p=17$, $q=23$, $N=391$, and $e=3$. 
+> Consider an [[Rivest-Shamir-Adleman algorithm (RSA algorithm)|RSA]] key set with $p=17$, $q=23$, $N=391$, and $e=3$.
 > a) What is the value of $d$ to make this a secrete key?
 > b) What is the encryption of the message $M = 41$?
 
@@ -156,12 +156,12 @@ Note $(7-1) \times (11 - 1) = 60$ so we can't use 3, 5 but we could use 7.
 
 | x   | y   | c   | a   | b   |
 | --- | --- | --- | --- | --- |
-| 60  | 7   | 8   | 2   | -17 | 
+| 60  | 7   | 8   | 2   | -17 |
 | 7   | 4   | 1   | -1  | 2   |
 | 4   | 3   | 1   | 1   | -1  |
 | 3   | 1   | 1   | 0   | 1   |
 
-Therefore we have inverse $60 - 17 = 43 = d$. 
+Therefore we have inverse $60 - 17 = 43 = d$.
 
 > [!question] Problem 1.42
 > Suppose that instead of using a composite $N = pq$ in the [[Rivest-Shamir-Adleman algorithm (RSA algorithm)|RSA]] cryptosystem, we simply use a prime modulus $p$. As in [[Rivest-Shamir-Adleman algorithm (RSA algorithm)|RSA]], we would have an encryption exponent $e$, and the encryption of a message $m$ mod $p$ would be $m^e$ mod $p$. Prove that this new cryptosystem is not secure, by giving an efficient algorithm to decrypt: that is, an algorithm that given $p$, $e$, and $m^e$ mod $p$ as input, computes $m$ mod $p$. Justify the correctness and analyze the running time of your decryption algorithm.
@@ -171,7 +171,7 @@ Therefore we have inverse $60 - 17 = 43 = d$.
 
 The correctness follows from [[Fermat's little theorem]].
 
-If $p$ is an $n$-digit number so is $e$ and $d$. Therefore step 1 and 2 has run time $O(n^3)$ giving the overall run time as $O(n^3)$. 
+If $p$ is an $n$-digit number so is $e$ and $d$. Therefore step 1 and 2 has run time $O(n^3)$ giving the overall run time as $O(n^3)$.
 
 # [[Depth-first search (DFS)|DFS]] and [[Strongly connected components (directed graphs)|Strongly Connected Component]]
 
@@ -204,7 +204,7 @@ We get the follow [[DFS tree (algorithm)|DFS tree]] with black [[DFS tree (algor
 
 | vertex | pre | post |
 | ------ | --- | ---- |
-| A      | 1   | 16   | 
+| A      | 1   | 16   |
 | B      | 2   | 15   |
 | C      | 3   | 14   |
 | D      | 4   | 13   |
@@ -223,7 +223,7 @@ We get the following [[DFS tree (algorithm)|DFS tree]] with [[DFS tree (algorith
 
 | vertex | pre | post |
 | ------ | --- | ---- |
-| A      | 1   | 16   | 
+| A      | 1   | 16   |
 | B      | 2   | 11   |
 | C      | 4   | 5    |
 | D      | 6   | 9    |
@@ -244,7 +244,7 @@ We get the following [[DFS tree (algorithm)|DFS tree]] with [[DFS tree (algorith
 
 ### Part a
 
-Use [[Depth-first search (DFS)|DFS]] where you update a mapping $m: V \rightarrow \{-,0,1\}$. Start by assigning the first vertex $0$. If you explore a vertex $u$ from $v$ and $m(v) = -$ then set $m(v) =_2 m(u) + 1$ if $m(v) =_2 m(u) + 1$ continue exploring $u$ and if $m(v) = m(u)$ return that it is not bipartite. Once we have explored every vertex return $m$. 
+Use [[Depth-first search (DFS)|DFS]] where you update a mapping $m: V \rightarrow \{-,0,1\}$. Start by assigning the first vertex $0$. If you explore a vertex $u$ from $v$ and $m(v) = -$ then set $m(v) =_2 m(u) + 1$ if $m(v) =_2 m(u) + 1$ continue exploring $u$ and if $m(v) = m(u)$ return that it is not bipartite. Once we have explored every vertex return $m$.
 
 The run time is the same as that of [[Depth-first search (DFS)|DFS]] so $O(\vert V \vert + \vert E \vert)$.
 
@@ -254,7 +254,7 @@ If we return false but it was bipartite with $V_0 \cup V_1 = V$. For simplicity 
 
 ## Part b
 
-Suppose we had a [[Bipartite graph|bipartite graph]] with an odd length cycle 
+Suppose we had a [[Bipartite graph|bipartite graph]] with an odd length cycle
 $$(v_1, v_2) \ldots (v_{2k}, v_{2k+1}), (v_{2k+1}, v_1)$$
 Let $V_0 \cup V_1$ be the [[Bipartite graph|bipartition]] without loss of generality assume $v_1 \in V_1$. Then as $(v_i, v_{i+1}) \in E$ we know $v_i \in V_{i \ mod \ 2}$ so $v_{i+1} \in V_{i + 1 \ mod \ 2}$. However as $(v_{2k+1}, v_1) \in E$ with $v_1, v_{2k+1} \in V_{2k+1 = 1 \ mod \ 2}$ we know no such odd cycle can exist.
 
@@ -284,7 +284,7 @@ As this new graph has no odd length cycles it is a [[Bipartite graph|bipartite g
 
 ## Part a)
 
-Define our vertex set as 
+Define our vertex set as
 $$V = \{(a, b, c) \vert 0 \leq a \leq 10, \ 0 \leq b \leq 7, \ 0 \leq c \leq 4, \ a + b + c = 11  \}$$
 Then we have edge set
 $$
@@ -333,7 +333,7 @@ Note if the graph is not a [[Directed acyclic graph (DAG)|dag]] then can't compl
 
 1. Run the [[DFS for finding strongly connected components]]
 2. If any strongly connected components are larger than 1 return that the course is impossible to pass.
-3. Define function $f: V \rightarrow \mathbb{N}$ 
+3. Define function $f: V \rightarrow \mathbb{N}$
 4. Run through the vertices in the [[Topological sorting (DAG)|topological sorting]].
 	1. If the vertex is a leaf node set $f(v) = 1.
 	2. Otherwise set $f(v) = 1 + \max_{(u,v) \in E} f(u)$.
@@ -345,7 +345,7 @@ We know [[DFS for finding strongly connected components]] is correct.
 
 If any connected component is larger than 1 then we have circular dependencies so we can't complete the course.
 
-Note $f(v)$ is the maximum number of vertices between that vertex and a leaf node. Including itself. Therefore you will need at least $f(v)$ semesters to complete the course. 
+Note $f(v)$ is the maximum number of vertices between that vertex and a leaf node. Including itself. Therefore you will need at least $f(v)$ semesters to complete the course.
 
 Therefore the maximum number of semesters you need to complete all courses is the maximum over $f(v)$.
 
@@ -406,11 +406,11 @@ Steps 1 and 2 take $O(\vert V \vert + \vert E \vert)$.
 
 Step 3 takes $O(\vert V \vert)$ at worst
 
-Overall this takes $2O(\vert V \vert + \vert E \vert) + O(\vert V \vert) = O(\vert V \vert + \vert E \vert)$. 
+Overall this takes $2O(\vert V \vert + \vert E \vert) + O(\vert V \vert) = O(\vert V \vert + \vert E \vert)$.
 
 > [!question] Problem 3.24
-> Give a linear-time algorithm for the following task. 
-> Input: A [[Directed acyclic graph (DAG)|directed acyclic graph]] $G$ 
+> Give a linear-time algorithm for the following task.
+> Input: A [[Directed acyclic graph (DAG)|directed acyclic graph]] $G$
 > Question: Does $G$ contain a directed path that touches every vertex exactly once?
 
 ## Algorithm
@@ -424,7 +424,7 @@ Overall this takes $2O(\vert V \vert + \vert E \vert) + O(\vert V \vert) = O(\ve
 
 If it returns true, then $(v_{i+1}, v_i)$ is exactly the path that runs through every vertex exactly once.
 
-If it returns false, then we are missing some edge $(v_{j+1}, v_j)$ this means we have two possible [[Topological sorting (DAG)|topological sorting]] $v_{i + 1} < v_i$ for all $i$ and $v_{i + 1} < v_i$ for all $i \not = j$ and $v_j < v_{j+1}$. Which by [[Week 9 - Exam Prep#Claim 3|Claim 3]] gives that this graph has no such path.  
+If it returns false, then we are missing some edge $(v_{j+1}, v_j)$ this means we have two possible [[Topological sorting (DAG)|topological sorting]] $v_{i + 1} < v_i$ for all $i$ and $v_{i + 1} < v_i$ for all $i \not = j$ and $v_j < v_{j+1}$. Which by [[Week 9 - Exam Prep#Claim 3|Claim 3]] gives that this graph has no such path.
 
 ### Claim 3
 
@@ -433,12 +433,12 @@ If it returns false, then we are missing some edge $(v_{j+1}, v_j)$ this means w
 
 If a [[Directed acyclic graph (DAG)|dag]] has a path $(v_1, v_2) \ldots (v_{n-1}, v_n)$ that touches every vertex exactly once, then $v_i < v_{i+1}$ for $1 \leq i < n$. Fixing the [[Topological sorting (DAG)|topological sorting]].
 
-If the [[Topological sorting (DAG)|topological sorting]] $v_i$ (with $v_i < v_j$ for $i < j$) of the vertices is unique then any switch $v_i$ for $v_{i+1}$ is invalid therefore there must be an edge $(v_i, v_{i+1})$. These edges form this path.   
+If the [[Topological sorting (DAG)|topological sorting]] $v_i$ (with $v_i < v_j$ for $i < j$) of the vertices is unique then any switch $v_i$ for $v_{i+1}$ is invalid therefore there must be an edge $(v_i, v_{i+1})$. These edges form this path.
 
 # [[Breath-first search (BFS)|BFS]] and Shortest path problems
 
 > [!question] Problem 4.1
-> Run [[Dijkstra's algorithm]] on the following graph tracking all the intermediate distances and return the path. 
+> Run [[Dijkstra's algorithm]] on the following graph tracking all the intermediate distances and return the path.
 
 ![[ex_4_1]]
 
@@ -488,7 +488,7 @@ For a square to exist it needs 4 vertices $a, b, c, d$ with edges $(a,b)(b,c)(c,
 
 ## Run time
 
-Step 1 iterates twice over the vertices of $G$ so this is $\vert V \vert^2$ steps. 
+Step 1 iterates twice over the vertices of $G$ so this is $\vert V \vert^2$ steps.
 
 Calculating $U_u \cap U_v \backslash \{u,v\}$ with $U_u$ and $U_v$ is order takes $O(\vert V \vert)$ time as we can iterate through both sets incrementing the lesser of the two and taking common elements. So this takes $O(\vert V \vert)$ time.
 

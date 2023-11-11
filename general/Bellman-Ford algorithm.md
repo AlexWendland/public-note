@@ -1,11 +1,11 @@
 ---
-aliases: 
-type: str
-publish: false
+aliases: null
+chatgpt: false
 created: 2023-09-05
 last_edited: 2023-09-05
+publish: false
 tags:
   - programming
-chatgpt: false
+type: str
 ---
 # Bellman-Ford algorithm

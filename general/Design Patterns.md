@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: design pattern
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-08-20
 last_edited: 2023-08-20
+publish: true
 tags:
   - programming
-chatgpt: false
+type: design pattern
 ---
 # Design Patterns
 

@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: algorithm
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-09-05
 last_edited: 2023-09-29
+publish: true
 tags:
   - programming
-chatgpt: false
+type: algorithm
 ---
 # Dijkstra's algorithm
 
@@ -40,6 +40,6 @@ To initialise $dist$ and $prev$ takes $O(\vert V \vert)$ time.
 
 To fetch the key $v$ takes $O(\log(\vert V \vert))$ time from [[Priority queue]] data structure. This is executed $\vert V \vert$ times so takes $O(\vert V \vert \log(\vert V \vert))$.
 
-We iterate over each edge twice and for each iteration we might have to call decreasekey which takes $O(\log(\vert V \vert))$ time from [[Priority queue]] implementation. So this takes $O(\vert E \vert \log(\vert V \vert))$. 
+We iterate over each edge twice and for each iteration we might have to call decreasekey which takes $O(\log(\vert V \vert))$ time from [[Priority queue]] implementation. So this takes $O(\vert E \vert \log(\vert V \vert))$.
 
 All together this takes $O(\vert V \vert) + O(\vert V \vert \log(\vert V \vert)) + O(\vert E \vert \log(\vert V \vert)) = O((\vert V \vert + \vert E \vert) \log(\vert V \vert))$.

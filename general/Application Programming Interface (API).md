@@ -1,10 +1,14 @@
 ---
-aliases: [api, API, application programming interface, API's]
-type: notation
-publish: true
+aliases:
+  - api
+  - API
+  - application programming interface
+  - API's
 created: 2023-03-10
 last_edited: 2023-03-10
+publish: true
 tags: programming, api
+type: notation
 ---
 # Application Programming Interface (API)
 

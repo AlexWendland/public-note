@@ -1,14 +1,14 @@
 ---
-aliases: 
-type: exercise
-publish: false
+aliases: null
+chatgpt: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-10-10
 last_edited: 2023-10-10
+publish: false
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+type: exercise
 week: 8
-chatgpt: false
 ---
 # Week 8 - Quiz 5
 
@@ -18,11 +18,11 @@ chatgpt: false
 Note $2^5 = 32 = 1$ (mod $31$) so $2^{345} = 1$ (mod 31).
 
 >[!question] Question 2
->A new Computer Science algorithms course takes 32 weeks to complete. The CS  
-teacher offers to assign you just one second of homework the first week of  
+>A new Computer Science algorithms course takes 32 weeks to complete. The CS
+teacher offers to assign you just one second of homework the first week of
 school, two seconds the second week, four seconds the third, and so on.
  >
->How long would the homework take for the last week of school?  
+>How long would the homework take for the last week of school?
 >
 > Provide your answer in seconds mod 11.
 
@@ -59,7 +59,7 @@ $$(2^{20} + 2^{80} + 2^{50} + 1) = (2^{2} + 2^{2} + 2^{2} + 1) = 4 + 4 + 4 + 1 =
 >[!question] Question 6
 >How many numbers in the range $1, \ldots, 143$ are relatively prime with $143$?
 
-As $143 = 11 \times 13$ we have $10 \times 12 = 120$ relatively prime numbers between $1$ and $143$. 
+As $143 = 11 \times 13$ we have $10 \times 12 = 120$ relatively prime numbers between $1$ and $143$.
 
 >[!question] Question 7
 >A red ribbon spool has 22,608 inches of ribbon and a blue ribbon spool has 10,206  inches of ribbon. The ribbons on both spools are to be evenly divided (with no  leftover) into pieces of the same length so that the pieces are as long as possible.  What is the length of each piece? (Provide an integer value without any units)
@@ -91,10 +91,10 @@ We have $133 = 7 \times 19$ so we need to find the inverse of $7$ in $6 \times 1
 | 3   | 1   | 3   | 0   | 1   |
 | 1   | 0   | 4   | 1   | 0   |
 
-So $7^{-1} = 31$ mod $108$. 
+So $7^{-1} = 31$ mod $108$.
 
 >[!question] Question 9
->Using your brother’s RSA Public Key (N=133,e=7), one of his friends sends him the  encrypted message “5” (the number 5 is the complete message). Decrypt the message to your brother. (Provide an integer value)
+>Using your brother’s RSA Public Key (N=133,e=7), one of his friends sends him the  encrypted message “5� (the number 5 is the complete message). Decrypt the message to your brother. (Provide an integer value)
 
 This will be $5^{31}$ mod $133$
 

@@ -1,16 +1,16 @@
 ---
-aliases: 
-type: exercise
-publish: false
+aliases: null
+chatgpt: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-09-11
 last_edited: 2023-09-11
+publish: false
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+type: exercise
 week: 4
-chatgpt: false
 ---
-# Week 4 - Homework 3 (unassessed) 
+# Week 4 - Homework 3 (unassessed)
 
 > [!question] FFT design
 > Let $A(x) = 1 - 2x -2x^2 + x^3$. You wish to run FFT to evaluate this polynomial.
@@ -25,7 +25,7 @@ b. $i$
 >
 > Example: For $N = 6$ and $S = \{ 1, 2, 3, 5, 10 \}$ your design should output True since $1+2+3 = 6$. For $N = 20$ and the same set $S$ the answer should be True again since $5+5+10 = 20$ (yes, you can have $s_i = s_j = s_k$) but for $N = 19$ the answer is False since no three numbers add up to $19$.
 
-This is really big brain stuff ... use polynomial exponents in place for integer sums. 
+This is really big brain stuff ... use polynomial exponents in place for integer sums.
 
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 
@@ -42,7 +42,7 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 
 ## a) FFT of (1,0,0,0) = 1
 
-$A^1_{even} = (1, 0)$ and $A^1_{odd} = (0,0)$ 
+$A^1_{even} = (1, 0)$ and $A^1_{odd} = (0,0)$
 
 ### FFT of (1,0)
 
@@ -85,7 +85,7 @@ $A(-i) = A_{even}(-1) - i \cdot A_{odd}(-1) = 0 - i = -i$
 >a. Suppose that you want to multiply the two polynomials $x + 1$ and $x^2 + 1$ using the FFT. Choose an appropriate power of two, find the FFT of the two sequences, multiply the results component wise, and compute the inverse FFT to get the final result.
 >b. Repeat for the pair of polynomials $1 + x + 2x^2$ and $2 + 3x$.
 
-a. $x+1 = (1, 1, 0, 0)$ and $x^2+1 = (1, 0, 1, 0)$ we will want to evaluate this around the 8'th roots of unity. 
+a. $x+1 = (1, 1, 0, 0)$ and $x^2+1 = (1, 0, 1, 0)$ we will want to evaluate this around the 8'th roots of unity.
 ### FFT for $A(x) = x + 1$
 
 $A^0 = A_{even} = (1, 0) = A_{odd} = A^1$
@@ -127,7 +127,7 @@ $C(1) = C(i) = C(-1) = C(-i) = 4$
 
 $(4,4,4,4)/4 = (1,1,1,1)$
 
-so $(1 + x)(1 + x^2) = 1 + x + x^2 + x^3$ as expected. 
+so $(1 + x)(1 + x^2) = 1 + x + x^2 + x^3$ as expected.
 
 b. Repeat for the pair of polynomials $1 + x + 2x^2$ and $2 + 3x$.
 
@@ -183,7 +183,7 @@ $C(i) = 24$
 $C(-1) = 18 + 10 = 28$
 $C(-i) = 20$
 
-As we use $FFT((20, -5 - i, -2, -5 + i), -i)$ we have 
+As we use $FFT((20, -5 - i, -2, -5 + i), -i)$ we have
 
 $(8, 20, 28, 24) / 4$
 $(2, 5, 7, 6)$

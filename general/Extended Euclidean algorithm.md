@@ -1,13 +1,13 @@
 ---
 aliases:
   - extended Euclidean algorithm
-type: algorithm
-publish: true
+chatgpt: false
 created: 2023-10-09
 last_edited: 2023-10-09
+publish: true
 tags:
   - maths
-chatgpt: false
+type: algorithm
 ---
 # Extended Euclidean algorithm
 
@@ -25,12 +25,12 @@ extended_euclidean(x,y):
 ```
 
 ## Runtime
- 
+
 Notice this is functionally the same as [[Euclidean algorithm]]. So if $x, y$ are $n$-bit integers then this takes $O(n^3)$.
 
 ## Correctness
 
-The fact that $d$ is correct follows from [[Euclid's rule]]. 
+The fact that $d$ is correct follows from [[Euclid's rule]].
 
 We proceed by induction on $y$.
 

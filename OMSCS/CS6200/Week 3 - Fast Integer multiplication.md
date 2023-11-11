@@ -1,19 +1,19 @@
 ---
 aliases: []
-type: lecture
-publish: true
+chatgpt: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-09-05
 last_edited: 2023-09-05
+publish: true
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
-week: "3"
-chatgpt: false
+type: lecture
+week: '3'
 ---
 # Week 3 - Fast Integer multiplication
 
 > [!tldr] Multiplying $n$-bit integers problem
-> Given $n$-bit integers $x$ and $y$ what is $z = xy$? 
+> Given $n$-bit integers $x$ and $y$ what is $z = xy$?
 
 Naïve approaches will do this in $O(n^2)$ time but you can do it faster with [[Divide and conquer algorithms|divide and conquer]].
 
@@ -32,7 +32,7 @@ $$(a + bi)(c + di) = ac - bd + ((a + b)(c+d) - bd - ac)i.$$
 
 ## Naïve divide and conquer approach
 
-Suppose we have $x$ and $y$ which are $2^k=n$-bit numbers. We cut $x$ and $y$ in half so 
+Suppose we have $x$ and $y$ which are $2^k=n$-bit numbers. We cut $x$ and $y$ in half so
 $$x = X_L2^{2^{k-1}} + X_R \mbox{ and } Y = Y_L2^{2^{k-1}} + Y_R.$$
 then there multiple is
 $$xy = X_LY_L2^{2^k} + (X_LY_R + X_RY_L)2^{2^{k-1}} + X_RY_R.$$
@@ -57,9 +57,9 @@ $$T(n) = 4 T(n/2) + O(n) = O(n^2).$$
 
 ## Better approach
 
-This time we combine Gauss's trick with the [[Divide and conquer algorithms|divide and conquer]] approach to speed up this algorithm. 
+This time we combine Gauss's trick with the [[Divide and conquer algorithms|divide and conquer]] approach to speed up this algorithm.
 
-Suppose we have $x$ and $y$ which are $2^k=n$-bit numbers. We cut $x$ and $y$ in half so 
+Suppose we have $x$ and $y$ which are $2^k=n$-bit numbers. We cut $x$ and $y$ in half so
 $$x = X_L2^{2^{k-1}} + X_R \mbox{ and } Y = Y_L2^{2^{k-1}} + Y_R.$$
 then there multiple is
 $$xy = X_LY_L2^{2^k} + (X_LY_R + X_RY_L)2^{2^{k-1}} + X_RY_R.$$
@@ -83,4 +83,4 @@ else:
 	return 2^nA + 2^(2^k-1)(C - A - B) + B
 ```
 
-This works slightly faster with $O(n^{1.5})$. 
+This works slightly faster with $O(n^{1.5})$.

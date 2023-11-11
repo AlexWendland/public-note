@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-10-09
 last_edited: 2023-10-09
+publish: true
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
 # Statement
 
@@ -16,7 +16,7 @@ chatgpt: false
 
 # Proof
 
-We prove more generally that 
+We prove more generally that
 $$gcd(x,y) = gcd(x + c\cdot y, y).$$
 which will give the desired result from the definition of [[Modular arithmetic|modular arithmetic]].
 

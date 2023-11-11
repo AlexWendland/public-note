@@ -1,11 +1,14 @@
 ---
-aliases: [dependect inversion principle, DIP, Dependency inversion]
-type: theory
-publish: true
+aliases:
+  - dependect inversion principle
+  - DIP
+  - Dependency inversion
+chatgpt: true
 created: 2023-03-18
 last_edited: 2023-03-18
+publish: true
 tags: programming, list[str]
-chatgpt: true
+type: theory
 ---
 # Dependency Inversion Principle (DIP)
 

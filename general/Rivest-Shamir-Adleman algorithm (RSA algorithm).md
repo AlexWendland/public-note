@@ -1,17 +1,17 @@
 ---
 aliases:
   - RSA
-type: algorithm
-publish: true
+chatgpt: false
 created: 2023-10-09
 last_edited: 2023-10-09
+publish: true
 tags:
   - programming
-chatgpt: false
+type: algorithm
 ---
 # Rivest-Shamir-Adleman algorithm (RSA algorithm)
 
-To set up the [[Rivest-Shamir-Adleman algorithm (RSA algorithm)|RSA]] algorithm you do the following: 
+To set up the [[Rivest-Shamir-Adleman algorithm (RSA algorithm)|RSA]] algorithm you do the following:
 
 1. You pick 2 n-bit random primes $p$ and $q$.
 3. You choose $e$ relatively prime to $(p-1)(q-1)$.
@@ -32,7 +32,7 @@ Lastly to decipher the message using the private key you do the following.
 
 Note this works from [[Euler's theorem (modular arithmetic)]] as $ed = 1 + k(p-1)(q-1)$ so
 $$ y^d = m^{ed} = m \cdot (m^{(p-1)(q-1)})^k = m \cdot 1^k = m \ (mod \ pq)$$
-as $\phi(pq) = (p-1)(q-1)$. 
+as $\phi(pq) = (p-1)(q-1)$.
 
 ## Limitations
 

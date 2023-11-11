@@ -1,11 +1,11 @@
 ---
 aliases: []
-type: convention
-publish: true
+chatgpt: false
 created: 2023-07-11
 last_edited: 2023-07-11
+publish: true
 tags: programming, clean-code
-chatgpt: false
+type: convention
 ---
 # Data - Object Anti-Symmetry
 
@@ -16,7 +16,7 @@ When we make objects we should have in mind whether this is simply a grouping of
 
 ## Hybrids
 
-In [[Python Index]] especially this might seem more like a spectrum than an anti-symmetry. However, a mid point tends to be bad practice and indicative that you may have low [[Cohesion]] in your code. 
+In [[Python Index]] especially this might seem more like a spectrum than an anti-symmetry. However, a mid point tends to be bad practice and indicative that you may have low [[Cohesion]] in your code.
 
 ## [[Procedural Programming]] vs [[Object Oriented Programming (OOP)]]
 
@@ -24,4 +24,4 @@ When we programme in a procedural manner, i.e. creating [[Data structure|Data st
 
 On the other hand using an [[Object Oriented Programming (OOP)|object oriented]] paradigm makes it really easy to add new objects - as we can just use [[Inheritance]] to define the new object. However, if we want to add a new function to all the objects it means we will need to open up each of the objects.
 
-Whilst in both examples we have to write essentially the same function just place it in different bits of the code. In larger applications this can have serious consequences. Not least because as other people use and extend your code you will lose ownership of making the changes. Suddenly lots of changes will break [[Backwards compatibility]]. Therefore, when making design decisions early on think about how your code is likely to be extended before choosing paradigm to work in. 
+Whilst in both examples we have to write essentially the same function just place it in different bits of the code. In larger applications this can have serious consequences. Not least because as other people use and extend your code you will lose ownership of making the changes. Suddenly lots of changes will break [[Backwards compatibility]]. Therefore, when making design decisions early on think about how your code is likely to be extended before choosing paradigm to work in.

@@ -3,13 +3,13 @@ aliases:
   - BFS
   - Breath-first search
   - breath-first search
-type: algorithm
-publish: true
+chatgpt: false
 created: 2023-09-29
 last_edited: 2023-09-29
+publish: true
 tags:
   - programming
-chatgpt: false
+type: algorithm
 ---
 # Breath-first search (BFS)
 

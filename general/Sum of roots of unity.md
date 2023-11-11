@@ -1,13 +1,13 @@
 ---
 aliases:
   - sum of roots of unity
-type: lemma
-publish: true
+chatgpt: false
 created: 2023-09-19
 last_edited: 2023-09-19
+publish: true
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
 >[!important] Lemma
 >For any $n$th root of unity $\omega$ where $\omega \not = 1$ we have
@@ -16,6 +16,6 @@ chatgpt: false
 
 For any number $z$ we have
 $$(z - 1)(1 + z + z^2 + \ldots + z^{n-1}) = z^n - 1.$$
-Therefore 
+Therefore
 $$ (\omega - 1) \cdot \left ( \sum_{i=0}^{n-1} \omega^i \right ) = \omega^n - 1 = 0$$
 however as $\omega \not = 1$ we have $\omega - 1 \not = 0$ giving the desired result.

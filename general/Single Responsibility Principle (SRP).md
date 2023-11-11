@@ -1,11 +1,13 @@
 ---
-aliases: [SRP, single responsibility principle]
-type: theory
-publish: true
+aliases:
+  - SRP
+  - single responsibility principle
+chatgpt: true
 created: 2023-03-18
 last_edited: 2023-03-19
+publish: true
 tags: programming
-chatgpt: true
+type: theory
 ---
 # Single Responsibility Principle (SRP)
 

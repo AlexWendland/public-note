@@ -1,14 +1,14 @@
 ---
-aliases: 
-type: lecture
-publish: true
+aliases: null
+chatgpt: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-09-30
 last_edited: 2023-09-30
+publish: true
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+type: lecture
 week: int
-chatgpt: false
 ---
 # Week 6 - 2-Satisfiability
 
@@ -23,10 +23,10 @@ This week we will look at
 > - $\land$ to represent and.
 
 > [!example] Example
-> Let 
+> Let
 > $$f = (\overline{x_1} \lor \overline{x_2} \lor x_3) \land (x_2 \lor x_3) \land (\overline{x_3} \lor \overline{x_1}) \land (\overline{x_3})$$
 > Is there an assignment to $x_1$, $x_2$ and $x_3$ that satisfies $f$?
-> 
+>
 
 This problem is generally quite hard so we look at the limited problem.
 
@@ -52,8 +52,8 @@ First we simplify the input by getting rid of forced decisions. We do this by re
 4. Remove clauses containing $a_i$ and drop $\overline{a_i}$ from clauses.
 5. Let $f'$ be the resulting formula.
 
-We can repeat this until either: 
-- we find an issue, 
+We can repeat this until either:
+- we find an issue,
 - the formula becomes empty and we have an assignment, or
 - the output formula only has clauses with 2 variable.
 
@@ -70,7 +70,7 @@ We can now assume our formula has all clauses of size 2, it will have $n$ variab
 
 > [!example] Example
 > Suppose our formula was $f = (\overline{x_1} \lor \overline{x_2}) \land (x_2 \lor x_3) \land (\overline{x_3} \lor \overline{x_1})$ then we would construct the following graph.
-> 
+>
 > ![[2_sat_example_graph.png]]
 
 The intuition behind this graph is that for a clause $(\alpha \lor \beta)$ if $\overline{\alpha}$ then we will need $\beta$ to be true for a correct allocation for $f$, similarly with $\overline{\beta}$ we would need $\alpha$.
@@ -84,13 +84,13 @@ This logic extends out to paths.
 
 Prove this by induction on the length of [[Path (graph)|path]].
 
-Suppose the [[Path (graph)|path]] is of length 1, i.e. $(a, b) \in E$. Therefore there is a clause $\overline{a} \lor b$ or $b \lor \overline{a}$, so if $a$ is true then $b$ needs to be true. 
+Suppose the [[Path (graph)|path]] is of length 1, i.e. $(a, b) \in E$. Therefore there is a clause $\overline{a} \lor b$ or $b \lor \overline{a}$, so if $a$ is true then $b$ needs to be true.
 
 Suppose it is true for a path of length less than $k$.
 
-Suppose we have a [[Path (graph)|path]] of length $k>1$ $p (c,b)$ where $p$ is a [[Path (graph)|path]] from $a$ to $c$ of length $k-1$. 
+Suppose we have a [[Path (graph)|path]] of length $k>1$ $p (c,b)$ where $p$ is a [[Path (graph)|path]] from $a$ to $c$ of length $k-1$.
 
-By the induction hypothesis if $a$ is true then $c$ must be true. 
+By the induction hypothesis if $a$ is true then $c$ must be true.
 
 As $(c,b) \in E$ we have a clause $\overline{c} \lor b$ or $b \lor \overline{c}$. As $c$ is true for this assignment to satisfy $f$ we need $b$ to be true.
 
@@ -105,9 +105,9 @@ This gives us an easy check for if $f$ is not satisfiable.
 
 #### Proof
 
-This means there is a path from $x_i$ to $\overline{x_i}$ and $\overline{x_i}$ to $x_i$. 
+This means there is a path from $x_i$ to $\overline{x_i}$ and $\overline{x_i}$ to $x_i$.
 
-From the lemma above if $x_i$ is true we would require $\overline{x_i}$ to be true also for an assignment to satisfy $f$. Similarly if $x_i$ then we need $\overline{x_i}$ to be true. 
+From the lemma above if $x_i$ is true we would require $\overline{x_i}$ to be true also for an assignment to satisfy $f$. Similarly if $x_i$ then we need $\overline{x_i}$ to be true.
 
 This is contradictory and so no such assignment exists.
 
@@ -131,14 +131,14 @@ Note the edge $(x_{i}, x_{i+1})$ comes from the clause $\overline{x_i} \lor x_{i
 
 Therefore we have the path $(\overline{x_n}, \overline{x_{n-1}}) (\overline{x_{n-1}}, \overline{x_{n-2}}) \ldots (\overline{x_2}, \overline{x_1})$ which is exactly the path from $\overline{x_n}$ to $\overline{x_1}$.
 
-Then if this path were from $a$ to $b$ this would give us a path to $\overline{b}$ to $\overline{a}$. 
+Then if this path were from $a$ to $b$ this would give us a path to $\overline{b}$ to $\overline{a}$.
 
-Similarly if this were a path from $\overline{b}$ to $\overline{a}$ we would get a path from $a$ to $b$. 
+Similarly if this were a path from $\overline{b}$ to $\overline{a}$ we would get a path from $a$ to $b$.
 
-This proves the required statement. 
+This proves the required statement.
 $\square$
 
-This means in $G$ it is meaningful to talk about complement paths. i.e. if $p_{a,b}$ is a [[Path (graph)|path]] in $G$ from $a$ to $b$ then $\overline{p_{a,b}}$ is the complement path from $\overline{b}$ to $\overline{a}$ that we will refer to as $p_{\overline{b}, \overline{a}} := \overline{p_{a,b}}$.  
+This means in $G$ it is meaningful to talk about complement paths. i.e. if $p_{a,b}$ is a [[Path (graph)|path]] in $G$ from $a$ to $b$ then $\overline{p_{a,b}}$ is the complement path from $\overline{b}$ to $\overline{a}$ that we will refer to as $p_{\overline{b}, \overline{a}} := \overline{p_{a,b}}$.
 
 This actually gives us quite a neat corollary.
 
@@ -157,7 +157,7 @@ Therefore $\overline{S}$ is a [[Strongly connected components (directed graphs)|
 
 $\square$
 
-This this actually extends further. 
+This this actually extends further.
 
 >[!important] Lemma
 >$S$ is a sink [[Strongly connected components (directed graphs)|strongly connected component]] if and only if $\overline{S}$ is a source [[Strongly connected components (directed graphs)|strongly connected component]]
@@ -174,7 +174,7 @@ Let $S$ be a sink.
 
 Let $p_{t, \overline{s}}$ be a path from $t \in V$ to $\overline{s} \in \overline{S}$.
 
-Note $\overline{p_{t,\overline{s}}} = p_{s, \overline{t}}$ is a path from $s \in S$ to $\overline{t} \in V$ from the lemma above. 
+Note $\overline{p_{t,\overline{s}}} = p_{s, \overline{t}}$ is a path from $s \in S$ to $\overline{t} \in V$ from the lemma above.
 
 However as $S$ is a sink $\overline{t} \in S$ as the only paths starting at $S$ have to end there.
 
@@ -213,9 +213,9 @@ To do this find a sink $S$ in $SCC(G)$ then we know $\overline{S}$ is a source. 
 
 Then remove $S$ and $\overline{S}$ from $SCC(G)$ and repeat.
 
-This assignment satisfies the first property as when we set $S$ to True we set $\overline{S}$ to false. 
+This assignment satisfies the first property as when we set $S$ to True we set $\overline{S}$ to false.
 
-This assignment satisfies the second property if $S$ is True and has a path to $T$. The $T$ was removed before $S$. 
+This assignment satisfies the second property if $S$ is True and has a path to $T$. The $T$ was removed before $S$.
 
 As $T$ has a path from $S$ it couldn't have been a source, so must have been a sink. It therefore was allocated True.
 
@@ -271,33 +271,33 @@ All together this runs in $O(n + m)$ time. However the algorithm with the above 
 This looks like it takes $O(nm)$ time to simplify the algorithm. However, clever use of data structures can help us here.
 
 ```psuedocode
-simplify(f) 
-	Input: 2-sat potenially with unit litterals. 
-	Output: Either there is not solution to the input, or a 2-sat that has 2 variables in every clause and a partial solution to f. 
-1. Define U and C_v to be list where v in variables 
-2. for clause c in f (let c be some positional variable not the expression of the clause) 
-	2.1. if c unit so f(c) = x, not x 
-		2.1.1. add c to C_x (position) 
-		2.1.2. add x or not x to U (variable) 
-	2.2. else f(c) = (not) x or (not) y 
-		2.2.1. add c to C_x and C_y (position) 
-3. Let f' = f (pick a data structure where looking up clauses is O(1) from a positional arguement) 
-4. While U not empty 
-	4.1. x or not x (set this to X) be the next value in U - removing it 
-		in the process 
-	4.2. if C_x exists 
-		4.2.1. for c in C_x 
-			4.2.1.1. if f'(c) contains X in f' remove it from f'. 
-			4.2.1.2. if f'(c) is (not X) in f' output that f has no solution 
-			4.2.1.3. if f'(c) contains not X (so f'(c) = not X or Y) 
-				4.2.1.3.1. remove not X from f'(c) 
-				4.2.1.3.2. append Y to U 
-		4.2.2. set X to true in our partial solution 
-		4.2.3. Remove C_x 
+simplify(f)
+	Input: 2-sat potenially with unit litterals.
+	Output: Either there is not solution to the input, or a 2-sat that has 2 variables in every clause and a partial solution to f.
+1. Define U and C_v to be list where v in variables
+2. for clause c in f (let c be some positional variable not the expression of the clause)
+	2.1. if c unit so f(c) = x, not x
+		2.1.1. add c to C_x (position)
+		2.1.2. add x or not x to U (variable)
+	2.2. else f(c) = (not) x or (not) y
+		2.2.1. add c to C_x and C_y (position)
+3. Let f' = f (pick a data structure where looking up clauses is O(1) from a positional arguement)
+4. While U not empty
+	4.1. x or not x (set this to X) be the next value in U - removing it
+		in the process
+	4.2. if C_x exists
+		4.2.1. for c in C_x
+			4.2.1.1. if f'(c) contains X in f' remove it from f'.
+			4.2.1.2. if f'(c) is (not X) in f' output that f has no solution
+			4.2.1.3. if f'(c) contains not X (so f'(c) = not X or Y)
+				4.2.1.3.1. remove not X from f'(c)
+				4.2.1.3.2. append Y to U
+		4.2.2. set X to true in our partial solution
+		4.2.3. Remove C_x
 5. output f' and partial solution to f.
 ```
 
-This takes $O(n + m)$ as we have $n$ lists we make and we visit each clause at most 3 times during the algorithm. 
+This takes $O(n + m)$ as we have $n$ lists we make and we visit each clause at most 3 times during the algorithm.
 
 We can instead expand the problem for a simpler algorithm. The pseudo code is below.
 

@@ -1,13 +1,13 @@
 ---
 aliases:
   - NP-complete
-type: definition
-publish: true
+chatgpt: false
 created: 2023-10-27
 last_edited: 2023-10-27
+publish: true
 tags:
   - programming
-chatgpt: false
+type: definition
 ---
 >[!tldr] NP-Complete
 >A problem $f$ is *NP-complete* if

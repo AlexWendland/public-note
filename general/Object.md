@@ -1,11 +1,14 @@
 ---
-aliases: [object, Objects, objects]
-type: theory
-publish: true
+aliases:
+  - object
+  - Objects
+  - objects
+chatgpt: false
 created: 2023-07-11
 last_edited: 2023-07-11
+publish: true
 tags: programming, oop
-chatgpt: false
+type: theory
 ---
 # Object
 
@@ -37,7 +40,7 @@ class point:
 		self._x = x
 		self._y = y
 
-	@classmethod 
+	@classmethod
 	def from_cartesian(cls, x: float, y: float):
 		return cls(x,y)
 
@@ -51,7 +54,7 @@ class point:
 	def from_polar(cls, radius: float, theta: float):
 		x, y = convert_polar_to_cartesian(radius, theta)
 		return cls(x,y)
-		
+
 
 	def convert_polar_to_cartesian(self, radius: float, theta: float)
 		self._x = radius*math.sin(theta)

@@ -1,14 +1,14 @@
 ---
-aliases: 
-type: definition
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-10-10
 last_edited: 2023-10-10
+publish: true
 tags:
   - maths
-chatgpt: false
+type: definition
 ---
 >[!tldr] Binomial coefficient
->Let $0 \leq k \leq n$ for $k,n \in \mathbb{n}$ then define the *binomial coefficient* of $n$ choose $k$ as 
+>Let $0 \leq k \leq n$ for $k,n \in \mathbb{n}$ then define the *binomial coefficient* of $n$ choose $k$ as
 >$$\binom{n}{k} = \frac{n!}{k!(n-k)!}.$$
 

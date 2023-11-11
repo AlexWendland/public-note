@@ -1,15 +1,17 @@
 ---
-aliases: [subsequence, subsequences]
-type: definition
-publish: true
+aliases:
+  - subsequence
+  - subsequences
+chatgpt: false
 created: 2023-08-26
 last_edited: 2023-08-26
+publish: true
 tags: maths
-chatgpt: false
+type: definition
 ---
 # Subsequence
 
-Given a [[Sequence|sequence]] $a_1, a_2, \ldots, a_n$ a subsequence is $a_{i_1}, a_{i_2}, \ldots a_{i_k}$ is such that $i_j < i_j + 1$ (note this can apply to infinite [[Sequence|sequences]] as well). In other words, it is a subset of the sequence ordered such that the indices are increasing. 
+Given a [[Sequence|sequence]] $a_1, a_2, \ldots, a_n$ a subsequence is $a_{i_1}, a_{i_2}, \ldots a_{i_k}$ is such that $i_j < i_j + 1$ (note this can apply to infinite [[Sequence|sequences]] as well). In other words, it is a subset of the sequence ordered such that the indices are increasing.
 
 ## Example
 
@@ -29,4 +31,4 @@ however
 $$
 9, 10, 1
 $$
-is not as the indices are not increasing. 
+is not as the indices are not increasing.

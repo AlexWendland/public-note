@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: problem
-publish: false
+aliases: null
+chatgpt: false
 created: 2023-11-03
 last_edited: 2023-11-03
+publish: false
 tags:
   - programming
-chatgpt: false
+type: problem
 ---
 # Statement
 
@@ -16,7 +16,7 @@ chatgpt: false
 # Solutions
 
 - First solution
-	- run time 
+	- run time
 
 # Theory
 

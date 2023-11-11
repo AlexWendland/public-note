@@ -1,11 +1,13 @@
 ---
-aliases: [loop, loops]
-type: definition
-publish: true
+aliases:
+  - loop
+  - loops
+chatgpt: false
 created: 2023-08-28
 last_edited: 2023-08-28
+publish: true
 tags: maths, graph-theory
-chatgpt: false
+type: definition
 ---
 # Loop (graph)
 

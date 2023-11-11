@@ -1,12 +1,12 @@
 ---
 aliases: []
-type: theorem
-publish: false
+chatgpt: false
 created: 2023-09-11
 last_edited: 2023-09-11
+publish: false
 tags:
   - programming
   - list[str]
-chatgpt: false
+type: theorem
 ---
 # Recursion tree method

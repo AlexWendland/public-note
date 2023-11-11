@@ -1,19 +1,19 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-08-28
 last_edited: 2023-08-28
+publish: true
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
->[!important] Proposition 
+>[!important] Proposition
 >A finite [[Graph|graph]] who has more than one vertex that is a [[Tree (graph)|tree]] must have at least two leaf vertex.
 
 ## Proof
 
-Proof by contradiction. 
+Proof by contradiction.
 
 Suppose this is not the case, then if it has a single vertex of degree one start a path at this vertex. Otherwise pick a random vertex to start the path at. As the tree is connected and has more than one vertex the [[Degree (graph)|degree]] of the chosen vertex is at least 1. It then has an edge to another vertex or itself.
 

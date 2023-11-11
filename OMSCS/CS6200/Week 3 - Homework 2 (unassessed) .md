@@ -1,16 +1,16 @@
 ---
-aliases: 
-type: exercise
-publish: false
+aliases: null
+chatgpt: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-09-11
 last_edited: 2023-09-11
+publish: false
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
-week: "3"
-chatgpt: false
+type: exercise
+week: '3'
 ---
-# Week 3 - Homework 2 (unassessed) 
+# Week 3 - Homework 2 (unassessed)
 
 > [!question] From [[Week 3 - Linear-Time Median]]  change 5 in the analysis
 > What happens to the run time if we switch out 5 for 3 or 7 in the analysis of this algorithm?
@@ -20,7 +20,7 @@ chatgpt: false
 >[!question] Smallest missing natural number
 >Design an $O(\log(n))$ algorithm to find the smallest missing natural number in a given sorted array. The given array only has natural numbers. For example, the smallest missing natural number from $A = \{3, 4, 5\}$ is $1$ and from $A = \{1, 3, 4, 6\}$ is $2$.
 
-If the first element of $A$ is greater than 1 return 1. If the last element of $A$ is $n$ return $n+1$. This leaves the case where the missing element is in $A$. Then we are in the following subproblem and will run the algorithm to solve that subproblem on the list $A$. 
+If the first element of $A$ is greater than 1 return 1. If the last element of $A$ is $n$ return $n+1$. This leaves the case where the missing element is in $A$. Then we are in the following subproblem and will run the algorithm to solve that subproblem on the list $A$.
 
 ## Subproblem
 
@@ -28,11 +28,11 @@ Suppose you are given a list $L$ of natural numbers of length $n > 1$ with the f
 
 ## Algorithm to solve this by D&C
 
-If the list is of length $2$ then we know the answer is $a + 1$. If the list is of length $3$ then we only check the second element. If this element is $a + 1$ we return $a+2$, if it is not we return $a+1$. 
+If the list is of length $2$ then we know the answer is $a + 1$. If the list is of length $3$ then we only check the second element. If this element is $a + 1$ we return $a+2$, if it is not we return $a+1$.
 
 If the list is of length greater than 3. Divide the list $L$ into the first $\lceil \frac{n}{2} \rceil$ elements $A_{left}$ and the rest $A_{right}$.
 
-If the last element of $A_{left}$ is $a + \lceil \frac{n}{2} \rceil - 1$ then run the algorithm on $A_{right}$ if not then run it on $A_{left}$. 
+If the last element of $A_{left}$ is $a + \lceil \frac{n}{2} \rceil - 1$ then run the algorithm on $A_{right}$ if not then run it on $A_{left}$.
 
 ## Run time
 
@@ -59,11 +59,11 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 Run the [[Floyd-Warshall algorithm]] and return the length of the minimum entry on the diagonal. If they are all infinite then return that it is acyclic.
 
 >[!question] 4.21 Currency exchange
->Shortest path algorithms can be applied in currency trading. Let $c_1, c_2, \ldots , c_n$ be various currencies; for instance, $c_1$ might be dollars, $c_2$ pounds, and $c_3$ lire. For any two currencies $c_i$ and $c_j$ , there is an exchange rate $r_{i,j}$ ; this means that you can purchase $r_{i,j}$ units of currency $c_j$ in exchange for one unit of $c_i$. These exchange rates satisfy the condition that $r_{i,j} \cdot r_{j,i} < 1$, so that if you start with a unit of currency $c_i$, change it into currency $c_j$ and then convert back to currency $c_i$, you end up with less than one unit of currency $c_i$ (the difference is the cost of the transaction). 
+>Shortest path algorithms can be applied in currency trading. Let $c_1, c_2, \ldots , c_n$ be various currencies; for instance, $c_1$ might be dollars, $c_2$ pounds, and $c_3$ lire. For any two currencies $c_i$ and $c_j$ , there is an exchange rate $r_{i,j}$ ; this means that you can purchase $r_{i,j}$ units of currency $c_j$ in exchange for one unit of $c_i$. These exchange rates satisfy the condition that $r_{i,j} \cdot r_{j,i} < 1$, so that if you start with a unit of currency $c_i$, change it into currency $c_j$ and then convert back to currency $c_i$, you end up with less than one unit of currency $c_i$ (the difference is the cost of the transaction).
 >
->(a) Give an efficient algorithm for the following problem: Given a set of exchange rates $r_{i,j}$, and two currencies $s$ and $t$, find the most advantageous sequence of currency exchanges for converting currency $s$ into currency $t$. Toward this goal, you should represent the currencies and rates by a graph whose edge lengths are real numbers. 
+>(a) Give an efficient algorithm for the following problem: Given a set of exchange rates $r_{i,j}$, and two currencies $s$ and $t$, find the most advantageous sequence of currency exchanges for converting currency $s$ into currency $t$. Toward this goal, you should represent the currencies and rates by a graph whose edge lengths are real numbers.
 >
->The exchange rates are updated frequently, reflecting the demand and supply of the various currencies. Occasionally the exchange rates satisfy the following property: there is a sequence of currencies $c_{i_1} , c_{i_2} , \ldots , c_{i_k}$ such that $r_{i_1,i_2} \cdot r_{i_2,i_3} \ldots r_{i_{kâˆ’1},i_k} \cdot r_{i_k,i_1} > 1$. This means that by starting with a unit of currency $c_{i_1}$ and then successively converting it to currencies $c_{i_2} , c_{i_3} , \ldots , c_{i_k}$ , and finally back to $c_{i_1}$ , you would end up with more than one unit of currency $c_{i_1}$. Such anomalies last only a fraction of a minute on the currency exchange, but they provide an opportunity for risk-free profits. 
+>The exchange rates are updated frequently, reflecting the demand and supply of the various currencies. Occasionally the exchange rates satisfy the following property: there is a sequence of currencies $c_{i_1} , c_{i_2} , \ldots , c_{i_k}$ such that $r_{i_1,i_2} \cdot r_{i_2,i_3} \ldots r_{i_{kâˆ’1},i_k} \cdot r_{i_k,i_1} > 1$. This means that by starting with a unit of currency $c_{i_1}$ and then successively converting it to currencies $c_{i_2} , c_{i_3} , \ldots , c_{i_k}$ , and finally back to $c_{i_1}$ , you would end up with more than one unit of currency $c_{i_1}$. Such anomalies last only a fraction of a minute on the currency exchange, but they provide an opportunity for risk-free profits.
 >
 >(b) Give an efficient algorithm for detecting the presence of such an anomaly. Use the graph representation you found above.
 
@@ -74,7 +74,7 @@ Suppose there was a route $d_0 \ldots d_{w+1}$ such that
 $$\prod_{i=0}^k r_{v_iv_{i+1}} < \prod_{i=0}^w r_{d_id_{i+1}} $$
 however this would lead to
 $$ - \sum_{i=0}^k \log(r_{v_i,v_{i+1}}) > - \sum_{i=0}^w \log(r_{d_i,d_{i+1}})$$
-contradicting the output of the algorithm. 
+contradicting the output of the algorithm.
 
 This takes time $O(n^3)$.
 
@@ -135,7 +135,7 @@ $$\begin{align*}Â T(n) & = 2T(n/3) + 1\\
 
 By masters theorem as $n = O(n)$ and $1 < \log_4(5)$ we have $T(n) = O(n^{\log_4(5)})$
 
-$$\begin{align*}Â 
+$$\begin{align*}Â
 T(n) & = 5T(n/4) + n\\
 & = 5 [5T(n/4^2) + n/4] + n\\
 & = 5^2T(n/4^2) + 5n/4 + n\\
@@ -155,7 +155,7 @@ T(n) & = 5T(n/4) + n\\
 
 By masters theorem as $n = O(n)$ and $7/7 = 1$ we should have $O(T(n)) = n\log(n)$.
 
-$$\begin{align*}Â 
+$$\begin{align*}Â
 T(n) & = 7T(n/7) + n\\
 & = 7 [7T(n/7^2) + n/7] + n\\
 & = 7^2T(n/7^2) + 2n\\
@@ -171,7 +171,7 @@ T(n) & = 7T(n/7) + n\\
 
 By masters theorem as $n^2 = O(n^2)$ and $\log_3(9) = 2$ we should have $O(T(n)) = n^2 \log(n)$
 
-$$\begin{align*}Â 
+$$\begin{align*}Â
 T(n) & = 9T(n/3) + n^2\\
 & = 9 [9T(n/3^2) + n^2/9] + n^2\\
 & = 9^2T(n/3^2) + 2n^2\\
@@ -193,7 +193,7 @@ By masters theorem as $n^3 = O(n^3)$ and $\log_2(8) = 3$ we have $\Theta(T(n)) =
 
 By masters theorem as $\log_{5^2}(7^2) = \log(7)/\log(5) < 1.5$ then $n^{3/2}\log(n) = \Omega(n^{3/2})$ this gives $T(n) = \Theta(n^{3/2}\log(n))$.
 
-$$\begin{align*}Â 
+$$\begin{align*}Â
 T(n) & = 7^2T(n/5^2) + n^{3/2}\log(n)\\
 & = 7^2[7^2T(n/5^4) + (n/5^2)^{3/2}\log(n/5^2)] + n^{3/2}\log(n)\\
 & = 7^4T(n/5^2) + n^{3/2}\log(n)(7^2/5^3) + n^{3/2}\log(n) - n^{3/2}2\log(5)(7^2/5^3)\\
@@ -232,7 +232,7 @@ $T(n) = \sum_{k=0}^{n} 2^k = 2^{n+1} = O(2^n)$
 > Solve the following recurrence relations and give a $\Theta$ bound for each of them.
 > k) $T(n) = T(\sqrt{n}) + 1$.
 
-$T(n) = k + T(b)$ where $n^{1/2^k} < b$ so $k = \log_2(\log(b))$ therefore $T(n) = O(\log(\log(n)))$. 
+$T(n) = k + T(b)$ where $n^{1/2^k} < b$ so $k = \log_2(\log(b))$ therefore $T(n) = O(\log(\log(n)))$.
 
 > [!question] 2.17 Index matching
 > Given a sorted array of distinct integers $A[1, \ldots , n]$, you want to find out whether there is an index $i$ for which $A[i] = i$. Give a divide-and-conquer algorithm that runs in time $O(\log(n))$.
@@ -241,17 +241,17 @@ First lest examine a subproblem.
 
 ## Subproblem
 
-Given an array $B[1, \ldots, k]$ with $k \geq 2$ and a value $a$ where $B[1] \leq a$ and $B[k] > a+k$ is there an index $i$ such that $a + i = B[i]$. If not return False, if there is return $a+k$. 
+Given an array $B[1, \ldots, k]$ with $k \geq 2$ and a value $a$ where $B[1] \leq a$ and $B[k] > a+k$ is there an index $i$ such that $a + i = B[i]$. If not return False, if there is return $a+k$.
 
 ## Algorithm
 
 Define this algorithm as $Sub(B,a)$.
 
-If $k = 2$ return False. If $k = 3$ return $a + 2$ if $B[2] = a + 2$ otherwise return False.  
+If $k = 2$ return False. If $k = 3$ return $a + 2$ if $B[2] = a + 2$ otherwise return False.
 
-Examine the middle element $m = \lceil \frac{k}{2} \rceil$ if $B[m] = a + m$ return $a + m$. 
+Examine the middle element $m = \lceil \frac{k}{2} \rceil$ if $B[m] = a + m$ return $a + m$.
 
-If $B[m] < a + m$ return $Sub(B[m, \ldots, k], a + m - 1)$ else return $Sub(B[1, \ldots, m], a)$. 
+If $B[m] < a + m$ return $Sub(B[m, \ldots, k], a + m - 1)$ else return $Sub(B[1, \ldots, m], a)$.
 
 ## Overall Algorithm
 
@@ -259,7 +259,7 @@ If $A[1]$ is greater than $1$, return False. If it is equal to 1 return 1.
 
 If $A[n]$ is less than $n$, return False. If it is equal to $n$ return $n$.
 
-Otherwise return $Sub(A, 0)$. 
+Otherwise return $Sub(A, 0)$.
 
 ## Correctness
 
@@ -268,7 +268,7 @@ First prove a sublemma
 > [!important] Lemma
 > If $A[i] = i$ then for all $k > 1$ we have $A[i + k] \geq i + k$ and $A[i - k] \leq i - k$.
 
-As $A$ is sorted and contains distinct integers we have that $A[j+1] \geq A[j] + 1$ which can be expanded to $A[j + k] \geq A[j] + k$ similarly $A[j - k] \leq A[k] - k$ for $k \geq 1$. 
+As $A$ is sorted and contains distinct integers we have that $A[j+1] \geq A[j] + 1$ which can be expanded to $A[j + k] \geq A[j] + k$ similarly $A[j - k] \leq A[k] - k$ for $k \geq 1$.
 
 Therefore as $A[i] = i$ we get $A[i + k] \geq A[i] + k = i + k$ similarly $A[i - k] \leq A[i] - k = i - k$. Giving the desired result.
 
@@ -278,7 +278,7 @@ $\square$
 
 First lets prove $Sub(B,a)$ is correct. We prove this by induction on $k$.
 
-If $k = 2$ as $B[1] \leq a$ and $B[2] > a + 2$ then neither element satisfies $B[i] = a + i$. So it is correct to return False. 
+If $k = 2$ as $B[1] \leq a$ and $B[2] > a + 2$ then neither element satisfies $B[i] = a + i$. So it is correct to return False.
 
 If $k = 3$ by the argument of $k=2$ the only element that can satisfy $B[i] = a+i$ is $i=2$ which it checks. So it returns the correct result in this case.
 
@@ -288,14 +288,14 @@ Let $B$ have size $t > 3$.
 
 If the $m$'th element satisfies $B[m] = i + m$ then we need to return it which we do.
 
-Suppose $B[m] < i + m$. 
+Suppose $B[m] < i + m$.
 
 If $B[i] = i + a$ for $1 \leq i < m$ then $B[m] \geq i + m$ by the lemma. Therefore $B[i] \not = i + a$ for $1 \leq i <m$. So we are safe to discount these elements and only look at $B[m, \ldots, k]$.
 
-Note that $B[m, \ldots, k]$ now satisfies the requirements of the sub problem with $a + m - 1$. 
+Note that $B[m, \ldots, k]$ now satisfies the requirements of the sub problem with $a + m - 1$.
 1. $B[k] > a + k = (a + m - 1) + (k - m + 1)$,
 2. $B[m] \leq a + m - 1$,
-3. $k - m + 1 \geq k/2 + 1 \geq 2$ as $k \geq 4$. 
+3. $k - m + 1 \geq k/2 + 1 \geq 2$ as $k \geq 4$.
 So by the induction hypothesis the solution to $Sub(B[m, \ldots, k], a + m - 1)$ is the solution we desire.
 
 Suppose $B[m] > i + m$.
@@ -305,7 +305,7 @@ We can now discount the elements $B[m, \ldots, k]$ similarly to the logic above.
 Note the $B[1, \ldots, m]$ now satisfies the requirements of the sub problem with $a$.
 1. $B[1] \leq a$ from before,
 2. $B[m] > i + m$,
-3. m \geq k/2 \geq 2$ as $k \geq 4$. 
+3. m \geq k/2 \geq 2$ as $k \geq 4$.
 So by the induction hypothesis the solution to $Sub(B[1, \ldots, m], a)$ is the required solution.
 
 Therefore we have the correct solution on $B$ of size $t$ and from induction it $Sub$ correctly solves the subproblem.
@@ -320,15 +320,15 @@ Note $A$ with 0 now satisfies the subproblem as
 1. $A[1] \leq 0$
 2. $A[n] > n$,
 3. $k > 2$
-So $Sub(A,0)$ returns the correct result. 
+So $Sub(A,0)$ returns the correct result.
 
 ## Run time analysis
 
-Let $T(n)$ be the run time of this algorithm. For $T(1)$ and $T(2)$ it takes 2 checks so $T(1) = T(2) = 2$. 
+Let $T(n)$ be the run time of this algorithm. For $T(1)$ and $T(2)$ it takes 2 checks so $T(1) = T(2) = 2$.
 
 For larger $n$ either it takes $2$ check and we terminate immediately or we run $Sub$.
 
-Functionally $Sub$ is just binary search so $Sub$ takes $O(\log(n))$ time. 
+Functionally $Sub$ is just binary search so $Sub$ takes $O(\log(n))$ time.
 
 This gives $T(n) = O(\log(n))$.
 
