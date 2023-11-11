@@ -31,8 +31,18 @@ def write_metadata(file: io.StringIO, metadata: Dict[str, Any]) -> None:
     file.write("---\n")
 
 def write_section(file: io.StringIO, section: models.MarkdownSection) -> None:
+    file.write(turn_section_to_string(section))
+
+def turn_section_to_string(section: models.MarkdownSection) -> str:
+    section = ""
     if section.title:
-        file.write("#" * section.depth + " " + section.title + "\n")
-    if section.lines:
-        for line in section.lines:
-            file.write(line + "\n")
+        section += ("#" * section.depth + " " + section.title + "\n")
+    if not section.lines:
+        return section
+
+    for line in section.lines:
+        section += line + "\n"
+
+    return section
+
+
