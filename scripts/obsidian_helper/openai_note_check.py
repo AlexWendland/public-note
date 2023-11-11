@@ -35,7 +35,7 @@ def query_article(article:str) -> Optional[str]:
     while tries < max_tries:
         try:
             completion = client.chat.completions.create(
-                model="gpt-3.5-turbo",
+                model="gpt-4-1106-preview",
                 messages=[
                     {
                         "role": "system",
