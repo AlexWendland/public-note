@@ -3,7 +3,7 @@ from typing import Any, Dict
 
 import yaml
 
-from obsidian_helper.models import MarkdownSection, ObsidianFile
+from obsidian_helper import models
 
 
 class IndentedDumper(yaml.Dumper):
@@ -14,7 +14,7 @@ class IndentedDumper(yaml.Dumper):
     def increase_indent(self, flow=False, indentless=False):
         return super(IndentedDumper, self).increase_indent(flow, False)
 
-def write_obsidian_file(obsidian_file:ObsidianFile):
+def write_obsidian_file(obsidian_file:models.ObsidianFile):
     """
     Writes an ObsidianFile object to a markdown file.
     """
@@ -30,7 +30,7 @@ def write_metadata(file: io.StringIO, metadata: Dict[str, Any]) -> None:
     yaml.dump(metadata, file, Dumper=IndentedDumper)
     file.write("---\n")
 
-def write_section(file: io.StringIO, section: MarkdownSection) -> None:
+def write_section(file: io.StringIO, section: models.MarkdownSection) -> None:
     if section.title:
         file.write("#" * section.depth + " " + section.title + "\n")
     if section.lines:
