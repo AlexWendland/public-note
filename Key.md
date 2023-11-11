@@ -1,6 +1,6 @@
 ---
 aliases: []
-checked: false
+checked: true
 created: 2023-08-29
 last_edited: 2023-11-11
 publish: true
@@ -28,5 +28,4 @@ I am using obsidian callouts, which is a nice feature. I am trying to stay consi
 > A problem related to the material.
 
 > [!attention] Warning
-> Something to we wary of, most probably because I misunderstood something before.
-
+> Something to be wary of, most probably because I misunderstood something before.
