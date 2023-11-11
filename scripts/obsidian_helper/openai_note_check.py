@@ -1,11 +1,14 @@
 import io
+import logging
+from enum import Enum
 from typing import List, Optional
 
-from openai import OpenAI
+import openai
 
 from obsidian_helper import constants, models, read_obsidian, write_obsidian
 
-client = OpenAI(timeout = 60)
+logger = logging.getLogger(__name__)
+client = openai.OpenAI(timeout = 60)
 
 SYSTEM_PROMPT = (
     "You are a content creator's assistant. "
@@ -21,21 +24,36 @@ SYSTEM_PROMPT = (
     "If it is worth correcting errors please return a corrected version of the article only. "
 )
 
+class OpenAIOutput(Enum):
+    NO_CHANGE = 1,
+    ERRORS = 2
+
 def query_article(article:str) -> Optional[str]:
-    completion = client.chat.completions.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {
-                "role": "system",
-                "content": SYSTEM_PROMPT},
-            {"role": "user", "content": article}
-        ]
-    )
+    tries = 0
+    max_tries = 3
+    completion = None
+    while tries < max_tries:
+        try:
+            completion = client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {
+                        "role": "system",
+                        "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": article}
+                ]
+            )
+        except openai.APITimeoutError:
+            tries += 1
+            continue
+
+    if completion is None:
+        return OpenAIOutput.ERRORS
 
     content = completion.choices[0].message.content
 
     if content == "NO ERRORS":
-        return None
+        return OpenAIOutput.NO_CHANGE
     else:
         return content
 
@@ -44,10 +62,19 @@ def update_article(obsidian_file: models.ObsidianFile):
     article = turn_sections_to_string(obsidian_file.sections)
     reviewed_article = query_article(article)
 
-    if reviewed_article:
-        file = io.StringIO(reviewed_article)
-        reviewed_article_sections = read_obsidian.extract_all_sections(next(file, None), file)
-        obsidian_file.sections = reviewed_article_sections
+    if reviewed_article == OpenAIOutput.ERRORS:
+        logger.error(f"{obsidian_file.file_path} ERROR: OpenAI timed out file not checked.")
+        return
+
+    if reviewed_article == OpenAIOutput.NO_CHANGE:
+        logger.info(f"{obsidian_file.file_path} INFO: No changes made to file.")
+        obsidian_file.metadata[constants.CHECKED_FIELD] = True
+        return
+
+    file = io.StringIO(reviewed_article)
+    reviewed_article_sections = read_obsidian.extract_all_sections(next(file, None), file)
+    obsidian_file.sections = reviewed_article_sections
+    logger.info(f"{obsidian_file.file_path} INFO: OpenAI updated the file.")
 
     obsidian_file.metadata[constants.CHECKED_FIELD] = True
 

@@ -13,7 +13,8 @@ def main():
         logger.info(f"{file_path} INFO: Updating...")
         obsidian_file = read_obsidian.read_obsidian_file(str(file_path))
         file_admin.update_tags(obsidian_file)
-        openai_note_check.update_article(obsidian_file)
+        if not obsidian_file.metadata.get("checked", False):
+            openai_note_check.update_article(obsidian_file)
         logger.info(f"{file_path} INFO: Updated.")
         write_obsidian.write_obsidian_file(obsidian_file)
 
