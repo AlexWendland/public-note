@@ -3,7 +3,7 @@ aliases:
   - error code
   - Error codes
   - error codes
-chatgpt: true
+checked: false
 created: 2023-08-20
 last_edited: 2023-08-20
 publish: true

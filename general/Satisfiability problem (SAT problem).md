@@ -3,7 +3,7 @@ aliases:
   - Satisfiability problem
   - satisfiability problem
   - SAT problem
-chatgpt: false
+checked: false
 created: 2023-09-30
 last_edited: 2023-09-30
 publish: true

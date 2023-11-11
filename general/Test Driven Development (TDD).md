@@ -3,7 +3,7 @@ aliases:
   - Test driven development
   - test driven development
   - TDD
-chatgpt: false
+checked: false
 created: 2023-07-25
 last_edited: 2023-07-25
 publish: true

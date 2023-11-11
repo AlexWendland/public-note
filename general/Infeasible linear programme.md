@@ -2,7 +2,7 @@
 aliases:
   - infeasible linear programme
   - feasible linear programme
-chatgpt: false
+checked: false
 created: 2023-11-08
 last_edited: 2023-11-08
 publish: true

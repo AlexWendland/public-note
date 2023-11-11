@@ -2,7 +2,7 @@
 aliases:
   - induction
   - inductively
-chatgpt: false
+checked: false
 created: 2023-08-26
 last_edited: 2023-08-26
 publish: false

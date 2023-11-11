@@ -3,7 +3,7 @@ aliases:
   - imperative programming
   - Imperative language
   - imperative language
-chatgpt: false
+checked: false
 created: 2023-02-24
 last_edited: 2023-07-14
 publish: true

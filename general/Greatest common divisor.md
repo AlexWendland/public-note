@@ -2,7 +2,7 @@
 aliases:
   - GCD
   - greatest common divisor
-chatgpt: false
+checked: false
 created: 2023-10-09
 last_edited: 2023-10-09
 publish: true

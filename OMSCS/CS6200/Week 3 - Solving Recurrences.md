@@ -1,6 +1,6 @@
 ---
 aliases: []
-chatgpt: false
+checked: false
 course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-09-11
 last_edited: 2023-09-11

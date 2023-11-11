@@ -1,7 +1,7 @@
 ---
 aliases:
   - edge weights
-chatgpt: false
+checked: false
 created: 2023-09-05
 last_edited: 2023-09-05
 publish: true

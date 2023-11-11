@@ -6,6 +6,7 @@ aliases:
   - dunder functions
   - special functions
   - magic functions
+checked: false
 created: 2023-02-25
 last_edited: 2023-03-03
 publish: true

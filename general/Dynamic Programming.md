@@ -2,7 +2,7 @@
 aliases:
   - dynamic programming
   - dynamic programs
-chatgpt: true
+checked: false
 created: 2023-08-26
 last_edited: 2023-08-26
 publish: true

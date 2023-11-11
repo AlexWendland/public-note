@@ -3,7 +3,7 @@ aliases:
   - logs
   - rules of logarithms
   - logarithms
-chatgpt: false
+checked: false
 created: 2023-08-28
 last_edited: 2023-08-28
 publish: true

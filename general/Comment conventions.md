@@ -3,7 +3,7 @@ aliases:
   - comments
   - comment
   - comment conventions
-chatgpt: false
+checked: false
 created: 2023-07-01
 last_edited: 2023-07-01
 publish: true

@@ -1,7 +1,7 @@
 ---
 aliases:
   - Knapsack-search
-chatgpt: false
+checked: false
 created: 2023-11-02
 last_edited: 2023-11-02
 publish: false

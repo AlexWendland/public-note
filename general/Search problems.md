@@ -2,7 +2,7 @@
 aliases:
   - search problems
   - search problem
-chatgpt: false
+checked: false
 created: 2023-10-24
 last_edited: 2023-10-24
 publish: true

@@ -1,6 +1,7 @@
 ---
 aliases:
   - the 5s philosophy
+checked: false
 created: 2023-03-12
 last_edited: 2023-03-12
 publish: true

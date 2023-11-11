@@ -1,7 +1,7 @@
 ---
 aliases:
   - induced subgraph
-chatgpt: false
+checked: false
 created: 2023-10-27
 last_edited: 2023-10-27
 publish: true

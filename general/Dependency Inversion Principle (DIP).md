@@ -3,7 +3,7 @@ aliases:
   - dependect inversion principle
   - DIP
   - Dependency inversion
-chatgpt: true
+checked: false
 created: 2023-03-18
 last_edited: 2023-03-18
 publish: true

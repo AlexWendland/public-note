@@ -2,7 +2,7 @@
 aliases:
   - acyclic graph
   - acyclic
-chatgpt: false
+checked: false
 created: 2023-09-26
 last_edited: 2023-09-26
 publish: true

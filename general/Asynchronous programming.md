@@ -1,7 +1,7 @@
 ---
 aliases:
   - asynchronous programming
-chatgpt: false
+checked: false
 created: 2023-08-20
 last_edited: 2023-08-20
 publish: false

@@ -3,7 +3,7 @@ aliases:
   - programming paradigm
   - programming paradigms
   - Programming paradigm
-chatgpt: false
+checked: false
 created: 2023-07-13
 last_edited: 2023-07-13
 publish: true

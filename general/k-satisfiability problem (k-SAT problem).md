@@ -6,7 +6,7 @@ aliases:
   - k-SAT problem
   - 2-SAT problem
   - 3-SAT
-chatgpt: false
+checked: false
 created: 2023-09-30
 last_edited: 2023-09-30
 publish: true

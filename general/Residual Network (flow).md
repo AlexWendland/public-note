@@ -1,7 +1,7 @@
 ---
 aliases:
   - residual network
-chatgpt: false
+checked: false
 created: 2023-10-02
 last_edited: 2023-10-02
 publish: true

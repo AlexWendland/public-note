@@ -6,7 +6,7 @@ aliases:
   - passing variables to a function
   - passed by reference
   - passed by value
-chatgpt: false
+checked: false
 created: 2023-07-17
 last_edited: 2023-07-17
 publish: true

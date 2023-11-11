@@ -3,7 +3,7 @@ aliases:
   - formatting
   - code formatting
   - formatting conventions
-chatgpt: false
+checked: false
 created: 2023-07-01
 last_edited: 2023-07-11
 publish: true

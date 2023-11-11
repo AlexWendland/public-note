@@ -3,7 +3,7 @@ aliases:
   - Independent set problem
   - max independent set problem
   - independent set problem
-chatgpt: false
+checked: false
 created: 2023-11-03
 last_edited: 2023-11-03
 publish: false

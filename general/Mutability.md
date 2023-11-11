@@ -7,7 +7,7 @@ aliases:
   - mutability
   - immutability
   - mutability
-chatgpt: false
+checked: false
 created: 2023-06-29
 last_edited: 2023-07-14
 publish: true

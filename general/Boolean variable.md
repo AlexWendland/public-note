@@ -3,7 +3,7 @@ aliases:
   - boolean
   - boolean variable
   - Boolean
-chatgpt: false
+checked: false
 created: 2023-08-28
 last_edited: 2023-08-28
 publish: true

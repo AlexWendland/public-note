@@ -1,7 +1,7 @@
 ---
 aliases:
   - variables
-chatgpt: true
+checked: false
 created: 2023-07-17
 last_edited: 2023-07-17
 publish: true

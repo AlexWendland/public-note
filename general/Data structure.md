@@ -3,7 +3,7 @@ aliases:
   - data structure
   - Data structures
   - data structures
-chatgpt: false
+checked: false
 created: 2023-07-11
 last_edited: 2023-07-11
 publish: true

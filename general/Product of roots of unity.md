@@ -1,6 +1,6 @@
 ---
 aliases: null
-chatgpt: false
+checked: false
 created: 2023-09-22
 last_edited: 2023-09-22
 publish: true
