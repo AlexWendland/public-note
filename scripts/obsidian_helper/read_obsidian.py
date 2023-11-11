@@ -1,9 +1,12 @@
 import io
-from typing import Any, Dict, List, Optional, Tuple
+from pathlib import Path
+from typing import Any, Dict, Generator, List, Optional, Tuple
 
 import pydantic
 import yaml
-from models import MarkdownSection, ObsidianFile
+
+from obsidian_helper.constants import OBSIDIAN_DIR
+from obsidian_helper.models import MarkdownSection, ObsidianFile
 
 
 def read_metadata_from_obsidian_file(metadata_lines: List[str]) -> Dict[str, Any]:
@@ -81,13 +84,13 @@ def extract_section(first_line: str, file: io.StringIO) -> Tuple[str, MarkdownSe
     lines = []
 
     if title is None:
-        lines.append(first_line.strip())
+        lines.append(first_line.rstrip())
 
     while True:
         line = next(file, None)
         if line is None or is_title(line):
             break
-        lines.append(line.strip())
+        lines.append(line.rstrip())
 
     return line, MarkdownSection(title=title, depth=depth, lines=lines)
 
@@ -121,3 +124,16 @@ def is_title(line: str) -> bool:
     if line[1] not in ["#", " "]:
         return False
     return True
+
+def get_obsidian_files() -> Generator[str, None, None]:
+    """
+    Gets all obsidian files in the vault. It skips over some common files you will want to ignore.
+
+    Yields:
+        Generator[str, None, None]: _description_
+    """
+    directory = Path(OBSIDIAN_DIR)
+
+    for file in directory.rglob('**/[!.obsidian,!.Excalidraw,!.scripts]*.md'):
+        if file.is_file() and file.suffix == '.md':
+            yield str(file)

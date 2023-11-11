@@ -2,7 +2,8 @@ import io
 from typing import Any, Dict
 
 import yaml
-from models import MarkdownSection, ObsidianFile
+
+from obsidian_helper.models import MarkdownSection, ObsidianFile
 
 
 class IndentedDumper(yaml.Dumper):
