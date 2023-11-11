@@ -59,7 +59,7 @@ def log_difference_in_tags(obsidian_file: models.ObsidianFile, new_tags:List[str
     if removed_tags:
         logger.info(f"{obsidian_file.file_path} INFO: Tags removed from file: {removed_tags}")
 
-def run_last_updated_check():
+def run_last_updated_check(switch_checked_field: bool = True):
     """
     Updates the last edited timestamp of all Obsidian files.
     """
@@ -70,4 +70,6 @@ def run_last_updated_check():
         obsidian_file = read_obsidian.read_obsidian_file(str(file))
         file_admin.update_last_edited(obsidian_file)
         write_obsidian.write_obsidian_file(obsidian_file)
+        if switch_checked_field:
+            obsidian_file.metadata[constants.CHECKED_FIELD] = False
 

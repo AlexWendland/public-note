@@ -46,13 +46,7 @@ def read_obsidian_file(file_path: str) -> ObsidianFile:
             metadata = extract_metadata(file)
             first_line = next(file, None)
 
-        sections = []
-
-        while True:
-            first_line, next_section = extract_section(first_line, file)
-            sections.append(next_section)
-            if first_line is None:
-                break
+        sections = extract_all_sections(first_line, file)
 
         return ObsidianFile(file_path=file_path, metadata=metadata, sections=sections)
 
@@ -71,6 +65,16 @@ def extract_metadata(file: io.StringIO) -> Dict[str, Any]:
         metadata += line
     return yaml.safe_load(metadata)
 
+def extract_all_sections(first_line: str, file: io.StringIO) -> List[MarkdownSection]:
+    sections = []
+
+    while True:
+        first_line, next_section = extract_section(first_line, file)
+        sections.append(next_section)
+        if first_line is None:
+            break
+
+    return sections
 
 def extract_section(first_line: str, file: io.StringIO) -> Tuple[str, MarkdownSection]:
     """
