@@ -34,15 +34,15 @@ def write_section(file: io.StringIO, section: models.MarkdownSection) -> None:
     file.write(turn_section_to_string(section))
 
 def turn_section_to_string(section: models.MarkdownSection) -> str:
-    section = ""
+    section_string = ""
     if section.title:
-        section += ("#" * section.depth + " " + section.title + "\n")
+        section_string += ("#" * section.depth + " " + section.title + "\n")
     if not section.lines:
-        return section
+        return section_string
 
     for line in section.lines:
-        section += line + "\n"
+        section_string += line + "\n"
 
-    return section
+    return section_string
 
 
