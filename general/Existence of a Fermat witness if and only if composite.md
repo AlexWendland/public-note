@@ -1,21 +1,21 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-10-10
 last_edited: 2023-10-10
+publish: true
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
 # Statement
 
 >[!important] Lemma
->A number $r$ has a [[Fermat witness]] if and only if $r$ is not [[Prime|prime]]. 
+>A number $r$ has a [[Fermat witness]] if and only if $r$ is not [[Prime|prime]].
 
 # Proof
 
-## $\Rightarrow$ 
+## $\Rightarrow$
 
 If $r$ is [[Prime|prime]] from [[Fermat's little theorem]] we know no [[Fermat witness]] exists.
 
@@ -27,6 +27,6 @@ Suppose
 $$n^{r-1} = 1 \ (mod \ r)$$
 then we would have
 $$n^{r-1} = n n^{r-2} = 1 \ (mod \ r)$$
-so $n^{r-2}$ is the inverse of $n$. 
+so $n^{r-2}$ is the inverse of $n$.
 
 Though by the [[Modular multiplicative inverse existence|existence modular multiplicative inverse lemma]] we know no such inverse exists for $n$ and therefore $n^{r-1} \not = 1$ (mod $r$). So $n$ is a [[Fermat witness]] for $r$.

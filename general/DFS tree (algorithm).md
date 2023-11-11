@@ -5,13 +5,13 @@ aliases:
   - DFS tree
   - Forward edge
   - Tree edge
-type: definition
-publish: true
+chatgpt: false
 created: 2023-09-27
 last_edited: 2023-09-27
+publish: true
 tags:
   - maths
-chatgpt: false
+type: definition
 ---
 > [!tldr] DFS tree
 > Given the run a [[Depth-first search (DFS)|DFS]] algorithm $A$ on a [[Directed graph|directed graph]] $G = (V,E)$, the *DFS tree* is a [[Subgraph|sub]]-[[Forest (graph)|forest]] $F = (V,E')$ where $E'$ are the edges used by $A$ to first explore a vertex.

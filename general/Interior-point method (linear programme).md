@@ -2,12 +2,12 @@
 aliases:
   - Interior-point method
   - interior-point method
-type: algorithm
-publish: false
+chatgpt: false
 created: 2023-11-07
 last_edited: 2023-11-07
+publish: false
 tags:
   - programming
-chatgpt: false
+type: algorithm
 ---
 # Interior-point method (linear programme)

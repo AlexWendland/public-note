@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-09-19
 last_edited: 2023-09-19
+publish: true
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
 
 >[!important] Lemma
@@ -15,7 +15,7 @@ chatgpt: false
 ### Proof
 Lets examine
 $$F_n(\omega^{-1}) F_n(\omega) := \{m_{i,j}\}.$$
-For these terms we have 
+For these terms we have
 $$ \begin{align*} m_{j,k} & = \left( 1, \omega^{-j}, \omega^{-2j}, \ldots, \omega^{-(n-1)j} \right ) \cdot \left( 1, \omega^{k}, \omega^{2k}, \ldots, \omega^{(n-1)k} \right )\\
 & = \sum_{i=0}^{n-1} \omega^{i(j-k)}\\
 & = \sum_{i=0}^{n-1} \left ( \omega^{j-k} \right )^n

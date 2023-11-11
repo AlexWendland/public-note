@@ -3,13 +3,13 @@ aliases:
   - DFS
   - depth-first search
   - Depth-first search
-type: algorithm
-publish: true
+chatgpt: false
 created: 2023-09-26
 last_edited: 2023-09-26
+publish: true
 tags:
   - programming
-chatgpt: false
+type: algorithm
 ---
 # Depth-first search (DFS)
 

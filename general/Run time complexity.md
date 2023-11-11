@@ -1,11 +1,13 @@
 ---
-aliases: [run time complexity, runtime]
-type: theory
-publish: true
+aliases:
+  - run time complexity
+  - runtime
+chatgpt: false
 created: 2023-08-26
 last_edited: 2023-08-26
+publish: true
 tags: programming
-chatgpt: false
+type: theory
 ---
 # Run time complexity
 
@@ -19,7 +21,7 @@ This is just saying that $f$ eventually is at most a scalar multiple of $g$.
 
 > [!note] This is **only** an upper bound
 > If $f = O(x^2)$ then we also have that $f = O(2^n)$, as $x^2 < 2^x$ eventually.
-> 
+>
 
 ## Big-Omega notation
 
@@ -33,4 +35,4 @@ This is just saying that $f$ eventually is at least a scalar multiple of $g$.
 
 ## Comments
 
-In some algorithmic disciplines, these notions are not sufficient and people talk about average run time of an algorithm. Whilst [[Big-O notation]] determines a functions complexity in practical terms if that run time is only really recognised in very specific circumstances - it could have a much better average run time on most cases people care about and come across in real life. 
+In some algorithmic disciplines, these notions are not sufficient and people talk about average run time of an algorithm. Whilst [[Big-O notation]] determines a functions complexity in practical terms if that run time is only really recognised in very specific circumstances - it could have a much better average run time on most cases people care about and come across in real life.

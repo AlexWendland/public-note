@@ -4,13 +4,13 @@ aliases:
   - DAG
   - directed acyclic graph
   - Directed acyclic graph
-type: definition
-publish: true
+chatgpt: false
 created: 2023-09-26
 last_edited: 2023-09-26
+publish: true
 tags:
   - programming
-chatgpt: false
+type: definition
 ---
 > [!tldr] Directed acyclic graph (DAG)
 > A [[Directed graph|directed]] [[Acyclic graph|acyclic]] graph.

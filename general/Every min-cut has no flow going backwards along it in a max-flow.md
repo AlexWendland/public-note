@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: false
+aliases: null
+chatgpt: false
 created: 2023-10-20
 last_edited: 2023-10-20
+publish: false
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
 # Statement
 

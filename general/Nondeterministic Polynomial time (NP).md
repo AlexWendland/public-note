@@ -4,13 +4,13 @@ aliases:
   - NP complexity
   - Nondeterministic Polynomial time
   - nondeterministic polynomial time
-type: definition
-publish: true
+chatgpt: false
 created: 2023-08-30
 last_edited: 2023-08-30
+publish: true
 tags:
   - programming
-chatgpt: false
+type: definition
 ---
 # Nondeterministic Polynomial time (NP)
 

@@ -1,11 +1,16 @@
 ---
-aliases: [error handling, exception handling, Exception handling, exception handler, Exception handler]
-type: concept
-publish: true
+aliases:
+  - error handling
+  - exception handling
+  - Exception handling
+  - exception handler
+  - Exception handler
+chatgpt: false
 created: 2023-08-20
 last_edited: 2023-08-20
+publish: true
 tags: programming, clean-code
-chatgpt: false
+type: concept
 ---
 # Error Handling
 

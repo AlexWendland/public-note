@@ -3,13 +3,13 @@ aliases:
   - Satisfiability problem
   - satisfiability problem
   - SAT problem
-type: problem
-publish: true
+chatgpt: false
 created: 2023-09-30
 last_edited: 2023-09-30
+publish: true
 tags:
   - programming
-chatgpt: false
+type: problem
 ---
 # Statement
 

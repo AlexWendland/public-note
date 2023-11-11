@@ -1,13 +1,13 @@
 ---
-aliases: 
-type: lecture
-publish: false
+aliases: null
+chatgpt: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: <% tp.file.creation_date("YYYY-MM-DD") %>
 last_edited: <% tp.file.creation_date("YYYY-MM-DD") %>
+publish: false
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
-week: 
-chatgpt: false
+type: lecture
+week: null
 ---
 # <% tp.file.title %>

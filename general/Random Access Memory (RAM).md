@@ -1,10 +1,14 @@
 ---
-aliases: [computer memory, RAM, Random access memory, random access memory]
-type: hardware
-publish: false
+aliases:
+  - computer memory
+  - RAM
+  - Random access memory
+  - random access memory
+chatgpt: false
 created: 2023-07-17
 last_edited: 2023-07-17
+publish: false
 tags: programming, list[str]
-chatgpt: false
+type: hardware
 ---
 # Random Access Memory (RAM)

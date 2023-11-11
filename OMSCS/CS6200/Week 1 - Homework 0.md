@@ -1,14 +1,14 @@
 ---
-aliases: 
-type: exercise
-publish: false
+aliases: null
+chatgpt: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-08-27
 last_edited: 2023-08-27
+publish: false
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+type: exercise
 week: 1
-chatgpt: false
 ---
 # Homework 0
 
@@ -64,7 +64,7 @@ which gives $f(n) = O(g(n))$.
 So the answer is 1.
 
 >[!question] Problem 2
-> Show that $g(n) = 1 + a + a^2 + \ldots + a^n$ is $O(a^n)$ when $a > 1$ and $O(1)$ when $a < 1$.  
+> Show that $g(n) = 1 + a + a^2 + \ldots + a^n$ is $O(a^n)$ when $a > 1$ and $O(1)$ when $a < 1$.
 > (Hint: You may try to prove $g(n) =\frac{a^{n+1} - 1}{a-1}$ at first.)
 
 Consider
@@ -79,7 +79,7 @@ If $a = 1$ then $g(n) = n$ giving $g(n) = O(n)$.
 
 Let $-1< a < 1$ then note that
 $$ \vert a^{n+1} - 1 \vert < \vert a - 1 \vert$$
-so we have that 
+so we have that
 $$\vert g(n) \vert < 1$$
 giving the required $g(n) < 1$ and $g(n) = O(1)$.
 
@@ -89,13 +89,13 @@ If $a < -1$ then $g(n)$ is divergent and we can't talk about run time.
 
 >[!question] Problem 3 (a)
 > For all parts, $G = (V, E)$ represents an undirected, simple [[Graph|graph]] (i.e.: no multiple edges and no loops).
->   
+>
 > Denote by deg(v), the degree of vertex v, the number of edges incident to v. Check that
 > $$ \sum_{v \in V} \mbox{deg}(v) = 2 \vert E \vert$$
 
 Lets prove this by induction on the number $\vert E \vert$ within a graph.
 
-Suppose a graph has no edges. Therefore $\deg(v) = 0$ for all $v \in V$ as there are no edges to be incident to $v$. Thus 
+Suppose a graph has no edges. Therefore $\deg(v) = 0$ for all $v \in V$ as there are no edges to be incident to $v$. Thus
 $$\sum_{v \in V} \mbox{deg}(v) = 0 = 2 \vert E \vert.$$
 Suppose we have shown the statement true for all graphs where $\vert E \vert < k$ and suppose we have a graph with $\vert E \vert = k$. Pick any edge $e = (x,y)$ and remove it from the graph to get $G^{\ast} = (V, E^{\ast})$ . From the induction hypothesis we have
 $$ \sum_{v \in V} \mbox{deg}_{G^{\ast}}(v) = 2 (\vert E \vert - 1)$$
@@ -108,7 +108,7 @@ $$\begin{align*}
 This shows the inductive case and proves the statement.
 
 >[!question] Problem 3 (b)
-> Review the concepts of path, cycle, connectivity.  
+> Review the concepts of path, cycle, connectivity.
 
 ![[Path (graph)]]
 
@@ -117,10 +117,10 @@ This shows the inductive case and proves the statement.
 ![[Connected (graph)]]
 
 > [!question] Problem 3 (c)
-> $G$ is said to be a tree if it is connected and have no cycles. Think why the following three conditions are equivalent:  
-> 1. $G$ is a tree.  
-> 2. $G$ is connected and $\vert E \vert = \vert V \vert − 1$.  
-> 3. $G$ has no cycles and $\vert E \vert = \vert V \vert − 1$.  
+> $G$ is said to be a tree if it is connected and have no cycles. Think why the following three conditions are equivalent:
+> 1. $G$ is a tree.
+> 2. $G$ is connected and $\vert E \vert = \vert V \vert − 1$.
+> 3. $G$ has no cycles and $\vert E \vert = \vert V \vert − 1$.
 
 Proof of $(1) \Rightarrow (2)$.
 
@@ -138,9 +138,9 @@ Thus proving our statement by induction.
 
 Proof of $(2) \Rightarrow (3)$.
 
-Suppose we have a graph $G$ that is connected and $\vert E \vert = \vert V \vert - 1$. Though $G$ has a [[Cycle (graph)|cycle]] in it. 
+Suppose we have a graph $G$ that is connected and $\vert E \vert = \vert V \vert - 1$. Though $G$ has a [[Cycle (graph)|cycle]] in it.
 
-Take a minimal, in terms of $\vert V \vert$, counter example.  
+Take a minimal, in terms of $\vert V \vert$, counter example.
 
 Note that from problem 3(a) we have
 $$ \sum_{v \in V} \mbox{deg}(v) = 2 \vert E \vert = 2 \vert V \vert - 2$$
@@ -152,7 +152,7 @@ This proves the claim.
 
 Proof of $(3) \Rightarrow (1)$.
 
-Note all we need to show is that $G$ is connected. 
+Note all we need to show is that $G$ is connected.
 
 Lets use proof be contradiction. Suppose $G$ satisfies $(3)$ but is not a tree, let $G$ be a minimal such example.
 
@@ -163,7 +163,7 @@ Take a connected component of $G$, as it has no vertices of degree 1 they must h
 This proves this claim and the equivalence.
 
 > [!question] Problem 3 (d)
-> A vertex is called a leaf if it has degree one. Show that every tree has at least two leaves.  
+> A vertex is called a leaf if it has degree one. Show that every tree has at least two leaves.
 > Think of an example of a tree with exactly two leaves.
 
 ![[A finite tree that has more than one vertex must have at least two leaf vertices]]
@@ -171,10 +171,10 @@ This proves this claim and the equivalence.
 The examples of graphs with exactly two [[Leaf (graph)|leaf vertices]] are the [[Path (graph)#The path graph|path graphs]].
 
 > [!question] Problem 4
-> For each example below, decide which functions are in [[Conjunctive normal form (CNF)|CNF]] and find an assignment of the variables such that the corresponding function evaluates to true, if such assignment exists.  
+> For each example below, decide which functions are in [[Conjunctive normal form (CNF)|CNF]] and find an assignment of the variables such that the corresponding function evaluates to true, if such assignment exists.
 > - $(x \lor y \lor z) \land (x \lor w) \land (y \lor \lnot w)$
 > - $( \lnot x \lor  \lnot y) \land (x) \land (z \lor \lnot z)$
-> - $x \land (y \land (z \lor \lnot w))$ 
+> - $x \land (y \land (z \lor \lnot w))$
 
 For $(x \lor y \lor z) \land (x \lor w) \land (y \lor \lnot w)$.
 

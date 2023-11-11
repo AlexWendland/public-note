@@ -1,10 +1,11 @@
 ---
-aliases: [binary]
-type: data-type
-publish: false
+aliases:
+  - binary
+chatgpt: false
 created: 2023-04-20
 last_edited: 2023-04-20
+publish: false
 tags: maths, programming
-chatgpt: false
+type: data-type
 ---
 # Binary

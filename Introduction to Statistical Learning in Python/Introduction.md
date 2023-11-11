@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: study-group
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-09-17
 last_edited: 2023-09-17
+publish: true
 tags:
   - lecture
-chatgpt: false
+type: study-group
 ---
 # Introduction to Statistical Learning in Python
 
@@ -26,7 +26,7 @@ Given a setting where $Y = f(X) + \epsilon$ then there.
 
 ## Accuracy
 
-Reducible error - The difference between $\hat{f}(x) - f(x)$. 
+Reducible error - The difference between $\hat{f}(x) - f(x)$.
 
 Irreducible error - The $\epsilon$ coming from measurement, innate randomness, ....
 
@@ -48,4 +48,4 @@ $$MSE(y, \hat{f}(x)) = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{f}(x_i))^2.$$
 How good can your model be given it is of a certain form.
 
 
-- 
+-

@@ -1,9 +1,9 @@
 ---
-type: blog
-subtype: wendland-weekly
-publish: false
+chatgpt: false
 created: <% tp.file.creation_date("YYYY-MM-DD") %>
 last_edited: <% tp.file.creation_date("YYYY-MM-DD") %>
-chatgpt: false
+publish: false
+subtype: wendland-weekly
+type: blog
 ---
 # {{date:YYYY}}-W{{date:WW}} Wendland Weekly

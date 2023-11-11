@@ -1,19 +1,19 @@
 ---
 aliases:
   - equivalent tree definitions
-type: lemma
-publish: true
+chatgpt: false
 created: 2023-09-26
 last_edited: 2023-09-26
+publish: true
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
 > [!important] Lemma
-> The following conditions are equivalent for a [[Graph|graph]] $G = (V,E)$. 
-> 1. $G$ is a [[Tree (graph)|tree]].  
-> 2. $G$ is [[Connected (graph)|path connected]] and $\vert E \vert = \vert V \vert − 1$.  
-> 3. $G$ has no [[Cycle (graph)|cycles]] and $\vert E \vert = \vert V \vert − 1$.  
+> The following conditions are equivalent for a [[Graph|graph]] $G = (V,E)$.
+> 1. $G$ is a [[Tree (graph)|tree]].
+> 2. $G$ is [[Connected (graph)|path connected]] and $\vert E \vert = \vert V \vert − 1$.
+> 3. $G$ has no [[Cycle (graph)|cycles]] and $\vert E \vert = \vert V \vert − 1$.
 
 ## Proof
 
@@ -33,9 +33,9 @@ Thus proving our statement by induction.
 
 ### Proof of $(2) \Rightarrow (3)$.
 
-Suppose we have a graph $G$ that is connected and $\vert E \vert = \vert V \vert - 1$. Though $G$ has a [[Cycle (graph)|cycle]] in it. 
+Suppose we have a graph $G$ that is connected and $\vert E \vert = \vert V \vert - 1$. Though $G$ has a [[Cycle (graph)|cycle]] in it.
 
-Take a minimal, in terms of $\vert V \vert$, counter example.  
+Take a minimal, in terms of $\vert V \vert$, counter example.
 
 Note that from problem 3(a) we have
 $$ \sum_{v \in V} \mbox{deg}(v) = 2 \vert E \vert = 2 \vert V \vert - 2$$
@@ -47,7 +47,7 @@ This proves the claim.
 
 ### Proof of $(3) \Rightarrow (1)$.
 
-Note all we need to show is that $G$ is connected. 
+Note all we need to show is that $G$ is connected.
 
 Lets use proof be contradiction. Suppose $G$ satisfies $(3)$ but is not a tree, let $G$ be a minimal such example.
 

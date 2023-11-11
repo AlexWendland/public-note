@@ -1,11 +1,11 @@
 ---
 aliases: []
-type: meta
-publish: true
+chatgpt: false
 created: 2023-08-05
 last_edited: 2023-08-05
+publish: true
 tags: programming,
-chatgpt: false
+type: meta
 ---
 # Backwards compatibility
 

@@ -1,14 +1,14 @@
 ---
 aliases: []
-type: lecture
-publish: true
+chatgpt: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-09-07
 last_edited: 2023-09-07
+publish: true
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
-week: "3"
-chatgpt: false
+type: lecture
+week: '3'
 ---
 # Week 3 - Linear-Time Median
 
@@ -59,7 +59,7 @@ If I choose any random element $p \in A$ then it has
 $$\mathbb{P}(p \mbox{ is good}) = \frac{3n/4 - n/4}{n} = \frac{1}{2}$$
 It takes $O(n)$ time to check if $p$ is good and if we kept randomly drawing elements we have
 $$\mathbb{E}(\mbox{draws untill } p \mbox{ is good}) = 2.$$
-Therefore this algorithm has expected runtime of $2n$ - though this is not [[Big-O notation|worst case run time]]. 
+Therefore this algorithm has expected runtime of $2n$ - though this is not [[Big-O notation|worst case run time]].
 
 ### Recursive pivot
 
@@ -68,7 +68,7 @@ Instead of finding a median of $A$ we could instead aim for a median of a "repre
 > [!info] Trick
 > Divide $A$ into sets of 5 and find the median of each of these sets. Call this set $S$. Then find the median of the set $S$.
 
-Let $G_i$ be the sets of size $5$ and $1 \leq i \leq \frac{n}{5}$ (assume $n$ is a multiple of $5$). Then the median $m_i$ of $G_i$ each have 2 elements less than $m_i$ and 2 elements greater than $m_i$. Therefore the median of $S = \left \{m_i \vert 1 \leq i \leq \frac{n}{5} \right \}$  $p$ has $\frac{3n}{10}$ less than or equal to it and $\frac{3n}{10}$ elements greater or equal to it. 
+Let $G_i$ be the sets of size $5$ and $1 \leq i \leq \frac{n}{5}$ (assume $n$ is a multiple of $5$). Then the median $m_i$ of $G_i$ each have 2 elements less than $m_i$ and 2 elements greater than $m_i$. Therefore the median of $S = \left \{m_i \vert 1 \leq i \leq \frac{n}{5} \right \}$  $p$ has $\frac{3n}{10}$ less than or equal to it and $\frac{3n}{10}$ elements greater or equal to it.
 
 Which gives $\vert A_{>p} \vert \leq \frac{7n}{10}$ and $\vert A_{<p} \vert \leq \frac{7n}{10}$. This gives that $p$ is a good pivot from the definition.
 
@@ -81,27 +81,27 @@ FastSelect(A,k):
 5. Partition A into A_{<p}, A_{=p}, A_{>p}.
 6. Return based on the following conditions.
 	1. If k <= |A_{<p}| then return FastSelect(A_{<p}, k)
-	2. If k > |A_{<p}| + |A_{=p}| then return 
+	2. If k > |A_{<p}| + |A_{=p}| then return
 	   FastSelect(A_{>p}, k - |A_{<p}| + |A_{=p}|)
 	3. Else return p.
 ```
 
-Breaking $A$ into groups requires one sweep through $A$ so that takes us $O(n)$ time. 
+Breaking $A$ into groups requires one sweep through $A$ so that takes us $O(n)$ time.
 
-Sorting a single $G_i$ takes $s$ where $s$ is the constant runtime of your favourite sorting algorithm on 5 elements. 
+Sorting a single $G_i$ takes $s$ where $s$ is the constant runtime of your favourite sorting algorithm on 5 elements.
 
-We run this sort on $n/5$ elements giving step 2 takes $O(n)$ time. 
+We run this sort on $n/5$ elements giving step 2 takes $O(n)$ time.
 
 We then run our algorithm on a subproblem of size $\frac{n}{5}$ having run time $T\left ( \frac{n}{5}\right )$.
 
 > [!note] Pivot runtime
-> So finding this pivot takes $T\left ( \frac{n}{5}\right ) + O(n)$ time. 
+> So finding this pivot takes $T\left ( \frac{n}{5}\right ) + O(n)$ time.
 
 Partitioning the set takes $O(n)$ time.
 
 The last step of the algorithm takes at most $T\left (\frac{3n}{4}\right ) + O(1)$ from the assumption about the good pivot.
 
-Combining this all together we have 
+Combining this all together we have
 $$T(n) = T\left (\frac{3n}{4}\right ) + T\left ( \frac{n}{5}\right ) + O(n) + O(n) + O(1) = T\left (\frac{3n}{4}\right ) + T\left ( \frac{n}{5}\right ) + O(n).$$
 As $\frac{3}{4} + \frac{1}{5} < 1$ we have that $T(n) = O(n)$.
 

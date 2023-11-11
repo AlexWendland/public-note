@@ -2,13 +2,13 @@
 aliases:
   - increasing
   - increasing sequence
-type: str
-publish: true
+chatgpt: false
 created: 2023-08-26
 last_edited: 2023-08-26
+publish: true
 tags:
   - maths
-chatgpt: false
+type: str
 ---
 >[!tldr] Increasing sequence
 >A [[Sequence|sequence]] is increasing if each subsequent term is greater than the previous.

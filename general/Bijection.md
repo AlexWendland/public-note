@@ -1,12 +1,12 @@
 ---
 aliases:
   - bijection
-type: definition
-publish: false
+chatgpt: false
 created: 2023-10-10
 last_edited: 2023-10-10
+publish: false
 tags:
   - maths
-chatgpt: false
+type: definition
 ---
 # Bijection

@@ -1,11 +1,14 @@
 ---
-aliases: [Bytes, bytes, byte]
-type: data-type
-publish: true
+aliases:
+  - Bytes
+  - bytes
+  - byte
+chatgpt: false
 created: 2023-04-20
 last_edited: 2023-04-20
+publish: true
 tags: programming
-chatgpt: false
+type: data-type
 ---
 # Byte
 

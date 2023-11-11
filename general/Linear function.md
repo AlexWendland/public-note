@@ -1,12 +1,12 @@
 ---
 aliases:
   - linear
-type: definition
-publish: false
+chatgpt: false
 created: 2023-11-07
 last_edited: 2023-11-07
+publish: false
 tags:
   - maths
-chatgpt: false
+type: definition
 ---
 # Linear function

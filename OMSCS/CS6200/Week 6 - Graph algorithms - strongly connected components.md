@@ -1,14 +1,14 @@
 ---
-aliases: 
-type: lecture
-publish: true
+aliases: null
+chatgpt: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-09-26
 last_edited: 2023-09-26
+publish: true
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
-week: "6"
-chatgpt: false
+type: lecture
+week: '6'
 ---
 # Week 6 - Graph algorithms - strongly connected components
 
@@ -20,7 +20,7 @@ Recall the definition of [[Depth-first search (DFS)]] in the note. We used it th
 
 ## [[Find path in undirected graph|Find paths in undirected graph]] via [[Depth-first search (DFS)|DFS]]
 
-First for [[Graph|undirected graphs]] we just keep track of the previous vertex and find a [[Spanning subgraph|spanning]] [[Subgraph|sub]]-[[Forest (graph)|forest]] for the [[Graph|graph]]. We can use this to find [[Path (graph)|paths]] between vertices by going back to the root vertices of the [[Tree (graph)|trees]]. 
+First for [[Graph|undirected graphs]] we just keep track of the previous vertex and find a [[Spanning subgraph|spanning]] [[Subgraph|sub]]-[[Forest (graph)|forest]] for the [[Graph|graph]]. We can use this to find [[Path (graph)|paths]] between vertices by going back to the root vertices of the [[Tree (graph)|trees]].
 
 ```pseudocode
 DFS(G)
@@ -48,7 +48,7 @@ Explore(z)
 
 ## [[Find path in undirected graph|Find paths in undirected graph]] via [[Depth-first search (DFS)|DFS]]
 
-To do this we are going to use a [[Depth-first search (DFS)|DFS]] algorithm like above but we are going to track pre/postorder numbers. 
+To do this we are going to use a [[Depth-first search (DFS)|DFS]] algorithm like above but we are going to track pre/postorder numbers.
 
 ```pseudocode
 DFS(G)
@@ -75,7 +75,7 @@ Explore(z)
 
 ### Example
 
-Suppose we have the following graph and let $B$ be the root node. Suppose we explore edges alphabetically and lets run the algorithm above on it. 
+Suppose we have the following graph and let $B$ be the root node. Suppose we explore edges alphabetically and lets run the algorithm above on it.
 
 ![[dfs_example.png]]
 
@@ -147,7 +147,7 @@ Then we can define the [[Strongly connected component graph (directed graph)|str
 
 ![[Strongly connected component graph (directed graph)|strongly connected component graph]]
 
-Which we can show is a [[DAG]]. 
+Which we can show is a [[DAG]].
 
 ![[The strongly connected component graph is a DAG]]
 
@@ -159,7 +159,7 @@ The idea of the algorithm is the following:
 - Remove it,
 - Repeat!
 
-We use sinks as if we start a [[Depth-first search (DFS)|DFS]] algorithm in a sink [[Strongly connected components (directed graphs)|strongly connected component]] we only discover vertices in that [[Strongly connected components (directed graphs)|strongly connected component]]. 
+We use sinks as if we start a [[Depth-first search (DFS)|DFS]] algorithm in a sink [[Strongly connected components (directed graphs)|strongly connected component]] we only discover vertices in that [[Strongly connected components (directed graphs)|strongly connected component]].
 
 This is not true for source [[Strongly connected components (directed graphs)|strongly connected components]], here we discover everything.
 
@@ -200,12 +200,12 @@ SCC(G):
 		1. Construct G^R
 		2. Run DFS on G^R
 		3. Order V by decreasing post order number.
-		4. Run directed DFS on G using the vertex ordering from before and 
+		4. Run directed DFS on G using the vertex ordering from before and
 		   label the connected components we reach.
 ```
 
 >[!note] Additional property
->In addition to labelling the connected components the order we have labelled them is in reverse topological ordering. This is because we always start at the next sink vertex after we have labelled a component. 
+>In addition to labelling the connected components the order we have labelled them is in reverse topological ordering. This is because we always start at the next sink vertex after we have labelled a component.
 
 This takes $O(\vert V \vert + \vert E \vert)$ as we do two runs of a [[Depth-first search (DFS)|DFS]] algorithm.
 
@@ -219,7 +219,7 @@ First we look at $G^R$ and run the [[DFS to find path in an undirected graph]] a
 
 ![[reverse_strongly_connected_compoent_graph.png]]
 
-This gives us $post : V \rightarrow \mathbb{N}$ - in this example we started at $C$ and did a fairly random vertex ordering. 
+This gives us $post : V \rightarrow \mathbb{N}$ - in this example we started at $C$ and did a fairly random vertex ordering.
 
 ![[scc_tree_example.png]]
 

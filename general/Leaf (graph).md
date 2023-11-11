@@ -1,11 +1,14 @@
 ---
-aliases: [leaf, leaf vertices, leaf vertex]
-type: definition
-publish: true
+aliases:
+  - leaf
+  - leaf vertices
+  - leaf vertex
+chatgpt: false
 created: 2023-08-28
 last_edited: 2023-08-28
+publish: true
 tags: maths, graph-theory
-chatgpt: false
+type: definition
 ---
 # Leaf (graph)
 

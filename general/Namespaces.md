@@ -1,11 +1,13 @@
 ---
-aliases: [namespaces, namespace]
-type: definition
-publish: true
+aliases:
+  - namespaces
+  - namespace
+chatgpt: true
 created: 2023-07-17
 last_edited: 2023-07-17
+publish: true
 tags: programming
-chatgpt: true
+type: definition
 ---
 # Namespaces
 

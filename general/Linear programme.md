@@ -3,13 +3,13 @@ aliases:
   - linear programme
   - linear programming
   - linear programmes
-type: definition
-publish: true
+chatgpt: false
 created: 2023-11-07
 last_edited: 2023-11-07
+publish: true
 tags:
   - programming
-chatgpt: false
+type: definition
 ---
 >[!tldr] Linear programme
 >A linear programme has $n$ variables $x_j$ for $1 \leq j \leq n$ where we are trying to either

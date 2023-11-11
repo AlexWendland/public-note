@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-10-10
 last_edited: 2023-10-10
+publish: true
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
 # Statement
 
@@ -29,12 +29,12 @@ $$\phi(n) = \prod_{i=1}^k (p_i - 1)p_i^{e_i-1} = n \cdot \prod_{i=1}^k \left ( 1
 
 ## Proof of Claim 1
 
-As $m$ and $n$ are coprime the [[Chinese remainder theorem]] gives has a bijection 
+As $m$ and $n$ are coprime the [[Chinese remainder theorem]] gives has a bijection
 $$b: \{i \vert 0 \leq i < m\} \times \{i \vert 0 \leq i < n\} \rightarrow \{i \vert 0 \leq i < mn\}$$
 where $b(x,y) = x$ (mod $m$) and $b(x,y) = y$ (mod $n$).
 
 Note if $gcd(b(x,y),mn) = 1$ if and only if $gcd(x,m) = 1$ and $gcd(y,n) = 1$ as $m$ and $n$ are [[Coprime|coprime]]. Therefore
-$$b: \begin{array}\ \{ x \in \mathbb{N} \ \vert \ 0 < x \leq m, \ gcd(x,m) = 1 \} \times \\ 
+$$b: \begin{array}\ \{ x \in \mathbb{N} \ \vert \ 0 < x \leq m, \ gcd(x,m) = 1 \} \times \\
 \ \{y \in \mathbb{N} \ \vert \ 0 < x \leq n, \ gcd(x,n) = 1 \} \end{array} \mapsto \left \{b(x,y) \in \mathbb{N} \ \Bigg \vert \begin{array} \ 0 < b(x,y) \leq mn, \\ \ gcd(b(x,y),mn) = 1 \end{array} \right \}$$
 and we have
 $$\phi(mn) = \phi(m) \phi(n).$$
@@ -49,7 +49,7 @@ $$\phi(mn) = \phi(m) \phi(n).$$
 
 As $p$ is [[Prime|prime]] we know the positive divisors of $p^k$ are powers of $p^i$ for $0 \leq i \leq k$.
 
-Therefore of $gcd(p^k, x) > 1$ we know $x$ will have to be a multiple of $p$.   
+Therefore of $gcd(p^k, x) > 1$ we know $x$ will have to be a multiple of $p$.
 
 So $x = mp$ with $m \in \mathbb{Z}_{\not = 0}$ and for $0 < x < p^k$ we have $0 < m \leq p^{k-1}$.
 

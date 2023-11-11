@@ -1,11 +1,11 @@
 ---
 aliases: []
-type: opinion
-publish: true
+chatgpt: true
 created: 2023-08-20
 last_edited: 2023-08-20
+publish: true
 tags: programming
-chatgpt: true
+type: opinion
 ---
 # Balance between library providers and users
 

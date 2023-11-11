@@ -1,10 +1,12 @@
 ---
-aliases: [stack, stack overflow]
-type: str
-publish: false
+aliases:
+  - stack
+  - stack overflow
+chatgpt: false
 created: 2023-08-26
 last_edited: 2023-08-26
+publish: false
 tags: programming, list[str]
-chatgpt: false
+type: str
 ---
 # Stack

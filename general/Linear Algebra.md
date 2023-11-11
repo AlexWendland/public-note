@@ -1,12 +1,12 @@
 ---
 aliases:
   - linear algebra
-type: str
-publish: false
+chatgpt: false
 created: 2023-09-19
 last_edited: 2023-09-19
+publish: false
 tags:
   - maths
-chatgpt: false
+type: str
 ---
 # Linear Algebra

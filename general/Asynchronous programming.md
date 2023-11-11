@@ -1,10 +1,11 @@
 ---
-aliases: [asynchronous programming]
-type: str
-publish: false
+aliases:
+  - asynchronous programming
+chatgpt: false
 created: 2023-08-20
 last_edited: 2023-08-20
+publish: false
 tags: programming, list[str]
-chatgpt: false
+type: str
 ---
 # Asynchronous programming

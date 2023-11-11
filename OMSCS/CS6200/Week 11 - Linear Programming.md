@@ -1,14 +1,14 @@
 ---
-aliases: 
-type: lecture
-publish: false
+aliases: null
+chatgpt: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-11-07
 last_edited: 2023-11-07
+publish: false
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
-week: 
-chatgpt: false
+type: lecture
+week: null
 ---
 # Week 11 - Linear Programming
 
@@ -23,7 +23,7 @@ In broad terms a [[Linear programme|linear programme]] is an optimisation proble
 >$$0 \leq f_{e} \leq c(e) \mbox{ for } e \in E.$$
 >As well as abide by the preservation of flow
 >$$ \sum_{(u,v) \in E} f_{(u,v)} - \sum_{(v,w) \in E} f_{(v,w)} = 0 \mbox{ for } v \in V \backslash \{s,t\}.$$
->This defines our [[Linear programme|linear programme]] and the solution to this provides a solution to the [[Max flow problem|max flow]] problem. 
+>This defines our [[Linear programme|linear programme]] and the solution to this provides a solution to the [[Max flow problem|max flow]] problem.
 
 ## Linear programme general form
 
@@ -114,8 +114,8 @@ Moreover, we can change the objective function of the linear programme to simply
 >Define a [[Linear programme|linear programme]] where we need to
 >$$ \max x_1 + 6 x_2 + 10 x_3 $$
 >with constraints
->$$ 
->\begin{align*} 
+>$$
+>\begin{align*}
 >x_1 & \leq 300\\
 >x_2 & \leq 200\\
 >x_1 + 3 x_2 + 2 x_3 & \leq 1000\\
@@ -128,7 +128,7 @@ Moreover, we can change the objective function of the linear programme to simply
 Lets try to upper bound the objective function $x_1 + 6 x_2 + 10 x_3$, we will do this with linear combinations of the inequalities. Lets consider the following
 
 $$
-\begin{align*} 
+\begin{align*}
 (x_2) * 1/3 + (x_1 + 3x_2 + 2 x_3) + (x_2 + 3x_3) * 8/3 & \leq 200 * 1/3 + 1000 + 500 * 8/3\\
 x_1 + x_2(1/3 + 1 + 8/3) + x_3 (2 + 3 * 8/3) & \leq 2400\\
 x_1 + 6 x_2 + 10 x_3 \leq 2400
@@ -172,13 +172,13 @@ This means the example above gives us a good way to check for optimal points.
 
 ## Check for unbounded linear programme
 
-Another corollary of the [[Weak duality theorem (linear programme)|Weak duality theorem]] helps us identify when we have [[Unbounded linear programme|unbounded linear programmes]]. 
+Another corollary of the [[Weak duality theorem (linear programme)|Weak duality theorem]] helps us identify when we have [[Unbounded linear programme|unbounded linear programmes]].
 
 ![[Unbounded linear programmes have infeasible duals]]
 
-Note that as [[The dual dual linear programme is the original linear programme|the dual dual linear programme is the original linear programme]] this also gives us that if the [[Dual linear programme|dual linear programme]] is unbounded then the original [[Linear programme|linear programme]] is [[Infeasible linear programme|infeasible]]. 
+Note that as [[The dual dual linear programme is the original linear programme|the dual dual linear programme is the original linear programme]] this also gives us that if the [[Dual linear programme|dual linear programme]] is unbounded then the original [[Linear programme|linear programme]] is [[Infeasible linear programme|infeasible]].
 
-This gives us a nice check for if a [[Linear programme|linear programme]] is [[Unbounded linear programme|unbounded]]. As we know [[Checking if a linear programme is feasible]] can be done, we just need to check if the [[Dual linear programme|dual linear programme]] is feasible - if it is then the original [[Linear programme|linear programme]] is bounded. If the [[Dual linear programme|dual linear programme]] is not [[Infeasible linear programme|feasible]] then we still need to check if the original [[Linear programme|linear programme]] is [[feasible]] or not (note a [[Linear programme|linear programme]]  can't be both [[Infeasible linear programme|infeasible]] and [[Unbounded linear programme|unbounded]]). 
+This gives us a nice check for if a [[Linear programme|linear programme]] is [[Unbounded linear programme|unbounded]]. As we know [[Checking if a linear programme is feasible]] can be done, we just need to check if the [[Dual linear programme|dual linear programme]] is feasible - if it is then the original [[Linear programme|linear programme]] is bounded. If the [[Dual linear programme|dual linear programme]] is not [[Infeasible linear programme|feasible]] then we still need to check if the original [[Linear programme|linear programme]] is [[feasible]] or not (note a [[Linear programme|linear programme]]  can't be both [[Infeasible linear programme|infeasible]] and [[Unbounded linear programme|unbounded]]).
 
 Therefore we have a nice algorithm to check if we have a solvable [[Linear programme|linear programme]].
 

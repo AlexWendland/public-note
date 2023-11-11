@@ -1,12 +1,12 @@
 ---
-type: personal
-publish: true
 created: 2023-02-24
 last_edited: 2023-02-24
+publish: true
+type: personal
 ---
 # Alex Wendland
 
-Hi! 
+Hi!
 
 I am a data specialist, python programmer, product developer, avid podcast listener, amature devops engineer, forgetful academic, [[Obsidian]] cult member, and quite bad prioritiser.
 

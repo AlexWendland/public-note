@@ -3,13 +3,13 @@ aliases:
   - disjoint set
   - union-find
   - Union-find
-type: data structure
-publish: false
+chatgpt: false
 created: 2023-10-01
 last_edited: 2023-10-01
+publish: false
 tags:
   - programming
-chatgpt: false
+type: data structure
 ---
 # Disjoint set
 

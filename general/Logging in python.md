@@ -1,11 +1,11 @@
 ---
 aliases: []
-type: module
-publish: true
+chatgpt: false
 created: 2023-03-31
 last_edited: 2023-03-31
+publish: true
 tags: programming, python, best-practices
-chatgpt: false
+type: module
 ---
 # logging python
 
@@ -19,7 +19,7 @@ Some cool features it has is:
 
 This library was converted from [[Java]] which is why it does not conform to the python naming conventions.
 
-I played around with some features in a [Github repo](https://github.com/AlexWendland/python-tutorials/tree/main/logging), if you find seeing easier than reading. 
+I played around with some features in a [Github repo](https://github.com/AlexWendland/python-tutorials/tree/main/logging), if you find seeing easier than reading.
 
 ## Logging level
 
@@ -32,9 +32,9 @@ There are 5 levels of severity in the logging module:
 | Error      | 40            | logging.ERROR    | logging.error(*message*)    | An error with the application that it can handle and keep running          |
 | Critical   | 50            | logging.CRITICAL | logging.critical(*message*) | An error with the application that it can not handle and should stop       |
 
-According to the [[pylint]] guidelines, the message should be formatted using the lazy % formatting. 
+According to the [[pylint]] guidelines, the message should be formatted using the lazy % formatting.
 
-You can set the level of the logger to filter messages of a lower level than set. 
+You can set the level of the logger to filter messages of a lower level than set.
 
 ```python
 logger.setLevel(logging.INFO)
@@ -52,10 +52,10 @@ filename = "somefile.log", # Set the filename of the logger like this.
 							#Defaults to stdout.
 filemode = "w", # Set the filemode of the logger like this.
 							#Defaults to append.
-format = "%(asctime)s - %(levelname)s - %(message)s", # Set the format of 
-							#the logger like this. 
+format = "%(asctime)s - %(levelname)s - %(message)s", # Set the format of
+							#the logger like this.
 							#Defaults to quite a nice format
-datefmt = "%d-%b-%y %H:%M:%S" # Set the date format of the logger like 
+datefmt = "%d-%b-%y %H:%M:%S" # Set the date format of the logger like
 							#this.
 )
 ```
@@ -64,7 +64,7 @@ Note this will effect a logger named `root` and will be the default logger that 
 
 ## Named loggers
 
-You can set up multiple loggers by getting one by a name, you can do this using `logging.getLogger(*name_of_logger*)` which returns you an object to write to. 
+You can set up multiple loggers by getting one by a name, you can do this using `logging.getLogger(*name_of_logger*)` which returns you an object to write to.
 
 It is good practice for applications to name the logger `__name__` like `logging.getLogger(__name__)`. Then when this logger is imported to other code the logger will be named with that library.
 
@@ -107,7 +107,7 @@ Each handler has different required variables.
 
 ```python
 stream_handler = logging.StreamHandler()
-file_handler = logging.FileHandler("file.log") 
+file_handler = logging.FileHandler("file.log")
 ```
 
 ### Formatter
@@ -120,7 +120,7 @@ This tells the logging object the format of how the messages should be sent. You
 | ip            | The id of the process                            |
 | asctime       | The time of the message                          |
 | name          | The name of the logger that was sent the message |
-| levelname     | The level of the message                         | 
+| levelname     | The level of the message                         |
 
 For example a valid format type would be `"%(asctime)s - %(name)s - %(levelname)s - %(message)s"` though ... not that pretty. You can change the date format by setting the `datefmt` variable.
 
@@ -132,7 +132,7 @@ time_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(m
 
 ### Attaching everything
 
-Each handler can have a formatter attached, however loggers can have multiple handlers attached. 
+Each handler can have a formatter attached, however loggers can have multiple handlers attached.
 
 ```python
 handler1.setFormatter(formatter)
@@ -146,7 +146,7 @@ logger.critical("Hey") # This will be handled by both handler1 and 2.
 
 ## Advanced Configuration
 
-Instead of defining the configuration in the code you can hand it in a file. The configuration can be passed by a dictionary - therefore you can define it in a yaml or json file - or a conf file. 
+Instead of defining the configuration in the code you can hand it in a file. The configuration can be passed by a dictionary - therefore you can define it in a yaml or json file - or a conf file.
 
 ### Conf file
 

@@ -3,13 +3,13 @@ aliases:
   - error code
   - Error codes
   - error codes
-type: definition
-publish: true
+chatgpt: true
 created: 2023-08-20
 last_edited: 2023-08-20
+publish: true
 tags:
   - programming
-chatgpt: true
+type: definition
 ---
 # Error code
 

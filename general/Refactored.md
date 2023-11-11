@@ -1,12 +1,15 @@
 ---
-aliases: [refactored, refactor, Refactor]
-type: meta
-publish: True
+aliases:
+  - refactored
+  - refactor
+  - Refactor
+chatgpt: false
 created: 2023-08-05
 last_edited: 2023-08-05
+publish: true
 tags: programming, list[str]
-chatgpt: false
+type: meta
 ---
 # Refactored
 
-The process of refactoring is to review your code and make it more readable by breaking it down into smaller components.  
+The process of refactoring is to review your code and make it more readable by breaking it down into smaller components.

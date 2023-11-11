@@ -2,12 +2,12 @@
 aliases:
   - Simplex method
   - simplex method
-type: algorithm
-publish: true
+chatgpt: false
 created: 2023-11-07
 last_edited: 2023-11-07
+publish: true
 tags:
   - programming
-chatgpt: false
+type: algorithm
 ---
 # Simplex method (linear programme)

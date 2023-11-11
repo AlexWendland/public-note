@@ -1,9 +1,9 @@
 ---
 aliases: []
-type: planning
-publish: false
 created: 2023-08-05
 last_edited: 2023-08-05
+publish: false
+type: planning
 ---
 # Your pages in reverse order
 
