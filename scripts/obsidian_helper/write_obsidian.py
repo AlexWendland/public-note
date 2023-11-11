@@ -18,7 +18,7 @@ def write_obsidian_file(obsidian_file:ObsidianFile):
     """
     Writes an ObsidianFile object to a markdown file.
     """
-    with open(obsidian_file.file_name, "w") as file:
+    with open(obsidian_file.file_path, "w") as file:
         if obsidian_file.metadata:
             write_metadata(file, obsidian_file.metadata)
 
