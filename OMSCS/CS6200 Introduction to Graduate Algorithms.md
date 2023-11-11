@@ -1,12 +1,14 @@
 ---
-aliases: [CS6200, Introduction to Graduate Algorithms]
-type: course
-publish: true
+aliases:
+  - CS6200
+  - Introduction to Graduate Algorithms
+chatgpt: false
 created: 2023-08-26
 last_edited: 2023-08-26
+publish: true
 tags: OMSCS, maths, programming
 term: 2023-fall
-chatgpt: false
+type: course
 ---
 # CS6200 Introduction to Graduate Algorithms
 

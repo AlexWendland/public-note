@@ -1,13 +1,13 @@
 ---
 aliases:
   - flow network
-type: definition
-publish: true
+chatgpt: false
 created: 2023-10-02
 last_edited: 2023-10-02
+publish: true
 tags:
   - programming
-chatgpt: false
+type: definition
 ---
 >[!tldr] Flow network
 >A flow network contains the following data:

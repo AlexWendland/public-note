@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-09-22
 last_edited: 2023-09-22
+publish: true
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
 # Product of roots of unity
 

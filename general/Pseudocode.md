@@ -1,12 +1,12 @@
 ---
 aliases:
   - pseudocode
-type: definition
-publish: false
+chatgpt: false
 created: 2023-09-07
 last_edited: 2023-09-07
+publish: false
 tags:
   - programming
-chatgpt: false
+type: definition
 ---
 # Pseudocode

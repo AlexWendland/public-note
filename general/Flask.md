@@ -1,9 +1,10 @@
 ---
-aliases: [flask]
-type: library
-publish: false
+aliases:
+  - flask
 created: 2023-03-10
 last_edited: 2023-03-10
+publish: false
 tags: programming, python, incomplete
+type: library
 ---
 # Flask

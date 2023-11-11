@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: algorithm
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-10-09
 last_edited: 2023-10-09
+publish: true
 tags:
   - programming
-chatgpt: false
+type: algorithm
 ---
 # Modular exponent algorithm
 

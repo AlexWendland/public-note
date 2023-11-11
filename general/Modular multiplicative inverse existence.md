@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-10-09
 last_edited: 2023-10-09
+publish: true
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
 # Statement
 
@@ -22,7 +22,7 @@ $$x \cdot \overline{N} = \overline{x} \cdot y \cdot \overline{N} = 0 \ (mod \ N)
 As $x$ has an inverse $x^{-1}$ consider
 $$
 \overline{N} = \overline{N} \cdot 1 = \overline{N} \cdot x \cdot x^{-1} = 0 \cdot x^{-1} = 0 \ (mod \ N).$$
-Therefore $\overline{N} = N$ and $gcd(x, N) = 1$. 
+Therefore $\overline{N} = N$ and $gcd(x, N) = 1$.
 
 ## $\Leftarrow$
 

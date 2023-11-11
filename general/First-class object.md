@@ -1,9 +1,9 @@
 ---
-type: definition
-publish: true
 created: 2023-02-25
 last_edited: 2023-02-25
+publish: true
 tags: programming
+type: definition
 ---
 # First-class object
 This is an entity that can be:

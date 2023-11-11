@@ -1,11 +1,11 @@
 ---
-aliases: 
-type: algorithm
-publish: false
+aliases: null
+chatgpt: false
 created: 2023-09-05
 last_edited: 2023-09-05
+publish: false
 tags:
   - programming
-chatgpt: false
+type: algorithm
 ---
 # Floyd-Warshall algorithm

@@ -1,19 +1,19 @@
 ---
 aliases:
   - Max clique problem
-type: problem
-publish: true
+chatgpt: false
 created: 2023-11-03
 last_edited: 2023-11-03
+publish: true
 tags:
   - programming
   - graph-theory
-chatgpt: false
+type: problem
 ---
 # Statement
 
 >[!tldr] Max clique size problem
->Given an [[Graph|undirected graph]] $G = (V,E)$ what is the largest $S \subset V$ such that the induced graph on $S$ forms a [[Clique (graph)|clique]]. 
+>Given an [[Graph|undirected graph]] $G = (V,E)$ what is the largest $S \subset V$ such that the induced graph on $S$ forms a [[Clique (graph)|clique]].
 
 # Theory
 

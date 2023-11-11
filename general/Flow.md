@@ -1,13 +1,13 @@
 ---
 aliases:
   - flow
-type: definition
-publish: true
+chatgpt: false
 created: 2023-10-02
 last_edited: 2023-10-02
+publish: true
 tags:
   - programming
-chatgpt: false
+type: definition
 ---
 >[!tldr] Flow
 >Given a [[Flow network|flow network]] $(G, c, s, t)$ a flow is an allocation $f: E \rightarrow \mathbb{R}_{\geq0}$ such that the following holds:

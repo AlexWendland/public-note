@@ -1,9 +1,9 @@
 ---
-type: tool
-publish: true
 created: 2023-02-24
 last_edited: 2023-02-24
+publish: true
 tags: programming, language
+type: tool
 ---
 # Markdown
 
@@ -35,7 +35,7 @@ I am sure there is more, but this is what I have found useful so far!
 | Footnotes             | \[\^text\] at the point you want the foot note and \[\^text\]\: where you want the text | text\[\^1\] ... \[\^1\]: This is a foot note         |
 | Tasks                 | Use unordered lists but put \[ \] after it or \[x\] to mark it done                | \- \[ \] or \- \[x\]                                                     |
 
-[^1]: The numbers don't have to be in order! 
+[^1]: The numbers don't have to be in order!
 
 [^2]: A larger example is here:
 	\| title1 \| title2 \|

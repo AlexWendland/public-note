@@ -1,10 +1,12 @@
 ---
-aliases: [Fibonacci number, Fibonacci numbers]
-type: str
-publish: false
+aliases:
+  - Fibonacci number
+  - Fibonacci numbers
+chatgpt: false
 created: 2023-08-26
 last_edited: 2023-08-26
+publish: false
 tags: maths, list[str]
-chatgpt: false
+type: str
 ---
 # Fibonacci sequence

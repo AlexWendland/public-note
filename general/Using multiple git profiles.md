@@ -1,10 +1,10 @@
 ---
 aliases: []
-type: guide
-publish: true
 created: 2023-03-19
 last_edited: 2023-03-19
+publish: true
 tags: programming, git, issue
+type: guide
 ---
 # Using multiple git profiles
 
@@ -12,7 +12,7 @@ tags: programming, git, issue
 I am using a laptop where I have my personal repositories and some work ones. I would like to commit to these using different profiles and secure them using different [[Secure Shell (SSH) key|SSH keys]].
 
 ## Assumptions
-I will assume you are: 
+I will assume you are:
 - using a [[Linux|linux]] system.
 - Have generated different [[Secure Shell (SSH) key|SSH keys]] for each profile:
 `~/.ssh/personal-key`
@@ -56,6 +56,6 @@ git clone <account>-github:/remote/path/of/repo.git
 \3. Set the user details for the repository:
 
 ```sh
-git config user.name "Your Name" 
+git config user.name "Your Name"
 git config user.email "your@email.here"
 ```

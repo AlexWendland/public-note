@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: data structure
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-10-08
 last_edited: 2023-10-08
+publish: true
 tags:
   - programming
-chatgpt: false
+type: data structure
 ---
 # Graph representations
 
@@ -18,4 +18,4 @@ Bellow are some common ways to do this:
 | ----------------------------------------------------- | ---------------------------------- | ------------------------ | ----------------------- |
 | [[Adjacency list format (graph)\|Adjacency list]]     | $O(\vert V \vert + \vert E \vert)$ | $O(N_v)$                 | $O(N_v)$                |
 | [[Adjacency matrix format (graph)\|Adjacency matrix]] | $O(\vert V \vert^2)$               | $O(1)$                   | $O(\vert V \vert)$      |
-| [[Edge list format (graph)\|Edge list]]               | $O(\vert E \vert)$                 | $O(\vert E \vert)$       | $O(\vert E \vert)$      | 
+| [[Edge list format (graph)\|Edge list]]               | $O(\vert E \vert)$                 | $O(\vert E \vert)$       | $O(\vert E \vert)$      |

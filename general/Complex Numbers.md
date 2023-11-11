@@ -1,12 +1,12 @@
 ---
 aliases:
   - complex numbers
-type: definition
-publish: false
+chatgpt: false
 created: 2023-09-05
 last_edited: 2023-09-05
+publish: false
 tags:
   - maths
-chatgpt: false
+type: definition
 ---
 # Complex Numbers

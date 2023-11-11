@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-09-28
 last_edited: 2023-09-28
+publish: true
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
 > [!important] Lemma
 > Let $G = (V,E)$ be a [[Directed graph|directed graph]] and $G^R = (V,E^R)$ be its [[Reverse directed graph|reverse]]. Both $G$ and $G^R$ have the same strongly connected components.

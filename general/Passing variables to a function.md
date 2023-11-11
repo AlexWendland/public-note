@@ -1,11 +1,17 @@
 ---
-aliases: [pass by reference, pass by value, passing variables, passing variables to a function, passed by reference, passed by value]
-type: definition
-publish: true
+aliases:
+  - pass by reference
+  - pass by value
+  - passing variables
+  - passing variables to a function
+  - passed by reference
+  - passed by value
+chatgpt: false
 created: 2023-07-17
 last_edited: 2023-07-17
+publish: true
 tags: programming, fundamentals
-chatgpt: false
+type: definition
 ---
 # Passing variables to a function
 
@@ -38,6 +44,6 @@ Passing by value means that you make a copy of that argument when it is passed t
 
 ## Passed by reference
 
-Passing by reference means the parameter points to the same object as the argument. This is very efficient for larger data structures both in terms of [[Random Access Memory (RAM)|computer memory]] and program speed however it complicates your code by increasing the changes of [[Side effect|side effects]]. 
+Passing by reference means the parameter points to the same object as the argument. This is very efficient for larger data structures both in terms of [[Random Access Memory (RAM)|computer memory]] and program speed however it complicates your code by increasing the changes of [[Side effect|side effects]].
 
 In [[Python Index]] functionally all arguments are passed by reference - however their [[Mutability in Python|mutability]] allows for something similar to passing by value.

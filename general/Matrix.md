@@ -3,12 +3,12 @@ aliases:
   - matrix
   - matrice
   - matrices
-type: definition
-publish: false
+chatgpt: false
 created: 2023-08-31
 last_edited: 2023-08-31
+publish: false
 tags:
   - maths
-chatgpt: false
+type: definition
 ---
 # Matrix

@@ -1,10 +1,13 @@
 ---
-aliases: [parallelisation, parallel programming, parallelise]
-type: str
-publish: false
+aliases:
+  - parallelisation
+  - parallel programming
+  - parallelise
+chatgpt: false
 created: 2023-08-26
 last_edited: 2023-08-26
+publish: false
 tags: programming, list[str]
-chatgpt: false
+type: str
 ---
 # Parallelisation

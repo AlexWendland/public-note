@@ -1,10 +1,11 @@
 ---
-aliases: [pythonic]
-type: notation
-publish: true
+aliases:
+  - pythonic
 created: 2023-03-03
 last_edited: 2023-03-03
+publish: true
 tags: programming, python
+type: notation
 ---
 # Pythonic
 

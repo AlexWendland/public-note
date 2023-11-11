@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: algorithm
-publish: true
+aliases: null
+chatgpt: false
 created: 2023-11-10
 last_edited: 2023-11-10
+publish: true
 tags:
   - programming
-chatgpt: false
+type: algorithm
 ---
 # Check if a linear programme is solvable
 
