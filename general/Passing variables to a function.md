@@ -10,7 +10,9 @@ checked: false
 created: 2023-07-17
 last_edited: 2023-11-11
 publish: true
-tags: programming, fundamentals
+tags:
+  - programming
+  - fundamentals
 type: definition
 ---
 # Passing variables to a function

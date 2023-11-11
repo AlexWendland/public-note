@@ -4,7 +4,9 @@ checked: false
 created: 2023-07-11
 last_edited: 2023-11-11
 publish: true
-tags: programming, clean-code
+tags:
+  - programming
+  - clean-code
 type: convention
 ---
 # Data - Object Anti-Symmetry

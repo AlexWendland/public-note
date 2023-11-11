@@ -4,7 +4,9 @@ checked: false
 created: 2023-04-24
 last_edited: 2023-11-11
 publish: true
-tags: programming, git
+tags:
+  - programming
+  - git
 type: tool
 ---
 # Pre-commit hooks
