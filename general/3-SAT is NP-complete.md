@@ -15,31 +15,31 @@ type: lemma
 
 # Proof
 
-We already know [[k-satisfiability problem (k-SAT problem)|3-SAT]] is in [[Nondeterministic Polynomial time (NP)|NP]] as [[k-SAT is in NP]].
+We already know [[k-satisfiability problem (k-SAT problem)|3-SAT]] is in [[Nondeterministic Polynomial time (NP)|NP]], as shown in [[k-SAT is in NP]].
 
-So we need to show [[k-satisfiability problem (k-SAT problem)|3-SAT]] is [[NP-hard]]. We will do this by finding a [[Many-one reduction (problem)|many-one reduction]] to the [[Satisfiability problem (SAT problem)|SAT problem]] which is [[NP-Complete|NP-complete]] ([[SAT is NP-complete]]). This will practically involve showing the following:
-- We can reformulate a instance of the [[Satisfiability problem (SAT problem)|SAT problem]] into one of the [[k-satisfiability problem (k-SAT problem)|3-SAT]] problem in polynomial time.
-- We can use the solution from the [[k-satisfiability problem (k-SAT problem)|3-SAT]] to solve the [[Satisfiability problem (SAT problem)|SAT problem]].
-- We show that a solution to the [[k-satisfiability problem (k-SAT problem)|3-SAT]] problem exists if and only if a problem to the [[Satisfiability problem (SAT problem)|SAT problem]] exists.
+So, we need to demonstrate that [[k-satisfiability problem (k-SAT problem)|3-SAT]] is [[NP-hard]]. This will be done by establishing a [[Many-one reduction (problem)|many-one reduction]] to the [[Satisfiability problem (SAT problem)|SAT problem]], which is [[NP-Complete|NP-complete]] (see [[SAT is NP-complete]]). Specifically, we will show the following:
 
-Let $f$ be a [[Conjunctive normal form (CNF)|CNF]] using $n$ variables with $m$ clauses, we want to make $f'$ a [[Conjunctive normal form (CNF)|CNF]] that is in [[k-satisfiability problem (k-SAT problem)|3-SAT]].
+A [[Satisfiability problem (SAT problem)|SAT problem]] instance can be transformed into a [[k-satisfiability problem (k-SAT problem)|3-SAT]] problem instance in polynomial time.
+The solution to the [[k-satisfiability problem (k-SAT problem)|3-SAT]] problem can be used to solve the [[Satisfiability problem (SAT problem)|SAT problem]].
+A solution for the [[k-satisfiability problem (k-SAT problem)|3-SAT]] problem exists if and only if a solution for the [[Satisfiability problem (SAT problem)|SAT problem]] exists.
+Let $f$ be a [[Conjunctive normal form (CNF)|CNF]] formula using $n$ variables with $m$ clauses. Our goal is to construct $f'$, a [[Conjunctive normal form (CNF)|CNF]] formula that falls under [[k-satisfiability problem (k-SAT problem)|3-SAT]].
 
-For each clause $C$ in $f$ we do the following:
-- if the clause has 3 or less literals we don't change the formula and let $C' = C$,
-- otherwise we apply [[3-SAT is NP-complete#Clause reduction|clause reduction]] to it to get $C'$.
-Then we add $C'$ to $f'$.
+For each clause $C$ in $f$, we proceed as follows:
 
-As each clause in $f'$ has at most 3 literals $f'$ is in [[k-satisfiability problem (k-SAT problem)|3-SAT]].
+If the clause contains 3 or fewer literals, we keep the formula unchanged, letting $C' = C$.
+Otherwise, we apply [[3-SAT is NP-complete#Clause reduction|clause reduction]] to obtain $C'$.
+Then, we add $C'$ to $f'$.
+Since every clause in $f'$ has at most 3 literals, $f'$ belongs to [[k-satisfiability problem (k-SAT problem)|3-SAT]].
 
-[[3-SAT is NP-complete#Clause reduction|Clause reduction]] takes $O(n)$ as each clause can have length at most $n$ (if it has more it either has repeating terms which can be truncated or contradicting terms which means we can return early saying false). We apply [[3-SAT is NP-complete#Clause reduction|clause reduction]] at most $m$ times so this reduction takes $O(nm)$ polynomial time.
+The [[3-SAT is NP-complete#Clause reduction|clause reduction]] process takes $O(n)$ time, as each clause can be at most $n$ literals long. Applying [[3-SAT is NP-complete#Clause reduction|clause reduction]] up to $m$ times, the reduction is done in $O(nm)$, a polynomial time.
 
-We then solve $f'$ using [[k-satisfiability problem (k-SAT problem)|3-SAT]], if there is no solution we return that otherwise we return whatever assignment there was to the original $n$ variables. This takes $O(1)$ time.
+We then solve $f'$ using [[k-satisfiability problem (k-SAT problem)|3-SAT]]. If no solution is found, we conclude the same for the original; otherwise, we use the solution for the original $n$ variables. This step takes $O(1)$ time.
 
-From [[3-SAT is NP-complete#Claim 1|Claim 1]] we know for each clause $C$ of $f$ is satisfiable if its [[3-SAT is NP-complete#Clause reduction|clause reduction]] $C'$ is satisfiable. Therefore as $f'$ is the set of [[3-SAT is NP-complete#Clause reduction|clause reduction]]'s of the clauses of $f$, we have that $f'$ is satisfiable if and only if $f$ is satisfiable.
+From [[3-SAT is NP-complete#Claim 1|Claim 1]], each clause $C$ of $f$ is satisfiable if and only if its [[3-SAT is NP-complete#Clause reduction|clause reduction]] $C'$ is satisfiable. Therefore, since $f'$ consists of [[3-SAT is NP-complete#Clause reduction|clause reductions]] of $f$'s clauses, $f'$ is satisfiable if and only if $f$ is.
 
-Therefore $f'$ has a solution if and only if $f$ does and we have a valid reduction of the [[Satisfiability problem (SAT problem)|SAT problem]] to [[k-satisfiability problem (k-SAT problem)|3-SAT]].
+Hence, $f'$ has a solution if and only if $f$ does, establishing a valid reduction of the [[Satisfiability problem (SAT problem)|SAT problem]] to [[k-satisfiability problem (k-SAT problem)|3-SAT]].
 
-All in all this shows that [[k-satisfiability problem (k-SAT problem)|3-SAT]] is [[NP-Complete]] as originally stated.
+This proves that [[k-satisfiability problem (k-SAT problem)|3-SAT]] is [[NP-Complete|NP-complete]], as initially stated.
 
 ## Clause reduction
 
