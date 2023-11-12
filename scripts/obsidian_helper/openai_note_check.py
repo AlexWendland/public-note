@@ -8,7 +8,6 @@ import openai
 from obsidian_helper import constants, models, read_obsidian, write_obsidian
 
 logger = logging.getLogger(__name__)
-client = openai.OpenAI(timeout = 60)
 
 SYSTEM_PROMPT = (
     "You are a content creator's assistant. "
@@ -34,7 +33,7 @@ def query_article(article:str) -> Optional[str]:
     completion = None
     while tries < max_tries:
         try:
-            completion = client.chat.completions.create(
+            completion = openai.chat.completions.create(
                 model="gpt-4-1106-preview",
                 messages=[
                     {
