@@ -12,7 +12,7 @@ week: 12
 ---
 # Week 12 - Knapsack complexity
 
-We are going to prove that the [[Knapsack problem (without repetition)|Knapsack problem]] is [[NP-hard]]. We will do this using the [[k-satisfiability problem (k-SAT problem)|3-SAT]] but first going through the [[Subset-sum problem]].
+We are going to prove that the [[Knapsack-search (without replacement)|Knapsack-search]] is [[NP-hard]]. We will do this using the [[k-satisfiability problem (k-SAT problem)|3-SAT]] but first going through the [[Subset-sum problem]].
 
 ![[Subset-sum problem#Statement]]
 
