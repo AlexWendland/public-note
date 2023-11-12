@@ -47,3 +47,5 @@ This course is a graduate-level course in the design and analysis of algorithms.
 - [[Week 10 - Graph problem complexity]]
 - [[Week 11 - Linear Programming]]
 - [[Week 12 - Max-SAT approximation algorithm]]
+
+- [[Week 12 - Knapsack complexity]]
