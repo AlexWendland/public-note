@@ -70,6 +70,9 @@ If we calculate this expectation more exactly we can get $m(1-2^{-k})$ clauses a
 
 For the case of $k=3$ it has been shown that doing any better than a $7/8$-approximation algorithm is [[NP-hard]].
 
-## Integer programming
+## Integer linear programming
 
+![[Integer linear programming problem#Statement]]
+
+We can use [[Max-Satisfiability Problem|Max-SAT]] to show this version of [[Linear programme|linear programming]] is [[NP-hard]].
 
