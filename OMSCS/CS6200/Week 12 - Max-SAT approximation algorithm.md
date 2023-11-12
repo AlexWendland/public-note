@@ -105,4 +105,24 @@ Giving us a $\left ( 1 - \frac{1}{e} \right )$-approximation algorithm to the pr
 
 ## Proof of Lemma 1
 
+For this we are going to use the [[Arithmetic mean is greater than or equal to the geometric mean|AM-GM inequality]]. Break down the clause $c_j$ by its positive and negative literals
+$$
+c_j = \left ( \bigvee_{i \in c_j^+} x_i \right ) \lor \left ( \bigvee_{i \in c_j^-} \overline{x_i} \right).
+$$
+Then lets look at 
+$$
+\begin{align*}
+\mathbb{P}(w_j = 1) & = 1 - \mathbb{P}(w_j = 0)\\
+& = 1 - \left [ \prod_{i \in c_j^+} (1 - \hat{y_i^{\ast}}) \cdot \prod_{i \in c_j^-} \hat{y_i^{\ast}} \right ]\\
+& \geq 1 - \left [\frac{1}{k} \left( \sum_{i \in c_j^+} (1 - \hat{y_i^{\ast}}) + \sum_{i \in c_j^-} \hat{y_i^{\ast}}  \right ) \right ]^k & \mbox{by the AM-GM inequality} \\
+& \geq 1 - \left [ 1 - \frac{1}{k} \left ( \sum_{i \in c_j^+} \hat{y_i^{\ast}} + \sum_{i \in c_j^-} (1 - \hat{y_i^{\ast}}) \right ) \right ]\\
+& \geq 1 - \left [ 1 - \frac{\hat{z_j^{\ast}}}{k} \right ]^k & \mbox{as } \sum_{i \in c_j^+} \hat{y_i^{\ast}} + \sum_{i \in c_j^-} (1 - \hat{y_i^{\ast}}) \geq \hat{z_j^{\ast}}\\
+\end{align*}
+$$
+Here comes a little bit of horrible functional analysis. For a fixed $k \in \mathbb{N}$ we claim
+$$
+1 - \left [ 1 - \frac{a}{k} \right ]^k \geq \left ( 1 - \left [ 1 - \frac{1}{k} \right ]^k \right ) a
+$$
+for $0 \leq a \leq 1$. Note for $a = 0, 1$ they are equal.
 
+With respect to $a$ 
