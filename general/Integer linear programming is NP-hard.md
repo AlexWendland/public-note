@@ -41,7 +41,14 @@ This reduction takes time $O(mn)$, as we need to go through each clause to conve
 
 When provided with a solution to the [[Integer linear programming problem|ILP]] return the solution to the [[Max-Satisfiability Problem|Max-SAT]] problem with $x_i$ true for all $y_i = 1$ and $x_i$ false for all $y_i = 0$. This takes $O(n)$ time so takes [[Polynomial time|polynomial time]].
 
-Suppose we have a correct solution to the [[Max-Satisfiability Problem|max-SAT]] problem, which is an assignment $a$ to the $x_i$. 
+Let $v$ be the max value of the constructed [[Integer linear programming problem|ILP]] and $w$ be the max value of [[Max-Satisfiability Problem|Max-SAT]]. From [[Integer linear programming is NP-hard#Claim 1|Claim 1]] we have $w \leq v$. Equally [[Integer linear programming is NP-hard#Claim 2|Claim 2]] gives us $v \leq w$. This provides that $v = w$ and we have the solution of the contracted [[Integer linear programming problem|ILP]] if and only if we have a solution to the [[Max-Satisfiability Problem|Max-SAT]] problem. 
+
+## Claim 1
+
+>[!important] Claim 1
+>An assignment to the variables of $f$ is reversed transformed into a feasible point in the contracted [[Integer linear programming problem|ILP]] and the value of its objective function is the number of satisfied clauses.
+
+## Proof of Claim 1
 
 Set $y_i = a(x_i)$ and $z_j = a(c_j)$, 1 if true and 0 if false. This satisfies the bounds on the variables and they are integers. The clause constraint
 $$
@@ -49,20 +56,28 @@ $$
 $$
 is satisfied as if there is a literal making $c_j$ true the corresponding value of $y_i$ or $(1-y_i)$ is 1 allowing $z_j$ to be 1.
 
-## Claim 1
-
->[!important] Claim 1
->A solution to the constructed [[Integer linear programming problem|ILP]] is transformed into a solution of the original [[Max-Satisfiability Problem|Max-SAT]] problem.
-
-## Proof of Claim 1
-
-
+The objective function
+$$\sum_{j=1}^m z_j$$
+is the number of satisfied clauses by definition.
 
 ## Claim 2
 
 >[!important] Claim 2
->A solution to the original [[Max-Satisfiability Problem|Max-SAT]] problem can be reverse transformed into a solution of the constructed [[Integer linear programming problem|ILP]].
+>A feasible point in the constructed [[Integer linear programming problem|ILP]] is transformed into a valid assignment of the variables and the value of the objective function is less than or equal to the number of satisfied clauses.
+>
 
 ## Proof of Claim 2
 
-
+We set $a(x_i) = y_1$ with $1$ being True and $0$ being False. The clause constraint
+$$
+\sum_{i \in c_j^+} y_i + \sum_{i \in c_j^-} (1 - y_i) \geq z_j
+$$
+guarantees that if this assignment doesn't satisfy $c_j$ then $z_j = 0$ as $0 \leq z_j \leq 1$ and 
+$$
+\sum_{i \in c_j^+} y_i + \sum_{i \in c_j^-} (1 - y_i) = \sum_{i \in c_j^+} 0 + \sum_{i \in c_j^-} (1 - 1) = 0 \geq z_j.
+$$
+Therefore
+$$
+\sum_{j = 1}^m z_j \leq \sum_{j=1}^m a(c_j)
+$$
+and we get the required statement.

@@ -76,3 +76,33 @@ For the case of $k=3$ it has been shown that doing any better than a $7/8$-appro
 
 We can use [[Max-Satisfiability Problem|Max-SAT]] to show this version of [[Linear programme|linear programming]] is [[NP-hard]].
 
+![[Integer linear programming is NP-hard]]
+
+However, what if we run the constructed [[Integer linear programming problem|ILP]] in the proof but don't require the points to be integers? We know [[Linear programming problem]] can be solved in [[Polynomial time|polynomial time]] can we use this to get an approximate solution to the [[Max-Satisfiability Problem|max-SAT]] problem?
+
+## LP relaxation for max-SAT
+
+Let $y_i^{\ast}$ and $z_j^{\ast}$ be optimal solutions to the constructed [[Integer linear programming problem|ILP]] for [[Max-Satisfiability Problem|max-SAT]]. Whereas let $\hat{y_i^{\ast}}$ and $\hat{z_j^{\ast}}$ be optimal solutions to the constructed [[Integer linear programming problem|ILP]] for [[Max-Satisfiability Problem|max-SAT]] where we drop the need to be an [[Integer]] solution. 
+
+Note as $\hat{y_i^{\ast}}$ and $\hat{z_j^{\ast}}$ are less constrained we have
+$$ \sum_{j=1}^m \hat{z_j^{\ast}} \geq \sum_{j=1}^m z_j^{\ast}.$$
+Next we are going to transform the point $\hat{y_i^{\ast}}$ and $\hat{z_j^{\ast}}$ into an integer point by using a random algorithm again. Set
+$$
+y_i = a(x_i) = \begin{cases} 1 & \mbox{with probability } \hat{y_i^{\ast}}\\ 0 & \mbox{with probability } 1 - \hat{y_i^{\ast}} \end{cases}
+$$
+we call this randomized rounding.
+
+Let $w = \sum_{j=1}^m w_j$ be the number of satisfied clauses in this assignment, with $w_j = a(c_j)$. We want to look at the expectation of $w$ for this we will need the following lemma.
+
+>[!important] Lemma 1
+> $$\mathbb{P}(w_j = 1) \geq \left ( 1 - \frac{1}{e} \right )\hat{z_j^{\ast}}$$
+
+Then we can look at the expectation of $w$
+$$
+\mathbb{E}[w] = \sum_{j=1}^m \mathbb{E}[w_j] = \sum_{j=1}^m \mathbb{P}(w_j = 1) \geq \left ( 1 - \frac{1}{e} \right ) \sum_{j=1}^m \hat{z_j^{\ast}} \geq  \left ( 1 - \frac{1}{e} \right ) m^{\ast}.
+$$
+Giving us a $\left ( 1 - \frac{1}{e} \right )$-approximation algorithm to the problem - in expectation. 
+
+## Proof of Lemma 1
+
+
