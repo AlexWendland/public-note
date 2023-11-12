@@ -11,7 +11,7 @@ type: problem
 # Statement
 
 >[!tldr] Subset-sum problem
->Given positive integers $a_1, \ldots, a_n$ and $t$, is there a subset $S \subset \{1, \ldots, k\}$ where
+>Given positive integers $a_1, \ldots, a_n$ and $t$, is there a subset $S \subset \{1, \ldots, n\}$ where
 >$$\sum_{i \in S} a_i = t$$
 >if such a subset exists output it, otherwise return no.
 
@@ -21,5 +21,7 @@ type: problem
 	- run time
 
 # Theory
+- [[Subset-sum problem is in NP]]
+- 
 
 # Related problems
