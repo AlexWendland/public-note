@@ -123,6 +123,52 @@ Here comes a little bit of horrible functional analysis. For a fixed $k \in \mat
 $$
 1 - \left [ 1 - \frac{a}{k} \right ]^k \geq \left ( 1 - \left [ 1 - \frac{1}{k} \right ]^k \right ) a
 $$
-for $0 \leq a \leq 1$. Note for $a = 0, 1$ they are equal.
+for $0 \leq a \leq 1$. 
 
-With respect to $a$ 
+First if $k = 1$ both sides equate to $a$ and we are done. So assume $k \geq 2$. 
+
+Note for $a = 0, 1$ they are equal.
+
+With respect to $a$ we have the second derivative of left hand side is
+$$
+- \frac{k-1}{k} \left [1 - \frac{a}{k} \right ]^{k-2} < 0, \mbox{ for } 0 \leq a \leq 1.
+$$
+Whereas the right hand side is linear with respect to $a$. Therefore we have the inequality we desire.
+
+So we can continue
+
+$$
+\begin{align*}
+\mathbb{P}(w_j = 1) & \geq 1 - \left [ 1 - \frac{\hat{z_j^{\ast}}}{k} \right ]^k\\
+& \geq \left ( 1 - \left [ 1 - \frac{1}{k} \right ]^k \right ) \hat{z_j^{\ast}}\\
+& \geq \left ( 1 - \frac{1}{e} \right )\hat{z_j^{\ast}}
+\end{align*}
+$$
+where this last step comes from the [[Taylor expansion]] for $e^{-x}$
+$$
+e^{-x} = 1 - x + \frac{x^2} + \ldots \geq 1 - x
+$$
+with $x = \frac{1}{k}$ gives us the inequality above.
+
+This completes the proof of the lemma.
+
+## Summary of the approach
+
+In abstract we did the following.
+- Take an [[NP-hard]] problem,
+- Reduce it to [[Integer linear programming problem|ILP]],
+- Relax to [[Linear programme|linear programming]] and solve, and
+- Randomize round that solution.
+
+This is a general approach we can take to finding approximation algorithms for [[NP-hard]] problems.
+
+## Comparison of approaches for [[Max-k-exact-satisfiability problem|max-Ek-SAT]]
+
+  | k   | Simple     | LP-based                    |
+  | --- | ---------- | --------------------------- |
+  | 1   | $1/2$      | $1$                         |
+  | 2   | $3/4$      | $3/4$                       |
+  | 3   | $7/8$      | $1 - (\frac{2}{3})^3 \approx 0.704$ |
+  | k   | $1 - 2^{-k}$ | $1 - (1 - \frac{1}{k})^k$                            |
+
+The thing to note here is that each row is at least $3/4$, so by taking the max of both algorithms we achieve a $3/4$-approximation algorithm in expectation. 
