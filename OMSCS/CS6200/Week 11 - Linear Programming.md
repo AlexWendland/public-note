@@ -65,7 +65,7 @@ $$(0,0), (0,200), (100,200), (300,0), \mbox{ and } (300, 133.33..).$$
 
 When it comes to solving a linear programming problem.
 
-![[Linear programme problem#Statement]]
+![[Linear programming problem#Statement]]
 
 There are [[Polynomial time|polynomial time]] algorithms like the [[Ellipsoid method (linear programming)|ellipsoid method]] and [[Interior-point method (linear programme)|interior-point method]] but in practice these can be slower than the much more widely used [[Simplex method (linear programme)|simplex method]] which can be exponential in its worst cases.
 

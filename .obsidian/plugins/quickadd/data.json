@@ -138,6 +138,36 @@
       "openFileInMode": "default",
       "fileExistsMode": "Nothing",
       "setFileExistsBehavior": true
+    },
+    {
+      "id": "d2a00d8a-d91c-4fc0-856f-00d233e5498a",
+      "name": "Template: Add algorithm",
+      "type": "Template",
+      "command": true,
+      "templatePath": "templates/algorithm-template.md",
+      "fileNameFormat": {
+        "enabled": false,
+        "format": ""
+      },
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "general"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "openFileInNewTab": {
+        "enabled": false,
+        "direction": "vertical",
+        "focus": true
+      },
+      "openFile": true,
+      "openFileInMode": "default",
+      "fileExistsMode": "Nothing",
+      "setFileExistsBehavior": true
     }
   ],
   "macros": [

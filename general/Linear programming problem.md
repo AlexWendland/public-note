@@ -1,5 +1,6 @@
 ---
-aliases: null
+aliases:
+  - linear programming problem
 checked: false
 created: 2023-11-07
 last_edited: 2023-11-11
@@ -11,7 +12,7 @@ type: problem
 # Statement
 
 >[!tldr] Linear programme problem
->Given a [[Linear programme|linear programme]] what is an $x$ that achieves an optimal solution if it exists.
+>Given a [[Linear programme|linear programme]] what is an $x \in \mathbb{R}^n$ that achieves an optimal solution if it exists.
 
 # Solutions
 
@@ -24,3 +25,4 @@ type: problem
 
 # Related problems
 - [[Max flow problem]]
+- [[Integer linear programming problem]]
