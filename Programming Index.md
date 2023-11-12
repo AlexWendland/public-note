@@ -112,7 +112,7 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Knapsack-search (without replacement)]]
 - [[Kruskal's algorithm]]
 - [[Linear programme]]
-- [[Linear programme problem]]
+- [[Linear programming problem]]
 - [[Linear programme standard form]]
 - [[Linked lists]]
 - [[Linux]]

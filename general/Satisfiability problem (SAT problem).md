@@ -22,6 +22,7 @@ type: problem
 # Related
 - [[k-satisfiability problem (k-SAT problem)]]
 	- This is a limited form of this problem
+- [[Max-Satisfiability Problem|Max-SAT]]
 
 # Theory
 
