@@ -16,5 +16,9 @@ We are going to prove that the [[Knapsack problem (without repetition)|Knapsack 
 
 ![[Subset-sum problem#Statement]]
 
-This can be solves using [[Dynamic Programming]] in a similar way to the [[Knapsack problem (without repetition)|Knapsack problem]] in $O(nt)$. However, similar to the [[Knapsack problem (without repetition)|Knapsack problem]] this is not a [[Polynomial time|polynomial time]] algorithm in the length of the input as that is $\log_2(n) + \log_2(t)$. 
+This can be solves using [[Dynamic Programming]] in a similar way to the [[Knapsack problem (without repetition)|Knapsack problem]] in $O(nt)$. However, similar to the [[Knapsack problem (without repetition)|Knapsack problem]] this is not a [[Polynomial time|polynomial time]] algorithm in the length of the input as that is $n\log_2(t)$.
+
+![[Subset-sum problem is in NP]]
+
+
 
