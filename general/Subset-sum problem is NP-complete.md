@@ -5,7 +5,7 @@ created: 2023-11-12
 last_edited: 2023-11-12
 publish: true
 tags:
-  - maths
+  - programming
 type: lemma
 ---
 # Statement
