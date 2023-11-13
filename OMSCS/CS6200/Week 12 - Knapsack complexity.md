@@ -28,5 +28,7 @@ Moreover it is [[NP-Complete|NP-complete]].
 
 ## Knapsack problem
 
-We are going to probe that [[Knapsack-search (without replacement)|Knapsack-search]] is [[NP-Complete|NP-complete]]. Note we already have [[Knapsack-search is NP]].
+This [[Subset-sum problem|subset-sum problem]] is very similar to the [[Knapsack-search (without replacement)|Knapsack-search]] problem so we have the following.
+
+![[Knapsack-search is NP-complete]]
 

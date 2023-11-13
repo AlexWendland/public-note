@@ -49,3 +49,4 @@ This course is a graduate-level course in the design and analysis of algorithms.
 - [[Week 12 - Max-SAT approximation algorithm]]
 
 - [[Week 12 - Knapsack complexity]]
+- [[Week 12 - Halting problem]]

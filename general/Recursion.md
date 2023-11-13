@@ -16,7 +16,7 @@ type: algorithm
 
 This is the technique of a function calling itself recursively to find an answer and returning at some given condition. This is in opposition to [[Iterative algorithms]] that achieve what they want in a for or while loop.
 
-The important thing to remember is to set up a return condition that will always be met otherwise, this could go on forever (see [[Halting Problem]]).
+The important thing to remember is to set up a return condition that will always be met otherwise, this could go on forever (see [[Halting problem]]).
 
 ## Example
 
