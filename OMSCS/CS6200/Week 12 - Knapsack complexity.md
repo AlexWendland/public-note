@@ -12,13 +12,21 @@ week: 12
 ---
 # Week 12 - Knapsack complexity
 
-We are going to prove that the [[Knapsack-search (without replacement)|Knapsack-search]] is [[NP-hard]]. We will do this using the [[k-satisfiability problem (k-SAT problem)|3-SAT]] but first going through the [[Subset-sum problem]].
+We are going to prove that the [[Knapsack-search (without replacement)|Knapsack-search]] is [[NP-Complete|NP-complete]]. We will do this using the [[k-satisfiability problem (k-SAT problem)|3-SAT]] but first going through the [[Subset-sum problem]].
+
+## Subset-sum problem
 
 ![[Subset-sum problem#Statement]]
 
-This can be solves using [[Dynamic Programming]] in a similar way to the [[Knapsack problem (without repetition)|Knapsack problem]] in $O(nt)$. However, similar to the [[Knapsack problem (without repetition)|Knapsack problem]] this is not a [[Polynomial time|polynomial time]] algorithm in the length of the input as that is $n\log_2(t)$.
+This can be solves using [[Dynamic Programming]] in a similar way to the [[Knapsack problem (without repetition)|Knapsack problem]] in $O(nt)$. However, similar to the [[Knapsack problem (without repetition)|Knapsack problem]] this is not a [[Polynomial time|polynomial time]] algorithm in the length of the input as that is $n\log_2(t)$. Therefore it is [[Pseudo-polynomial time|Pseudo-polynomial]].
 
 ![[Subset-sum problem is in NP]]
 
+Moreover it is [[NP-Complete|NP-complete]].
 
+![[Subset-sum problem is NP-complete]]
+
+## Knapsack problem
+
+We are going to probe that [[Knapsack-search (without replacement)|Knapsack-search]] is [[NP-Complete|NP-complete]]. Note we already have [[Knapsack-search is NP]].
 

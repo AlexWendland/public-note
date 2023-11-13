@@ -1,9 +1,10 @@
 ---
-aliases: null
+aliases:
+  - subset-sum problem
 checked: false
 created: 2023-11-12
 last_edited: 2023-11-12
-publish: false
+publish: true
 tags:
   - programming
 type: problem
@@ -17,11 +18,8 @@ type: problem
 
 # Solutions
 
-- First solution
-	- run time
-
 # Theory
 - [[Subset-sum problem is in NP]]
-- 
+- [[Subset-sum problem is NP-complete]]
 
 # Related problems
