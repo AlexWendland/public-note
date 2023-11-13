@@ -1,9 +1,9 @@
 ---
-aliases: null
+aliases: 
 checked: false
 created: 2023-10-20
 last_edited: 2023-11-11
-publish: false
+publish: true
 tags:
   - maths
 type: lemma

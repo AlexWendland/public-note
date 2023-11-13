@@ -7,7 +7,7 @@ aliases:
 checked: false
 created: 2023-11-12
 last_edited: 2023-11-12
-publish: false
+publish: true
 tags:
   - programming
 type: problem
