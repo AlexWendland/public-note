@@ -21,8 +21,6 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 > ![[Traveling salesman problem#Statement]]
 > Show that if [[Traveling salesman problem (search)|TSP search]] can be solved in [[Polynomial time|polynomial time]] then we can solve [[Traveling salesman problem|TSP]] in [[Polynomial time|polynomial time]] also.
 
-
-
 >[!question] 8.2 Search problems vs Decision problems
 
 >[!question] 8.3 Stingy SAT
