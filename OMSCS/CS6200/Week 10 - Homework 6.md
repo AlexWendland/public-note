@@ -35,11 +35,23 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 
 
 >[!question] Problem 8.4 Clique-3
->
+>Suppose we reduce the [[Max clique problem (graph)|Max clique problem]] but on [[Graph|graphs]] with [[Degree (graph)|degree]] at most 3.
+>a) Probe that Clique-3 is in [[Nondeterministic Polynomial time (NP)|NP]].
+>...
+>d) Describe an $O(\vert V \vert^4)$ algorithm for clique-3.
+
+
 
 >[!question] Problem 8.8 Exact 4-SAT
+>Exact 4-SAT: Suppose we are given a [[Boolean function|boolean function]] $f$ that is in [[Conjunctive normal form (CNF)|CNF]], each clause has exactly 4 literals, and each variable appears at most once in each clause. The goal is to find a satisfying assignment, if one exists.
+>Prove that Exact 4-SAT is [[NP-Complete|NP-complete]]. 
+
+
 
 >[!question] Problem 8.10 Subgraph isomorphism
+>
+
+
 
 >[!question] 8.14 Clique + Independent set (HW 6 assessed)
 
