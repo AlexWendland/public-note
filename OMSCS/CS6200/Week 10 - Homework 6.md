@@ -16,7 +16,12 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 
 > [!question] Problem 8.1 TSP optimization versus search
 > Recall the traveling salesman problem:
-> 
+> ![[Traveling salesman problem (search)#Statement]]
+> and the optimisation version of the problem:
+> ![[Traveling salesman problem#Statement]]
+> Show that if the search version of the problem can be solved in polynomial time then so can 
+
+
 
 >[!question] Problem 8.4 Clique-3
 
