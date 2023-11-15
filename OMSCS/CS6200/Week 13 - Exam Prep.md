@@ -20,4 +20,4 @@ Chapter 7 (Linear Programming) 7.2, 7.3, 7.7, 7.8, 7.16, 7.25(*), 7.26(*), 7.27,
 
 ## NP-Completeness
 
-Chapter 8 (NP-complete problems) 8.3, 8.6, 8.9(Hitting Set), 8.10, 8.14, 8.15, 8.16, 8.17, 8.19(Kite), 8.20(dominating set), 8.22(*)
+Chapter 8 (NP-complete problems) 8.6, 8.9(Hitting Set), 8.15, 8.16, 8.17, 8.20(dominating set), 8.22(*)
