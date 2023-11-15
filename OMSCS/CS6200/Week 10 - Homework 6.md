@@ -21,11 +21,21 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 > ![[Traveling salesman problem#Statement]]
 > Show that if [[Traveling salesman problem (search)|TSP search]] can be solved in [[Polynomial time|polynomial time]] then we can solve [[Traveling salesman problem|TSP]] in [[Polynomial time|polynomial time]] also.
 
->[!question] 8.2 Search problems vs Decision problems
 
->[!question] 8.3 Stingy SAT
+
+>[!question] Problem 8.2 Search problems vs Decision problems
+>Suppose you have an [[Polynomial time|polynomial time]] algorithm that tells you if there is a [[Rudrata path]] in a given [[Graph|graph]] $G$. Show that you can use it to develop a [[Polynomial time|polynomial time]] algorithm to solve the [[Rudrata path problem]].
+
+
+
+>[!question] Problem 8.3 Stingy SAT
+>Stingy SAT: Given a [[Boolean function|boolean function]] $f$ that is in [[Conjunctive normal form (CNF)|CNF]] and an integer $k$, find a satisfying assignment for $f$ with at most $k$ variables are true if it exists. 
+>Prove that the stingy SAT problem is [[NP-Complete]].
+
+
 
 >[!question] Problem 8.4 Clique-3
+>
 
 >[!question] Problem 8.8 Exact 4-SAT
 
