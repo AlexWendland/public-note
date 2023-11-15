@@ -19,9 +19,13 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 > ![[Traveling salesman problem (search)#Statement]]
 > and the optimisation version of the problem:
 > ![[Traveling salesman problem#Statement]]
-> Show that if the search version of the problem can be solved in polynomial time then so can 
+> Show that if [[Traveling salesman problem (search)|TSP search]] can be solved in [[Polynomial time|polynomial time]] then we can solve [[Traveling salesman problem|TSP]] in [[Polynomial time|polynomial time]] also.
 
 
+
+>[!question] 8.2 Search problems vs Decision problems
+
+>[!question] 8.3 Stingy SAT
 
 >[!question] Problem 8.4 Clique-3
 
@@ -29,4 +33,6 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 
 >[!question] Problem 8.10 Subgraph isomorphism
 
+>[!question] 8.14 Clique + Independent set (HW 6 assessed)
 
+>[!question] 8.19 Kite

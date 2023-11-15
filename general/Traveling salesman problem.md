@@ -1,5 +1,6 @@
 ---
-aliases: 
+aliases:
+  - TSP
 checked: false
 created: 2023-11-15
 last_edited: 2023-11-15
@@ -11,7 +12,7 @@ type: problem
 # Statement
 
 >[!tldr] Traveling salesman problem
->Given an [[Graph|undirected graph]] $G$ and [[Edge weights|edge weights]] $d: E \rightarrow \mathbb{R}$. What is the path $p$ in $G$ that visits every vertex and has shortest length with respected to $d$?
+>Given a list of $n$ cities $C$ and a symmetric distance function $d: C \times C \rightarrow \mathbb{R}$. What is an ordering on $C$, $c_i \in C$ with $1 \leq i \leq n$ that visits every city and has minimum length $\sum_{i=1}^{n-1} d(c_i, c_{i+1})$?
 
 # Solutions
 
