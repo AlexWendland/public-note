@@ -36,7 +36,7 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 
 >[!question] Problem 8.4 Clique-3
 >Suppose we reduce the [[Max clique problem (graph)|Max clique problem]] but on [[Graph|graphs]] with [[Degree (graph)|degree]] at most 3.
->a) Probe that Clique-3 is in [[Nondeterministic Polynomial time (NP)|NP]].
+>a) Prove that Clique-3 is in [[Nondeterministic Polynomial time (NP)|NP]].
 >...
 >d) Describe an $O(\vert V \vert^4)$ algorithm for clique-3.
 
