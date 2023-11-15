@@ -87,8 +87,8 @@ Therefore to check for cliques it takes $O(\vert V \vert)$ by running the right 
 
 
 
->[!question] Problem 8.10 Subgraph isomorphism
->
+>[!question] Problem 8.10
+>Proving [[NP-Complete|NP-complete]] by generalisations. For each of the following problems, prove that it is [[NP-Complete|NP-complete]] by showing that it is a generalisation of some [[NP-Complete|NP-complete]] problem we have seen in this chapter.
 
 
 
