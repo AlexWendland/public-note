@@ -42,7 +42,44 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 
 a) Follows as [[Clique of a given size problem is in NP]].
 
-b) 
+d)
+
+Notice this only has 2 real cases of interest.
+- $g = 1$ the answer is true.
+- $g = 2$ we just have to check if there is an edge.
+- $g = 3$, we are looking for a triangle.
+- $g = 4$, we are looking for copy of $k_4$ in the graph (if there are 4 than 4 vertices this will be a disconnected copy)
+- $g > 4$ the answer is false as the degree is limited to 3.
+
+```
+g_3_algorithm(G)
+	Input: suppose we have a graph G = (V,E) in adjacency list form (A_v for v in V) where |A_v| <= 3.
+	Output: A triangle in the graph or that no such triangle exists.
+1. Let S = V.
+2. While S is not empty.
+	1. Pop off the next element of v in S.
+	2. For w in A_v:
+		1. If u in A_v intersect A_w return v, w, u
+3. Return no such triangle exists
+```
+
+This algorithm takes $O(\vert V \vert)$ as we need to go through each element of $V$ and then do atmost 3 intersections of two sets of size at most 3 which can take $3 \times 9 = 27$ operations. 
+
+```
+g_4_algorithm(G)
+	Input: suppose we have a graph G = (V,E) in adjacency list form (A_v for v in V) where |A_v| <= 3.
+	Output: A copy of K_4 exists in G.
+1. For v in V:
+	1.1. For w in A_V,
+		1.1.1. if A_W /= A_v U {v} \ {w}
+			1.1.1.1 continue
+	1.2. return v U A_v
+2. return no such component exists.
+```
+
+Step 1 takes $\vert V \vert$ steps. At worst each step compares 3 sets of size 3 which takes $3 \times 9 = 27$ operations. So this algorithm takes $O(\vert V \vert)$ time.
+
+Therefore to check for cliques it takes $O(\vert V \vert)$ by running the right sub-algorithm given the $g$. 
 
 >[!question] Problem 8.8 Exact 4-SAT
 >Exact 4-SAT: Suppose we are given a [[Boolean function|boolean function]] $f$ that is in [[Conjunctive normal form (CNF)|CNF]], each clause has exactly 4 literals, and each variable appears at most once in each clause. The goal is to find a satisfying assignment, if one exists.
