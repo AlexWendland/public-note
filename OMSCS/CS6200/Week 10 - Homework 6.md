@@ -32,7 +32,13 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 >Stingy SAT: Given a [[Boolean function|boolean function]] $f$ that is in [[Conjunctive normal form (CNF)|CNF]] and an integer $k$, find a satisfying assignment for $f$ with at most $k$ variables are true if it exists. 
 >Prove that the stingy SAT problem is [[NP-Complete]].
 
-This problem is in the form of a search problem. It either outputs a given assignment or it 
+This problem is in the form of a search problem. It either outputs a given assignment or it say no such problems exists.
+
+To verify a solution of the Stingy SAT problem, first check it satisfies the $f$ by going through clause after clause checking at least one literal is satisfied, this takes $O(nm)$ time. Second check that at most $k$ variables are true by going through each assignment this takes $O(n)$. Therefore verification of a solution takes $O(nm) + O(n) = O(nm)$. So can be done in polynomial time, giving Stingy SAT is in [[Nondeterministic Polynomial time (NP)|NP]].
+
+To show it is [[NP-Complete]] we will make a [[Many-one reduction (problem)|many-one reduction]] from the [[Satisfiability problem (SAT problem)|SAT problem]] to Stingy SAT.
+
+Suppose we are given $f$ an instance of the [[Satisfiability problem (SAT problem)|SAT problem]] with $n$ variables and $m$ clauses. 
 
 >[!question] Problem 8.4 Clique-3
 >Suppose we reduce the [[Clique of a given size problem]] but on [[Graph|graphs]] with [[Degree (graph)|degree]] at most 3.
