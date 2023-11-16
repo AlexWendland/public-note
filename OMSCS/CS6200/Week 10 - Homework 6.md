@@ -32,7 +32,7 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 >Stingy SAT: Given a [[Boolean function|boolean function]] $f$ that is in [[Conjunctive normal form (CNF)|CNF]] and an integer $k$, find a satisfying assignment for $f$ with at most $k$ variables are true if it exists. 
 >Prove that the stingy SAT problem is [[NP-Complete]].
 
-
+This problem is in the form of a search problem. It either outputs a given assignment or it 
 
 >[!question] Problem 8.4 Clique-3
 >Suppose we reduce the [[Clique of a given size problem]] but on [[Graph|graphs]] with [[Degree (graph)|degree]] at most 3.
