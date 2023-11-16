@@ -1,9 +1,13 @@
 ---
-type: feature
-publish: true
+checked: false
 created: 2023-02-26
-last_edited: 2023-02-26
-tags: programming, python, functional
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+  - python
+  - functional
+type: feature
 ---
 # Lambda functions
 These are [[Anonymous Functions]] that take multiple inputs and evaluate the output in a single statement. It has the following syntax:
@@ -13,7 +17,7 @@ lambda arguments : expression
 ```
 
 > [!note] Syntactic Sugar
-> A `lambda` expression creates a function object just like the `def` statement. 
+> A `lambda` expression creates a function object just like the `def` statement.
 
 ## Lundh's lambda Refactoring Recipe
 
@@ -25,7 +29,7 @@ If you find a piece of code hard to understand because of a `lambda`, follow thi
 
 ## Examples
 
-###  Invert strings
+### Invert strings
 
 ```python
 lambda string : string[::-1]

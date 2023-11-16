@@ -1,11 +1,11 @@
 ---
-aliases: 
-type: definition
-publish: false
+aliases: null
+checked: false
 created: <% tp.file.creation_date("YYYY-MM-DD") %>
 last_edited: <% tp.file.creation_date("YYYY-MM-DD") %>
-tags: 
-chatgpt: false
+publish: false
+tags: []
+type: definition
 ---
 >[!tldr] <% tp.file.title %>
 >Definition here

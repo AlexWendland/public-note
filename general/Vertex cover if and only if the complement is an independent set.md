@@ -1,18 +1,18 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+checked: false
 created: 2023-11-03
-last_edited: 2023-11-03
+last_edited: 2023-11-11
+publish: true
 tags:
   - maths
   - graph-theory
-chatgpt: false
+type: lemma
 ---
 # Statement
 
 > [!important] Lemma
-> Suppose we have an [[Graph|undirected graph]] $G = (V,E)$ with $C \subset V$. Then $C$ is a [[Vertex cover|vertex cover]] if and only if $\overline{C} := V \backslash C$ is an [[Independent set (graph)|independent set]]. 
+> Suppose we have an [[Graph|undirected graph]] $G = (V,E)$ with $C \subset V$. Then $C$ is a [[Vertex cover|vertex cover]] if and only if $\overline{C} := V \backslash C$ is an [[Independent set (graph)|independent set]].
 
 # Proof
 

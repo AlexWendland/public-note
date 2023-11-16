@@ -1,11 +1,15 @@
 ---
-aliases: [train wreck, train wrecks]
-type: terminology
-publish: true
+aliases:
+  - train wreck
+  - train wrecks
+checked: false
 created: 2023-08-05
-last_edited: 2023-08-05
-tags: programming, clean-code
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+  - clean-code
+type: terminology
 ---
 # Train Wrecks
 

@@ -1,11 +1,16 @@
 ---
-aliases: [comments, comment, comment conventions]
-type: convention
-publish: true
+aliases:
+  - comments
+  - comment
+  - comment conventions
+checked: false
 created: 2023-07-01
-last_edited: 2023-07-01
-tags: programming, clean-code
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+  - clean-code
+type: convention
 ---
 # Comment conventions
 
@@ -17,7 +22,7 @@ The goal is to express yourself in code so clearly you will never really need to
 
 ## Good comments
 
-- **API docstrings**: If you exposing some functions to others, provide a full doc string so they don't have to read your code to understand what is going on. 
+- **API docstrings**: If you exposing some functions to others, provide a full doc string so they don't have to read your code to understand what is going on.
 - **Legal comments**: If you are required to add a comments by the legal team.
 - **Warning of consequences**: If you want to highlight a particular consequence like irreparably changing a database.
 - **TODO comments**: Tag for some task to extend the code. These shouldn't be an excuse to write shoddy code.
@@ -32,7 +37,7 @@ The goal is to express yourself in code so clearly you will never really need to
 - **Position markers**: People can use position markers in code, like sections. If you need these it might indicate that the file is doing too much.
 - **Attribution and bylines**: Want to say you made this file? This can be handled by the source control.
 - **Commented out code**: No one will delete this as they will worry that it is important. If you aren't going to use it delete it. If you want to keep the version, try using the version control system instead.
-- **Docstrings in non-public functions**: If the function isn't exposed to an outside user, docstrings are not required. The function should be short enough so the signature is easily understood. 
+- **Docstrings in non-public functions**: If the function isn't exposed to an outside user, docstrings are not required. The function should be short enough so the signature is easily understood.
 
 ## Practices
 
@@ -42,7 +47,7 @@ Regularly if you want to write a comment to explain a variable or function - tha
 
 ### Only use local information
 
-If you write a comment, make sure it describes code close to it. If it uses information outside that context you can't guarantee the comment will be updated when that changes. 
+If you write a comment, make sure it describes code close to it. If it uses information outside that context you can't guarantee the comment will be updated when that changes.
 
 ### Try to keep any comments concise
 

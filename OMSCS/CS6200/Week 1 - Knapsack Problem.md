@@ -1,13 +1,14 @@
 ---
 aliases: []
-type: lecture
-publish: true
+checked: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-08-29
-last_edited: 2023-08-29
-tags: OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+last_edited: 2023-11-11
+publish: true
+tags:
+  - OMSCS
+type: lecture
 week: 1
-chatgpt: false
 ---
 # Week 1 - Knapsack Problem
 
@@ -30,7 +31,7 @@ We will focus on the first problem for the next sections.
 > $$O = \{(15,15), (12,10), (10,8), (5,1)\},$$
 > with a max capacity of $B=22$.
 
-Here a greedy algorithm would notice that the first object $(15,15)$ has the best value to weight ratio, so would fit one of those in the bag first. With 7 (=22-15) capacity left it would fit a single copy of the 4th object $(5,1)$ making the bag full. 
+Here a greedy algorithm would notice that the first object $(15,15)$ has the best value to weight ratio, so would fit one of those in the bag first. With 7 (=22-15) capacity left it would fit a single copy of the 4th object $(5,1)$ making the bag full.
 
 This solution has a value of 16.
 
@@ -42,7 +43,7 @@ In summary greedy algorithm will not work for this problem.
 
 Lets define a [[Dynamic programming|dynamic program]] for the single copy Knapsack problem.
 
-Let $K(i, b)$ be the max value using the first $0 \leq i \leq n$ objects with a bag of capacity $0 \leq b \leq B$. 
+Let $K(i, b)$ be the max value using the first $0 \leq i \leq n$ objects with a bag of capacity $0 \leq b \leq B$.
 
 The solution to the knapsack problem will then be $K(n,B)$.
 
@@ -85,14 +86,14 @@ class KnapsackSolver:
 
     def _setup_solution_array(self) -> None:
         self.solution_array = [
-            [0 for _ in range(self.capacity + 1)] 
+            [0 for _ in range(self.capacity + 1)]
             for _ in range(len(self.items) + 1)
         ]
 
     def _solve_for_single_value(
-	    self, 
-	    item_number: int, 
-	    capacity_limit: int) 
+	    self,
+	    item_number: int,
+	    capacity_limit: int)
 	-> int:
         current_item = self.items[item_number - 1]  # 0-indexed
         previous_solution = self.solution_array[item_number - 1][
@@ -126,9 +127,9 @@ if __name__ == "__main__":
 
 Lets look at the run time of each part of this algorithm. Let $n$ be the number of coins and $B$ be the total capacity.
 
-First `_setup_problem` is $O(1)$ as it is just setting variables. 
+First `_setup_problem` is $O(1)$ as it is just setting variables.
 
-Whereas `_setup_solution_array` fills an $(n+1) \times (B+1)$ array that takes $O(nB)$ time. 
+Whereas `_setup_solution_array` fills an $(n+1) \times (B+1)$ array that takes $O(nB)$ time.
 
 The function `_solve_for_single_value` does 1 check and the at worst takes the max of 2 values so is $O(1)$. This is ran $nB$ times in `_fill_array` giving this a run time of $O(nB)$.
 
@@ -136,7 +137,7 @@ Combining these we have `solve` has run time $O(1) + O(nB) + O(nB) = O(nB)$.
 
 ## This is not polynomial in the input size
 
-Even though $O(nB)$ is polynomial in $n$ and $B$ - the space it takes to represent $B$ is $\log_2(B)$. If we set $\overline{B} = \log_2(B)$ then the input size is $n, \overline{B}$ and the run time of this algorithm is $O(n 2^{\overline{B}})$ which is exponential. 
+Even though $O(nB)$ is polynomial in $n$ and $B$ - the space it takes to represent $B$ is $\log_2(B)$. If we set $\overline{B} = \log_2(B)$ then the input size is $n, \overline{B}$ and the run time of this algorithm is $O(n 2^{\overline{B}})$ which is exponential.
 
 The Knapsack is [[Nondeterministic Polynomial time (NP)]], meaning there is no polynomial algorithm for the knapsack problem.
 
@@ -146,7 +147,7 @@ The Knapsack is [[Nondeterministic Polynomial time (NP)]], meaning there is no p
 
 We can modify what we did for the last problem to solve this problem.
 
-Let $K(i, b)$ be the max value using the first $0 \leq i \leq n$ objects as many times as you would like with a bag of capacity $0 \leq b \leq B$. 
+Let $K(i, b)$ be the max value using the first $0 \leq i \leq n$ objects as many times as you would like with a bag of capacity $0 \leq b \leq B$.
 
 The solution to the knapsack problem will then be $K(n,B)$.
 
@@ -190,15 +191,15 @@ You can alter the algorithm to store a second array $S$ which tracks the coin th
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 
 >[!question] 6.17 Making change I
->Given an unlimited supply of coins of denominations $x_1, x_2, \ldots , x_n$, we wish to make change for a value $v$; that is, we wish to find a set of coins whose total value is $v$. This might not be possible: for instance, if the denominations are $5$ and $10$ then we can make change for $15$ but not for $12$. Give an $O(nv)$ dynamic-programming algorithm for the following problem. 
+>Given an unlimited supply of coins of denominations $x_1, x_2, \ldots , x_n$, we wish to make change for a value $v$; that is, we wish to find a set of coins whose total value is $v$. This might not be possible: for instance, if the denominations are $5$ and $10$ then we can make change for $15$ but not for $12$. Give an $O(nv)$ dynamic-programming algorithm for the following problem.
 >
->Input: $x_1, \ldots , x_n; v$. 
+>Input: $x_1, \ldots , x_n; v$.
 >Question: Is it possible to make change for $v$ using coins of denominations $x_1, \ldots , x_n$?
 
 >[!question] 6.18 Making change II
 >Consider the following variation on the change-making problem (Exercise 6.17). Given coin denominations $x_1, x_2, \ldots , x_n$, we wish to make change for a value $v$ but you are only allowed to use each denomination *at most once*. For instance, if the denominations are 1, 5, 10, 20, then you can make change for 16 = 1 + 15 and for 31 = 1 + 10 + 20 but not for 40 (because you can’t use 20 twice).
 >
->Input: $x_1, \ldots , x_n; v$. 
+>Input: $x_1, \ldots , x_n; v$.
 >Question: Is it possible to make change for $v$ using coins of denominations $x_1, \ldots , x_n$ only once?
 >
 >Show how to solve this problem in time O(nv).
@@ -206,5 +207,5 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 >[!question] 6.19 Making change III
 >Consider the following variation on the change-making problem (Exercise 6.17). Given coin denominations $x_1, x_2, \ldots , x_n$, we wish to make change for a value $v$ but you can only use a *at most $k$ coins* (with repeats). For instance, if the denominations are $5$, $10$ with $k=6$ then you can make change for 55 with $5 \times 10 + 1 \times 5$ but not $65$.
 >
->Input: $x_1, \ldots , x_n; k; v$. 
+>Input: $x_1, \ldots , x_n; k; v$.
 >Question: Is it possible to make change for $v$ using at most $k$ coins of denominations $x_1, \ldots , x_n$?

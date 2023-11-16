@@ -1,14 +1,14 @@
 ---
 aliases:
   - vertex cover
-type: definition
-publish: true
+checked: false
 created: 2023-11-03
-last_edited: 2023-11-03
+last_edited: 2023-11-11
+publish: true
 tags:
   - maths
   - graph-theory
-chatgpt: false
+type: definition
 ---
 >[!tldr] Vertex cover
 >Given an [[Graph|undirected graph]] $G = (V,E)$ a set $C \subset V$ is a *vertex cover* if for all $(u,v) \in E$ we have $u \in C$ or $v \in C$.

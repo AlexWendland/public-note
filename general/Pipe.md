@@ -1,15 +1,16 @@
 ---
 aliases: []
-type: terminology
-publish: true
+checked: false
 created: 2023-08-05
-last_edited: 2023-08-05
-tags: programming
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+type: terminology
 ---
 # Pipe
 
-This is where you do multiple manipulations to a data object in 'one line' but break it up over multiple. This is commonly used in [[Python Index]] with the [[Pandas]] library. 
+This is where you do multiple manipulations to a data object in 'one line' but break it up over multiple. This is commonly used in [[Python Index]] with the [[Pandas]] library.
 
 ```python
 data_frame.group_by(["animals"])

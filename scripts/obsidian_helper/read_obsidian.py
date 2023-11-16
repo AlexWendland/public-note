@@ -1,9 +1,12 @@
 import io
-from typing import Any, Dict, List, Optional, Tuple
+from pathlib import Path
+from typing import Any, Dict, Generator, List, Optional, Tuple
 
 import pydantic
 import yaml
-from models import MarkdownSection, ObsidianFile
+
+from obsidian_helper.constants import OBSIDIAN_DIR
+from obsidian_helper.models import MarkdownSection, ObsidianFile
 
 
 def read_metadata_from_obsidian_file(metadata_lines: List[str]) -> Dict[str, Any]:
@@ -23,7 +26,7 @@ def read_metadata_from_obsidian_file(metadata_lines: List[str]) -> Dict[str, Any
     return metadata
 
 
-def read_obsidian_file(file_name: str) -> ObsidianFile:
+def read_obsidian_file(file_path: str) -> ObsidianFile:
     """
     Reads a markdown file and returns an ObsidianFile object.
 
@@ -33,25 +36,19 @@ def read_obsidian_file(file_name: str) -> ObsidianFile:
     Returns:
     - ObsidianFile: An ObsidianFile object containing the file's metadata and sections.
     """
-    with open(file_name, "r", errors="ignore") as file:
+    with open(file_path, "r", errors="ignore") as file:
         first_line = next(file, None).strip()
         if first_line is None:
-            return ObsidianFile(file_name=file_name, metadata={}, sections=[])
+            return ObsidianFile(file_path=file_path, metadata={}, sections=[])
 
         metadata = {}
         if first_line == "---":
             metadata = extract_metadata(file)
             first_line = next(file, None)
 
-        sections = []
+        sections = extract_all_sections(first_line, file)
 
-        while True:
-            first_line, next_section = extract_section(first_line, file)
-            sections.append(next_section)
-            if first_line is None:
-                break
-
-        return ObsidianFile(file_name=file_name, metadata=metadata, sections=sections)
+        return ObsidianFile(file_path=file_path, metadata=metadata, sections=sections)
 
 
 def extract_metadata(file: io.StringIO) -> Dict[str, Any]:
@@ -68,6 +65,16 @@ def extract_metadata(file: io.StringIO) -> Dict[str, Any]:
         metadata += line
     return yaml.safe_load(metadata)
 
+def extract_all_sections(first_line: str, file: io.StringIO) -> List[MarkdownSection]:
+    sections = []
+
+    while True:
+        first_line, next_section = extract_section(first_line, file)
+        sections.append(next_section)
+        if first_line is None:
+            break
+
+    return sections
 
 def extract_section(first_line: str, file: io.StringIO) -> Tuple[str, MarkdownSection]:
     """
@@ -81,13 +88,13 @@ def extract_section(first_line: str, file: io.StringIO) -> Tuple[str, MarkdownSe
     lines = []
 
     if title is None:
-        lines.append(first_line.strip())
+        lines.append(first_line.rstrip())
 
     while True:
         line = next(file, None)
         if line is None or is_title(line):
             break
-        lines.append(line.strip())
+        lines.append(line.rstrip())
 
     return line, MarkdownSection(title=title, depth=depth, lines=lines)
 
@@ -121,3 +128,30 @@ def is_title(line: str) -> bool:
     if line[1] not in ["#", " "]:
         return False
     return True
+
+EXCLUDED_DIRECTORIES = [
+    'Excalidraw',
+    'scripts',
+    '.obsidian',
+]
+
+def get_obsidian_files(templates: bool = True) -> Generator[str, None, None]:
+    """
+    Gets all obsidian files in the vault. It skips over some common files you will want to ignore.
+
+    Parameters:
+        templates (bool,optional): Whether to include templates in the search. Defaults to True.
+
+    Yields:
+        Generator[str, None, None]: The files in the vault.
+    """
+    directory = Path(OBSIDIAN_DIR)
+
+    excluded_directories = EXCLUDED_DIRECTORIES.copy()
+    if not templates:
+        excluded_directories.append("templates")
+
+    for file in directory.rglob("*.md"):
+        if any(excluded in file.parts for excluded in excluded_directories):
+            continue
+        yield str(file)

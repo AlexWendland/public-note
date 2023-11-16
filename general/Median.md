@@ -1,12 +1,12 @@
 ---
 aliases:
   - median
-type: str
-publish: false
+checked: false
 created: 2023-09-07
-last_edited: 2023-09-07
+last_edited: 2023-11-11
+publish: false
 tags:
   - maths
-chatgpt: false
+type: str
 ---
 # Median

@@ -3,13 +3,13 @@ aliases:
   - associative array
   - dictionary
   - map
-type: data structure
-publish: true
+checked: false
 created: 2023-10-12
-last_edited: 2023-10-12
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
-chatgpt: false
+type: data structure
 ---
 >[!tldr] Associative array
 >This is an abstract data structure that hold a collection of key - value pairs. The keys must be unique. The data structure needs to support the following operations:

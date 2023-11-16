@@ -1,13 +1,13 @@
 ---
 aliases:
   - Knapsack problem
-type: problem
-publish: true
+checked: false
 created: 2023-10-03
-last_edited: 2023-10-03
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
-chatgpt: false
+type: problem
 ---
 # Statement
 
@@ -19,7 +19,7 @@ chatgpt: false
 # Solutions
 
 - First solution
-	- run time 
+	- run time
 
 # Theory
 
@@ -28,4 +28,4 @@ chatgpt: false
 # Related problems
 
 - [[Knapsack-search (without replacement)|Knapsack-search]]
-- 
+-

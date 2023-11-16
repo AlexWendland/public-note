@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: problem
-publish: true
+aliases: null
+checked: false
 created: 2023-09-28
-last_edited: 2023-09-28
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
-chatgpt: false
+type: problem
 ---
 ## Statement
 
@@ -15,5 +15,5 @@ chatgpt: false
 
 ## Solutions
 
-- [[DFS to find connected components in an undirected graph]] 
-	- This runs in $O(\vert V \vert \cdot \vert E \vert)$ time. 
+- [[DFS to find connected components in an undirected graph]]
+	- This runs in $O(\vert V \vert \cdot \vert E \vert)$ time.

@@ -3,13 +3,13 @@ aliases:
   - partition
   - Partition
   - partitioned
-type: definition
-publish: true
+checked: false
 created: 2023-10-01
-last_edited: 2023-10-01
+last_edited: 2023-11-11
+publish: true
 tags:
   - maths
-chatgpt: false
+type: definition
 ---
 >[!tldr] Partition
 >Given a set $S$ a partition is a series of subsets $S_i \subset S$ such that they are mutually disjoint

@@ -2,13 +2,13 @@
 aliases:
   - prime
   - primes
-type: definition
-publish: true
+checked: false
 created: 2023-10-10
-last_edited: 2023-10-10
+last_edited: 2023-11-11
+publish: true
 tags:
   - maths
-chatgpt: false
+type: definition
 ---
 >[!tldr] Prime
 >An element $p$ is prime if it is non-zero, non-unit where if $p \vert mn$ then $p \vert m$ or $p \vert n$.

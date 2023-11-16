@@ -1,14 +1,14 @@
 ---
 aliases: []
-type: lecture
-publish: true
+checked: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-08-31
-last_edited: 2023-08-31
+last_edited: 2023-11-11
+publish: true
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+type: lecture
 week: 2
-chatgpt: false
 ---
 # Week 2 - Chain Matrix Multiply
 
@@ -101,8 +101,8 @@ class ChainMultiplySolver:
                 )
 
     def _solve_for_single_value(
-	    self, 
-	    lower_index: int, 
+	    self,
+	    lower_index: int,
 	    upper_index: int)
 	-> int:
         return min(
@@ -132,11 +132,11 @@ if __name__ == "__main__":
     print(solver.solve(sizes))
 ```
 
-Lets look at the run time of this algorithm, let the number of sizes be $n$. First `_setup_problem` takes $O(n^2)$ as we have to fill half a matrix. 
+Lets look at the run time of this algorithm, let the number of sizes be $n$. First `_setup_problem` takes $O(n^2)$ as we have to fill half a matrix.
 
-Working inside out, `_get_cost_of_multiplying_matrices` takes $O(1)$.  Then `_solve_for_single_value` calls `_get_cost_of_multiplying_matrices` up to $n$ times so takes $O(n)$. Lastly `_fill_matrix_diagonally` has two for loops calling `_solve_for_single_value` up to $n$ times each giving the run time of `_fill_matrix_diagonally` to be $O(n^3)$. 
+Working inside out, `_get_cost_of_multiplying_matrices` takes $O(1)$.  Then `_solve_for_single_value` calls `_get_cost_of_multiplying_matrices` up to $n$ times so takes $O(n)$. Lastly `_fill_matrix_diagonally` has two for loops calling `_solve_for_single_value` up to $n$ times each giving the run time of `_fill_matrix_diagonally` to be $O(n^3)$.
 
-So the cost of running `solve` $O(n^2) + O(n^3) = O(n^3)$. 
+So the cost of running `solve` $O(n^2) + O(n^3) = O(n^3)$.
 
 ## Further questions
 
@@ -148,7 +148,7 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 >Write a dynamic program that solves this problem efficiently with the following:
 >
 >Input: words $w_1, \ldots, w_n$ (in sorted order); frequencies $f_1, \ldots, f_n$.
->Output: The binary search tree of lowest cost.  (Not just the cost!)  
+>Output: The binary search tree of lowest cost.  (Not just the cost!)
 
 >[!question] 6.7 Palindrome subsequence
 >Given a sequence $a_1, a_2, \ldots, a_n$ devise an algorithm that returns the length of the longest [[Palindrome|palindromic]] [[Subsequence|subsequence]]. Its running time should be $O(n^2)$.

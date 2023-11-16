@@ -1,15 +1,16 @@
 ---
-aliases: 
-type: lecture
-publish: true
+aliases: null
+checked: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-11-03
-last_edited: 2023-11-03
+last_edited: 2023-11-11
+publish: true
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+type: lecture
 week: 10
-chatgpt: false
 ---
+# Week 7 - Homework 5 (unassessed)
 # Week 10 - Graph problem complexity
 
 ## Independent set problem
@@ -80,7 +81,7 @@ Like before the minimum problem is not known to be in [[Nondeterministic Polynom
 
 ![[Vertex cover of a given size is NP]]
 
-The [[Vertex cover|vertex cover]] is closely related to the [[Independent set (graph)|independent set]]. 
+The [[Vertex cover|vertex cover]] is closely related to the [[Independent set (graph)|independent set]].
 
 ![[Vertex cover if and only if the complement is an independent set]]
 

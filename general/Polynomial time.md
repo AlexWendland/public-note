@@ -2,13 +2,13 @@
 aliases:
   - polynomial time
   - P
-type: definition
-publish: true
+checked: false
 created: 2023-10-03
-last_edited: 2023-10-03
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
-chatgpt: false
+type: definition
 ---
 > [!tldr] Polynomial time
 > An algorithm runs in *polynomial time* if its running time is polynomial in the length of the input.

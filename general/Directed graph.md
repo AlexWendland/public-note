@@ -2,14 +2,13 @@
 aliases:
   - directed graph
   - digraph
-type: definition
-publish: true
+checked: false
 created: 2023-09-05
-last_edited: 2023-09-05
+last_edited: 2023-11-11
+publish: true
 tags:
   - maths
-  - list[str]
-chatgpt: false
+type: definition
 ---
 > [!tldr] Directed graph
 > Let $V$ be a set of vertices and let $E \subset V \times V$ an edge $e = (x,y)$ is a directed edge from $x \in V$ to $y \in V$. The directed graph is the pair $(V,E)$.

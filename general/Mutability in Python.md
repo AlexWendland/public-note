@@ -1,11 +1,14 @@
 ---
-aliases: [mutability in Python]
-type: concept
-publish: true
+aliases:
+  - mutability in Python
+checked: false
 created: 2023-07-17
-last_edited: 2023-07-17
-tags: programming, python
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+  - python
+type: concept
 ---
 # Mutability in Python
 
@@ -68,8 +71,8 @@ print("After function: ", greeting)  # After function: ['Hello', 'world']
 ```
 
 > [!Warning] Beware [[Side effect|side effects]]!
-> When passing a [[Mutability|mutable]] argument to a function. This function can alter the argument causing an intended [[Side effect|side effect]] of that function. It is [[Function conventions#Have no side effects|good practice]] to not have [[Side effect|side effects]] of your function and to not use [[Function conventions#Don't use input arguments to output the result|input parameters as the functions output]]. 
+> When passing a [[Mutability|mutable]] argument to a function. This function can alter the argument causing an intended [[Side effect|side effect]] of that function. It is [[Function conventions#Have no side effects|good practice]] to not have [[Side effect|side effects]] of your function and to not use [[Function conventions#Don't use input arguments to output the result|input parameters as the functions output]].
 
 ## Mutable and Immutable types in python
 
-In [[Python Index]], lists, sets and dictionaries are [[Mutability|mutable]] whereas numbers, strings, tuples and frozen sets are [[Mutability|immutable]]. User defined objects are by default [[Mutability|mutable]] however you can make them [[Mutability|immutable]] if you so wish. 
+In [[Python Index]], lists, sets and dictionaries are [[Mutability|mutable]] whereas numbers, strings, tuples and frozen sets are [[Mutability|immutable]]. User defined objects are by default [[Mutability|mutable]] however you can make them [[Mutability|immutable]] if you so wish.

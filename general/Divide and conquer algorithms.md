@@ -2,12 +2,12 @@
 aliases:
   - divide and conquer
   - divide and conquer algorithm
-type: 
-publish: false
+checked: false
 created: 2023-09-05
-last_edited: 2023-09-05
+last_edited: 2023-11-11
+publish: false
 tags:
   - programming
-chatgpt: false
+type: null
 ---
 # Divide and conquer algorithms

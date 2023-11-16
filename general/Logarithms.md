@@ -1,15 +1,19 @@
 ---
-aliases: [logs, rules of logarithms, logarithms]
-type: function
-publish: true
+aliases:
+  - logs
+  - rules of logarithms
+  - logarithms
+checked: false
 created: 2023-08-28
-last_edited: 2023-08-28
-tags: maths
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - maths
+type: function
 ---
 # Logarithms
 
-A logarithm is the inverse operation to exponentiation. Given a base $b > 0$ and $b \not = 1$, the logarithm $\log_b(a)$ is the exponent $x$ you would raise $b$ to in order to get $a$. 
+A logarithm is the inverse operation to exponentiation. Given a base $b > 0$ and $b \not = 1$, the logarithm $\log_b(a)$ is the exponent $x$ you would raise $b$ to in order to get $a$.
 
 > [!tldr] Logarithm
 > This is defined as:
@@ -30,20 +34,20 @@ which combining these and substituting for $y$ gives
 $$\log_c(b) \ast \log_b(x) = \zeta \log_b(x) = \zeta y = \log_c(x).$$
 ## Natural logarithms
 
-A lot of people will only talk about logarithms using the base $e$ instead of using the notation $\log_e(x)$ they may use the notation $\ln(x)$. This is sort of implied when people just write $\log(x)$. The reason for this is $\log_a(x)$ and $\log_b(x)$ only differ by a constant $\log_c(b)$, as above showed us - in some fields people don't care about things up to scalar multiple. 
+A lot of people will only talk about logarithms using the base $e$ instead of using the notation $\log_e(x)$ they may use the notation $\ln(x)$. This is sort of implied when people just write $\log(x)$. The reason for this is $\log_a(x)$ and $\log_b(x)$ only differ by a constant $\log_c(b)$, as above showed us - in some fields people don't care about things up to scalar multiple.
 
 >[!warning] Some people use $\log(x)$ to mean $\log_{10}(x)$ instead.
 >You need to know the context of the field you are working in. If you are working in a particular base setting it might mean that base. Like in binary it might mean $\log_2(x)$.
 
 ## Logs turn multiplication into addition
 
-Logs are useful as they bring the rules of exponential powers to regular terms. 
+Logs are useful as they bring the rules of exponential powers to regular terms.
 
 >[!important] Proposition
 > We have the following equality
 > $$\log(A) + \log(B) = \log(AB).$$
 
-Which is proven by the fact that 
+Which is proven by the fact that
 $$e^Ae^B = e^{A+B}.$$
 This by extension gives
 $$\log(A^n) = n\log(A).$$

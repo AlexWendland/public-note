@@ -1,11 +1,14 @@
 ---
-aliases: [boolean function]
-type: definition
-publish: true
+aliases:
+  - boolean function
+checked: false
 created: 2023-08-28
-last_edited: 2023-08-28
-tags: maths, computer-science
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - maths
+  - computer-science
+type: definition
 ---
 # Boolean function
 

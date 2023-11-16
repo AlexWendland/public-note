@@ -1,14 +1,13 @@
 ---
 aliases:
   - quick sort
-type: algorithm
-publish: true
+checked: false
 created: 2023-09-07
-last_edited: 2023-09-07
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
-  - list[str]
-chatgpt: false
+type: algorithm
 ---
 # Quick Sort
 
@@ -18,7 +17,7 @@ This is a [[Recursion|recursive]] algorithm used to solve the [[Sorting problem|
 2. Partition $A$ into $A_{<p}$ , $A_{=p}$ , and $A_{>p}$ .
 3. Recursively sort $A_{<p}$ and $A_{>p}$.
 
-The issue is how to choose a good piviot $p$ - ideally you would want to pick the [[Median|median]] element. 
+The issue is how to choose a good piviot $p$ - ideally you would want to pick the [[Median|median]] element.
 
 ## Run time
 

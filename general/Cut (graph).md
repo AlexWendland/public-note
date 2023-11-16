@@ -2,13 +2,13 @@
 aliases:
   - cut
   - cut edge
-type: definition
-publish: true
+checked: false
 created: 2023-10-01
-last_edited: 2023-10-01
+last_edited: 2023-11-11
+publish: true
 tags:
   - maths
-chatgpt: false
+type: definition
 ---
 >[!tldr] Cut
 >Let $G = (V,E)$ be a [[Graph|undirected graph]]. A *cut* of $G$ is a *partition* of $V = S \cup \overline{S}$. The *cut edges* are

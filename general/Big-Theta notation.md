@@ -1,11 +1,13 @@
 ---
 aliases: []
-type: notation
-publish: true
+checked: false
 created: 2023-08-27
-last_edited: 2023-08-27
-tags: programming, maths
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+  - maths
+type: notation
 ---
 # Big-Theta notation
 

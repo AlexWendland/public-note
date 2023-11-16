@@ -1,11 +1,13 @@
 ---
 aliases: []
-type: practice
-publish: true
+checked: false
 created: 2023-08-20
-last_edited: 2023-08-20
-tags: programming, clean-code
-chatgpt: true
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+  - clean-code
+type: practice
 ---
 # Wrap 3rd party libraries
 

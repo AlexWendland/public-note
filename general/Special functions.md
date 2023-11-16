@@ -1,15 +1,24 @@
 ---
-aliases: [special, dunder, magic, dunder functions, special functions, magic functions]
-type: notation
-publish: true
+aliases:
+  - special
+  - dunder
+  - magic
+  - dunder functions
+  - special functions
+  - magic functions
+checked: false
 created: 2023-02-25
-last_edited: 2023-03-03
-tags: programming, python
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+  - python
+type: notation
 ---
 # Special Functions
 This are also known as [[Special functions|dunder]] (double underscore) or [[Special functions|magic]] functions. They are signified by two underscores before and after its name i.e. \_\_len\_\_.
 
-These functions are not normally called by the user, the are for the python interpreter to use. For example if you call 
+These functions are not normally called by the user, the are for the python interpreter to use. For example if you call
 ```python
 item in some_iterable:
 	pass

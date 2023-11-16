@@ -1,11 +1,11 @@
 ---
-aliases: 
-type: data structure
-publish: false
+aliases: null
+checked: false
 created: 2023-10-12
-last_edited: 2023-10-12
+last_edited: 2023-11-11
+publish: false
 tags:
   - programming
-chatgpt: false
+type: data structure
 ---
 # Bloom filters

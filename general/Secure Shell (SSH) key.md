@@ -1,9 +1,13 @@
 ---
-aliases: [SSH key, SSH keys]
-type: tool
-publish: false
+aliases:
+  - SSH key
+  - SSH keys
+checked: false
 created: 2023-03-19
-last_edited: 2023-03-19
-tags: programming, list[str]
+last_edited: 2023-11-11
+publish: false
+tags:
+  - programming
+type: tool
 ---
 # Secure Shell (SSH) key

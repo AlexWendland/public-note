@@ -1,14 +1,14 @@
 ---
-aliases: 
-type: lecture
-publish: true
+aliases: null
+checked: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-10-09
-last_edited: 2023-10-09
+last_edited: 2023-11-11
+publish: true
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+type: lecture
 week: 8
-chatgpt: false
 ---
 # Week 8 - RSA
 
@@ -38,11 +38,11 @@ Which as a corollary has $\phi(pq) = (p-1)(q-1)$ for two distinct prime numbers.
 
 ## [[Rivest-Shamir-Adleman algorithm (RSA algorithm)|RSA]] idea
 
-Here we want to pass a message $z \in \mathbb{Z}$ from one person to another where the message sent between them is unintelligible without more information. 
+Here we want to pass a message $z \in \mathbb{Z}$ from one person to another where the message sent between them is unintelligible without more information.
 
-Let $p$ and $q$ be distinct primes. We are going to use [[Euler's theorem (modular arithmetic)]] that 
+Let $p$ and $q$ be distinct primes. We are going to use [[Euler's theorem (modular arithmetic)]] that
 $$z^{(p-1)(q-1)} = z \ (mod \ pq)$$
-to recover a message. 
+to recover a message.
 
 ![[Rivest-Shamir-Adleman algorithm (RSA algorithm)]]
 
@@ -55,7 +55,7 @@ As [[Prime|primes]] are dense the probability that this number is prime is $1/n$
 ```pseudocode
 random_prime(n):
 	Input: n the length of the number in bits.
-	Output: A prime number that has n-bits. 
+	Output: A prime number that has n-bits.
 1. Select a random n-bit number.
 2. If it is prime return it
 3. Go back to step 1.
@@ -67,13 +67,13 @@ Though how do we check if a number is [[Prime|prime]].
 
 If $r$ is a [[Prime|prime]] then for all $1 \leq z < r$ we have
 $$z^{r-1} = 1 \ (mod \ r).$$
-So if we find $z$ where $z^{r-1} \not = 1$ (mod $r$) we know $r$ is composite. 
+So if we find $z$ where $z^{r-1} \not = 1$ (mod $r$) we know $r$ is composite.
 
-Such $z$ are called a [[Fermat witness]] for $r$ and every composite number has one. 
+Such $z$ are called a [[Fermat witness]] for $r$ and every composite number has one.
 
 ![[Existence of a Fermat witness if and only if composite]]
 
-However, the [[Fermat witness]] constructed in the proof are not dense in the numbers between $1$ to $r-1$. We need the existence of [[Fermat witness|non-trivial Fermat witness]] to guarantee this. 
+However, the [[Fermat witness]] constructed in the proof are not dense in the numbers between $1$ to $r-1$. We need the existence of [[Fermat witness|non-trivial Fermat witness]] to guarantee this.
 
 ![[Carmichael number]]
 

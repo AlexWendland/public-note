@@ -1,11 +1,15 @@
 ---
-aliases: [data structure, Data structures, data structures]
-type: structure
-publish: true
+aliases:
+  - data structure
+  - Data structures
+  - data structures
+checked: false
 created: 2023-07-11
-last_edited: 2023-07-11
-tags: programming
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+type: structure
 ---
 # Data structure
 

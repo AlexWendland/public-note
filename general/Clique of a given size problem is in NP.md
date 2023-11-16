@@ -1,13 +1,13 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+checked: false
 created: 2023-11-03
-last_edited: 2023-11-03
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
   - graph-theory
-chatgpt: false
+type: lemma
 ---
 # Statement
 

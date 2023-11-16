@@ -4,13 +4,13 @@ aliases:
   - P /= NP
   - P equals NP
   - P not equal to NP
-type: theory
-publish: true
+checked: false
 created: 2023-10-24
-last_edited: 2023-10-24
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
-chatgpt: false
+type: theory
 ---
 # P equals NP or P not equals NP
 

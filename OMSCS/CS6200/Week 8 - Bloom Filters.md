@@ -1,16 +1,16 @@
 ---
-aliases: 
-type: lecture
-publish: true
+aliases: null
+checked: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-10-10
-last_edited: 2023-10-10
+last_edited: 2023-11-11
+publish: true
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+type: lecture
 week: 8
-chatgpt: false
 ---
-# Week 7 - Homework 5 (unassessed) 
+# Week 7 - Homework 5 (unassessed)
 # Week 8 - Bloom Filters
 
 This week we will be focusing on [[Hash function|hash functions]]. First we will look at a probability question.
@@ -21,7 +21,7 @@ If you randomly throw $n$ identical balls in $n$ identical bins $B_i$ for $1 \le
 
 We are going to show that  ....
 
-So first look at 
+So first look at
 
 $$\mathbb{P}(\geq log(n) \mbox{ balls are ssigned to } B_i) = \binom{n}{log(n)} \left ( \frac{1}{n} \right )^{\log(n)} \leq \left ( \frac{e}{\log(n)} \right )^{\log(n)}$$
 by [[Stirling's approximation|Stirling's formula]] and the definition of the [[Binomial coefficient]].
@@ -44,9 +44,9 @@ Best of 2(n)
 	4. Otherwise assign ball to bin k
 ```
 
-In this approach we get the max load is $O(\log \log n)$ [[Happens with high probability|with high probability]]. 
+In this approach we get the max load is $O(\log \log n)$ [[Happens with high probability|with high probability]].
 
-Note if we increase 2 to $d > 2$ then we only get a slight decrease in max load to $O(\frac{\log \log(n)}{\log(d)})$ [[Happens with high probability|with high probability]]. 
+Note if we increase 2 to $d > 2$ then we only get a slight decrease in max load to $O(\frac{\log \log(n)}{\log(d)})$ [[Happens with high probability|with high probability]].
 
 ## Hashing
 
@@ -73,12 +73,12 @@ Instead of using a [[Hash table|hash table]] with only one [[Hash function|hash 
 	- Compute $h_1(e)$ and $h_2(e)$, and
 	- check for $y$ in $h_1(e)$ and $h_2(e)$.
 
-From the analysis we did above if $n = m$ then this should have run time of $O(\log \log(n))$. 
+From the analysis we did above if $n = m$ then this should have run time of $O(\log \log(n))$.
 
 ## Bloom filters
 
 [[Bloom filters]] are another way to solve the unacceptable passwords problem.
-- Checks take $O(1)$ time, 
+- Checks take $O(1)$ time,
 - It uses less space than [[Chain Hashing]], and
 - it is a simpler algorithm.
 However, there is a small probability of false positives $x \not \in S$ but we say it is!

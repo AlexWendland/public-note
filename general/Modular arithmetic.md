@@ -2,13 +2,13 @@
 aliases:
   - mod
   - modular arithmetic
-type: definition
-publish: true
+checked: false
 created: 2023-10-09
-last_edited: 2023-10-09
+last_edited: 2023-11-11
+publish: true
 tags:
   - maths
-chatgpt: false
+type: definition
 ---
 >[!tldr] Modular arithmetic
 >Given two values $a,b \in \mathbb{Z}$ (though this can be expanded to other domains). We define $a$ modulo $b$ to be the remainder when dividing $a$ by $b$. Write

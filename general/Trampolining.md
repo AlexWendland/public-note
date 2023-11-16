@@ -1,11 +1,12 @@
 ---
 aliases: []
-type: algorithm
-publish: true
+checked: false
 created: 2023-08-26
-last_edited: 2023-08-26
-tags: programming
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+type: algorithm
 ---
 # Trampolining
 
@@ -38,21 +39,21 @@ def greatest_common_divisor(first_number: int, second_number: int) -> int:
     Calculate the greatest common divisor of two integers using a trampoline.
     """
     def gcd_trampoline(
-	    larger_number: int, 
-	    smaller_number: int) 
+	    larger_number: int,
+	    smaller_number: int)
 	-> Union[int, Callable]:
         if smaller_number == 0:
             return larger_number
         else:
             return lambda: gcd_trampoline(
-	            smaller_number, 
+	            smaller_number,
 	            larger_number % smaller_number
 	        )
-    
+
     # Swap the numbers if needed
     if first_number < second_number:
         first_number, second_number = second_number, first_number
-    
+
     return run_trampoline(gcd_trampoline(first_number, second_number))
 
 if __name__ == "__main__":
@@ -63,6 +64,6 @@ if __name__ == "__main__":
 
 ## Advantages
 
-This method will stop 
+This method will stop
 
 ## Limitations

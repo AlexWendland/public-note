@@ -1,11 +1,14 @@
 ---
-aliases: [naming variables, naming conventions]
-type: convention
-publish: true
+aliases:
+  - naming variables
+  - naming conventions
+checked: false
 created: 2023-03-18
-last_edited: 2023-03-19
-tags: programming
-chatgpt: true
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+type: convention
 ---
 # Naming conventions
 
@@ -45,12 +48,12 @@ In this example, `d` doesn't reveal its purpose, while `seconds_in_a_day` clearl
 
 Remember this heuristic to evaluate if you've chosen a good name:
 
-> [!quote] [[Clean Code]] 
+> [!quote] [[Clean Code]]
 > If a name requires a comment, then the name does not reveal its intent.
 
 ## Don't include the type in the name
 
-As a [[Python Index]] programmer working in [[Data]], it's tempting to include data types in variable names, such as `df_football_results_data`. 
+As a [[Python Index]] programmer working in [[Data]], it's tempting to include data types in variable names, such as `df_football_results_data`.
 
 There are several reasons to avoid this practice:
 
@@ -112,11 +115,11 @@ Requires more context to know what is going on. You could use more descriptive n
 ```python
 for index, football_team in enumerate(football_premiership_teams):
 	average_goals_per_game = calculate_goals_per_game(football_team)
-	print(f'Team {index} completed with {football_team} and output {average_goals_per_game}') 
+	print(f'Team {index} completed with {football_team} and output {average_goals_per_game}')
 ```
 
 >[!warning] Include units in the variable name
-> You might know that all timestamps in your code are unix second timestamps. However you in 5 days or another coder might not. So instead of `start_time` why not `start_unix_timestamp_seconds` 
+> You might know that all timestamps in your code are unix second timestamps. However you in 5 days or another coder might not. So instead of `start_time` why not `start_unix_timestamp_seconds`
 
 ## Be consistent
 

@@ -1,12 +1,17 @@
 ---
-aliases: [CS6200, Introduction to Graduate Algorithms]
-type: course
-publish: true
+aliases:
+  - CS6200
+  - Introduction to Graduate Algorithms
+checked: false
 created: 2023-08-26
-last_edited: 2023-08-26
-tags: OMSCS, maths, programming
+last_edited: 2023-11-11
+publish: true
+tags:
+  - OMSCS
+  - maths
+  - programming
 term: 2023-fall
-chatgpt: false
+type: course
 ---
 # CS6200 Introduction to Graduate Algorithms
 
@@ -40,3 +45,8 @@ This course is a graduate-level course in the design and analysis of algorithms.
 - [OMSCS page](https://omscs.gatech.edu/cs-6515-intro-graduate-algorithms)
 - [Course textbook](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf)
 - [[Week 10 - Graph problem complexity]]
+- [[Week 11 - Linear Programming]]
+- [[Week 12 - Max-SAT approximation algorithm]]
+
+- [[Week 12 - Knapsack complexity]]
+- [[Week 12 - Halting problem]]

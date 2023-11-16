@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: algorithm
-publish: true
+aliases: null
+checked: false
 created: 2023-10-05
-last_edited: 2023-10-05
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
-chatgpt: false
+type: algorithm
 ---
 # Image segmentation by max flow
 
@@ -25,7 +25,7 @@ Therefore to maximise $w(F,B)$ we could instead minimise
 $$w'(F,B) = \sum_{u \in B} f(u) + \sum_{v \in F} b(v) + \sum_{(v,u) \in cut(F,B)} p(u,v).$$
 ### New problem
 
->[!tldr] Image segmentation altered 
+>[!tldr] Image segmentation altered
 >Given an undirected graph $G = (V,E)$ with weights:
 >- for each $v \in V$, $f(v), b(v) \geq 0$, and
 >- for each $e \in E$, $p(e) \geq 0$.
@@ -46,7 +46,7 @@ $$\begin{align*} capacity(F \cup \{s\}, B \cup \{t\}) & = \sum_{\substack{(v,w) 
 & = \sum_{u \in B} f(u) + \sum_{v \in F} b(v) + \sum_{\substack{(v,w) \in E\\ v \in F, w \in B}} p(v,w)\\
 & = w'(F,B).
 \end{align*}$$
-## Pseudo code 
+## Pseudo code
 
 ```pseudocode
 Image_segmentation(G,f,b,p):
@@ -59,4 +59,4 @@ Image_segmentation(G,f,b,p):
 
 ## Runtime
 
-Defining the graph takes at most $O(\vert V \vert + \vert E \vert)$ so the algorithm is dominated by the solution to your flow network problem. 
+Defining the graph takes at most $O(\vert V \vert + \vert E \vert)$ so the algorithm is dominated by the solution to your flow network problem.

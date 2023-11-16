@@ -1,11 +1,17 @@
 ---
-aliases: [formatting, code formatting, formatting conventions]
-type: convention
-publish: true
+aliases:
+  - formatting
+  - code formatting
+  - formatting conventions
+checked: false
 created: 2023-07-01
-last_edited: 2023-07-11
-tags: programming, clean code,
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+  - clean code
+  - ''
+type: convention
 ---
 # Formatting conventions
 

@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: algorithm
-publish: true
+aliases: null
+checked: false
 created: 2023-09-29
-last_edited: 2023-09-29
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
-chatgpt: false
+type: algorithm
 ---
 # DFS for finding strongly connected components
 
@@ -17,12 +17,12 @@ SCC(G):
 		1. Construct G^R
 		2. Run DFS on G^R
 		3. Order V by decreasing post order number.
-		4. Run directed DFS on G using the vertex ordering from before and 
+		4. Run directed DFS on G using the vertex ordering from before and
 		   label the connected components we reach.
 ```
 
 >[!note] Additional property
->In addition to labelling the connected components the order we have labelled them is in reverse topological ordering. This is because we always start at the next sink vertex after we have labelled a component. 
+>In addition to labelling the connected components the order we have labelled them is in reverse topological ordering. This is because we always start at the next sink vertex after we have labelled a component.
 
 This takes $O(\vert V \vert + \vert E \vert)$ as we do two runs of a [[Depth-first search (DFS)|DFS]] algorithm.
 
@@ -40,7 +40,7 @@ First we look at $G^R$ and run the [[DFS to find path in an undirected graph]] a
 
 ![[reverse_strongly_connected_compoent_graph.png]]
 
-This gives us $post : V \rightarrow \mathbb{N}$ - in this example we started at $C$ and did a fairly random vertex ordering. 
+This gives us $post : V \rightarrow \mathbb{N}$ - in this example we started at $C$ and did a fairly random vertex ordering.
 
 ![[scc_tree_example.png]]
 

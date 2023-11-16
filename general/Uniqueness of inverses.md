@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+checked: false
 created: 2023-10-09
-last_edited: 2023-10-09
+last_edited: 2023-11-11
+publish: true
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
 >[!important] Lemma
 >Suppose we have some set $X$ and [[associative]] [[Binary operation|binary operation]] $\cdot$  with a unit $1$ such that $x \cdot 1 = 1 \cdot x = x$ then two-sided inverses if they exists are unique.

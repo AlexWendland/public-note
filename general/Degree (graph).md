@@ -1,11 +1,16 @@
 ---
-aliases: [degree of a vertex, degree, vertex degree]
-type: definition
-publish: true
+aliases:
+  - degree of a vertex
+  - degree
+  - vertex degree
+checked: false
 created: 2023-08-28
-last_edited: 2023-08-28
-tags: maths, graph-theory
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - maths
+  - graph-theory
+type: definition
 ---
 # Degree (graph)
 
