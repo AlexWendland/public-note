@@ -38,7 +38,15 @@ To verify a solution of the Stingy SAT problem, first check it satisfies the $f$
 
 To show it is [[NP-Complete]] we will make a [[Many-one reduction (problem)|many-one reduction]] from the [[Satisfiability problem (SAT problem)|SAT problem]] to Stingy SAT.
 
-Suppose we are given $f$ an instance of the [[Satisfiability problem (SAT problem)|SAT problem]] with $n$ variables and $m$ clauses. 
+Suppose we are given $f$ an instance of the [[Satisfiability problem (SAT problem)|SAT problem]] with $n$ variables and $m$ clauses. Put  $f$ into stingy STAT with $k = n$. This takes $O(1)$ as we are doing no transformation.
+
+If Stingy stat provides a solution, provide this solution to the original question. This takes $O(1)$ as we are doing no alteration.
+
+If $f$ has a satisfying assignment then that assignment has less than $n$ true values as it only has $n$ variables. Therefore this assignment solves the stingy SAT problem with $k = n$.
+
+If $f$ has a satisfying assignment to the stingy SAT problem with $k = n$. Then by definition this satisfies $f$ and so it satisfies $f$ solving the [[Satisfiability problem (SAT problem)|SAT problem]].
+
+As [[SAT is NP-complete]] this gives Stingy SAT is.
 
 >[!question] Problem 8.4 Clique-3
 >Suppose we reduce the [[Clique of a given size problem]] but on [[Graph|graphs]] with [[Degree (graph)|degree]] at most 3.
