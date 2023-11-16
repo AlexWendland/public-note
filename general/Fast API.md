@@ -1,10 +1,16 @@
 ---
-aliases: [fast API]
-type: library
-publish: true
+aliases:
+  - fast API
+checked: false
 created: 2023-03-10
-last_edited: 2023-03-10
-tags: programming, python, api, incomplete
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+  - python
+  - api
+  - incomplete
+type: library
 ---
 # Fast API
 

@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+checked: false
 created: 2023-11-03
-last_edited: 2023-11-03
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
-chatgpt: false
+type: lemma
 ---
 # Statement
 
@@ -17,7 +17,7 @@ chatgpt: false
 
 We know the [[Independent set of a given size is NP-complete]], therefore it is [[NP-hard]]. We can reduce the [[Independent set of a given size]] to [[Max independent set problem (graph)|max independent set problem]] using the straight forward [[Many-one reduction (problem)|Many-one reduction]].
 
-Suppose we have a graph $G$ and integer $g \geq 1$. Pass this graph $G$ to the [[Max independent set problem (graph)|max independent set problem]]. This step is $O(1)$ as we need to do no manipulation. 
+Suppose we have a graph $G$ and integer $g \geq 1$. Pass this graph $G$ to the [[Max independent set problem (graph)|max independent set problem]]. This step is $O(1)$ as we need to do no manipulation.
 
 The solution provides $I$ a max [[Independent set (graph)|independent set]]. If $\vert I \vert \geq g$ then return $I$, otherwise return no. This step takes $O(\vert V \vert)$ so it is polynomial in the input size.
 

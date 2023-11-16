@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+checked: false
 created: 2023-10-10
-last_edited: 2023-10-10
+last_edited: 2023-11-11
+publish: true
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
 # Statement
 
@@ -21,7 +21,7 @@ chatgpt: false
 
 We proceed by induction.
 
-If $i = 2$ then from the [[Extended Euclidean algorithm|extended Euclidean algorithm]] we could construct $x_1$ and $x_2$ such that $x_1 n_1 + x_2 n_2 = 1$. 
+If $i = 2$ then from the [[Extended Euclidean algorithm|extended Euclidean algorithm]] we could construct $x_1$ and $x_2$ such that $x_1 n_1 + x_2 n_2 = 1$.
 
 Note this gives $x_1n_1 = 1$ (mod $n_2)$ and $x_2n_2 = 1$ (mod $n_1$).
 
@@ -37,12 +37,12 @@ Now solve the $i = k-1$ problem using the induction assumption with $n_i$ for $i
 $$ x = a_{i} \ (mod \ n_{i}), \mbox{ for } i < k-1, \mbox{ and } x = x_{k-1,k} \ (mod \ n_{k-1}n_k).$$
 which by construction gives
 $$ x = x_{k-1,k} = a_{k-1} \ (mod \ n_{k-1}), \mbox{ and } x = x_{k-1,k} = a_k \ (mod \ n_k).$$
-Thus by induction we have show existence. 
+Thus by induction we have show existence.
 
 ## Uniqueness
 
-Suppose $0 \leq x \leq y < N$ were two such solutions then $n_i \vert y - x$ for all $1 \leq i \leq k$. 
+Suppose $0 \leq x \leq y < N$ were two such solutions then $n_i \vert y - x$ for all $1 \leq i \leq k$.
 
-As the $n_i$ are [[Coprime|coprime]] we have that $N \vert y-x$. 
+As the $n_i$ are [[Coprime|coprime]] we have that $N \vert y-x$.
 
 As $0 \leq y-x < N$ the only possible solution is $y = x$ and we have uniqueness.

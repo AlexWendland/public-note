@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: problem
-publish: true
+aliases: null
+checked: false
 created: 2023-09-29
-last_edited: 2023-09-29
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
-chatgpt: false
+type: problem
 ---
 ## Statement
 
@@ -16,5 +16,5 @@ chatgpt: false
 ## Solutions
 
 - [[DFS for finding strongly connected components]]
-	- This runs in $O(\vert V \vert \cdot \vert E \vert)$ time. 
+	- This runs in $O(\vert V \vert \cdot \vert E \vert)$ time.
 	- It also outputs the strongly connected components in a reverse [[Topological sorting (DAG)|topologically sort]].

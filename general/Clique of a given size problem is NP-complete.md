@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+checked: false
 created: 2023-11-03
-last_edited: 2023-11-03
+last_edited: 2023-11-11
+publish: true
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
 # Statement
 
@@ -25,8 +25,8 @@ Calculating the [[Complement graph|complement graph]] takes $O(\vert V \vert^2)$
 
 Then if a [[Clique (graph)|clique]] $S$ is returned in $G^C$ then we return this as our [[Independent set (graph)|independent set]] in $G$.
 
-This takes $O(1)$ as we are doing no transformations to the output. 
+This takes $O(1)$ as we are doing no transformations to the output.
 
-As [[Cliques in G are independent sets in the complement]] we have a solution to the [[Independent set of a given size]] if and only if we have a solution to the [[Clique of a given size problem]]. 
+As [[Cliques in G are independent sets in the complement]] we have a solution to the [[Independent set of a given size]] if and only if we have a solution to the [[Clique of a given size problem]].
 
 This gives [[Clique of a given size problem]] is [[NP-hard]] making it [[NP-Complete|NP-complete]].

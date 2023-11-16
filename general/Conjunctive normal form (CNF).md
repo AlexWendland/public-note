@@ -1,11 +1,14 @@
 ---
 aliases: Conjunctive normal form, conjunctive normal form, CNF
-type: definition
-publish: true
+checked: false
 created: 2023-08-28
-last_edited: 2023-08-28
-tags: maths, computer-sciecne, logic
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - maths
+  - computer-sciecne
+  - logic
+type: definition
 ---
 # Conjunctive normal form (CNF)
 

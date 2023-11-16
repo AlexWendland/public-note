@@ -1,14 +1,14 @@
 ---
-aliases: 
-type: lecture
-publish: true
+aliases: null
+checked: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-10-01
-last_edited: 2023-10-01
+last_edited: 2023-11-11
+publish: true
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+type: lecture
 week: 6
-chatgpt: false
 ---
 # Week 6 - Minimum Spanning Tree
 
@@ -28,7 +28,7 @@ These are all proved by the [[Equivalent tree definitions|equivalent tree defini
 
 The greedy approach of just starting with an empty graph and keep adding valid edges of minimum weight, solves the [[Minimum Spanning Tree problem (MST)|MST]] problem.
 
-The only problem is keeping track of the edges that are valid to include. 
+The only problem is keeping track of the edges that are valid to include.
 
 ## Kruskal's Algorithm
 

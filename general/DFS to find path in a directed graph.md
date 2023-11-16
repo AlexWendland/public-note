@@ -1,16 +1,16 @@
 ---
-aliases: 
-type: algorithm
-publish: true
+aliases: null
+checked: false
 created: 2023-09-29
-last_edited: 2023-09-29
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
-chatgpt: false
+type: algorithm
 ---
 ## Finding paths in a [[Directed graph|directed graph]] via [[Depth-first search (DFS)|DFS]]
 
-To do this we are going to use a [[Depth-first search (DFS)|DFS]] algorithm like [[]] but we are going to track pre/postorder numbers. 
+To do this we are going to use a [[Depth-first search (DFS)|DFS]] algorithm like [[]] but we are going to track pre/postorder numbers.
 
 ```pseudocode
 DFS(G)
@@ -37,7 +37,7 @@ Explore(z)
 
 ### Example
 
-Suppose we have the following graph and let $B$ be the root node. Suppose we explore edges alphabetically and lets run the algorithm above on it. 
+Suppose we have the following graph and let $B$ be the root node. Suppose we explore edges alphabetically and lets run the algorithm above on it.
 
 ![[dfs_example.png]]
 

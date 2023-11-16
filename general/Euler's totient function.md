@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: definition
-publish: true
+aliases: null
+checked: false
 created: 2023-10-09
-last_edited: 2023-10-09
+last_edited: 2023-11-11
+publish: true
 tags:
   - maths
-chatgpt: false
+type: definition
 ---
 > [!tldr] Euler's totient function
 > For a natural number $n \in \mathbb{N}$ define *Eulers totient function* as

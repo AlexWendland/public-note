@@ -1,15 +1,21 @@
 ---
-aliases: [test, testing, testing conventions, test conventions]
-type: conventions
-publish: true
+aliases:
+  - test
+  - testing
+  - testing conventions
+  - test conventions
+checked: false
 created: 2023-06-29
-last_edited: 2023-06-29
-tags: programming, clean-code
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+  - clean-code
+type: conventions
 ---
 # Testing conventions
 
-Tests are what makes your code safe to change. They are validate the assumptions that other bits of your code make. Without them you can not change your code without fearing the consequences. Though for this we pay a price with time, time to write them, time to run them and time to maintain them. This is a problem similar to the rest of your code but with different emphasis - tests do not need to be hyper efficient, however they will need to clearly state the assumption that has been broken. 
+Tests are what makes your code safe to change. They are validate the assumptions that other bits of your code make. Without them you can not change your code without fearing the consequences. Though for this we pay a price with time, time to write them, time to run them and time to maintain them. This is a problem similar to the rest of your code but with different emphasis - tests do not need to be hyper efficient, however they will need to clearly state the assumption that has been broken.
 
 ## Writing tests
 

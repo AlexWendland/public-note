@@ -1,14 +1,14 @@
 ---
-aliases: 
-type: lecture
-publish: true
+aliases: null
+checked: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-10-03
-last_edited: 2023-10-03
+last_edited: 2023-11-11
+publish: true
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+type: lecture
 week: 7
-chatgpt: false
 ---
 # Week 6 - Homework 4 (assessed)
 # Week 7 - Max-Flow Min-Cut

@@ -1,16 +1,16 @@
 ---
-aliases: 
-type: algorithm
-publish: true
+aliases: null
+checked: false
 created: 2023-09-29
-last_edited: 2023-09-29
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
-chatgpt: false
+type: algorithm
 ---
 # [[Depth-first search (DFS)|DFS]] to find path in an undirected graph
 
-For [[Graph|undirected graphs]] we just keep track of the previous vertex and find a [[Spanning subgraph|spanning]] [[Subgraph|sub]]-[[Forest (graph)|forest]] for the [[Graph|graph]]. We can use this to find [[Path (graph)|paths]] between vertices by going back to the root vertices of the [[Tree (graph)|trees]]. 
+For [[Graph|undirected graphs]] we just keep track of the previous vertex and find a [[Spanning subgraph|spanning]] [[Subgraph|sub]]-[[Forest (graph)|forest]] for the [[Graph|graph]]. We can use this to find [[Path (graph)|paths]] between vertices by going back to the root vertices of the [[Tree (graph)|trees]].
 
 ```pseudocode
 DFS(G)
@@ -40,4 +40,4 @@ Explore(z)
 
 # Runtime
 
-$O(\vert V \vert + \vert E \vert)$ 
+$O(\vert V \vert + \vert E \vert)$

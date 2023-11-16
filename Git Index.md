@@ -1,19 +1,20 @@
 ---
 aliases:
   - git
-type: index
-publish: true
+checked: true
 created: 2023-03-19
-last_edited: 2023-10-20
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
   - git
+type: index
 ---
 # Git
-This is my preferred (well ... to be honest the only one I have used) version control system. It allows complete distributed development on code, though most people use a centralised version of this on [[GitHub]], [[GitLab]], or if the are forced [[BitBucket]].  
+Git is a version control system that I prefer and have experience using. It enables distributed development on code, although many people opt for a centralized version by using platforms such as [[GitHub]], [[GitLab]], or, if they have no choice, [[BitBucket]].
 
 # Index
-Following is an index for things about Git:
-- [[GitHub]]
-- [[Using multiple git profiles]]
+
+- [[Git Index]]
 - [[Pre-commit hooks]]
+- [[Using multiple git profiles]]

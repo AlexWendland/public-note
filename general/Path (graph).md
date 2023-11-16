@@ -2,14 +2,14 @@
 aliases:
   - path
   - paths
-type: definition
-publish: true
+checked: false
 created: 2023-08-28
-last_edited: 2023-08-28
+last_edited: 2023-11-11
+publish: true
 tags:
   - maths
   - graph-theory
-chatgpt: false
+type: definition
 ---
 # Path (graph)
 

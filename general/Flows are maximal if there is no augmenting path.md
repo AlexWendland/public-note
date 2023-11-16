@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+checked: false
 created: 2023-10-03
-last_edited: 2023-10-03
+last_edited: 2023-11-11
+publish: true
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
 # Statement
 
@@ -18,4 +18,4 @@ chatgpt: false
 
 This follows from the proof of the [[Max-flow min-cut Theorem]].
 
-In particularly [[Max-flow min-cut Theorem#Claim 2|Claim 2]] in the proof of the main result gives us that value of $f$ is the capacity of some [[st-cut]]. With the corollary of [[Max-flow min-cut Theorem#Claim 1|Claim 1]] being that for these to be equal they must be maximal/minimal in their own respects. 
+In particularly [[Max-flow min-cut Theorem#Claim 2|Claim 2]] in the proof of the main result gives us that value of $f$ is the capacity of some [[st-cut]]. With the corollary of [[Max-flow min-cut Theorem#Claim 1|Claim 1]] being that for these to be equal they must be maximal/minimal in their own respects.

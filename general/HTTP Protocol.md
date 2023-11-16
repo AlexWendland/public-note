@@ -1,10 +1,13 @@
 ---
-aliases: [HTTP protocol, HTTP]
-type: str
-publish: false
+aliases:
+  - HTTP protocol
+  - HTTP
+checked: false
 created: 2023-08-20
-last_edited: 2023-08-20
-tags: programming, list[str]
-chatgpt: false
+last_edited: 2023-11-11
+publish: false
+tags:
+  - programming
+type: str
 ---
 # HTTP

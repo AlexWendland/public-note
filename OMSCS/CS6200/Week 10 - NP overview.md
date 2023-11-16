@@ -1,14 +1,14 @@
 ---
-aliases: 
-type: lecture
-publish: true
+aliases: null
+checked: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-10-24
-last_edited: 2023-10-24
+last_edited: 2023-11-11
+publish: true
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+type: lecture
 week: 10
-chatgpt: false
 ---
 # Week 10 - NP overview
 
@@ -86,7 +86,7 @@ Therefore lets look at the hardest problems in [[Nondeterministic Polynomial tim
 
 ![[NP-hard]]
 
-We define a [[Many-one reduction (problem)|many-one reduction]] as bellow. 
+We define a [[Many-one reduction (problem)|many-one reduction]] as bellow.
 
 ![[Many-one reduction (problem)|Many-one reduction]]
 
@@ -94,7 +94,7 @@ However, we want to look at the hardest problems in [[Nondeterministic Polynomia
 
 ![[NP-Complete]]
 
-A classic [[NP-Complete]] problem is the [[Satisfiability problem (SAT problem)|SAT problem]]. 
+A classic [[NP-Complete]] problem is the [[Satisfiability problem (SAT problem)|SAT problem]].
 
 ## Reductions functionally
 

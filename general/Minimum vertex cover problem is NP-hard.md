@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+checked: false
 created: 2023-11-03
-last_edited: 2023-11-03
+last_edited: 2023-11-11
+publish: true
 tags:
   - maths
-chatgpt: false
+type: lemma
 ---
 # Statement
 
@@ -21,7 +21,7 @@ Suppose we have an [[Graph|undirected graph]] $G = (V,E)$ and a positive integer
 
 This takes $O(1)$ as we are doing no manipulations.
 
-We get back minimum cover $C$. If $\vert C \vert \leq g$ return $C$ to the [[Vertex cover of a given size]] problem, otherwise return no. This step takes $O(\vert V \vert)$ so is [[Polynomial time|polynomial time]] in the input size. 
+We get back minimum cover $C$. If $\vert C \vert \leq g$ return $C$ to the [[Vertex cover of a given size]] problem, otherwise return no. This step takes $O(\vert V \vert)$ so is [[Polynomial time|polynomial time]] in the input size.
 
 If there is a [[Vertex cover|vertex cover]] of size less than $g$ then the minimum [[Vertex cover|vertex cover]] will have size less than $g$.
 

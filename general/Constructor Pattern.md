@@ -1,10 +1,12 @@
 ---
-aliases: [constructor pattern]
-type: design pattern
-publish: false
+aliases:
+  - constructor pattern
+checked: false
 created: 2023-06-29
-last_edited: 2023-06-29
-tags: programming, list[str]
-chatgpt: false
+last_edited: 2023-11-11
+publish: false
+tags:
+  - programming
+type: design pattern
 ---
 # Constructor Pattern

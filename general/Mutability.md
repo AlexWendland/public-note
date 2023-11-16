@@ -1,11 +1,19 @@
 ---
-aliases: [mutable, Mutable, immutable, Immutable, mutability, immutability, mutability]
-type: concept
-publish: true
+aliases:
+  - mutable
+  - Mutable
+  - immutable
+  - Immutable
+  - mutability
+  - immutability
+  - mutability
+checked: false
 created: 2023-06-29
-last_edited: 2023-07-14
-tags: programming
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+type: concept
 ---
 # Mutability
 

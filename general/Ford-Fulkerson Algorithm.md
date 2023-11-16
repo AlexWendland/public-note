@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: algorithm
-publish: true
+aliases: null
+checked: false
 created: 2023-10-03
-last_edited: 2023-10-03
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
-chatgpt: false
+type: algorithm
 ---
 # Ford-Fulkerson Algorithm
 
@@ -39,6 +39,6 @@ This is proven as [[Flows are maximal if there is no augmenting path|flows are m
 
 If we assume $c(e) \in \mathbb{Z}$ are integers, then each iteration we will increase the flow by 1. Therefore we can have at most the max flow iterations $C$.
 
-To run each iteration we need need to update the path length number of edges in the graph $G^f$ which takes $O(\vert V \vert)$ time. We need to run [[Breath-first search (BFS)|BFS]] which takes $O(\vert V \vert + \vert E \vert) = O(\vert E \vert)$ if we assume $G$ is connected. Then calculating $c(p)$ and updating the weights also takes $O(\vert V \vert)$ time. So all together a single iteration takes $O(\vert E \vert)$ time. 
+To run each iteration we need need to update the path length number of edges in the graph $G^f$ which takes $O(\vert V \vert)$ time. We need to run [[Breath-first search (BFS)|BFS]] which takes $O(\vert V \vert + \vert E \vert) = O(\vert E \vert)$ if we assume $G$ is connected. Then calculating $c(p)$ and updating the weights also takes $O(\vert V \vert)$ time. So all together a single iteration takes $O(\vert E \vert)$ time.
 
 Therefore altogether the runtime is $O(C\vert E \vert)$.

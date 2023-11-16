@@ -1,13 +1,13 @@
 ---
-aliases: 
-type: algorithm
-publish: true
+aliases: null
+checked: false
 created: 2023-08-26
-last_edited: 2023-08-26
+last_edited: 2023-11-11
+publish: true
 tags:
   - maths
   - programming
-chatgpt: false
+type: algorithm
 ---
 # Euclidean algorithm
 
@@ -30,7 +30,7 @@ If $x$ and $y$ are $n$-bit integers then calculating $x$ mod $y$ takes $O(n^2)$ 
 ### Claim 1
 
 >[!important] Claim 1
->If $x \geq y$ then $x$ mod $y$ < $x/2$. 
+>If $x \geq y$ then $x$ mod $y$ < $x/2$.
 
 ### Proof
 

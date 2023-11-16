@@ -1,14 +1,14 @@
 ---
-aliases: 
-type: exercise
-publish: false
+aliases: null
+checked: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-10-27
-last_edited: 2023-10-27
+last_edited: 2023-11-11
+publish: false
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+type: exercise
 week: 11
-chatgpt: false
 ---
 # Week 11 - Homework 7 (assessed)
 
@@ -19,7 +19,7 @@ chatgpt: false
 
 ## Algorithm
 
-Suppose we have a [[Conjunctive normal form (CNF)|CNF]] $f$ with $n$ variables $x_i$ for $1 \leq i \leq n$ and $m$ clauses $c_i = l_i^1 \lor l_i^2 \lor l_i^3$ for $1 \leq i \leq m$. 
+Suppose we have a [[Conjunctive normal form (CNF)|CNF]] $f$ with $n$ variables $x_i$ for $1 \leq i \leq n$ and $m$ clauses $c_i = l_i^1 \lor l_i^2 \lor l_i^3$ for $1 \leq i \leq m$.
 
 1. Initialise a union-find data structure on the set $V = \{x_i, \overline{x_i} \vert 1 \leq i \leq n\}$.
 2. For each $c_i$ run $union(l_i^a, l_i^b)$ and $union(\overline{l_i^a}, \overline{l_i^b})$ for $a,b \in \{1,2,3\}$ with $a < b$.
@@ -34,9 +34,9 @@ Suppose we have a [[Conjunctive normal form (CNF)|CNF]] $f$ with $n$ variables $
 
 We need to show it is correct in 2 cases. If is says it is not possible or if it provides an assignment.
 
-Suppose we say the assignment is not possible. 
+Suppose we say the assignment is not possible.
 
-Then there is an $x_i$ such that there are a set of clauses (or a clauses negation) such that $x_i$ and $\overline{x_i}$ need to share the same assignment for us to have each clause having all literals be True or False. 
+Then there is an $x_i$ such that there are a set of clauses (or a clauses negation) such that $x_i$ and $\overline{x_i}$ need to share the same assignment for us to have each clause having all literals be True or False.
 
 As $x_i$ and $\overline{x_i}$ have opposite assignments this is not possible. Therefore no assignment to the variables will guarantee all clauses literals are either positive or negative.
 
@@ -44,7 +44,7 @@ Suppose we return an assignment.
 
 As the set $V$ contained all $x_i$ and $\overline{x_i}$  for $1 \leq i \leq n$ and the set contain $x_i$ was assigned true or the set containing $\overline{x_i}$ was assigned true, the assignment returned was an assignment to all $n$ variables.
 
-Step 4 guarantees that for each clause $c_i$ all the literals are contained in the same set. Therefore the assignment generated in step $5$ means all literals in clause $c_i$ are true or false. 
+Step 4 guarantees that for each clause $c_i$ all the literals are contained in the same set. Therefore the assignment generated in step $5$ means all literals in clause $c_i$ are true or false.
 
 So the returned assignment is a valid AllorNothing3SAT assignment to $f$.
 
@@ -89,7 +89,7 @@ $$3O(n) + O(m\log(n)) + O(n \log(n)) = O((n + m)\log(n)).$$
 
 To prove 3-at most-3-SAT is [[NP-Complete|NP-complete]] I will show 2 things.
 
-1. Demonstrate that 3-at most-3-SAT is in the class of [[Nondeterministic Polynomial time (NP)|NP]] problems. 
+1. Demonstrate that 3-at most-3-SAT is in the class of [[Nondeterministic Polynomial time (NP)|NP]] problems.
 2. Then demonstrate that the 3-at most-3-SAT problem is at least as hard as the 3-SAT - which is known to be [[NP-Complete]]. The specific steps are as follows:
 	1. Show how an instance of the [[k-satisfiability problem (k-SAT problem)|3-SAT]] problem is converted to an instance of the  3-at most-3-SAT problem, in polynomial time.
 	2. Show how a solution the 3-at most-3-SAT can be converted to a solution for the [[k-satisfiability problem (k-SAT problem)|3-SAT]] problem, again in polynomial time.
@@ -101,9 +101,9 @@ Note that 3-at most-3-SAT is in the correct form to be a [[Search problems|searc
 
 Suppose we have $f$ a [[Conjunctive normal form (CNF)|CNF]] that is an instance 3-at most-3-SAT problem with $n$ variables and $m$ ($\leq 3n$) literals and an assignment $a$ to the $n$ variables.
 
-To check the solution we go through each clause and check one of the 3 literals is true - if any are not we say this solution is not valid otherwise if all clauses are passed we say the solution is valid. This takes at most $m \leq 3n$ steps checking $3$ values in each step. Therefore takes $O(m) = O(n)$. 
+To check the solution we go through each clause and check one of the 3 literals is true - if any are not we say this solution is not valid otherwise if all clauses are passed we say the solution is valid. This takes at most $m \leq 3n$ steps checking $3$ values in each step. Therefore takes $O(m) = O(n)$.
 
-As this is in the form of a [[Search problems|search problem]] and verifying a solution takes [[Polynomial time|polynomial time]], we have that 3-at most-3-SAT is in [[Nondeterministic Polynomial time (NP)|NP]]. 
+As this is in the form of a [[Search problems|search problem]] and verifying a solution takes [[Polynomial time|polynomial time]], we have that 3-at most-3-SAT is in [[Nondeterministic Polynomial time (NP)|NP]].
 
 ## Reduction of 3-SAT to 3-at most-3-SAT
 
@@ -117,7 +117,7 @@ To reduce $f$ to an instance of 3-at most-3-SAT $f'$, first set $f' = f$ then do
 - Replace every literal $x_i$ or $\overline{x_i}$ in $f'$ with a distinct $x^j_i$ or $\overline{x^j_i}$ respectively. So each $x_i^j$ is used exactly once and no $x_i$ or $\overline{x_i}$ literals exist in $f'$.
 - If $k_i \geq 1$ then append to $f'$
 $$f_i := (x_i^{k_i} \lor \overline{x_i^1}) \land \bigwedge_{j = 1}^{k_i-1} (x_i^j \lor \overline{x_i^{j+1}}).$$
-Therefore $f'$ is now a [[Conjunctive normal form (CNF)|CNF]] with $n' := \sum_{i=1}^n k_i$ variables $x^j_i$ with $1 \leq i \leq n$ and $1 \leq j \leq k_i$ and at most $m + n'$ clauses.  
+Therefore $f'$ is now a [[Conjunctive normal form (CNF)|CNF]] with $n' := \sum_{i=1}^n k_i$ variables $x^j_i$ with $1 \leq i \leq n$ and $1 \leq j \leq k_i$ and at most $m + n'$ clauses.
 
 Every variable $x_i^j$ appears in at most 3 literals of $f'$, once where it is replaced in the original formula then twice in $f_i$ (if $f_i$ is appended).
 
@@ -137,11 +137,11 @@ This involves assigning each variable that takes $O(n)$, so this transformation 
 
 ### Correctness of the reduction
 
-Suppose there is a valid assignment for $f'$. 
+Suppose there is a valid assignment for $f'$.
 
 Then we have made assignment $x_i = x_i^1$ for $f$.
 
-From [[Week 11 - Homework 7 (assessed)#Claim 2|Claim 2]] we know for any $1 \leq i \leq n$ that all $x^i_j$ have the same value - so they all have the same assignment as $x_i$. 
+From [[Week 11 - Homework 7 (assessed)#Claim 2|Claim 2]] we know for any $1 \leq i \leq n$ that all $x^i_j$ have the same value - so they all have the same assignment as $x_i$.
 
 As $f$ is a subset of $f'$ with each $x_i$ replaced with $x_i^j$ for some $1 \leq j \leq k_i$ but each of the $x_i^j$ have the same assignment as $x_i$ and $f'$ has a valid assignment then $f$ with this assignment is valid.
 
@@ -153,14 +153,14 @@ As this assignment is valid for $f$ it is valid for the component of $f'$ that c
 
 For any $i$ we have $x_i^j$ have the same assignment, so by [[Week 11 - Homework 7 (assessed)#Claim 3|Claim 3]] this is a valid assignment for $f_i$.
 
-Therefore every component of $f'$ has a valid assignment, giving this assignment is valid for $f'$. 
+Therefore every component of $f'$ has a valid assignment, giving this assignment is valid for $f'$.
 
 Therefore this reduction is valid and 3-at most-3-SAT [[NP-Complete|NP-complete]] as it is in [[Nondeterministic Polynomial time (NP)|NP]] and [[k-satisfiability problem (k-SAT problem)|3-SAT]] is [[NP-Complete|NP-complete]].
 
 ### Claim 2
 
 >[!important] Claim 2
->In a valid assignment for $f'$ for all $1 \leq i \leq n$ we have that $x_i^j$ have the same value for $1 \leq j \leq k_i$.  
+>In a valid assignment for $f'$ for all $1 \leq i \leq n$ we have that $x_i^j$ have the same value for $1 \leq j \leq k_i$.
 
 ### Proof of Claim 2
 
@@ -168,7 +168,7 @@ Let $1 \leq i \leq n$.
 
 If $k_i = 1$ then there is only one variable $x_i^1$ and so the claim holds.
 
-If $k_i \geq 2$ then we have appended $f_i$ to $f'$ and so this assignment is valid for $f_i$ also. By [[Week 11 - Homework 7 (assessed)#Claim 3|Claim 3]] all $x_i^j$ have the same value and so the claim holds. 
+If $k_i \geq 2$ then we have appended $f_i$ to $f'$ and so this assignment is valid for $f_i$ also. By [[Week 11 - Homework 7 (assessed)#Claim 3|Claim 3]] all $x_i^j$ have the same value and so the claim holds.
 
 ### Claim 3
 

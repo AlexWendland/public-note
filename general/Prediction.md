@@ -1,10 +1,11 @@
 ---
 aliases: []
-type: str
-publish: false
+checked: false
 created: 2023-09-09
-last_edited: 2023-09-09
-tags: maths, list[str]
-chatgpt: false
+last_edited: 2023-11-11
+publish: false
+tags:
+  - maths
+type: str
 ---
 # Maths

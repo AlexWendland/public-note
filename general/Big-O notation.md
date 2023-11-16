@@ -1,14 +1,14 @@
 ---
 aliases:
   - worst case run time
-type: notation
-publish: true
+checked: false
 created: 2023-08-27
-last_edited: 2023-08-27
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
   - maths
-chatgpt: false
+type: notation
 ---
 # Big-O notation
 
@@ -18,4 +18,4 @@ This is just saying that $f$ eventually is at most a scalar multiple of $g$.
 
 > [!note] This is **only** an upper bound
 > If $f = O(x^2)$ then we also have that $f = O(2^n)$, as $x^2 < 2^x$ eventually.
-> 
+>

@@ -1,13 +1,13 @@
 ---
 aliases:
   - st-cuts
-type: definition
-publish: true
+checked: false
 created: 2023-10-03
-last_edited: 2023-10-03
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
-chatgpt: false
+type: definition
 ---
 >[!tldr] st-cut
 >Given a [[Flow network|flow network]] $(G, c, s, t)$ an *st-cut* is a [[Cut (graph)|cut]] $(L, R)$ of $G$ where $s \in L$ and $t \in R$. The *capacity* of this cut is

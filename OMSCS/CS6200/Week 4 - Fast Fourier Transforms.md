@@ -1,21 +1,21 @@
 ---
-aliases: 
-type: lecture
-publish: true
+aliases: null
+checked: false
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-09-18
-last_edited: 2023-09-18
+last_edited: 2023-11-11
+publish: true
 tags:
   - OMSCS
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
-week: "4"
-chatgpt: false
+type: lecture
+week: '4'
 ---
 # Week 4 - Fast Fourier Transforms
 
 > [!tldr] Polynomial multiplication problem
 > Given polynomials
 > $$A(x) = \sum_{i=0}^{n-1} a_i x^i, \mbox{ and } B(x) = \sum_{i=0}^{n-1} b_i x^i.$$
-> We want to compute the product 
+> We want to compute the product
 > $$\sum_{i=0}^{2n-2} c_i x^i = C(x) := A(x) B(x).$$
 
 This can be restated as the following problem.
@@ -32,7 +32,7 @@ When you want to reduce noise or add a visual effect to some data $y = (y_1, \ld
 
 ### Mean filter
 
-You replace $y_i$ by the average of the closest $2m$ terms for some $m$. i.e. 
+You replace $y_i$ by the average of the closest $2m$ terms for some $m$. i.e.
 $$\hat{y_j} = \frac{1}{2m+1} \sum_{i=m}^{-m} y_{j + i}.$$
 This is the same as calculating
 $$\hat{y} = y \ast f \mbox{ where } f = \left ( \frac{1}{2m+1}, \ldots, \frac{1}{2m+1} \right ).$$
@@ -54,7 +54,7 @@ Any polynomial $A(x) = \sum_{i=0}^{n-1} a_i x^i$ has two natural representations
 2. the values $A(x_1), A(x_2), \ldots A(x_n)$ for some distinct $x_i$.
 
 > [!important] Lemma
-> Polynomials of degree $n-1$ is uniquely determined by its values at any $n$ distinct points. 
+> Polynomials of degree $n-1$ is uniquely determined by its values at any $n$ distinct points.
 
 The fast Fourier transform is just a nice way of going between these two representations. Though it determines what $x_i$ it uses.
 
@@ -62,12 +62,12 @@ The fast Fourier transform is just a nice way of going between these two represe
 
 Given $A(x_1), \ldots A(x_{2n})$ and $B(x_1), \ldots, B(x_{2n})$ then to uniquely determine $C(x)$ we just calculate $C(x_i) = A(x_i)B(x_i)$.
 
-Note here we used $2n$ points. The plan of attack will be to convert polynomials from coefficients into values using [[Fast Fourier Transform|fast Fourier transforms]], multiply them, then transform back using the same technique. 
+Note here we used $2n$ points. The plan of attack will be to convert polynomials from coefficients into values using [[Fast Fourier Transform|fast Fourier transforms]], multiply them, then transform back using the same technique.
 
-## Picking the points 
+## Picking the points
 
-We get to pick the points $x_i$ we want to evaluate our polynomial around. So we will pick $2n$ points such that $x_i = - x_{i+n}$ for $1 \leq i \leq n$. That way we know 
-- $a_{2j}x_i^{2j} = a_{2i}x_{i+n}^{2j}$ and 
+We get to pick the points $x_i$ we want to evaluate our polynomial around. So we will pick $2n$ points such that $x_i = - x_{i+n}$ for $1 \leq i \leq n$. That way we know
+- $a_{2j}x_i^{2j} = a_{2i}x_{i+n}^{2j}$ and
 - $a_{2j+1}x_i^{2j+1} = - a_{2i+1}x_{i+n}^{2j+1}$.
 So it is meaningful to split up the polynomial into odd and even terms and defining
 $$A_{even}(y) = \sum_{i=0}^{n-2/2} a_{2i} y^i, \mbox{ and } A_{odd}(y) = a_{2i + 1} y^i.$$
@@ -97,9 +97,9 @@ which by masters theorem is $O(n\log(n))$.
 
 ## Complex numbers
 
-To achieve this we will need to look at the polynomials in the [[Complex Numbers|complex numbers]], which we denote as $\mathbb{C}$.  
+To achieve this we will need to look at the polynomials in the [[Complex Numbers|complex numbers]], which we denote as $\mathbb{C}$.
 
-To work with complex numbers remember we set $i = \sqrt{-1}$ and think of them as sums $a + bi$. 
+To work with complex numbers remember we set $i = \sqrt{-1}$ and think of them as sums $a + bi$.
 
 These can be represented as $(a,b)$ or we can represent them using [[Polar Coordinates]] using $r$ and $\theta$, where
 $$(a,b) = (r \cos(\theta), r \sin(\theta)).$$
@@ -114,13 +114,13 @@ More generically these are $e^{\frac{j2\pi}{k} i}$ for $0 \leq j < k$. In the no
 > [!note] Properties of use
 > When $k = 2n$ is even note that $\omega_k^2 = \omega_n$ as well as $\omega_k^j = - \omega_k^{j + n}$ as $\omega_k^n = -1$.
 
-This means that even powers of the [[Roots of unity|roots of unity]] are perfect choices for our $x_i$ in the [[Fast Fourier Transform|fast Fourier transform]] algorithm. 
+This means that even powers of the [[Roots of unity|roots of unity]] are perfect choices for our $x_i$ in the [[Fast Fourier Transform|fast Fourier transform]] algorithm.
 
 ## Pseudocode for FFT
 
 ``` pseudocode
 FFT(a, w):
-	input: coefficents a = (a_0, a_1, ..., a_{n-1}) for polynomial A(x) where 
+	input: coefficents a = (a_0, a_1, ..., a_{n-1}) for polynomial A(x) where
 		n is a power of 2 and w is a nth root of unity.
 	output: A(w^0), A(w), A(w^2), ...., A(w^{n-1})
 	if n = 1
@@ -134,19 +134,19 @@ FFT(a, w):
 	Return (A(w^0), A(w^1), ..., A(w^{n-1}))
 ```
 
-If $T(n)$ is the run time of our algorithm - lets analyse this. The steps to split up the polynomial and glue the answers back together takes $O(n)$ for each of them. Then we make two recursive calls that both take $T(n/2)$ so the run time is $T(n) = 2T(n/2) + O(n)$ like we said above.  
+If $T(n)$ is the run time of our algorithm - lets analyse this. The steps to split up the polynomial and glue the answers back together takes $O(n)$ for each of them. Then we make two recursive calls that both take $T(n/2)$ so the run time is $T(n) = 2T(n/2) + O(n)$ like we said above.
 
 > [!question] How do we go backwards?
 
 ## Linear algebra of FFT
 
-The [[Linear Algebra|linear algebra]] of what we are doing here is important to how we compute the inverse. 
+The [[Linear Algebra|linear algebra]] of what we are doing here is important to how we compute the inverse.
 
-For a point $x_j$ we have 
+For a point $x_j$ we have
 $$A(x_j) = \sum_{i=0}^{n-1} a_i x_j^i = (1, x_j, \ldots, x_j^{n-1}) \cdot (a_0, a_1, \ldots, a_{n-1}).$$
 So to compute it for points $x_0, \ldots, x_{n-1}$ we do this via [[Matrix|matrices]] using the following form
 $$ \left [ \begin{array} \ A(x_0)\\ A(x_1)\\ \vdots \\ A(x_{n-1}) \end{array} \right] = \left [ \begin{array} \ 1 & x_0 & x_0^2 & \cdots & x_0^{n-1}\\ 1 & x_1 & x_1^2 & \cdots & x_1^{n-1}\\ \vdots & \vdots & \vdots & \ddots & \vdots\\ 1 & x_{n-1} & x_{n-1}^2 & \cdots & x_{n-1}^{n-1} \end{array} \right ]  \left [ \begin{array} \ a_0 \\ a_1\\ \vdots \\ a_{n-1} \end{array} \right]$$
-when $x_j = \omega_n^j$ we denote this as $A = M_n(\omega_n) a$. So computing the inverse of the [[Fast Fourier Transform|FFT]] is simply calculating $M_n(\omega_n)^{-1} A = a$, 
+when $x_j = \omega_n^j$ we denote this as $A = M_n(\omega_n) a$. So computing the inverse of the [[Fast Fourier Transform|FFT]] is simply calculating $M_n(\omega_n)^{-1} A = a$,
 
 >[!important] Lemma
 >$$M_n(\omega_n)^{-1} = \frac{1}{n} M_n(\omega_n^{-1}) = \frac{1}{n} M_n(\omega_n^{n-1})$$
@@ -154,7 +154,7 @@ when $x_j = \omega_n^j$ we denote this as $A = M_n(\omega_n) a$. So computing th
 ### Proof
 Lets examine
 $$M_n(\omega_n^{-1}) M_n(\omega_n) := \{m_{i,j}\}.$$
-For these terms we have 
+For these terms we have
 $$ \begin{align*} m_{j,k} & = \left( 1, \omega_n^{-j}, \omega_n^{-2j}, \ldots, \omega_n^{-(n-1)j} \right ) \cdot \left( 1, \omega_n^{k}, \omega_n^{2k}, \ldots, \omega_n^{(n-1)k} \right )\\
 & = \sum_{i=0}^{n-1} \omega_n^{i(j-k)}\\
 & = \sum_{i=0}^{n-1} \left ( \omega_n^{j-k} \right )^n
@@ -163,9 +163,9 @@ Which splits into cases if $j = k$ then $\omega_n^{j-k} = 1$ and we have this su
 $$ M_n(\omega_n^{-1}) M_n(\omega_n) = n I_n$$
 giving us the desired result.
 
-$\square$ 
+$\square$
 
-Now the problem once again is of the form $n a = M_n(\omega_n^{n-1}) A$ we can use the [[Fast Fourier Transform|FFT]] algorithm detailed before to solve the inverse of the [[Fast Fourier Transform|FFT]]. 
+Now the problem once again is of the form $n a = M_n(\omega_n^{n-1}) A$ we can use the [[Fast Fourier Transform|FFT]] algorithm detailed before to solve the inverse of the [[Fast Fourier Transform|FFT]].
 
 ## Pseudocode for Polynomial Multiply
 

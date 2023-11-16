@@ -1,11 +1,12 @@
 ---
 aliases: []
-type: representations
-publish: true
+checked: false
 created: 2023-04-20
-last_edited: 2023-04-20
-tags: programming
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+type: representations
 ---
 # Two's complement
 
@@ -13,11 +14,11 @@ This is a way to represent [[Signed or unsigned integers|signed integers]]. Assu
 
 sign digit | numerical representation.
 
-So assume you store your signed integer as a [[Byte|byte]] then left most [[Bit|bit]] would be for the sign and the other 7 [[Bit|bits]] would be for the number. 
+So assume you store your signed integer as a [[Byte|byte]] then left most [[Bit|bit]] would be for the sign and the other 7 [[Bit|bits]] would be for the number.
 
 ## Positive numbers
 
-For example when representing 10 in 7 bits you would use 
+For example when representing 10 in 7 bits you would use
 
 $$
 000\ 1010 = 0*2^7 + 0*2^6 + 0*2^5 + 0*2^4 + 1*2^3 + 0*2^2 + 1*2^1 + 0*2^0
@@ -39,13 +40,13 @@ Lets say we want to represent -10:
 2. Flip all the digits e.g. 1111 0101
 3. Add 1 to the representation and ignore overflow (this is pretty key as $-2^7$ is a legit option) e.g. 1111 0110
 
-Ok great, so it has the left most digit being 1 (so not positive) and this seems to be unique. This might take a bit more maths but we actually use all the 'space' we have in the [[Byte|byte]]. 0111 1111 is $2^7 - 1$, 0000 0000 is $0$, 1000 0000 is -$2^7$ and 1111 1111 is $-1$.  
+Ok great, so it has the left most digit being 1 (so not positive) and this seems to be unique. This might take a bit more maths but we actually use all the 'space' we have in the [[Byte|byte]]. 0111 1111 is $2^7 - 1$, 0000 0000 is $0$, 1000 0000 is -$2^7$ and 1111 1111 is $-1$.
 
 Lets just cover how to go decimalise a binary representation of a negative number as well suppose we wanted to convert 1100 1100:
 
 1. First subtract 1 from the expression (or add -1 but we will come back to that) e.g. 1100 1011.
 2. Flip all the digits e.g. 0011 0100.
-3. Convert the binary number into decimal representation and put a negative sign on it e.g. 32 + 16 + 4 = 52, so the number is -52. 
+3. Convert the binary number into decimal representation and put a negative sign on it e.g. 32 + 16 + 4 = 52, so the number is -52.
 
 That seems easy enough but there has to be simpler way to do this right?
 
@@ -101,8 +102,8 @@ $$
 
 This essentially works the same as unsigned integers starting from the most significant [[Bit|bit]] work your way to the least until you see a difference. Which ever is 1 in the different place is larger.
 
-The only exclusion to this is if the signed [[Bit|bits]] of the two numbers are different. Then the positive number is larger! 
+The only exclusion to this is if the signed [[Bit|bits]] of the two numbers are different. Then the positive number is larger!
 
 ## Conclusion
 
-This does seem like a pretty good method to encode negative numbers ... you don't need to add in much additional logic on top of unsigned integers. 
+This does seem like a pretty good method to encode negative numbers ... you don't need to add in much additional logic on top of unsigned integers.

@@ -1,11 +1,14 @@
 ---
-aliases: [namespaces, namespace]
-type: definition
-publish: true
+aliases:
+  - namespaces
+  - namespace
+checked: false
 created: 2023-07-17
-last_edited: 2023-07-17
-tags: programming
-chatgpt: true
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+type: definition
 ---
 # Namespaces
 

@@ -1,11 +1,15 @@
 ---
-aliases: [reference count, reference counting]
-type: definition
-publish: true
+aliases:
+  - reference count
+  - reference counting
+checked: false
 created: 2023-07-17
-last_edited: 2023-07-17
-tags: programming, python
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+  - python
+type: definition
 ---
 # Reference counting in Python
 
@@ -27,4 +31,4 @@ print(sys.getrefcount(x)) # 2
 
 (Note the numbers are 1 more than you would expect, this is due to the object `[0,1]` being passed into the function `sys.getrefcount` which then has a reference to that object also.)
 
-When the reference count of any variable goes to zero it is deleted by [[Garbage collection in python|Python's garbage collector]]. 
+When the reference count of any variable goes to zero it is deleted by [[Garbage collection in python|Python's garbage collector]].

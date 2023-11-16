@@ -1,13 +1,13 @@
 ---
 aliases:
   - residual network
-type: definition
-publish: true
+checked: false
 created: 2023-10-02
-last_edited: 2023-10-02
+last_edited: 2023-11-11
+publish: true
 tags:
   - maths
-chatgpt: false
+type: definition
 ---
 >[!tldr] Residual Network
 >Let $(G, c, s, t)$ be a [[Flow network|flow network]] and $f$ be a [[Flow|flow]]. Further assume $G$ has no dual edges. Define the $G^f = (V,E^f)$ where

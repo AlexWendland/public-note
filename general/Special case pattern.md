@@ -1,11 +1,13 @@
 ---
-aliases: [special case pattern]
-type: design pattern
-publish: true
+aliases:
+  - special case pattern
+checked: false
 created: 2023-08-20
-last_edited: 2023-08-20
-tags: programming
-chatgpt: true
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+type: design pattern
 ---
 # Special case pattern
 
@@ -13,7 +15,7 @@ The Special Case Pattern is a design pattern used in software development to han
 
 ## How It Works
 
-Let's consider a simple example in some accounting software to calculate the refund for an a business trip. 
+Let's consider a simple example in some accounting software to calculate the refund for an a business trip.
 
 ```python
 class ExpenseReport:
@@ -27,7 +29,7 @@ class ExpenseReport:
 ...
 
 def get_trip_refund(
-	employees_on_trip: List[Employee], 
+	employees_on_trip: List[Employee],
 	expense_report:ExpenseReport
 ) -> float:
 	total = 0
@@ -56,7 +58,7 @@ class ExpenseReport:
 ...
 
 def get_trip_refund(
-	employees_on_trip: List[Employee], 
+	employees_on_trip: List[Employee],
 	expense_report:ExpenseReport
 ) -> float:
 	total = 0

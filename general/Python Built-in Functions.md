@@ -1,9 +1,12 @@
 ---
-type: feature
-publish: true
+checked: false
 created: 2023-03-03
-last_edited: 2023-03-03
-tags: programming, python
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+  - python
+type: feature
 ---
 # Python Builtin Functions
 [[Python Index]] has some built in functions that make using the language slightly easier. You can find a full list of these in the [python documentation](https://docs.python.org/3/library/functions.html).
@@ -19,7 +22,7 @@ This returns `True` or `False` depending on if the object is callable. For examp
 - Generators, that have a `yield` method.
 
 ## dir(object)
-This returns a list of names in the [[Namespace]] of the object, i.e. variables and functions you can call on it. This normally involves calling the .\_\_dir\_\_ function of the object. 
+This returns a list of names in the [[Namespace]] of the object, i.e. variables and functions you can call on it. This normally involves calling the .\_\_dir\_\_ function of the object.
 
 You can call it with no arguments and it returns all the names in the current [[Namespace]].
 
@@ -35,7 +38,7 @@ This will evaluate the expression as if it were python script and use the global
 ```
 
 ## isinstance(object, classinfo: object | tuple)
-If the first argument is a subtype of the second it returns true otherwise false. The second object can be a tuple of classes, then it returns true if it is a subtype of any of them. 
+If the first argument is a subtype of the second it returns true otherwise false. The second object can be a tuple of classes, then it returns true if it is a subtype of any of them.
 
 ## len(object)
 The returns the length of the object, it calls the .\_\_len\_\_  [[Special functions|special]] function of the object.
@@ -56,9 +59,9 @@ To understand this completely read the [documentation](https://docs.python.org/3
 | `'t'`     | text mode (default)                                             |
 | `'+'`     | open for updating (reading and writing)                         |
 
-The encoding specifies the encoding of the object. 
+The encoding specifies the encoding of the object.
 
-The buffering specifies that, 0 is off, 1 is line buffering and an integer large than that is the size of bytes to buffer. 
+The buffering specifies that, 0 is off, 1 is line buffering and an integer large than that is the size of bytes to buffer.
 
 Newline specifies what is a new line, None here is a universal set of newline characters.
 
@@ -75,13 +78,13 @@ $$
 If only stop is specified then start = 0 and step = 1.
 
 ## reversed(iterable)
-This will reverse the iterable, though only if it has a .\_\_reversed\_\_ function implemented in the class(or .\_\_len\_\_ and .\_\_getitem\_\_ implemented). 
+This will reverse the iterable, though only if it has a .\_\_reversed\_\_ function implemented in the class(or .\_\_len\_\_ and .\_\_getitem\_\_ implemented).
 
 ## round(number, ndigits=None)
 This will round a number to the nearest $10^{\mbox{ndigits}}$ where if ndigits is None the result will be an integer. When inbetween choices it will round to the nearest event choice, so 0.5 to 0 and 1.5 to 2. For numerical types it implements the .\_\_round\_\_ function.
 
 > [!note] Floats
-> For floats the behaviour is slightly different where it will simply truncate the expression to the required precision. 
+> For floats the behaviour is slightly different where it will simply truncate the expression to the required precision.
 
 ## sorted(interable, key=None, reverse=False)
 This returns a sorted list from the objects in the interable object. You can provide a key to apply to each of the objects in the iterable objects to get the key (i.e. getting one item in a dictionary). If reverse is True it will reverse the list of the items.

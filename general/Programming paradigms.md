@@ -1,11 +1,15 @@
 ---
-aliases: [programming paradigm, programming paradigms, Programming paradigm]
-type: paradigms
-publish: true
+aliases:
+  - programming paradigm
+  - programming paradigms
+  - Programming paradigm
+checked: false
 created: 2023-07-13
-last_edited: 2023-07-13
-tags: programming
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+type: paradigms
 ---
 # Programming paradigms
 

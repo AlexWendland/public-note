@@ -2,12 +2,12 @@
 aliases:
   - roots of unity
   - root of unity
-type: str
-publish: false
+checked: false
 created: 2023-09-18
-last_edited: 2023-09-18
+last_edited: 2023-11-11
+publish: false
 tags:
   - maths
-chatgpt: false
+type: str
 ---
 # Roots of unity

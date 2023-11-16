@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: algorithm
-publish: true
+aliases: null
+checked: false
 created: 2023-09-28
-last_edited: 2023-09-28
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
-chatgpt: false
+type: algorithm
 ---
 # DFS to find connected components in an undirected graph
 
@@ -39,4 +39,4 @@ Explore(z)
         Explore(w)
 ```
 
-As we run through every vertex once and then every edge twice we have $O(\vert V \vert + \vert E \vert)$. 
+As we run through every vertex once and then every edge twice we have $O(\vert V \vert + \vert E \vert)$.

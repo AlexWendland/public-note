@@ -1,12 +1,12 @@
 ---
 aliases:
   - binary search tree
-type: definition
-publish: false
+checked: false
 created: 2023-09-03
-last_edited: 2023-09-03
+last_edited: 2023-11-11
+publish: false
 tags:
   - maths
-chatgpt: false
+type: definition
 ---
 # Binary search tree

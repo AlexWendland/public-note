@@ -1,11 +1,14 @@
 ---
-aliases: [side effect, side effects]
-type: concept
-publish: true
+aliases:
+  - side effect
+  - side effects
+checked: false
 created: 2023-07-14
-last_edited: 2023-07-14
-tags: programming
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+type: concept
 ---
 # Side effect
 

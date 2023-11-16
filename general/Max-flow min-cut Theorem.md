@@ -1,12 +1,12 @@
 ---
-aliases: 
-type: lemma
-publish: true
+aliases: null
+checked: false
 created: 2023-10-03
-last_edited: 2023-10-03
+last_edited: 2023-11-11
+publish: true
 tags:
   - programming
-chatgpt: false
+type: lemma
 ---
 # Statement
 
@@ -60,17 +60,17 @@ With the 4th line following from the fact that we can assume $s$ has no in flow.
 
 As $f^{\ast}$ is given by the [[Ford-Fulkerson Algorithm]] there is no [[Path (graph)|path]] from $s$ to $t$ in the [[Residual Network (flow)|residual network]] $G^{f^{\ast}}$.
 
-Let 
+Let
 $$L^{\ast} = \{v \in V \vert s-v \mbox{ are path connected in } G^{f^{\ast}}\} \mbox{ and } R^{\ast} = V \backslash L^{\ast}.$$
 We know $t \not \in L^{\ast}$ as there is no [[Path (graph)|path]] from $s$ to $t$. So this is an [[st-cut]].
 
-Now consider edge $(l,r) \in E$ with $l \in L^{\ast}$ and $r \in R^{\ast}$ as there is no edge $(l,r) \in E^{f^{\ast}}$ we have $f^{\ast}(l,r) = c(l,r)$. 
+Now consider edge $(l,r) \in E$ with $l \in L^{\ast}$ and $r \in R^{\ast}$ as there is no edge $(l,r) \in E^{f^{\ast}}$ we have $f^{\ast}(l,r) = c(l,r)$.
 
 Similarly for edges $(r,l) \in E$ with $l \in L^{\ast}$ and $r \in R^{\ast}$ as there is no edge $(l,r) \in E^{f^{\ast}}$ we have $f^{\ast}(r,l) = 0$.
 
 From [[Max-flow min-cut Theorem#Claim 1|Claim 1]] we have
 $$\begin{align*}size(f^{\ast}) & = (f^{\ast})^{out}(L) + (f^{\ast})^{in}(L)\\
-& =  \sum_{\substack{(l,r) \in E\\ l \in L, r \in R}} f^{\ast}(l,r) + \sum_{\substack{(r,l) \in E\\ l \in L, r \in R}} f^{\ast}(r,l)\\ 
+& =  \sum_{\substack{(l,r) \in E\\ l \in L, r \in R}} f^{\ast}(l,r) + \sum_{\substack{(r,l) \in E\\ l \in L, r \in R}} f^{\ast}(r,l)\\
 & = \sum_{\substack{(l,r) \in E\\ l \in L, r \in R}} c(l,r)\\
 & = capacity(L^{\ast}, R^{\ast}).\end{align*}$$
 

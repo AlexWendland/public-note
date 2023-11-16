@@ -2,13 +2,13 @@
 aliases:
   - decision problems
   - decision problem
-type: definition
-publish: false
+checked: false
 created: 2023-10-24
-last_edited: 2023-10-24
+last_edited: 2023-11-11
+publish: false
 tags:
   - programming
-chatgpt: false
+type: definition
 ---
 >[!tldr] Decision problems
 >Definition here

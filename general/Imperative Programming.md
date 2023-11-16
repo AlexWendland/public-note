@@ -1,11 +1,16 @@
 ---
-aliases: [imperative programming, Imperative language, imperative language]
-type: paradigm
-publish: true
+aliases:
+  - imperative programming
+  - Imperative language
+  - imperative language
+checked: false
 created: 2023-02-24
-last_edited: 2023-07-14
-tags: programming, language
-chatgpt: false
+last_edited: 2023-11-11
+publish: true
+tags:
+  - programming
+  - language
+type: paradigm
 ---
 # Imperative Programming
 
@@ -24,7 +29,7 @@ print(output) # ["a", "b"]
 
 Here you provide the machine exact steps to what has to be done to produce the output.
 
-There is a sub category of this called [[Procedural Programming]] that uses this with [[Function conventions|functions]]. 
+There is a sub category of this called [[Procedural Programming]] that uses this with [[Function conventions|functions]].
 
 ## Advantages
 
@@ -33,4 +38,4 @@ There is a sub category of this called [[Procedural Programming]] that uses this
 
 # Disadvantages
 
-- 
+-
