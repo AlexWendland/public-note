@@ -38,10 +38,12 @@ t = \sum_{i = 1}^{n} 10^{i-1} + \sum_{j=1}^m 3 \cdot 10^{j-2}.
 $$
 It is useful to talk about map $\theta$ where
 $$\theta(x_i) = v_i^+ \mbox{ and } \theta(\overline{x_i}) = v_i^-.$$
+This map is a [[Bijection|bijection]] so it has well defined inverse
+$$\theta^{-1}(v_i^+) = x_i \mbox{ and } \theta^{-1}(v_i^-) = \overline{x_i}.$$
 
 >[!note] Observation
 >Let $S \subset \{v_i^+, v_i^-, s_j^1, s_j^2 \vert 1 \leq i \leq n, \ 1 \leq j \leq m\}$ then
->$$\sum_{s \in S} s = \sum_{i=1}^n \vert \{v_i^+, v_i^-\} \cap S \vert 10^{i-1} + \sum_{j=1}^m \left( \vert \{s_j^1, s_j^2\} \cap S \vert + \vert \{ l \in c_j \vert \theta(l) \in S \} \vert \right ) 10^{n + j - 2}. $$
+>$$\sum_{s \in S} s = \sum_{i=1}^n \vert \{v_i^+, v_i^-\} \cap S \vert 10^{i-1} + \sum_{j=1}^m \left( \vert \{s_j^1, s_j^2\} \cap S \vert + \vert \{ l \in c_j \vert \theta(l) \in S \} \vert \right ) 10^{n + j - 1}. $$
 
 Any sum of the $v_i^+$, $v_i^-$, $s_j^1$, and $s_j^2$ can have at most 5 in any digit (as each clause can have at most 3 literals and 2 values from the $s_j^1$ or $s_j^2$), therefore there is no overflow from one digit to another.
 
@@ -66,7 +68,7 @@ Now define
 $$S = \{v_i^+ \vert a(x_i) = T\} \cup \{v_i^- \vert a(x_i) = F\} \cup \{s_j^1 \vert \ \vert c_j \vert \leq 2\} \cup \{s_j^2 \vert \vert c_j \vert \leq 1 \}.$$
 
 Consider the sum
-$$\sum_{s \in S} s = \sum_{i=1}^n \vert \{v_i^+, v_i^-\} \cap S \vert 10^{i-1} + \sum_{j=1}^m \left( \vert \{s_j^1, s_j^2\} \cap S \vert + \vert \{ l \in c_j \vert \theta(l) \in S \} \vert \right ) 10^{n + j - 2}. $$
+$$\sum_{s \in S} s = \sum_{i=1}^n \vert \{v_i^+, v_i^-\} \cap S \vert 10^{i-1} + \sum_{j=1}^m \left( \vert \{s_j^1, s_j^2\} \cap S \vert + \vert \{ l \in c_j \vert \theta(l) \in S \} \vert \right ) 10^{n + j - 1}. $$
 For the first $n$ digits, as $a(x_i) = T$ or $a(x_i) = F$ we have $\vert \{v_i^+, v_i^-\} \cap S \vert = 1$.
 
 For the last $m$ digits, we have $\vert \{ l \in c_j \vert \theta(l) \in S \} \vert = \vert c_j \vert$ and

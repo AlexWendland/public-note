@@ -152,6 +152,8 @@ with $x = \frac{1}{k}$ gives us the inequality above.
 
 This completes the proof of the lemma.
 
+$\square$
+
 ## Summary of the approach
 
 In abstract we did the following.
