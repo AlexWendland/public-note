@@ -1,11 +1,12 @@
 ---
-aliases: null
+aliases: 
 checked: false
 created: 2023-11-10
 last_edited: 2023-11-11
 publish: true
 tags:
   - maths
+  - todo
 type: lemma
 ---
 # Statement
@@ -20,4 +21,4 @@ From the [[Strong duality theorem (linear programme)]] we know the original [[Li
 
 However, a [[Linear programme|linear programme]] has a solution if and only if it is feasible and bounded therefore providing the equivalence above.
 
-The relationship between the points is given by the [[Weak duality theorem (linear programme)|weak duality theorem]].
+The relationship between the points is given by the [[Weak duality theorem (linear programme)|weak duality theorem]]. **This is not finished**
