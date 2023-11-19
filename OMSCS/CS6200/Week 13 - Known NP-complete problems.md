@@ -15,6 +15,7 @@ week: 9
 The following problems are known to be [[NP-Complete|NP-complete]]:
 - Lectures
 	- [[Satisfiability problem (SAT problem)|SAT problem]] - [[SAT is NP-complete]]
+	- [[k-satisfiability problem (k-SAT problem)|k-SAT]] - [[k-SAT is NP-complete for k greater than or equal to 3]]
 	- [[Independent set of a given size]] - [[Independent set of a given size is NP-complete]]
 	- [[Clique of a given size problem]] - [[Clique of a given size problem is NP-complete]]
 	- [[Vertex cover of a given size]] - [[Vertex cover of a given size is NP-complete]]
@@ -26,6 +27,3 @@ The following problems are known to be [[NP-Complete|NP-complete]]:
 	- [[Rudrata cycle problem]] - ???
 	- [[Balanced cut problem]] - ???
 - 
-
-​￼- First solution
-	- run time
