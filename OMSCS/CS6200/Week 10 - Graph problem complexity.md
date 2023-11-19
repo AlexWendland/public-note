@@ -17,9 +17,11 @@ week: 10
 ![[Independent set (graph)|independent set]]
 
 Therefore we have the following problem.
+
 ![[Max independent set problem (graph)#Statement]]
 
 Though this problem is not known to be in [[Nondeterministic Polynomial time (NP)|NP]] as to verify if a set is the largest set we would require to calculate the set of largest size. However, we can edit this question to make one that is in [[Nondeterministic Polynomial time (NP)|NP]].
+
 ![[Independent set of a given size#Statement]]
 
 ## Independent set of a given size is [[NP-Complete]]
