@@ -106,6 +106,6 @@ Therefore to check for cliques it takes $O(\vert V \vert)$ by running the right 
 
 
 
->[!question] 8.14 Clique + Independent set (HW 6 assessed)
-
 >[!question] 8.19 Kite
+>A *kite* is a graph on an even number of vertices, say $2n$, in which $n$ of the vertices form a [[Clique (graph)|clique]] and the remaining $n$ vertices are connected in a “tail” that consists of a [[Path (graph)|path]] joined to one of the vertices of the [[Clique (graph)|clique]]. Given a [[Graph|graph]] and a goal $g$, the KITE problem asks for a subgraph which is a kite and which contains $2g$ nodes. 
+>Prove that KITE is NP-complete
