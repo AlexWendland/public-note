@@ -94,7 +94,7 @@ We have $133 = 7 \times 19$ so we need to find the inverse of $7$ in $6 \times 1
 So $7^{-1} = 31$ mod $108$.
 
 >[!question] Question 9
->Using your brother’s RSA Public Key (N=133,e=7), one of his friends sends him the  encrypted message “5� (the number 5 is the complete message). Decrypt the message to your brother. (Provide an integer value)
+>Using your brother’s RSA Public Key (N=133,e=7), one of his friends sends him the  encrypted message “5� (the number 5 is the complete message). Decrypt the message to your brother. (Provide an integer value)
 
 This will be $5^{31}$ mod $133$
 
