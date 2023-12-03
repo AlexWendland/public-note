@@ -146,3 +146,21 @@ We think of this graph in an extended [[Adjacency list format (graph)|Adjacency 
 - $In(x) = \{y \in V \vert (y,x) \in E\}$. 
 
 The problem is to define $\pi(x)$ to be the "rank" of a page - which will be a measure of importance.
+
+## How to construct the page rank
+
+We want the page rank that obays some simple ideas.
+
+- the value of a page should be linked to the pages linking to it,
+- the value of a link should be inversely proportional to how many outbound links it has, and
+- the value of a link should be proportional to the value of the page.
+
+The simplest formula obeying these rules would be
+$$\pi(x) = \sum_{y \in In(x)} \frac{\pi(y)}{\vert Out(y) \vert}.$$
+This is recursive however, so we don't know if there will be a solution for $\pi$.
+
+Though the suggestive notation of $\pi$ and the idea of a limit should give you an idea that we will construct this via a [[Stationary distribution (Markov Chains)|stationary distribution]] of a [[Markov chain]]. In this world we already know when [[Stationary distribution (Markov Chains)|stationary distributions]] exist.
+
+## Random walk
+
+
