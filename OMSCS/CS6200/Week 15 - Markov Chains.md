@@ -163,4 +163,42 @@ Though the suggestive notation of $\pi$ and the idea of a limit should give you 
 
 ## Random walk
 
+Suppose we play a game on the [[Webgraph]] where we start at one page, then uniformly at random we hit one of the outbound hyperlinks on that webpage. This defines us a [[Markov chain]] on the [[Webgraph]] where
+$$p_{y,x} = \begin{cases} \frac{1}{\vert Out(y) \vert} & \mbox{if } (y,x) \in E\\ 0 & \mbox{otherwise} \end{cases}.$$
+Then consider its stationary distribution from the perspective of
+$$\pi = \pi P$$
+then for a particular position $x$ on the righthand side we have
+$$\pi(x) = \sum_{y \in In(x)} \pi(y)p_{y,x} = \sum_{y \in In(x)} \frac{\pi(y)}{\vert Out(y) \vert}.$$
+Giving us the page rank we defined above.
+
+## Technical tweaks
+
+The web we might be on might have horrible irregularities within it so we get [[Periodic state (markov chain)|periodic states]] or [[Strongly connected components (directed graphs)|strongly connected components]]. Therefore we add the possibility to randomly jump from the page you are on to one picked uniformly at random from all the pages on the web. We will do this with probability $1 - \alpha$ for some $\alpha \in (0,1] \subset \mathbb{R}$.
+
+Therefore we get the following [[Markov chain]]
+$$p_{y,x} = \begin{cases} \frac{\alpha}{\vert Out(y) \vert} + \frac{1 - \alpha}{\vert V \vert} & \mbox{if } (y,x) \in E\\ \frac{1 - \alpha}{\vert V \vert} & \mbox{otherwise} \end{cases}.$$
+There is one last problem with this definition. What do we do when a page has no outgoing links? There are a couple approaches taken:
+1. Self-loop with all its weight,
+2. Remove such nodes (recursively), and
+3. Set $\alpha = 0$ for these nodes.
+The first solution makes these pages have a much higher page rank. The second solution leaves us with pages with no page rank. The third solution is practically what happens within the Page Rank algorithm.
+
+This [[Markov chain]] is [[Strongly connected (directed graphs)|strongly connected]] as every vertex connects to every other - so it is [[Irreducible Markov chain|irreducible]]. Every vertex has a self-loop so it is an [[Periodic state (markov chain)|aperiodic state]] - making the [[Markov chain]] [[Periodic Markov chain|aperiodic]].
+
+This tweaked [[Markov chain]] is an [[Ergodic Markov chain]] so has a unique [[Stationary distribution (Markov Chains)|stationary distribution]]. We use this to find the page rank.
+
+## How to compute $\pi$
+
+Computing $\pi$ is hard as $N$ therefore $P$ is huge. You will need to compute
+$$\mu_0 P^t$$
+for some large $t$. There are some tricks that will help
+- if $\alpha$ is sufficiently small, then $t$ doesn't have to be too large,
+- if we use an old approximation of $\pi$ for $\mu_0$ it will mix faster, and
+- matrix multiplication doesn't need to take $O(N^2)$ instead we can get it on the order of $O(\vert E \vert)$.
+
+## What value to set $\alpha$ 
+
+If $\alpha = 0$ then we have a [[Symmetric Markov chain]] with just the uniform [[Stationary distribution (Markov Chains)|stationary distribution]]. So $\alpha$ in some sense is reflecting how much the tweaked [[Markov chain]] is reflecting the original idea of the page rank. 
+
+The trade off for increasing $\alpha$ is that it is slower to converge to a [[Stationary distribution (Markov Chains)|stationary distribution]]. Google are believed to use $\alpha = 0.85$.
 
