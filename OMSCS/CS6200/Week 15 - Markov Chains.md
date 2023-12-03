@@ -157,7 +157,7 @@ We want the page rank that obays some simple ideas.
 
 The simplest formula obeying these rules would be
 $$\pi(x) = \sum_{y \in In(x)} \frac{\pi(y)}{\vert Out(y) \vert}.$$
-This is recursive however, so we don't know if there will be a solution for $\pi$.
+This is recursive however, so we don't know if there will be a solution for $\pi$. We define this as the [[Page rank|page rank]].
 
 Though the suggestive notation of $\pi$ and the idea of a limit should give you an idea that we will construct this via a [[Stationary distribution (Markov Chains)|stationary distribution]] of a [[Markov chain]]. In this world we already know when [[Stationary distribution (Markov Chains)|stationary distributions]] exist.
 
@@ -188,6 +188,8 @@ This [[Markov chain]] is [[Strongly connected (directed graphs)|strongly connect
 This tweaked [[Markov chain]] is an [[Ergodic Markov chain]] so has a unique [[Stationary distribution (Markov Chains)|stationary distribution]]. We use this to find the page rank.
 
 ## How to compute $\pi$
+
+This is the [[Page rank algorithm]].
 
 Computing $\pi$ is hard as $N$ therefore $P$ is huge. You will need to compute
 $$\mu_0 P^t$$
