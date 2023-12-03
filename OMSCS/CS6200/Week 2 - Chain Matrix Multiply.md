@@ -24,8 +24,7 @@ which takes $b$ multiplications and $b-1$ additions. As $Z$ has size $a \times c
 
 Here the multiplications are the more costly operations so this is what we will focus on for the cost of this single operation.
 
-> [!tldr] Chain Matrix Multiply problem
-> For $n$ [[Matrix|matrices]] $A_1, A_2, \ldots, A_n$, where $A_i$ has size $m_{i-1} \times m_i$, what is the minimum cost for computing $A_1 A_2 \ldots A_n$?
+![[Chain multiply problem#Statement]]
 
 ## Dynamic program set up
 

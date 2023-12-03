@@ -12,10 +12,7 @@ week: 1
 ---
 # Week 1 - [[Knapsack Problem]]
 
-> [!tldr] The knapsack problem
-> Given $n$ objects $o_i$ with weight $w_i$ and value $v_i$ how do we maximise the value of a bag that can carry weight $B$. The solution to this is a subset of objects $S \subset \{1, 2, \ldots, n\}$ such that:
-> - $\sum_{i \in S} w_i \leq B$, and
-> - it maximises its value $\sum_{i \in S} v_i$.
+![[Knapsack Problem#Statement]]
 
 There are different versions of this problem:
 - Where you can have at most one version of each object,
