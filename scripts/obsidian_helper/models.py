@@ -5,9 +5,9 @@ import pydantic
 
 
 class MarkdownSection(pydantic.BaseModel):
-    title: Optional[str]
-    depth: Optional[pydantic.PositiveInt]
-    lines: Optional[List[str]]
+    title: Optional[str] = None
+    depth: Optional[pydantic.PositiveInt] = None
+    lines: Optional[List[str]] = None
 
     @pydantic.model_validator(mode='before')
     @classmethod
@@ -17,6 +17,9 @@ class MarkdownSection(pydantic.BaseModel):
         ):
             raise ValueError("Must must provide a title and depth or neither.")
         return values
+
+    def set_lines(self, lines: List[str]) -> None:
+        self.lines = lines
 
 
 class ObsidianFile(pydantic.BaseModel):
@@ -36,8 +39,8 @@ class ObsidianFile(pydantic.BaseModel):
 
 class ObsidianLink(pydantic.BaseModel):
     file_name: str
-    section: Optional[str]
-    alias: Optional[str]
+    section: Optional[str] = None
+    alias: Optional[str] = None
 
     @property
     def link(self) -> str:
@@ -49,22 +52,22 @@ class ObsidianLink(pydantic.BaseModel):
         return f"[[{text}]]"
 
     def clean_representation(self) -> str:
-        return self.alias
+        return self.alias if self.alias else self.file_name
 
     @classmethod
-    def from_string(cls, string: str) -> 'ObsidianLink':
-        file_name = None
+    def from_string(cls, text: str) -> 'ObsidianLink':
+        file_name = text
         section = None
         alias = None
-        if "#" in string:
-            file_name, string = string.split("#")
-        if "|" in string:
-            if file_name:
-                section, alias = string.split("|")
-            else:
-                file_name, alias = string.split("|")
+        if "|" in file_name:
+            file_name, alias = file_name.split("|")
+        if "#" in file_name:
+            file_name, section = file_name.split("#")
         return cls(
             file_name=file_name.strip(),
             section=section.strip() if section else None,
             alias=alias.strip() if alias else None
         )
+
+    def __hash__(self) -> int:
+        return str.__hash__(str(self))

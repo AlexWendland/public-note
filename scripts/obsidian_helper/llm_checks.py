@@ -3,8 +3,6 @@ import logging
 from enum import Enum
 from typing import List, Optional
 
-import openai
-
 from obsidian_helper import constants, models, read_obsidian, write_obsidian
 
 logger = logging.getLogger(__name__)
