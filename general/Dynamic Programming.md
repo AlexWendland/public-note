@@ -24,7 +24,7 @@ The basic structure of this technique is to:
 > [!example] Longest [[Increasing sequence|increasing]] [[Subsequence|subsequence]] (LIS)
 > Suppose we are provided with a [[sequence]] of $n$ numbers $a_1, a_2, \ldots, a_n$ and we want to find the length of the longest [[Increasing sequence|increasing]] [[Subsequence|subsequence]] in $\{a_i\}_{i=1}^n$.
 >
-> This can be done using [[Dynamic programming|dynamic programming]] with the following steps:
+> This can be done using [[Dynamic Programming|dynamic programming]] with the following steps:
 >
 > Let $L(i)$ be the LIS on $a_1, \ldots, a_i$ that ends with $a_i$.
 >

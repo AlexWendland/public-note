@@ -76,7 +76,7 @@ def fibonacci(step:int):
     return fibonacci(step-1) + fibonacci(step-2)
 ```
 
-Note these algorithms are likely to have exponential run time and in the case of the [[Fibonacci sequence]] this can be speed up with [[Dynamic programming]] instead.
+Note these algorithms are likely to have exponential run time and in the case of the [[Fibonacci sequence]] this can be speed up with [[Dynamic Programming|Dynamic programming]] instead.
 
 ### Tail Recursion
 

@@ -12,7 +12,7 @@ week: 1
 ---
 # Week 1 - Dynamic Programming
 
-[[Dynamic programming]] is a method to speed up [[Recursion|recursion]] especially when the recursive algorithm computes the same step multiple times.
+[[Dynamic Programming|Dynamic programming]] is a method to speed up [[Recursion|recursion]] especially when the recursive algorithm computes the same step multiple times.
 
 > [!example] [[Fibonacci sequence]] by [[Recursion|recursion]]
 >
@@ -54,11 +54,11 @@ Lets try to do this [[Iterative algorithms|iteratively]] instead of [[Recursion|
 
 ## Dynamic programming
 
-The key features of [[Dynamic programming]] is that there is no [[Recursion|recursion]] in the algorithm it is fully [[Iterative algorithms|iterative]].
+The key features of [[Dynamic Programming|Dynamic programming]] is that there is no [[Recursion|recursion]] in the algorithm it is fully [[Iterative algorithms|iterative]].
 
 There is another method to get around the inefficiencies of [[Recursion|recursion]] called [[Memoization]]. This is where you still use [[Recursion|recursion]] but you use a hash table to store previously computed values.
 
-The benefits to [[Dynamic programming]] over [[Memoization]] are:
+The benefits to [[Dynamic Programming|Dynamic programming]] over [[Memoization]] are:
 
 - Some people would say the algorithms are more beautiful,
 - They are faster as there is less overhead associated to [[Recursion|recursion]], and
@@ -77,7 +77,7 @@ We are provided with a [[sequence]] of $n$ numbers $a_1, a_2, \ldots, a_n$ and t
 >
 >**We don't need to find the sequence to answer the question.**
 
-## [[Dynamic programming]] approach
+## [[Dynamic Programming]] approach
 
 ### Step 1: define subproblem in words
 
@@ -294,7 +294,7 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 
 ## Summary
 
-To approach [[Dynamic programming]] problems follow these steps
+To approach [[Dynamic Programming|Dynamic programming]] problems follow these steps
 
 1. Define a subproblem in words.
 	1. Set up an array to fill in with a clearly defined meaning.
