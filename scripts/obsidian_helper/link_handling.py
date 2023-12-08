@@ -8,9 +8,11 @@ import re
 ALIAS_LINKS = dict()
 
 def set_alias_link(alias: str, file: str):
+    alias = alias.strip()
+    file = file.strip()
     current_link = ALIAS_LINKS.get(alias)
 
-    if not current_link
+    if not current_link:
         ALIAS_LINKS[alias] = file
     elif current_link != file:
         raise ValueError(f"Alias {alias} has multiple links: {current_link} and {file}")
