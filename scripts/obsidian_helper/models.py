@@ -47,3 +47,24 @@ class ObsidianLink(pydantic.BaseModel):
         if self.alias:
             text += f" | {self.alias}"
         return f"[[{text}]]"
+
+    def clean_representation(self) -> str:
+        return self.alias
+
+    @classmethod
+    def from_string(cls, string: str) -> 'ObsidianLink':
+        file_name = None
+        section = None
+        alias = None
+        if "#" in string:
+            file_name, string = string.split("#")
+        if "|" in string:
+            if file_name:
+                section, alias = string.split("|")
+            else:
+                file_name, alias = string.split("|")
+        return cls(
+            file_name=file_name.strip(),
+            section=section.strip() if section else None,
+            alias=alias.strip() if alias else None
+        )

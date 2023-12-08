@@ -1,9 +1,8 @@
-from .constants import ALIAS_FIELD
-from .models import ObsidianFile, MarkdownSection, ObsidianLink
-
-from collections import namedtuple
-from typing import Tuple
 import re
+from typing import List, Tuple
+
+from obsidian_helper.constants import ALIAS_FIELD
+from obsidian_helper.models import MarkdownSection, ObsidianFile, ObsidianLink
 
 ALIAS_LINKS = dict()
 
@@ -45,15 +44,14 @@ def clean_section_of_aliases(section: MarkdownSection) -> None:
     """
     section.title = section.title.split(",")[0]
 
-def clean_string_of_aliases(string: str) -> Tuple[str, dict]:
+def clean_string_of_aliases(text: str) -> Tuple[str, List[ObsidianLink]]:
     """
-    Replaces all obsidian aliases with their string representation.
+    Replaces all obsidian aliases with their string representation. Then returns the ObsidianLinks in a list.
     """
-    alias_links = dict()
-    for alias, link in ALIAS_LINKS.items():
-        if alias in string:
-            alias_links[alias] = link
-            string = string.replace(alias, "")
-    return string, alias_links
-
-def process_obsidian_link(str)
+    pattern = re.compile(r"\[\[(.*?)\]\]")
+    matches = re.findall(pattern, text)
+    for match in matches:
+        print(match)
+        # link = ObsidianLink.from_string(match)
+        # text = text.replace(match, link.clean_representation())
+        # links.append(link)
