@@ -25,7 +25,7 @@ Euclid(x,y):
 
 ## Run time
 
-If $x$ and $y$ are $n$-bit integers then calculating $x$ mod $y$ takes $O(n^2)$ time. From [[# Euclidean algorithm#Claim 1|Claim 1]] we have every 2 rounds $x$ decreases by at least a factor of 2. So there are at most $2n$ rounds giving this algorithm a run time of $O(n^3)$.
+If $x$ and $y$ are $n$-bit integers then calculating $x$ mod $y$ takes $O(n^2)$ time. From [[Euclidean algorithm#Claim 1|Claim 1]] we have every 2 rounds $x$ decreases by at least a factor of 2. So there are at most $2n$ rounds giving this algorithm a run time of $O(n^3)$.
 
 ### Claim 1
 
