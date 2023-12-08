@@ -161,7 +161,7 @@ This is a tempting practice but instead call the write function on an object tha
 
 ### Don't return error codes from functions
 
-Throw exceptions, don't pass error codes from your function. It means when you get a return from a function you have to check it for a error type. As well as it makes typing harder to do. This also subtly breaks [[Function conventions#### Command Query separation|Command Query separation]] separation.
+Throw exceptions, don't pass error codes from your function. It means when you get a return from a function you have to check it for a error type. As well as it makes typing harder to do. This also subtly breaks [[Function conventions#Command Query separation|Command Query separation]] separation.
 
 ## Function organisation
 
