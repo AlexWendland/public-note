@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases: null
 checked: false
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-11-15
-last_edited: 2023-11-15
+last_edited: 2023-11-19
 publish: false
 tags:
   - OMSCS
@@ -29,7 +29,7 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 
 
 >[!question] Problem 8.3 Stingy SAT
->Stingy SAT: Given a [[Boolean function|boolean function]] $f$ that is in [[Conjunctive normal form (CNF)|CNF]] and an integer $k$, find a satisfying assignment for $f$ with at most $k$ variables are true if it exists. 
+>Stingy SAT: Given a [[Boolean function|boolean function]] $f$ that is in [[Conjunctive normal form (CNF)|CNF]] and an integer $k$, find a satisfying assignment for $f$ with at most $k$ variables are true if it exists.
 >Prove that the stingy SAT problem is [[NP-Complete]].
 
 This problem is in the form of a search problem. It either outputs a given assignment or it say no such problems exists.
@@ -77,7 +77,7 @@ g_3_algorithm(G)
 3. Return no such triangle exists
 ```
 
-This algorithm takes $O(\vert V \vert)$ as we need to go through each element of $V$ and then do atmost 3 intersections of two sets of size at most 3 which can take $3 \times 9 = 27$ operations. 
+This algorithm takes $O(\vert V \vert)$ as we need to go through each element of $V$ and then do atmost 3 intersections of two sets of size at most 3 which can take $3 \times 9 = 27$ operations.
 
 ```
 g_4_algorithm(G)
@@ -93,11 +93,11 @@ g_4_algorithm(G)
 
 Step 1 takes $\vert V \vert$ steps. At worst each step compares 3 sets of size 3 which takes $3 \times 9 = 27$ operations. So this algorithm takes $O(\vert V \vert)$ time.
 
-Therefore to check for cliques it takes $O(\vert V \vert)$ by running the right sub-algorithm given the $g$. 
+Therefore to check for cliques it takes $O(\vert V \vert)$ by running the right sub-algorithm given the $g$.
 
 >[!question] Problem 8.8 Exact 4-SAT
 >Exact 4-SAT: Suppose we are given a [[Boolean function|boolean function]] $f$ that is in [[Conjunctive normal form (CNF)|CNF]], each clause has exactly 4 literals, and each variable appears at most once in each clause. The goal is to find a satisfying assignment, if one exists.
->Prove that Exact 4-SAT is [[NP-Complete|NP-complete]]. 
+>Prove that Exact 4-SAT is [[NP-Complete|NP-complete]].
 
 
 
@@ -107,5 +107,5 @@ Therefore to check for cliques it takes $O(\vert V \vert)$ by running the right 
 
 
 >[!question] 8.19 Kite
->A *kite* is a graph on an even number of vertices, say $2n$, in which $n$ of the vertices form a [[Clique (graph)|clique]] and the remaining $n$ vertices are connected in a “tail” that consists of a [[Path (graph)|path]] joined to one of the vertices of the [[Clique (graph)|clique]]. Given a [[Graph|graph]] and a goal $g$, the KITE problem asks for a subgraph which is a kite and which contains $2g$ nodes. 
+>A *kite* is a graph on an even number of vertices, say $2n$, in which $n$ of the vertices form a [[Clique (graph)|clique]] and the remaining $n$ vertices are connected in a “tail� that consists of a [[Path (graph)|path]] joined to one of the vertices of the [[Clique (graph)|clique]]. Given a [[Graph|graph]] and a goal $g$, the KITE problem asks for a subgraph which is a kite and which contains $2g$ nodes.
 >Prove that KITE is NP-complete

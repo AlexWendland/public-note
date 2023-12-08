@@ -1,8 +1,8 @@
 ---
-aliases: 
+aliases: null
 checked: false
 created: 2023-11-12
-last_edited: 2023-11-12
+last_edited: 2023-11-19
 publish: true
 tags:
   - programming
@@ -54,13 +54,13 @@ $$a(x_i) = \begin{cases} T & \mbox{if } \theta^{-1}(x_i) \in S\\ F & \mbox{if } 
 
 This takes $O(n + m)$ to construct, as we just need to iterate through $S$. So can be done in [[Polynomial time|polynomial time]].
 
-Suppose we have a solution to the constructed [[Subset-sum problem|subset-sum problem]]. Then we have a valid assignment by the observation. 
+Suppose we have a solution to the constructed [[Subset-sum problem|subset-sum problem]]. Then we have a valid assignment by the observation.
 
-When looking at the last $m$ digits of $t$ we require a 3 in each position. Therefore for each $1 \leq j \leq m$ we have at least one $l \in c_j$ such that $\theta(l) \in S$ therefore $a(l) = T$ and we satisfy clause $c_j$. 
+When looking at the last $m$ digits of $t$ we require a 3 in each position. Therefore for each $1 \leq j \leq m$ we have at least one $l \in c_j$ such that $\theta(l) \in S$ therefore $a(l) = T$ and we satisfy clause $c_j$.
 
 Therefore this is a valid solution to the [[k-satisfiability problem (k-SAT problem)|3-SAT]] problem $f$.
 
-Suppose we have a valid assignment $a$ to $x_i$ for the [[k-satisfiability problem (k-SAT problem)|3-SAT]] problem $f$. 
+Suppose we have a valid assignment $a$ to $x_i$ for the [[k-satisfiability problem (k-SAT problem)|3-SAT]] problem $f$.
 
 Then for each clause $c_j$ define $\vert c_j \vert$ to be the number of satisfied literals - note $1 \leq \vert c_j \vert \leq 3$.
 

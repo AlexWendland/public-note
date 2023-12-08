@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases: null
 checked: false
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-10-18
-last_edited: 2023-11-11
+last_edited: 2023-11-19
 publish: false
 tags:
   - OMSCS
@@ -26,4 +26,4 @@ The following problems are known to be [[NP-Complete|NP-complete]]:
 	- [[Traveling salesman problem (search)]] - ???
 	- [[Rudrata cycle problem]] - ???
 	- [[Balanced cut problem]] - ???
-- 
+-

@@ -1,7 +1,9 @@
 import datetime
 import logging
 import os
-from typing import List
+from typing import List, Optional
+
+from git import Repo
 
 from obsidian_helper import constants, file_admin, models, read_obsidian, write_obsidian
 
@@ -11,7 +13,13 @@ def update_last_edited(obsidian_file: models.ObsidianFile):
     """
     Updates the last edited timestamp of an ObsidianFile object.
     """
-    last_edited = datetime.date.fromtimestamp(os.path.getmtime(obsidian_file.file_path))
+    last_edited = get_last_edited(obsidian_file.file_path)
+    if not last_edited:
+        last_edited = datetime.date.fromtimestamp(os.path.getmtime(obsidian_file.file_path))
+        logger.info(
+            f"{obsidian_file.file_path} INFO: No commit history found for file using local last edited date "
+            f"{last_edited}."
+        )
     if constants.LAST_EDITED_FIELD not in obsidian_file.metadata:
         logger.info(f"{obsidian_file.file_path} CHANGE: Adding last edited timestamp {last_edited}.")
     elif obsidian_file.metadata[constants.LAST_EDITED_FIELD] < last_edited:
@@ -20,6 +28,18 @@ def update_last_edited(obsidian_file: models.ObsidianFile):
             f"{obsidian_file.metadata[constants.LAST_EDITED_FIELD]} to {last_edited}."
         )
     obsidian_file.metadata[constants.LAST_EDITED_FIELD] = last_edited
+
+def get_last_edited(file_path, repo_path=constants.OBSIDIAN_DIR) -> Optional[datetime.date]:
+    repo = Repo(repo_path)
+
+    try:
+        commit_log = repo.iter_commits(paths=file_path)
+        last_commit = next(commit_log)
+        commit_date = datetime.date.fromtimestamp(last_commit.committed_date)
+        return commit_date
+    except StopIteration:
+        # No commit history for the file
+        return None
 
 def update_tags(obsidian_file: models.ObsidianFile):
     old_tags = obsidian_file.metadata.get("tags", None)

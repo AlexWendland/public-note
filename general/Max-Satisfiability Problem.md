@@ -6,7 +6,7 @@ aliases:
   - Max-SAT
 checked: false
 created: 2023-11-12
-last_edited: 2023-11-12
+last_edited: 2023-11-13
 publish: true
 tags:
   - programming

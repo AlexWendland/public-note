@@ -1,5 +1,5 @@
 ---
-aliases: 
+aliases: null
 checked: false
 created: 2023-11-13
 last_edited: 2023-11-13
@@ -21,7 +21,7 @@ Suppose we have an instance of the [[Subset-sum problem|subset-sum problem]] giv
 
 Construct a [[Knapsack-search (without replacement)|Knapsack-search]] problem with items with $o_i$ with weight $b_i := a_i$ and value $v_i := a_i$. Then set the limit $B := t$ and goal $g := t$.
 
-Note this transformation is $O(n)$ as we just need to construct the objects. So it is [[Polynomial time]]. 
+Note this transformation is $O(n)$ as we just need to construct the objects. So it is [[Polynomial time]].
 
 Suppose the constructed [[Knapsack-search (without replacement)|Knapsack-search]] problem provides solution $S$, then provide this as the solution to the [[Subset-sum problem|subset-sum problem]].
 

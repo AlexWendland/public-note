@@ -1,5 +1,5 @@
 ---
-aliases: 
+aliases: null
 checked: false
 created: 2023-11-12
 last_edited: 2023-11-12
@@ -39,13 +39,13 @@ If we have a single variable, then all clauses are either $x_i$ or $\overline{x_
 
 Assume we have proven that on $k-1$ variables our algorithm satisfies more than $m/2$ clauses.
 
-Suppose we have formula $f$ with $k$ variables. Let $E$ be the set of all clauses that use only $x_k$. Remove all literals from $f$ that involve $x_k$ to make $f'$ with $m - \vert E \vert$ clauses. 
+Suppose we have formula $f$ with $k$ variables. Let $E$ be the set of all clauses that use only $x_k$. Remove all literals from $f$ that involve $x_k$ to make $f'$ with $m - \vert E \vert$ clauses.
 
 Similarly to case $k=1$ there is an assignment $a^{\ast}(x_k)$ that satisfies at least $\vert E \vert / 2$ clauses as they just involve $x_k$.
 
-When we run our algorithm on $f'$ we get an assignment $a'$ that satisfies $y' \geq (m - \vert E \vert) / 2$. 
+When we run our algorithm on $f'$ we get an assignment $a'$ that satisfies $y' \geq (m - \vert E \vert) / 2$.
 
-The steps that return this assignment are identical to that of running it on the first $k-1$ variables of $f$. Therefore $a'(x_i) = a(x_i)$ for $1 \leq i \leq k-1$. 
+The steps that return this assignment are identical to that of running it on the first $k-1$ variables of $f$. Therefore $a'(x_i) = a(x_i)$ for $1 \leq i \leq k-1$.
 
 In the last step we consider $x_k$, we pick $a(x_k)$ that maximises the number of left over unsatisfied clauses. This includes the clauses in $E$ where $a^{\ast}(a_k)$ satisfies at least $\vert E \vert / 2$, therefore $a(a_k)$ satisfies $z \geq \vert E \vert / 2$ new clauses - as it is maximal.
 
