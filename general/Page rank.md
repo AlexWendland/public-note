@@ -14,5 +14,5 @@ type: definition
 > $$\pi(x) = \sum_{y \in In(x)} \frac{\pi(y)}{\vert Out(y) \vert}.$$
 > With
 > - $Out(x) = \{y \in V \vert (x,y) \in E\}$, and
-> - $In(x) = \{y \in V \vert (y,x) \in E\}$. 
+> - $In(x) = \{y \in V \vert (y,x) \in E\}$.
 

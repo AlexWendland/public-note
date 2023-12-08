@@ -3,7 +3,7 @@ aliases:
   - k-vertex-colouring problem
 checked: false
 created: 2023-11-02
-last_edited: 2023-11-11
+last_edited: 2023-11-16
 publish: true
 tags:
   - programming

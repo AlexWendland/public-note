@@ -1,5 +1,5 @@
 ---
-aliases: 
+aliases: null
 checked: false
 created: 2023-11-12
 last_edited: 2023-11-12
@@ -33,7 +33,7 @@ For each clause $c_j$ add the following constraint
 $$
 \sum_{i \in c_j^+} y_i + \sum_{i \in c_j^-} (1 - y_i) \geq z_j
 $$
-this guarantees for integer points $z_j$ can only be 1 if $x_i = 1$ for some $i \in c^+_j$ or $x_i = 0$ for some $i \in c^-_j$. 
+this guarantees for integer points $z_j$ can only be 1 if $x_i = 1$ for some $i \in c^+_j$ or $x_i = 0$ for some $i \in c^-_j$.
 
 Lastly to define the reduction, we need to define the objective function
 $$\max \sum_{j=1}^m z_j.$$
@@ -41,7 +41,7 @@ This reduction takes time $O(mn)$, as we need to go through each clause to conve
 
 When provided with a solution to the [[Integer linear programming problem|ILP]] return the solution to the [[Max-Satisfiability Problem|Max-SAT]] problem with $x_i$ true for all $y_i = 1$ and $x_i$ false for all $y_i = 0$. This takes $O(n)$ time so takes [[Polynomial time|polynomial time]].
 
-Let $v$ be the max value of the constructed [[Integer linear programming problem|ILP]] and $w$ be the max value of [[Max-Satisfiability Problem|Max-SAT]]. From [[Integer linear programming is NP-hard#Claim 1|Claim 1]] we have $w \leq v$. Equally [[Integer linear programming is NP-hard#Claim 2|Claim 2]] gives us $v \leq w$. This provides that $v = w$ and we have the solution of the contracted [[Integer linear programming problem|ILP]] if and only if we have a solution to the [[Max-Satisfiability Problem|Max-SAT]] problem. 
+Let $v$ be the max value of the constructed [[Integer linear programming problem|ILP]] and $w$ be the max value of [[Max-Satisfiability Problem|Max-SAT]]. From [[Integer linear programming is NP-hard#Claim 1|Claim 1]] we have $w \leq v$. Equally [[Integer linear programming is NP-hard#Claim 2|Claim 2]] gives us $v \leq w$. This provides that $v = w$ and we have the solution of the contracted [[Integer linear programming problem|ILP]] if and only if we have a solution to the [[Max-Satisfiability Problem|Max-SAT]] problem.
 
 ## Claim 1
 
@@ -72,7 +72,7 @@ We set $a(x_i) = y_1$ with $1$ being True and $0$ being False. The clause constr
 $$
 \sum_{i \in c_j^+} y_i + \sum_{i \in c_j^-} (1 - y_i) \geq z_j
 $$
-guarantees that if this assignment doesn't satisfy $c_j$ then $z_j = 0$ as $0 \leq z_j \leq 1$ and 
+guarantees that if this assignment doesn't satisfy $c_j$ then $z_j = 0$ as $0 \leq z_j \leq 1$ and
 $$
 \sum_{i \in c_j^+} y_i + \sum_{i \in c_j^-} (1 - y_i) = \sum_{i \in c_j^+} 0 + \sum_{i \in c_j^-} (1 - 1) = 0 \geq z_j.
 $$

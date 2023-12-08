@@ -3,7 +3,7 @@ aliases: null
 checked: false
 course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-11-10
-last_edited: 2023-11-11
+last_edited: 2023-11-19
 publish: true
 tags:
   - OMSCS
@@ -58,7 +58,7 @@ $$
 $$
 though this is in expectation - which means there is an assignment that has more than $m/2$ clauses satisfied.
 
-We can in fact find this pretty easily. 
+We can in fact find this pretty easily.
 
 ![[Max-SAT random approximation algorithm#Pseudocode]]
 
@@ -82,7 +82,7 @@ However, what if we run the constructed [[Integer linear programming problem|ILP
 
 ## LP relaxation for max-SAT
 
-Let $y_i^{\ast}$ and $z_j^{\ast}$ be optimal solutions to the constructed [[Integer linear programming problem|ILP]] for [[Max-Satisfiability Problem|max-SAT]]. Whereas let $\hat{y_i^{\ast}}$ and $\hat{z_j^{\ast}}$ be optimal solutions to the constructed [[Integer linear programming problem|ILP]] for [[Max-Satisfiability Problem|max-SAT]] where we drop the need to be an [[Integer]] solution. 
+Let $y_i^{\ast}$ and $z_j^{\ast}$ be optimal solutions to the constructed [[Integer linear programming problem|ILP]] for [[Max-Satisfiability Problem|max-SAT]]. Whereas let $\hat{y_i^{\ast}}$ and $\hat{z_j^{\ast}}$ be optimal solutions to the constructed [[Integer linear programming problem|ILP]] for [[Max-Satisfiability Problem|max-SAT]] where we drop the need to be an [[Integer]] solution.
 
 Note as $\hat{y_i^{\ast}}$ and $\hat{z_j^{\ast}}$ are less constrained we have
 $$ \sum_{j=1}^m \hat{z_j^{\ast}} \geq \sum_{j=1}^m z_j^{\ast}.$$
@@ -101,7 +101,7 @@ Then we can look at the expectation of $w$
 $$
 \mathbb{E}[w] = \sum_{j=1}^m \mathbb{E}[w_j] = \sum_{j=1}^m \mathbb{P}(w_j = 1) \geq \left ( 1 - \frac{1}{e} \right ) \sum_{j=1}^m \hat{z_j^{\ast}} \geq  \left ( 1 - \frac{1}{e} \right ) m^{\ast}.
 $$
-Giving us a $\left ( 1 - \frac{1}{e} \right )$-approximation algorithm to the problem - in expectation. 
+Giving us a $\left ( 1 - \frac{1}{e} \right )$-approximation algorithm to the problem - in expectation.
 
 ## Proof of Lemma 1
 
@@ -109,7 +109,7 @@ For this we are going to use the [[Arithmetic mean is greater than or equal to t
 $$
 c_j = \left ( \bigvee_{i \in c_j^+} x_i \right ) \lor \left ( \bigvee_{i \in c_j^-} \overline{x_i} \right).
 $$
-Then lets look at 
+Then lets look at
 $$
 \begin{align*}
 \mathbb{P}(w_j = 1) & = 1 - \mathbb{P}(w_j = 0)\\
@@ -123,9 +123,9 @@ Here comes a little bit of horrible functional analysis. For a fixed $k \in \mat
 $$
 1 - \left [ 1 - \frac{a}{k} \right ]^k \geq \left ( 1 - \left [ 1 - \frac{1}{k} \right ]^k \right ) a
 $$
-for $0 \leq a \leq 1$. 
+for $0 \leq a \leq 1$.
 
-First if $k = 1$ both sides equate to $a$ and we are done. So assume $k \geq 2$. 
+First if $k = 1$ both sides equate to $a$ and we are done. So assume $k \geq 2$.
 
 Note for $a = 0, 1$ they are equal.
 
@@ -173,4 +173,4 @@ This is a general approach we can take to finding approximation algorithms for [
   | 3   | $7/8$      | $1 - (\frac{2}{3})^3 \approx 0.704$ |
   | k   | $1 - 2^{-k}$ | $1 - (1 - \frac{1}{k})^k$                            |
 
-The thing to note here is that each row is at least $3/4$, so by taking the max of both algorithms we achieve a $3/4$-approximation algorithm in expectation. 
+The thing to note here is that each row is at least $3/4$, so by taking the max of both algorithms we achieve a $3/4$-approximation algorithm in expectation.

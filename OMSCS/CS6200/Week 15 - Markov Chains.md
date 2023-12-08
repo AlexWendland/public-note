@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases: null
 checked: false
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+course: '[[CS6200 Introduction to Graduate Algorithms]]'
 created: 2023-11-11
-last_edited: 2023-11-11
+last_edited: 2023-12-03
 publish: true
 tags:
   - OMSCS
@@ -30,7 +30,7 @@ Now we can define a [[Markov chain]].
 >0.2 & 0 & 0.5 & 0.3\\
 >0 & 0.3 & 0.7 & 0\\
 >0.7 & 0 & 0 & 0.3\\
->\end{array}\right ) 
+>\end{array}\right )
 >$$
 >where $p_{i,j}$ represents the edge weight going from $i$ to $j$ in the graph above.
 
@@ -43,7 +43,7 @@ P^2 = \left ( \begin{array}
 0.31 & 0.25 & 0.35 & 0.09\\
 0.06 & 0.21 & 0.64 & 0.09\\
 0.56 & 0.35 & 0 & 0.09\\
-\end{array}\right ) 
+\end{array}\right )
 $$
 as you can notice there is no path from state $4$ to $3$ in 2 steps.
 
@@ -71,7 +71,7 @@ The connection follows as to calculate $P \cdot P^k$ for each row we calculate s
 
 ## Algebraic view
 
-For some [[Markov chain]] given by $P \in M_{N, N}(\mathbb{R})$ if you start at state $i$ with $1 \leq i \leq N$ then the [[Probability distribution|probability distribution]] of where you are is given by the $i$'th row of $P$. 
+For some [[Markov chain]] given by $P \in M_{N, N}(\mathbb{R})$ if you start at state $i$ with $1 \leq i \leq N$ then the [[Probability distribution|probability distribution]] of where you are is given by the $i$'th row of $P$.
 
 Equivalently, if $\mu_0 \in M_{1,N}(\mathbb{R})$ is the vector with $0$'s in all entries other than $1$ in the $i$'th column then its [[Probability distribution|probability distribution]] is given by
 $$
@@ -83,7 +83,7 @@ $$
 $$
 However, we can pick any [[Probability distribution|probability distribution]] over the $N$ states for $\mu_0$. Therefore a [[Stationary distribution (Markov Chains)|stationary distribution]] is just one in which this doesn't change over time.
 
-From the definition any [[Stationary distribution (Markov Chains)|stationary distribution]] is simply an [[Eigenvector and Eigenvalue|eigenvector]] for $P$ with [[Eigenvector and Eigenvalue|eigenvalue]] 1. 
+From the definition any [[Stationary distribution (Markov Chains)|stationary distribution]] is simply an [[Eigenvector and Eigenvalue|eigenvector]] for $P$ with [[Eigenvector and Eigenvalue|eigenvalue]] 1.
 
 ## When does a [[Markov chain]] not have a [[Stationary distribution (Markov Chains)|stationary distribution]]?
 
@@ -97,14 +97,14 @@ We can show [[Periodic Markov chain|periodic Markov chains]] have no [[Stationar
 
 ## When does a [[Markov chain]] not have a unique [[Stationary distribution (Markov Chains)|stationary distribution]]?
 
-Suppose we have a [[Markov chain]] with multiple [[Strongly connected components (directed graphs)|strongly connected component]] sinks in the [[Strongly connected component graph (directed graph)|strongly connected component graph]]. Then for each of these we will get a [[Stationary distribution (Markov Chains)|stationary distribution]] on the vertices involved. Then any weighted sum of these [[Stationary distribution (Markov Chains)|stationary distribution]] such that they sum to a [[Probability distribution|probability distribution]] would be a [[Stationary distribution (Markov Chains)|stationary distribution]] on the whole [[Markov chain]] and it wouldn't be unique. 
+Suppose we have a [[Markov chain]] with multiple [[Strongly connected components (directed graphs)|strongly connected component]] sinks in the [[Strongly connected component graph (directed graph)|strongly connected component graph]]. Then for each of these we will get a [[Stationary distribution (Markov Chains)|stationary distribution]] on the vertices involved. Then any weighted sum of these [[Stationary distribution (Markov Chains)|stationary distribution]] such that they sum to a [[Probability distribution|probability distribution]] would be a [[Stationary distribution (Markov Chains)|stationary distribution]] on the whole [[Markov chain]] and it wouldn't be unique.
 
 ![[Irreducible Markov chain]]
 
 
 ## [[Markov chain]] with a unique [[Stationary distribution (Markov Chains)|stationary distribution]]
 
-Now we know what to avoid we define the following. 
+Now we know what to avoid we define the following.
 
 ![[Ergodic Markov chain]]
 
@@ -134,7 +134,7 @@ Though in general it does not have anything explicit.
 
 There is an algorithm invented in 1998 that was used to rate the importance of webpages.
 
-The way it determines importance has nice applications for [[Markov chain|Markov chains]]. It was used in search engines at the beginning of the popularisation of the internet. 
+The way it determines importance has nice applications for [[Markov chain|Markov chains]]. It was used in search engines at the beginning of the popularisation of the internet.
 
 For this lets start by defining the object we are working with.
 
@@ -143,7 +143,7 @@ For this lets start by defining the object we are working with.
 We think of this graph in an extended [[Adjacency list format (graph)|Adjacency list]] form,
 
 - $Out(x) = \{y \in V \vert (x,y) \in E\}$, and
-- $In(x) = \{y \in V \vert (y,x) \in E\}$. 
+- $In(x) = \{y \in V \vert (y,x) \in E\}$.
 
 The problem is to define $\pi(x)$ to be the "rank" of a page - which will be a measure of importance.
 
@@ -198,9 +198,9 @@ for some large $t$. There are some tricks that will help
 - if we use an old approximation of $\pi$ for $\mu_0$ it will mix faster, and
 - matrix multiplication doesn't need to take $O(N^2)$ instead we can get it on the order of $O(\vert E \vert)$.
 
-## What value to set $\alpha$ 
+## What value to set $\alpha$
 
-If $\alpha = 0$ then we have a [[Symmetric Markov chain]] with just the uniform [[Stationary distribution (Markov Chains)|stationary distribution]]. So $\alpha$ in some sense is reflecting how much the tweaked [[Markov chain]] is reflecting the original idea of the page rank. 
+If $\alpha = 0$ then we have a [[Symmetric Markov chain]] with just the uniform [[Stationary distribution (Markov Chains)|stationary distribution]]. So $\alpha$ in some sense is reflecting how much the tweaked [[Markov chain]] is reflecting the original idea of the page rank.
 
 The trade off for increasing $\alpha$ is that it is slower to converge to a [[Stationary distribution (Markov Chains)|stationary distribution]]. Google are believed to use $\alpha = 0.85$.
 
