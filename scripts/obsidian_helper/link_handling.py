@@ -1,6 +1,9 @@
 from .constants import ALIAS_FIELD
 from .models import ObsidianFile, MarkdownSection
 
+from typing import Tuple
+import re
+
 ALIAS_LINKS = dict()
 
 def set_alias_link(alias: str, file: str):
@@ -32,3 +35,20 @@ def set_aliases_from_section(obsidian_file: ObsidianFile, section: MarkdownSecti
     set_alias_link(file_name, file_name)
     for alias in aliases:
         set_alias_link(alias, file_name)
+
+def clean_section_of_aliases(section: MarkdownSection) -> None:
+    """
+    Removes all aliases from a section.
+    """
+    section.title = section.title.split(",")[0]
+
+def clean_string_of_aliases(string: str) -> Tuple[str, dict]:
+    """
+    Replaces all obsidian aliases with their string representation.
+    """
+    alias_links = dict()
+    for alias, link in ALIAS_LINKS.items():
+        if alias in string:
+            alias_links[alias] = link
+            string = string.replace(alias, "")
+    return string, alias_links
