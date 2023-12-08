@@ -1,6 +1,7 @@
 from .constants import ALIAS_FIELD
-from .models import ObsidianFile, MarkdownSection
+from .models import ObsidianFile, MarkdownSection, ObsidianLink
 
+from collections import namedtuple
 from typing import Tuple
 import re
 
@@ -52,3 +53,5 @@ def clean_string_of_aliases(string: str) -> Tuple[str, dict]:
             alias_links[alias] = link
             string = string.replace(alias, "")
     return string, alias_links
+
+def process_obsidian_link(str)
