@@ -33,3 +33,17 @@ class ObsidianFile(pydantic.BaseModel):
         if not value.endswith('.md'):
             raise ValueError('file_path must be a markdown (.md) file.')
         return value
+
+class ObsidianLink(pydantic.BaseModel):
+    file_name: str
+    section: Optional[str]
+    alias: Optional[str]
+
+    @property
+    def link(self) -> str:
+        text = self.file_name
+        if self.section:
+            text += f"#{self.section}"
+        if self.alias:
+            text += f" | {self.alias}"
+        return f"[[{text}]]"
