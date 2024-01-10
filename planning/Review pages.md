@@ -14,6 +14,6 @@ It is good to review old pages and update their last_edited value.
 ```dataview
 TABLE last_edited, created
 FROM -"templates"
-SORT last_edited ASC
+SORT last_edited ASC, created ASC
 WHERE last_edited
 ```
