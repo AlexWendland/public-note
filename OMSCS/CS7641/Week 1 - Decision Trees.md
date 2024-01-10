@@ -52,5 +52,16 @@ Suppose we have two sets $A$ and $B$ and we are looking to find some function op
 
 # Decision trees
 
+Suppose your domain $A$ actually breaks down into many different aspects $A = \oplus_{i=1}^k A_i$. Like if you were making a decision about whether to go into the restaurant your aspects could be the type of restaurant, whether it is raining, and how full the restaurant is.
+
+Then a [[Decision tree]] is a [[Rooted tree|rooted tree]] where
+- Each parent node is affiliated with an aspect with each child branch being affiliated with a collection of potential values. We make sure all potential values of that aspect are covered by the branches.  
+- Each child node is associated to a value in the [[Function codomain|codomain]] $B$.
+
+An example for the problem of restaurant choosing is below.
+
+![[decision tree example.excalidraw]]
+
+## Learning with Decision trees
 
 
