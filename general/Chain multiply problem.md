@@ -1,9 +1,9 @@
 ---
-aliases: null
+aliases: 
 checked: false
 created: 2023-12-03
 last_edited: 2023-12-03
-publish: false
+publish: true
 tags:
   - programming
 type: problem
