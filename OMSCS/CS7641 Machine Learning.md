@@ -25,13 +25,11 @@ Supervised Learning is a machine learning task that makes it possible for your p
 Ever wonder how Netflix can predict what movies you'll like? Or how Amazon knows what you want to buy, before you make a purchase? The answer can be found in Unsupervised Learning. Closely related to pattern recognition, Unsupervised Learning is about analyzing data and looking for patterns. It is an extremely powerful tool for identifying structure in data. This course focuses on how students can use Unsupervised Learning approaches - including randomized optimization, clustering, and feature selection and transformation - to find structure in unlabeled data.
 
 **Reinforcement Learning**  
-Reinforcement Learning is the area of Machine Learning concerned with the actions that software agents ought to take in a particular environment in order to maximize rewards. You can apply Reinforcement Learning to robot control, chess, backgammon, checkers and other activities that a software agent can learn. Reinforcement Learning uses behaviorist psychology in order to achieve reward maximization.
+Reinforcement Learning is the area of Machine Learning concerned with the actions that software agents ought to take in a particular environment in order to maximize rewards. You can apply Reinforcement Learning to robot control, chess, backgammon, checkers and other activities that a software agent can learn. Reinforcement Learning uses behaviorial psychology in order to achieve reward maximization.
 
 ## Lectures
-
-- 
-
+- [[Week 1 - Decision Trees]]
 ## Links
 - [Central](https://www.omscentral.com/courses/machine-learning/reviews)
 - [OMSCS page](https://omscs.gatech.edu/cs-7641-machine-learning)
-- [Course textbook](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf)
+- [[MachineLearningTomMitchell.pdf|Course textbook]]

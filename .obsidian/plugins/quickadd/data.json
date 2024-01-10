@@ -512,7 +512,7 @@
             "folder": {
               "enabled": true,
               "folders": [
-                "OMSCS/CS6200"
+                "OMSCS/CS7641"
               ],
               "chooseWhenCreatingNote": false,
               "createInSameFolderAsActiveFile": false,
@@ -540,7 +540,7 @@
             "type": "Capture",
             "command": false,
             "appendLink": false,
-            "captureTo": "OMSCS/CS6200 Introduction to Graduate Algorithms.md",
+            "captureTo": "OMSCS/CS7641 Machine Learning.md",
             "captureToActiveFile": false,
             "createFileIfItDoesntExist": {
               "enabled": false,
