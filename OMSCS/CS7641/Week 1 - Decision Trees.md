@@ -64,4 +64,5 @@ An example for the problem of restaurant choosing is below.
 
 ## Learning with Decision trees
 
+If we want to design a decision tree to help us most with making a decision, how can we design that tree to be most effective?
 
