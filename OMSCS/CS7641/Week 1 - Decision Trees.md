@@ -62,7 +62,15 @@ An example for the problem of restaurant choosing is below.
 
 ![[decision tree example.excalidraw]]
 
-## Learning with Decision trees
+## Boolean decision trees
 
-If we want to design a decision tree to help us most with making a decision, how can we design that tree to be most effective?
+Suppose our domain consists of $A_i = \{T, F\}$ [[Boolean variable|Boolean's]], either true or false as well as our [[Function codomain|codomain]] $B = \{T, F\}$. Then our function $f^{\ast}$ represented by the [[Decision tree|decision trees]] is a [[Boolean function|boolean function]].
+
+![[boolean decision trees.excalidraw]]
+
+
+These can expand to many variables, and for different functions can grow with different rates.
+
+- [[Logical or]] and [[Logical and]] with $n$ variables uses $O(n)$ nodes.
+- Even/odd parity (true if an even/odd number of inputs are True) with $n$ variables uses $O(2^n)$ nodes. 
 
