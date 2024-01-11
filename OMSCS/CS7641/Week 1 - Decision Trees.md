@@ -74,3 +74,7 @@ These can expand to many variables, and for different functions can grow with di
 - [[Logical or]] and [[Logical and]] with $n$ variables uses $O(n)$ nodes.
 - Even/odd parity (true if an even/odd number of inputs are True) with $n$ variables uses $O(2^n)$ nodes. 
 
+# ID3
+
+![[Iterative Dichotomiser 3 (ID3)#Iterative Dichotomiser 3 (ID3)]]
+

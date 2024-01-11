@@ -46,8 +46,7 @@ ID3(training_data, attributes):
 ```
 
 ## Run time
-
-
+- $O(\vert A' \vert 2^{\vert T \vert})$  
 
 ## Correctness
 
