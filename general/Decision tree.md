@@ -1,5 +1,7 @@
 ---
-aliases: 
+aliases:
+  - decision tree
+  - decision trees
 checked: false
 created: 2024-01-10
 last_edited: 2024-01-10
