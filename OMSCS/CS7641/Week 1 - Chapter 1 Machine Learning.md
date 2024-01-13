@@ -70,7 +70,16 @@ In the example above we can may explicit expectations on $V$ such as $b \in B$
 - if it is drawn then $V(b) = 0$, and
 - else $V(b) = V(b')$ where $b'$ is the end state assuming optimum play.
 
-Though the last point makes $V$ a *non-operational* definition as it is not efficiently computable. The goal of learning is to make an *operational* description of $V$. This might not be known perfectly however a [[Prediction|prediction]] of it $\hat{V}$ will suffice. 
+The function as you right it down might be $V$ *non-operational* definition as it is not efficiently computable (as the last condition above makes it). The goal of learning is to make an *operational* description of $V$. This might not be known perfectly however a [[Prediction|prediction]] of it $\hat{V}$ will suffice. 
 
+# Choosing a representation of this target knowledge
 
+This is equivalent to choosing a [[Modelling paradigm|modelling paradigm]].
+
+In checkers you could represent $V$ as:
+- A letteral function from board states to values,
+- A neural network, or
+- A function on board features that are predefined.
+
+## A learning Mechanism
 
