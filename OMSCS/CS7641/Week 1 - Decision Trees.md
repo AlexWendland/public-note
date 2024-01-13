@@ -78,3 +78,23 @@ These can expand to many variables, and for different functions can grow with di
 
 ![[Iterative Dichotomiser 3 (ID3)#Iterative Dichotomiser 3 (ID3)]]
 
+# Bias
+
+![[Inductive bias]]
+
+![[Preference bias]]
+
+![[Restriction bias]]
+
+In [[Iterative Dichotomiser 3 (ID3)|ID3]] the [[Restriction bias|restriction bias]] comes from the fact that the have a [[Decision tree|decision tree]] based on a set of attributes. 
+
+For example, if you let the attributes $T = Func(A,B)$ then the [[Decision tree|decision tree]] can represent any function in $Func(A,B)$ trivially. Though this might be computationally completely infeasible in most cases!
+
+Whereas the [[Preference bias|preference bias]] comes from the [[Iterative Dichotomiser 3 (ID3)|ID3]] algorithm itself:
+- good splits near the root of the tree,
+- ones that lower the entropy more, and
+- shorter trees.
+
+# Continuous variables
+
+Suppose we have some continuous attribute in $A$. 
