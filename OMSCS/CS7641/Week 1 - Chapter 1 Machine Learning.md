@@ -14,3 +14,13 @@ week: 1
 
 This is my notes from the first chapter of [[MachineLearningTomMitchell.pdf]].
 
+# 1.1 Well posed learning problems
+
+![[Machine Learning]]
+
+>[!example] Checkers
+>If we want a programme to learn at checkers we simply need to define $T$, $P$, and $E$!
+>- Task $T$: playing checkers,
+>- Performance measure $P$: percentage of games won against opponents, and
+>- Training experience $E$: playing practice games against itself.
+
