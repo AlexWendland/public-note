@@ -95,6 +95,18 @@ Whereas the [[Preference bias|preference bias]] comes from the [[Iterative Dicho
 - ones that lower the entropy more, and
 - shorter trees.
 
-# Continuous variables
+# Other considerations
 
-Suppose we have some continuous attribute in $A$. 
+## Continuous variables
+
+Suppose we have some continuous attribute in $A$. Whilst we could have a branch for every value that attribute could take, it is most probably best to categorify the value by their picking Boolean decisions like is it $\geq a$ or $< a$ for $a \in A$ or splitting the value into ranges.
+
+## Pruning
+
+![[Overfitting]]
+
+The model can have [[Overfitting|overfitting]] if the tree gets too large. Therefore it is good practice to contract (or prune) branches of the tree if they have marginal effect on the outcome of the [[Decision tree|decision tree]].
+
+## [[Regression problems]]
+
+It is possible to tackle this with a [[Decision tree|decision tree]] if you only care about approximate answer. However, you will have to change the definition of [[Information entropy|information entropy]] to work in the continuous space. This will have to use something like an average of the leaf nodes.

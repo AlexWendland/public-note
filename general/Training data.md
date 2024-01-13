@@ -1,5 +1,6 @@
 ---
-aliases: 
+aliases:
+  - training data
 checked: false
 created: 2024-01-13
 last_edited: 2024-01-13
