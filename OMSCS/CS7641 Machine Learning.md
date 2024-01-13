@@ -29,7 +29,7 @@ Reinforcement Learning is the area of Machine Learning concerned with the action
 
 ## Lectures
 - [[Week 1 - Decision Trees]]
-## Links
+- [[Week 1 - Chapter 1 Machine Learning]]## Links
 - [Central](https://www.omscentral.com/courses/machine-learning/reviews)
 - [OMSCS page](https://omscs.gatech.edu/cs-7641-machine-learning)
 - [[MachineLearningTomMitchell.pdf|Course textbook]]
