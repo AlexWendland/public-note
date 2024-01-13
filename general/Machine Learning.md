@@ -1,5 +1,6 @@
 ---
-aliases: 
+aliases:
+  - machine learning
 checked: false
 created: 2024-01-10
 last_edited: 2024-01-10

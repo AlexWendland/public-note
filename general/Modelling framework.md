@@ -15,7 +15,7 @@ type: definition
 >$$Y = f(X) + \epsilon.$$
 >Where $\epsilon$ is some [[Irreducible error]] within our system and $f: A \rightarrow B$.
 >
->Then you normally pick a modelling paradigm, like [[Linear regression]], which relates to a subset of functions from $A$ to $B$, $M \subset Func(A,B)$ with an [[Objective function|objective function]] $O$. Then pick the best $\hat{f} \in M$ with respect to the [[Objective function|objective function]] $O$ on some [[Testing data|testing data]]. Therefore you are making the [[Prediction|prediction]]
+>Then you normally pick a modelling paradigm, like [[Linear regression]], which relates to a subset of functions from $A$ to $B$, $M \subset Func(A,B)$ with an [[Objective function|objective function]] $O$. Then pick the best $\hat{f} \in M$ with respect to the [[Objective function|objective function]] $O$. Therefore you are making the [[Prediction|prediction]]
 >$$Y \approx \hat{f}(X).$$
 
 # References
