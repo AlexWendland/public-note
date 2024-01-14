@@ -113,3 +113,14 @@ In our example:
 - The critic would transform that game into a training data.
 - The generaliser would run the learning algorithm on it.
 - The experiment generator could either start a game at the beginning of the game or a state of particular confusion for the model. 
+
+Learning problems can be summarised as searching through large "Hypothesis spaces" to find the best fitting function to a given curve.
+
+# Issues in Machine Learning
+
+- What algorithms perform best for a given task?
+- How much training data does it take to make a learning process converge?
+- What is the most useful experience to next learn on? 
+- What function is worth learning for a given task?
+- Can the learner automatically alter its representation to reduce [[Restriction bias|restriction bias]]?
+
