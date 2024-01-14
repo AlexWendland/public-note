@@ -83,6 +83,17 @@ In checkers you could represent $V$ as:
 
 ## A learning Mechanism
 
-Now given a function $V: B \rightarrow \mathbb{R}$ you need [[Training data|training data]] to build $\hat{V}$ and a method to evaluate this approximation. 
+Now given a function $V: A \rightarrow B$ you need: 
+- [[Training data|training data]] to build $\hat{V}$ of the form $T \subset A \times B$, 
+- a method to evaluate this approximation - the [[Objective function|objective function]], and 
+- an algorithm to learn.
 
-In the example it may be confusing how we define training data, as the training experience is it playing itself. Here we use a tr
+In the example it may be confusing how we define training data, as the training experience is it playing itself. Here we use a trick to make the training data using $\hat{V}$ itself.
+
+The evaluation process for a linear function is commonly something like [[Mean squared error (MSE)]]. Evaluating the output of the [[Prediction|prediction]] $\hat{V}$ against the training data $T$.
+
+In the example as would choose the algorithm appropriate for the representation of $V$ that we went for.
+
+
+
+
