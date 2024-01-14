@@ -83,3 +83,6 @@ In checkers you could represent $V$ as:
 
 ## A learning Mechanism
 
+Now given a function $V: B \rightarrow \mathbb{R}$ you need [[Training data|training data]] to build $\hat{V}$ and a method to evaluate this approximation. 
+
+In the example it may be confusing how we define training data, as the training experience is it playing itself. Here we use a tr
