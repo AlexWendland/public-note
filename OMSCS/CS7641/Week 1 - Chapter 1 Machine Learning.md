@@ -94,6 +94,22 @@ The evaluation process for a linear function is commonly something like [[Mean s
 
 In the example as would choose the algorithm appropriate for the representation of $V$ that we went for.
 
+# Summary
 
+A lot of learning systems follow the design below.
 
+![[learning_system_diagram]]
 
+- The performance system: Runs an instance of the task and returns a new solution.
+- The critic: Uses that instance to generate training data.
+- Generaliser: Uses this training data to update the model.
+- Experiment generator: Decides what new experience would be best for the next round of training.
+
+Whilst not all these components are required, training systems tend to follow this cycle.
+
+In our example:
+
+- The performance system would play a game starting for the provided state.
+- The critic would transform that game into a training data.
+- The generaliser would run the learning algorithm on it.
+- The experiment generator could either start a game at the beginning of the game or a state of particular confusion for the model. 
