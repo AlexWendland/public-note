@@ -18,18 +18,42 @@ week: 2
 
 The name comes from [[Regression to the mean|regression to the mean]], this was the technique they used to first talk about it - then the word regression for the technique stuck.
 
-# Linear Regression
+# Polynomial Regression
 
-Suppose we are in the [[Modelling framework|modelling framework]] then [[Linear regression|linear regression]] is the process of matching a straight line to a set of $(x,y) \in A \times B$ for some continuous $A$ and $B$. Suppose a point in $x = (x_1, \ldots, x_n) \in A$ then we choose the [[Modelling paradigm|modelling paradigm]] of function to be a linear sum of the inputs with a base value:
-$$
-f(x) = c_0 + \sum_{i=1} c_i x_i
-$$
-with $c_i$ being constants in an appropriate field. 
+![[Polynomial regression]]
 
-Once we have an [[Objective function|objective function]] we can use training data to fit the parameters $c_i$.
+Once we have an [[Objective function|objective function]] we can use training data to fit the parameters $c_{p}$.
 
-## Linear regression using [[Mean squared error (MSE)|MSE]]
+Note that [[Linear regression|linear regression]] is [[Polynomial regression|polynomial regression]] but where $k=1$.
+
+![[Linear regression|linear regression]]
+
+## Polynomial regression using [[Mean squared error (MSE)|MSE]]
 
 ![[Mean squared error (MSE)|MSE]]
 
-Suppose $B = \mathbb{R}$ lets use [[Differentiation|differentiation]] to derive the values for $c_i$. 
+![[Calculate polynomial regression coefficients for MSE]]
+
+## Picking a degree
+
+Below is an example of [[Polynomial regression|polynomial regression]] done on different degree polynomials.
+
+![[polynomial regression example.png]]
+
+As we increase the degree the fitting polynomial, the fit to the points we are training on gets better. However, at a point the utility of the curve outside of these points gets less. 
+
+This is easy to see by eye but how can we computationally infer this?
+
+## Cross validation
+
+![[Cross validation]]
+
+![[cross validation example.png]]
+
+When using cross validation to assess the accuracy of our fit in the example before, you can see it agrees with our intuition. Whilst the high order approximations are a closer fit for the [[Training data|training data]], they are a worse fit for the [[Testing data|test data]]. Therefore we could use [[Cross validation|cross validation]] to pick the best polynomial without breaking the integrity of the [[Testing data|testing data]]. 
+
+Generally you need to find the right sweet spot between [[Underfitting|underfitting]] and [[Overfitting|overfitting]] by varying the degree of the polynomial.
+
+![[Getting the right fit]]
+
+![[Transforming discrete input for regression]]
