@@ -1,5 +1,7 @@
 ---
-aliases: 
+aliases:
+  - Perceptron
+  - perceptron
 checked: false
 created: 2024-01-18
 last_edited: 2024-01-18
