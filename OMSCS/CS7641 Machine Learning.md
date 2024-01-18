@@ -34,3 +34,4 @@ Reinforcement Learning is the area of Machine Learning concerned with the action
 - [OMSCS page](https://omscs.gatech.edu/cs-7641-machine-learning)
 - [[MachineLearningTomMitchell.pdf|Course textbook]]
 - [[Week 2 - Regression and classification]]
+- [[Week 2 - Neural networks]]
