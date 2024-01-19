@@ -39,3 +39,5 @@ Now consider $x_1, x_2 \in \{0,1\}$ and the conjunction
 $$p(x_1, x_2, p_{\land}(x_1,x_2)) = \begin{cases} 1 & \mbox{if } (x_1, x_2) \in \{(1,0), (0,1)\} \\ 0 & \mbox{otherwise.} \end{cases}$$
 ## Perceptron rule
 
+![[Perceptron rule]]
+
