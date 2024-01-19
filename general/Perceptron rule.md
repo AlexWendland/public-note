@@ -49,10 +49,3 @@ set_y_hat(T, w_i):
 2. return hat{y}_t
 ```
 
-## Run time
-
-
-
-## Correctness
-
-
