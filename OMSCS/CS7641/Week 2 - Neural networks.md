@@ -16,6 +16,14 @@ The basis of all neural networks is a simplified model of a neuron in the human 
 
 ![[Perceptron (neural network)]]
 
+Where we define an [[Activation function|activation function]] as.
+
+![[Activation function]]
+
+First we will just take the function to be [[Binary step]] which introduces an extra parameter $\theta$.
+
+![[Binary step]]
+
 ## Binary operations with perceptron's
 
 ### [[Logical and]] ($\land$)
@@ -60,8 +68,18 @@ $$
 $$
 This is very similar to the [[Perceptron rule|perceptron rule]]. Now to completely the training using this we would travel in the opposite of the direction of found by this [[Differentiation|derivative]]. This method is called [[Gradient decent]].
 
+![[Gradient decent]]
 ## Comparison
 
-Whilst the [[Perceptron rule|perceptron rule]] [[The perceptron rule converges in finite time if the dataset is linearly separable|converges in finite time for linear separable datasets]] it is unstable on datasets that are not [[Linearly separable|linearly separable]]. The advantage of [[Gradient decent|gradient decent]] is that it is stable on all datasets but it has the issue of converging only to local minimum.
+Whilst the [[Perceptron rule|perceptron rule]] [[The perceptron rule using binary step converges in finite time if the dataset is linearly separable|converges in finite time for linear separable datasets]] it is unstable on datasets that are not [[Linearly separable|linearly separable]]. The advantage of [[Gradient decent|gradient decent]] is that it is stable on all datasets but it has the issue of converging only to local minimum.
 
 ## Sigmoid function
+
+![[Sigmoid function]]
+
+Where this function looks similar to the [[Binary step|binary step]] function with one big advantage, that it is [[Differentiation|differentiable]]. 
+$$\frac{d \sigma}{d a} = \sigma(a) (1 - \sigma(a))$$
+Which shows the function is relative stable when $\sigma(a)$ is close to either $0$ or $1$ but will have the largest change when it is close to $1/2$. 
+
+This allow us to use [[Gradient decent|gradient decent]] on a [[Perceptron (neural network)|perceptron]] that is using the [[Sigmoid function]] as its [[Activation function|activation function]].
+

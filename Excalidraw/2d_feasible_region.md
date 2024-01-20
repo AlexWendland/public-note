@@ -16,7 +16,7 @@ x_1 + 3 x_2 <= 700 ^fsZHVNoK
 
 
 # Embedded files
-0d7b7d1f6762553a5b2e2e08f4b5c94c19612e81: [[Pasted Image 20231107210103_166.png]]
+0d7b7d1f6762553a5b2e2e08f4b5c94c19612e81: [[feasible region.png]]
 
 %%
 # Drawing
