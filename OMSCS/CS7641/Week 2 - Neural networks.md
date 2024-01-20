@@ -42,3 +42,26 @@ $$p(x_1, x_2, p_{\land}(x_1,x_2)) = \begin{cases} 1 & \mbox{if } (x_1, x_2) \in 
 ![[Perceptron rule]]
 
 ## Gradient decent
+
+With the [[Perceptron rule|perceptron rule]] we applied an activation function that made $p$ [[Differentiation|non-differentiable]]. Lets get rid of this for now and see if we can use [[Differentiation|differentiation]] to get another training method. 
+
+Let our [[Training data|training data]] $(x,y) \in T$ have $x = (x_1, x_2, \ldots, x_n) \in \mathbb{R}^n$ and $w = (w_1, w_2, \ldots w_n)$ be our weights for a [[Perceptron (neural network)|perceptron]] as before. The define the following error term
+$$
+E(w) = \frac{1}{2} \sum_{(x,y) \in T} (y - a)^2, \ \ \ \mbox{where} \ \ \ a = \sum_{i=1}^n x_iw_i.
+$$
+Note $E$ is a function of the weights in this example.
+
+Then we can find a local derivative to decide on the best direction to reduce the weights.
+
+$$
+\begin{align*}
+\frac{\partial E}{\partial w_i} & = \frac{1}{2} \sum_{(x,y) \in T} -2 (y-a) \frac{\partial a}{\partial w_i}\\
+& = - \sum_{(x,y) \in T} (y-a) x_i \end{align*}
+$$
+This is very similar to the [[Perceptron rule|perceptron rule]]. Now to completely the training using this we would travel in the opposite of the direction of found by this [[Differentiation|derivative]]. This method is called [[Gradient decent]].
+
+## Comparison
+
+Whilst the [[Perceptron rule|perceptron rule]] [[The perceptron rule converges in finite time if the dataset is linearly separable|converges in finite time for linear separable datasets]] it is unstable on datasets that are not [[Linearly separable|linearly separable]]. The advantage of [[Gradient decent|gradient decent]] is that it is stable on all datasets but it has the issue of converging only to local minimum.
+
+##
