@@ -85,3 +85,6 @@ This allow us to use [[Gradient decent|gradient decent]] on a [[Perceptron (neur
 
 ## Neural network
 
+![[Neural network]]
+
+If we use the [[Sigmoid function]] for each of the [[Perceptron (neural network)|perceptrons]] [[Activation function|activation function]] or some other [[Differentiation|differentiable]] [[Activation function|activation function]] - the function this neural network represents is also [[Differentiation|differentiable]]. In this case we can run [[Gradient decent|gradient decent]] which in this case is called [[Back propagation]].
