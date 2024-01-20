@@ -11,7 +11,7 @@ type: algorithm
 ---
 # Gradient decent
 
-This algorithm uses [[Differentiation|differentiation]] to minimise error terms for models. Suppose we have a model with some parameters $w \in \mathbb{R}^k$. Further suppose the error term $E(w)$ is [[Differentiation|differentiable]] with respect to $w$. Then we set some learning rate $\eta$ and we perturb the weights $w$ by $w \leftarrow w - \eta \frac{\partial E}{\partial w}$ until $w$ settles in some local minimum.
+This algorithm uses [[Differentiation|differentiation]] to minimise error terms for models. Suppose we have a model with some parameters $w \in \mathbb{R}^k$. Further suppose the [[Error function (modelling)|error function]] $E(w)$ is [[Differentiation|differentiable]] with respect to $w$. Then we set some learning rate $\eta$ and we perturb the weights $w$ by $w \leftarrow w - \eta \frac{\partial E}{\partial w}$ until $w$ settles in some local minimum.
 
 Note the convergence to a local minimum - rather than a global minimum. There are techniques to get around this but it is a hard problem to know you are in some global minimum.
 

@@ -45,7 +45,7 @@ $$p(x_1, x_2, p_{\land}(x_1,x_2)) = \begin{cases} 1 & \mbox{if } (x_1, x_2) \in 
 
 With the [[Perceptron rule|perceptron rule]] we applied an activation function that made $p$ [[Differentiation|non-differentiable]]. Lets get rid of this for now and see if we can use [[Differentiation|differentiation]] to get another training method. 
 
-Let our [[Training data|training data]] $(x,y) \in T$ have $x = (x_1, x_2, \ldots, x_n) \in \mathbb{R}^n$ and $w = (w_1, w_2, \ldots w_n)$ be our weights for a [[Perceptron (neural network)|perceptron]] as before. The define the following error term
+Let our [[Training data|training data]] $(x,y) \in T$ have $x = (x_1, x_2, \ldots, x_n) \in \mathbb{R}^n$ and $w = (w_1, w_2, \ldots w_n)$ be our weights for a [[Perceptron (neural network)|perceptron]] as before. The define the following [[Error function (modelling)|error function]]
 $$
 E(w) = \frac{1}{2} \sum_{(x,y) \in T} (y - a)^2, \ \ \ \mbox{where} \ \ \ a = \sum_{i=1}^n x_iw_i.
 $$
@@ -64,4 +64,4 @@ This is very similar to the [[Perceptron rule|perceptron rule]]. Now to complete
 
 Whilst the [[Perceptron rule|perceptron rule]] [[The perceptron rule converges in finite time if the dataset is linearly separable|converges in finite time for linear separable datasets]] it is unstable on datasets that are not [[Linearly separable|linearly separable]]. The advantage of [[Gradient decent|gradient decent]] is that it is stable on all datasets but it has the issue of converging only to local minimum.
 
-##
+## Sigmoid function
