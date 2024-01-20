@@ -11,6 +11,6 @@ tags:
 type: definition
 ---
 >[!tldr] Perceptron (neural network)
->A *perceptron* is a function $p: \mathbb{R}^n \rightarrow \{0,1\}$ defined by some weights $w_i$ for $1 \leq i \leq n$ and a threshold $\theta$. Where
->$$p(x) = \begin{cases} 1 & \mbox{if } \sum_{i=1}^n w_i x_i \geq \theta\\ 0 & \mbox{otherwise.} \end{cases}$$
+>A *perceptron* is a function $p: \mathbb{R}^n \rightarrow \mathbb{R}$ defined by two steps - first a weighted linear sum, the second an [[Activation function|activation function]]. To define this we need weights $w_i$ for $1 \leq i \leq n$ and an activation function $a: \mathbb{R} \rightarrow \mathbb{R}$. Where
+>$$p(x) = a\left (\sum_{i=1}^n w_i x_i \right ).$$
 
