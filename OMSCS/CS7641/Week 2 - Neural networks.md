@@ -83,3 +83,5 @@ Which shows the function is relative stable when $\sigma(a)$ is close to either 
 
 This allow us to use [[Gradient decent|gradient decent]] on a [[Perceptron (neural network)|perceptron]] that is using the [[Sigmoid function]] as its [[Activation function|activation function]].
 
+## Neural network
+
