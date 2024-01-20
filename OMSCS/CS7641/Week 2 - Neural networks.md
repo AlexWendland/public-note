@@ -41,3 +41,4 @@ $$p(x_1, x_2, p_{\land}(x_1,x_2)) = \begin{cases} 1 & \mbox{if } (x_1, x_2) \in 
 
 ![[Perceptron rule]]
 
+## Gradient decent
