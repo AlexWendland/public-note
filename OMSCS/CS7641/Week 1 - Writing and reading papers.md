@@ -123,5 +123,15 @@ It can be tempting to break the structure for a chronologic record of results or
 
 >[!Quote] They (readers) do not care about the chronological path by which you reached a result; they just care about the ultimate claim and the logic supporting it
 
-### Rule 4: 
+### Rule 4: Organise you logical flow by using [[Separation of concerns (SoC)]] and using parallelism
 
+Avoid dipping in an out of a concept constantly revisiting them unless they are the central purpose to your paper. Use the [[Separation of concerns (SoC)|separation of concerns]] principle to isolate individual ideas to area.
+
+If you address a topic repeatedly - try to do so in a parallel way. Use a single definition for concepts and structure each component similarly. This will make it easier for the reader to digest.
+
+### Aside: Typical structure in biomedical papers
+
+![[structure of papers.png]]
+Figure 1 from [[Ten simple rules for structuring papers]]
+
+### Rule 5: 
