@@ -134,4 +134,17 @@ If you address a topic repeatedly - try to do so in a parallel way. Use a single
 ![[structure of papers.png]]
 Figure 1 from [[Ten simple rules for structuring papers]]
 
-### Rule 5: 
+### Rule 5: Tell a complete story in the abstract
+
+The abstract is the 2nd most read bit of your paper after the title. This should be no more than a paragraph and follow the [[Context content conclusion (CCC)]] structure. It should avoid jargon or subtle terms that can be misunderstood to be the most widely understood.
+
+Context - This needs to reflect the current state of the art and distinguish the gap you are filling. 
+
+Content  - Describe your approach highlighting any new methods you used to fill the gap. Then talk about the results you have gotten.
+
+Conclusion - Interpret the results and show why it fills the gap you presented. Lastly relate this back to the wider field.
+
+Getting the abstract right is very important so may get revised a lot. 
+
+### Rule 6: Get across why the paper matters in the introduction
+
