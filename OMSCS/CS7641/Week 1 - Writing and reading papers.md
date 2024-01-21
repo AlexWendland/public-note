@@ -83,3 +83,32 @@ The point of reading papers is so you can do more. Think about how to apply meth
 
 ## Ten simple rules for structuring papers by Konrad Kording and Brett Mensh
 
+Being able to write and publish papers is one of the key indicators of success within science. It is worth understanding how to do it well. 
+
+When writing a paper you need to understand there are different groups of people involved:
+- Editors want to make sure that the paper is signification,
+- Reviewers want to determine if the conclusions are valid,
+- Readers want to quickly understand the conceptual conclusions before deciding if they want to read the paper, and
+- Writers want to attract the broadest possible reader base. 
+
+The learning rate of new information is one of the biggest limitation to the growth of scientific knowledge. It is helped a lot by the interconnection of common ideas, understanding how your area applies to the bigger picture.
+
+The first place to start is to make the logic of your paper as clear as possible. With all assumptions and reasons for conclusions transparent.
+
+### Rule 1: [[Single Responsibility Principle (SRP)]]
+
+(Much like in programming, you can use this principle in papers at all levels.)
+
+Do one thing in a paper and convey that in the title. Titles are the most read component of any paper so it should be clear and concise what this is achieving. 
+
+Write the title of the paper early and use it reground you on any decisions about whether you need to include something in the paper.
+
+By adding more conclusions to a paper, you decrease its over all perceived value. Similar to the [[Broken tea cup|broken tea cup analogy]].
+
+### Rule 2: Write for a laymen
+
+You are the world leading expert on what you are trying to get across. You will assume people know more than they do, so assume you are writing the paper for someone who knows nothing about your area. Also, don't help the pervasive [[Imposters syndrome]] by assuming people know stuff they don't.
+
+It is also helpful to understand human [[Psychology]] so we can write them in a human friendly way and get our point across better. For example [[Start and end point bias|start and end point bias]] means we should focus the most time on opening and closing sections.
+
+## Rule 3: 
