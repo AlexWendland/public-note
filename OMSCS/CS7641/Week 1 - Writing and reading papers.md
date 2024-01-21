@@ -148,3 +148,6 @@ Getting the abstract right is very important so may get revised a lot.
 
 ### Rule 6: Get across why the paper matters in the introduction
 
+You should use paragraphs in the introduction to narrow in on the gap in the current knowledge. Start at the highest level and zoom in slowly. The last paragraph will have its context provided by the previous paragraphs so can start with the lowest level of gap you are fixing.
+
+### Rule 7: 
