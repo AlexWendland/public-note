@@ -35,3 +35,4 @@ Reinforcement Learning is the area of Machine Learning concerned with the action
 - [[MachineLearningTomMitchell.pdf|Course textbook]]
 - [[Week 2 - Regression and classification]]
 - [[Week 2 - Neural networks]]
+- [[Week 1 - Writing and reading papers]]
