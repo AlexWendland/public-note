@@ -111,4 +111,17 @@ You are the world leading expert on what you are trying to get across. You will 
 
 It is also helpful to understand human [[Psychology]] so we can write them in a human friendly way and get our point across better. For example [[Start and end point bias|start and end point bias]] means we should focus the most time on opening and closing sections.
 
-## Rule 3: 
+## Rule 3: Stick to the [[Context content conclusion (CCC)]] model
+
+Stories normally are structured with 3 components, a beginning which sets up the story, the middle where the problems are confronted and solve, and an end which ties that story off. This has an analogy in academic writing as well. 
+
+![[Context content conclusion (CCC)]]
+
+This is a useful structure to follow at all levels of the paper, from the overall structure to each paragraph. Whilst it does have the downside of losing impatient readers - outside of the abstract / introduction we can assume the reader is already on board for the ride. 
+
+It can be tempting to break the structure for a chronologic record of results or a personal autobiographical comment. Avoiding this is normally best and helps the reader understand the content better.
+
+>[!Quote] They (readers) do not care about the chronological path by which you reached a result; they just care about the ultimate claim and the logic supporting it
+
+### Rule 4: 
+
