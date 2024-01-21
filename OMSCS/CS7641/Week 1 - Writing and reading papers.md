@@ -166,4 +166,16 @@ The following paragraphs should talk about the limitations of your approach but 
 
 Lastly open up your work to be built on, and talk about how your work can be used to further the field. 
 
-### Rule 9: 
+### Rule 9: Focus time where it matters, Title, abstract, figures, and outlining
+
+Starting with an empty page is always hard. It is good to have organised notes that link together and help build the logic of the paper - this is the most important thing in the document.
+
+When it comes to formalising your notes into a paper. Spend time proportional to how much it gets read: Title, abstract, introduction, figures, conclusion. 
+
+Doing this is helped by making an outline of the paper to start with bullet points about what goes where. This will define the overall story line and help you bring focus to the bits that matter.
+
+### Rule 10: Get feedback to reduce, reuse and recycle the story
+
+Use test readers to understand where the paper falls down. Don't get attached to what is there and either delete, rewrite or move text to help the flow of the paper. Though, make sure you discern preference verses substance of comments - be critical before just accepting them. Do this graciously as they have put in time to help you.
+
+Writing is an optimisation problem, which takes many iterations and for you to know what you are optimising for.
