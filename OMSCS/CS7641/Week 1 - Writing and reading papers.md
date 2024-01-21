@@ -150,4 +150,20 @@ Getting the abstract right is very important so may get revised a lot.
 
 You should use paragraphs in the introduction to narrow in on the gap in the current knowledge. Start at the highest level and zoom in slowly. The last paragraph will have its context provided by the previous paragraphs so can start with the lowest level of gap you are fixing.
 
-### Rule 7: 
+### Rule 7: Results should build on one another to support a central claim
+
+The results section should use data and logic to prove your central claim. Each method may have its own logical structure but keep in mind that everything should be building to prove your central claim. Each paragraph should start with a sentence answering why it is there. 
+
+Lots of people don't read the results section, or skim it. There are two things you can do to assist these people.
+1. Make the first paragraph a summary of your approach.
+2. The figures and tables should tell the story without the words.
+
+### Rule 8: End with how you filled the gap, limitations to that, and future work
+
+For people who didn't read the results section, summarise how you have filled the gap in knowledge in the first paragraph. 
+
+The following paragraphs should talk about the limitations of your approach but link to the literature on why you choose to do it this way.
+
+Lastly open up your work to be built on, and talk about how your work can be used to further the field. 
+
+### Rule 9: 
