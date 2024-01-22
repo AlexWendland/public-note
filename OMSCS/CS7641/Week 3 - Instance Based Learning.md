@@ -33,3 +33,7 @@ Quite often [[Instance-based learning]] is called "lazy" learning as you are del
 
 > [!Question] Why is linear regression $n$ time to learn?
 
+## The curse of dimensionality
+
+![[The curse of dimensionality]]
+

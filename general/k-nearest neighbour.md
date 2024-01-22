@@ -59,7 +59,14 @@ get_k_nearest_neighbours(T, d, k, a):
 
 ## Run time
 
-
+This algorithm is a [[Lazy learner|lazy learner]] and puts of compute until it is executed. This means learning is $O(1)$ but execution can take a while.
 
 ## Correctness
+
+This model has some [[Bias (modelling)]] for the representations it prefers:
+- Near points are similar,
+- The function it models is smooth with respect to the distance,
+- All features equally matter,
+- All points equally matter, and
+- Input points are represented by the [[Training data|training data]].
 
