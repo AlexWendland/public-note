@@ -1,10 +1,12 @@
 ---
-aliases: null
+aliases: 
 checked: false
 created: 2024-01-11
 last_edited: 2024-01-11
-publish: false
-tags: []
+publish: true
+tags:
+  - logic
+  - maths
 type: definition
 ---
 >[!tldr] Logical and

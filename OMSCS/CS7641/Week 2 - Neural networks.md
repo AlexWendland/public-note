@@ -1,14 +1,14 @@
 ---
-aliases: null
+aliases: 
 checked: false
-course: '[[CS6200 Introduction to Graduate Algorithms]]'
+course: "[[CS6200 Introduction to Graduate Algorithms]]"
 created: 2024-01-18
 last_edited: 2024-01-18
-publish: false
+publish: true
 tags:
   - OMSCS
 type: lecture
-week: null
+week: 2
 ---
 # Week 2 - Neural networks
 
