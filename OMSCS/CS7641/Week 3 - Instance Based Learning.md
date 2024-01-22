@@ -37,3 +37,5 @@ Quite often [[Instance-based learning]] is called "lazy" learning as you are del
 
 ![[The curse of dimensionality]]
 
+## Locally weighted regression
+
