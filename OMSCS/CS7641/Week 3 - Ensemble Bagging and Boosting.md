@@ -30,3 +30,9 @@ The simplest example of [[Ensemble learning]] is [[Bagging]].
 
 ![[Error rate (modelling)]]
 
+Models that are considered good should always do better than chance.
+
+![[Weak learner]]
+
+## Boosting
+
