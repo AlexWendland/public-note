@@ -10,7 +10,7 @@ type: algorithm
 ---
 # Boosting
 
-Some introduction
+Boosting is an [[Ensemble learning]] method that enhances 
 
 ## Pseudocode
 
