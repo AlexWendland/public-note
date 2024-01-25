@@ -10,7 +10,9 @@ type: algorithm
 ---
 # Boosting
 
-Boosting is an [[Ensemble learning]] method that user
+Boosting is an [[Ensemble learning]] method that uses multiple instances of another model to average them out to make a classifier that is better than any one individual one.
+
+Suppose we have a classification problem 
 
 ## Pseudocode
 
