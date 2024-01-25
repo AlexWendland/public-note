@@ -36,3 +36,4 @@ Models that are considered good should always do better than chance.
 
 ## Boosting
 
+![[Boosting]]
