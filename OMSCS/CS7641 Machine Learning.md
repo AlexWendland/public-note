@@ -38,3 +38,4 @@ Reinforcement Learning is the area of Machine Learning concerned with the action
 - [[Week 1 - Writing and reading papers]]
 - [[Week 3 - Instance Based Learning]]
 - [[Week 3 - Ensemble Bagging and Boosting]]
+- [[Week 4 - Support Vector Machines]]
