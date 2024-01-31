@@ -24,6 +24,8 @@ y_t ( x^t \cdot w + b ) = y_t \left ( \sum_{i=1}^n x^t_i w_i + b \right ) \geq 0
 $$
 for every $t \in T$. 
 
+![[Dot product]]
+
 Geometrically $w$ and $b$ represent a [[Hyperplane|hyperplane]] defined by $w$ being the [[Tangent vector|tangent vector]] and $bw$ being a point on the [[Hyperplane|hyperplane]]. 
 
 ![[SVM example]]
@@ -112,8 +114,9 @@ We have added a trade off parameter $C \in \mathbb{R}$ do we care more about a t
 
 ## Here comes the magic
 
-Here I am not even pretending to know why. This optimisation problem can be generalised to the "Dual Optimization Problem" which is as follows
-$$ \max_{\alpha} \sum_{t \in T} \alpha_t - \frac{1}{2} \sum_{t,s \in T} \alpha_t \alpha_s y^t y^s (x^t \cdot x^s)
-
+This is apparently a [[Quadratic programming problem|quadratic programming problem]] and can be transformed to the  "Dual Optimization Problem" which is as follows
+$$ \max_{\alpha} \sum_{t \in T} \alpha_t - \frac{1}{2} \sum_{t,s \in T} \alpha_t \alpha_s y^t y^s (x^t \cdot x^s)$$ such that
+$$ \alpha_t \geq 0 \mbox{ for all } t \in T, \mbox{ and } \sum_{t \in T} \alpha_ty^t = 0.$$
+Which can be transformed back to 
 
 
