@@ -117,6 +117,15 @@ We have added a trade off parameter $C \in \mathbb{R}$ do we care more about a t
 This is apparently a [[Quadratic programming problem|quadratic programming problem]] and can be transformed to the  "Dual Optimization Problem" which is as follows
 $$ \max_{\alpha} \sum_{t \in T} \alpha_t - \frac{1}{2} \sum_{t,s \in T} \alpha_t \alpha_s y^t y^s (x^t \cdot x^s)$$ such that
 $$ \alpha_t \geq 0 \mbox{ for all } t \in T, \mbox{ and } \sum_{t \in T} \alpha_ty^t = 0.$$
-Which can be transformed back to 
+Which we turn into a classifier by setting:
+$$
+\hat{f}(x) = \mbox{sgn}\left ( \sum_{t \in T} \alpha_t y^t (x^t \cdot x) + b \right )$$
+where 
+$$
+b = y^s - \sum_{t \in T} \alpha_t y^t (x^t \cdot x^s), \mbox{ for any } s \in T \mbox{ such that } \alpha^s \not = 0.
+$$
+## Kernel methods
+
+
 
 
