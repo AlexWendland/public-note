@@ -112,7 +112,8 @@ We have added a trade off parameter $C \in \mathbb{R}$ do we care more about a t
 
 ## Here comes the magic
 
-
+Here I am not even pretending to know why. This optimisation problem can be generalised to the "Dual Optimization Problem" which is as follows
+$$ \max_{\alpha} \sum_{t \in T} \alpha_t - \frac{1}{2} \sum_{t,s \in T} \alpha_t \alpha_s y^t y^s (x^t \cdot x^s)
 
 
 
