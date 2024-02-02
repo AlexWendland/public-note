@@ -170,5 +170,10 @@ However, we only have use $\Phi$ on two vectors who immediately get the [[Dot pr
 
 ![[Support vector machines (SVM)|SVM]]
 
-## Back to [[Boosting]]
+## Why doesn't [[Boosting]] have as many problems with [[Overfitting]]
 
+In practice when using [[Boosting]] we tend to find the training error and testing error follow each other, rather than separate as in the case with [[Overfitting|overfitting]]. This is connected to [[Support vector machines (SVM)|SVMs]] by the concept of [[Margin for a linear separator|margins]]. When we talked about [[Support vector machines (SVM)|SVMs]] we stated that a larger [[Margin for a linear separator|margin]] was better as it reduced the [[Overfitting|overfitting]]. The [[Margin for a linear separator|margin]] is analogous to the confidence level we have in our model.
+
+In relation to [[Boosting]] we can think of the algorithm as a complicated way of projecting $\Phi: A \rightarrow \mathbb{R}$ before taking the sign of the value to determine our prediction. As we train for a longer period of time we separate data points more and more - increasing the [[Margin for a linear separator|margin]] and thus our confidence in the outcomes. This counter intuitively reduces [[Overfitting|overfitting]] in a lot of cases.   
+
+This does not hold for all [[Boosting]] for example if we use this with [[Neural network|Neural networks]] it will still be liable to [[Overfitting|overfit]].
