@@ -126,8 +126,21 @@ b = y^s - \sum_{t \in T} \alpha_t y^t (x^t \cdot x^s), \mbox{ for any } s \in T 
 $$
 The form should remind you of [[Boosting]] where we take an average of lots of different views on the data. However in reality lots of these $\alpha_t = 0$ if they are not the support vectors closest to the line. So it might be more correct to think of this as close to [[k-nearest neighbour|KNN]].
 
+## Handling very not separable data 
+
+In reality data could be far from linearly separable. For example for [[Exclusive or|xor]] we have the following embedding in $\mathbb{R}^2$ of the 4 training points  
+$$\{((1,1), -1), ((1,-1), 1), ((-1,-1), -1), ((-1,1), 1)\}.$$
+
+![[xor_embedding]]
+
+This is far from linearly separable. However, we can define a new embedding mapping
+$$K: \mathbb{R}^2 \rightarrow \mathbb{R}^6, \ \mbox{ by } \ (x_1, x_2) \mapsto (x_1^2, x_2^2, \sqrt{2} x_1x_2, \sqrt{2} x_1, \sqrt{2} x_2, 1)$$ which when applied to the [[Function domain|domain]] of our training data rearranges our points to be
+
+![[xor_mapped_embedding]]
+
+which are easily [[Linearly separable|linearly separable]].
+
+Though how do we choose these embeddings?
+
 ## Kernel methods
-
-In reality data could be far from linearly separable. 
-
 
