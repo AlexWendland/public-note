@@ -144,3 +144,31 @@ Though how do we choose these embeddings?
 
 ## Kernel methods
 
+![[Kernel trick]]
+
+There are some popular [[Kernel trick|kernels]] to try.
+
+![[Polynomial kernel (SVMs)]]
+
+![[Gaussian kernel (SVM)]]
+
+![[Sigmoid kernel (SVM)]]
+
+## Support Vector Machines
+
+We are now going to take the idea of the [[Kernel trick|kernel trick]] where we embed our feature space $A$ using $\Phi$ into a space in which our dataset is closer to [[Linearly separable|linearly separable]]. This turns our optimisation problem from before into
+$$ \max_{\alpha} \sum_{t \in T} \alpha_t - \frac{1}{2} \sum_{t,s \in T} \alpha_t \alpha_s y^t y^s (\Phi(x^t) \cdot \Phi(x^s))$$ such that
+$$ \alpha_t \geq 0 \mbox{ for all } t \in T, \mbox{ and } \sum_{t \in T} \alpha_ty^t = 0.$$
+Which we turn this into a classifier by setting:
+$$
+\hat{f}(x) = \mbox{sgn}\left ( \sum_{t \in T} \alpha_t y^t (\Phi(x^t) \cdot \Phi(x)) + b \right )$$
+where 
+$$
+b = y^s - \sum_{t \in T} \alpha_t y^t (\Phi(x^t) \cdot \Phi(x^s)), \mbox{ for any } s \in T \mbox{ such that } \alpha^s \not = 0.
+$$
+However, we only have use $\Phi$ on two vectors who immediately get the [[Dot product|dot product]] applied to them - so we can replace this with the kernel instead. 
+
+![[Support vector machines (SVM)|SVM]]
+
+## Back to [[Boosting]]
+
