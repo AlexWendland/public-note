@@ -113,7 +113,7 @@ The model can have [[Overfitting|overfitting]] if the tree gets too large. There
 
 ### Post-pruning decision trees
 
-
+Post-pruning is the process of letting the tree organically grown. Then evaluating if the branches are worth keeping or they [[Overfitting|overfit]] the data. 
 
 ## [[Regression problems]]
 
