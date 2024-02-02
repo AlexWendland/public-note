@@ -19,6 +19,12 @@ R_{\alpha}(\hat{f}, T) = R(\hat{f}, T) + \alpha L(\hat{f})
 $$
 to be the value we want to minimise on our sub-trees.
 
+Optimally we would iterate over all potential subtrees of $\hat{f}$ and find the sub-tree that optimises $R_{\alpha}$ on $T$. However, computationally this can be expensive. Therefore it is usual to find a heuristic to choose a branch to prune instead.
+
+One method to do this it to calculate the *effective cost complexity* of a non-terminal node. To define this let the $G = (V,E)$ be our decision tree and for $v \in V$ let $G_v$ be the subtree rooted at $v$. 
+
+## Pseudocode
+
 ## Run time
 
 Optimally we would iterate over all potential subtrees of $\hat{f}$ and find the sub-tree that optimises $R_{\alpha}$ on $T$. However, computationally this can be expensive. 
