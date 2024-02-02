@@ -115,6 +115,10 @@ The model can have [[Overfitting|overfitting]] if the tree gets too large. There
 
 Post-pruning is the process of letting the tree organically grown. Then evaluating if the branches are worth keeping or they [[Overfitting|overfit]] the data. 
 
+![[Cost complexity pruning for decision trees (CPP)|CPP]]
+
+Due to the 
+
 ## [[Regression problems]]
 
 It is possible to tackle this with a [[Decision tree|decision tree]] if you only care about approximate answer. However, you will have to change the definition of [[Information entropy|information entropy]] to work in the continuous space. This will have to use something like an average of the leaf nodes.
