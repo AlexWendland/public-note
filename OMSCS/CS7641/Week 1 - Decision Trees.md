@@ -105,8 +105,22 @@ Suppose we have some continuous attribute in $A$. Whilst we could have a branch 
 
 ![[Overfitting]]
 
-The model can have [[Overfitting|overfitting]] if the tree gets too large. Therefore it is good practice to contract (or prune) branches of the tree if they have marginal effect on the outcome of the [[Decision tree|decision tree]].
+The model can have [[Overfitting|overfitting]] if the tree gets too large. Therefore it is good practice to contract (or prune) branches of the tree if they have marginal effect on the outcome of the [[Decision tree|decision tree]]. This splits into two subcategories pre-pruning and post-pruning.
+
+### Pre-pruning decision trees
+
+![[Pre-pruning decision trees]]
+
+### Post-pruning decision trees
+
+
 
 ## [[Regression problems]]
 
 It is possible to tackle this with a [[Decision tree|decision tree]] if you only care about approximate answer. However, you will have to change the definition of [[Information entropy|information entropy]] to work in the continuous space. This will have to use something like an average of the leaf nodes.
+
+### Gini Index
+
+Above we used [[Information entropy]] to choose which feature to split along. However there are other options like the [[Gini index]].
+
+![[Gini index]]
