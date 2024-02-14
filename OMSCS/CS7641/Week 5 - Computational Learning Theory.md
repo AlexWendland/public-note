@@ -93,6 +93,8 @@ Suppose instead of the learner giving an example to the teacher to answer, inste
 
 Instead of then trying to get the formula in the least time possible, we are trying to get the largest score from the provided examples.
 
+
+
 ### Algorithm
 
 We are going to slowly build a table that reflects our guess of the formula. For each variable $X_i$ we have 3 possible states, not included, negative, and positive. In the example above this table would look like:
