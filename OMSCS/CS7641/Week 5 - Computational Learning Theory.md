@@ -60,5 +60,32 @@ This method assumes that any question is valid.
 
 ### Restricted questions for the teacher
 
-Lets further formalise this problem. Suppose further you can only ask questions in set $X$. 
+Lets further formalise this problem. Suppose further you can only ask questions in set $X$ about the answers in $A$.
+
+For an example let $X$ be $k$-bit literals that relate to [[Boolean variable|boolean]] assignments for $X_i$ with $1 \leq i \leq k$. Then assume $A$ are boolean functions on $k$ variables that can be expressed as a logical formula involving $X_i$ or their negations $\overline{X_i}$ joint with $\land$. Then the answer to question $x \in X$ is $c(x)$.
+
+>[!example]
+>Suppose $k = 5$ and let $c = \overline{X_2} \land X_4 \land \overline{X_5}$. Then we might have the following series of questions
+
+| $X_1$ | $X_2$ | $X_3$ | $X_4$ | $X_5$ | $c$ |
+| ----- | ----- | ----- | ----- | ----- | --- |
+| 1     | 0     | 1     | 1     | 0     | 1   |
+| 0     | 0     | 0     | 1     | 0     | 1   |
+| 1     | 1     | 1     | 1     | 0     | 0   |
+| 1     | 0     | 1     | 0     | 0     | 0   |
+| 1     | 0     | 1     | 1     | 1     | 0    |
+
+In this set up we require 2 questions to establish the variables that didn't matter by having a true case where they were either 0 or 1. Then the number of questions as there are variables in the formula to verify they are required. 
+
+You can see this in the above example. The first two questions show that $X_1$ and $X_3$ are not included in the formula, the 3rd one shows that if $X_2$ is positive then it fails, 4th one shows if $X_4$ is negative it fails and the last one shows that if $X_5$ is positive it fails.
+
+So if the teacher presents the questions here it only takes at most $k + 2$ questions to work out the answer.
+
+### Restricted question for the learner
+
+In the current set up, if the learner were to guess it would take them $2^k$ guesses. As the formula potentially uses all literal and there is only one correct answer.
+
+## Learning with mistake bounds
+
+
 
