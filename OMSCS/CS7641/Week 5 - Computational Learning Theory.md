@@ -43,20 +43,22 @@ When considering problems it is useful to think about:
 
 There are different set ups for this game - but the point is to demonstrate the power of how [[Training data]] is collected. 
 
-For simplicity we will call the questionee the teacher and the questioner 
+For simplicity we will call the questionee the teacher and the questioner the learner. 
 
-### Simple: Questionee provides questions
+### Simple: Teacher provides questions
 
-If the goal of the game is too arrive at the answer as quickly as possible but the person who knows the answer can provide the questions. This should be solvable in 1 question.
+If the goal of the game is too arrive at the answer as quickly as possible but the teacher can provide the questions. This should be solvable in 1 question.
 
-The questionee can provide the question
+The teacher can provide the question
 - "Is the answer $c \in A$?"
 
 ### Normal: Binary search
 
-If the questioner has to come up with the questions. The best strategy in terms of expectation is to ask questions that divide the remaining potential answers into two even sized chunks. That way no matter the answers you have halved the solution space. This takes $\log_2(\vert A \vert)$ time to find $c$.
+If the learner has to come up with the questions. The best strategy in terms of expectation is to ask questions that divide the remaining potential answers into two even sized chunks. That way no matter the answers you have halved the solution space. This takes $\log_2(\vert A \vert)$ time to find $c$.
 
 This method assumes that any question is valid.
 
-### Restricted questions
+### Restricted questions for the teacher
+
+Lets further formalise this problem. Suppose further you can only ask questions in set $X$. 
 
