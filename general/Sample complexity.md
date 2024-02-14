@@ -9,5 +9,5 @@ tags:
 type: definition
 ---
 >[!tldr] Sample complexity
-> Similar to [[Run time complexity|run time complexity]] it is the number of samples required for a model to converge to the optimum hypothesis.
+> Similar to [[Run time complexity|run time complexity]] it is the number of samples required for a model to converge to the optimum hypothesis in terms of the problem size.
 

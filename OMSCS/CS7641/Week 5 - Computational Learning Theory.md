@@ -120,4 +120,14 @@ The algorithm starts as follows:
 
 This algorithm will only ever make $k+1$ mistakes so we have a bound on the number of mistakes we can make.
 
+## Definitions
+
+In machine learning there are similar definitions to other algorithmic disciplines.
+
+![[Run time complexity]]
+
+However there are some domain specific definitions as well.
+
+![[Sample complexity]]
+
 
