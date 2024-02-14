@@ -87,5 +87,13 @@ In the current set up, if the learner were to guess it would take them $2^k$ gue
 
 ## Learning with mistake bounds
 
+Clearly the restricted questions for the learner is a hard problem. Though instead we can change the set up.
+
+Suppose instead of the learner giving an example to the teacher to answer, instead the teacher is going to give the learner an example to predict. The teacher then verifies if they were correct or not. If the learner is wrong they get a -1 to their score.
+
+Instead of then trying to get the formula in the least time possible, we are trying to get the largest score from the provided examples.
+
+### Algorithm
+
 
 
