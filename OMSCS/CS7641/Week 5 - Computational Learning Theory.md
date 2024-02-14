@@ -95,5 +95,29 @@ Instead of then trying to get the formula in the least time possible, we are try
 
 ### Algorithm
 
+We are going to slowly build a table that reflects our guess of the formula. For each variable $X_i$ we have 3 possible states, not included, negative, and positive. In the example above this table would look like:
+
+| Variable | Positive | Negative |
+| ---- | ---- | ---- |
+| $X_1$ |  |  |
+| $X_2$ |  | Y |
+| $X_3$ |  |  |
+| $X_4$ | Y |  |
+| $X_5$ |  | Y |
+
+Where something that is neither positive or negative is not included.
+
+The algorithm starts as follows:
+1. Initialise the table with all positive and negatives selected.
+2. For each example $x \in X$
+	1. Using the table make a guess of the answer
+		1. If a variable is ticked positive, it needs to be positive.
+		2. If a variable is ticked negative, it needs to be negative.
+	2. If we are wrong:
+		2. For each $X_i$
+			1. If $X_i$ was 0, remove $X_i$'s positive tick if it exists.
+			2. If $X_i$ was 1, remove $X_i$'s negative tick if it exists.
+
+This algorithm will only ever make $k+1$ mistakes so we have a bound on the number of mistakes we can make.
 
 
