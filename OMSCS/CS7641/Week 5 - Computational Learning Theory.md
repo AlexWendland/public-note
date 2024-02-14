@@ -34,3 +34,6 @@ When considering problems it is useful to think about:
 	3. Fix distribution.
 	4. Examples are picked poorly.
 
+## 20 Questions
+
+Suppose we are in a teach learner relationship. 
