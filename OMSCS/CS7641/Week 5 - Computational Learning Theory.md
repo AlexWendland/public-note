@@ -36,4 +36,27 @@ When considering problems it is useful to think about:
 
 ## 20 Questions
 
-Suppose we are in a teach learner relationship. 
+20 Questions is a game where there is a set of possible answers $A$ and a correct answer $c \in A$. There is a player (questioner) who wants to find $c \in A$ and a questionee who knows $c \in A$. The player then asks questions [[Boolean variable|boolean]] questions to questionee who answers True or false about item $c \in A$. 
+
+> [!Note] 20 Questions
+> In the traditional version of the game you have until 20 questions to guess the answer, thus the name!
+
+There are different set ups for this game - but the point is to demonstrate the power of how [[Training data]] is collected. 
+
+For simplicity we will call the questionee the teacher and the questioner 
+
+### Simple: Questionee provides questions
+
+If the goal of the game is too arrive at the answer as quickly as possible but the person who knows the answer can provide the questions. This should be solvable in 1 question.
+
+The questionee can provide the question
+- "Is the answer $c \in A$?"
+
+### Normal: Binary search
+
+If the questioner has to come up with the questions. The best strategy in terms of expectation is to ask questions that divide the remaining potential answers into two even sized chunks. That way no matter the answers you have halved the solution space. This takes $\log_2(\vert A \vert)$ time to find $c$.
+
+This method assumes that any question is valid.
+
+### Restricted questions
+
