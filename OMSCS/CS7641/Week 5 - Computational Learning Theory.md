@@ -150,4 +150,8 @@ There are two concepts of error when evaluating a hypothesis.
 
 ![[True error]]
 
+Using this we can define what we call "probably approximately correct" (PAC) learner.
+
+![[Probably approximately correct learnable (PAC)|PAC learner]]
+
 
