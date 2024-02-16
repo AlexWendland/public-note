@@ -188,3 +188,5 @@ $$
 >$$m \geq 40 > 10 \cdot ( 2.3 + 1.6 ).$$
 
 Note here that we didn't use what $\mathbb{D}$ was in this computation. 
+
+A weakness of [[Haussler Theorem]] is that it doesn't handle infinite dimensional hypothesis spaces. 
