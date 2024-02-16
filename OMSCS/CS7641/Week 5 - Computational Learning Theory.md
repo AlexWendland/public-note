@@ -161,3 +161,10 @@ Though showing something is PAC-learner is hard.
 
 ## $\epsilon$-exhausted version space
 
+![[epsilon-exhausted version space]]
+
+>[!example] Xor example
+>Suppose $A = \{0,1\}^2$ and our real function is [[Exclusive or|xor]] $\oplus$ on two variables $x_1$ and $x_2$. Let $H = \{x_1, \overline{x_1}, x_2, \overline{x_2}, T, F, \land, \lor, \oplus, =\}$ and set probability distribution $\mathbb{D}(0,0) = 0.1$, $\mathbb{D}(0,1) = 0.5$, $\mathbb{D}(1,0) = 0.4$, and $\mathbb{D}(1,1) = 0$. 
+>Then with $T = \{((0,0), 0), ((1,0), 1)\}$ we have our [[Version space|version space]] to be $VS_H(T) = \{x_1, \lor, \oplus\} \subset H$.
+>This [[Version space|version space]] is $0.5$-exhausted as $x_1$ doesn't correctly map $(0,1)$ and $\lor$ doesn't correctly map $(1,1)$. However as $\mathbb{D}(0,1) = 0.5$ and $\mathbb{D}(1,1) = 0$ a hypothesis in the [[Version space|version space]] has error at worst $0.5$. 
+
