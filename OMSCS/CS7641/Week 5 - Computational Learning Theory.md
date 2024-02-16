@@ -168,3 +168,23 @@ Though showing something is PAC-learner is hard.
 >Then with $T = \{((0,0), 0), ((1,0), 1)\}$ we have our [[Version space|version space]] to be $VS_H(T) = \{x_1, \lor, \oplus\} \subset H$.
 >This [[Version space|version space]] is $0.5$-exhausted as $x_1$ doesn't correctly map $(0,1)$ and $\lor$ doesn't correctly map $(1,1)$. However as $\mathbb{D}(0,1) = 0.5$ and $\mathbb{D}(1,1) = 0$ a hypothesis in the [[Version space|version space]] has error at worst $0.5$. 
 
+This is useful concept for finding the number of samples we need to take to us to give us a [[Probably approximately correct learnable (PAC)|PAC learner]].
+
+![[Haussler Theorem]]
+
+Note in the definition of [[Probably approximately correct learnable (PAC)|PAC learner]] $\mathbb{P}[Error_{\mathbb{D}}(h) > \epsilon]$ is exactly the quantity we need to bound with $\delta$ (as we need the probability of finding a good learner to be $1 - \delta$). Therefore if we have the ability to draw [[Independent identically distributed samples|i.i.d.]] examples we need $m$ to obey
+$$
+\vert H \vert e^{-m\epsilon} \leq \delta.
+$$
+Which rearranging for $m$ gives us
+$$
+m \geq \frac{1}{\epsilon}\left ( \ln(\vert H \vert) + \ln\left(\frac{1}{\delta}\right) \right).
+$$
+(Note this is polynomial in $\frac{1}{\epsilon}$, $\vert H \vert$ and $\frac{1}{\delta}$ as required by a [[Probably approximately correct learnable (PAC)|PAC learner]].) So given that good learner does exist in our [[Modelling paradigm|hypothesis space]] we have use drawing [[Independent identically distributed samples|i.i.d.]] representatives to give us a [[Probably approximately correct learnable (PAC)|PAC learner]] by checking if the hypothesis are consistent with the observations.
+
+>[!example] 10-bit example
+>Suppose our underlying set $X = \{0,1\}^10$ and $H = C = \{h_i : h_i(x) = x_i\}$. How many [[Independent identically distributed samples|i.i.d.]] samples do we need to draw to find a $\epsilon = 0.1$, $\delta = 0.2$ with $\mathbb{D}$ being uniform [[Probably approximately correct learnable (PAC)|PAC learner]]?
+>Using the above formula we need
+>$$m \geq 40 > 10 \cdot ( 2.3 + 1.6 ).$$
+
+Note here that we didn't use what $\mathbb{D}$ was in this computation. 
