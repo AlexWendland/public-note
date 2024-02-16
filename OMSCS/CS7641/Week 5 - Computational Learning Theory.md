@@ -154,4 +154,4 @@ Using this we can define what we call "probably approximately correct" (PAC) lea
 
 ![[Probably approximately correct learnable (PAC)|PAC learner]]
 
-
+Though showing something is PAC-learner 
