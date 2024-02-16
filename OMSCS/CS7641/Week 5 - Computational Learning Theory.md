@@ -142,4 +142,10 @@ Lets fix terminology for the next section. Suppose we are in the [[Modelling fra
 - A [[Consistent learner|consistent learner]] $h$ is one where $h(a) = c(a)$ for all $(a,b) \in T$.
 - The [[Version space|version space]] VS(T) = \{$h \ \vert$  $h$ is a consistent learner with respect to $T$\}.
 
+## Pac learning
+
+There are two concepts of error when evaluating a hypothesis.
+
+![[Training error]]
+
 
