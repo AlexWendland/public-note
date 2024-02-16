@@ -148,4 +148,6 @@ There are two concepts of error when evaluating a hypothesis.
 
 ![[Training error]]
 
+![[True error]]
+
 
