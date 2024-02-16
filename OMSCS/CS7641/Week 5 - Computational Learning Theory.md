@@ -154,4 +154,10 @@ Using this we can define what we call "probably approximately correct" (PAC) lea
 
 ![[Probably approximately correct learnable (PAC)|PAC learner]]
 
-Though showing something is PAC-learner 
+Though showing something is PAC-learner is hard.
+
+>[!example] $k$-bit example
+>Suppose our underlying set $X = \{0,1\}^k$ and $H = C = \{h_i : h_i(x) = x_i\}$. Is there an algorithm that is $\epsilon$, $\delta$ [[Probably approximately correct learnable (PAC)|PAC learner]]?
+
+## $\epsilon$-exhausted version space
+
