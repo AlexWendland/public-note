@@ -140,6 +140,6 @@ Lets fix terminology for the next section. Suppose we are in the [[Modelling fra
 - Given some [[Modelling paradigm|hypothesis space]] $H$ the "true hypothesis" is $c \in H$ (i.e. for all $(a,b) \in T$ $c(a) = b$). 
 - The current candidate hypothesis will be $h \in H$.
 - A [[Consistent learner|consistent learner]] $h$ is one where $h(a) = c(a)$ for all $(a,b) \in T$.
-- The *version space* VS(T) = \{$h \ \vert$  $h$ is a consistent learner with respect to $T$\}.
+- The [[Version space|version space]] VS(T) = \{$h \ \vert$  $h$ is a consistent learner with respect to $T$\}.
 
 
