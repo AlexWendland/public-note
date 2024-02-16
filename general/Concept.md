@@ -1,0 +1,13 @@
+---
+aliases: 
+checked: false
+created: 2024-02-16
+last_edited: 2024-02-16
+publish: true
+tags:
+  - machine-learning
+type: definition
+---
+>[!tldr] Concept
+> Suppose we have a set $A$ then a *concept* about $A$ is a function $f: A \rightarrow \{0,1\}$. I.e. tall people would map people who were considered tall to true.
+
