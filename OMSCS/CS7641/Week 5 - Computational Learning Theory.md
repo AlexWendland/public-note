@@ -132,4 +132,8 @@ However there are some domain specific definitions as well.
 
 ![[Sample complexity]]
 
+Touching upon the example above.
 
+![[Mistake bound]]
+
+Lets fix terminology for the next section. Suppose we are in the [[Modelling framework|modelling framework]] with some training data $T$. Given some [[Modelling paradigm|hypothesis space]] $H$ the "true hypothesis" is $c \in H$ (i.e. for all $(x,y) \in T$. The current candidate hypothesis will be $h \in H$. 
