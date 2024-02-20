@@ -54,3 +54,25 @@ Sometimes we will have no prior preference on the [[Modelling paradigm|hypothesi
 ![[Maximum likelihood estimation (MLE)|Maximum likelihood estimation]]
 
 Though to actually calculate these would be very hard - as the [[Modelling paradigm|hypothesis space]] might be very large.
+
+## Noise free data
+
+Suppose:
+- There is some target $c : A \rightarrow B$.
+- We have some [[Irreducible error|irreducible error]] free (noise free) [[Training data|training data]] $T$, so for $(a,b) \in T$ we have $b = c(a)$.  
+- We have a finite [[Modelling paradigm|hypothesis space]] $H$ which contains the target $c \in H$.
+- We have no prior preference on the [[Modelling paradigm|hypothesis space]] $H$.
+- Each hypothesis is an [[Independent events|independent event]].
+
+Now we are use [[Bayes rule]] to calculate $\mathbb{P}(h \vert T)$ for each $h \in H$.
+- As we have no prior preference on $H$ we have $\mathbb{P}[h] = \frac{1}{\vert H \vert}$.
+- As we know the data is noise free we have
+$$\mathbb{P}[T \vert h] = \begin{cases} 1 & \mbox{if } b = h(a) \mbox{ for all } (a,b) \in T\\ 0 & \mbox{otherwise} \end{cases}$$
+however this describes the [[Version space|version space]] for $H$ with $T$, $VS_H(T)$, so
+$$\mathbb{P}[T \vert h] = \mathbb{I}[h \in VS_H(T)].$$
+- As each hypothesis is an [[Independent events|independent event]] we have
+$$\mathbb{P}[T] = \sum_{h \in H} \mathbb{P}[T \vert h]\mathbb{P}[h] = \sum_{h \in VS_H(T)} \frac{1}{\vert H \vert} = \frac{\vert VS_H(T) \vert}{\vert H \vert}.$$
+This gives
+$$
+\mathbb{P}(h \vert T) = \frac{\mathbb{P}[T \vert h] \mathbb{P}[h]}{\mathbb{P}[T]} = \frac{\mathbb{I}[h \in VS_H(T)]}{\vert VS_H(T) \vert}.
+$$
