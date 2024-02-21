@@ -76,3 +76,14 @@ This gives
 $$
 \mathbb{P}(h \vert T) = \frac{\mathbb{P}[T \vert h] \mathbb{P}[h]}{\mathbb{P}[T]} = \frac{\mathbb{I}[h \in VS_H(T)]}{\vert VS_H(T) \vert}.
 $$
+## Gaussian noise
+
+In the previous set up we assumed there was no noise, this time we will introduce some.
+
+Suppose:
+- There is some target $c : A \rightarrow \mathbb{R}$.
+- We have some 
+- [[Training data|training data]] $T$, so for $(a,b) \in T$ we have $b = c(a)$.  
+- We have a finite [[Modelling paradigm|hypothesis space]] $H$ which contains the target $c \in H$.
+- We have no prior preference on the [[Modelling paradigm|hypothesis space]] $H$.
+- Each hypothesis is an [[Independent events|independent event]].
