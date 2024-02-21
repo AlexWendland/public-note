@@ -12,3 +12,5 @@ week: 6
 ---
 # Week 10 - Bayesian Inference
 
+## Joint distributions
+
