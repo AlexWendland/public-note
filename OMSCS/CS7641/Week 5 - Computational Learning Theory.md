@@ -4,7 +4,7 @@ checked: false
 course: "[[CS6200 Introduction to Graduate Algorithms]]"
 created: 2024-02-13
 last_edited: 2024-02-13
-publish: false
+publish: true
 tags:
   - OMSCS
 type: lecture
