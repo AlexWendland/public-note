@@ -100,5 +100,25 @@ h_{MLE} & = \mbox{arg}\max_{h \in H} \mathbb{P}[T \vert h]\\
 $$
 So this shows that [[Finding the maximum likelihood estimation for normally distributed noise is the same as minimising mean squared error|finding the maximum likelihood estimation for normally distributed noise is the same as minimising mean squared error]]. 
 
-## Other noise
+>[!note]
+>If we switch our assumption about how the noise is distributed, then we find a different loss function will be appropriate.
+
+This shows that the loss function we use really relates to the noise we have in our observations.
+
+## Probability length
+
+![[Length of a probability]]
+
+Now assume we have a prior distribution on our [[Modelling paradigm|hypothesis space]] $H$ such that $\mathbb{P}[h]$ is higher when it is a simpler explanation. For some [[Training data|training data]] $T$ lets look at the [[Maximum a posteriori probability estimate (MAP)|maximum a posteriori probability estimate]]
+$$
+\begin{align*}
+h_{MAP} = & \mbox{arg}\max_{h \in H}  \ \mathbb{P}[T \vert h]\mathbb{P}[h]\\
+= & \mbox{arg}\max_{h \in H} \left [ \ \log\left ( \mathbb{P}[T \vert h]\right ) + \log \left ( \mathbb{P}[h] \right ) \ \right ] & \mbox{by taking logs}\\
+= & \mbox{arg}\min_{h \in H} \left [ \ -\log\left ( \mathbb{P}[T \vert h]\right ) - \log \left ( \mathbb{P}[h] \right ) \ \right ] & \mbox{negative max is min}\\
+= & \mbox{arg}\min_{h \in H} \left [ \ \mbox{length}[T \vert h] + \mbox{length}[h] \ \right ] & \mbox{by the definition of length}\\
+\end{align*}
+$$
+here we have a pay off. Longer length explanations in $\mbox{length}[h]$ may lead better explanations of $T$ by the hypothesis. Though this will have to be worth in increase in length of that hypothesis. This is [[Occam's razor]] in an equation.
+
+## Bayesian classification
 
