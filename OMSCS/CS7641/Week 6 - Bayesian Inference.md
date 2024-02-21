@@ -14,3 +14,5 @@ week: 6
 
 ## Joint distributions
 
+![[Conditional Independence]]
+
