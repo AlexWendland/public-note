@@ -1,7 +1,7 @@
 ---
 aliases: 
 checked: false
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+course: "[[CS7641 Machine Learning]]"
 created: 2024-02-19
 last_edited: 2024-02-19
 publish: true
@@ -121,4 +121,6 @@ $$
 here we have a pay off. Longer length explanations in $\mbox{length}[h]$ may lead better explanations of $T$ by the hypothesis. Though this will have to be worth in increase in length of that hypothesis. This is [[Occam's razor]] in an equation.
 
 ## Bayesian classification
+
+![[Bayeses optimal classifier]]
 
