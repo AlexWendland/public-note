@@ -82,8 +82,23 @@ In the previous set up we assumed there was no noise, this time we will introduc
 
 Suppose:
 - There is some target $c : A \rightarrow \mathbb{R}$.
-- We have some 
-- [[Training data|training data]] $T$, so for $(a,b) \in T$ we have $b = c(a)$.  
-- We have a finite [[Modelling paradigm|hypothesis space]] $H$ which contains the target $c \in H$.
-- We have no prior preference on the [[Modelling paradigm|hypothesis space]] $H$.
-- Each hypothesis is an [[Independent events|independent event]].
+- We have some [[Independent identically distributed samples|i.i.d.]] [[Normal distribution|normally distributed]] noise values $\epsilon \sim N(0,\sigma^2)$ for each of our [[Training data|training data]] $t \in T$.
+- The [[Training data|training data]] $T$ is such that $(a_i,b_i) \in T$ we have $b_i = c(a_i) + \epsilon_i$.  
+
+Now lets try to compute the [[Maximum likelihood estimation (MLE)|maximum likelihood estimation]] for our [[Modelling paradigm|hypothesis space]] $H$.
+$$
+\begin{align*}
+h_{MLE} & = \mbox{arg}\max_{h \in H} \mathbb{P}[T \vert h]\\
+& = \mbox{arg}\max_{h \in H} \prod_{t \in T} \mathbb{P}[t \vert h] & \mbox{as each } \epsilon \mbox{ is i.i.id}\\
+& = \mbox{arg}\max_{h \in H} \prod_{t \in T} \frac{1}{\sigma \sqrt{2\pi}} \exp \left [ - \frac{1}{2} \left ( \frac{b_i - h(a_i)}{\sigma} \right )^2 \right ] & \mbox{normal distribution}\\
+& = \mbox{arg}\max_{h \in H} \prod_{t \in T} \exp \left [ - \frac{1}{2} \left ( \frac{b_i - h(a_i)}{\sigma} \right )^2 \right ] & \mbox{no change in argmax}\\
+& = \mbox{arg}\max_{h \in H} \sum_{t \in T} - \frac{1}{2} \left ( \frac{b_i - h(a_i)}{\sigma} \right )^2 & \mbox{log is concave}\\
+& = \mbox{arg}\max_{h \in H} \sum_{t \in T} - \left (b_i - h(a_i) \right )^2 & \mbox{no change in argmax}\\
+& = \mbox{arg}\min_{h \in H} \sum_{t \in T} \left (b_i - h(a_i) \right )^2 & \mbox{negative max is min}\\
+& = \mbox{arg}\min_{h \in H} mse(h,T) & \mbox{definition of MSE.}
+\end{align*}
+$$
+So this shows that [[Finding the maximum likelihood estimation for normally distributed noise is the same as minimising mean squared error|finding the maximum likelihood estimation for normally distributed noise is the same as minimising mean squared error]]. 
+
+## Other noise
+
