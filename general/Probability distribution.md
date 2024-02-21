@@ -12,7 +12,5 @@ type: definition
 ---
 >[!tldr] Probability distribution
 >Given some domain $D$ a *probability distribution* on $D$ is a function $p: D \rightarrow [0,1] \subset \mathbb{R}$  such that
->$$
->\sum_{d \in D} p(d) = 1.
->$$
+>$$\int_{x \in D} p(x)\ dx = 1.$$
 
