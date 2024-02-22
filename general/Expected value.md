@@ -11,6 +11,6 @@ tags:
 type: definition
 ---
 >[!tldr] Expected value
->For some random variable $X$ with [[Function domain|domain]] $D$ (with a sense of addition and multiplication by $\mathbb{R}$) and [[Density function|density function]] $f: D \rightarrow [0,1] \subset \mathbb{R}$ the *expected value* is:
+>For some random variable $X$ with [[Function domain|domain]] $D$ (with a sense of addition and multiplication by $\mathbb{R}$) and [[Probability density function|probability density function]] $f: D \rightarrow [0,1] \subset \mathbb{R}$ the *expected value* is:
 >$$\int_{x \in D} x f(x) \ dx.$$
 
