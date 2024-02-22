@@ -38,6 +38,27 @@ For a set of [[Random variable|random variables]] $X_v$ for $v \in V$ we would l
 >[!example] Independent variables
 >Let $A$ and $B$ be [[Independent events|independent event]]. Then $G = (\{A, B\}, \emptyset )$ forms a [[Bayesian network]] as
 >$$\mathbb{P}[A,B] = \mathbb{P}[A]\mathbb{P}[B].$$ 
+>Note that it also forms a [[Bayesian network]] with $G = (\{A, B\}, \{(A,B)\} )$ or $G = (\{A, B\}, \{(B,A)\} )$ but it would not be minimal.
 
 >[!example] Conditionally independent
->Suppose we have [[Random variable|random variables]] $A$, $B$, and $C$
+>Suppose we have [[Random variable|random variables]] $A$, $B$, and $C$ where $C$ is [[Conditional independence|conditionally independent]] of $A$ given $B$. Then $G = (\{A, B, C\}, \{(A,B), (B,C)\})$ forms as [[Bayesian network]].
+
+The property of being [[Conditional independence|conditionally independent]] is deducible from the [[Bayesian network]] $(G, X)$ by using the [[Chain rule (probability)|chain rule]]. 
+
+![[Chain rule (probability)|chain rule]]
+
+Lets [[Topological sorting (DAG)|topological order]] $V$ so $V = \{1, 2, \ldots, n\}$ where $(i,j) \in E$ we have $i < j$. Then apply the [[Chain rule (probability)|chain rule]] to
+$$
+\mathbb{P}[X_1, X_2, \ldots, X_n] = \prod_{k=1}^n \mathbb{P}[X_k \vert X_1, X_2, \ldots, X_{k-1}]
+$$
+and compare this to 
+$$\mathbb{P}[X] =\prod_{v \in V} \mathbb{P}[X_v \vert \bigcup_{(u,v) \in E} X_u].$$
+So for any $X_i$ and $j < i$ such that $(j,i) \not \in E$ then $X_i$ is [[Conditional independence|conditionally independent]] of $X_j$ given $\bigcup_{(u,v) \in E} X_u$.  
+
+This is in fact a defining property of [[Bayesian network]].
+
+![[Local Markov property]]
+
+![[Bayesian network if and only if it satisfies the local Markov Property]]
+
+## Sampling
