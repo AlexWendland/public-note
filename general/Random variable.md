@@ -1,6 +1,8 @@
 ---
 aliases:
   - random variable
+  - Random variables
+  - random variables
 checked: false
 created: 2024-01-11
 last_edited: 2024-01-11

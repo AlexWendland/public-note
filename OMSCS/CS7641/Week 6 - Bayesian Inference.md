@@ -10,7 +10,7 @@ tags:
 type: lecture
 week: 6
 ---
-# Week 10 - Bayesian Inference
+# Week 6 - Bayesian Inference
 
 ## Joint distributions
 
@@ -61,4 +61,48 @@ This is in fact a defining property of [[Bayesian network]].
 
 ![[Bayesian network if and only if it satisfies the local Markov Property]]
 
-## Sampling
+## Inference rules
+
+Once you have a [[Bayesian network]] you can use it to calculate all kinds of conditional probabilities. There are 3 main rules that help you do this.
+
+![[Marginalisation (probability)]]
+
+![[Chain rule (probability)|chain rule]]
+
+![[Bayes rule#Statement]]
+
+>[!example]
+>Suppose we have two boxes, the first box has 3 green balls and 1 orange, the second has 3 blue and 2 green. Then we do the following, we pick a box with a half chance of picking either $P$, we draw and do not replace 1 ball from that box $D1$, lastly we draw another ball from the same box $D2$. 
+>This can be represented as a [[Bayesian network]] with the following graph $(\{P, D1, D2\}, \{(P, D1), (D1, D2), (P, D2)\})$. Note this means $D1$ depends on $P$ and $D2$ depends on $P$ and $D1$. 
+>What is $\mathbb{P}[D2 =$ blue $\vert D1 =$ green$]$?
+
+We can write out the [[Conditional probability|conditional probability]] tables when they rely on all their dependents quite easily. First note $\mathbb{P}[P = 1] = \mathbb{P}[P = 2] = 0.5$. For the first joint distribution, we have what is below.
+
+| $P$ | $\mathbb{P}[D1 = green \vert P]$ | $\mathbb{P}[D1 = orange\vert P]$ | $\mathbb{P}[D1= blue \vert P]$ |
+| --- | -------------------------------- | -------------------------------- | ------------------------------ |
+| 1   | 3/4                              | 1/4                              | 0                              |
+| 2   | 2/5                              | 0                                | 3/5                            |
+
+What follows is the second.
+
+| P   | D1     | $\mathbb{P}[D2 = green \vert P, D1]$ | $\mathbb{P}[D2 = orange \vert P, D1]$ | $\mathbb{P}[D2 = blue \vert P, D1]$ |
+| --- | ------ | ------------------------------------ | ------------------------------------- | ----------------------------------- |
+| 1   | green  | 2/3                                  | 1/3                                   | 0                                   |
+| 1   | orange | 1                                    | 0                                     | 0                                   |
+| 2   | green  | 1/4                                  | 0                                     | 3/4                                 |
+| 2   | blue   | 1/2                                  | 0                                     | 1/2                                 |
+
+
+$$\mathbb{P}[D2 = blue \vert D1 = green] = \frac{\mathbb{P}[D2 = blue, D1 = green]}{\mathbb{P}[D1 = green]}$$
+However this all 
+
+
+The way to do this is through [[Marginalisation (probability)|marginalisation]] of the probability.
+
+## Why sample
+
+- To get indicative distributions of the date. Potentially this is costly and we can now use these probabilities to run simulations.
+- To simulate a complex process by sampling smaller bits of it.
+- Approximate inference, the process of looking at samples that only have a certain property to understand joint distributions.
+	- Actual inference is hard!
+- To "visualise" or get a feel for the data so we have intuition to reason about the state. 
