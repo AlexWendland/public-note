@@ -102,10 +102,20 @@ $$\mathbb{P}[D2 = blue \vert D1 = green] = \frac{\mathbb{P}[D2 = blue, D1 = gree
 Next lets use [[Marginalisation (probability)|marginalisation]] to add in the first variable.
 $$\mathbb{P}[D2 = blue \vert D1 = green] = \frac{\mathbb{P}[D2 = blue, D1 = green, P=1] + \mathbb{P}[D2 = blue, D1 = green, P=2]}{\mathbb{P}[D1 = green, P = 1] + \mathbb{P}[D1 = green, P = 2]}$$
 
-Lastly lets use the [[Chain rule (probability)|chain rule]] to turn them into the probabilities we have
-$$\mathbb{P}[D2 = blue \vert D1 = green] = \frac{1/2*3/4*0 + 1/2*2/5*3/4}{1/2*3/4 + 1/2*2/5}$$
-giving
-$$\mathbb{P}[D2 = blue \vert D1 = green] = \frac{5/20}{3/8 + 1/5} = \frac{}
+Lastly lets use the [[Chain rule (probability)|chain rule]] to turn them into the probabilities we have in the tables above. For example 
+$$\mathbb{P}[D2 = blue, D1 = green, P=1] = \mathbb{P}[P=1] * \mathbb{P}[D1 = green \vert P=1] * \mathbb{P}[D2 = blue \vert D1 = green, P=1]$$
+
+doing this for each quantity we get
+
+$$\mathbb{P}[D2 = blue \vert D1 = green] = \frac{1/2*3/4*0 + 1/2*2/5*3/4}{1/2*3/4 + 1/2*2/5} = \frac{3/10}{23/20} = \frac{6}{23}.$$
+
+## Naive Bayes Classifier
+
+Lets picture a [[Bayesian network]] with one root node and all other nodes as children of it. For example
+
+
+
+
 
 ## Why sample
 
