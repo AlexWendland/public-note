@@ -1,5 +1,6 @@
 ---
-aliases: 
+aliases:
+  - marginalisation
 checked: false
 created: 2024-02-23
 last_edited: 2024-02-23

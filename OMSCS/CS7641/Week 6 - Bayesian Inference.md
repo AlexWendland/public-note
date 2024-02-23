@@ -92,12 +92,15 @@ What follows is the second.
 | 2   | green  | 1/4                                  | 0                                     | 3/4                                 |
 | 2   | blue   | 1/2                                  | 0                                     | 1/2                                 |
 
-
+These tables perfectly set us up to calculate an exact state using the [[Chain rule (probability)|chain rule]]. So we are going to try and rewrite this probability in terms of exact states first. So lets use the definition of [[Conditional probability|conditional probability]]
 $$\mathbb{P}[D2 = blue \vert D1 = green] = \frac{\mathbb{P}[D2 = blue, D1 = green]}{\mathbb{P}[D1 = green]}$$
-However this all 
+Next lets use [[Marginalisation (probability)|marginalisation]] to add in the first variable.
+$$\mathbb{P}[D2 = blue \vert D1 = green] = \frac{\mathbb{P}[D2 = blue, D1 = green, P=1] + \mathbb{P}[D2 = blue, D1 = green, P=2]}{\mathbb{P}[D1 = green, P = 1] + \mathbb{P}[D1 = green, P = 2]}$$
 
-
-The way to do this is through [[Marginalisation (probability)|marginalisation]] of the probability.
+Lastly lets use the [[Chain rule (probability)|chain rule]] to turn them into the probabilities we have
+$$\mathbb{P}[D2 = blue \vert D1 = green] = \frac{1/2*3/4*0 + 1/2*2/5*3/4}{1/2*3/4 + 1/2*2/5}$$
+giving
+$$\mathbb{P}[D2 = blue \vert D1 = green] = \frac{5/20}{3/8 + 1/5} = \frac{}
 
 ## Why sample
 
