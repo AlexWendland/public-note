@@ -87,10 +87,24 @@ All the randomised algorithms here have been fairly simply and don't use history
 
 ## MIMIC
 
-Suppose we have some [[Optimisation problem]] with input space $A$ and fitness function $f: A \rightarrow \mathbb{R}$. Then for any $\theta \in \mathbb{R}$ define
-$$
-P^{\theta}(a) = \begin{cases} \frac{1}{Z_{\theta}} & \mbox{if } f(a) \geq \theta\\ 0 & \mbox{otherwise.} \end{cases}$$
-(Where $Z_{\theta}$ is some normalisation coefficient to make this a [[Probability distribution|probability distribution]].) Then let $\theta_{min} = \min_{a \in A} f(a)$ and $\theta_{max} = \max_{a \in A} f(a)$ then $P^{\theta_{min}}$ is the uniform distribution over $A$ whereas $P^{\theta_{max}}$ is the uniform distribution over the optimum.
+![[MIMIC (meta)]]
 
-The goal if MIMIC is to simulate $P^{\theta}$ whilst slowing increasing $\theta$ to find the maximum.
+## Estimating the probability distribution using dependency trees
 
+![[Dependency Trees (Bayesian Network)]]
+
+As always lets assume we are in the [[Modelling framework|modelling framework]] and we can break down our [[Function domain|domain]] $A = \oplus_{i=1}^n A_i$ into features, we assume similarly the random variable $X$ breaks down equally $X = \oplus_{i=1}^n X_i$. 
+
+To build a probability distribution on $A$ we will model it using a [[Dependency Trees (Bayesian Network)|dependency tree]].  Where $\mathbb{P}[X_i = a_i]$ will be the probability that an input uses $a_i$ in the $i'th$ feature and has a fitness function larger that $\theta_j$ for some step $j$. Similarly for $\mathbb{P}[X_i = a_i \vert X_j = a_j]$ however we are assuming that $i'th$ feature is for some reason dependent on the $j'th$.
+
+Just like with [[Bayesian network]] we can calculate $\mathbb{P}[X_i = a_i]$ and $\mathbb{P}[X_i = a_i \vert X_j = a_j]$ using the samples - however unlike the [[Bayesian network]] each time we do this we need to pick the most meaningful relationships to use. 
+
+## Generating your dependency tree
+
+This requires a couple of probability or information theory.
+
+![[Kullback–Leibler divergence|KL-divergence]]
+
+![[Information entropy]]
+
+Supose 
