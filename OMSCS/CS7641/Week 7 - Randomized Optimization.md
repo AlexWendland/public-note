@@ -42,3 +42,9 @@ There are a couple of good methods here:
 
 ![[Hill climbing]]
 
+## Restart Hill climbing
+
+![[Restart hill climbing ]]
+
+## Simulated Annealing
+
