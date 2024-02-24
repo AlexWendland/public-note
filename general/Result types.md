@@ -11,8 +11,9 @@ aliases:
 checked: false
 created: 2024-02-02
 last_edited: 2024-02-02
-publish: false
-tags: 
+publish: true
+tags:
+  - statistics
 type: definition
 ---
 >[!tldr] Result types
