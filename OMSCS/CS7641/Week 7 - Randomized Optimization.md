@@ -50,3 +50,11 @@ There are a couple of good methods here:
 
 The next class of algorithms is like hill climbing but we allow for a bit more random walking.
 
+![[Simulated Annealing]]
+
+Notice with the formula that if $T \rightarrow 0$ then this will make $P(x, x_t, T) \rightarrow 0$ for points where $f(x_t) < f(x)$ so it will start acting like [[Hill climbing]] whereas as $T \rightarrow \infty$ we have $P(x, x_t, T) \rightarrow 1$ so it will be close to a random walk.  
+
+![[Simulated annealing ending probability]]
+
+## Genetic Algorithms
+

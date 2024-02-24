@@ -14,7 +14,7 @@ type: algorithm
 Suppose we have a [[Optimisation problem|optimisation problem]] where $A$ has some sense of neighbourhood $N(a)$ for each point $a \in A$.
 
 Then we want to emulate [[Hill climbing]] but probabilistically allow for random walking. We do this by randomly deciding to take moves from $x$ to $x_t$ based on the temperature of the algorithm at that time $T$ this is given by
-$$\mathbb{P}[x,x_t,T] = \begin{cases} 1 & \mbox{if } f(x_t) \geq f(x)\\ \exp{\frac{f(x_t) - f(x)}{T}} & \mbox{otherwise.} \end{cases}$$
+$$P(x,x_t,T) = \begin{cases} 1 & \mbox{if } f(x_t) \geq f(x)\\ \exp{\frac{f(x_t) - f(x)}{T}} & \mbox{otherwise.} \end{cases}$$
 Then we just modify what is done in [[Hill climbing]] with this and gradually decrease the temperature and we have simulated annealing.
 
 ## Pseudocode
@@ -28,7 +28,13 @@ hill_climber(optimise, neighourhood, max_itterations, update_temperature, starti
 		update_temperature: A method to update the temperature.
 		starting_temperature: The starting value of the temperature.
 	Output: Some a in A that hopefully is a local optimum.
-1. 
+1. Pick a random start point current in A.
+2. Set temperature = starting_temperature
+3. For iteration in 1, ..., max_itterations
+	1. Pick a random point to_switch in N(current).
+	2. Set current = to_switch with probability P(current, to_switch, temperature)
+	3. Set temperature = update_temperature(T, iteration)
+4. Return current
 ```
 
 ## Run time
