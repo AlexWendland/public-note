@@ -3,22 +3,37 @@ aliases:
 checked: false
 created: 2024-02-24
 last_edited: 2024-02-24
-publish: false
+publish: true
 tags:
   - programming
 type: algorithm
 ---
 # Hill climbing
 
-Some introduction
+This is the most naïve random optimisation algorithm. Suppose we have a [[Optimisation problem|optimisation problem]] where $A$ has some sense of neighbourhood $N(a)$ for each point $a \in A$.
+
+Start at some random point $a_s \in A$ then move to the point 
+$$a' = \mbox{arg}\max_{a' \in N(a_s)} f(a')$$
+keep iterating until $a_s = a'$.
 
 ## Pseudocode
 
 ```pseudocode
-Name(variables):
+hill_climber(optimise, neighourhood):
 	Input:
-	Output:
-1. 
+		optimise: The function you are looking to optimise
+		neighbourhood: A function that returns the neighbourhood of a point A -> P(A).
+	Output: Some a in A that is a local optimum for optimise.
+1. Select random point current_best in A.
+2. Let next_best be some different point in A.
+3. While current_best != next_best:
+	1. Let current_best = next_best
+	2. next_best_score = optimise(current_best)
+	3. for n in neighourhood(next_best):
+		1. if optimise(n) > next_best_score
+			1. next_best_score = optimise(n)
+			2. next_best = n
+4. Return current_best
 ```
 
 ## Run time
@@ -27,3 +42,4 @@ Name(variables):
 
 ## Correctness
 
+It will only return you a local optimum but no guarantee it will hit a global optimum. 

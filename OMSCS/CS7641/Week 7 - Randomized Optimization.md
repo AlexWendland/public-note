@@ -40,3 +40,5 @@ There are a couple of good methods here:
 
 ## Hill climbing
 
+![[Hill climbing]]
+
