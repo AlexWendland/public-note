@@ -43,9 +43,9 @@ mimic(optimise, number_of_samples, percentile, probability_constructor, stopping
 
 ## Run time
 
-This strongly depends on how we construct our probability distribution. However, normally this takes longer than other randomised algorithms though with fewer iterations.
-
-This is useful when calculating the function on a set of points is hard. 
+This strongly depends on how we construct our probability distribution. However, normally this takes longer than other randomised algorithms to run one iteration though it will take fewer iterations all together. This is useful when optimising on a function that is hard to compute. 
 
 ## Correctness
 
+- MIMIC performs well when your feature space has structure within it that relates to the fitness function. 
+- It can get stuck in local optima with the probability distribution but you can use different sampling methods from probability theory to help you in these situations. 

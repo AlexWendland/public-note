@@ -44,3 +44,4 @@ Reinforcement Learning is the area of Machine Learning concerned with the action
 - [[Week 6 - Bayesian learning]]
 - [[Week 6 - Bayesian Inference]]
 - [[Week 7 - Randomized Optimization]]
+- [[Week 7 - Information Theory]]
