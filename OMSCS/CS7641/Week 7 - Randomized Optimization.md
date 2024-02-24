@@ -107,4 +107,17 @@ This requires a couple of probability or information theory.
 
 ![[Information entropy]]
 
-Supose 
+Now for every choice of $\pi$ to define the [[Dependency Trees (Bayesian Network)|dependency tree]] lets try to minimise the [[Kullback–Leibler divergence|KL-divergence]]. We are going to assume we have the perfect probability distribution $p$ and we are modelling it using our dependency tree $\pi$ where
+$$
+p_{\pi}(a) = \prod_{i = 1}^n p(a_i \vert a_{\pi(i)})
+$$
+here we are making the assumption when $\pi(i) = \emptyset$ we do the right thing. Moreover we are assuming we are using the real distribution $p$.
+$$
+\begin{align*}
+D_{KL}(p \vert \vert p_{\pi}) = & \sum_{a \in A}^n p(a) \left [ \ \log(p(a)) - \log(p_{\pi}(a)) \ \right ]\\
+= & - \left ( - \sum_{a \in A} p(a) \log(p(a)) \right ) + \left ( - \sum_{a \in A} p(a) \log(\prod_{i=1}^n p(a_i \vert a_{\pi(i)})) \right )\\
+= & - Entropy(p) + \sum_{i=1}^n \left (- \sum_{a \in A} p(a)\log(p(a_i \vert a_{\pi(i)})) \right ) & \mbox{by log and Entropy}\\
+= & - Entropy(p) + \sum_{i=1}^n Entropy(p(a_i \vert a_{\pi(i)})) & \mbox{how?????????????}
+\end{align*}
+$$
+Then as $-Entropy(p)$ doesn't depend on $\pi$ when looking for a maximum $\pi$ we can ignore it.
