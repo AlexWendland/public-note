@@ -38,8 +38,9 @@ hill_climber(optimise, neighourhood):
 
 ## Run time
 
-
+This strongly depends on the sense of neighbourhood. For example if the neighbourhoods were the entire domain this might be very slow. 
 
 ## Correctness
 
 It will only return you a local optimum but no guarantee it will hit a global optimum. 
+We need that the sense of neighbourhood kind of aligns with how the function behaves otherwise we are just looking at random subsets of points.
