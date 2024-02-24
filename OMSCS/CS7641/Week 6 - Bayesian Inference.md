@@ -111,11 +111,53 @@ $$\mathbb{P}[D2 = blue \vert D1 = green] = \frac{1/2*3/4*0 + 1/2*2/5*3/4}{1/2*3/
 
 ## Naive Bayes Classifier
 
-Lets picture a [[Bayesian network]] with one root node and all other nodes as children of it. For example
+Lets picture a [[Bayesian network]] with one root node and all other nodes as children of it. For this it is useful to think of an example.
 
+>[!example] Spam mail
+>We are given 3 words Viagra, Price and Udacity and depending on the existence of these words in an email we have to decide if it is spam or not. We can sample for already labelled data to understand the probabilities of these words appearing or not appearing. 
 
+First lets draw the Naive Bayes Classifier diagram.
 
+![[Naice Bayes]]
 
+This is a model for if the email is spam or not. Lets assume the probability of spam is $\mathbb{P}[Spam] = 0.4$. Then we have the [[Conditional probability|conditional probabilities]] below.
+
+| $\mathbb{P}[V \vert S]$ | $V = Viagra$ | $V = Prince$ | $V = Udacity$ |
+| ----------------------- | ------------ | ------------ | ------------- |
+| $S = Spam$              | 0.3          | 0.2          | 0.0001        |
+| $S = Not \ Spam$        | 0.001        | 0.1          | 0.1           |
+
+To work these out we have only had to sample from our spam and non-spam mail how many times they contain the word $V$.
+
+Now we would like to know 
+$$\mathbb{P}[Spam \vert Viagra, \lnot Prince, \lnot Udacity]$$
+To turn this into something we can use from above we apply [[Bayes rule]] to this
+$$\mathbb{P}[S \vert V, \lnot P, \lnot U] = \frac{\mathbb{P}[V, \lnot P, \lnot U \vert S] \mathbb{P}[S]}{\mathbb{P}[V, \lnot P, \lnot U]}.$$
+(Shortening the words to their first letters.) Next we apply the [[Chain rule (probability)|chain rule]] but knowing that $V$ $P$ and $U$ are [[Conditional independence|conditionally independent]].
+$$
+\begin{align*}
+\mathbb{P}[S \vert V, \lnot P, \lnot U] & = \frac{\mathbb{P}[V, \lnot P, \lnot U \vert S] \mathbb{P}[S]}{\mathbb{P}[V, \lnot P, \lnot U]}\\
+& = \frac{\left ( \mathbb{P}[V \vert \lnot P, \lnot U, S] \mathbb{P}[\lnot P \vert \lnot U, S] \mathbb{P}[\lnot U \vert S] \right ) \mathbb{P}[S]}{\mathbb{P}[V, \lnot P, \lnot U]} & \mbox{chain rule}\\
+& = \frac{\left ( \mathbb{P}[V \vert S] \mathbb{P}[\lnot P \vert S] \mathbb{P}[\lnot U \vert S] \right ) \mathbb{P}[S]}{\mathbb{P}[V, \lnot P, \lnot U]} & \mbox{conditional independence}\\
+& = \frac{\left ( \mathbb{P}[V \vert S] \mathbb{P}[\lnot P \vert S] \mathbb{P}[\lnot U \vert S] \right ) \mathbb{P}[S]}{\sum_{X \in \{S, \lnot S\}}\mathbb{P}[V, \lnot P, \lnot U, X]} & \mbox{marginalisation}\\
+& = \frac{\left ( \mathbb{P}[V \vert S] \mathbb{P}[\lnot P \vert S] \mathbb{P}[\lnot U \vert S] \right ) \mathbb{P}[S]}{\sum_{X \in \{S, \lnot S\}} \mathbb{P}[V \vert X] \mathbb{P}[\lnot P \vert X] \mathbb{P}[\lnot U \vert X] \mathbb{P}[X]} & \mbox{chain and c.i.}\\
+& = \frac{0.3*0.8*0.9999*0.4}{0.3*0.8*0.9999*0.4 + 0.001*0.9*0.9*0.6} & \mbox{substution}\\
+& \approx 0.9949
+\end{align*}
+$$
+
+We want to do this but not have to crack out the pen and paper every time. 
+
+![[Naive Bayes classifier]]
+
+This is cool as,
+- Normally [[Inference]] is expensive to do, however in this case it makes it really cheap.
+- The model has few parameters so has low [[Spacial complexity|spacial complexity]].
+- If you have sufficient data you can make very good estimates on these probabilities.
+- This connects [[Inference]] and [[Classification problems|classification problems]].
+- Empirically widely successful. 
+
+Though the main consideration when using this is you will need to smooth the data to make sure we don't zero out options due to limitations of our data.
 
 ## Why sample
 
