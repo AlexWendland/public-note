@@ -48,3 +48,5 @@ There are a couple of good methods here:
 
 ## Simulated Annealing
 
+The next class of algorithms is like hill climbing but we allow for a bit more random walking.
+
