@@ -29,4 +29,14 @@ There are lots of examples of this.
 - Neural network weights.
 - Minimising error in another model!
 
+There are a couple of good methods here: 
+- Generate and test
+	- Good when we have a small input space but complex function.
+- Calculus:
+	- We need the function to have a derivative and solvable!
+- Search method like [[Newton Raphson method]]
+	- Similar problems to calculus.
+- Random Optimisation, todays lecture :)
+
+## Hill climbing
 
