@@ -20,7 +20,7 @@ Then we just modify what is done in [[Hill climbing]] with this and gradually de
 ## Pseudocode
 
 ```pseudocode
-hill_climber(optimise, neighourhood, max_itterations, update_temperature, starting_temperature):
+simulated_annealing(optimise, neighourhood, max_itterations, update_temperature, starting_temperature):
 	Input:
 		optimise: The function you are looking to optimise
 		neighbourhood: A function that returns the neighbourhood of a point A -> P(A).
