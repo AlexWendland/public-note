@@ -1,5 +1,6 @@
 ---
-aliases: 
+aliases:
+  - conditional entropy
 checked: false
 created: 2024-02-24
 last_edited: 2024-02-24
