@@ -64,3 +64,12 @@ In the first case by looking at their joint distributions we still need the same
 
 ![[Mutual information]]
 
+Let $X$ and $Y$ represent two [[Independent identically distributed samples|i.i.d.]] fair coin tosses then we have $I(X,Y) = 0$ i.e. these events tell us nothing about one another. Whereas $I(X,X) = 1$ $X$ completely tells us about $X$. 
+
+![[Mutual information is symmetric]]
+
+## KL-divergence
+
+We would like to be able to tell when two distributions are similar. For this we use the following definition. Notice if $P = Q$ then $D_KL(P \vert \vert Q) = 0$.
+
+![[Kullback–Leibler divergence|KL-divergence]]
