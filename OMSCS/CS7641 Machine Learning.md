@@ -22,20 +22,17 @@ This is a 3-course Machine Learning Series, taught as a dialogue between Profess
 Supervised Learning is a machine learning task that makes it possible for your phone to recognize your voice, your email to filter spam, and for computers to learn a number of fascinating things. This sort of machine learning task is an important component in all kinds of technologies. From stopping credit card fraud; to finding faces in camera images; to recognizing spoken language - our goal is to give students the skills they need to apply supervised learning to these technologies and interpret their output. This is especially important for solving a range of data science problems.
 
 **Unsupervised Learning**  
-Ever wonder how Netflix can predict what movies you'll like? Or how Amazon knows what you want to buy, before you make a purchase? The answer can be found in Unsupervised Learning. Closely related to pattern recognition, Unsupervised Learning is about analyzing data and looking for patterns. It is an extremely powerful tool for identifying structure in data. This course focuses on how students can use Unsupervised Learning approaches - including randomized optimization, clustering, and feature selection and transformation - to find structure in unlabeled data.
+Ever wonder how Netflix can predict what movies you'll like? Or how Amazon knows what you want to buy, before you make a purchase? The answer can be found in Unsupervised Learning. Closely related to pattern recognition, Unsupervised Learning is about analysing data and looking for patterns. It is an extremely powerful tool for identifying structure in data. This course focuses on how students can use Unsupervised Learning approaches - including randomized optimization, clustering, and feature selection and transformation - to find structure in unlabelled data.
 
 **Reinforcement Learning**  
-Reinforcement Learning is the area of Machine Learning concerned with the actions that software agents ought to take in a particular environment in order to maximize rewards. You can apply Reinforcement Learning to robot control, chess, backgammon, checkers and other activities that a software agent can learn. Reinforcement Learning uses behaviorial psychology in order to achieve reward maximization.
+Reinforcement Learning is the area of Machine Learning concerned with the actions that software agents ought to take in a particular environment in order to maximize rewards. You can apply Reinforcement Learning to robot control, chess, backgammon, checkers and other activities that a software agent can learn. Reinforcement Learning uses behavioural psychology in order to achieve reward maximization.
 
 ## Lectures
 - [[Week 1 - Decision Trees]]
-- [[Week 1 - Chapter 1 Machine Learning]]## Links
-- [Central](https://www.omscentral.com/courses/machine-learning/reviews)
-- [OMSCS page](https://omscs.gatech.edu/cs-7641-machine-learning)
-- [[MachineLearningTomMitchell.pdf|Course textbook]]
+- [[Week 1 - Chapter 1 Machine Learning]] (Optimistically tried to do this each week ...)
+- [[Week 1 - Writing and reading papers]]
 - [[Week 2 - Regression and classification]]
 - [[Week 2 - Neural networks]]
-- [[Week 1 - Writing and reading papers]]
 - [[Week 3 - Instance Based Learning]]
 - [[Week 3 - Ensemble Bagging and Boosting]]
 - [[Week 4 - Support Vector Machines]]
@@ -43,5 +40,10 @@ Reinforcement Learning is the area of Machine Learning concerned with the action
 - [[Week 5 - Infinite hypothesis spaces]]
 - [[Week 6 - Bayesian learning]]
 - [[Week 6 - Bayesian Inference]]
-- [[Week 7 - Randomized Optimization]]
 - [[Week 7 - Information Theory]]
+- [[Week 7 - Randomized Optimization]]
+
+## Links
+- [Central](https://www.omscentral.com/courses/machine-learning/reviews)
+- [OMSCS page](https://omscs.gatech.edu/cs-7641-machine-learning)
+- [[MachineLearningTomMitchell.pdf|Course textbook]]

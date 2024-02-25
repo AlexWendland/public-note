@@ -24,21 +24,15 @@ $$
 $$
 however there are more advanced technique you can apply here. 
 
-Then we 
+Now we apply the formula of [[Mutual information]], [[Information entropy]], and [[Conditional entropy|conditional entropy]] to get $I[X_i, X_j]$.
 
-## Pseudocode
+Then we construct a complete [[Graph|undirected graph]] on $\{1,2, \ldots n\}$ then weight the edge $(i,j)$ with $-I[X_i, X_j]$. (Note [[Mutual information is symmetric]] so we can just use $I[X_i,X_j]$ where $i < j$.)
 
-```pseudocode
-dependency_tree_distribution(successess, fails):
-	Input:
-		successes: A subset of A that had sufficient large score.
-		fails: A subset of A that did not have sufficient scrore.
-	Output: Probability distribution over A.
-1. 
-```
+Then construct a [[Minimum Spanning Tree problem (MST)|MST]] on this graph and pick one node to be the root. This gives us our [[Dependency Trees (Bayesian Network)|dependency tree]]. We can now use the probabilities calculated earlier to find the probabilities associated with this tree. 
+
+Once we have this [[Bayesian network]] we can use it to simulate new samples to evaluate on.
 
 ## Run time
-
 
 
 ## Correctness
