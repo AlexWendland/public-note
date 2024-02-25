@@ -101,13 +101,7 @@ Just like with [[Bayesian network]] we can calculate $\mathbb{P}[X_i = a_i]$ and
 
 ## Generating your dependency tree
 
-This requires a couple of probability or information theory concepts that I don't really understand.
-
-![[Kullback–Leibler divergence|KL-divergence]]
-
-![[Information entropy]]
-
-Also [[Mutual information]] ... but I don't even understand that well enough to write what it is down.
+At this point it is best to listen to [[Week 7 - Information Theory]] to get the terms required for this proof.
 
 Now for every choice of $\pi$ to define the [[Dependency Trees (Bayesian Network)|dependency tree]] lets try to minimise the [[Kullback–Leibler divergence|KL-divergence]]. We are going to assume we have the perfect probability distribution $p$ and we are modelling it using our dependency tree $\pi$ where
 $$
@@ -118,25 +112,26 @@ $$
 \begin{align*}
 D_{KL}(p \vert \vert p_{\pi}) = & \sum_{a \in A}^n p(a) \left [ \ \log(p(a)) - \log(p_{\pi}(a)) \ \right ]\\
 = & - \left ( - \sum_{a \in A} p(a) \log(p(a)) \right ) + \left ( - \sum_{a \in A} p(a) \log(\prod_{i=1}^n p(a_i \vert a_{\pi(i)})) \right )\\
-= & - Entropy(p) + \sum_{i=1}^n \left (- \sum_{a \in A} p(a)\log(p(a_i \vert a_{\pi(i)})) \right ) & \mbox{by log and Entropy}\\
-= & - Entropy(p) + \sum_{i=1}^n Entropy(p(a_i \vert a_{\pi(i)})) & \mbox{how?????????????}
+= & - H(p) + \sum_{i=1}^n \left (- \sum_{a \in A} p(a)\log(p(a_i \vert a_{\pi(i)})) \right ) & \mbox{by log and Entropy}\\
+= & - H(p) + \sum_{i=1}^n \left (- \sum_{a_i \in A_i} \sum_{a_{\pi(i)} \in A_{\pi(i)}} p(a_i, a_{\pi(i)})\log(p(a_i \vert a_{\pi(i)})) \right ) & \mbox{by marginalisation}\\
+= & - H(p) + \sum_{i=1}^n H(a_i \vert a_{\pi(i)})
 \end{align*}
 $$
-Then as $-Entropy(p)$ doesn't depend on $\pi$ when looking for a maximum $\pi$ we can ignore it. Though as it is mathematically convenient we will add $- \sum_{i=1}^n h(a_i)$. All together this is
+Where $H(a_i \vert a_{\pi(i)})$ is [[Conditional entropy]]. Then as $-H(p)$ doesn't depend on $\pi$ when looking for a maximum $\pi$ we can ignore it. Though as it is mathematically convenient we will add $- \sum_{i=1}^n h(a_i)$. All together this is
 $$
 \begin{align*}
-\min_{\pi} J_{\pi} & = \left ( - \sum_{i=1}^n h(a_i) + \sum_{i=1}^n h(a_i \vert x_{\pi(i)}) \right )\\
-& = \left ( \sum_{i=1}^n h(a_i \vert x_{\pi(i)}) - h(a_i) \right )\\
-& = \sum_{i = 1}^n - I(x_i ; \pi(a_i)) & \mbox{no idea.}\\
+\min_{\pi} J_{\pi} & = \left ( - \sum_{i=1}^n H(a_i) + \sum_{i=1}^n H(a_i \vert a_{\pi(i)}) \right )\\
+& = \sum_{i = 1}^n - I(a_i, a_{\pi(i)}) & \mbox{by definition of mutual information}\\
 \end{align*}
 $$
-After all this maths I don't understand apparently we get a cool result. Whereas $p(a_i \vert a_{\pi(i)})$ is directional $I(a_i;\pi(a_i))$ is not. 
+Where $I(a_i, a_{\pi(i)})$ is [[Mutual information]]. We get a cool result here before we had $p(a_i \vert a_{\pi(i)})$ is which is directional but $I(a_i,\pi(a_i))$ is not as [[Mutual information is symmetric]]. 
 
-So we just need to calculate $-I(a_i ; a_j)$ for every pair of $i$ and $j$. Then we can find an [[Minimum Spanning Tree problem (MST)|MST]] in the complete graph on $\{1, 2, \ldots  n\}$ where the edges $(i,j)$ are weighted by $-I(a_i ; a_j)$.
+So we just need to calculate $-I(a_i, a_j)$ for every pair of $i$ and $j$. Then we can find an [[Minimum Spanning Tree problem (MST)|MST]] in the complete graph on $\{1, 2, \ldots  n\}$ where the edges $(i,j)$ are weighted by $-I(a_i ; a_j)$.
 
 Once we have the [[Minimum Spanning Tree problem (MST)|MST]] we can choose an arbitrary root and direct the edges accordingly!
 
 Now we have the [[Dependency Trees (Bayesian Network)|dependency tree]] structure we can generate the probabilities using our samples.
 
-## Practical matters
+Bringing this all together we have the algorithm.
 
+![[MIMIC by dependency trees]]
