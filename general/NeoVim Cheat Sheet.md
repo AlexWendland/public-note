@@ -21,8 +21,25 @@ type:
 - Undo: u
 - Undo all changes to one line: U
 - Put: p/P (after/before)
-- replace: r
+- replace: r/R (R is for multiple characters)
 - Change: c *motion* (deletes and puts you in edit mode)
+- Move to line number: *number* G (defaults to end of file)
+- Move to start of file: gg
+- Search: / *search word* (n/N to go through options)
+- Back: C-o
+- Forward: C-i
+- Switch to match parenthesis: %
+- Replace: :s/old/new/g
+- Replace between line number n,m : :n,ms/old/new/g
+- Replace in whole file: :%s/old/new/g(c) (c allows you to decide)
+- External commands: :!
+- Save as: :w
+- Visual selector: v
+- Retrieve: :r
+- Open/insert new line: o/O (below/above)
+- Copy: y *motion* (use in visual mode too)
+- Set an option: :set
+- Edit different file: :e
 
 Motions
 - Start of the next word: w
