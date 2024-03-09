@@ -32,3 +32,14 @@ Two trivial solutions to clustering problems are:
 
 ## Soft clustering
 
+![[Soft clustering]]
+
+![[Expectation Maximisation]]
+
+## Clustering properties
+
+There are 3 properties we will want to have from a clustering algorithm.
+- Richness: For any assignment of objects to clusters, there is some distance $d$ such that $P_d$ returns that clustering.
+- Scale-invariance: Scaling distances by a positive value does not change the clustering.
+- Consistency: Shrinking intra-cluster distances and expanding intercluster distances does not change the clustering.
+
