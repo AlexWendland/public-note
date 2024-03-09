@@ -11,7 +11,7 @@ type: algorithm
 ---
 # Expectation Maximisation
 
-This is a method of 
+In the [[Classification problems|classification problems]] setting with a given number of classes $k$ and training data $T$. Suppose we have assumed our data is clustered according to some distribution $\mathbb{D}$.  
 
 ## Pseudocode
 
