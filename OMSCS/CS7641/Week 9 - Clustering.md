@@ -16,11 +16,15 @@ week: 9
 
 ![[Unsupervised learning]]
 
-![[Clustering Problem]]
+![[Clustering problem]]
 
 Two trivial solutions to clustering problems are:
 - Set $B = A$ the $f(a) = a$, for all $a \in A$ or
 - Set $B = \{1\}$ then $f(a) = 1$ for all $a \in A$.
 
 ## Single Linkage Clustering
+
+![[Single linkage clustering]]
+
+## k-means clustering
 
