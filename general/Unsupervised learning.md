@@ -1,5 +1,6 @@
 ---
-aliases: 
+aliases:
+  - unsupervised learning
 checked: false
 created: 2024-02-24
 last_edited: 2024-02-24
@@ -9,5 +10,5 @@ tags:
 type: definition
 ---
 >[!tldr] Unsupervised learning
->In *unsupervised learning* we are given an input [[Function domain|domain]] $A$ and an output [[Function codomain|codomain]] $B$ with some [[Training data|training data]] $T \subset A$ which are not labelled. The goal is to approximate some $f^{\ast}: A \rightarrow B$ the as well as we can through properties of the input data.
+>In *unsupervised learning* we are given an input [[Function domain|domain]] $A$ with some [[Training data|training data]] $T \subset A$ which are not labelled (you may or may not be provided with an output [[Function codomain|codomain]] $B$) . The goal is to make some $f: A \rightarrow B$ (and $B$) that groups items that are "related" to one another given $T$.
 
