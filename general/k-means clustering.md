@@ -75,4 +75,10 @@ Then our algorithm is identical to the [[Hill climbing]] algorithm in this set u
 > This argument only works when you think of one iteration of our algorithm being 2 steps in the [[Hill climbing]]. First you update the centres, one hop, then you update the partition, two hop.
 > The state we visit after the first state will only have at most 1 neighbour as the previous step we will have picked either the center or partitions to be optimal. 
 
-Then given the [[Hill climbing]] algorithm does not 
+Therefore we don't revisit a state?
+
+>[!warning] Might only be true in Euclidian spaces
+
+Given this is the same as [[Hill climbing]] we can get stuck in a local optimum which is not a global optimum. There are two ways to get around this:
+- Do it with random restarts, or
+- Pick the starting states well.
