@@ -10,6 +10,8 @@ type:
 ---
 # NeoVim Cheat Sheet
 
+## Basics
+
 - Normal mode: Esc
 - Beginners guide: :Tutor
 - Edit setup: :e $MYVIMRC
@@ -17,6 +19,7 @@ type:
 - Delete letter: x
 - Insert text: i / a
 - Delete text: d *motion*
+	- Everything deleted goes into a buffer for put.
 - Delete whole line: dd
 - Undo: u
 - Undo all changes to one line: U
@@ -40,13 +43,22 @@ type:
 - Copy: y *motion* (use in visual mode too)
 - Set an option: :set
 - Edit different file: :e
-
-Motions
+## Motions
 - Start of the next word: w
 - End of current word: e
 - End of line: $
 - Start of line: 0
 - Use numbers to do it multiple times.
-
-Notes:
-- Everything deleted goes into a buffer for put.
+## Lazy
+- Directory tree: leader e
+	- Help: ?
+	- New file: a
+	- 
+- Search in files: leader s g
+- Switch colour scheme: leader u C
+- Search key maps: leader s k
+- Search and replace: leader s r
+	- accept: leader s r
+	- reject: dd
+	- accept all: leader R
+- Lazygit: leader gg
