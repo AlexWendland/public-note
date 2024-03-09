@@ -10,6 +10,8 @@ type:
 ---
 # NeoVim Cheat Sheet
 
+Every NeoVim set up is personal, I am using my website it document how I have it set up - not universally true. :) 
+
 ## Basics
 
 - Normal mode: Esc
