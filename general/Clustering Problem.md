@@ -9,5 +9,5 @@ tags:
 type: definition
 ---
 >[!tldr] Clustering Problem
->Suppose we are in the [[Unsupervised learning|unsupervised learning]] set up an we have sense of distance on $A$, $d(\cdot, \cdot)$. We want to be $B$ a set of categories such that $f$ maps items that are close to one another to the same category.
+>Suppose we are in the [[Unsupervised learning|unsupervised learning]] set up an we have sense of distance on $A$, $d(\cdot, \cdot)$ (we assume $d(x,y) = d(y,x)$ for $x,y \in A$). We want to be $B$ a set of categories such that $f$ maps items that are close to one another to the same category.
 
