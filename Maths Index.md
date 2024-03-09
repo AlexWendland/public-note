@@ -164,3 +164,5 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Vertex cover if and only if the complement is an independent set]]
 - [[Vertex degree sum in a graph]]
 - [[Weak duality theorem (linear programme)]]
+
+- [[Power set]]
