@@ -35,8 +35,10 @@ Name(k, T, d, Avg):
 1. Pick k random points in T and set this to be center_i
 2. Set f_last, f_current to be empty
 3. While f_last empty or f_last != f_current:
-	1. for t in T:
-		1. Set 
+	1. Set f_last = f_current
+	3. Set center_i = Avg(f_last^{-1}(i)) for all 1 <= i <= k
+	4. Set f_current(t) = argmin_j d(t, center_j) for all t in T
+4. Return f_current
 ```
 
 ## Run time
