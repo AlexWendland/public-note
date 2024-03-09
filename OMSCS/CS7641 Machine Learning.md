@@ -43,7 +43,7 @@ Reinforcement Learning is the area of Machine Learning concerned with the action
 - [[Week 7 - Information Theory]]
 - [[Week 7 - Randomized Optimization]]
 - [[Week 9 - Clustering]]
-## Links
+- [[Week 10 - Feature selection]]## Links
 - [Central](https://www.omscentral.com/courses/machine-learning/reviews)
 - [OMSCS page](https://omscs.gatech.edu/cs-7641-machine-learning)
 - [[MachineLearningTomMitchell.pdf|Course textbook]]

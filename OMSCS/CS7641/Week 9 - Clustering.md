@@ -39,7 +39,16 @@ Two trivial solutions to clustering problems are:
 ## Clustering properties
 
 There are 3 properties we will want to have from a clustering algorithm.
-- Richness: For any assignment of objects to clusters, there is some distance $d$ such that $P_d$ returns that clustering.
-- Scale-invariance: Scaling distances by a positive value does not change the clustering.
-- Consistency: Shrinking intra-cluster distances and expanding intercluster distances does not change the clustering.
+- [[Rich clustering|Richness]]: For any assignment of objects to clusters, there is some distance $d$ such that $P_d$ returns that clustering.
+- [[Scale-invariant clustering]]: Scaling distances by a positive value does not change the clustering.
+- [[Consistent clustering]]: Shrinking intra-cluster distances and expanding inter-cluster distances does not change the clustering.
+
+For example, the [[Single linkage clustering]] as we have defined
+- Is not rich, as it can't classify all points as the same.
+- Is scale-invariant, as scale preserves the minimum.
+- Is consistent, little harder to show but I believe it. 
+
+Unfortunately we can't have them all! 
+
+![[Impossibility Theorem]]
 
