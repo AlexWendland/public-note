@@ -51,3 +51,14 @@ We have already come across some ways to do wrapping too
 - Forward search where we keep adding features until we don't get any better, and
 - Backward search where we keep removing features until the score starts to drop.
 
+## Relevance
+
+![[Strongly relevant feature]]
+
+![[Weakly relevant feature]]
+
+![[Irrelevant feature]]
+
+Whilst relevance is very abstract, you can have irrelevant features that help a particular algorithm. These features are useful.
+
+![[Useful feature]]
