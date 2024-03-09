@@ -28,3 +28,7 @@ Two trivial solutions to clustering problems are:
 
 ## k-means clustering
 
+![[k-means clustering]]
+
+## Soft clustering
+
