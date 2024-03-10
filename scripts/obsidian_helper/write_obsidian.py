@@ -25,7 +25,7 @@ def write_obsidian_file(obsidian_file:models.ObsidianFile):
         for section in obsidian_file.sections:
             file.write(turn_section_to_string(section))
 
-def write_metadata(file: io.StringIO, metadata: Dict[str, Any]) -> None:
+def write_metadata(file: io.TextIOWrapper, metadata: Dict[str, Any]) -> None:
     file.write("---\n")
     yaml.dump(metadata, file, Dumper=IndentedDumper)
     file.write("---\n")
@@ -33,7 +33,8 @@ def write_metadata(file: io.StringIO, metadata: Dict[str, Any]) -> None:
 def turn_section_to_string(section: models.MarkdownSection) -> str:
     section_string = ""
     if section.title:
-        section_string += ("#" * section.depth + " " + section.title + "\n")
+        depth = section.depth if section.depth else 0
+        section_string += ("#" * depth + " " + section.title + "\n")
     if not section.lines:
         return section_string
 
