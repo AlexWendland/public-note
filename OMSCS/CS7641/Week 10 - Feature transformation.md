@@ -19,3 +19,11 @@ In this course we will focus on linear feature transformation where $p$ is a [[L
 >[!note]
 >Feature selection is a special case of feature transformation
 
+## Problems to overcome
+
+If you think of features in analogy to language there is two problems when using a feature to label data.
+
+![[Polysemy]]
+
+![[Synonymy]]
+
