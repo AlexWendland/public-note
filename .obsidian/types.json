@@ -4,6 +4,7 @@
     "cssclasses": "multitext",
     "tags": "tags",
     "course": "text",
-    "type": "text"
+    "type": "text",
+    "last_edited": "date"
   }
 }
