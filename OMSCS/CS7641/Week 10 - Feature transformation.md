@@ -36,3 +36,6 @@ If you think of features in analogy to language there is two problems when using
 ![[Independent component analysis]]
 
 ![[Cocktail party problem]]
+
+## Comparison of [[Independent component analysis|ICA]] and [[Principle component analysis|PCA]]
+
