@@ -12,7 +12,7 @@ def main():
         link_handling.clean_aliases_from_file(obsidian_file)
         # rehydration_map = link_handling.build_rehydration_map()
         # link_handling.rehydrate_file(obsidian_file, rehydration_map)
-        write_obsidian.write_obsidian_file(obsidian_file)
+        write_obsidian.write_obsidian_file(obsidian_file):
 
     print("\n------------------------\n")
     print("Finished updating Obsidian files but you will still need to check the differences in the git logs.")
