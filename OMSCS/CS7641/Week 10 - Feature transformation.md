@@ -27,3 +27,6 @@ If you think of features in analogy to language there is two problems when using
 
 ![[Synonymy]]
 
+## Principle component analysis
+
+
