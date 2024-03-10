@@ -15,3 +15,7 @@ week: 10
 Feature transformation is the problem of pre-processing a set of features to create a new (smaller/compact) feature set, while retaining as much information as possible. It is a map $p: \mathbb{F}^N \rightarrow \mathbb{F}^M$ where you usually want $M < N$.
 
 In this course we will focus on linear feature transformation where $p$ is a [[Linear map|linear map]].
+
+>[!note]
+>Feature selection is a special case of feature transformation
+
