@@ -49,3 +49,4 @@ We can use [[Independent component analysis|ICA]] to understand our data on what
 
 ![[Random component analysis]]
 
+![[Linear discriminant analysis]]
