@@ -1,7 +1,7 @@
 ---
 aliases: 
 checked: false
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+course: "[[CS7641 Machine Learning]]"
 created: 2024-03-09
 last_edited: 2024-03-09
 publish: true
