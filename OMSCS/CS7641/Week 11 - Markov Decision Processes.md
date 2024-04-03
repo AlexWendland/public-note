@@ -34,3 +34,10 @@ In problems like the above we only get the reward at the end. Therefore at the e
 
 ![[Credit assignment problem]]
 
+## Cumulative rewards
+
+Suppose we now get a reward for each state and the score of the run was the cumulative score of all the states we have visited.
+
+For example in the example above instead of just providing a reward for the pit of death and getting home instead we provided a reward for all the other squares it might influence what we want to do. If it were strongly positive we might want to stay out for longer. If it were strongly negative we might chance walking past the pit of death to get home sooner or even jump in the pit of death!
+
+
