@@ -12,3 +12,5 @@ week: 13
 ---
 # Week 13 - Game theory
 
+![[Game theory]]
+
