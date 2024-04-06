@@ -28,5 +28,7 @@ to read this table, if the first player at the top picks action $a$ and the seco
 
 We call the options $a$, $b$, $c$, $x$ and $y$ strategies.
 
-![[Minmax strategy]]
+![[Minmax decision]]
+
+![[Optimum play exists for 2-player zero-sum deterministic games with perfect information]]
 
