@@ -15,4 +15,4 @@ type: index
 This [masters](https://omscs.gatech.edu/) course is aimed at making rigorous [[Computer Science]] accessible to all through an affordable programme on an accessible platform.
 
 - [[CS6200 Introduction to Graduate Algorithms]]
--
+- [[CS7641 Machine Learning]]
