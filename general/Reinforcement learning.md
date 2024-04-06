@@ -9,5 +9,5 @@ tags:
 type: definition
 ---
 >[!tldr] Reinforcement learning
->Definition here
+>This is a branch of [[Machine Learning]] applied in a setting where a learner has a number of actions to take in a given state - each action will lead to a different reward and we want to maximise it. 
 

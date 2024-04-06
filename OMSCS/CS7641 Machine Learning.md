@@ -49,3 +49,4 @@ Reinforcement Learning is the area of Machine Learning concerned with the action
 - [[MachineLearningTomMitchell.pdf|Course textbook]]
 - [[Week 10 - Feature transformation]]
 - [[Week 11 - Markov Decision Processes]]
+- [[Week 12 - Reinforcement learning]]
