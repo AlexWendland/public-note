@@ -32,7 +32,18 @@ We call the options $a$, $b$, $c$, $x$ and $y$ strategies.
 
 ![[Optimum play exists for 2-player zero-sum games with perfect information]]
 
-This means we can determine the value of the game by both players following their best strategy we can work out the value of the game.  For some situations like above it might be probabilistic but then we take the expectation. Player one will always pick b but for player two they can't choose between $x$ or $y$ so will choose randomly.
+This means we can determine the value of the game by both players following their best strategy we can work out the value of the game.  
+
+>[!warning]
+>I don't really understand what happens in the case
+>$$
+> \begin{array}{c|cc}
+>  \ 1 & a & b \\ \hline 
+> x & 1 &  -1 \\
+> y & -1 &  1 \\
+> \end{array}
+> $$
+> What would be the optimal pure strategy?
 
 ## No more perfect information
 
@@ -67,4 +78,3 @@ $$
 \mbox{show} & 5 & -5\\
 \end{array}
 $$
-Interestingly here there is not a definitely best strategy for both players. From player ones perspective they lose 5 either 
