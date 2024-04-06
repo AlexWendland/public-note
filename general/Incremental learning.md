@@ -1,5 +1,6 @@
 ---
-aliases: 
+aliases:
+  - incrementally learn
 checked: false
 created: 2024-04-06
 last_edited: 2024-04-06
