@@ -10,5 +10,5 @@ tags:
 type: definition
 ---
 >[!tldr] Game theory
->Game theory is the study of systems where there are more than one entity with different goals. 
+>Game theory is the study of systems where there are more than one rational players. 
 
