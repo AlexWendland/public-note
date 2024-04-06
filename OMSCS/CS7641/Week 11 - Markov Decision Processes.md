@@ -54,48 +54,9 @@ So we will have no preference over these two sets of actions even though it seem
 
 ![[Discounted rewards]]
 
-## Optimum policy
-
-We ideally would like to work out what the best policy is
-$$
-\pi^{\ast} = \mbox{arg}\max_{\pi} \mathbb{E}\left [ \sum_{i=1}^{\infty} \gamma^i R(s_t) \ \Bigg \vert \ \pi \right ].
-$$
-To help us work out what $\pi^{\ast}$ should be lets define the utility of a state
-$$
-U^{\pi}(s) = \mathbb{E}\left [ \sum_{i=1}^{\infty} \gamma^i R(s_t) \ \Bigg \vert \ \pi, s_o = s \right ].
-$$
-Given we could calculate the above for a given state then we can write down what the optimum strategy should be
-$$
-\pi^{\ast}(s) = \mbox{arg}\max_{a \in A(s)} \sum_{s' \in S} T(s,a,s') U^{\pi^{\ast}}(s').
-$$
-This equation should concern you as to work out $\pi^{\ast}$ you would have to know $U^{\pi^{\ast}}$ which will depend on $\pi^{\ast}$ making it circular. However using the above strategy we get a nice set of simultaneous-like equations using the following.
-$$
-U^{\pi^{\ast}}(s) = R(s) + \gamma \max_{a \in A(s)} \sum_{s' \in S} T(s,a,s') U^{\pi^{\ast}}(s')
-$$
-What is above is a [[Bellman equation]]. They are simultaneous-like due to the max in it. 
-
-## Finding the utility of the state
-
-We would like to solve it like a set of simultaneous equations but that doesn't work due to the max. However instead we can interactively calculate it by doing the following:
-
-1. Start with some guess at $U^{\pi^{\ast}}(s)$ called $U_0(s)$
-2. The for $t \in \mathbb{N}$ set
-$$
-U_{t+1} = R(s) + \gamma \max_{a \in A(s)} \sum_{s' \in S} T(s,a,s') U_t(s')
-$$
-keep iterating until we converge to a stable answer.
+![[Value iteration (MDP)]]
 
 >[!note] We only care about the policy
 >Whilst we might worry that convergence of the above takes infinite time - in reality we only care about when the policy based on these utilities stops changing. This might take less time.
 
-## Another way
-
-Instead of looking at the utility of a state we could instead look at the policy and use the utility to guide us.
-
-1. Start with a random policy $\pi_0$.
-2. For $t \in \mathbb{N}$ do the following
-	1. Calculate $U_t(s) = R(s) + \gamma \sum_{s' \in S} T(S, \pi_t(s), s') U_t(s')$
-		1. This is now a system of simultaneous equations as there is no max!
-	2. Set $\pi_{t+1} = \mbox{arg}\max_a \sum_{s' \in S} T(s,a,s')U_t(s')$
-
-Then stop once you reach some sense of convergence.
+![[Policy Iteration (MDP)]]
