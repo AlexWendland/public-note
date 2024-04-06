@@ -12,6 +12,8 @@ week: 12
 ---
 # Week 12 - Reinforcement learning
 
+![[Transitions (MDP)]]
+
 ![[Reinforcement learning]]
 
 There are 4 kinds of process we think about: 
@@ -64,4 +66,6 @@ $$
 \pi^{\ast}(s) = \mbox{arg}\max_{a \in A_s} 
 $$
 as both $\gamma$ and $R(s)$ don't effect the $\mbox{arg}\max$. 
+
+## Q-learning
 
