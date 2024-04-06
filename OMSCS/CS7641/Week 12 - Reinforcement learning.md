@@ -76,5 +76,23 @@ $$\sum_{t \in \mathbb{N}} \alpha_t = \infty, \mbox{ and } \sum_{t \in \mathbb{N}
 $$
 with $X$ is a random variable and $x_t$ are all [[Independent identically distributed samples|i.i.d.]] then $V = \mathbb{E}[X]$.
 
-## Q-learning
+![[Q-learning]]
 
+## Choosing an action
+
+The two main ideas for choosing actions are:
+
+- choose randomly, and
+- choose the best action.
+
+The trouble with the first is you never use what you are learning - so it will be slow to explore the space you care about. The trouble with the second is you might not explore routes that are better than your current guess.
+
+![[Explore exploit dilemma]]
+
+You want to pick a balance between the two of them.
+
+![[Epsilon-greedy exploration]]
+
+In the case where you really do explore infinitely if $\epsilon_t \rightarrow 0$ then $\hat{Q} \rightarrow Q$ and $\hat{\pi} \rightarrow \pi^{\ast}$. 
+
+![[Optimistic exploration]]
