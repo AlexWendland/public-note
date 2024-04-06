@@ -6,7 +6,7 @@ created: 2024-04-06
 last_edited: 2024-04-06
 publish: true
 tags:
-  - probability
+  - game-theory
 type: definition
 ---
 >[!tldr] Zero-sum game

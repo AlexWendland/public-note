@@ -5,7 +5,7 @@ created: 2024-04-06
 last_edited: 2024-04-06
 publish: true
 tags:
-  - maths
+  - game-theory
 type: lemma
 ---
 # Statement

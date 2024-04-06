@@ -5,8 +5,9 @@ created: 2024-04-06
 last_edited: 2024-04-06
 publish: true
 tags:
+  - game-theory
   - maths
-  - machine-learning
+  - probability
 type: definition
 ---
 >[!tldr] Game theory

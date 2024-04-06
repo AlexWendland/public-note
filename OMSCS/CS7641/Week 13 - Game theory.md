@@ -26,6 +26,8 @@ y & -1 & 0 & 1 \\
 $$
 to read this table, if the first player at the top picks action $a$ and the second player on the rows picks $x$ then player one gets 1 point whereas player two gets -1 point. This is the [[Zero-sum game|zero-sum]] aspect to the game. (Note the game could be non-deterministic but we just take [[Expected value|expectation]] to find the values in the grid.)
 
+![[Zero-sum game|zero-sum]]
+
 We call the options $a$, $b$, $c$, $x$ and $y$ strategies.
 
 ![[Minmax decision]]
@@ -78,3 +80,40 @@ $$
 \mbox{show} & 5 & -5\\
 \end{array}
 $$
+>[!warning] Don't understand
+>I don't really get how this situation is any different to the above ones. The lecturers say now the value of the game differ for both players but it still boils down to a matrix that you could have gotten with a normal game?
+
+## Mix strategies
+
+![[Pure strategy]]
+
+However you can have non-deterministic strategies.
+
+![[Mixed strategy]]
+
+In the game above, if player one holds with probability $p$ then we get expected return $15p- 5$ if player two resigns otherwise we get $5 - 10p$ profit if player two sees the card. Therefore if we choose $p = 0.4$ we can get expected profit of $1$ no matter what player $B$ does. 
+
+If you do the same for player two, picking to see with probability $q$ then we get expected return $10q - 5$ if player one resigns but $10 - 15q$ if they hold. Then we get optimum $q = 3/5$ which also gives player one a profit of 1.
+
+## Removing [[Zero-sum game|zero-sum]]
+
+![[Prisoner's dilemma]]
+
+In the [[Prisoner's dilemma]] the dominating strategy is for them both to testify. Even if any player could change their decision after finding out the outcome they wouldn't want to.
+
+![[Nash equilibrium]]
+
+This works for both pure or mixed strategies. 
+
+## Dominating strategies
+
+![[Strictly dominated strategy]]
+
+This could be used to get [[Nash equilibrium]].
+
+![[Elimination and Nash Equilibrium]]
+
+Though this doesn't guarantee finding it. Though there is always a [[Nash equilibrium]] in finite games.
+
+![[Existance of Nash equilibrium]]
+
