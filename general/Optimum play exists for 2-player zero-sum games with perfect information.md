@@ -11,6 +11,6 @@ type: lemma
 # Statement
 
 > [!important] Lemma
-> In a 2-player zero-sum deterministic games with perfect information there exists an optimal pure strategy for each player. 
+> In a 2-player zero-sum games with perfect information there exists an optimal pure strategy for each player. 
 
 # Proof
