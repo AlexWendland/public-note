@@ -116,3 +116,5 @@ This could be used to get [[Nash equilibrium]].
 Though this doesn't guarantee finding it. Though there is always a [[Nash equilibrium]] in finite games.
 
 ![[Existance of Nash equilibrium]]
+
+## Multiple rounds
