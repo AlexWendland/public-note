@@ -7,8 +7,7 @@ created: 2024-04-06
 last_edited: 2024-04-06
 publish: true
 tags:
-  - probability
-  - machine-learning
+  - game-theory
 type: definition
 ---
 >[!tldr] Minmax decision
