@@ -67,5 +67,14 @@ $$
 $$
 as both $\gamma$ and $R(s)$ don't effect the $\mbox{arg}\max$. 
 
+## Incremental learning
+
+![[Incremental learning ]]
+
+If we have a sequence where 
+$$\sum_{t \in \mathbb{N}} \alpha_t = \infty, \mbox{ and } \sum_{t \in \mathbb{N}} \alpha_t^2 < \infty
+$$
+with $X$ is a random variable and $x_t$ are all [[Independent identically distributed samples|i.i.d.]] then $V = \mathbb{E}[X]$.
+
 ## Q-learning
 
