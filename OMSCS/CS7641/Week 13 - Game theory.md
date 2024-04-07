@@ -118,3 +118,16 @@ Though this doesn't guarantee finding it. Though there is always a [[Nash equili
 ![[Existance of Nash equilibrium]]
 
 ## Multiple rounds
+
+Suppose now you are in a situation where you are playing iterative rounds of a game with the same player.
+
+### Known number of rounds
+
+One approach to solving this issue is to combine possible series of strategies as a new series and to investigate the composite game. Though an easier solution to this situation can be found be thinking of them separately.
+
+If the number of rounds are known beforehand, then consider the last round. As there are no games afterwards - there is no incentive to not behave rationally, so we will use the [[Nash equilibrium]] strategy.
+
+Though given this last game is already decided we might as well consider playing one less game. Though this inductively gives that each player will play a [[Nash equilibrium]] strategy at each step of the game.
+
+However, which [[Nash equilibrium]] is an interesting problem.
+
