@@ -183,3 +183,27 @@ Now we are repeating games we could adopt a [[Mixed strategy]] of meta strategie
 
 ![[Minmax profile]]
 
+![[Battle of the sexes]]
+
+To calculate the [[Minmax profile]] of the [[Battle of the sexes]] we have to think about how one player could punish the other player the most. (This game is simpler as it is symmetric.) Using a [[Pure strategy]] if $B$ wanted to punish $A$ they would go for $y$ and so the best $A$ could do would be 1 point. 
+
+However, this is not the worst player $B$ could do. Instead they use a mixed strategy and went to $x$ with probability $p$ and $y$ with probability $(1-p)$. Then player $A$ choosing $x$ would give them $2p$ whereas choosing $y$ gives them $(1 - p)$. Which setting $p = 1/3$ gives the expected return of either decision to be $2/3$.
+
+This gives the following [[Minmax profile]].
+> $$
+ \begin{array}{c|c}
+ \ \mbox{A} & \mbox{B} \\ \hline 
+ \frac{2}{3} & \frac{2}{3} \\
+ \end{array}
+$$
+## Feasible region
+
+In the [[Battle of the sexes]] we saw that one player could in expectation guarantee another player a lower score by adopting a mixed strategy. Therefore they have made the pay off a point that isn't in $\{(0,0), (2,1), (1,2)\}$. So what is the feasible region of expected scores using [[Mixed strategy|mixed strategies]]?
+
+If player $A$ picks $x$ with probability $p$ and player $B$ picks $x$ with probability $q$ then we get the expected score
+$$(pq2 + (1-p)(1-q), pq + 2(1-p)(1-q)).$$
+This gives us all the points in the convex hull of the points $\{(0,0), (2,1), (1,2)\}$.
+
+![[feasible_region.excalidraw]]
+
+You can see this by letting $a = pq$ and $b = (1-p)(1-q)$ 
