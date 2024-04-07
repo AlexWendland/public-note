@@ -181,4 +181,5 @@ Here no matter what $\gamma$ we have that testify is a [[Nash equilibrium]]. Tho
 
 Now we are repeating games we could adopt a [[Mixed strategy]] of meta strategies. i.e. decide a probability distribution over the strategies and use them dependent on a random variable. 
 
-This 
+![[Minmax profile]]
+
