@@ -206,4 +206,20 @@ This gives us all the points in the convex hull of the points $\{(0,0), (2,1), (
 
 ![[feasible_region.excalidraw]]
 
-You can see this by letting $a = pq$ and $b = (1-p)(1-q)$ 
+For example to get the line at the bottom set $p = 1$ $\{(2q, q) \vert q \in [0,1]\}$, for the line at the top set $p=0$ $\{((1-q), 2(1-q)) \vert q \in [0,1]\}$. For lines in-between let $p$ vary.
+
+## Security region
+
+![[Security region]]
+
+In the [[Battle of the sexes]] example we have plotted the security region below. 
+
+![[feasible_region_with_security_region.excalidraw]]
+
+## Folk Theorem
+
+We would like to think we could get any point which is feasible and in the security region with sufficient cooperation. That cooperation will have to be enforced with a penalty, such as forcing the opposition player into the [[Minmax profile]]. This will look as follows.
+
+![[Grim trigger strategy]]
+
+![[Folk Theorem]]
