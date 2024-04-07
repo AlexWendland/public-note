@@ -23,5 +23,3 @@ type: example
 > \end{array}
 > $$
 > If the player stays silent they pay an expected cost of 2, whereas if they testify they pay an expected cost of 1. So the optimum strategy is to testify. However by other testifying combined they are paying the largest cost.
-
-
