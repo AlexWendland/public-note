@@ -117,6 +117,9 @@ Though this doesn't guarantee finding it. Though there is always a [[Nash equili
 
 ![[Existance of Nash equilibrium]]
 
+>[!Note]
+>Normally the best way to get out of the prisoners dilemma is to change the structure of the game.
+
 ## Multiple rounds
 
 Suppose now you are in a situation where you are playing iterative rounds of a game with the same player.
@@ -145,5 +148,18 @@ The expected number of round in this set up is $\frac{1}{1-\gamma}$.
 
 ## Tit for Tat
 
+When in the above situation there are some meta strategies you can adopt. For example you can always choose one option - like in the known number of rounds example. However, you can now adopt strategies that depend on the opponents move.
+
 ![[Tit for Tat]]
 
+>[!example] [[Prisoner's dilemma]]
+>Suppose we do this with the prisoners dilemma. Now lets consider 3 strategies, always stay silent (silent), always testify (testify) or tit for tat (tft) where we look at the two different start points silent and testify. Lets consider the strategy matrix (to simplify things I took a factor of $\frac{1}{1 - \gamma}$ out)
+> $$
+> \begin{array}{c|cc}
+> \ \mbox{A \\ B} & \mbox{silent} & \mbox{testify} & \mbox{tft-silent} & \mbox{tft-testify}\\ \hline 
+> \mbox{silent} & (1,1) & (3,0) & (1,1) & (3-2\gamma, \gamma) \\
+> \mbox{testify} & (0,3) & (2,2) & (2 \gamma, 3 - \gamma) & (2,2) \\
+> \mbox{tft-silent} & (1,1) & (3 - \gamma, 2 \gamma) & (1,1) & (\frac{3}{1 + \gamma}, \frac{3 \gamma}{1 + \gamma})\\
+> \mbox{tft-testify} & (\gamma, 3-2\gamma) & (2,2) & (\frac{3\gamma}{1+\gamma}, \frac{3}{1 + \gamma}) & (2,2)\\
+> \end{array}
+> $$
