@@ -177,3 +177,8 @@ Here no matter what $\gamma$ we have that testify is a [[Nash equilibrium]]. Tho
 - for $\gamma \leq 0.5$ tft-testify is also a [[Nash equilibrium]], and
 - for $\gamma \geq 0.5$ tft-silent is also a [[Nash equilibrium]].
 
+## Picturing Mixed strategies for repeated games
+
+Now we are repeating games we could adopt a [[Mixed strategy]] of meta strategies. i.e. decide a probability distribution over the strategies and use them dependent on a random variable. 
+
+This 
