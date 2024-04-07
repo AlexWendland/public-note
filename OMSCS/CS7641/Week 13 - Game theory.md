@@ -121,7 +121,7 @@ Though this doesn't guarantee finding it. Though there is always a [[Nash equili
 
 Suppose now you are in a situation where you are playing iterative rounds of a game with the same player.
 
-### Known number of rounds
+## Known number of rounds
 
 One approach to solving this issue is to combine possible series of strategies as a new series and to investigate the composite game. Though an easier solution to this situation can be found be thinking of them separately.
 
@@ -129,5 +129,21 @@ If the number of rounds are known beforehand, then consider the last round. As t
 
 Though given this last game is already decided we might as well consider playing one less game. Though this inductively gives that each player will play a [[Nash equilibrium]] strategy at each step of the game.
 
-However, which [[Nash equilibrium]] is an interesting problem.
+However, which [[Nash equilibrium]] is an interesting problem!
+
+## Unknown number of rounds
+
+At the end of a round suppose there is a $\gamma$ chance you play again and a $1-\gamma$ chance you end. This stays constant and you use [[Discounted rewards|discounted rewards]] to evaluate performance.
+
+>[!Note]
+>[[Discounted rewards]] is perfectly built for this. Suppose $G$ is the random variable for the value of playing this game, let $g_i$ be the reward for the $i'th$ round then
+>$$\mathbb{E}[G] = g_i + \gamma \mathbb{E}[G] + (1-\gamma) 0 = g_i + \gamma \mathbb{E}[G].$$
+>Therefore if we pick a strategy that would pay off $g_i$ in round $i$ if it were played then the total expected value of this strategy would be
+>$$\mathbb{E}[G] = \sum_{i \in \mathbb{N}} g_i \gamma^i.$$
+
+The expected number of round in this set up is $\frac{1}{1-\gamma}$.
+
+## Tit for Tat
+
+![[Tit for Tat]]
 
