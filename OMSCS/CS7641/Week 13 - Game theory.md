@@ -163,3 +163,17 @@ When in the above situation there are some meta strategies you can adopt. For ex
 > \mbox{tft-testify} & (\gamma, 3-2\gamma) & (2,2) & (\frac{3\gamma}{1+\gamma}, \frac{3}{1 + \gamma}) & (2,2)\\
 > \end{array}
 > $$
+
+Lets consider the preferred strategy when your opponent has already picked (this depends on $\gamma$).
+
+| Opponent    | $\gamma < 0.5$       | $\gamma = 0.5$       | $\gamma > 0.5$       |
+| ----------- | -------------------- | -------------------- | -------------------- |
+| Silent      | Testify              | Testify              | Testify              |
+| Testify     | Testify, tft-testify | Testify, tft-testify | Testify, tft-testify |
+| tft-silent  | testify              | Any                  | tft-silent, silent   |
+| tft-testify | Testify, tft-testify | Any                  | silent               |
+
+Here no matter what $\gamma$ we have that testify is a [[Nash equilibrium]]. Though we have additional equilibrium depending on $\gamma$
+- for $\gamma \leq 0.5$ tft-testify is also a [[Nash equilibrium]], and
+- for $\gamma \geq 0.5$ tft-silent is also a [[Nash equilibrium]].
+
