@@ -259,4 +259,34 @@ We see from this no matter what happened last round the [[Pavlov strategy]] self
 
 ![[Semi-wall stochastic game]]
 
+## Generalisations for [[Zero-sum game|zero-sum]] [[Stochastic games]]
 
+In the [[Zero-sum game|zero-sum]] setting we assume only two players, so $i = 2$. However, we leave the terminology general for syntactic ease.
+
+![[Minimax-Q]]
+
+This has some nice properties
+- Value iteration works,
+- It converges,
+- $Q_i$ has a unique solution for each $i$,
+- Policies can be computed independently from one another,
+- We can update in [[Polynomial time|polynomial time]], and
+- Q-functions are sufficient to specify the policy.
+
+## Generalisation to [[Stochastic games]]
+
+You can do the same for non-[[Zero-sum game]]s using [[Nash equilibrium]] instead of [[Minmax decision|minmax]] but it doesn't have the nice properties.
+
+This has some nice properties
+- Value iteration doesn't works,
+- It doesn't converges,
+- $Q_i$ has a multiple solution for each $i$ (as there is no unique [[Nash equilibrium]]),
+- Policies cannot be computed independently from one another,
+- We can update in [[PPAD time]], and
+- Q-functions are not sufficient to specify the policy.
+
+Though there are ideas to correct for this:
+- We can use repeated [[Stochastic games]],
+- You can talk to players,
+- You can limit players computational power, and
+- Allowing players to pay each other some of their reward.
