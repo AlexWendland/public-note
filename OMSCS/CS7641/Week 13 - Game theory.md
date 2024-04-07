@@ -153,7 +153,7 @@ When in the above situation there are some meta strategies you can adopt. For ex
 ![[Tit for Tat]]
 
 >[!example] [[Prisoner's dilemma]]
->Suppose we do this with the prisoners dilemma. Now lets consider 3 strategies, always stay silent (silent), always testify (testify) or tit for tat (tft) where we look at the two different start points silent and testify. Lets consider the strategy matrix (to simplify things I took a factor of $\frac{1}{1 - \gamma}$ out)
+>Suppose we do this with the prisoners dilemma. Now lets consider 4 strategies, always stay silent (silent), always testify (testify) or tit for tat (tft) where you start silent or testify. Lets consider the strategy matrix (to simplify things I took a factor of $\frac{1}{1 - \gamma}$ out)
 > $$
 > \begin{array}{c|cc}
 > \ \mbox{A \\ B} & \mbox{silent} & \mbox{testify} & \mbox{tft-silent} & \mbox{tft-testify}\\ \hline 
