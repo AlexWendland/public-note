@@ -223,3 +223,40 @@ We would like to think we could get any point which is feasible and in the secur
 ![[Grim trigger strategy]]
 
 ![[Folk Theorem]]
+
+If we follow through with the threat in the [[Grim trigger strategy]] this might actually be sub-optimal play for us - and we might not want to do it. So this threat is some what implausible.
+
+![[Subgame perfect]]
+
+![[Plausible threat]]
+
+## Pavlov
+
+![[Pavlov strategy]]
+
+This strategy feels counter intuitive - like a punch me twice and its all ok mentality.
+
+The strategy is in [[Nash equilibrium]] with itself, as both players start out cooperating and will continue forever. However it is also [[Subgame perfect]] and therefore a plausible threat. To see this lets start a game in every previous state. Will will represents turns as $(*,*)$ where the first position is what player $A$ did and the second is what player $B$ did. There are two options are moves cooperate $C$ and defect $D$.
+> $$
+ \begin{array}{c|cc}
+ \ \mbox{Last} & 1 & 2 \\ \hline 
+ (C,C) & (C,C) & (C,C) \\
+ (C,D) & (D,D) & (C,C) \\
+ (D,C) & (D,D) & (C,C) \\
+ (D,D) & (C,C) & (C,C)
+ \end{array}
+$$
+
+We see from this no matter what happened last round the [[Pavlov strategy]] self rights itself into the cooperate cooperate state.
+
+![[Computational Folk theorem]]
+
+## Stochastic games
+
+[[Stochastic games]] are the multi-agent analogy to a [[Markov decision process]]. 
+
+![[Stochastic games]]
+
+![[Semi-wall stochastic game]]
+
+

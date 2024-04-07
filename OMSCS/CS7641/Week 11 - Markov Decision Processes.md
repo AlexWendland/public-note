@@ -60,3 +60,4 @@ So we will have no preference over these two sets of actions even though it seem
 >Whilst we might worry that convergence of the above takes infinite time - in reality we only care about when the policy based on these utilities stops changing. This might take less time.
 
 ![[Policy Iteration (MDP)]]
+
