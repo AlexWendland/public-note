@@ -11,23 +11,23 @@ type: algorithm
 ---
 # Expectation Maximisation
 
-Expectation maximising is an algorithm which can be used on problems such as [[Clustering problem|clustering problem]]. It is used in situations where we need to estimate some  It takes the following view on the world. Suppose we have some observed data $X = \{x_1, \ldots, x_m\}$ which is independently drawn 
+Expectation maximising is an algorithm which can be used on problems such as [[Clustering problem|clustering problem]]. It is used in situations where you assume your data follows some underlying distribution $\mathbb{D}$ which in this instance is given by parameters $\theta$. We assume $\theta \in H$ our [[Modelling paradigm|hypothesis space]]. 
 
-Then we are going to iteratively update 
-1. the expectation of event $Z_{i,j} = [f(x_i) = j]$ that the $i \in I$ point belongs to the class $j$ given the hypothesis that the clusters use $\mu_j$, and
-2. the parameters $\mu_j$ using the distribution of $Z_{i,j}$.
+Suppose we draw $m$ samples from $\mathbb{D}_{\theta}$ which has an observed component $X = \{x_1, \ldots, x_m\}$ and an unobserved component $Z = \{z_1, \ldots, z_m\}$. Therefore the samples of $\mathbb{D}_{\theta}$ are given by $Y = X \cup Z$. 
 
-First we will describe step one, given some new parameters $\mu_j$. We set
-$$
-\mathbb{E}[z_{i,j}] = \frac{\mathbb{P}_{\mathbb{D}}[x=x_i \vert \mu = \mu_j]}{\sum_{h=1}^k \mathbb{P}_{\mathbb{D}}[x=x_i \vert \mu = \mu_h]}
-$$
-Where the formula for $\mathbb{P}_{\mathbb{D}}[x=x_i \vert \mu = \mu_j]$ comes from the distribution $\mathbb{D}$.
+Once you are provided with $X$ you can treat the values of $Z$ as random variables - similar with $Y$. Both $Z$ and $Y$ depend on the unknow parameters $\theta$.  
 
-The second step just calculates the best parameters given these probabilities. In this case mean
+During the EM algorithm we will update our current hypothesis $h \in H$ for the parameters $\theta$, to a new hypothesis $h' \in H$. We want to update $h \in H$ by trying to maximise 
+$$Q(h' \vert h) = \mathbb{E}[ \ln( \ \mathbb{P}_{\mathbb{D}} \ [Y \ \vert \ h']) \ \vert \ X, h \ ]
 $$
-\mu_j = \frac{\sum_{i \in I} \mathbb{E}[Z_{i,j}]x_i}{\sum_{i \in I} \mathbb{E}[Z_{i,j}]}.
+Lets unpack this - we use our current hypotheses $h$ to guess at the values of $Z$. This gives us $X$ and $Z$ therefore $Y$. Now we want to find the hypothesis $h'$ (or parameters for $\mathbb{D}$) that maximises the log probability that $Y$ would occur. This follows a nice natural two step process.
+1. Given our current hypothesis $h$ calculate the values for $Z$ the unobserved parameters, this gives us the function $Q(h' \vert h): H \rightarrow \mathbb{R}$, and then
+2. Using the values of $X$ and $Z$ for $Y$ - find a hypothesis
 $$
-This process is not guaranteed to stop. 
+h' = \mbox{arg}\max_{h' \in H} Q(h' \vert h) = \mbox{arg}\max_{h' \in H} \mathbb{E}[ \ln( \mathbb{P}_{\mathbb{D}} \ [Y \ \vert \ h']) \ \vert \ X, h \ ].
+$$
+
+If the function $Q(h' \vert h)$ is continuous for all $h', h \in H$ then we will converge to a local maximum however we don't know how long this will take us or if this local maximum is a global maximum.
 
 ## Correctness
 
