@@ -32,10 +32,8 @@ Two trivial solutions to clustering problems are:
 
 ## Soft clustering
 
-![[Soft clustering]]
-
 ![[Expectation Maximisation]]
-
+![[Soft clustering]]
 ## Clustering properties
 
 There are 3 properties we will want to have from a clustering algorithm.
