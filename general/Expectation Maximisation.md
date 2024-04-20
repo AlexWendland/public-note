@@ -11,7 +11,7 @@ type: algorithm
 ---
 # Expectation Maximisation
 
-In the [[Clustering problem|clustering problem]] setting with a given number of classes $k$ and training data $T = \{x_i \vert i \in I\}$. Suppose we have assumed our data is clustered according to some distribution $\mathbb{D}$ each cluster depends on a parameter $\mu_j$ (for this example we will use the mean).  
+Expectation maximising is an algorithm which can be used on problems such as [[Clustering problem|clustering problem]]. It is used in situations where we need to estimate some  It takes the following view on the world. Suppose we have some observed data $X = \{x_1, \ldots, x_m\}$ which is independently drawn 
 
 Then we are going to iteratively update 
 1. the expectation of event $Z_{i,j} = [f(x_i) = j]$ that the $i \in I$ point belongs to the class $j$ given the hypothesis that the clusters use $\mu_j$, and
