@@ -13,7 +13,7 @@ type: algorithm
 
 Suppose we are in the [[Clustering problem|clustering problem]] set up. Here we are given the number of desired clusters $k$, and the sense of distance $d$.
 
-The idea will be to make everyone element in our [[Training data|training data]] $T$ its own cluster. Then we take the union of two clusters which are considered the closest. For this linkage clustering we use the minimum distance of points in the cluster. i.e.
+The idea will be to make every element in our [[Training data|training data]] $T$ its own cluster. Then we take the union of two clusters which are considered the closest. For this linkage clustering we use the minimum distance of points in the cluster. i.e.
 $$
 d_C: 2^T \times 2^T \rightarrow \mathbb{R}, \ d_C(C_1, C_2) = \min_{a \in C_1, b \in C_2} d(a,b)
 $$
