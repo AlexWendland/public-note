@@ -14,7 +14,7 @@ type: algorithm
 In the [[Clustering problem|clustering problem]] setting with a given number of classes $k$ and training data $T = \{x_i \vert i \in I\}$. Suppose we have assumed our data is clustered according to some distribution $\mathbb{D}$ each cluster depends on a parameter $\mu_j$ (for this example we will use the mean).  
 
 Then we are going to iteratively update 
-1. the expectation of event $Z_{i,j} = [f(x_i) = j]$ that the $i \in I$ point belongs to the class $j$ given some parameters $\mu_j$, and
+1. the expectation of event $Z_{i,j} = [f(x_i) = j]$ that the $i \in I$ point belongs to the class $j$ given the hypothesis that the clusters use $\mu_j$, and
 2. the parameters $\mu_j$ using the distribution of $Z_{i,j}$.
 
 First we will describe step one, given some new parameters $\mu_j$. We set
