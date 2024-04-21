@@ -24,7 +24,7 @@ The simplest example of [[Ensemble learning]] is [[Bagging]].
 
 ![[Bagging]]
 
-[[Bagging]] treated all data points evening and didn't focus on whether we performed well or poorly on a given data point to pick the next subset. If we fixed this we could potentially tighten up our model.
+[[Bagging]] treated all data points equally and didn't focus on whether we performed well or poorly on a given data point to pick the next subset. If we fixed this we could potentially tighten up our model.
 
 ## Error rate and weak learners
 
