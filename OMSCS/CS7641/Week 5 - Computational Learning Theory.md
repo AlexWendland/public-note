@@ -181,7 +181,7 @@ $$
 (Note this is polynomial in $\frac{1}{\epsilon}$, $\vert H \vert$ and $\frac{1}{\delta}$ as required by a [[Probably approximately correct learnable (PAC)|PAC learner]].) So given that good learner does exist in our [[Modelling paradigm|hypothesis space]] we have use drawing [[Independent identically distributed samples|i.i.d.]] representatives to give us a [[Probably approximately correct learnable (PAC)|PAC learner]] by checking if the hypothesis are consistent with the observations.
 
 >[!example] 10-bit example
->Suppose our underlying set $X = \{0,1\}^10$ and $H = C = \{h_i : h_i(x) = x_i\}$. How many [[Independent identically distributed samples|i.i.d.]] samples do we need to draw to find a $\epsilon = 0.1$, $\delta = 0.2$ with $\mathbb{D}$ being uniform [[Probably approximately correct learnable (PAC)|PAC learner]]?
+>Suppose our underlying set $X = \{0,1\}^{10}$ and $H = C = \{h_i : h_i(x) = x_i\}$. How many [[Independent identically distributed samples|i.i.d.]] samples do we need to draw to find a $\epsilon = 0.1$, $\delta = 0.2$ with $\mathbb{D}$ being uniform [[Probably approximately correct learnable (PAC)|PAC learner]]?
 >Using the above formula we need
 >$$m \geq 40 > 10 \cdot ( 2.3 + 1.6 ).$$
 

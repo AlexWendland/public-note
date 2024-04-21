@@ -19,7 +19,7 @@ In [[Week 5 - Computational Learning Theory]] we developed a method to build a [
 Whilst the [[Modelling paradigm|hypothesis space]] might be infinite theoretically, the actual number of distinct hypothesises could be finite. Then we can fall back on the previous work.
 
 >[!example] Discrete problem domain
->Let $A=\{i \in \mathbb{N} \vert i \leq 10\}$ and $B = \{T,F\}$. Then notice that $Fun(A,B) = 2^10$ which is finite. If we had $H = \{\ln(x) \geq \theta \ \vert \ \theta \in \mathbb{R}\}$  then $H$ is infinite as $\theta \in \mathbb{R}$. However, in reality there are at most 11 realised functions here $\{x > n \vert 0 \leq n \leq 10, \ n \in \mathbb{Z}\}$ so we have a finite hypothesis space. 
+>Let $A=\{i \in \mathbb{N} \vert i \leq 10\}$ and $B = \{T,F\}$. Then notice that $Fun(A,B) = 2^{10}$ which is finite. If we had $H = \{\ln(x) \geq \theta \ \vert \ \theta \in \mathbb{R}\}$  then $H$ is infinite as $\theta \in \mathbb{R}$. However, in reality there are at most 11 realised functions here $\{x > n \vert 0 \leq n \leq 10, \ n \in \mathbb{Z}\}$ so we have a finite hypothesis space. 
 
 ## VC-dimension
 
