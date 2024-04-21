@@ -35,8 +35,6 @@ For a set of [[Random variable|random variables]] $X_v$ for $v \in V$ we would l
 
 ![[Bayesian network]]
 
-X_v A_v
-
 $\mathbb{P}[X_1 = a_1, X_2 = a_2, .... X_n = a_n] = \prod_{i=1}^n \mathbb{P}[X_i = a_i \vert X_u = a_u \forall (u,v) \in E]$
 
 
