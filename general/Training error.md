@@ -11,6 +11,6 @@ type: definition
 ---
 >[!tldr] Training error
 >Suppose we are in the [[Modelling framework|modelling framework]] with some [[Training data|training data]] $T$ and [[Modelling paradigm|hypothesis space]] $H$. For some candidate hypothesis $h \in H$ the *training error*
->$$TrainingError(h,T) = \frac{\vert \{ (a,b) \in T \vert h(a) = b \}\vert}{\vert T \vert}.$$
+>$$TrainingError(h,T) = \frac{\vert \{ (a,b) \in T \vert h(a) \neq b \}\vert}{\vert T \vert}.$$
 
 
