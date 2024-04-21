@@ -14,7 +14,7 @@ week: 5
 
 [[Computational learning theory]] is fundamentally about 3 things:
 - defining learning problems,
-- show algorithms work, and
+- showing algorithms work, and
 - showing problems are easy or hard. 
 
 When considering problems it is useful to think about:
