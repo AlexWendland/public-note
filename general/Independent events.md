@@ -12,5 +12,5 @@ type: definition
 ---
 >[!tldr] Independent events
 >Suppose we have two events $A$ and $B$. These events are *independent* if
->$$\mathbb{P}[A \mbox{ and } B] = \mathbb{P}[A] \cdot \mathbb{P}[B].$$
+>$$\mathbb{P}[A \cap B] = \mathbb{P}[A] \cdot \mathbb{P}[B].$$
 
