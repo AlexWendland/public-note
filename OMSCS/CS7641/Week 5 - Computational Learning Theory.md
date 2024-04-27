@@ -183,7 +183,7 @@ $$
 >[!example] 10-bit example
 >Suppose our underlying set $X = \{0,1\}^{10}$ and $H = C = \{h_i : h_i(x) = x_i\}$. How many [[Independent identically distributed samples|i.i.d.]] samples do we need to draw to find a $\epsilon = 0.1$, $\delta = 0.2$ with $\mathbb{D}$ being uniform [[Probably approximately correct learnable (PAC)|PAC learner]]?
 >Using the above formula we need
->$$m \geq 40 > 10 \cdot ( 2.3 + 1.6 ).$$
+>$$m \geq 10 \cdot ( 2.3 + 1.6 ) = 39.$$
 
 Note here that we didn't use what $\mathbb{D}$ was in this computation. 
 
