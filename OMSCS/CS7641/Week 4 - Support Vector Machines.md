@@ -161,10 +161,10 @@ $$ \max_{\alpha} \sum_{t \in T} \alpha_t - \frac{1}{2} \sum_{t,s \in T} \alpha_t
 $$ \alpha_t \geq 0 \mbox{ for all } t \in T, \mbox{ and } \sum_{t \in T} \alpha_ty^t = 0.$$
 Which we turn this into a classifier by setting:
 $$
-\hat{f}(x) = \mbox{sgn}\left ( \sum_{t \in T} \alpha_t y^t (\Phi(x^t) \cdot \Phi(x)) + b \right )$$
+\hat{f}(x) = \mbox{sgn}\left ( \sum_{t \in T} \alpha_t y^t (\Phi(x^t) \cdot \Phi(x)) + b^t \right )$$
 where 
 $$
-b = y^s - \sum_{t \in T} \alpha_t y^t (\Phi(x^t) \cdot \Phi(x^s)), \mbox{ for any } s \in T \mbox{ such that } \alpha^s \not = 0.
+b^s = y^s - \sum_{t \in T} \alpha_t y^t (\Phi(x^t) \cdot \Phi(x^s)), \mbox{ for any } s \in T \mbox{ such that } \alpha^s \not = 0.
 $$
 However, we only have use $\Phi$ on two vectors who immediately get the [[Dot product|dot product]] applied to them - so we can replace this with the kernel instead. 
 
