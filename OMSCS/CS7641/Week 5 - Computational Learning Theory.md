@@ -91,7 +91,7 @@ Clearly the restricted questions for the learner is a hard problem. Though inste
 
 Suppose instead of the learner giving an example to the teacher to answer, instead the teacher is going to give the learner an example to predict. The teacher then verifies if they were correct or not. If the learner is wrong they get a -1 to their score.
 
-Instead of then trying to get the formula in the least time possible, we are trying to get the largest score from the provided examples.
+Instead of them trying to get the formula in the least time possible, we are trying to get the largest score from the provided examples.
 
 ### Algorithm
 
