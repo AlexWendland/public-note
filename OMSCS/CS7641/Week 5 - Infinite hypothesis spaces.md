@@ -27,17 +27,17 @@ In the problem above the hypothesis space was in some way limited. We want to ca
 
 ![[Vapnik-Chervonenkis dimension|VC dimension]]
 
-In the example above we have [[Vapnik-Chervonenkis dimension|VC dimension]] 1. As for any two points $1 \leq l \leq u \leq 10$ if $l = T$ and $u = F$ then no such function $h_{\theta}(x) = [\ln(x) \geq \theta]$ can set $h_{\theta}(l) = T$ without setting $h_{\theta}(u) = T$. 
+In the example above we have [[Vapnik-Chervonenkis dimension|VC dimension]] 1. As for any two points $1 \leq l \leq u \leq 10$ if $f(l) = T$ and $f(u) = F$ then no such function $h_{\theta}(x) = [\ln(x) \geq \theta]$ can set $h_{\theta}(l) = T$ without setting $h_{\theta}(u) = T$. 
 
 ## VC dimensions roughly follow degrees of freedom
 
-| Separator                 | VC-dimension | parameters |
-| ------------------------- | ------------ | ---------- |
-| 1- demensional hyperplane | 1            | 1          |
-| Interval on $\mathbb{R}$  | 2            | 2          |
-| 2-dimensional hyper plane | 3            | 3          |
-| d-dimesional hyperplane   | d + 1        | -          |
-| Convex polygon in $\mathbb{R}^n, n > 1$                          | $\infty$             | $\infty$           |
+| Separator                               | VC-dimension | parameters |
+| --------------------------------------- | ------------ | ---------- |
+| 1- demensional hyperplane               | 1            | 1          |
+| Interval on $\mathbb{R}$                | 2            | 2          |
+| 2-dimensional hyper plane               | 3            | 3          |
+| d-dimesional hyperplane                 | d + 1        | -          |
+| Convex polygon in $\mathbb{R}^n, n > 1$ | $\infty$     | $\infty$   |
 
 ## [[Probably approximately correct learnable (PAC)|PAC learnable]] and [[Vapnik-Chervonenkis dimension|VC dimension]]
 
