@@ -236,7 +236,7 @@ If we follow through with the threat in the [[Grim trigger strategy]] this might
 
 This strategy feels counter intuitive - like a punch me twice and its all ok mentality.
 
-The strategy is in [[Nash equilibrium]] with itself, as both players start out cooperating and will continue forever. However it is also [[Subgame perfect]] and therefore a plausible threat. To see this lets start a game in every previous state. Will will represents turns as $(*,*)$ where the first position is what player $A$ did and the second is what player $B$ did. There are two options are moves cooperate $C$ and defect $D$.
+The strategy is in [[Nash equilibrium]] with itself, as both players start out cooperating and will continue forever. However it is also [[Subgame perfect]] and therefore a plausible threat. To see this lets start a game in every previous state. We will represents turns as $(*,*)$ where the first position is what player $A$ did and the second is what player $B$ did. There are two options are moves cooperate $C$ and defect $D$.
 > $$
  \begin{array}{c|cc}
  \ \mbox{Last} & 1 & 2 \\ \hline 
