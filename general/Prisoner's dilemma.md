@@ -18,8 +18,8 @@ type: example
 > $$
 > \begin{array}{c|cc}
 > \ \mbox{A \\ B} & \mbox{cooperate} & \mbox{defect}\\ \hline 
-> \mbox{cooperate} & (1,1) & (3,0) \\
-> \mbox{defect} & (0,3) & (2,2) \\
+> \mbox{cooperate} & (1,1) & (0,3) \\
+> \mbox{defect} & (3,0) & (2,2) \\
 > \end{array}
 > $$
 > If the player stays silent they pay an expected cost of 2, whereas if they testify they pay an expected cost of 1. So the optimum strategy is to testify. However by other testifying combined they are paying the largest cost.
