@@ -15,7 +15,7 @@ week: 6
 ## Joint distributions
 
 We can use the definition of [[Conditional probability|conditional probability]] to help calculate joint probabilities.
-$$\mathbb{P}[A, B] = \mathbb{P}[A \vert B] \mathbb{P}[B].$$
+$$\mathbb{P}]A \cap B] = \mathbb{P}[A, B] = \mathbb{P}[A \vert B] \mathbb{P}[B].$$
 If probabilities are independent this simplifies to
 $$\mathbb{P}[A, B] = \mathbb{P}[A] \ \mathbb{P}[B].$$
 We say simplifies as to keep track of $\mathbb{P}[A, B]$ if $A$ has domain of size $n$ and $B$ of size $m$ we only need to keep track of $n + m - 2$ values whereas in the first case we need to keep track of $nm - 1$ values.
