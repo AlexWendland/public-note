@@ -174,12 +174,56 @@ There are two important different cases to cover.
 
 #### Talking on the same network
 
-When hosts talk to each other on the same network they have 3 identifying bits of information.
+When hosts talk to each other on the same network they need 3 identifying bits of information.
 - MAC Address,
 - IP Address, and
 - subnet mask (this tells the host how many computers are on this network).
 
+Suppose we need host A to send data to host B.
 
+As host A is already part of the network it has the subnet mask already.
+
+We will assume host A already has host B's IP address through a DNS entry or an act of god.
+
+The only further information about host B host A needs is its mac address. To do this it will need to use the Address Resolution Protocol (ARP) as discussed before.
+
+Every host has an ARP cache that stores the MAC address against each IP address it knows in the network. If host B's address is already in host A's ARP cache it can use that to generate the layer 2 and 3 headers.
+
+If not it will need to make an ARP request to the network. It broadcasts its IP and MAC address on the network asking for the host at host B's IP address to respond. It does this by setting in the layer 2 header the all f's MAC address - an address reserved for the purpose of broadcasting to the local network.
+
+Once host B gets this ARP request it can populate its ARP cache entry for host A then send an ARP response directly back (Unicast) to host A with its MAC address.
+
+Now with host B's MAC address host A can now safely send the data directly to host B.
+
+This is how computers on the same network communicate with each they use ARP to populate their ARP cache so they can directly communicate with one another.
+
+#### Talking to computers on different networks
+
+In this set up host A needs to send data to host C but there is a router in-between them. We assume host A already has host C's IP address.
+
+It will know this IP is on a foreign network using host C's IP address and its own sub-net mask.
+
+The first step for host A to send data to host C is to get it to its local router. It will know the address of that router as it will be set to the default gateway for host A. If this is the first time host A has connected to the router it can use ARP to find the routers IP address.
+
+Host A now constructs the frame to send to the router it sets the layer 3 header using its IP address and host C's IP address. The it sets the layer 2 header using its MAC address and the routers MAC address and sends it off unicast to the network.
+
+At this point the router takes the frame it receives strips out the layer 2 header to get a packet then it uses it's own ARP table to attach a new layer 2 header to send it further on. This could be directly to host C or to another router.
+
+### Lesson 4: Everything switches do to communicate within a network
+
+These are the rules for switching so applies to anything that can do switching.
+
+When performing switching they only care about the layer 2 data so they don't know anything about IP addresses - only MAC addresses.
+
+In a switch each device connects to a different port. The switch will maintain a MAC address table that maps different ports to MAC addresses. There are then 3 operations a switch can do.
+
+- Learn,
+- Flood, and
+- Forward.
+
+When a switch gets a frame from a new host it can *learn* that hosts MAC address as it will be the source MAC address of that frame. So it can add this to its MAC address table.
+
+If the switch gets a message for a MAC address it doesn't know it will *flood* the network with that frame to make sure it gets to the intended host. This involves duplicating the frame and sending it on all ports that wasn't the port the package came from.
 
 
 
