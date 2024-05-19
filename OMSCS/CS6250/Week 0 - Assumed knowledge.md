@@ -225,7 +225,13 @@ When a switch gets a frame from a new host it can *learn* that hosts MAC address
 
 If the switch gets a message for a MAC address it doesn't know it will *flood* the network with that frame to make sure it gets to the intended host. This involves duplicating the frame and sending it on all ports that wasn't the port the package came from.
 
+The idea is that hosts that do not match that MAC address throw away the frame as it is not for them.
 
+If the switch already knows the hosts port in its MAC address table it *forwards* that frame on to the associated port for the destination.
+
+As this all works on layer 2 and doesn't involve IP addresses the router on the network is just another host from the switches perspective.
+
+Traffic going through a switch does not use a switches MAC address or IP address. However switches are hosts on that network so have an IP address and MAC address. These only get used if you are looking to connect directly to the switch to configure it.
 
 ## Preparation questions
 
