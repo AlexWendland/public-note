@@ -16,7 +16,7 @@ week: 0
 
 I followed this [Fundamentals course](https://www.youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi) to understand the basics.
 
-### Lecture 1: Hosts
+### Lecture 1: Hosts and devices
 
 Some terminology first:
 
@@ -33,8 +33,6 @@ Some terminology first:
 	- Subnetting: Normally host names a hierarchical. With sub networks owned by different teams having a given prefix.
 - Networks: Are just logical groupings of hosts with similar connectivity requirements.
 - Internet: Is just a massive interconnected network.
-
-### Lesson 2: Devices
 
 Signal strength decays over long distances.
 
@@ -103,6 +101,8 @@ For any packet of data we attach the source and destination IP address. This pac
 
 Address Resolution Protocols (ARP) combine layer 2 MAC addresses and layer 3 IP
 addresses.
+
+#### 4 
 
 ## Preparation questions
 
