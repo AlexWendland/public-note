@@ -334,7 +334,7 @@ To connect to the internet you need 4 bits of information:
 
 The DHCP will provide you all the above information once you connect to a new network. When you first join you send DHCP discover message first and be provided with all your information.
 
-### Lesson 7: How data moves through the internet
+### Lesson 8: 
 
 
 
