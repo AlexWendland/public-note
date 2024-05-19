@@ -278,7 +278,7 @@ There are many different Dynamic routing protocols RIP, OSPF, BGP, EIGRP, IS-IS,
 
 As routers have IP addresses on the networks associated to their interfaces they therefor have to have ARP tables for these networks.
 
-The main difference between ARP tables and router tables is that ARP tables always start empty and can be fully populated through ARP. If the router gets a frame it doesn't have an ARP entry for it will use ARP to discover it - wheras if a router gets a packet it doesn't have a routing entry for it will drop that packet. 
+The main difference between ARP tables and router tables is that ARP tables always start empty and can be fully populated through ARP. If the router gets a frame it doesn't have an ARP entry for it will use ARP to discover it - whereas if a router gets a packet it doesn't have a routing entry for it will drop that packet. 
 
 #### Hierarchy helps with scaling
 
@@ -286,9 +286,58 @@ If you use a tree like network to connect routers the longest path grows like $\
 
 With the entries in the routing table the subnet mask indicates what part of the IP address you need to match on. For example the routing table may look something like
 
+| IP address | Subnet mask | Interface |
+| ---------- | ----------- | --------- |
+| 10.40.55.0 | 24          | R1        |
+| 10.20.0.0  | 16          | R2        |
+
+the first entry would say any IP address matching the first 24 bits or the first 3 decimals of the IP address go here whereas the second entry says any address matching the first 16 bits or 2 decimals then go here. The second entry is called router summerization. It is actually referring to a lot of sub nets but groups them all index one entry as the first step is always to go to a single router. This can only be done if you arrange your IP addresses in a hierarchical manner.
+
+You can set a default route - this is one that matches on 0 bits. Then instead of dropping any unknown address you instead send it to the default route.
+
+>[!note] Matching criteria
+>If you have a default gateway then it will match with all addresses which might cause a conflict. By default the more specific a routing entry the higher priority that rule. Though rules can get more complicated than this.
+
+### Lesson 6: Protocols
+
+Protocol: Set of rules and messages that form an Internet standard.
+
+Some were already described above. Such as ARP (RFC 826).
+
+##### File Transfer Protocol (FTP)
+
+This is a simple file transfer format which starts with the client sending a RETR message with the file name to get a file from a server.
+
+#### Simple Mail Transfer Protocol (SMTP)
+
+This is the mail mail servers communicate with users.
+
+#### Hyper Text Transfer Protocol (HTTP)
+
+This is the underlying protocol for web servers.
+
+#### Secure Sockets Layer (SSL) and Transport Layer Security (TLS)
+
+Methods to establish secure communication between hosts.
+
+#### Domain Name System (DNS)
+
+This is the way you convert the name of your favourite website to their IP address.
+
+#### Dynamic Host Configuration Protocol (DHCP)
+
+To connect to the internet you need 4 bits of information:
+- Your IP address,
+- Your subnet mask,
+- The default network of your local network, and
+- The domain name server you will use.
+
+The DHCP will provide you all the above information once you connect to a new network. When you first join you send DHCP discover message first and be provided with all your information.
+
+### Lesson 7: How data moves through the internet
 
 
-### Lesson 6: 
+
 ## Preparation questions
 
 - What is a “protocol”? What are some of the most well-known and used protocols?
