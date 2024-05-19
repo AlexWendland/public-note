@@ -57,7 +57,7 @@ Whilst these devices are called routers and switches there is a more abstract co
 
 Many other devices can perform switching and routing other than a switch and a router.
 
-### Lesson 3: OSI model
+### Lesson 2: OSI model
 
 The ultimate goal of networking is to let hosts share data with one another. For this purpose the OSI model breaks down networking into 7 layers.
 
@@ -110,13 +110,31 @@ This layer is responsible for getting data going between two hosts to go to the 
 
 A packet sent to a server will also contain a layer 4 header including the port.
 
+#### 5 Session
+
+Layer 5 is responsible for separating out users who might be connecting through the same lower levels of the OSI model or the same user who is switching between different networks to connect to the same server.
+
+Browser cookies is an example of a layer 5 technology as it allows users to switch networks without having to login again.
+
+#### 6 Presentation
+
+Layer 6 is responsible for telling us the form the data is in. How should we break down the long binary expression into something the application can understand.
+
+For example in HTTP it says characters are grouped into 8 bit sequences and interpreted as extended asci characters.
+
+#### 7 Application
+
+This layer determines what to do with this data. In a HTTP web server these would be the key words get, post, head ect.
+
 #### 567 Session, Presentation, and Application
 
-When first created these layers had distinct purposes but now the distinction is a bit vague. Applications are free to control all of them.
+The roles and responsibilities of the last 3 layers get very mixed and end up being combined into one in other. Some applications might not implement some of them.
 
-These are what the applications do with the data once they have got it.
+For example HTTP uses cookies for layer 5, extended ASCII for layer 6, and keywords for layer 7. Whereas FTP doesn't have a way to implement layer 5, uses the same extended ASCII for layer 6 but different commands for layer 7.
 
-#### TCP/IP Model
+This mix of these layers is normally dependent on the protocol - so normally rolled up into one thing.
+
+#### TCP/IP Model (4 Layer)
 
 This is a more modern model of networks that has 4 layers.
 
@@ -128,6 +146,8 @@ This is a more modern model of networks that has 4 layers.
 	1. The same as layer 4 of the OSI model
 4. Application
 	1. The same as layer 5, 6, and 7 of the OSI model.
+
+![[model-comparison.png]]
 
 #### Encapsulation: Process of sending data
 
@@ -143,9 +163,18 @@ This is moved onto layer two to be passed along to its destination.
 
 The reverse process is called de-encapsulation.
 
+![[osci-model-summary.png]]
+
+### Lesson 3: How do hosts talk to one another
+
+There are two important different cases to cover.
+
+1. How host talk to one another on the same network, and
+2. How hosts talk to one another on different networks.
+
+#### Talking on the same network
 
 
-There is a competing model to the 
 
 ## Preparation questions
 
