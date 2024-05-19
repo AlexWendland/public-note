@@ -211,6 +211,8 @@ At this point the router takes the frame it receives strips out the layer 2 head
 
 ### Lesson 4: Everything switches do to communicate within a network
 
+#### Rules of a switch
+
 These are the rules for switching so applies to anything that can do switching.
 
 When performing switching they only care about the layer 2 data so they don't know anything about IP addresses - only MAC addresses.
@@ -231,8 +233,62 @@ If the switch already knows the hosts port in its MAC address table it *forwards
 
 As this all works on layer 2 and doesn't involve IP addresses the router on the network is just another host from the switches perspective.
 
-Traffic going through a switch does not use a switches MAC address or IP address. However switches are hosts on that network so have an IP address and MAC address. These only get used if you are looking to connect directly to the switch to configure it.
+>[!note] Switches MAC address
+>Traffic going through a switch does not use a switches MAC address or IP address. However switches are hosts on that network so have an IP address and MAC address. These only get used if you are looking to connect directly to the switch to configure it.
 
+#### Unicast flooding vs Brodcasts
+
+Flooding is an action the switch takes when it does not know the port for a provided MAC address. This replicates the frame and sends it on all available ports. 
+
+Broadcast is a type of frame that has the destination MAC address set as all f's. These will always get flooded by the switch as it will not have a port for the MAC address of all f's.
+
+#### Virtual Local Area Networks (VLAN's)
+
+VLAN's let you break a large physical switch into multiple virtual switches. It does this by breaking up its ports into small groups that each will be a virtual switch. This means messages within one port range can only go out to ports within that range.
+
+#### Multiple switches
+
+When multiple switches are on the same network - nothing really changes about the switches rules.
+
+### Lesson 5: Everything a router does to communicate between networks
+
+In RFC2460: Internet Protocol, Version 6 (IPv6) Specification it defines what a node, host, and router is.
+
+- Node: A devise that implements IPv6.
+- Router: A node that forwards IPV6 packets not explicitly addressed to itself.
+- Host: Any node that is not a router.
+
+In otherwards the only difference between a router and a host is that a host will drop a packet not matching its own IP address whereas a router will do its best to get that packet to its home.
+
+A router keeps a table of all networks it knows about in its *routing table*. Different networks are identified by the part of the IP space associated to that network. The router will bind these different network spaces to interfaces of the router.
+
+> [!note] Unknown packet address
+> If a router gets a packet it does not know the address of it will just drop that packet.
+
+#### Routing table
+
+There are 3 ways a router can populate its routing table
+1. Directly connected: This is for networks directly connected to the router.
+2. Static route: This is a route that has been manually configured on a router. Instead on set of subdomains mapping to an interface it will instead have an IP address to forward that packet on to.
+3. Dynamic routing: This is the same in structure to the static rout but instead of being manually added this gets populated by routers sharing known addresses with one another.
+
+There are many different Dynamic routing protocols RIP, OSPF, BGP, EIGRP, IS-IS, ect They differ in how they discover new routers, what addresses they share, and how they share thous addresses.
+
+#### Difference between an ARP table and a Router table
+
+As routers have IP addresses on the networks associated to their interfaces they therefor have to have ARP tables for these networks.
+
+The main difference between ARP tables and router tables is that ARP tables always start empty and can be fully populated through ARP. If the router gets a frame it doesn't have an ARP entry for it will use ARP to discover it - wheras if a router gets a packet it doesn't have a routing entry for it will drop that packet. 
+
+#### Hierarchy helps with scaling
+
+If you use a tree like network to connect routers the longest path grows like $\log(n)$ instead of linear designs that will grown as $n$. However there are more reasons to use a Hierarchy a base on the IP address.
+
+With the entries in the routing table the subnet mask indicates what part of the IP address you need to match on. For example the routing table may look something like
+
+
+
+### Lesson 6: 
 ## Preparation questions
 
 - What is a “protocol”? What are some of the most well-known and used protocols?
