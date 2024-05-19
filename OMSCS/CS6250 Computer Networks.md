@@ -27,5 +27,5 @@ Throughout the course, students will work on hands-on projects to learn about ro
 - [OMSCS page](https://omscs.gatech.edu/cs-6250-computer-networks)
 
 ## Lectures
-
+- [[Week 0 - Assumed knowledge]]
 - [[Week 1 - Introduction]]
