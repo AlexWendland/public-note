@@ -102,7 +102,50 @@ For any packet of data we attach the source and destination IP address. This pac
 Address Resolution Protocols (ARP) combine layer 2 MAC addresses and layer 3 IP
 addresses.
 
-#### 4 
+#### 4 Transport
+
+This layer is responsible for getting data going between two hosts to go to the correct service. It does this using ports. There are two different types of ports.
+- 0-65535 TCP, which favours reliability, or
+- 0-65535 UDP, which favours efficiency.
+
+A packet sent to a server will also contain a layer 4 header including the port.
+
+#### 567 Session, Presentation, and Application
+
+When first created these layers had distinct purposes but now the distinction is a bit vague. Applications are free to control all of them.
+
+These are what the applications do with the data once they have got it.
+
+#### TCP/IP Model
+
+This is a more modern model of networks that has 4 layers.
+
+1. Network access
+	1. Combines layer 1 and 2 of the OSI model
+2. Internet
+	1. The same as layer 3 of the OSI model
+3. Host to host
+	1. The same as layer 4 of the OSI model
+4. Application
+	1. The same as layer 5, 6, and 7 of the OSI model.
+
+#### Encapsulation: Process of sending data
+
+For an application to send data to another application across a network it needs to encapsulate it.
+
+Layer 4 takes the data and adds the source and destination ports to the data to make it a *segment*.
+
+Layer 3 takes the segment and adds a source and destination IP address to make it a *packet*.
+
+Layer 2 takes the packet and adds a source and destination MAC address to make it a *frame*.
+
+This is moved onto layer two to be passed along to its destination.
+
+The reverse process is called de-encapsulation.
+
+
+
+There is a competing model to the 
 
 ## Preparation questions
 
