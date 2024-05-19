@@ -174,6 +174,13 @@ There are two important different cases to cover.
 
 #### Talking on the same network
 
+When hosts talk to each other on the same network they have 3 identifying bits of information.
+- MAC Address,
+- IP Address, and
+- subnet mask (this tells the host how many computers are on this network).
+
+
+
 
 
 ## Preparation questions
