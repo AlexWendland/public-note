@@ -57,7 +57,7 @@ Whilst these devices are called routers and switches there is a more abstract co
 
 Many other devices can perform switching and routing other than a switch and a router.
 
-### Lesson 2: OSI model
+### Lesson 2: Open System Interconnection (OSI) model
 
 The ultimate goal of networking is to let hosts share data with one another. For this purpose the OSI model breaks down networking into 7 layers.
 
@@ -334,41 +334,80 @@ To connect to the internet you need 4 bits of information:
 
 The DHCP will provide you all the above information once you connect to a new network. When you first join you send DHCP discover message first and be provided with all your information.
 
-### Lesson 8: 
-
-
-
 ## Preparation questions
 
 - What is a “protocol”? What are some of the most well-known and used protocols?
 
+A protocol is a set of messages and rules that are an internet standard. They can be found defined in RFC's. Some popular protocols are ARP, HTTP, TLS, and DNS.
 
 - What is an ISP? What is an AS?
-    
+
+A ISP is an internet service provider. The offer connectivity to their network.
+
+AS???
+
 - What is the OSI layer model? What is the primary responsibility of each layer?
-    
+
+The Open System Interconnection model is the 7 conceptual layers of how connected systems work.
+
+1. Physical: Cables and transportation of data.
+2. Data Link: Devices that move data on and off the physical layer. Identifies actors by MAC addresses.
+3. Network: Devices that work as the ultimate destination for data within a network. Uses IP addresses to distinguish actors.
+4. Transport: The passes data going to the same host to different processes. This uses ports to distinguish entities.
+5. Session: This allows users using the same process to be distinguished.
+6. Presentation: This determines how the data should be interpreted.
+7. Application: How the data will be used to run commands.
+
 - How does the layered architecture of the internet allow fundamentally different technologies (such as WiFi vs. Ethernet) to be used together?
-    
+
+It established clear separation of concerns and the interfaces in which the operate by. For example for ethernet or Wifi as long as the data has been encapsulated properly these Physical layers are only responsible for getting data to the next entity in the network. 
+
 - What is the client-server model? What is the peer-to-peer model? What are the strengths and weaknesses of each?
-    
+
+????
+
 - What is a port (number)? How is it used?
-    
+
+A port number is how Layer 4 distinguishes different applications. It is used to separate up messages going to the same host.
+
 - What’s the difference between a well-known port number and an ephemeral port?
-    
+
+????
+
 - What is TCP? What is UDP? What are some of the major differences between them?
-    
+
+????
+
 - If you were developing a brand new application layer protocol, what aspects of TCP would make it more appealing to use? What aspects of UDP would make it more appealing to use?
-    
+
+???
+
 - What is a socket? How is it used?
-    
+
+???
+
 - Can you generally describe how HTTP works in an example (how the HTTP request is initiated, how the webserver receives the request, how the content is returned, etc.)?
-    
+
+????
+
 - What is an IP address? How is it different than a MAC Address?
-    
+
+An IP address is the unique identifier for a host. This works for hosts that are not not the same network. This will be added to the message at Layer 3 and is responsible for checking the message is going to the correct host. MAC addresses are encapsulated at layer 2 and are only responsible for getting the frame to the correct host within a network.
+
 - What is a switch? What is a router? What are the major differences between the roles that they play in a network, classically?
-    
-- What is a default gateway?
-    
+
+Switches are responsible for getting data between hosts on the same network. The have an ARP table and can do 3 operations, learn, flood and forward. These allow for the switch to learn about new hosts that are connected to its ports and find their MAC addresses. This device only cares about the layer 2 information of the message.
+
+Routing on the other hand is responsible for getting packets to hosts that are not on their network. The maintain a route table that informs them about the IP addresses it knows where to route packets to. This operates on the Layer 3 information of the packet.
+
+- What is a default gateway
+
+The default gateway is the address of the main router in that network it is IP address that hosts add the MAC address of if the IP address is not in this network.
+
 - What happens to a message as it gets sent across a network, as far as encapsulation and protocol headers?
-    
+
+Suppose we have a message we need to send to an application first we encode that information using the specification of layer 6 of the target application. We add headers to identify this user session in layer 5. Then we add the randomly assigned source port of the application sending the data and the destination port of the application we need to send the information to. Now we add the IP address of the machine sending the data and the IP address of the machine we want to send the data to. Then we use that IP address and the subnet mask to determine if the machine is on our network or a foriegn network. Then we either uses its address or the default gateway's address to look a MAC address of the next hop in the network in our ARP table - if we don't have it we use ARP to determine that MAC address in the network.
+
 - What is DNS? At a high level, how does it work?
+
+Domain Name Service map domain names to IP addresses. When connecting to a domain name like www.example.com first you go to your domain name provider to look up the associated IP address then once you have done that you can send the message to the server. Note this doesn't resolve the port of the application this would need to be known before hand. Lots of standard protocols use default ports.
