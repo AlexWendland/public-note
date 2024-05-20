@@ -344,7 +344,7 @@ A protocol is a set of messages and rules that are an internet standard. They ca
 
 A ISP is an internet service provider. The offer connectivity to their network.
 
-AS???
+A Autonomous system (AS) is a collection of IP addresses with a common prefix all controlled by a single administrative entity or domain.
 
 - What is the OSI layer model? What is the primary responsibility of each layer?
 
@@ -364,7 +364,29 @@ It established clear separation of concerns and the interfaces in which the oper
 
 - What is the client-server model? What is the peer-to-peer model? What are the strengths and weaknesses of each?
 
-????
+The client-server model is a distributed application structure with two roles. There are servers providing resources and clients requesting them. For example, a web-server follows the client server model. The user of the browser is the client and the server providing web-pages is the server.
+
+Advantages
+- A service that is centrally managed is easier to monitor.
+- Easier to apply access controls and security to the system.
+- With a centralised system you can gaurentee data integrity more easily.
+
+Disadvantages
+- Single point of failure if the server goes down.
+- Higher start up cost as you require the infrastructure in the first place.
+- Scaling can become complex as the server can become a big bottle neck.
+
+The peer-to-peer model is a decentralised application architecture which has each participant being both consumer and provider of resources. Each peer offers some of its resources up to the network for other peers to use without central coordination. An example of this is Torrent file sharing.
+
+Advantages
+- Naturally scales as more people use the system.
+- Cost effective as there is no centrally managed servers.
+- Fault tolerant as any number of nodes going down does not stop the system working.
+
+Disadvantages
+- Security challenges as no central authority is dictating who is allowed into the network.
+- Can not gaurentee data integrity of assets on the network. 
+- Hard to manage and monitor as there is no central place collecting logs.
 
 - What is a port (number)? How is it used?
 
@@ -372,23 +394,51 @@ A port number is how Layer 4 distinguishes different applications. It is used to
 
 - What’s the difference between a well-known port number and an ephemeral port?
 
-????
+Ports break down into 3 groups
+1. 0-1023 are well known ports,
+2. 1024-49151 are user or registered ports, and
+3. 49152-65535 are ephemeral ports.
+
+Well known ports are used for system processes and protocols. For example port 80 is used by webservers for HTTP.
+
+Registered ports are used for user applications that need a port to work off of.
+
+The ephemeral ports or dynamic ports are used for private or temporary uses for example to connect to a web browser and receive a web page. 
 
 - What is TCP? What is UDP? What are some of the major differences between them?
 
-????
+Transmission Control Protocol (TCP)
+
+This is reliable and verified way to send data. The guarantees data integrity on the other end. This starts with a 3 way handshake:
+1. The server sends a syn (synchronising) message.
+2. The client sends a syn-ach message (Acknowledgement)
+3. Lastly the server sends an ach back to that.
+This opens a connection between the two hosts.
+
+Then data is sent with sequence numbers which has a checksum to verify the data is correct on the other side. The client returns ach messages with these sequence number to inform the host it was received. The client also checks the check sum on their side. If the check sum doesn't match it asks for the data again.
+
+Lastly they close the session with a similar 3 way handshake as before.
+
+User Datagram Protocol (UDP)
+
+This protocol includes a checksum but does not sequence data or check if the client has received it. It is used when applications are latency sensitive such as voice calls or video gaming.
 
 - If you were developing a brand new application layer protocol, what aspects of TCP would make it more appealing to use? What aspects of UDP would make it more appealing to use?
 
-???
+I would use TCP if I wanted to gaurentee integrity of the data and didn't care about latency whereas I would use UDP if I wanted a fast connection where packet replay was not important.
 
 - What is a socket? How is it used?
 
-???
+A socket is the collection of 3 bits of information:
+- A transport protocal such as TCP or UDP,
+- An IP address, and
+- A port.
+
+They are used by applications to get send and receive data. This is the PO box for this application on the internet.
 
 - Can you generally describe how HTTP works in an example (how the HTTP request is initiated, how the webserver receives the request, how the content is returned, etc.)?
 
-????
+Yes I think so but that is a lot of writing.
 
 - What is an IP address? How is it different than a MAC Address?
 
