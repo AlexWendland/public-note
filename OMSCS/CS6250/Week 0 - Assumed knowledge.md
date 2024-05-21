@@ -20,35 +20,40 @@ I followed this [Fundamentals course](https://www.youtube.com/playlist?list=PLIF
 
 Some terminology first:
 
-- Hosts: Any device that sends or revives traffic.
-	- Client: Initialises a request
-	- Server: Responds to that request.
+![[Host (networks)]]
+
+![[Client]]
+
+![[Server]]
 
 > [!Note] 
 > These terms are relative to a single request a host can be a client in another request.
 
-- Server: Is just a host that has software to serve specific kinds of requests.
-- IP Address: Identity for a host on a network. This is 32-[[Bit|bits]] long.
-	- These 32 bits are normally broken down into 4 8-bit chunks and written in decimal format as the human readable address. 
-	- Subnetting: Normally host names a hierarchical. With sub networks owned by different teams having a given prefix.
-- Networks: Are just logical groupings of hosts with similar connectivity requirements.
-- Internet: Is just a massive interconnected network.
+![[IP address]]
+
+![[Subnets]]
+
+![[Network]]
+
+![[Internet]]
 
 Signal strength decays over long distances.
 
-- Repeater: Just repeats a signal to increase signal distance.
+![[Repeater]]
 
 When joining lots of computers together there is a scaling problem if they all need to connect to one another. So instead we us a single entity to act as an intermediary.
 
-- Hub: This is a multi-port repeater. I.e. everything it receives it sends to all connected devices.
-- Bridges: Only have two ports but they know which devices are on either side. They will only repeat signals if the destination host is on the opposite side of the bridge.
-- Switch: A multi-port bridge. This facilitates communication within a network.
-	- Hosts on a switch normally all belong to a subnet and will have the same IP address prefix.
-- Router: facilitates communication between networks.
-	- Provides a traffic control point between networks. This is a good place to apply security filtering or redirecting.
-	- Routing table: Routers keep a table of which addresses belong to which connection for redirecting messages like a switch.
-	- Gateway: In addition to the routing table routers have an IP address on each network it is connected to, this is called the gateway address.
-	- Routers make the hierarchy on the internet possible by owning the prefix for that sub network.
+![[Hub]]
+
+![[Bridge]]
+
+![[Switch]]
+
+![[Router]]
+
+![[Gateway]]
+
+Routers make the hierarchy on the internet possible by owning the prefix for that sub network.
 
 Whilst these devices are called routers and switches there is a more abstract concept here.
 
@@ -252,13 +257,15 @@ When multiple switches are on the same network - nothing really changes about th
 
 ### Lesson 5: Everything a router does to communicate between networks
 
-In RFC2460: Internet Protocol, Version 6 (IPv6) Specification it defines what a node, host, and router is.
+In [[RFC2460 Internet Protocol, Version 6 (IPv6) Specification]] it defines what a node, host, and router is.
 
-- Node: A devise that implements IPv6.
-- Router: A node that forwards IPV6 packets not explicitly addressed to itself.
-- Host: Any node that is not a router.
+![[Node (IPv6)]]
 
-In otherwards the only difference between a router and a host is that a host will drop a packet not matching its own IP address whereas a router will do its best to get that packet to its home.
+![[Router (IPv6)]]
+
+![[Host (networks)]]
+
+In other words the only difference between a router and a host is that a host will drop a packet not matching its own IP address whereas a router will do its best to get that packet to its home.
 
 A router keeps a table of all networks it knows about in its *routing table*. Different networks are identified by the part of the IP space associated to that network. The router will bind these different network spaces to interfaces of the router.
 
