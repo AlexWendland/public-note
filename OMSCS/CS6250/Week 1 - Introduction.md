@@ -79,9 +79,9 @@ Holding the Internet Accountable
 
 An Algorithm for Distributed Computation of a Spanning Tree in an Extended LAN [https://www.it.uu.se/edu/course/homepage/datakom/ht06/slides/sta-perlman.pdfLinks to an external site.](https://www.it.uu.se/edu/course/homepage/datakom/ht06/slides/sta-perlman.pdf)
 
-## Why study computer networks
+## Layer architecture of the internet
 
-- Internet is a massive area of growth!
-- Networks more generally play an influential role in society.
-- Networking is used lots of cross disciplinary research and is cross cutting through computer science.
+The internet stack is a layered stack of protocols where each layer depends loosely on the layer below and is requried by the layer above. This allows doe scalability molecularity and the flexibility to add or remove components.
+
+The first version of this structure was the [[Open Systems interconnection (OSI) model|OSI model]] - though later refinements came about such as [[Internet Protocol Stack (IPS) 5 layers|IPS model]] which combined some layers.
 
