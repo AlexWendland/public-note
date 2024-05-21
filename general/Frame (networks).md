@@ -1,14 +1,14 @@
 ---
 aliases:
-  - packet
-  - packets
+  - frame
 checked: false
 created: 2024-05-21
 last_edited: 2024-05-21
 publish: false
-tags: 
+tags:
+  - networks
 type: definition
 ---
->[!tldr] Packets
+>[!tldr] Frame (networks)
 >Definition here
 
