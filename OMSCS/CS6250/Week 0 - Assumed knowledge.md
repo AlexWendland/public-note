@@ -53,12 +53,12 @@ When joining lots of computers together there is a scaling problem if they all n
 
 ![[Gateway]]
 
-Routers make the hierarchy on the internet possible by owning the prefix for that sub network.
+[[Router|Routers]] make the hierarchy on the internet possible by owning the prefix for that [[Subnets|subnet]].
 
-Whilst these devices are called routers and switches there is a more abstract concept here.
+Whilst these devices are called [[Router|routers]] and [[Switch|switches]] there is a more abstract concept here.
 
-- Switching: The process of moving data within networks.
-- Routing: The process of moving data between networks.
+- [[Switching]]: The process of moving data within networks.
+- [[Routing]]: The process of moving data between networks.
 
 Many other devices can perform switching and routing other than a switch and a router.
 
@@ -91,8 +91,7 @@ These are tools that put data on or off the physical transport layer. For exampl
 
 These devices all have unique MAC addresses. 
 
->[!tip] MAC Addresses
->These are 48-bit addresses that represent physical devices. These are made human readable by representing them as 12 hex digits (these are grouped into 2 characters and separated by - for windows : for Linux and in groups of 4 separated by a . SISCO routers and switches)
+![[MAC address]]
 
 #### 3 Network
 
