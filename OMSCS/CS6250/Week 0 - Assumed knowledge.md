@@ -74,12 +74,7 @@ Many other devices can perform switching and routing other than a switch and a r
 
 ![[Layer 3 Network]]
 
-What is the difference between MAC addresses and IP addresses?
-
-For any packet of data we attach the source and destination IP address. This packet may need to travel through different networks. For this purpose within a network we attach the source and destination MAC address for where it has to go within that network. This is then removed when it goes through a router.
-
-Address Resolution Protocols (ARP) combine layer 2 MAC addresses and layer 3 IP
-addresses.
+![[Difference between an IP and MAC address]]
 
 #### 4 Transport
 
@@ -375,34 +370,13 @@ A port number is how Layer 4 distinguishes different applications. It is used to
 
 - What’s the difference between a well-known port number and an ephemeral port?
 
-Ports break down into 3 groups
-1. 0-1023 are well known ports,
-2. 1024-49151 are user or registered ports, and
-3. 49152-65535 are ephemeral ports.
-
-Well known ports are used for system processes and protocols. For example port 80 is used by webservers for HTTP.
-
-Registered ports are used for user applications that need a port to work off of.
-
-The ephemeral ports or dynamic ports are used for private or temporary uses for example to connect to a web browser and receive a web page. 
+![[Port]]
 
 - What is TCP? What is UDP? What are some of the major differences between them?
 
-Transmission Control Protocol (TCP)
+![[Transmission Control Protocol (TCP)]]
 
-This is reliable and verified way to send data. The guarantees data integrity on the other end. This starts with a 3 way handshake:
-1. The server sends a syn (synchronising) message.
-2. The client sends a syn-ach message (Acknowledgement)
-3. Lastly the server sends an ach back to that.
-This opens a connection between the two hosts.
-
-Then data is sent with sequence numbers which has a checksum to verify the data is correct on the other side. The client returns ach messages with these sequence number to inform the host it was received. The client also checks the check sum on their side. If the check sum doesn't match it asks for the data again.
-
-Lastly they close the session with a similar 3 way handshake as before.
-
-User Datagram Protocol (UDP)
-
-This protocol includes a checksum but does not sequence data or check if the client has received it. It is used when applications are latency sensitive such as voice calls or video gaming.
+![[User Datagram Protocol (UDP)]]
 
 - If you were developing a brand new application layer protocol, what aspects of TCP would make it more appealing to use? What aspects of UDP would make it more appealing to use?
 
@@ -410,12 +384,7 @@ I would use TCP if I wanted to gaurentee integrity of the data and didn't care a
 
 - What is a socket? How is it used?
 
-A socket is the collection of 3 bits of information:
-- A transport protocal such as TCP or UDP,
-- An IP address, and
-- A port.
-
-They are used by applications to get send and receive data. This is the PO box for this application on the internet.
+![[Socket]]
 
 - Can you generally describe how HTTP works in an example (how the HTTP request is initiated, how the webserver receives the request, how the content is returned, etc.)?
 
