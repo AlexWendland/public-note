@@ -62,7 +62,7 @@ Whilst these devices are called [[Router|routers]] and [[Switch|switches]] there
 
 Many other devices can perform switching and routing other than a switch and a router.
 
-### Lesson 2: Open System Interconnection (OSI) model
+### Lesson 2: [[Open Systems interconnection (OSI) model]]
 
 The ultimate goal of networking is to let hosts share data with one another. For this purpose the OSI model breaks down networking into 7 layers.
 
