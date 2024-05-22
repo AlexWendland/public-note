@@ -76,13 +76,7 @@ Many other devices can perform switching and routing other than a switch and a r
 
 ![[Difference between an IP and MAC address]]
 
-#### 4 Transport
-
-This layer is responsible for getting data going between two hosts to go to the correct service. It does this using ports. There are two different types of ports.
-- 0-65535 TCP, which favours reliability, or
-- 0-65535 UDP, which favours efficiency.
-
-A packet sent to a server will also contain a layer 4 header including the port.
+![[Layer 4 Transport|layer 4]]
 
 #### 5 Session
 
@@ -288,9 +282,7 @@ This is a simple file transfer format which starts with the client sending a RET
 
 This is the mail mail servers communicate with users.
 
-#### Hyper Text Transfer Protocol (HTTP)
-
-This is the underlying protocol for web servers.
+![[Hyper Text Transfer Protocol (HTTP)]]
 
 #### Secure Sockets Layer (SSL) and Transport Layer Security (TLS)
 
