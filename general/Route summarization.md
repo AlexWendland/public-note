@@ -10,5 +10,5 @@ tags:
 type: definition
 ---
 >[!tldr] Route summarization
->The process of route summarization is to combine entries in the routing table that have to same common prefix if they all go to the same router. To do this though you need to know that all bother addresses on that [[Subnets|subnet]] need to go to that [[Router|router]].
+>The process of route summarization is to combine entries in the [[Routing table|routing table]] that have to same common prefix if they all go to the same router. To do this though you need to know that all bother addresses on that [[Subnets|subnet]] need to go to that [[Router|router]].
 

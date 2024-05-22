@@ -64,32 +64,11 @@ Many other devices can perform switching and routing other than a switch and a r
 
 ### Lesson 2: [[Open Systems interconnection (OSI) model]]
 
-The ultimate goal of networking is to let hosts share data with one another. For this purpose the OSI model breaks down networking into 7 layers.
+![[Open Systems interconnection (OSI) model]]
 
-1. Physical
-2. Data Link
-3. Network
-4. Transport
-5. Session
-6. Presentation
-7. Application
+![[Layer 1 Physical]]
 
-#### 1 Physical
-
-Tools that help transport the physical 10 bits from one host to another. For example:
-- Cables,
-- Wifi,
-- Repeaters, or
-- Hubs.
-
-#### 2 Data Link
-
-These are tools that put data on or off the physical transport layer. For example:
-- Network Interface Cards (NIC),
-- Wifi access cards, or
-- Switches.
-
-These devices all have unique MAC addresses. 
+![[Layer 2 Data Link]]
 
 ![[MAC address]]
 
