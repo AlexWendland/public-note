@@ -11,5 +11,7 @@ tags:
 type: definition
 ---
 >[!tldr] Layer 3 Network
->Definition here
+> This layer works with [[Node (IPv6)|nodes]] identified by an [[IP address|IP addresses]]. This applies a header to a [[Segment]] with the source and destination [[IP address]]. Devices at level 3 are:
+>- [[Host (networks)|hosts]], or
+>- [[Router|Routers]].
 

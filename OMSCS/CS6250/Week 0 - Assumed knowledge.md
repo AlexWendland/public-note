@@ -72,11 +72,7 @@ Many other devices can perform switching and routing other than a switch and a r
 
 ![[MAC address]]
 
-#### 3 Network
-
-This layer works with entities identified by an IP address. Devices at level 3 are:
-- Hosts, or
-- Routers.
+![[Layer 3 Network]]
 
 What is the difference between MAC addresses and IP addresses?
 
