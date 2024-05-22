@@ -10,5 +10,5 @@ tags:
 type: definition
 ---
 >[!tldr] Hyper Text Transfer Protocol (HTTP)
->Definition here
+>The underlying [[Protocol (networks)|protocol]] for web-servers. 
 

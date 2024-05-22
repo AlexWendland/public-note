@@ -19,9 +19,8 @@ type: definition
 >2. 1024-49151 are user or registered ports, and
 >3. 49152-65535 are ephemeral ports.
 >
->Well known ports are used for system processes and protocols. For example port 80 is used by webservers for HTTP.
+>Well known ports are used for system processes and protocols. For example port 80 is used by webservers for [[Hyper Text Transfer Protocol (HTTP)|HTTP]].
 >
 >Registered ports are used for user applications that need a port to work off of.
 >
 >The ephemeral ports or dynamic ports are used for private or temporary uses for example to connect to a web browser and receive a web page. 
-
