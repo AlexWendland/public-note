@@ -100,7 +100,7 @@ Layer 3 takes the segment and adds a source and destination IP address to make i
 
 Layer 2 takes the packet and adds a source and destination MAC address to make it a *frame*.
 
-This is moved onto layer two to be passed along to its destination.
+This is moved onto layer one to be passed along to its destination.
 
 The reverse process is called de-encapsulation.
 
