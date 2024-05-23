@@ -154,6 +154,10 @@ Most home [[Router|routers]] have a [[Network Address Translation (NAT)|NAT]] in
 
 ![[Firewall]]
 
+## Shape of the internet
+
+![[Internet protocol stack hourglass shape]]
+
 
 
 
