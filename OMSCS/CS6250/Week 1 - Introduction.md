@@ -144,3 +144,16 @@ The end hosts have to implement encapsulation and de-encapsulation however inter
 
 ![[End to end principle]]
 
+In simple terms this states that the network core should be simple and minimal, while the end systems should carry the intelligence. Any feature in the core of the network should be shared by all applications. Therefore there could be error checking at the physical layer if that error checking was done without needing to know the structure of the original message.
+
+### Violations of the end to end principle
+
+![[Network Address Translation (NAT)]]
+
+Most home [[Router|routers]] have a [[Network Address Translation (NAT)|NAT]] in them this means your home internet will have a single [[IP address]] to the outside world.
+
+![[Firewall]]
+
+
+
+
