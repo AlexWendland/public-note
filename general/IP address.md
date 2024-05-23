@@ -1,6 +1,5 @@
 ---
 aliases:
-  - IP
   - IP addresses
 checked: false
 created: 2024-05-21

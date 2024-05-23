@@ -4,11 +4,11 @@ aliases:
 checked: false
 created: 2024-05-21
 last_edited: 2024-05-21
-publish: false
+publish: true
 tags:
   - networks
 type: definition
 ---
 >[!tldr] Frame (networks)
->Definition here
+>During the process of [[Encapsulation|encapsulation]] the *frame* is a [[Packets|packet]] with added [[MAC address|MAC addresses]] for the source and destination.
 
