@@ -158,6 +158,16 @@ Most home [[Router|routers]] have a [[Network Address Translation (NAT)|NAT]] in
 
 ![[Internet protocol stack hourglass shape]]
 
+There is a model that was purposed to explain this shape.
 
+![[Evolutionary Architecture model (EvoArch)]]
+
+In some set ups of this model the width of the layers tend to follow that of the internet with a similar hourglass shape. Implying there might not be anything particularly special about [[Internet Protocol (IP)]], [[User Datagram Protocol (UDP)|UDP]], or [[Transmission Control Protocol (TCP)|TCP]] but more there was always going to be a bottle neck here.
+
+These [[Protocol (networks)|protocols]] do defend one another for a replacement to [[Internet Protocol (IP)|IP]] to come about it would have to rival being used by both [[Transmission Control Protocol (TCP)|TCP]] and [[User Datagram Protocol (UDP)|UDP]]. 
+
+This is good to keep in mind for development for any layered system - if you don't want monopolies to form you need to garentee a variety of non-competing protocols at each layer.
+
+## Optional: Clean slate for the internet
 
 
