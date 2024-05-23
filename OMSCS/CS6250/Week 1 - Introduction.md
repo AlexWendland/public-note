@@ -168,6 +168,23 @@ These [[Protocol (networks)|protocols]] do defend one another for a replacement 
 
 This is good to keep in mind for development for any layered system - if you don't want monopolies to form you need to garentee a variety of non-competing protocols at each layer.
 
-## Optional: Clean slate for the internet
+## Devices
 
+[[Layer 1 Physical|layer 1]]
+
+![[Repeater]]
+
+![[Hub]]
+
+[[Layer 2 Data Link|layer 2]]
+
+![[Bridge]]
+
+![[Switch]]
+
+[[Layer 3 Network|layer 3]]
+
+![[Router]]
+
+## Spanning tree algorithm
 
