@@ -78,44 +78,17 @@ Many other devices can perform switching and routing other than a switch and a r
 
 ![[Layer 4 Transport|layer 4]]
 
-#### 5 Session
+![[Layer 5 Session]]
 
-Layer 5 is responsible for separating out users who might be connecting through the same lower levels of the OSI model or the same user who is switching between different networks to connect to the same server.
+![[Layer 6 Presentation]]
 
-Browser cookies is an example of a layer 5 technology as it allows users to switch networks without having to login again.
+![[Layer 7 Application]]
 
-#### 6 Presentation
+The main other model of the internet is [[Internet Protocol Stack (IPS) 5 layers|IPS model]]
 
-Layer 6 is responsible for telling us the form the data is in. How should we break down the long binary expression into something the application can understand.
+![[Internet Protocol Stack (IPS) 5 layers|IPS model]]
 
-For example in HTTP it says characters are grouped into 8 bit sequences and interpreted as extended asci characters.
-
-#### 7 Application
-
-This layer determines what to do with this data. In a HTTP web server these would be the key words get, post, head ect.
-
-#### 567 Session, Presentation, and Application
-
-The roles and responsibilities of the last 3 layers get very mixed and end up being combined into one in other. Some applications might not implement some of them.
-
-For example HTTP uses cookies for layer 5, extended ASCII for layer 6, and keywords for layer 7. Whereas FTP doesn't have a way to implement layer 5, uses the same extended ASCII for layer 6 but different commands for layer 7.
-
-This mix of these layers is normally dependent on the protocol - so normally rolled up into one thing.
-
-#### TCP/IP Model (4 Layer)
-
-This is a more modern model of networks that has 4 layers.
-
-1. Network access
-	1. Combines layer 1 and 2 of the OSI model
-2. Internet
-	1. The same as layer 3 of the OSI model
-3. Host to host
-	1. The same as layer 4 of the OSI model
-4. Application
-	1. The same as layer 5, 6, and 7 of the OSI model.
-
-![[model-comparison.png]]
+![[Connection between OSI and IPS models]]
 
 #### Encapsulation: Process of sending data
 
@@ -272,11 +245,9 @@ You can set a default route - this is one that matches on 0 bits. Then instead o
 
 Protocol: Set of rules and messages that form an Internet standard.
 
-Some were already described above. Such as ARP (RFC 826).
+Some were already described above. Such as [[Address Resolution Protocol (ARP)|ARP]] (RFC 826).
 
-##### File Transfer Protocol (FTP)
-
-This is a simple file transfer format which starts with the client sending a RETR message with the file name to get a file from a server.
+![[File Transfer Protocol (FTP)|FTP]]
 
 #### Simple Mail Transfer Protocol (SMTP)
 

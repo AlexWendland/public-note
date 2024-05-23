@@ -17,4 +17,7 @@ type: definition
 >3. Network Layer
 >4. Data Link Layer
 >5. Physical Layer
+>
+>It is based of the [[Open Systems interconnection (OSI) model|OSI model]] and compares as follows.
+>![[model-comparison.png]]
 
