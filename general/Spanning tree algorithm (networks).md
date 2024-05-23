@@ -25,4 +25,4 @@ Once it receives some configuration messages, it then recalculates what it think
 
 To calculate the spanning tree it keeps track of which node is its next nearest neighbour to the root. It splits ties of equal distance paths by taking the path that ends in the root with the lowest ID.
 
-A node will only send another configuration message if its updated its best guess at the root or its distance to that root. Then only to neighbours that didn't say that node was the root.
+A node will only send another configuration message if its updated its best guess at the root or its distance to that root. Then only to neighbours that didn't say that node was the root or it had a larger distance.
