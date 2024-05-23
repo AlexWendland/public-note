@@ -2,13 +2,15 @@
 aliases:
   - packet
   - packets
+  - datagram
 checked: false
 created: 2024-05-21
 last_edited: 2024-05-21
-publish: false
-tags: 
+publish: true
+tags:
+  - networks
 type: definition
 ---
 >[!tldr] Packets
->Definition here
+>During the process of [[Encapsulation|encapsulation]] a packet is a [[Segment|segment]] with the additional headers for the destination and source [[IP address]]. This is sometimes refereed to as the data-gram.
 

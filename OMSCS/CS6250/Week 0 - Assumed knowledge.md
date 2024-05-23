@@ -90,21 +90,7 @@ The main other model of the internet is [[Internet Protocol Stack (IPS) 5 layers
 
 ![[Connection between OSI and IPS models]]
 
-#### Encapsulation: Process of sending data
-
-For an application to send data to another application across a network it needs to encapsulate it.
-
-Layer 4 takes the data and adds the source and destination ports to the data to make it a *segment*.
-
-Layer 3 takes the segment and adds a source and destination IP address to make it a *packet*.
-
-Layer 2 takes the packet and adds a source and destination MAC address to make it a *frame*.
-
-This is moved onto layer one to be passed along to its destination.
-
-The reverse process is called de-encapsulation.
-
-![[osci-model-summary.png]]
+![[Encapsulation]]
 
 ### Lesson 3: How do hosts talk to one another
 
@@ -116,21 +102,21 @@ There are two important different cases to cover.
 #### Talking on the same network
 
 When hosts talk to each other on the same network they need 3 identifying bits of information.
-- MAC Address,
-- IP Address, and
-- subnet mask (this tells the host how many computers are on this network).
+- [[MAC address]],
+- [[IP address]], and
+- [[Network mask]] (this tells the [[Host (networks)|host]] which other [[Host (networks)|hosts]] are on its [[Network|network]]).
 
 Suppose we need host A to send data to host B.
 
-As host A is already part of the network it has the subnet mask already.
+As host A is already part of the [[Network|network]] it has the [[Network mask|network mask]] already.
 
-We will assume host A already has host B's IP address through a DNS entry or an act of god.
+We will assume host A already has host B's [[IP address]] through a [[DN]] entry or an act of god.
 
-The only further information about host B host A needs is its mac address. To do this it will need to use the Address Resolution Protocol (ARP) as discussed before.
+The only further information about host B host A needs is its [[MAC address]]. To do this it will need to use the [[Address Resolution Protocol (ARP)]] as discussed before.
 
-Every host has an ARP cache that stores the MAC address against each IP address it knows in the network. If host B's address is already in host A's ARP cache it can use that to generate the layer 2 and 3 headers.
+Every host has an [[ARP cache]] that stores the [[MAC address]] against each [[IP address]] it knows in the [[Network|network]]. If host B's address is already in host A's [[ARP cache]] it can use that to generate the layer 2 and 3 headers.
 
-If not it will need to make an ARP request to the network. It broadcasts its IP and MAC address on the network asking for the host at host B's IP address to respond. It does this by setting in the layer 2 header the all f's MAC address - an address reserved for the purpose of broadcasting to the local network.
+If not it will need to make an [[Address Resolution Protocol (ARP)|ARP]] request to the [[Network|network]]. It broadcasts its IP and MAC address on the network asking for the host at host B's IP address to respond. It does this by setting in the layer 2 header the all f's MAC address - an address reserved for the purpose of broadcasting to the local network.
 
 Once host B gets this ARP request it can populate its ARP cache entry for host A then send an ARP response directly back (Unicast) to host A with its MAC address.
 
@@ -154,7 +140,7 @@ At this point the router takes the frame it receives strips out the layer 2 head
 
 #### Rules of a switch
 
-These are the rules for switching so applies to anything that can do switching.
+These are the rules for [[Switching]] so applies to anything that can do switching.
 
 When performing switching they only care about the layer 2 data so they don't know anything about IP addresses - only MAC addresses.
 
@@ -183,9 +169,7 @@ Flooding is an action the switch takes when it does not know the port for a prov
 
 Broadcast is a type of frame that has the destination MAC address set as all f's. These will always get flooded by the switch as it will not have a port for the MAC address of all f's.
 
-#### Virtual Local Area Networks (VLAN's)
-
-VLAN's let you break a large physical switch into multiple virtual switches. It does this by breaking up its ports into small groups that each will be a virtual switch. This means messages within one port range can only go out to ports within that range.
+![[Virtual Local Area Networks (VLAN)]]
 
 #### Multiple switches
 
@@ -208,12 +192,7 @@ A router keeps a table of all networks it knows about in its *routing table*. Di
 > [!note] Unknown packet address
 > If a router gets a packet it does not know the address of it will just drop that packet.
 
-#### Routing table
-
-There are 3 ways a router can populate its routing table
-1. Directly connected: This is for networks directly connected to the router.
-2. Static route: This is a route that has been manually configured on a router. Instead on set of subdomains mapping to an interface it will instead have an IP address to forward that packet on to.
-3. Dynamic routing: This is the same in structure to the static rout but instead of being manually added this gets populated by routers sharing known addresses with one another.
+![[Routing]]
 
 There are many different Dynamic routing protocols RIP, OSPF, BGP, EIGRP, IS-IS, ect They differ in how they discover new routers, what addresses they share, and how they share thous addresses.
 
@@ -234,7 +213,7 @@ With the entries in the routing table the subnet mask indicates what part of the
 | 10.40.55.0 | 24          | R1        |
 | 10.20.0.0  | 16          | R2        |
 
-the first entry would say any IP address matching the first 24 bits or the first 3 decimals of the IP address go here whereas the second entry says any address matching the first 16 bits or 2 decimals then go here. The second entry is called router summerization. It is actually referring to a lot of sub nets but groups them all index one entry as the first step is always to go to a single router. This can only be done if you arrange your IP addresses in a hierarchical manner.
+the first entry would say any IP address matching the first 24 bits or the first 3 decimals of the IP address go here whereas the second entry says any address matching the first 16 bits or 2 decimals then go here. The second entry is called [[Route summarization|route summarization]]. It is actually referring to a lot of [[Subnets|subnets]] but groups them all index one entry as the first step is always to go to a single router. This can only be done if you arrange your IP addresses in a hierarchical manner.
 
 You can set a default route - this is one that matches on 0 bits. Then instead of dropping any unknown address you instead send it to the default route.
 
@@ -249,30 +228,17 @@ Some were already described above. Such as [[Address Resolution Protocol (ARP)|A
 
 ![[File Transfer Protocol (FTP)|FTP]]
 
-#### Simple Mail Transfer Protocol (SMTP)
-
-This is the mail mail servers communicate with users.
+![[Simple Mail Transfer Protocol (SMTP)]]
 
 ![[Hyper Text Transfer Protocol (HTTP)]]
 
-#### Secure Sockets Layer (SSL) and Transport Layer Security (TLS)
+![[Secure Socket Layer (SSL)]]
 
-Methods to establish secure communication between hosts.
+![[Transport Layer Security (TLS)]]
 
-#### Domain Name System (DNS)
+![[Domain Name System (DNS)]]
 
-This is the way you convert the name of your favourite website to their IP address.
-
-#### Dynamic Host Configuration Protocol (DHCP)
-
-To connect to the internet you need 4 bits of information:
-- Your IP address,
-- Your subnet mask,
-- The default network of your local network, and
-- The domain name server you will use.
-
-The DHCP will provide you all the above information once you connect to a new network. When you first join you send DHCP discover message first and be provided with all your information.
-
+![[Dynamic Host Configuration Protocol (DHCP)]]
 ## Preparation questions
 
 - What is a “protocol”? What are some of the most well-known and used protocols?
@@ -281,9 +247,9 @@ A protocol is a set of messages and rules that are an internet standard. They ca
 
 - What is an ISP? What is an AS?
 
-A ISP is an internet service provider. The offer connectivity to their network.
+![[Internet Service Provider (ISP)]]
 
-A Autonomous system (AS) is a collection of IP addresses with a common prefix all controlled by a single administrative entity or domain.
+![[Autonomous system (AS)]]
 
 - What is the OSI layer model? What is the primary responsibility of each layer?
 
@@ -303,29 +269,9 @@ It established clear separation of concerns and the interfaces in which the oper
 
 - What is the client-server model? What is the peer-to-peer model? What are the strengths and weaknesses of each?
 
-The client-server model is a distributed application structure with two roles. There are servers providing resources and clients requesting them. For example, a web-server follows the client server model. The user of the browser is the client and the server providing web-pages is the server.
+![[Client-Server model]]
 
-Advantages
-- A service that is centrally managed is easier to monitor.
-- Easier to apply access controls and security to the system.
-- With a centralised system you can gaurentee data integrity more easily.
-
-Disadvantages
-- Single point of failure if the server goes down.
-- Higher start up cost as you require the infrastructure in the first place.
-- Scaling can become complex as the server can become a big bottle neck.
-
-The peer-to-peer model is a decentralised application architecture which has each participant being both consumer and provider of resources. Each peer offers some of its resources up to the network for other peers to use without central coordination. An example of this is Torrent file sharing.
-
-Advantages
-- Naturally scales as more people use the system.
-- Cost effective as there is no centrally managed servers.
-- Fault tolerant as any number of nodes going down does not stop the system working.
-
-Disadvantages
-- Security challenges as no central authority is dictating who is allowed into the network.
-- Can not gaurentee data integrity of assets on the network. 
-- Hard to manage and monitor as there is no central place collecting logs.
+![[Peer-peer model]]
 
 - What is a port (number)? How is it used?
 

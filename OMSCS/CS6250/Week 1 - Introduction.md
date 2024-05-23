@@ -14,15 +14,31 @@ week: 1
 
 Here are some questions you should be able to answer to start the course:
 
-• What are the advantages and disadvantages of a layered architecture?  
-• What are the differences and similarities between the OSI model and the five-layered Internet  
-model?  
+• What are the advantages and disadvantages of a layered architecture?
+Modularity, Separation of concerns, and interchange of methods at different layers.
+Duplication of effort, more covert coupling, and additional overhead.
+• What are the differences and similarities between the OSI model and the five-layered Internet model?  
+![[Connection between OSI and IPS models]]
 • What are sockets?  
+![[Socket]]
 • Describe each layer of the OSI model.  
+![[Open Systems interconnection (OSI) model|OSI]]
 • Provide examples of popular protocols at each layer of the five-layered Internet model.  
+[[Hyper Text Transfer Protocol (HTTP)|HTTP]]
+[[Transmission Control Protocol (TCP)|TCP]]
+[[Address Resolution Protocol (ARP)|ARP]]
 • What is encapsulation, and how is it used in a layered model?  
-• What is the end-to-end (e2e) principle?  
-• What are the examples of a violation of e2e principle?  
+![[Encapsulation|encapsulation]]
+• What is the end-to-end (e2e) principle? 
+![[End to end principle]]
+• What are the examples of a violation of e2e principle? 
+
+1. **Network Address Translation (NAT)**: NAT modifies the IP address information in packet headers while they are in transit, which breaks the end-to-end connectivity and transparency. This complicates end-to-end communication protocols that rely on unique IP addresses.
+2. **Firewalls and Deep Packet Inspection (DPI)**: Firewalls and DPI devices inspect and sometimes modify the content of data packets as they pass through the network. This interferes with end-to-end encryption and data integrity checks.
+3. **Content Delivery Networks (CDNs)**: CDNs cache content closer to users to improve performance and reduce latency. While this benefits performance, it introduces intermediary nodes that alter the direct path between the source and destination, which can complicate end-to-end control and data integrity.
+4. **QoS (Quality of Service) Mechanisms**: QoS techniques prioritize certain types of traffic over others within the network. While this can improve performance for specific applications, it introduces complexity and control within the network itself, rather than at the endpoints.
+5. **Proxy Servers**: Proxy servers act as intermediaries for requests from clients seeking resources from other servers. They can modify requests and responses, breaking the direct communication path and potentially interfering with end-to-end data handling.
+
 • What is the EvoArch model?  
 • Explain a round in the EvoArch model.  
 • What are the ramifications of the hourglass shape of the internet?  
@@ -84,4 +100,47 @@ An Algorithm for Distributed Computation of a Spanning Tree in an Extended LAN 
 The internet stack is a layered stack of protocols where each layer depends loosely on the layer below and is requried by the layer above. This allows doe scalability molecularity and the flexibility to add or remove components.
 
 The first version of this structure was the [[Open Systems interconnection (OSI) model|OSI model]] - though later refinements came about such as [[Internet Protocol Stack (IPS) 5 layers|IPS model]] which combined some layers.
+
+![[Open Systems interconnection (OSI) model|OSI model]]
+
+[[Layer 7 Application|Application layer]]
+
+This is where a lot of the popular [[Protocol (networks)|protocols]] operate such as [[Hyper Text Transfer Protocol (HTTP)|HTTP]], [[Simple Mail Transfer Protocol (SMTP)|SMTP]], [[File Transfer Protocol (FTP)|FTP]], or [[Domain Name System (DNS)|DNS]]. This controls the application specific command.
+
+[[Layer 6 Presentation|Presentation layer]]
+
+This is responsible for converting data from its encoded format to one understood by the application. This might be as simple as converting [[Bit|bits]] to [[American Standard Code for Information Interchange (ASCII)|ASCII]].
+
+[[Layer 5 Session|Session layer]]
+
+This is responsible for merging different transport streams that are intended for the same user. For example the audio and video streams for a call.
+
+[[Layer 4 Transport|Transport layer]]
+
+This is responsible for getting the data correctly from one end to another. It uses protocols such as [[User Datagram Protocol (UDP)|UDP]] and [[Transmission Control Protocol (TCP)|TCP]]. This attaches source and destination [[Port|ports]] to the message to make it a [[Segment|segment]].
+
+Note that [[Transmission Control Protocol (TCP)|TCP]] adds
+- multiplexing, 
+- congestion control and 
+- reliable, in-order delivery.
+
+Though for this is slower and more complex to implement.
+
+[[Layer 3 Network|Network layer]]
+
+The network layer is responsible for getting the data to the correct host in the internet. It wraps the [[Segment]] up with the [[IP address|IP addresses]] to make a [[Packets|datagram]]. This uses the [[Internet Protocol (IP)|IP]] to do this.
+
+[[Layer 2 Data Link|Data Link layer]]
+
+This layer uses [[MAC address|MAC addresses]] and bind this to the [[Packets|datagram]] to make a [[Frame (networks)|frame]]. This is used to safely pass [[Segment|segment]] through [[Network|networks]].
+
+[[Layer 1 Physical|Physical layer]]
+
+This facilitates communicate these [[Frame (networks)|frames]] through the physical hardware associated to the network be that cables or wifi.
+
+![[Encapsulation]]
+
+The end hosts have to implement encapsulation and de-encapsulation however intermediary don't need to. This is summarised by the [[End to end principle]].
+
+![[End to end principle]]
 
