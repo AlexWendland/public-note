@@ -21,20 +21,8 @@ This is done iteratively by each device telling its neighbours 3 bits of informa
 
 If it doesn't know of any nodes with lower ID than itself it uses itself as the root with distance 0.
 
-It splits ties of equal distance paths by taking the path that ends in the root with the lowest ID.
+Once it receives some configuration messages, it then recalculates what it thinks is the new root and its shortest distance to that root.
 
-It will stop sending configuration messages one
-## Pseudocode
+To calculate the spanning tree it keeps track of which node is its next nearest neighbour to the root. It splits ties of equal distance paths by taking the path that ends in the root with the lowest ID.
 
-```pseudocode
-Name(variables):
-	Input:
-	Output:
-1. 
-```
-
-## Run time
-
-
-
-## Correctness
+A node will only send another configuration message if its updated its best guess at the root or its distance to that root. Then only to neighbours that didn't say that node was the root.
