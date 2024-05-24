@@ -20,6 +20,7 @@ This is done iteratively by each device telling its neighbours 4 bits of informa
 2. The node it believes is the root, 
 3. The shortest distance between itself and that node, and 
 4. If this host thinks that node is the next node in the shortest path to the root.
+These messages are [[Bridge Protocol Data Units (BPDUs)]].
 
 Once it receives a configuration message, it then recalculates what it thinks is the new root and its shortest distance to that root. It then tells all its neighbours about its new status.
 
@@ -29,4 +30,4 @@ To calculate the set of active connections a node keeps track of which node is t
 
 When broadcasting and flooding all switches still send messages to all links but a [[Switch|switch]] only forwards or floods a message it receives on an active connection.
 
-When switches implement
+When switches are working out the topology they do not forward regular messages.
