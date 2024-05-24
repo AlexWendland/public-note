@@ -29,3 +29,4 @@ Throughout the course, students will work on hands-on projects to learn about ro
 ## Lectures
 - [[Week 0 - Assumed knowledge]]
 - [[Week 1 - Introduction]]
+- [[Week 2 - Transport and application layer]]
