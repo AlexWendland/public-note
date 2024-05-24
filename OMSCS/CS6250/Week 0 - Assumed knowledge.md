@@ -173,7 +173,7 @@ Broadcast is a type of frame that has the destination MAC address set as all f's
 
 #### Multiple switches
 
-When multiple switches are on the same network - nothing really changes about the switches rules.
+To handle loops in the network we have to use the [[Spanning Tree Protocol (STP)]] to turn off certain connections. 
 
 ### Lesson 5: Everything a router does to communicate between networks
 

@@ -190,4 +190,4 @@ This is good to keep in mind for development for any layered system - if you don
 
 There is a problem with [[Switching]] when there are multiple [[Switch|switches]] that form loops. A message may go round infinitely. To get around this the switches in a [[Network|network]] try to form a spanning tree amongst themselves so they stop infinite cycles.
 
-![[Spanning tree algorithm (networks)]]
+![[Spanning Tree Protocol (STP)]]
