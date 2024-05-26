@@ -58,3 +58,6 @@ The two main [[Protocol (networks)|protocols]] here are [[User Datagram Protocol
 
 ![[Port]]
 
+![[Transmission Control Protocol (TCP)|TCP]]
+
+![[User Datagram Protocol (UDP)|UDP]]

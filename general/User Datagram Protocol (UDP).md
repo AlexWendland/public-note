@@ -10,5 +10,11 @@ tags:
 type: definition
 ---
 >[!tldr] User Datagram Protocol (UDP)
->This is a protocol for data transfer. This protocol includes a checksum but does not sequence data or check if the client has received it. It is used when applications are latency sensitive such as voice calls or video gaming but reliability is not as important. 
+> This is a [[Layer 4 Transport|layer 4]] [[Protocol (networks)|protocol]] that optimises for simplicity over reliability. The header that gets attached includes:
+> - source [[Port|port]],
+> - destination [[Port|port]],
+> - length of the header, and 
+> - [[Checksum|checksum]] of the data.
+> ![[udp-header.png]]
+> This tends to be used in applications that are latency sensitive or have small number of messages to send.
 
