@@ -10,7 +10,7 @@ tags:
 type: definition
 ---
 >[!tldr] User Datagram Protocol (UDP)
-> This is a [[Layer 4 Transport|layer 4]] [[Protocol (networks)|protocol]] that optimises for simplicity over reliability. The header that gets attached includes:
+> This is a [[Layer 4 Transport|layer 4]] [[Protocol (networks)|protocol]] that optimises for simplicity over reliability. This is defined it [RFC768](https://datatracker.ietf.org/doc/html/rfc768) The header that gets attached includes:
 > - source [[Port|port]],
 > - destination [[Port|port]],
 > - length of the header, and 
