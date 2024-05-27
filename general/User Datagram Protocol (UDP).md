@@ -18,3 +18,4 @@ type: definition
 > ![[udp-header.png]]
 > This tends to be used in applications that are latency sensitive or have small number of messages to send.
 
+
