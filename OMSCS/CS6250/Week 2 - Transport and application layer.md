@@ -58,9 +58,23 @@ The two main [[Protocol (networks)|protocols]] here are [[User Datagram Protocol
 
 ![[Port]]
 
-![[Transmission Control Protocol (TCP)|TCP]]
+## UDP
 
 ![[User Datagram Protocol (UDP)|UDP]]
 
 ![[Checksum in layer 4]]
+
+![[Pseudo-header]]
+
+![[Ones complement]]
+
+## TCP
+
+![[Transmission Control Protocol (TCP)|TCP]]
+
+![[TCP 3 way handshake]]
+
+![[TCP connection teardown]]
+
+### Reliable Transmission
 

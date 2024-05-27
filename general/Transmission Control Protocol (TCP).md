@@ -10,13 +10,29 @@ tags:
 type: definition
 ---
 >[!tldr] Transmission Control Protocol (TCP)
->This is reliable and verified way to send data. The guarantees data integrity on the other end. This starts with a 3 way handshake:
->1. The server sends a syn (synchronising) message.
->2. The client sends a syn-ach message (synchronising-acknowledgement)
->3. Lastly the server sends an ach (acknowledgement) back to that.
->This opens a connection between the two hosts.
+>The transmission control protocol is a [[Layer 4 Transport|layer 4]] [[Protocol (networks)|protocol]] that allows for [[Multiplexing|multiplexing]] and a [[Duplex|duplex]] communication channel. It is defined in [RFC793](https://www.ietf.org/rfc/rfc793.txt). This is a connection orientated [[Protocol (networks)|protocol]] which establishes a connection with [[TCP 3 way handshake]] and closes connections with the [[TCP connection teardown]]. This gaurentees the following features. 
+>- reliability: every message will be received and acknowledge or it will be redelivered,
+>- error checking: [[Checksum in layer 4]],
+>- ordered delivery: messages have a sequence number and will only be parsed to the [[Layer 7 Application|Application layer]] in order,
+>- Transmission control:
+>	- Flow control: allow the receiver to dictate how many message it can buffer.
+>	- Congestion control and fair usage: will use connection probing to determine a safe and fair transmission rate.
 >
->Then data is sent with sequence numbers which has a checksum to verify the data is correct on the other side. The client returns ach messages with these sequence number to inform the host it was received. The client also checks the check sum on their side. If the check sum doesn't match it asks for the data again.
+>The TCP header has the following fields:
 >
->Lastly they close the session with a similar 3 way handshake as before.
+>- Source [[Port|port]],
+>- Destination [[Port|port]],
+>- sequence number: the sequence number of the first data octect, this has a special role in the [[TCP 3 way handshake]],
+>- Acknowledgement number: the next sequence number the receiver is expecting to get,
+>- Data offset: the number of 32 [[Bit|bit]] words in the TCP header,
+>- Reserved: set to all 0's,
+>- control bits: these are 0 or 1 for the following 6 fields Urgent, Acknowledgement, Push, Reset, Synchronise, and Finish.
+>- Window: The number of data octets number of data octets the sender of this segment is willing to receive. 
+>- Checksum: [[Checksum in layer 4]],
+>- Urgent pointer,
+>- Options, and
+>- Padding to make the header a multiple of 32 [[Bit|bits]].
+>
+>![[tcp_header.png]]
+
 
