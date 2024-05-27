@@ -61,3 +61,6 @@ The two main [[Protocol (networks)|protocols]] here are [[User Datagram Protocol
 ![[Transmission Control Protocol (TCP)|TCP]]
 
 ![[User Datagram Protocol (UDP)|UDP]]
+
+![[Checksum in layer 4]]
+
