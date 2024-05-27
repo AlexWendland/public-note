@@ -9,7 +9,7 @@ tags:
 type: definition
 ---
 >[!tldr] Routing
->The process of routing is getting a [[Packets|packet]] the network associated to its [[IP address]]. To do this all routers store a [[Routing table|routing table]] which maps the tuple of an IP address and a [[Network mask|network mask]] to either a interface or a IP address.
+>The process of routing is getting a [[Packets|packet]] the network associated to its [[Internet Protocol (IPv4)]]. To do this all routers store a [[Routing table|routing table]] which maps the tuple of an IP address and a [[Network mask|network mask]] to either a interface or a IP address.
 >There are 3 ways a router can populate its routing table
 >1. Directly connected: This is for networks directly connected to the router. It adds an entry for that networks and the interface of the [[Router|router]] it is connected to.
 >2. Static route: This is a route that has been manually configured on a router. Instead of an interface it will have an IP address to forward that packet on to.

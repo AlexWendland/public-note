@@ -15,7 +15,7 @@ type: definition
 >
 >[[Layer 4 Transport|Layer 4]] takes the data and adds the source and destination [[Port|ports]] to the data to make it a *[[Segment|segment]]*.
 >
->[[Layer 3 Network|Layer 3]] takes the [[Segment|segment]] and adds a source and destination [[IP address]] to make it a *[[Packets|packet]]*.
+>[[Layer 3 Network|Layer 3]] takes the [[Segment|segment]] and adds a source and destination [[Internet Protocol (IPv4)]] to make it a *[[Packets|packet]]*.
 >
 >[[Layer 2 Data Link|Layer 2]] takes the [[Packets|packet]] and adds a source and destination [[MAC address]] to make it a *[[Frame (networks)|frame]]*.
 >

@@ -9,5 +9,5 @@ tags:
 type: definition
 ---
 >[!tldr] Autonomous system (AS)
->An Autonomous system (AS) is a collection of [[IP address|IP addresses]] with a common prefix all controlled by a single administrative entity or domain.
+>An Autonomous system (AS) is a collection of [[Internet Protocol (IPv4)|IP addresses]] with a common prefix all controlled by a single administrative entity or domain.
 

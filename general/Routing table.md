@@ -10,5 +10,5 @@ tags:
 type: definition
 ---
 >[!tldr] Routing table
->Routers keep a table of where [[Packets|packets]] [[IP address|IP addresses]] addresses belong to which connection for redirecting messages. This table maps the tuple of an [[IP address]] and a [[Network mask|network mask]] to either an interface or a [[IP address]]. You can use [[Route summarization]] to keep a routing table short.
+>Routers keep a table of where [[Packets|packets]] [[Internet Protocol (IPv4)|IP addresses]] addresses belong to which connection for redirecting messages. This table maps the tuple of an [[Internet Protocol (IPv4)]] and a [[Network mask|network mask]] to either an interface or a [[Internet Protocol (IPv4)]]. You can use [[Route summarization]] to keep a routing table short.
 

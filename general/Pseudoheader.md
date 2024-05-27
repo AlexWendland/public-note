@@ -1,12 +1,13 @@
 ---
 aliases: null
 checked: false
-created: 2024-05-21
-last_edited: 2024-05-21
+created: 2024-05-27
+last_edited: 2024-05-27
 publish: false
 tags: []
 type: definition
 ---
->[!tldr] IPv6
+>[!tldr] Pseudoheader
 >Definition here
+
 
