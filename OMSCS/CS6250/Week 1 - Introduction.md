@@ -128,7 +128,7 @@ Though for this is slower and more complex to implement.
 
 [[Layer 3 Network|Network layer]]
 
-The network layer is responsible for getting the data to the correct host in the internet. It wraps the [[Segment]] up with the [[IP address|IP addresses]] to make a [[Packets|datagram]]. This uses the [[Internet Protocol (IP)|IP]] to do this.
+The network layer is responsible for getting the data to the correct host in the internet. It wraps the [[Segment]] up with the [[Internet Protocol (IPv4)|IP addresses]] to make a [[Packets|datagram]]. This uses the [[Internet Protocol (IP)|IP]] to do this.
 
 [[Layer 2 Data Link|Data Link layer]]
 
@@ -150,7 +150,7 @@ In simple terms this states that the network core should be simple and minimal, 
 
 ![[Network Address Translation (NAT)]]
 
-Most home [[Router|routers]] have a [[Network Address Translation (NAT)|NAT]] in them this means your home internet will have a single [[IP address]] to the outside world.
+Most home [[Router|routers]] have a [[Network Address Translation (NAT)|NAT]] in them this means your home internet will have a single [[Internet Protocol (IPv4)]] to the outside world.
 
 ![[Firewall]]
 

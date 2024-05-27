@@ -11,7 +11,7 @@ type: definition
 ---
 >[!tldr] Dynamic Host Configuration Protocol (DHCP)
 >To connect to the internet you need 4 bits of information:
->- Your [[IP address]],
+>- Your [[Internet Protocol (IPv4)]],
 >- Your [[Network mask|network mask]],
 >- The [[Default Gateway|default gateway]] of your local network, and
 >- The [[Domain Name System (DNS)]] server you will use.

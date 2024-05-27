@@ -10,5 +10,5 @@ tags:
 type: definition
 ---
 >[!tldr] Gateway
->The gateway for a [[Router|router]] connected to a [[Network|network]] is its [[IP address]] on that [[Network|network]]. 
+>The gateway for a [[Router|router]] connected to a [[Network|network]] is its [[Internet Protocol (IPv4)]] on that [[Network|network]]. 
 

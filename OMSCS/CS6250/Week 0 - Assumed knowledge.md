@@ -29,7 +29,7 @@ Some terminology first:
 > [!Note] 
 > These terms are relative to a single request a host can be a client in another request.
 
-![[IP address]]
+![[Internet Protocol (IPv4)]]
 
 ![[Subnets]]
 
@@ -103,18 +103,18 @@ There are two important different cases to cover.
 
 When hosts talk to each other on the same network they need 3 identifying bits of information.
 - [[MAC address]],
-- [[IP address]], and
+- [[Internet Protocol (IPv4)]], and
 - [[Network mask]] (this tells the [[Host (networks)|host]] which other [[Host (networks)|hosts]] are on its [[Network|network]]).
 
 Suppose we need host A to send data to host B.
 
 As host A is already part of the [[Network|network]] it has the [[Network mask|network mask]] already.
 
-We will assume host A already has host B's [[IP address]] through a [[DN]] entry or an act of god.
+We will assume host A already has host B's [[Internet Protocol (IPv4)]] through a [[DN]] entry or an act of god.
 
 The only further information about host B host A needs is its [[MAC address]]. To do this it will need to use the [[Address Resolution Protocol (ARP)]] as discussed before.
 
-Every host has an [[ARP cache]] that stores the [[MAC address]] against each [[IP address]] it knows in the [[Network|network]]. If host B's address is already in host A's [[ARP cache]] it can use that to generate the layer 2 and 3 headers.
+Every host has an [[ARP cache]] that stores the [[MAC address]] against each [[Internet Protocol (IPv4)]] it knows in the [[Network|network]]. If host B's address is already in host A's [[ARP cache]] it can use that to generate the layer 2 and 3 headers.
 
 If not it will need to make an [[Address Resolution Protocol (ARP)|ARP]] request to the [[Network|network]]. It broadcasts its IP and MAC address on the network asking for the host at host B's IP address to respond. It does this by setting in the layer 2 header the all f's MAC address - an address reserved for the purpose of broadcasting to the local network.
 

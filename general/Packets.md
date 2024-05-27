@@ -12,5 +12,5 @@ tags:
 type: definition
 ---
 >[!tldr] Packets
->During the process of [[Encapsulation|encapsulation]] a packet is a [[Segment|segment]] with the additional headers for the destination and source [[IP address]]. This is sometimes refereed to as the data-gram.
+>During the process of [[Encapsulation|encapsulation]] a packet is a [[Segment|segment]] with the additional headers for the destination and source [[Internet Protocol (IPv4)]]. This is sometimes refereed to as the data-gram.
 

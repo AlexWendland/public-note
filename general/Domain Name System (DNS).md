@@ -10,5 +10,5 @@ tags:
 type: definition
 ---
 >[!tldr] Domain Name System (DNS)
->This is the way you convert the name of your favourite domain name to their [[IP address]].
+>This is the way you convert the name of your favourite domain name to their [[Internet Protocol (IPv4)]].
 
