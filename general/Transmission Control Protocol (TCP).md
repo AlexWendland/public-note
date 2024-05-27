@@ -11,10 +11,10 @@ type: definition
 ---
 >[!tldr] Transmission Control Protocol (TCP)
 >The transmission control protocol is a [[Layer 4 Transport|layer 4]] [[Protocol (networks)|protocol]] that allows for [[Multiplexing|multiplexing]] and a [[Duplex|duplex]] communication channel. It is defined in [RFC793](https://www.ietf.org/rfc/rfc793.txt). This is a connection orientated [[Protocol (networks)|protocol]] which establishes a connection with [[TCP 3 way handshake]] and closes connections with the [[TCP connection teardown]]. This gaurentees the following features. 
->- reliability: every message will be received and acknowledge or it will be redelivered,
->- error checking: [[Checksum in layer 4]],
+>- [[Reliable transmission of TCP messages|reliability]]: every message will be received and acknowledge or it will be redelivered,
 >- ordered delivery: messages have a sequence number and will only be parsed to the [[Layer 7 Application|Application layer]] in order,
->- Transmission control:
+>- error checking: [[Checksum in layer 4]],
+>- [[Transmission control in TCP]]:
 >	- Flow control: allow the receiver to dictate how many message it can buffer.
 >	- Congestion control and fair usage: will use connection probing to determine a safe and fair transmission rate.
 >

@@ -78,3 +78,8 @@ The two main [[Protocol (networks)|protocols]] here are [[User Datagram Protocol
 
 ### Reliable Transmission
 
+![[Reliable transmission of TCP messages]]
+
+### Transmission control
+
+![[Transmission control in TCP]]
