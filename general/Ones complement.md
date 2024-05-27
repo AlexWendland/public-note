@@ -1,5 +1,6 @@
 ---
-aliases: 
+aliases:
+  - ones complement
 checked: false
 created: 2024-05-27
 last_edited: 2024-05-27
