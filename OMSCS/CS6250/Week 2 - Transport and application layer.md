@@ -83,3 +83,7 @@ The two main [[Protocol (networks)|protocols]] here are [[User Datagram Protocol
 ### Transmission control
 
 ![[Transmission control in TCP]]
+
+![[Flow control in TCP]]
+
+![[Congestion control in TCP]]

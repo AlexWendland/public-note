@@ -36,3 +36,8 @@ type: definition
 >![[tcp_header.png]]
 
 
+# Flow control in [[Transmission Control Protocol (TCP)|TCP]]
+
+	Suppose [[Host (networks)|host]] A is transmitting data to [[Host (networks)|host]] B. When this starts up [[Host (networks)|host]] B will reserve some amount of memory to buffer unprocessed packages. Lets say it can fit `RcvBuffer` bytes. Then it keeps track of `LastByteRead` and `LastByteRecieved` 
+
+
