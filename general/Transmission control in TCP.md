@@ -17,3 +17,6 @@ There are two main components of transmission control. These tackle two distinct
 These both ultimately effect the number of unacknowledged messages allowed to be sent in [[Automatic Repeat Request (ARQ)|ARQ]]. This will be the minimum of the two window sizes provided by the above controls.
 
 [[User Datagram Protocol (UDP)|UDP]] lets the [[Layer 7 Application|Application layer]] hand transmission control. Whereas [[Transmission Control Protocol (TCP)|TCP]] sees this a a widely shared feature that it can abstract away.
+
+
+
