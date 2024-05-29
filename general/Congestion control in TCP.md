@@ -21,9 +21,10 @@ There are two approaches when it comes to congestion control.
 	- ICMP source quench.
 - End-to-end congestion control: Hosts need to infer congestion from the traffic they receive. This can use different signal such as:
 	- Packet delay based on acknowledgement times.
-	- Packet loss using some level of timeout when waiting for acknowledgements 
+	- Packet loss using the acknowledgement sequence numbers.
+	- Major network delay based on the time out window.
 
-[[Transmission Control Protocol (TCP)|TCP]] uses the end-to-end approach. It mainly uses packet loss to detect congestion as packet delay can have quite a bit of noise in the system.
+[[Transmission Control Protocol (TCP)|TCP]] uses the end-to-end approach. It mainly uses packet loss to detect congestion as packet delay can have quite a bit of noise in the system. It uses major network delay to reset itself.
 
 [[Transmission Control Protocol (TCP)|TCP]] uses ACK messages as a probes and adopts a probe-and-adapt approach to adjusting the window size (number of unacknowledged packets) for congestion control. 
 
