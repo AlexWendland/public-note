@@ -53,3 +53,5 @@ OSPF Monitoring: Architecture, Design and Deployment Experience
 ## Routing
 
 ![[Routing]]
+
+![[Intradomain routing]]
