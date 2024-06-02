@@ -11,5 +11,9 @@ type: explainer
 ---
 # Intradomain routing
 
+Here are two main algorithms, these use two different approaches to how route [[Packets|packets]].
 
+![[Link-state routing algorithms]]
+
+![[Distance vector routing algorithms]]
 
