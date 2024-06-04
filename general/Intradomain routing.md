@@ -17,3 +17,7 @@ Here are two main algorithms, these use two different approaches to how route [[
 
 ![[Distance vector routing algorithms]]
 
+![[Count to infinity problem]]
+
+![[Routing Information Protocol (RIP)]]
+
