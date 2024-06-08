@@ -9,15 +9,6 @@ tags:
   - networks
 type: definition
 ---
-# Intradomain routing
-
-Here are two main algorithms, these use two different approaches to how route [[Packets|packets]].
-
-![[Link-state routing algorithms]]
-
-![[Distance vector routing algorithms]]
-
-![[Count to infinity problem]]
-
-![[Routing Information Protocol (RIP)]]
+> [!tldr] Intradomain routing
+> *Intradomain routing* is the process of routers within an [[Autonomous system (AS)|AS]] discovering their router table.
 
