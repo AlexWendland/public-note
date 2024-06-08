@@ -7,7 +7,7 @@ last_edited: 2024-06-02
 publish: true
 tags:
   - networks
-type: explainer
+type: definition
 ---
 # Intradomain routing
 
