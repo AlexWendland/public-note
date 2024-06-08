@@ -56,6 +56,10 @@ OSPF Monitoring: Architecture, Design and Deployment Experience
 
 ![[Intradomain routing]]
 
+![[Interdomain routing]]
+
+## Intradomain routing
+
 Here are two main algorithms, these use two different approaches to how route [[Packets|packets]].
 
 ![[Link-state routing algorithms]]
@@ -66,3 +70,25 @@ Here are two main algorithms, these use two different approaches to how route [[
 
 ![[Routing Information Protocol (RIP)]]
 
+![[Open Shortest Path First (OSPF)|OSPF]]
+
+When using [[Open Shortest Path First (OSPF)|OSPF]] the computation is handled by the [[Router|router]] processor as apposed to the [[Switching fabric|switching fabric]] which handles message forwarding.
+
+![[OSPF_processed.png]]
+
+The process the router goes through is:
+1. Collect [[Open Shortest Path First (OSPF)|LSA]]'s from other routers.
+2. Use [[Dijkstra's algorithm]] to calculate new shortest paths and update [[Forwarding information base (FIB)]]
+3. Forward messages using the [[Switching fabric|switching fabric]]
+
+This can be summarised by the following flow chart.
+
+![[OSPF_flow_chart.png]]
+
+![[Hot potato routing]]
+
+## Traffic Engineering
+
+The process of deciding the weights between [[Router|routers]] can be complicated as small changes in weights can have a large impact to the traffic flow. There is a framework for this.
+
+![[Traffic Engineering Framework]]
