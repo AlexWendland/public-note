@@ -55,3 +55,14 @@ OSPF Monitoring: Architecture, Design and Deployment Experience
 ![[Routing]]
 
 ![[Intradomain routing]]
+
+Here are two main algorithms, these use two different approaches to how route [[Packets|packets]].
+
+![[Link-state routing algorithms]]
+
+![[Distance vector routing algorithms]]
+
+![[Count to infinity problem]]
+
+![[Routing Information Protocol (RIP)]]
+
