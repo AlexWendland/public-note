@@ -1,0 +1,15 @@
+---
+aliases:
+  - IGP
+  - IGPs
+checked: false
+created: 2024-06-08
+last_edited: 2024-06-08
+publish: true
+tags:
+  - networks
+type: definition
+---
+>[!tldr] Interior gateway protocol (IGP)
+>This is a class of protocols used for [[Intradomain routing|intradomain routing]]. That is for [[Router|routers]] in the same network to exchange subnet addresses.
+

@@ -57,3 +57,56 @@ Detecting BGP Configuration Faults with Static Analysis
 
 ##  Ecology of the internet
 
+The internet has 3 major players:
+
+![[Internet Service Provider (ISP)]]
+
+![[Content delivery network (CDN)]]
+
+![[Internet Exchange Points (IXPs)]]
+
+Each of these may operate as one [[Autonomous system (AS)|AS]] or as multiple to allow different protocols to be used in different parts of the network.
+
+## Cooperation and competition among networks
+
+Whilst [[Internet Service Provider (ISP)|ISPs]] are in direct competition with eachother they also can not operate without cooperating with each other also. The [[Internet Service Provider (ISP)|ISP]] business model is based off selling access to internet - this is normally calculated via bandwidth used either for a fixed price with a cap or by taking the 95th percentile of measurements normally taken every 5 minutes. Either of these mean the [[Internet Service Provider (ISP)|ISP]] has incentives to make you use their service more. This relies on you having low latency connections to as many other [[Host (networks)|hosts]] as possible.
+
+The cost to [[Internet Service Provider (ISP)|ISPs]] is maintaining a network with sufficient capacity to handle all that traffic. Therefore unless traffic is going to a [[Host (networks)|host]] paying them they will need a commercial incentive to carry it.
+
+Therefore two types of relationships form between [[Internet Service Provider (ISP)|ISPs]]
+- **Peering relationships**: If two providers see [[Host (networks)|hosts]] exchange traffic between there networks in roughly equal quantities they may agree to share traffic directly at no cost between the [[Internet Service Provider (ISP)|ISPs]].
+- **Customer-Provider relationships**: If one [[Internet Service Provider (ISP)|ISP]] has considerably more [[Host (networks)|hosts]] receiving traffic then they can sell access to these hosts to other [[Internet Service Provider (ISP)|ISPs]]. Here the larger [[Internet Service Provider (ISP)|ISP]] becomes the provider to the smaller customer [[Internet Service Provider (ISP)|ISP]] and picks up a fee.
+
+This has been the model since the beginning of the internet and was one of the main drivers for the hierarchical nature of [[Internet Service Provider (ISP)|ISPs]] and the internet as a whole. However [[Internet Exchange Points (IXPs)|IXPs]] are changing this. [[Internet Exchange Points (IXPs)|IXPs]] mean that [[Internet Service Provider (ISP)|ISPs]] don't need to go through eachother and instead can trade traffic directly. This is making the internet more flat. This is in part driven by [[Content delivery network (CDN)|CDNs]] using [[Internet Exchange Points (IXPs)|IXPs]] to have the lowest latency connections to their consumers.  
+
+## Address exchange
+
+First consider which addresses [[Autonomous system (AS)|AS]] want to exchange with other internet entities. 
+
+### Exporting routes
+
+First lets look at what routes an [[Autonomous system (AS)|AS]] would want to tell other internet entities about. This has financial repercussions as you will then have to carry that traffic on your network.
+
+- **Routes form customers**: These are profitable for an [[Internet Service Provider (ISP)|ISP]] to share as they generate revenue from more traffic going to these. These are shared willingly to all.
+- **Routes from peers**: Whilst there is the network cost of carrying this traffic sharing these addresses keeps the free agreements in place or can turn peers into customers. It may make sense to share routes learnt from peers but it is circumstantial.
+- **Routes from providers**: A provider is paying for access to the provider. It has very little commercial incentive to share routes learnt from the provider.
+
+### Importing routes
+
+When an [[Autonomous system (AS)|AS]] decides which route to send its traffic down this again is a symmetric decision to exporting. The goal of the [[Autonomous system (AS)|AS]] is for the traffic of its customers to travel through the fewest other [[Autonomous system (AS)|AS]] as possible as each one will generate it some cost and potentially reduce capacity of the route.
+
+- **Route offered by peer or customer**: These in the short term are completely free and so will preferably use these.
+- **Route offered by provider**: These cost the [[Autonomous system (AS)|AS]] money so will be used as a last resort.
+
+### [[Protocol (networks)|Protocols]]
+
+![[Interdomain routing]]
+
+![[Boarder gateway protocol (BGP)]]
+
+The goals of [[Boarder gateway protocol (BGP)|BGP]] are:
+- **Scalability**: How do you maintain a routing table when the size of the internet is expanding.
+- **Expressing route policies**: How do we allow for [[Autonomous system (AS)|AS]] to control which routes to use and to broadcast.
+- **Cooperation**: To let [[Autonomous system (AS)|AS]] to make local decisions with the information they are provided.
+- **Security**: Whist not an initial design goal [[Boarder gateway protocol (BGP)|BGP]] did not include security as the internet has expanded it has become more important. This needs to protect [[Autonomous system (AS)|AS]] from malicious attacks, misconfiguration, and faults. This includes different protocols, registries for the domains an [[Autonomous system (AS)|AS]] owns, private keys for [[Autonomous system (AS)|AS]]. 
+
