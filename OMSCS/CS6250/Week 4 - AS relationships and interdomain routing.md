@@ -110,3 +110,21 @@ The goals of [[Boarder gateway protocol (BGP)|BGP]] are:
 - **Cooperation**: To let [[Autonomous system (AS)|AS]] to make local decisions with the information they are provided.
 - **Security**: Whist not an initial design goal [[Boarder gateway protocol (BGP)|BGP]] did not include security as the internet has expanded it has become more important. This needs to protect [[Autonomous system (AS)|AS]] from malicious attacks, misconfiguration, and faults. This includes different protocols, registries for the domains an [[Autonomous system (AS)|AS]] owns, private keys for [[Autonomous system (AS)|AS]]. 
 
+## The [[Boarder gateway protocol (BGP)|BGP]] [[Protocol (networks)|protocol]]
+
+Two [[Router|routers]] connected over [[Boarder gateway protocol (BGP)|BGP]] are called BGP peers. They open a semi-permanent [[Transmission Control Protocol (TCP)|TCP]] connection where they exchange routes. There are two different varieties.
+- iBGP: For internal communication about what external routes are available.
+- eBGP: For communicating with other [[Autonomous system (AS)|AS]].
+
+There are three important messages [[Boarder gateway protocol (BGP)|BGP]] has.
+1. The **OPEN** message to start the conversation. 
+2. The  **UPDATE** message that contains a change of available routes. This has two forms:
+	1. *Announcements* about new routes or updates to old routes.
+	2. *Withdrawls* messages about routes no longer available.
+3. The **KEEPALIVE** messages that keep the connection going.
+
+In the [[Boarder gateway protocol (BGP)|BGP]] the [[Router|routers]] exchange [[Subnets|IP prefixes]] that represent [[Subnets|subnets]] or collections of [[Subnets|subnets]] if the [[Router|router]] is using [[Route summarization|route summarization]]. For the routes agreed by the [[Autonomous system (AS)|AS]] the [[Router|router]] offers theses over [[Boarder gateway protocol (BGP)|eBGP]] and then shares the routes it has been offered over [[Boarder gateway protocol (BGP)|iBGP]].
+
+Messages passed between [[Autonomous system (AS)|AS]] have some special properties, two of which are:
+- **ASPATH**: A list of [[Autonomous system number (ASN)|ASN]] for each [[Autonomous system (AS)|AS]] the route has passed through. This is helpful to avoid loops.
+- **NEXTHOP**: The [[Internet Protocol (IP)|IP address]] of the next router in the hop. 
