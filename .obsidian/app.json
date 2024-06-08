@@ -9,5 +9,5 @@
     "downscalePercent": 100
   },
   "vimMode": true,
-  "defaultViewMode": "preview"
+  "defaultViewMode": "source"
 }
