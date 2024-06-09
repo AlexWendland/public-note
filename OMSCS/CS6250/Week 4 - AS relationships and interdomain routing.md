@@ -128,3 +128,45 @@ In the [[Boarder gateway protocol (BGP)|BGP]] the [[Router|routers]] exchange [[
 Messages passed between [[Autonomous system (AS)|AS]] have some special properties, two of which are:
 - **ASPATH**: A list of [[Autonomous system number (ASN)|ASN]] for each [[Autonomous system (AS)|AS]] the route has passed through. This is helpful to avoid loops.
 - **NEXTHOP**: The [[Internet Protocol (IP)|IP address]] of the next router in the hop. 
+
+## The router process
+
+We can model a [[Router|router]] running [[Boarder gateway protocol (BGP)|BGP]] as follows.
+
+![[router_diagram.png]]
+
+This has 3 main steps.
+1. Receive and store neighbours routing tables.
+2. Decides its best routing options and updates the forwarding table.
+3. Decides which routes it wants to advertise and updates neighbouring routers.
+
+How a router decides which route to use depends on many factors. It ranks these and then compares routes.
+
+| Step | Attribute                                            | Controller? |
+| ---- | ---------------------------------------------------- | ----------- |
+| 1    | Highest LocalPref                                    | local       |
+| 2    | Lowest AS path length                                | neighbour   |
+| 3    | Lowest origin type                                   | neither     |
+| 4    | Lowest MED                                           | neighbour   |
+| 5    | eBGP-learned over iBGP-learned                       | neither     |
+| 6    | Lowest [[Interior gateway protocol (IGP)\|IGP]] cost | local       |
+| 7    | Lowest router ID (break ties)                        | neither     |
+
+There are two main ways [[Autonomous system (AS)|AS]] can control which routes it uses and its neighbours uses.
+
+### LocalPref
+
+This is how an [[Autonomous system (AS)|AS]] expresses its commercial best interest. It will set a value to neighbouring [[Autonomous system (AS)|AS]] based on the financial relationship it has with it. These normally are:
+
+| Relationship to advertising [[Autonomous system (AS)\|AS]] | LocalPerf value |
+| ---------------------------------------------------------- | --------------- |
+| Customer                                                   | 90-99           |
+| Peer                                                       | 80 - 89         |
+| Provider                                                   | 70 - 79         |
+| Backup links                                               | 60-69           |
+
+This reflects the preferences we discussed above, customer then peer then provider.j
+
+### Multi-exit Discriminator (MED)
+
+If an [[Autonomous system (AS)|AS]] has two routers connecting to a neighbours [[Autonomous system (AS)|AS]] which are offering some of the same routes. Knowing the forwarding tables of these routers may give a preference for how a neighbouring [[Autonomous system (AS)|AS]] forwards traffic through your network. This is controlled by setting a MED value (maybe as the [[Interior gateway protocol (IGP)|IGP]] cost to forward that traffic). 
