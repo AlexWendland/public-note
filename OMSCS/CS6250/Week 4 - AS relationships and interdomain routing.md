@@ -183,3 +183,45 @@ Routers can be strategic about what addresses it does this too and how sensitive
 
 ## Peering at an [[Internet Exchange Points (IXPs)|IXP]]
 
+![[Internet Exchange Points (IXPs)|IXP]]
+
+Below is an example of such and [[Internet Exchange Points (IXPs)|IXP]] is Frankfurt.
+
+![[IXP_example.png]]
+
+This shows how an [[Internet Exchange Points (IXPs)|IXP]] is a massive set of switches creating a giant [[Network|network]]. It is normally distributed over a region or globally with different connection points such as DE-CIX1,2,3,4,7 all connecting in to a fault tolerant core Core 1 with backup Core2.
+
+To exchange with an [[Internet Exchange Points (IXPs)|IXP]] a [[Autonomous system (AS)|AS]] needs to physically connect with it. Which is why being distributed makes this easier though carries technical cost to it.
+
+### [[Internet Exchange Points (IXPs)|IXPs]] have become increasingly popular, why?
+
+1. [[Internet Exchange Points (IXPs)|IXP]] can handle large quantities of traffic rivalling that of tier-1 [[Internet Service Provider (ISP)|ISPs]].
+2. [[Internet Exchange Points (IXPs)|IXP]] can mitigate [[Distributed Denial-of-Service (DDoS)|DDoS]] attacks by monitoring traffic to particular [[Autonomous system (AS)|ASs]].
+3. They provide excellent research hubs due to their open and large scale nature.
+4. They are active marketplaces offering services to the [[Autonomous system (AS)|ASs]] that participate in them. This offering is expanding as more research happens providing innovation to the internet.
+
+### How to peer at an [[Autonomous system (AS)|AS]]
+
+An [[Autonomous system (AS)|AS]] must have an [[Autonomous system number (ASN)|ASN]] to peer at an [[Internet Exchange Points (IXPs)|IXP]]. Then they will need to physically collocate a router in the [[Autonomous system (AS)|AS]] to one of the [[Internet Exchange Points (IXPs)|IXP]] access points. Lastly they must agree to the terms and conditions of using the [[Internet Exchange Points (IXPs)|IXP]]. To do this they pay:
+- A one off access cost to locate the router at the access point,
+- A monthly fee for renting a port - this cost normally scales based on the speed/capacity of that [[Port|port]].
+- Sometimes there is a yearly subscription fee.
+
+Once connected to the [[Internet Exchange Points (IXPs)|IXP]] there is normally no cost to publicly peer there. That means getting access to all the other networks also publicly peering there. 
+
+Normally the terms of accessing do not forbid reselling of access to the [[Internet Exchange Points (IXPs)|IXP]]. Therefore some providers link with an [[Internet Exchange Points (IXPs)|IXP]] the resale access to that [[Internet Exchange Points (IXPs)|IXP]] if it is too hard for another [[Autonomous system (AS)|AS]] to collocate a router there.
+
+### Why peer in an [[Internet Exchange Points (IXPs)|IXP]]
+
+- Keeps traffic local which is more reliable and faster.
+- Lower costs than negotiating with other [[Autonomous system (AS)|ASs]] such as [[Internet Service Provider (ISP)|ISP]] for access.
+- Incentives - large content providers prefer use of [[Internet Exchange Points (IXPs)|IXP]] as it guarantees more control of how their users receive their content. Therefore they connect via [[Internet Exchange Points (IXPs)|IXPs]] which motivates other actors to use them.
+
+### Services offered by an [[Internet Exchange Points (IXPs)|IXP]]
+
+1. **Public peering**: This allows you to directly connect with any other participant who is also public peering opening up a massive number of new routes but also direct connections with other [[Autonomous system (AS)|ASs]].
+2. **Private peering**: This allows for direct connection between two parties who know eachother at the [[Internet Exchange Points (IXPs)|IXP]]. This won't use the pubic peering infrastructure. Though provides a high capacity stable connection.
+3. **Route servers and Service level agreements**: Normally the [[Internet Exchange Points (IXPs)|IXP]] will offer free access to a route server which is a giant public route table. The [[Internet Exchange Points (IXPs)|IXP]] will also offer [[Service Level Agreements (SLAs)|SLAs]] with the services they offer.
+4. **Mobile peering**: This is a scalable solution to mobile networks.
+5. **DDoS black-holing**: This is a customer triggered black-holing of traffic coming towards their [[Autonomous system (AS)|AS]] to relieve the stress from [[Distributed Denial-of-Service (DDoS)|DDoS]] attacks.
+6. 
