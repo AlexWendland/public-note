@@ -169,4 +169,17 @@ This reflects the preferences we discussed above, customer then peer then provid
 
 ### Multi-exit Discriminator (MED)
 
-If an [[Autonomous system (AS)|AS]] has two routers connecting to a neighbours [[Autonomous system (AS)|AS]] which are offering some of the same routes. Knowing the forwarding tables of these routers may give a preference for how a neighbouring [[Autonomous system (AS)|AS]] forwards traffic through your network. This is controlled by setting a MED value (maybe as the [[Interior gateway protocol (IGP)|IGP]] cost to forward that traffic). 
+If an [[Autonomous system (AS)|AS]] has two routers connecting to a neighbours [[Autonomous system (AS)|AS]] which are offering some of the same routes. Knowing the forwarding tables of these routers may give a preference for how a neighbouring [[Autonomous system (AS)|AS]] forwards traffic through your network. This is controlled by setting a MED value (for example as the [[Interior gateway protocol (IGP)|IGP]] cost to forward that traffic).
+
+## Challenges with [[Boarder gateway protocol (BGP)|BGP]]: Misconfiguration and scalability 
+
+Routers are vulnerable to misconfiguration and faults. This can lead to an excessively large number of updates leading to further faults from overloading the network. This can be mediated by limiting the size of the routing table.
+
+To limit the size of the routing table it can filter out routes that are too specific. This encourages [[Route summarization|route summarization]]. The act of [[Route summarization|route summarization]] protects the whole network from getting overloaded and help with scalability. Small [[Autonomous system (AS)|AS]] sometimes just use a default gateway where they redirect all traffic without further knowledge.
+
+If a route is repeatedly updated due to some route instability this can risk messages getting sent in error or a patchy connection. Routers can implement **flap damping** where it tracks the number of updates to a prefix. If this goes over a certain threshold in a time interval it will suppress that route until it stabilises. 
+
+Routers can be strategic about what addresses it does this too and how sensitive it is. If it has addresses it needs to have high availability for it can have a much higher threshold whereas other addresses it can be much lower.
+
+## Peering at an [[Internet Exchange Points (IXPs)|IXP]]
+
