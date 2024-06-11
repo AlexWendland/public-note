@@ -32,3 +32,4 @@ Throughout the course, students will work on hands-on projects to learn about ro
 - [[Week 2 - Transport and application layer]]
 - [[Week 3 - Intradomain routing]]
 - [[Week 4 - AS relationships and interdomain routing]]
+- [[Week 5 - Router design and algorithms]]
