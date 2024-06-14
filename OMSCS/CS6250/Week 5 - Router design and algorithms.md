@@ -131,3 +131,47 @@ There are many problems that just the lookup process faces.
 
 ![[lookup_problems.png]]
 
+## Unibit Tries
+
+![[Trie]]
+
+We can use [[Subnets|subnet]] to form a [[Trie|trie]] over the alphabet of $\{0, 1\}$ with values being the [[Subnets|subnets]]. To generate the [[Trie|trie]] we build a path from the root for every address in our table and label the end node with that [[Subnets|subnet]]. 
+
+> [!example] Prefix-match lookup
+> Suppose we have the following table
+> ![[prefix_table.png]]
+> then we use these strings to construct the following [[Trie|trie]].
+> ![[prefix_trie.png]]
+> we do not include the left branch of this [[Trie|trie]]. We also compress one-way branches for example in P9.
+
+Then we use this [[Trie|trie]] as the description entails.
+
+## Multibit tries
+
+Whilst unibit [[Trie|tries]] is very efficient in terms of space they can be slow in terms of memory lookups. For a substring of length $n$ you may need to look up $n$ times. Instead we can increase the length of the "stride" and go for a longer alphabet.
+
+We have two approaches here.
+- Fix stride length $k$ generating $2^k$ children.
+- Variable length stride depending on the number of children, like P9 above.
+
+### Fixed length multibit tries
+
+Here we pick a length of stride $k$ and then cut our [[Subnets|subnets]] into multiples of $k$. If a [[Subnets|subnet]] length is not a multiple of $k$ then we expand it to all the address of the next multiple of $k$ that would be covered b it. If no other longer address clashes with it, we label that address with the [[Subnets|subnet]] it came from.
+
+> [!example] Prefix expansion
+> Suppose we set $k=3$ then using the table from the previous example lets do prefix expansion.
+> ![[prefix_expansion.png]]
+
+Then we construct the multibit [[Trie|trie]] the same way as the unibit [[Trie|trie]] with the expanded addresses but with the alphabet set to bit strings of length $k$.
+
+![[fixed_length_multibit_trie.png]]
+
+Notice here we only needed to have at most 3 lookups whereas before it was 5.
+
+### Variable length multibit tries
+
+In the previous example we can see by choosing length 3 words the table to the left is much larger than we needed it to be. P3 was only length 2 and we had no other entries in that table. This wastes space - so we can let the length of that string be 2 instead.
+
+![[variable_length_trie.png]]
+
+The optimal stride length can be chosen using [[Dynamic Programming|dynamic programming]]. Though they do not say how.
