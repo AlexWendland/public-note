@@ -12,6 +12,8 @@ week: 5
 ---
 # Week 5 - Router design and algorithms
 
+# Part 1
+
 ## Additional reading
 
 ### Important Readings
@@ -175,3 +177,18 @@ In the previous example we can see by choosing length 3 words the table to the l
 ![[variable_length_trie.png]]
 
 The optimal stride length can be chosen using [[Dynamic Programming|dynamic programming]]. Though they do not say how.
+
+# Part 2
+
+## Additional readings
+
+### Book References
+
+Varghese, Network Algorithmics, Chapters 12, 13, 14
+
+Kurose-Ross, 6th Edition, Section 7.5.2
+
+Kurose-Ross, 7th Edition, Section 9.5.2
+
+## Packet classification
+
