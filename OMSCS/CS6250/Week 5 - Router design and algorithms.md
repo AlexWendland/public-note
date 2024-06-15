@@ -273,3 +273,36 @@ However this algorithm has a clear problem if all the inputs want to connect to 
 
 If we can avoid [[Head of line (HOL) blocking|HOL blocking]] we achieve a big speedup. In the example above we could do the same message passing but in only 3 iterations. Though for this we sacrifice "fairness".
 
+### Knockout scheme
+
+This uses output queuing to get around [[Head of line (HOL) blocking|HOL blocking]]. If our switching fabric operates $k$ times faster than outputs we can ... This is really not clear what on earth is going on here.
+
+### Parallel iterative matching
+
+Here we let input lines request access for each output line they have a packet for. This goes as follows:
+1. Input lines request a route for each output lines they have a [[Packets|packet]] for. 
+2. Output lines randomly select an input line to complete a transaction with.
+3. If an input line has more than one offer it randomly selects a transaction to complete.
+4. Connection happens. 
+
+![[parallel_iterative_matching.png]]
+
+## Custom Scheduling
+
+Scheduling can allow different types of packets to get different services. This is done in real time so will need to be done at inter packet times.
+
+### [[First in first out (FIFO) queue|FIFO]] with tail drop
+
+Traditional schedule approach. Each input link is a [[First in first out (FIFO) queue|FIFO]] queue where if the queue is full any new additions get dropped. 
+
+### Need for Quality of Service (QoS)
+
+If you have some QoS guarantees such as maximum delay or a given bandwidth you employ smarter scheduling techniques. Here it is useful to think of network flows - [[Packets|packets]] that are all following the same route from source to destination. This flow will need to be recognisable from a header.
+
+In the following examples you might want to make smarter routing decisions:
+- Router support for congestion.
+- Providing QoS guarantees to flows.
+- Fair sharing of links among competing flows. 
+
+
+
