@@ -271,3 +271,5 @@ However this algorithm has a clear problem if all the inputs want to connect to 
 
 ![[Head of line (HOL) blocking]]
 
+If we can avoid [[Head of line (HOL) blocking|HOL blocking]] we achieve a big speedup. In the example above we could do the same message passing but in only 3 iterations. Though for this we sacrifice "fairness".
+
