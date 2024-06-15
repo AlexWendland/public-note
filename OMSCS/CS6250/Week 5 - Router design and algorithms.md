@@ -204,3 +204,70 @@ These further classifications can be based on source [[Internet Protocol (IP)|IP
 **Example for traffic type sensitive routing.** The above figure shows an example topology where networks are connected through router R. Destinations are shown as S1, S2, X, Y, and D. L1 and L2 denote specific connection points for router R. The table shows some examples of packet classification rules. The first rule is for routing video traffic from S1 to D via L1. The second rule drops all traffic from S2, for example, in the scenario that S2 was an experimental site. Finally, the third rule reserves 50 Mbps of traffic from prefix X to prefix Y, which is an example of a rule for resource reservation.
 
 ## Simple solutions
+
+### Linear search
+
+Firewalls do a linear search through a rules table like above and keep track of the best match. This is fine for a small number of rules but scales linearly in the number of rules.
+
+### Caching
+
+If you are going to get a lot of similar [[Packets|packets]] then caching could be used on top of another search algorithm. This has two problems
+1. The cache-hit rate can be high (80-90%) but still need to perform searches on the misses,
+2. If the underlying search like linear has poor performance this can still have low overall performance.
+
+### Passing labels
+
+This involves the sender attaching labels to the header that determine when happens to it. This means that intermediary routers do not need to reclassify packets on a path to the destination. Though this will require security to ensure bad actors can not abuse this. This is deployed in [[Multiprotocol label switching (MPLS)]] and [[DiffServ]].
+
+## More [[Trie|tries]]
+
+Assume we are in a position where we need to use the destination and source [[Internet Protocol (IP)|IP address]] to determine the rule. The address must match both the [[Subnets|subnets]] and ties are broken first by the longest matching destination [[Subnets|subnet]] then by the longest matching source [[Subnets|subnet]].
+
+A simple way to do this would be to construct the destination [[Trie|trie]] then at the [[Leaf (graph)|leaf]] nodes attach source [[Trie|tries]].
+
+>[!example] Set-Pruning [[Trie|tries]]
+> Suppose we have the following rule table.
+> ![[set_pruning_trie_table.png]]
+> Then we attach the following [[Trie|tries]] to the destination [[Trie|trie]].
+> ![[set_pruning_trie_example.png]]
+> Note that for the 00\* source trie we need to include all rules that could match that prefix in particular even rules that only match the 0\*.
+> 
+
+The need to match all rules that could fit with the prefix means we have to repeat the same rule in multiple branches. This leads to a memory explosion in large examples.
+
+> [!note] This prefers the longest matching source [[Subnets|subnet]]
+> This can be mitigated by switching the order of source and destination when constructing the [[Trie|trie]].
+
+## Backtracking
+
+We could get around the memory problem by letting each rule only appear in one source [[Trie|trie]]. Then if you don't match in current source [[Trie|trie]] you backtrack on the destination [[Trie|trie]] and go to the next source [[Trie|trie]]. In the example above we get the following [[Trie|trie]].
+
+![[set_pruning_tries_backtrack.png]]
+
+Whilst this reduces memory the downside to this approach is the time to compute the answer. If a [[Packets|packet]] has lots of backtracking you have lots of memory lookups which is slow.
+
+## Grid of [[Trie|tries]]
+
+We can get the best of both worlds if we precompute where the misses land in the backtracked [[Trie|trie]]. This means we don't need to recalculate the source path we had already walked. In the example above we would get the following.
+
+![[grid_of_tries_example.png]]
+
+## Scheduling and head of line blocking
+
+### Scheduling
+
+Assume we have an $N \times M$ crossbar switch with $N$ inputs and $M$ outputs, and $NM$ cross points. Each cross point needs to switched on and off so one input line only connects to one output line. We also would like to maximise input/output lines that are connected for better parallelism.
+
+### Take-a-ticket algorithm
+
+This is analogise to input lines taking a ticket to wait to be served by a given output line. The output lines serve the requests in order. This has rounds that follow the pattern.
+1. Input ques make requests to output ques to send a message if needed.
+2. The output queues grant tickets to the input queues.
+3. The holder of the latest ticket for each output queue connects and passes its transaction on.
+
+![[take_a_ticket_example.png]]
+
+However this algorithm has a clear problem if all the inputs want to connect to the same output. 
+
+![[Head of line (HOL) blocking]]
+
