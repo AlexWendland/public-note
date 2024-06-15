@@ -304,5 +304,79 @@ In the following examples you might want to make smarter routing decisions:
 - Providing QoS guarantees to flows.
 - Fair sharing of links among competing flows. 
 
+## Round Robin
 
+This is a method to control bandwidth reservations in schedulers for multiple flows.
 
+### Bit-by-bit round robin
+
+If we could split [[Packets|packets]] into bits we could employ absolute fairness by switching from flow to flow delivering each [[Bit|bit]]. This is a round robin.
+
+We can not split packets up so we will simulate this by making a "round number" delivering packets based on this value assigned to each request. 
+
+Let $R(t)$ be the round number at time $t$. If the router can deliver packets at $\mu$ [[Bit|bits]] a second and we have $N$ flows then
+$$
+\frac{dR}{dt} = \frac{\mu}{N}.
+$$
+For the $i$th packet in a flow of size $p(i)$ (in [[Bit|bits]]) we will assign $S(i)$ and $F(i)$ to be the start and finish round number for that packet when it arrives in a queue at time $t$. We set $S(i) = \max(R(t), F(i-1))$ and $F(i) = S(i) + p(i)$ i.e. if there are no packets waiting for that flow the start round number should be now - otherwise it should start after the last packet is sent. 
+
+Though when do we send packets using this scheme?
+
+### Packet-level fair queueing
+
+This is a method that uses bit-by-bit round robin framework to make fair queues.
+
+It achieves this by sending the packet that has the smallest finish time $F(i)$. It iteratively does this and increments the current round number to the finish time of the last packet whilst doing it.
+
+![[rr_1.png]]
+
+![[rr_2.png]]
+
+![[rr_3.png]]
+
+![[rr_4.png]]
+
+Whilst this guarantees fairness keeping track of all the finishing time would require a propitiatory queue method which has time complexity of $\log(N)$. This makes it hard to operate at gigabit speeds.
+
+### Deficit Round Robin (DRR)
+
+Whilst the bit-by-bit round robin was completely fair and ensured bandwidth and delay guarantees the time complexity made it infeasible. 
+
+Instead we can use round robin to given each flow some allocation to use for packets. If the next packet size is less than their current allowance we send it reducing their allowance by that size. For this we set some *quantum size* for each flow $Q_i$ (this can be the same or different for each flow) and we have a deficit counter $D(i)$ for each flow. Then we do the following procedure.
+
+```psuedo code
+1. Loop forever
+2. for each flow i
+	1. Increment D(i) += Q_i
+	2. While there is a next packet of size p such that p < D(i):
+		1. Decremet D(i) -= p
+		2. Send p
+```
+
+![[drr_example.png]]
+
+Deficit Round robin has one fail condition. If a flow has not had any packets for a while it allowance may build up which then could release a burst of packets. This might not be desirable if you want to guarantee a constant rate to other flows.
+
+## Token bucket
+
+Token bucket shaping is similar to Deficit round robin but here we limit the number of tokens in the counter by $B$ and restrict the inflow to a rate $R$ per second this enables:
+1. limiting the average rate, and
+2. limiting the maximum burst size.
+
+![[token_bucket_shaping.png]]
+
+If a packet arrives and the bucket does not have enough tokens we have two options:
+1. Put it into a buffer and wait for that bucket to have enough tokens, this is traditional token bucket shaping, or
+2. Drop the packet, this is called bucket policing.
+
+This leads to very different traffic throughput on the router.
+
+![[token_bcuket_traffic.png]]
+
+## Leaky bucket
+
+There is a middle ground between policing and shaping that combines the benefits of both. Instead of having tokens added to the bucket instead think of it being the [[Packets|packets]] we need to send. If there is room in the bucket we add the packet to the buffer and wait to send it. If the packet is too big to fit in the bucket we discard it. We then send packets at a constant rate in terms of size - thus the leak.
+
+![[leaky_bucket.png]]
+
+This can take a irregular flow and regularise it. This has the benefit of having a controlled size of buffer which can offset overflow. 
