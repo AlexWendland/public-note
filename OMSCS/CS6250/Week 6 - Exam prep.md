@@ -163,7 +163,7 @@ week: 6
 - Which services do IXPs provide?
     
 - How does a route server work?
-    
+    ``
 ## Lesson 5: Router Design and Algorithms (Part 1)
 
 - What are the basic components of a router?
