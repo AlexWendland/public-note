@@ -12,13 +12,13 @@ type: algorithm
 
 Boosting is an [[Ensemble learning]] method that uses multiple instances of another model to average them out to make a classifier that is better than any one individual one.
 
-Suppose we are in the [[Modelling framework|modelling framework]] where $B = \{-1,1\}$ and we have a training set $T$ where $(a_t, b_t) = t \in T$. Boosting iteratively train classifiers $h_i: A \rightarrow \mathbb{R}$ based on how the past classifiers have performed. To do this before training $h_i$ we define a distribution $\mathbb{B}_i$ on $A_T = \{a_t \vert t \in T\}$. 
+Suppose we are in the [[Modelling framework|modelling framework]] where $B = \{-1,1\}$ and we have a training set $T$ where $(a_t, b_t) = t \in T$. Boosting iteratively train classifiers $h_i: A \rightarrow \mathbb{R}$ based on how the past classifiers have performed. To do this before training $h_i$ we define a distribution $\mathbb{D}_i$ on $A_T = \{a_t \vert t \in T\}$. 
 
 We set  
 $$\mathbb{D}_1(a) = \frac{1}{\vert T \vert}.$$
 To define the other terms lets introduce some notation.
 
-Let $\epsilon_i$ be the [[Error rate (modelling)|error rate]] of $h_i$ with respect to $\mathbb{B}_i$ 
+Let $\epsilon_i$ be the [[Error rate (modelling)|error rate]] of $h_i$ with respect to $\mathbb{D}_i$ 
 
 Set our learning rate
 $$
