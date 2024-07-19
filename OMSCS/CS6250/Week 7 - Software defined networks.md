@@ -290,3 +290,28 @@ There are alternatives to [[OpenFlow]] such as ForCES which provides mo flexible
         - **Weak Consistency Semantics:** Less strict data consistency requirements.
         - **Fault Tolerance:** Better resilience to failures.
 
+## Example distributed controller
+
+Here we will review the ONOS distributed SDN control platform. This is based on Floodlight an open-source single instance SDN controller.
+
+![[onos_controller.png]]
+
+**Architecture:**
+
+- **Cluster Setup:** Multiple ONOS instances running in a cluster.
+- **Global Network View:** Built from network topology and state information (ports, links, hosts).
+- **Decision Making:** Applications use the global view for forwarding and policy decisions, updating the view accordingly.
+- **Components:**
+    - **Titan (Graph Database):** Stores the global view.
+    - **Cassandra (Distributed Key-Value Store):** Manages data.
+    - **Blueprints Graph API:** Interface for applications to interact with the network view.
+
+**Performance and Fault Tolerance:**
+
+- **Scale-Out Performance:** Add more instances to the cluster to handle increased demand.
+- **Mastership:** Each ONOS instance is the master controller for a group of switches, handling state changes between its switches and the network view.
+- **Failure Handling:**
+    - **Redistribution:** Workload of a failed instance is redistributed among remaining instances.
+    - **Master Election:** New masters are elected for affected switches, ensuring each switch has one master.
+    - **Zookeeper:** Manages mastership between switches and controllers.
+
