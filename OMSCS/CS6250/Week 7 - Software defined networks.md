@@ -259,3 +259,34 @@ There are alternatives to [[OpenFlow]] such as ForCES which provides mo flexible
 
 ## Centralised vs decentralised controllers
 
+### Essential Functions
+
+- **Topology Management:** Understanding and managing the network layout.
+- **Statistics Collection:** Gathering network data for analysis.
+- **Notifications:** Alerting systems of events or changes in the network.
+- **Device Management:** Overseeing the network hardware and software components.
+- **Shortest Path Forwarding:** Determining the most efficient routes for data.
+- **Security Mechanisms:** Ensuring isolation and enforcing security rules, prioritising high-priority services over lower-priority applications.
+
+### Controller Architectures
+
+1. **Centralized Controllers:**
+    
+    - **Characteristics:**
+        - Single entity managing all network devices.
+        - Potential single point of failure.
+        - Scalability issues in large networks.
+    - **Examples:**
+        - **Maestro, Beacon, NOX-MT:** Utilise multi-threaded designs to leverage multi-core processors, e.g., Beacon handles over 12 million flows per second using large computing nodes.
+        - **Trema, Ryu NOS:** Target specific environments like data centres and cloud infrastructure.
+        - **Rosemary:** Ensures security and isolation using a container-based micro-NOS architecture.
+2. **Distributed Controllers:**
+    
+    - **Characteristics:**
+        - Scalable to various network sizes.
+        - Can be centralised clusters or physically distributed elements.
+        - Suitable for large, WAN-connected data centres using a hybrid approach (clusters within data centres, distributed nodes across sites).
+    - **Properties:**
+        - **Weak Consistency Semantics:** Less strict data consistency requirements.
+        - **Fault Tolerance:** Better resilience to failures.
+
