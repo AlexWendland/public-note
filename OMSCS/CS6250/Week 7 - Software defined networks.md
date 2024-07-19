@@ -101,3 +101,43 @@ There were 3 main steps in the journey to the definition of an [[Software define
 - Generalised network device functions.
 - Introduced the vision of a network operating system.
 - Developed distributed state management techniques.
+
+## [[Software defined networks (SDN)|SDN]] functionality
+
+### Separation of Data and Control Plane
+
+There were two main pushes for this:
+1. Independent evolution and development.
+2. Control from higher-level software.
+
+This led to developments in many areas such as: Data centres, routing, enterprise networks, and research networks. Through the ability to control the behaviour of all devices through a single centralised point.
+
+The main role of the data plane is the forwarding of packets based on some [[Forwarding information base (FIB)|FIB]], whereas the main role of the control plane is [[Routing|routing]] which mainly involves updating the [[Forwarding information base (FIB)|FIB]] once it has computed the route a particular packet should take. 
+
+A [[Software defined networks (SDN)|SDN]] moves the control plane from being on the device to being located somewhere else on the network. It defines a clean API on how this networked control plane can interact and update the [[Forwarding information base (FIB)|FIB]] on the device.
+
+![[snd_example.png]]
+
+## Architecture
+
+There are 3 separate layers to the architecture:
+
+- **SDN-controlled network elements**: The SDN-controlled network elements, sometimes called the infrastructure layer, is responsible for the forwarding of traffic in a network based on the rules computed by the SDN control plane. 
+- **SDN controller**: The **SDN controller** is a logically centralized entity that acts as an **interface between the network elements and the network-control applications.** 
+- **Network-control applications**: The network-control applications are programs that manage the underlying network by collecting information about the network elements with the help of SDN controller.
+
+![[sdn_arciteture.png]]
+
+These components have two important interfaces.
+- Southbound API: Connecting the SDN controller to the SDN-Controlled switches.
+- NorthboundAPI: Allowing other network applications to interface with the SDN controller.
+
+There are 4 important features of this architecture:
+
+1. **Flow-based forwarding:** The rules for forwarding packets in the SDN-controlled switches can be computed based on any number of header field values in various layers such as the transport-layer, network-layer and link-layer. This differs from the traditional approach where only the destination IP address determines the forwarding of a packet. For example, [[OpenFlow]] allows up to 11 header field values to be considered. 
+2. **Separation of data plane and control plane:** The SDN-controlled switches operate on the data plane and they only execute the rules in the flow tables. Those rules are computed, installed, and managed by software that runs on separate servers. 
+3. **Network control functions:** The SDN control plane, (running on multiple servers for increased performance and availability) consists of two components: the controller and the network applications. The controller maintains up-to-date network state information about the network devices and elements (for example, hosts, switches, links) and provides it to the network-control applications. This information, in turn, is used by the applications to monitor and control the network devices. 
+4. **A programmable network:** The network-control applications act as the “brain” of SDN control plane by managing the network. Example applications can include network management, traffic engineering, security, automation, analytics, etc. For example, we can have an application that determines the end-to-end path between sources and destinations in the network using Dijkstra’s algorithm.
+
+### Controller Architecture
+
