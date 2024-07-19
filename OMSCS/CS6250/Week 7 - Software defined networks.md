@@ -401,4 +401,31 @@ This has been implemented in [[Internet Exchange Points (IXPs)|IXPs]] using SDX.
 - Traffic load balancing - The destination IP address can be rewritten based on any field in the packet header to balance the load. 
 - Traffic redirection through [[Middleboxes|middleboxes]] - Targeted subsets of traffic can be redirected to [[Middleboxes|middleboxes]].
 
-At an [[Internet Exchange Points (IXPs)|IXP]] each participant connects to the route server - there they get a virtual sdn switch where they decide the in/outbound rules for traffic leaving and entering their network. These do not effect other participants but are applied to 
+At an [[Internet Exchange Points (IXPs)|IXP]] each participant connects to the route server - there they get a virtual sdn switch where they decide the in/outbound rules for traffic leaving and entering their network. These do not effect other participants switches but does effect how traffic is routed through the [[Internet Exchange Points (IXPs)|IXP]]. This differs from a standard route server which uses [[Boarder gateway protocol (BGP)|BGP]] rules to control traffic form/to participant [[Autonomous system (AS)|AS]].
+
+This is written in Pyretic and exmple can be found below.
+
+![[sdx_example.png]]
+
+## Wide area traffic delivery
+
+1. **Application-Specific Peering**
+    - **Current Challenge:** ISPs need to handle high-bandwidth application traffic (e.g., YouTube, Netflix) with dedicated ASes and configure additional rules in edge routers.
+    - **SDX Solution:** Custom rules can be configured at the SDX to identify and direct specific application traffic, eliminating the overhead on ISP edge routers.
+2. **Inbound Traffic Engineering**
+    - **Current Challenge:** BGP routes based on destination address, with limited control over inbound traffic through AS path prepending and selective advertisements, which can pollute global routing tables.
+    - **SDX Solution:** An SDN-enabled switch can install forwarding rules based on source IP and port, allowing ASes to control inbound traffic more effectively than with BGP.u
+3. **Wide-Area Server Load Balancing**
+    - **Current Challenge:** Traditional DNS-based load balancing can lead to slower responses due to DNS caching and inefficiencies during failures.
+    - **SDX Solution:** With SDX, packet headers can be modified to direct traffic to the appropriate backend server using a single anycast IP, improving load balancing efficiency.
+4. **Redirection Through Middleboxes**
+    - **Current Challenge:** Placing middleboxes at every necessary junction is costly for large ISPs, and routing protocols like iBGP to redirect traffic can be inefficient.
+    - **SDX Solution:** SDX can dynamically identify and redirect traffic through a sequence of middleboxes, optimizing middlebox usage without unnecessary traffic redirection.
+
+### Key Advantages
+
+- **Customization:** Each AS can tailor its traffic policies without affecting others.
+- **Efficiency:** SDX enables more precise traffic control and management, reducing overhead and inefficiencies.
+- **Scalability:** SDX's ability to manage and combine policies ensures scalable and flexible network operations.
+
+These use cases demonstrate how SDX architecture can enhance traffic management, load balancing, and the use of middleboxes, providing a more efficient and flexible network infrastructure.
