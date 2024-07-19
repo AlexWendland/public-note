@@ -403,7 +403,7 @@ This has been implemented in [[Internet Exchange Points (IXPs)|IXPs]] using SDX.
 
 At an [[Internet Exchange Points (IXPs)|IXP]] each participant connects to the route server - there they get a virtual sdn switch where they decide the in/outbound rules for traffic leaving and entering their network. These do not effect other participants switches but does effect how traffic is routed through the [[Internet Exchange Points (IXPs)|IXP]]. This differs from a standard route server which uses [[Boarder gateway protocol (BGP)|BGP]] rules to control traffic form/to participant [[Autonomous system (AS)|AS]].
 
-This is written in Pyretic and exmple can be found below.
+This is written in Pyretic and example can be found below.
 
 ![[sdx_example.png]]
 
