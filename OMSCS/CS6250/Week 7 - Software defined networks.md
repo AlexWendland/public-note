@@ -141,3 +141,41 @@ There are 4 important features of this architecture:
 
 ### Controller Architecture
 
+The controller itself is broken down into a further 3 layers. These handle each of its separate responsibilities. 
+
+1. **Communication Layer**: This layer consists of a protocol through which the SDN controller and the network controlled elements communicate. Using this protocol, the devices send locally observed events to the SDN controller providing the controller with a current view of the network state. For example, these events can be a new device joining the network, heartbeat indicating the device is up, etc. The communication between SDN controller and the controlled devices is known as the “southbound” interface. [[OpenFlow]] is an example of this protocol, which is broadly used by SDN controllers today.
+2. **Network-wide state-management layer**: This layer is about the network-state that is maintained by the controller. The network-state includes any information about the state of the hosts, links, switches and other controlled elements in the network. It also includes copies of the flow tables of the switches. Network-state information is needed by the SDN control plane to configure the flow tables.
+3. **The interface to the network-control application layer:** This layer is also known as the controller’s “northbound” interface using which the SDN controller interacts with network-control applications. Network-control applications can read/write network state and flow tables in controller’s state-management layer. The SDN controller can notify applications of changes in the network state, based on the event notifications sent by the SDN-controlled devices. The applications can then take appropriate actions based on the event. A REST interface is an example of a northbound API.
+
+![[sdn_controller_architecture.png]]
+
+The SDN controller, although viewed as a monolithic service by external devices and applications, is implemented by distributed servers to achieve fault tolerance, high availability and efficiency. Despite the issues of synchronization across servers, many modern controllers such as OpenDayLight and ONOS have solved it and prefer distributed controllers to provide highly scalable services.
+
+## Readings for part 2
+
+### Important Readings
+
+Software-Defined Networking: A Comprehensive Survey  
+[https://arxiv.org/pdf/1406.0440.pdfLinks to an external site.](https://arxiv.org/pdf/1406.0440.pdf "Link")
+
+ONOS: Towards an Open, Distributed SDN OS  
+[https://www-cs-students.stanford.edu/~rlantz/papers/onos-hotsdn.pdf Links to an external site.](https://www-cs-students.stanford.edu/~rlantz/papers/onos-hotsdn.pdf)
+
+P4: Programming Protocol-Independent Packet Processors  
+[https://www.sigcomm.org/sites/default/files/ccr/papers/2014/July/0000000-0000004.pdfLinks to an external site.](https://www.sigcomm.org/sites/default/files/ccr/papers/2014/July/0000000-0000004.pdf)
+
+A Software-Defined Internet Exchange  
+[https://dl.acm.org/doi/pdf/10.1145/2740070.2626300?download=trueLinks to an external site.](https://dl.acm.org/doi/pdf/10.1145/2740070.2626300?download=true)
+
+### Optional Readings
+
+P4 Language tutorial  
+[https://github.com/p4lang/tutorials/tree/master/exercises/basicLinks to an external site.](https://github.com/p4lang/tutorials/tree/master/exercises/basic)
+
+An Industrial-Scale Software Defined Internet Exchange Point  
+[https://www.usenix.org/system/files/conference/nsdi16/nsdi16-paper-gupta.pdfLinks to an external site.](https://www.usenix.org/system/files/conference/nsdi16/nsdi16-paper-gupta.pdf)
+
+ _As you go through this lesson, there will be links for optional tutorials on various SDN technologies._
+
+## Motivation again
+
