@@ -177,5 +177,14 @@ An Industrial-Scale Software Defined Internet Exchange Point
 
  _As you go through this lesson, there will be links for optional tutorials on various SDN technologies._
 
-## Motivation again
+## Advantages of [[Software defined networks (SDN)|SDN]]s
+
+1. **Shared abstractions:** These middlebox services (or network functionalities) can be programmed easily now that the abstractions provided by the control platform and network programming languages can be shared.
+2. **Consistency of same network information**: All network applications have the same global network information view, leading to consistent policy decisions while reusing control plane modules
+3. **Locality of functionality placement:** Previously, the location of middleboxes was a strategic decision and big constraint. However, in this model, the middlebox applications can take actions from anywhere in the network.
+4. **Simpler integration:** Integrations of networking applications are smoother. For example, load balancing and routing applications can be combined sequentially.
+
+![[sdn_advantages.png]]
+
+
 
