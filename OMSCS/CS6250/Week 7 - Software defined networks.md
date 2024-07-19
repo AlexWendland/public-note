@@ -348,3 +348,43 @@ Below is an example dependency graph for the [[Programming Protocol-independent 
 
 ## SDN Applications
 
+- **Traffic Engineering:**
+    - **Focus:** Optimize traffic flow to minimize power consumption, use network resources efficiently, and perform load balancing.
+    - **Techniques:** Use optimization algorithms and monitor data plane load via southbound interfaces.
+    - **Examples:**
+        - **ElasticTree:** Shuts down specific links and devices based on traffic load.
+        - **Load Balancers (Plug-n-Serve, Aster*x):** Create rules based on wildcard patterns for scalability.
+        - **ALTO VPN:** Enables dynamic VPN provisioning in cloud infrastructures.
+
+- **Mobility and Wireless:**
+    - **Challenges:** Manage limited spectrum, allocate radio resources, and perform load balancing.
+    - **SDN Benefits:** Simplifies deployment and management of wireless networks (e.g., WLANs, cellular networks).
+    - **Features:** On-demand virtual access points (VAPs), dynamic spectrum usage, shared wireless infrastructure.
+    - **Examples:**
+        - **OpenRadio:** Provides an abstraction layer, decoupling wireless protocols from hardware.
+        - **Light Virtual Access Points (LVAPs):** Map one-to-one with clients for better management.
+        - **Odin Framework:** Uses LVAPs for mobility management and channel selection, allowing seamless movement between access points.
+
+- **Measurement and Monitoring:**
+    - **Goals:** Add new features and improve existing SDN features using OpenFlow.
+    - **Methods:** Reduce control plane load from data collection using sampling and estimation techniques.
+    - **Examples:**
+        - **OpenSketch:** Offers flexibility for network measurements.
+        - **Monitoring Frameworks (OpenSample, PayLess):** Enhance monitoring capabilities.
+
+- **Security and Dependability:**
+    - **Focus:** Enhance network security through programmable devices and policies.
+    - **Approaches:** Impose security policies at network entry points and throughout the network.
+    - **Examples:**
+        - **DDoS Detection:** Identifies and mitigates DDoS attacks using network information.
+        - **OF-RHM:** Randomly mutates IP addresses to fake dynamic IPs for attackers.
+        - **CloudWatcher:** Monitors cloud infrastructures.
+        - **SDN Security Improvements:** Include rule prioritisation and ongoing research for better security measures.
+
+- **Data Center Networking:**
+    - **Benefits:** Revolutionize data center operations with services like live network migration, troubleshooting, and real-time monitoring.
+    - **Features:** Detect anomalous behaviour, dynamic reconfigurations during live migrations.
+    - **Examples:**
+        - **LIME:** Provides live migration capabilities.
+        - **FlowDiff:** Detects abnormalities in data center networks.
+
