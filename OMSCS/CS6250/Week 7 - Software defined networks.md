@@ -388,3 +388,17 @@ Below is an example dependency graph for the [[Programming Protocol-independent 
         - **LIME:** Provides live migration capabilities.
         - **FlowDiff:** Detects abnormalities in data center networks.
 
+## SDX
+
+Routing using [[Boarder gateway protocol (BGP)|BGP]] has some serious limitations:
+1. Routing only uses destination IP: We want customisation based in the traffic application or source IP.
+2. Little control over end-to-end paths: We can only speak to our neighbours or look at the as-path field.
+These could be addressed using [[Software defined networks (SDN)|SDN]].
+
+This has been implemented in [[Internet Exchange Points (IXPs)|IXPs]] using SDX. This allows for:
+- Application specific peering - Custom peering rules can be installed for certain applications, such as high-bandwidth video applications like Netflix or YouTube which constitute a significant amount of traffic volume. 
+- Traffic engineering - Controlling the inbound traffic based on source IP or port numbers by setting forwarding rules.
+- Traffic load balancing - The destination IP address can be rewritten based on any field in the packet header to balance the load. 
+- Traffic redirection through [[Middleboxes|middleboxes]] - Targeted subsets of traffic can be redirected to [[Middleboxes|middleboxes]].
+
+At an [[Internet Exchange Points (IXPs)|IXP]] each participant connects to the route server - there they get a virtual sdn switch where they decide the in/outbound rules for traffic leaving and entering their network. These do not effect other participants but are applied to 
