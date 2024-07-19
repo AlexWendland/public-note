@@ -34,3 +34,4 @@ Throughout the course, students will work on hands-on projects to learn about ro
 - [[Week 4 - AS relationships and interdomain routing]]
 - [[Week 5 - Router design and algorithms]]
 - [[Week 6 - Exam prep]]
+- [[Week 7 - Software defined networks]]
