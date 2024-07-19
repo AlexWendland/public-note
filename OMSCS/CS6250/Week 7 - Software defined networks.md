@@ -331,7 +331,18 @@ Here we will review the ONOS distributed SDN control platform. This is based on 
 2. **Protocol Independence:** Switches should be independent of specific protocols. Controllers define packet parsers and match-action tables for processing.
 3. **Target Independence:** Packet processing programs should be independent of the underlying hardware. P4 programs are compiled into target-specific configurations to program switches.
 
-P4 enhances switch programmability, ensuring they can adapt to various protocols and hardware environments while providing a flexible and open interface for [[Software defined networks (SDN)|SDN]] controllers.
+[[Programming Protocol-independent Packet Processors (P4)|P4]] enhances switch programmability, ensuring they can adapt to various protocols and hardware environments while providing a flexible and open interface for [[Software defined networks (SDN)|SDN]] controllers.
 
 ![[P4_compiler.png]]
+
+This operates within the switch in two steps:
+
+1. **Configure**: These sets of operations are used to program the parser. They specify the header fields to be processed in each match+action stage and also define the order of these stages. 
+2. **Populate**: The entries in the match+action tables specified during configuration may be altered using the populate operations. It allows addition and deletion of the entries in the tables.
+
+![[P4_model.png]]
+
+Below is an example dependency graph for the [[Programming Protocol-independent Packet Processors (P4)|P4]] language.
+
+![[P4_example.png]]
 
