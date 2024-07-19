@@ -1,14 +1,14 @@
 ---
 aliases:
-  - SDNs
+  - load balancers
+  - LB
 checked: false
 created: 2024-07-19
 last_edited: 2024-07-19
 publish: false
-tags:
-  - networks
+tags: 
 type: definition
 ---
->[!tldr] Software Defined Networks
->
+>[!tldr] Load balancers
+>Definition here
 
