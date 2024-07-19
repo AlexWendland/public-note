@@ -315,3 +315,23 @@ Here we will review the ONOS distributed SDN control platform. This is based on 
     - **Master Election:** New masters are elected for affected switches, ensuring each switch has one master.
     - **Zookeeper:** Manages mastership between switches and controllers.
 
+## Programming languages for the control plane [[Programming Protocol-independent Packet Processors (P4)|P4]]
+
+- **Purpose:** A high-level programming language designed to configure network switches, complementing SDN control protocols.
+- **Context:** Developed to address the limitations of the [[OpenFlow]] interface, which started with simple rule tables and has grown more complex to handle multiple stages and numerous header fields.
+
+**Need for P4:**
+
+- **Flexibility and Extensibility:** Required to parse packets and match header fields efficiently while providing an open interface for controllers.
+- **Controller-Switch Interaction:** P4 enables controllers to define switch operations programmatically, acting as a general interface between switches and controllers.
+
+**Primary Goals of P4:**
+
+1. **Reconfigurability:** Controllers should be able to modify packet parsing and processing within switches.
+2. **Protocol Independence:** Switches should be independent of specific protocols. Controllers define packet parsers and match-action tables for processing.
+3. **Target Independence:** Packet processing programs should be independent of the underlying hardware. P4 programs are compiled into target-specific configurations to program switches.
+
+P4 enhances switch programmability, ensuring they can adapt to various protocols and hardware environments while providing a flexible and open interface for [[Software defined networks (SDN)|SDN]] controllers.
+
+![[P4_compiler.png]]
+
