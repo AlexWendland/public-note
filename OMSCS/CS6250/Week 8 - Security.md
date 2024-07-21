@@ -140,3 +140,11 @@ Within the paper it highlighted.
 
 ## [[Distributed Denial-of-Service (DDoS)]]
 
+![[Distributed Denial-of-Service (DDoS)|DDoS]]
+
+![[DDoS Spoofing]]
+
+![[DDoS reflection and amplification]]
+
+## Defence against [[Distributed Denial-of-Service (DDoS)|DDoS]]
+
