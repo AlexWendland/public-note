@@ -75,3 +75,5 @@ These techniques have their roots in legitimate DNS-based techniques that legiti
 
 ![[DSN-based content delivery]]
 
+![[Fast-Flux Service Networks (FFSN)]]
+
