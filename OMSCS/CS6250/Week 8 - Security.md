@@ -123,3 +123,20 @@ This system effectively uses external indicators of mismanagement, malicious act
 
 ## [[Boarder gateway protocol (BGP)|BGP]] hijacking
 
+![[BGP Hijacking]]
+
+There are different reasons attempt these attacks:
+- **Human error**: Accidental misconfiguration of routers can lead to this type of attack. E.g. China Telecom accidentally leaked a full [[Boarder gateway protocol (BGP)|BGP]] table that led to large-scale [[Type-0 hijacking]]
+- **Targeted attack**: This is normally done by someone trying to intercept network traffic and carry out a [[Man-in-the-middle attack (MM)]], a [[Type-N hijacking]] or a [[Type-U hijacking]]. E.g. Visa and Mastercard were hijacked by Russian networks in 2017 using this.
+- **High impact attack**: Here someone is obviously trying to cause wide spread outages. E.g. Pakistan Telecom in a [[Type-0 hijacking]] with a [[Sub-prefix hijacking]], essentially [[Blackholing (BH)|blackholing]] all of YouTube’s services worldwide for nearly 2 hours.
+
+## Defence against [[BGP Hijacking]]
+
+![[ARTEMIS]]
+
+Within the paper it highlighted.
+1. **Outsourcing BGP Announcements**: Having an external organisation manage BGP announcements is highly effective in combating BGP hijacking.
+2. **BGP Announcements vs. Prefix Filtering**: Outsourcing BGP announcements is more optimal compared to the current standard defence mechanism of prefix filtering.
+
+## [[Distributed Denial-of-Service (DDoS)]]
+
