@@ -148,3 +148,22 @@ Within the paper it highlighted.
 
 ## Defence against [[Distributed Denial-of-Service (DDoS)|DDoS]]
 
+![[Traffic Scrubbing Service]]
+
+![[Access control list (ACL) filters]]
+
+![[BGP Flowspec]]
+
+**ACL vs. Flowspec**: Unlike traditional Access Control Lists (ACLs) that must be manually configured on each router, Flowspec rules can be propagated using the BGP protocol, making network-wide rule deployment more efficient.
+
+**Real-World Applications**: ISPs and large enterprises often use BGP Flowspec to protect their networks from DDoS attacks by dynamically adjusting traffic rules based on current threats.
+
+By understanding and leveraging [[BGP Flowspec]], network administrators can better protect their infrastructures from [[Distributed Denial-of-Service (DDoS)|DDoS]] attacks, ensuring smoother and more secure network operations.
+
+Lastly we consider [[Blackholing (BH)]].
+
+![[Blackholing (BH)|blackholing]]
+
+![[BGP Blackholing]]
+
+When implemented in an [[Internet Exchange Points (IXPs)|IXP]] if one of the participants does not accept the [[Blackholing (BH)|BH]] message then this can render the who excise worthless.
