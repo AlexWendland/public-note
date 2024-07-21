@@ -77,3 +77,18 @@ These techniques have their roots in legitimate DNS-based techniques that legiti
 
 ![[Fast-Flux Service Networks (FFSN)]]
 
+## Rouge network detection
+
+There are different approaches to detecting rouge networks. The most intuitive method is to see if they are hosting bad actors.
+
+![[Finding rouge networks (FIRE)]]
+
+The approach has a couple downsides:
+- It is infeasible to monitor all networks all the time.
+- It takes a long time for malicious IPs to get on the back list.
+- This struggles to distinguish between bad networks and networks that are curntly being misused but are not themselves bad (such as a service that hosts websites for other people).
+
+We could instead look at the network topology of the system to see if it is behaving like a bad actor.
+
+![[ASwatch]]
+
