@@ -121,3 +121,5 @@ This system predicts the likelihood of a security breach within an organisation 
 
 This system effectively uses external indicators of mismanagement, malicious activity, and past incidents to predict the probability of future breaches in an organization's network.
 
+## [[Boarder gateway protocol (BGP)|BGP]] hijacking
+
