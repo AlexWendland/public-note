@@ -92,3 +92,32 @@ We could instead look at the network topology of the system to see if it is beha
 
 ![[ASwatch]]
 
+Lastly we can instead of looking at if a network is behaving badly work out if the network is likely to be breached or to have been breached. This allows us to know if we can trust that network even if it is operated with good intentions.
+
+This system predicts the likelihood of a security breach within an organisation using externally observable features. It uses these features to train a [[Random forest]] model, making it callable to all organizations. The features fall into three main categories:
+
+1. **Mismanagement Symptoms**:
+    - **Open Recursive Resolvers**: Misconfigured [[Domain Name System (DNS)|DNS]] resolvers that can be exploited.
+    - **DNS Source Port Randomization**: Servers lacking this feature are more vulnerable.
+    - **BGP Misconfiguration**: Short-lived routes indicating routing issues.
+    - **Untrusted HTTPS Certificates**: Detection of invalid certificates via TLS handshake.
+    - **Open SMTP Mail Relays**: Servers improperly configured to filter mail, increasing risk.
+2. **Malicious Activities**:
+    - **Spam Activity**: IP addresses involved in spam, identified by services like CBL and SpamCop.
+    - **Phishing and Malware**: Detection of phishing and malware sources via platforms like PhishTank.
+    - **Scanning Activity**: IP addresses involved in scanning detected by monitors like Dshield.
+3. **Security Incident Reports**:
+    - **VERIS Community Database**: A collection of over 5000 cybersecurity incidents.
+    - **Hackmageddon**: Aggregates monthly security incidents.
+    - **Web Hacking Incidents Database**: Repository of cyber security incidents.
+
+### Model and Evaluation:
+
+- **Random Forest Classifier**: Trained using 258 features, including the ones described above, along with statistical secondary features and organization size.
+- **Baseline Comparison**: Compared against a [[Support vector machines (SVM)]].
+- **Output**: The model provides a risk probability which, when thresholded, gives a binary class label indicating breach likelihood.
+- **Data Handling**: Training-testing splits are time-based to ensure sequential data integrity.
+- **Accuracy**: The model achieves an accuracy of 90% with the optimal parameters.
+
+This system effectively uses external indicators of mismanagement, malicious activity, and past incidents to predict the probability of future breaches in an organization's network.
+
