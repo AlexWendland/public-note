@@ -57,3 +57,21 @@ Next Gen Blackholing to Counter DDoS
 
 Kurose-Ross Edition 6th, Section 8.1
 
+## Secure communications
+
+There a 4 properties of secure communication:
+- **Confidentiality**: The message can only be read by the person who was the intended recipient of the message.
+- **Integrity**: The message was received as intended and has not been manipulated. 
+- **Authentication**: The person who you are talking to is who you think they are.
+- **Availability**: You can communicate when you need to through this channel.
+
+## DNS abuse
+
+Attackers have developed techniques abusing the DNS protocol to extend the uptime of domains that are used for malicious purposes (e.g., Command and Control hosting infrastructure, phishing, spamming domains, hosting illegal businesses, and illegal content). The ultimate goal of this abuse is to remain undetectable for longer.
+
+These techniques have their roots in legitimate DNS-based techniques that legitimate businesses and administrators use.
+
+![[Round robin DNS (RRDNS)]]
+
+![[DSN-based content delivery]]
+
