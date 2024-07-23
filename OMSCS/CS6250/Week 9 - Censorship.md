@@ -158,3 +158,4 @@ The most direct way of censorship is to block access to the whole or parts of th
 - **Router disruption**: Abusing the [[Boarder gateway protocol (BGP)|BGP]] to change the routes that are offered or removing them completely. This is fairly easy to detect as you would be able to notice the change in routing behaviour.
 - **Packet filtering**: Such as what a [[Firewall|firewall]] or a [[Switch|switch]] does but on the level on of the whole network. This can be harder to detect as you would need to probe for these [[Internet Protocol (IP)|IP address]] or the paths packets follow.
 
+![[Angur]]
