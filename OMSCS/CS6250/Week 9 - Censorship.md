@@ -115,3 +115,46 @@ china(http) → cam(54191) [RST] TTL=49, seq=1
 ```
 The reset packet received by the client is from the firewall. It does not matter that the client sends out legitimate GET requests following one “questionable” request. It will continue to receive resets from the firewall for a particular duration. Running different experiments suggests that this blocking period is variable for “questionable” requests.
 
+## Measuring DNS manipulation
+
+It is believed over 60 countries are impacted by some form of [[DNS censorship]] byt there is little comprehensive knowledge of what is blocked in which country because of the following issues:
+
+- **Diverse Measurements**
+    - **Geographic and Political Variation:**
+        - Different geographic regions, [[Internet Service Provider (ISP)|ISPs]], and countries exhibit diverse political dynamics affecting censorship.
+        - Censorship techniques can vary even within regions of the same country.
+    - **Different Filtering Techniques:**
+        - ISPs may employ various methods, such as IP address blocking or keyword-based web request blocking.
+    - **Need for Longitudinal Studies:**
+        - Continuous and widespread measurements are necessary to understand the global scope and diversity of [[Domain Name System (DNS)|DNS]] manipulation.
+- **Need for Scale**
+    - **Limitations of Volunteer-Based Methods:**
+        - Initial methods relied on volunteers installing and running measurement software.
+        - This approach lacks the scale needed for comprehensive analysis.
+    - **Automation and Independence:**
+        - There is a need for automated measurement tools that do not depend on human intervention.
+- **Identifying Intent to Restrict Content Access**
+    - **Complexity in Detection:**
+        - Inconsistent or anomalous DNS responses may be due to various causes, including misconfigurations.
+    - **Intent Detection:**
+        - Detecting DNS manipulation involves discerning intent to block access, which is inherently challenging.
+    - **Reliance on Multiple Indications:**
+        - It is essential to identify multiple signals to infer deliberate DNS manipulation.
+- **Ethics and Minimizing Risks**
+    - **Risks to Citizens:**
+        - Participation in censorship measurement can pose risks, especially in countries penalising access to censored content.
+    - **Safer Alternatives:**
+        - Avoid using home network DNS resolvers or forwarders.
+        - Prefer open DNS resolvers within Internet infrastructure, such as those hosted by ISPs or cloud providers.
+
+Good method to measure censorship require different vantage points on the internet. Some of these did use servers to rent such as CensMon others such as OpenNet used volunteers - though this can be difficult in exactly the places where you would want to measure it. 
+
+![[Iris]]
+
+## Censorship through connectivity disruptions
+
+The most direct way of censorship is to block access to the whole or parts of the internet at the [[Internet Protocol (IP)|IP]] level. The main methods to do this are:
+- **Physically disconnecting infrastructure**: If the network is sufficiently small then you could take down the access points to the internet. This is hard however, as normally this infrastructure is distributed.
+- **Router disruption**: Abusing the [[Boarder gateway protocol (BGP)|BGP]] to change the routes that are offered or removing them completely. This is fairly easy to detect as you would be able to notice the change in routing behaviour.
+- **Packet filtering**: Such as what a [[Firewall|firewall]] or a [[Switch|switch]] does but on the level on of the whole network. This can be harder to detect as you would need to probe for these [[Internet Protocol (IP)|IP address]] or the paths packets follow.
+
