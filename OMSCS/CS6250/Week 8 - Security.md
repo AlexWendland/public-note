@@ -142,7 +142,11 @@ Within the paper it highlighted.
 
 ![[Distributed Denial-of-Service (DDoS)|DDoS]]
 
-![[DDoS Spoofing]]
+![[Spoofing]]
+
+In the context of [[Distributed Denial-of-Service (DDoS)|DDoS]] attacks this can be done in two ways:
+- Changing the address to another legitimate server to waste resources and bandwidth.
+- Changing the address to the host you are attacking so the response is sent to the server under attack.
 
 ![[DDoS reflection and amplification]]
 
