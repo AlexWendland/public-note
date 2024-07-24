@@ -43,3 +43,29 @@ Kurose-Ross Edition 7, Chapter 9
 
 ## Basic requirements
 
+Sounds and video are interesting internet applications due to their interesting requirements. First they have far higher [[Bit|bit]]-rates than other applications.
+
+![[media_bit_rates.png]]
+
+Where facebook is someone flicking through 1 picture per second. 
+
+Whilst video does have a much larger bit-rate you may be ok with skipping [[Bit|bits]] or there being a slight delay - in contrast with voice where skipped  [[Bit|bits]] or delayed audio may make the stream unusable. Therefore they have different dynamics at play.
+
+There are three different types of multi-media applications we will look at:
+1. Streaming stored audio/video,
+	- This requires to play before the whole file is downloaded.
+	- It is interactive skipping forward, pausing going backward.
+	- It should have continuous playout i.e. play out as it was recorded without freezing.
+2. Conversational audio/video, and
+	- Multiple users connecting to the same stream.
+	- These are highly delay sensitive - normally 150ms is a bench mark to being acceptable. 
+	- They are loss-tolerant. i.e. it is ok if there is a small skip or small sections are scrambled.  
+3. Live audio/video.
+	- This is similar to streamed but you have a one to many dynamic.
+	- The users are geographically displaced.
+	- They are very delay sensitive. 
+
+## [[Voice over IP (VoIP)]]
+
+![[Voice over IP (VoIP)|VoIP]]
+
