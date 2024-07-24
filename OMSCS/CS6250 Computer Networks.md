@@ -37,3 +37,4 @@ Throughout the course, students will work on hands-on projects to learn about ro
 - [[Week 7 - Software defined networks]]
 - [[Week 8 - Security]]
 - [[Week 9 - Censorship]]
+- [[Week 10 - Video applications]]
