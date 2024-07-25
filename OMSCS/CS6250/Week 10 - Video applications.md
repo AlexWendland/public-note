@@ -102,7 +102,36 @@ Delay is very important to the end user to stop people talking over one another.
 
 Due to the [[Internet]] having unreliable network times - packets will be received in a different order than they were sent out. We call this phenomenon *jitter*. This is problematic for [[Voice over IP (VoIP)|VoIP]] as we need to reconstruct a audio signal that has continuous playout - gaps in audio must be kept to less that 30-75ms.
 
-The main way to handle this is keeping a playout buffer. This delays the playout on the receivers side to wait to collect all packets before playing out. This has a payoff, the longer you wait the less Jitter but the more end-to-end delay. The less you wait the more Jitter and packet loss.
+The main way to handle this is keeping a playout buffer or jitter window. This delays the playout on the receivers side to wait to collect all packets before playing out. This has a payoff, the longer you wait the less Jitter but the more end-to-end delay. The less you wait the more Jitter and packet loss.
 
 ## Packet loss
+
+Due to the use of the [[Internet|internet]] packet loss is inevitable in [[Voice over IP (VoIP)|VoIP]]. However, [[Voice over IP (VoIP)|VoIP]] uses an even tougher definition of packet loss - which is either it is lost or it arrives after the jitter window. Luckily [[Voice over IP (VoIP)|VoIP]] can tolerate between 1-20% packet loss depending on voice codex used.
+
+To avoid packet loss we might want to use [[Transmission Control Protocol (TCP)|TCP]] however due to the tougher definition the transmission of packets might arrive after the jitter window so be considered lost anyway. Therefore most [[Voice over IP (VoIP)|VoIP]] applications use [[User Datagram Protocol (UDP)|UDP]] and just accept some packet loss - this lowers bandwidth usage as well.
+
+There are 3 major techniques to handle packet loss in [[Voice over IP (VoIP)|VoIP]]
+
+### Forward Error Correction
+
+This transmits redundant data that can fill any gaps. This increases the bandwidth used but decreases packet loss. This can be done in a few different ways:
+- Breaking the data into chunks that are overlapping - then we can use xor to reconstruct the data.
+- Transmitting a lower quality stream along side the high quality stream.
+The more redundant data you send the more bandwidth you use. Also some of these techniques require you to wait longer before playing out increasing end-to-end delay.
+
+![[fec_example.png]]
+
+### Interleaving
+
+This technique does not require additional data to be transmitted instead it breaks up the chunks of data so that the data in one chunk does not contain consecutive bits. That way a lost packet generate many small gaps not noticeable by the human ear. The pay off is having to wait longer to receive consecutive chunks which increases end-to-end delay. 
+
+![[interleaving.png]]
+
+### Error concealment
+
+This involves filling in the gaps using the packets around it. There are two basic forms of this:
+- Simply replacing missing gaps with the chunk from before. This is easy to implement and is fairly good in most circumstances.
+- Interpolating from the chunks on either side. This is computationally more expensive but normally provides better estimates.
+
+## Live/on demand streaming
 
