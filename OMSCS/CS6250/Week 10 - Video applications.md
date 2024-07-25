@@ -10,7 +10,7 @@ tags:
 type: lecture
 week: 10
 ---
-# Week 10 - Video applications
+pdef# Week 10 - Video applications
 
 ## Additional reading
 
@@ -68,4 +68,41 @@ There are three different types of multi-media applications we will look at:
 ## [[Voice over IP (VoIP)]]
 
 ![[Voice over IP (VoIP)|VoIP]]
+
+[[Voice over IP (VoIP)|VoIP]] faces unique challenges as the [[Internet]] is best effort delivery and does not come with built in quality of service gaurentees. Moveover, audio is an analogue form so any [[Voice over IP (VoIP)|VoIP]] will need to send a digital approximation.
+
+- **Encoding**: We normally encode sound by making lots of descrete apprximations of the waves current position this is call **[[Quantization|quantization]]**. There are different categories of encoding schemes, narrowband, broadband, and multimode these each have different trade offs. The encoding hopes to make speech intelligible but also use as little bandwidth as possible.
+- **Signalling**: Traditionally this takes care of how calls are set up and torn down. [[Protocol (networks)|Protocols]] such as [[Session Initiation Protocol (SIP)]] had handle this in [[Voice over IP (VoIP)|VoIP]] applications. This has four major responsibilities.
+	1. User location - the parties finding one another,
+	2. Session establishment - handling the callee accepting, rejecting or redirecting the call,
+	3. Session negotiation - endpoint synchronizing on the same standard,
+	4. Call participation management - handling people joining or leaving.
+	
+## Quality of service metrics
+
+There are 3 major quality of service metrics in [[Voice over IP (VoIP)|VoIP]]:
+- **End to end delay**: The total time between speaking and hearing.
+- **Jitter**: Scrambled or jumpy audio and video.
+- **Packet loss**: The amount of missing data there is at the end of the call.
+
+## End to end 
+
+This includes:
+- the time it takes to encode the audio,
+- the time it takes to put it in packets, 
+- all the normal sources of network delay that network traffic encounters such as queueing delays, 
+- “playback delay,” which comes from the receiver’s playback buffer (which is a mitigation technique for delay jitter, which we’ll be discussing next),
+- and decoding delay, which is the time it takes to reconstruct the signal.
+
+Delay is very important to the end user to stop people talking over one another. Below displays the acceptable levels.
+
+![[e2e_delay.png]]
+
+## Jitter
+
+Due to the [[Internet]] having unreliable network times - packets will be received in a different order than they were sent out. We call this phenomenon *jitter*. This is problematic for [[Voice over IP (VoIP)|VoIP]] as we need to reconstruct a audio signal that has continuous playout - gaps in audio must be kept to less that 30-75ms.
+
+The main way to handle this is keeping a playout buffer. This delays the playout on the receivers side to wait to collect all packets before playing out. This has a payoff, the longer you wait the less Jitter but the more end-to-end delay. The less you wait the more Jitter and packet loss.
+
+## Packet loss
 
