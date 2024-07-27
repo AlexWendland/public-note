@@ -38,3 +38,5 @@ Throughout the course, students will work on hands-on projects to learn about ro
 - [[Week 8 - Security]]
 - [[Week 9 - Censorship]]
 - [[Week 10 - Video applications]]
+- [[Week 12 - Future of the internet]]
+- [[Week 11 - CDNs and overlay networks]]

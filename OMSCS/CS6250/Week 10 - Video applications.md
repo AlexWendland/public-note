@@ -168,3 +168,96 @@ This meant that the original plan was abandoned and people moved to [[Hyper Text
 
 ![[video_application_logic.png]]
 
+## Streaming vs progressive downloading
+
+Downloading large parts of the video has a couple of downsides:
+- The user often leaves halfway through leading to wasted bandwidth.
+- The client will need to store the video in memory which from large segments will use a lot of it.
+
+The other option is just in time streaming where you download the next segment the user is watching. As the internet has variable throughput this would create stalling with the video.
+
+Therefore a hybrid approach is taken. We maintain a playout-buffer (normally 5 seconds) and switch between two states:
+1. **Filling state**: When the playout buffer is empty we try to fill it quickly - for example when we start the video or skip ahead.
+2. **Steady state**: With a large buffer we wait for that to drop to a lower limit and start downloading more of the video until we fill the buffer again. This switches from being in an ON/OFF state.
+
+![[video_playout.png]]
+
+## Handling variation
+
+There is a lot of variation with playing videos:
+- You might be streaming on a phone or  a 4k wide screen needing different [[Bit|bit]]-rates.
+- You may be streaming on a fixed wired internet or over ropy airport wifi.
+- You might be using your whole homes 1.5 Mbps internet or you may be sharing the internet with you sibling playing a game at the same time.
+
+![[Bitrate]]
+
+Therefore a single [[Bitrate|bitrate]] would not handle this . Therefore normally producers make encodings for different required [[Bitrate|bitrates]]for streaming, such as 250 kbps, 500 kbps, 1.5 Mbps, 3 Mbps. Then we us [[Bitrate adaption|bitrate adaption]] to adjust the provided quality to the user depending on network and device requirements. 
+
+To find out these quality ranges and the URLs for each download - when clients first connect to a server they download a manifest file with details all this.
+
+![[Dynamic Adaptive Streaming over HTTP (DASH)|DASH]]
+
+## Quality of Service metrics
+
+1. Low or no rebuffering: where the video stalls.
+2. High video quality.
+3. Low video quality variations: i.e. a change in the video quality caused by [[Bitrate adaption|bitrate adaption]].
+4. Low startup latency: The time spent in the filling state.
+
+These quality of service metrics are competing with eachother, for example having the best quality video at all points might mean you need to change the video quality regularly and might risk rebuffering. A larger buffer might reduce rebuffering chance but will make startup slower. To reduce the startup latency you could start with lower quality video. Therefore it is critical to understand the payoffs between them.
+
+Now we have our output metrics lets see the inputs to the calculation.
+- **Network throughput**: The [[Bitrate|bitrate]] your network can currently sustain. This is constantly changing.
+- **Video buffer size**: The amount of buffer you currently have.
+
+## Rate-based adaption
+
+One simple way to calculate the video quality is to look at your current bandwidth $C(t)$ and divide it by the available [[Bitrate|bitrates]] $R(t)$ and find the largest one such that $C(t)/R(t) > 1$ that way we are filling our buffer when downloading.
+
+![[throughput_based_adaption.png]]
+
+The issue is forecasting what $C(t)$ will be in the future.
+
+Practically this is done it two steps:
+- **Estimation**: Guessing $C(t)$ by considering our past download rates.
+- **Quantization**: Using the above formula to pick a bitrate but we find $C(t)/R(t) > 1 + c$ for some constant $c$.
+The constant allows:
+- Us to avoid unneeded re-buffering.
+- Different encoding that may require higher [[Bitrate|bitrate]] for shorter periods.
+- Application and [[Layer 4 Transport|Transport layer]] overhead.
+
+When forecasting $C(t)$ we normally use a weighted average of the past [[Bitrate|bitrate]]. This can be sluggish to adapting to a fall in [[Bitrate|bitrate]] causing rebuffering. Though the bigger issue is with how this interacts with [[Transmission Control Protocol (TCP)|TCP]].
+
+Suppose we are in the following competitive networking position where we have two clients using [[Transmission Control Protocol (TCP)|TCP]].
+
+![[DASH_underestimation.png]]
+
+Consider the scenario when a client is watching a video over a 5 Mbps link. 
+
+The available bitrates are {375kbps, 560 kbps, 750kbps, 1050kbps, 1400kbps, 1750kbs}. Clearly, the client would end up streaming at 1.75 Mbps under rate-based adaptation.
+
+Suppose the user initially starts with no competition then someone comes and downloads a larger file. They are both using [[Transmission Control Protocol (TCP)|TCP]] that should converge to a fair share - though this takes some time.
+
+![[DASH_under_graph.png]]
+
+What happens in this case it we incrementally step down to the lowest quality video as the [[Bitrate adaption|bitrate adaption]] and [[Transmission Control Protocol (TCP)|TCP]] congestion window work together to drive down the videos share of the network.
+
+First note [[Dynamic Adaptive Streaming over HTTP (DASH)|DASH]] has an on off pattern as described above.
+
+![[DASH_flow.png]]
+
+Then if the congestion window is reset in the off period it can allow the competing flow take more network share and this causes [[Dynamic Adaptive Streaming over HTTP (DASH)|DASH]] to pick a lower [[Bitrate|bitrate]]. Though this spiral continues as then the competition take a larger network share in the gaps throttling [[Dynamic Adaptive Streaming over HTTP (DASH)|DASH]]'s [[Bitrate|bitrate]] again.
+
+![[DASH_TCP_fail.png]]
+
+This is a problem for [[Dynamic Adaptive Streaming over HTTP (DASH)|DASH]] so implementations have to try to handle this correctly.
+
+## Buffer-based bitrate adaption
+
+There is a competing strategy which varies the [[Bitrate|bitrate]] based on the buffer size. The avoids the need to predict the network speed.
+
+![[buffer_size_bitrate_adaption.png]]
+
+Though comes with its own challenges.
+
+
