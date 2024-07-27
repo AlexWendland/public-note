@@ -3,20 +3,24 @@ aliases:
   - DNS A record
   - CNAME
   - NS record
+  - MX record
 checked: false
 created: 2024-07-22
 last_edited: 2024-07-22
-publish: false
-tags: 
+publish: true
+tags:
+  - networks
 type: definition
 ---
 >[!tldr] DNS records
->This is the response from a [[Domain Name System (DNS)|DNS]] server. It typically has 4 vales:
+>This is the response from a [[Domain Name System (DNS)|DNS]] server. This comes in a question/answer format as bellow. Typically these 4 vales:
 >- Domain name: The name of the domain requested.
 >- [[Time to live (TTL)|TTL]]: How long the response should be cached for by other DNS servers.
 >- Type: The type of record being returned.
 >- Value: What is associated to the Domain name.
->
+>This is given in the following format
+>![[dns_message_format.png]]
+>The flags provide information such as the type of query iterative or recursive. 
 >There are different types of responses you can get from a [[Domain Name System (DNS)|DNS]] resolver. 
 >1. **A (Address) Record**: Maps a domain name to an [[Internet Protocol (IPv4)|IPv4]] address.
 >2. **AAAA (Quad-A) Record**: Maps a domain name to an [[Internet Protocol (IPv6)|IPv6]] address.

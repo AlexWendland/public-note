@@ -153,3 +153,89 @@ This leaves the question - how does the authoritative [[Content delivery network
 
 ## Cluster selection
 
+The most intuitive answer to this question is choose the cluster geographically closest to the end user. 
+![[geography.png]]
+This can work well in a lot of cases but it is harder and maybe more sub-optimal than you might expect.
+- You do not know the IP of the end user only the IP of there local [[Domain Name System (DNS)|DNS]] server.
+	- There is a proposition to propagate the IP of the requesting user through the [[Domain Name System (DNS)|DNS]] protocol but this has not caught on yet.
+- This server might have the best connection.
+	- The server might be congested due to the level of traffic getting directed towards it.
+	- The local topology of the [[Autonomous system (AS)|AS]] might mean the geographically closest server is not the closest in terms of the internet.
+
+This second limitation can be over-come using metrics and evaluating how good a connection each [[Content delivery network (CDN)|CDN]] cluster has to the local [[Domain Name System (DNS)|DNS]].
+
+There are a couple metrics we can calculate to assess how good a fit each server is:
+- Network delay.
+- Available bandwidth.
+- Application specific metrics.
+	- How fast a [[Hyper Text Transfer Protocol (HTTP)|HTTP]] page loads.
+	- Buffer rate for video applications.
+Though to measure these we have two approaches:
+- **Active measurements**: When each local [[Domain Name System (DNS)|DNS]] requests a record we calculate them for each [[Content delivery network (CDN)|CDN]] content server to the [[Domain Name System (DNS)|DNS]] server.
+- **Passive measurements**: Clusters keep an index of these metrics for different [[Subnets]] that it passes back to the controller.
+
+Implicitly in both these approaches there exists a central controller that determines where to send the client. However this has limitation when it comes to scaling.
+
+Researchers have proposed the design of a distributed system that uses a two-layered system.
+
+- A coarse-grained global layer operates at larger time scales (timescale of a few tens of seconds (or minutes)). This layer has a global view of client quality measurements. It builds a data-driven prediction model of video quality. 
+- A fine-grained per-client decision layer that operates at the millisecond timescale. It makes actual decisions upon a client request. This is based on the latest (but possibly stale) pre-computed global model and up-to-date per-client state.
+
+![[distrubuted_cdn_controller.png]]
+
+A second challenge in the above approach is that it needs to have data for different subnet-cluster pairs. Thus, some of the clients deliberately need to be routed to sub-optimal clusters.
+
+## Server selection
+
+Once we have selected a cluster we need to choose a server inside that cluster. Lets go through the ideas we might have. 
+- The simplest approach is to round robin requests to available server. 
+Though due to the random nature of different requests this will likely cause one server to become overloaded. 
+- Load balance to the least utilised server.
+However this is also not optimal in the [[Content delivery network (CDN)|CDN]] use case. As content servers will lazily load content - load balancing will mean all server will need to cauche most of the content they are offer. Each new request will have delay whilst the load it and free memory.
+- Divide requests based on the content they are requesting through a hashing technique.
+This idea is simple but slightly harder to implement as the nature of a data centre is that machines will come up and down fairly randomly. Therefore we need a fairly consistent and balanced way to hash the material to a server.
+
+![[Consistent hashing]]
+
+Consistent hashing was first used in peer-to-peer networks such as Napster and Bittorrent.
+
+## Network protocols used for cluster/server selection
+
+This whole process uses 3 [[Protocol (networks)|protocols]]:
+- [[Domain Name System (DNS)|DNS]],
+- [[HTTP redirection]], and
+- [[IP Anycast]].
+
+### [[Domain Name System (DNS)|DNS]]
+
+![[Domain Name System (DNS)|DNS]]
+
+An example of a recursive query can be found below.
+
+![[dns_recursive.png]]
+
+The [[Domain Name System (DNS)|DNS]] system is speed up through caching with [[DNS records]] having a [[Time to live (TTL)|TTL]] field which determines the time they can be cached for.
+
+![[DNS records]]
+
+The key message types are:
+- [[DNS records|DNS A record]]: The [[Internet Protocol (IP)|IP]] that relates to the domain.
+- [[DNS records|NS record]]: The name of the server to go to next.
+- [[DNS records|CNAME]]: An alias for another domain name.
+- [[DNS records|MX record]]: Mail server name.
+
+## [[IP Anycast]]
+
+![[IP Anycast]]
+
+Below is an example where we start [[IP Anycast]] from our content servers C1 and C2. We are trying to find the shortest [[Autonomous system (AS)|AS]]-path to client 1 and client 2.
+
+![[IP_anycast_example.png]]
+
+[[Domain Name System (DNS)|DNS]] servers use this to find the closest [[Domain Name System (DNS)|DNS]] server to the client.
+
+## [[HTTP redirection]]
+
+![[HTTP redirection]]
+
+Whilst this costs time in terms of completing the request it can be useful for load balancing.
