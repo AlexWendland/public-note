@@ -130,3 +130,26 @@ There is a spectrum with the philosophy on server placement. With the extremes r
 
 There are lots of hybrid approaches. Such as Google with 16 mega data-centers and 50 smaller clusters deeper into the network.
 
+## [[Domain Name System (DNS)|DNS]] with a [[Content delivery network (CDN)|CDN]]
+
+In the traditional approach to hosting [[Domain Name System (DNS)|DNS]] was fairly simple. You would look up the domain of the server and it would provide the [[Internet Protocol (IP)|IP address]] of the cluster that provided the content. With a [[Content delivery network (CDN)|CDN]] there are multiple clusters that client could be directed to.
+
+Below is and example for the site www.NetCinema.com who use [[Domain Name System (DNS)|DNS]] King[[Content delivery network (CDN)|CDN]].
+
+![[cdn_dns_example.png]]
+
+1. The user is on the NetCinema website finding some content they want to watch.
+2. User clicks on a link that has a subdomain linked to the [[Content delivery network (CDN)|CDN]] part of NetCinemas network i.e. video.netcinema.com. This sends a request to their local [[Domain Name System (DNS)|DNS]] server.
+3. An iterative [[Domain Name System (DNS)|DNS]] lookup happens returning a [[DNS records|NS record]] first the the authoritative [[Domain Name System (DNS)|DNS]] server for netcinema. This redirects the to KingCDN's authoritative server. 
+4. KingDNS authorative server then has to work out what the best cluster to send the user to. Once it has done that it returns the [[Internet Protocol (IP)|IP address]] in a [[DNS records|DNS A record]].
+5. Their local [[Domain Name System (DNS)|DNS]] then returns them the [[Internet Protocol (IP)|IP address]] of the selected [[Content delivery network (CDN)|CDN]] server.
+6. The user then requests the content from the [[Content delivery network (CDN)|CDN]] content server.
+
+This leaves the question - how does the authoritative [[Content delivery network (CDN)|CDN]] server decide which [[Content delivery network (CDN)|CDN]] content server to redirect the user to. Here there are really two major question.
+- Which cluster to send the user too.
+![[cluster_selection.png]]
+- Which server within that cluster to send the user to.
+![[server_selection.png]]
+
+## Cluster selection
+
