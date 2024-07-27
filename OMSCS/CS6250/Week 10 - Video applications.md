@@ -10,7 +10,7 @@ tags:
 type: lecture
 week: 10
 ---
-pdef# Week 10 - Video applications
+# Week 10 - Video applications
 
 ## Additional reading
 
@@ -134,4 +134,37 @@ This involves filling in the gaps using the packets around it. There are two bas
 - Interpolating from the chunks on either side. This is computationally more expensive but normally provides better estimates.
 
 ## Live/on demand streaming
+
+Streaming media content over the Internet accounts for nearly 60-70% of the Internet traffic. There are two flavours will we talk about here:
+1. Live streaming of events.
+2. On demand streaming of videos already recorded.
+Whilst there restrictions differ by focusing on 2 we learn a lot of the general principles that apply to 1. 
+
+Generally on-demand video sharing follows the same common pattern.
+![[streaming_infra.png]]
+
+Most notably they will use [[Content delivery network (CDN)|CDN]] to distribute content to be closer to their users.
+
+To render the stored content correctly we need to make sure we do not drop any packets. With streaming the content to the user flow control will be important too. [[Transmission Control Protocol (TCP)|TCP]] provides these out of the box - therefore it is a better match that [[User Datagram Protocol (UDP)|UDP]].
+
+![[internet_picture.png]]
+
+## How we got to [[Hyper Text Transfer Protocol (HTTP)|HTTP]]
+
+When streaming platforms were originally envisioned they wanted all the intelligence to be kept in a stateful server - with the client doing minimal work. 
+
+![[original_design.png]]
+
+However, this would:
+- Require providers to by specialist hardware.
+- Handle state in a scalable service.
+- Navigate firewalls and middleboxes.
+
+Instead the [[Hyper Text Transfer Protocol (HTTP)|HTTP]] protocol was already well used and understood by network participants. Here the server can be stateless and just provide the content the client requests. This had the following advantages:
+- Servers can be stateless.
+- Providers could use already established [[Content delivery network (CDN)|CDNs]]
+- [[Hyper Text Transfer Protocol (HTTP)|HTTP]] messages were already understood in firewalls and middleboxes.
+This meant that the original plan was abandoned and people moved to [[Hyper Text Transfer Protocol (HTTP)|HTTP]].
+
+![[video_application_logic.png]]
 
