@@ -128,3 +128,123 @@ In the [[Boarder gateway protocol (BGP)|BGP]] the [[Router|routers]] exchange [[
 Messages passed between [[Autonomous system (AS)|AS]] have some special properties, two of which are:
 - **ASPATH**: A list of [[Autonomous system number (ASN)|ASN]] for each [[Autonomous system (AS)|AS]] the route has passed through. This is helpful to avoid loops.
 - **NEXTHOP**: The [[Internet Protocol (IP)|IP address]] of the next router in the hop. 
+
+## The router process
+
+We can model a [[Router|router]] running [[Boarder gateway protocol (BGP)|BGP]] as follows.
+
+![[router_diagram.png]]
+
+This has 3 main steps.
+1. Receive and store neighbours routing tables.
+2. Decides its best routing options and updates the forwarding table.
+3. Decides which routes it wants to advertise and updates neighbouring routers.
+
+How a router decides which route to use depends on many factors. It ranks these and then compares routes.
+
+| Step | Attribute                                            | Controller? |
+| ---- | ---------------------------------------------------- | ----------- |
+| 1    | Highest LocalPref                                    | local       |
+| 2    | Lowest AS path length                                | neighbour   |
+| 3    | Lowest origin type                                   | neither     |
+| 4    | Lowest MED                                           | neighbour   |
+| 5    | eBGP-learned over iBGP-learned                       | neither     |
+| 6    | Lowest [[Interior gateway protocol (IGP)\|IGP]] cost | local       |
+| 7    | Lowest router ID (break ties)                        | neither     |
+
+There are two main ways [[Autonomous system (AS)|AS]] can control which routes it uses and its neighbours uses.
+
+### LocalPref
+
+This is how an [[Autonomous system (AS)|AS]] expresses its commercial best interest. It will set a value to neighbouring [[Autonomous system (AS)|AS]] based on the financial relationship it has with it. These normally are:
+
+| Relationship to advertising [[Autonomous system (AS)\|AS]] | LocalPerf value |
+| ---------------------------------------------------------- | --------------- |
+| Customer                                                   | 90-99           |
+| Peer                                                       | 80 - 89         |
+| Provider                                                   | 70 - 79         |
+| Backup links                                               | 60-69           |
+
+This reflects the preferences we discussed above, customer then peer then provider.j
+
+### Multi-exit Discriminator (MED)
+
+If an [[Autonomous system (AS)|AS]] has two routers connecting to a neighbours [[Autonomous system (AS)|AS]] which are offering some of the same routes. Knowing the forwarding tables of these routers may give a preference for how a neighbouring [[Autonomous system (AS)|AS]] forwards traffic through your network. This is controlled by setting a MED value (for example as the [[Interior gateway protocol (IGP)|IGP]] cost to forward that traffic).
+
+## Challenges with [[Boarder gateway protocol (BGP)|BGP]]: Misconfiguration and scalability 
+
+Routers are vulnerable to misconfiguration and faults. This can lead to an excessively large number of updates leading to further faults from overloading the network. This can be mediated by limiting the size of the routing table.
+
+To limit the size of the routing table it can filter out routes that are too specific. This encourages [[Route summarization|route summarization]]. The act of [[Route summarization|route summarization]] protects the whole network from getting overloaded and help with scalability. Small [[Autonomous system (AS)|AS]] sometimes just use a default gateway where they redirect all traffic without further knowledge.
+
+If a route is repeatedly updated due to some route instability this can risk messages getting sent in error or a patchy connection. Routers can implement **flap damping** where it tracks the number of updates to a prefix. If this goes over a certain threshold in a time interval it will suppress that route until it stabilises. 
+
+Routers can be strategic about what addresses it does this too and how sensitive it is. If it has addresses it needs to have high availability for it can have a much higher threshold whereas other addresses it can be much lower.
+
+## Peering at an [[Internet Exchange Points (IXPs)|IXP]]
+
+![[Internet Exchange Points (IXPs)|IXP]]
+
+Below is an example of such and [[Internet Exchange Points (IXPs)|IXP]] is Frankfurt.
+
+![[IXP_example.png]]
+
+This shows how an [[Internet Exchange Points (IXPs)|IXP]] is a massive set of switches creating a giant [[Network|network]]. It is normally distributed over a region or globally with different connection points such as DE-CIX1,2,3,4,7 all connecting in to a fault tolerant core Core 1 with backup Core2.
+
+To exchange with an [[Internet Exchange Points (IXPs)|IXP]] a [[Autonomous system (AS)|AS]] needs to physically connect with it. Which is why being distributed makes this easier though carries technical cost to it.
+
+### [[Internet Exchange Points (IXPs)|IXPs]] have become increasingly popular, why?
+
+1. [[Internet Exchange Points (IXPs)|IXP]] can handle large quantities of traffic rivalling that of tier-1 [[Internet Service Provider (ISP)|ISPs]].
+2. [[Internet Exchange Points (IXPs)|IXP]] can mitigate [[Distributed Denial-of-Service (DDoS)|DDoS]] attacks by monitoring traffic to particular [[Autonomous system (AS)|ASs]].
+3. They provide excellent research hubs due to their open and large scale nature.
+4. They are active marketplaces offering services to the [[Autonomous system (AS)|ASs]] that participate in them. This offering is expanding as more research happens providing innovation to the internet.
+
+### How to peer at an [[Autonomous system (AS)|AS]]
+
+An [[Autonomous system (AS)|AS]] must have an [[Autonomous system number (ASN)|ASN]] to peer at an [[Internet Exchange Points (IXPs)|IXP]]. Then they will need to physically collocate a router in the [[Autonomous system (AS)|AS]] to one of the [[Internet Exchange Points (IXPs)|IXP]] access points. Lastly they must agree to the terms and conditions of using the [[Internet Exchange Points (IXPs)|IXP]]. To do this they pay:
+- A one off access cost to locate the router at the access point,
+- A monthly fee for renting a port - this cost normally scales based on the speed/capacity of that [[Port|port]].
+- Sometimes there is a yearly subscription fee.
+
+Once connected to the [[Internet Exchange Points (IXPs)|IXP]] there is normally no cost to publicly peer there. That means getting access to all the other networks also publicly peering there. 
+
+Normally the terms of accessing do not forbid reselling of access to the [[Internet Exchange Points (IXPs)|IXP]]. Therefore some providers link with an [[Internet Exchange Points (IXPs)|IXP]] the resale access to that [[Internet Exchange Points (IXPs)|IXP]] if it is too hard for another [[Autonomous system (AS)|AS]] to collocate a router there. This is called remote peering and is an active area of study.
+
+### Why peer in an [[Internet Exchange Points (IXPs)|IXP]]
+
+- Keeps traffic local which is more reliable and faster.
+- Lower costs than negotiating with other [[Autonomous system (AS)|ASs]] such as [[Internet Service Provider (ISP)|ISP]] for access.
+- Incentives - large content providers prefer use of [[Internet Exchange Points (IXPs)|IXP]] as it guarantees more control of how their users receive their content. Therefore they connect via [[Internet Exchange Points (IXPs)|IXPs]] which motivates other actors to use them.
+
+### Services offered by an [[Internet Exchange Points (IXPs)|IXP]]
+
+1. **Public peering**: This allows you to directly connect with any other participant who is also public peering opening up a massive number of new routes but also direct connections with other [[Autonomous system (AS)|ASs]].
+2. **Private peering**: This allows for direct connection between two parties who know eachother at the [[Internet Exchange Points (IXPs)|IXP]]. This won't use the pubic peering infrastructure. Though provides a high capacity stable connection.
+3. **Route servers and Service level agreements**: Normally the [[Internet Exchange Points (IXPs)|IXP]] will offer free access to a route server which is a giant public route table. The [[Internet Exchange Points (IXPs)|IXP]] will also offer [[Service Level Agreements (SLAs)|SLAs]] with the services they offer.
+4. **Mobile peering**: This is a scalable solution to mobile networks.
+5. **DDoS black-holing**: This is a customer triggered black-holing of traffic coming towards their [[Autonomous system (AS)|AS]] to relieve the stress from [[Distributed Denial-of-Service (DDoS)|DDoS]] attacks.
+6. **Free value add services**: Services that are for the public good like bandwidth testing, Internet Routing Registries,[[Domain Name System (DNS)|DNS]] servers, ect.
+
+### How do route servers work
+
+Two [[Autonomous system (AS)|ASs]] in a [[Internet Exchange Points (IXPs)|IXP]] to transfer route information need to establish a bilateral [[Boarder gateway protocol (BGP)|BGP]] connection. However with so many participants at an [[Internet Exchange Points (IXPs)|IXP]] the number of open connections would be massive - which would not scale.
+
+![[route_server_example.png]]
+
+Instead if the [[Internet Exchange Points (IXPs)|IXP]] offers a route server [[Autonomous system (AS)|ASs]] connect to this single entity instead. This offers the following services:
+- It collects and shares routing information from its peers.
+- It execute [[Boarder gateway protocol (BGP)|BGP]] decisions and re-advertises the resulting information.
+
+The collection of addresses is called a Routing Information Base (RIB) which contains all [[Boarder gateway protocol (BGP)|BGP]] paths. There is a master RIB with all the information and an [[Autonomous system (AS)|AS]] specific RIB for each participant.
+
+Route servers maintain two types of route filters. Import route filters that allow [[Autonomous system (AS)|ASs]] to only advertise routes they should advertise. Export route filters which are triggered by member [[Autonomous system (AS)|ASs]] to restrict which other [[Internet Exchange Points (IXPs)|IXP]] members can receive their routes.
+
+For example suppose AS X and AS Y exchange routes through a multi-lateral peering session through a route server. This happens in the following steps.
+1. First AS X advertises a prefix p1 to the route server, which is added to the route server's RIB for that [[Autonomous system (AS)|AS]].
+2. The route server checks AS X import filters to see if it wants to advertise p1 - if so it is added to the master RIB.
+3. The route server checks AS X's export filters to see if AS Y is allowed to recieve p1. If so it adds it to AS Y's RIB.
+4. Lastly the route server advertises p1 to AS Y with AS X as the next hop.
+
+![[route_server_process.png]]
+
