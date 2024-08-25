@@ -1,14 +1,14 @@
 ---
 aliases: []
 checked: false
-course: '[[CS6200 Introduction to Graduate Algorithms]]'
+course: "[[CS6215 Introduction to Graduate Algorithms]]"
 created: 2023-09-05
 last_edited: 2023-11-11
 publish: true
 tags:
   - OMSCS
 type: lecture
-week: '2'
+week: "2"
 ---
 # Week 2 - Shortest Paths
 

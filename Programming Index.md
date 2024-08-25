@@ -34,7 +34,7 @@ This is an index page for the notes that could broadly be grouped under this top
 - [[Breath-first search (BFS)]]
 - [[Byte]]
 - [[CRUD API]]
-- [[CS6200 Introduction to Graduate Algorithms]]
+- [[CS6215 Introduction to Graduate Algorithms]]
 - [[Call Stack]]
 - [[Chain Hashing]]
 - [[Chain multiply problem]]

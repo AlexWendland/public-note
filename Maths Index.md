@@ -31,7 +31,7 @@ This is an index page for all notes that broadly could be grouped under Maths.
 - [[Bipartite graph]]
 - [[Boolean function]]
 - [[Boolean variable]]
-- [[CS6200 Introduction to Graduate Algorithms]]
+- [[CS6215 Introduction to Graduate Algorithms]]
 - [[Carmichael number]]
 - [[Chinese remainder theorem]]
 - [[Clique (graph)]]

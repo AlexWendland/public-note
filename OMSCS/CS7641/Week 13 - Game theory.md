@@ -1,7 +1,7 @@
 ---
 aliases: 
 checked: false
-course: "[[CS6200 Introduction to Graduate Algorithms]]"
+course: "[[CS6215 Introduction to Graduate Algorithms]]"
 created: 2024-04-06
 last_edited: 2024-04-06
 publish: true
