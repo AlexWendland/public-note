@@ -42,3 +42,7 @@ Each [[Process|process]] has its own [[Address space (OS)|address space]] and [[
 
 ## Benefits of multithreading
 
+Threads allow us to parallelise a process over multiple cores without incurring the code complexity of [[Inter-process communication (IPC)]] or the overhead of multiple [[Process control block (PCB)|PCB]] instances. You can specialise threads for a particular task that needs the same items from the [[Cache|cache]] this allows you to run the task off a hot cache all the time.
+
+Multi-threading on a single core also can be efficient. As one of the largest costs in [[Context switch (CPU)|context switching]] is to remap the [[Address space (OS)|address space]] the time it takes to [[Context switch (CPU)|context switch]] between [[Thread|threads]] is lower than that for [[Process|processes]]. Therefore if you have [[Input output (IO)|I/O]] bound tasks using multi-threading can improve performance.
+
