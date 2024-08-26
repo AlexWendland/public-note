@@ -131,9 +131,9 @@ def is_not_odd(step:int):
 
 ## Limitations
 
-1. **Stack Overflow**: Each recursive call adds a new layer to the [[Stack|stack]], so if your recursion goes too deep, you risk running out of stack space and causing a stack overflow.
+1. **Stack Overflow**: Each recursive call adds a new layer to the [[Stack (OS)|stack]], so if your recursion goes too deep, you risk running out of stack space and causing a stack overflow.
 
-2. **Performance Overheads**: Recursive calls can be more expensive than simple loops due to the overhead of maintaining the [[Stack|stack]] and the function calls.
+2. **Performance Overheads**: Recursive calls can be more expensive than simple loops due to the overhead of maintaining the [[Stack (OS)|stack]] and the function calls.
 
 3. **Memory Usage**: Due to the use of the stack to keep track of operations, recursion can be memory-intensive.
 
