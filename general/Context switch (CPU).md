@@ -1,5 +1,7 @@
 ---
-aliases: 
+aliases:
+  - context switched
+  - context switch
 checked: false
 created: 2024-08-26
 last_edited: 2024-08-26

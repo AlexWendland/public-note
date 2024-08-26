@@ -70,3 +70,21 @@ Context switching is costly for two reasons:
 - Direct costs: This comes from physically having to write the [[Process control block (PCB)|PCB]] from the [[CPU register|CPU registers]] into memory and vice versa.
 - Indirect costs: The [[Central processing unit (CPU)|CPU]] has multiple layers of [[Cache|caches]]. When switching from one process to another you have to switch the data present in all these [[Cache|caches]] normally making data access temporarily very costly.
 
+### Process life cycle
+
+During a processes time it goes through multiple different stages.
+- New: Once the user issues a process that they want to start a [[Process control block (PCB)|PCB]] is made and it is admitted to the [[Central processing unit (CPU)|CPU]].
+- Ready: This is a [[Process|process]] that has something to do but is not being ran on the [[Central processing unit (CPU)|CPU]] yet.
+- Waiting: If the process has to wait on some event from the network or I/O then it will be moved into a waiting stating for that to finish.
+- Running: It will have been [[Context switch (CPU)|context switched]] onto and the [[Process control block (PCB)|PCB]] loaded into the [[CPU register]].
+- Terminated: Once a process has exited or error-ed it moves state to terminated to be cleaned up. 
+
+![[process_life_cycle.png]]
+
+### Creation
+
+When you start the computer the [[Operating system (OS)|OS]] starts a number of processes that have privileged access. These in tern create the application that you run on your computer. There are two [[System call|system calls]] to create a new [[Process|process]]:
+- Fork: This creates an exact copy of the current process, including the [[Program counter (PC)|program counter]].
+- Exec: This replaces a [[Process|processes]] [[Process control block (PCB)|PCB]] with that of a new program.
+The normal flow for a [[Process|process]] to start another one is to call fork followed by exec.
+
