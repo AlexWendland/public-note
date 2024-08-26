@@ -88,3 +88,14 @@ When you start the computer the [[Operating system (OS)|OS]] starts a number of 
 - Exec: This replaces a [[Process|processes]] [[Process control block (PCB)|PCB]] with that of a new program.
 The normal flow for a [[Process|process]] to start another one is to call fork followed by exec.
 
+### CPU Scheduler
+
+This is a process that determines which one of the ready processes will be dispatched next to the CPU and how long it should run for. This is done via 3 operations:
+- **Preempt**: Interrupt and save the current context.
+- **Schedule**: Run the scheduler to choose the next process.
+- **Dispatch**: dispatch a process and switch to its context.
+An efficient [[Operating system (OS)|OS]] wants to spend as much time running processes the user wants to run and the least time possible running the above 3 operations.
+
+There are two important decisions that you must take when deciding on the scheduler.
+- How long should processes run for?
+- What metrics to choose the next process to run?
