@@ -4,7 +4,7 @@ checked: false
 course: "[[CS6200 Graduate introduction to Operating Systems]]"
 created: 2024-08-26
 last_edited: 2024-08-26
-publish: false
+publish: true
 tags:
   - OMSCS
 type: lecture
@@ -103,6 +103,45 @@ User mode application have to access hardware through system calls. The [[Operat
 
 ![[System call]]
 
+## OS arcitecture
+ 
+At first [[Operating system (OS)|OS]] included all the features within one monolithic application. This had the following advantages:
+- You have everything already, you do not need to go somewhere else, and
+- You can use compile time optimisations to improve efficiency. 
+Though had the following downsides:
+- Lower customisation, protabability and manageability,
+- Higher memory footprint to run the OS, and
+- Lower performance when you do not need all aspects of the OS.
 
+[[Operating system (OS)|OS]] such as LINUX instead have gone for a modular approach, where [[Operating system (OS)|OS]] applications have to conform to a standard interface for system calls. The user then can add the modules to the [[Operating system (OS)|OS]] that they want to use. This had the following advantages:
+- Easier to maintain as it is less code,
+- Smaller footprint in memory,
+- Less resources used to run the [[Operating system (OS)|OS]],
+Though comes with the following down sides:
+- Indirection can effect performance,
+- Maintenance can be an issue as you rely on lots of different code bases that can introduce bugs.
 
+For embedded devices another architecture is common called a Micro-kernel. These typically only handle memory and process management. Though adds a standard Inter process communication call - as services such as file systems or disk drivers are now application level processes rather than handled by the OS. This has the following advantages:
+- They are normally a very small code base.
+- It is easy to verify behaviour, so you can be sure the [[Operating system (OS)|OS]] behaves well.
+Though they come with a lot of down sides:
+- They are not normally portable as they are designed for a specific bit of hardware. 
+- Software development is more complex as they need to interact with difference processes that normally would be part of the [[Operating system (OS)|OS]].
+- There is lots of user/kernel crossing as they need to use the IPC a lot.
+
+### Linux
+
+The linux [[Operating system (OS)|OS]] is built in a layer architecture to make it simpler to use. 
+
+![[linux_arcitecture.png]]
+
+The kernel itself has a couple of components that can all be switched out for specific users needs.
+
+![[linux_kernel.png]]
+
+### Mac
+
+Mac uses a micro-kernel for all low level operations with a BSD component provides a unix interface for the rest of the OS. 
+
+![[mac_architecture.png]]
 
