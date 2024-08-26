@@ -11,5 +11,5 @@ tags:
 type: definition
 ---
 >[!tldr] Address space (OS)
->For a [[Process|process]] the address space is index 
+>For a [[Process|process]] the address space is the [[Virtual memory|virtual memory]] associated to the executing program. This is used to make memory management within the program simple and abstracts handing the [[Physical memory|physical memory]] to the [[Operating system (OS)|OS]].
 
