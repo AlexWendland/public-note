@@ -99,3 +99,14 @@ An efficient [[Operating system (OS)|OS]] wants to spend as much time running pr
 There are two important decisions that you must take when deciding on the scheduler.
 - How long should processes run for?
 - What metrics to choose the next process to run?
+### I/O scheduling
+
+When a process is stopped by an [[Input output (IO)|IO]] operation this is then handled by the [[Device driver|device driver]] associated with that [[Input output (IO)|IO]] task. The [[Process|process]] will enter the waiting state until the [[Device driver|device driver]] interrupts the [[Central processing unit (CPU)|CPU]] to let it know the operation has been completed and the [[Process|process]] can move back to the ready state. Though there are other ways this waiting state can end - for example a time out.
+
+![[IO_process.png]]
+
+## Inter-process communication
+
+As modern applications get more complex they are being structured to be multiple processes communicating with on another. However, the [[Operating system (OS)|OS]] is on purposely structured to isolate different applications from one another. Therefore they need to communicate to each other using [[Inter-process communication (IPC)|IPC]]
+
+![[Inter-process communication (IPC)|IPC]]
