@@ -20,6 +20,8 @@ week: 2
 
 ![[Stack (OS)]]
 
+![[Address space (OS)|address space]]
+
 ## Metaphor
 
 A process is line an order of toys:
