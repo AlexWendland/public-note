@@ -14,6 +14,8 @@ week: 3
 
 ["An Introduction to Programming with Threads"](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-birrell-paper.pdf) by Birrell
 
+![[Thread]]
+
 ## Visual metaphor
 
 Threads are like workers in a toy shop:
@@ -31,4 +33,12 @@ In comparison to a thread:
 	- many threads executing
 - requires coordination
 	- sharing of [[Input output (IO)|IO]] devices, [[Central processing unit (CPU)|CPU]], and [[Virtual memory|virtual memory]].
+
+## Difference between a process and a thread
+
+Each [[Process|process]] has its own [[Address space (OS)|address space]] and [[Process control block (PCB)|PCB]] whereas each [[Thread|thread]] in a [[Process|process]] shares the same [[Address space (OS)|address space]], code and data but has its own [[CPU register|CPU registers]], [[Program counter (PC)|program counter]], and [[Stack (OS)|stack]]. A [[Thread|thread]] does not have its own [[Process control block (PCB)|PCB]] but its state is tracked in the [[Process|process]] [[Process control block (PCB)|PCB]].
+
+![[process_vs_thread.png]]
+
+## Benefits of multithreading
 
