@@ -48,4 +48,8 @@ Multi-threading on a single core also can be efficient. As one of the largest co
 
 ## Downsides of mulitithreading
 
-Now threads have access to the same {{virtual memory}}
+Now threads have access to the same [[Virtual memory|virtual memory]] they can perform operations on the same bit of memory which can lead to unintended outcomes. For example two threads incrementing a number leading to the number only being incremented by one.
+
+## Mutual exclusion
+
+You can limit certain actions to only be carried out by one thread at a time. This is called mut
