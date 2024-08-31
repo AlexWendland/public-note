@@ -46,3 +46,6 @@ Threads allow us to parallelise a process over multiple cores without incurring 
 
 Multi-threading on a single core also can be efficient. As one of the largest costs in [[Context switch (CPU)|context switching]] is to remap the [[Address space (OS)|address space]] the time it takes to [[Context switch (CPU)|context switch]] between [[Thread|threads]] is lower than that for [[Process|processes]]. Therefore if you have [[Input output (IO)|I/O]] bound tasks using multi-threading can improve performance.
 
+## Downsides of mulitithreading
+
+Now threads have access to the same {{virtual memory}}
