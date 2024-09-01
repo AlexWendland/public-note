@@ -58,3 +58,13 @@ You can limit certain actions to only be carried out by one thread at a time. Th
 
 ### Threads waiting
 
+Similar to [[Process|processes]] threads can enter a wait state for [[Input output (IO)|I/O]] operations or other conditions. This is controlled by condition variables.
+
+### Threads getting woken up
+
+Threads can also wake each other up.
+
+## Thread creation
+
+Threads interfaces are different between providers. 
+
