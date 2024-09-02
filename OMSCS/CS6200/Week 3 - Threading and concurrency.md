@@ -66,5 +66,21 @@ Threads can also wake each other up.
 
 ## Thread creation
 
-Threads interfaces are different between providers. 
+Threads interfaces are different between providers. In this course we follow on specific implementation.
+
+Threads have a data-structure that tracks their current state. Containing data like:
+- Tread ID,
+- Process it belongs to,
+- [[CPU register]],
+- [[Stack (OS)|stack]],
+- attributes.
+
+A [[Thread|thread]] can start another [[Thread|thread]] using the Fork command (not the same as UNIX fork). This takes a program to run and the arguments and starts a new thread.
+
+A [[Thread|thread]] can be terminated using the `join` command which makes the thread calling it wait till the joined thread finishes and then gets any returned value.
+
+>[!note] Different threads execute operations in a non-deterministic manner
+> If two threads are safely writing to a list the order of those writes are non-deterministic as it is up to the kernel to schedule them.
+
+
 
