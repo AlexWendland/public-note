@@ -237,12 +237,29 @@ The concept of the [[Thread|thread]] exists at the kernel level and at the proce
 
 [[Process]] threads that are directly mapped to kernel threads (bound threads) allows the [[Operating system (OS)|OS]] to fully understand that [[Thread|threads]] requirements and in tern use all the [[Operating system (OS)|OS]] features such as synchronisation, blocks, prioritisation directly. This also gives that whole [[Process|process]] thread the priority of one system thread. Though this means all operations must go through the [[Operating system (OS)|OS]] which can be slow. You have to use the [[Operating system (OS)|OS]] thread scheduler meaning less control. Limited by the system you are on such as max thread count, or thread policies which can make your application less portable.
 
-[[Process]] threads sharing the same kernel thread have their scheduling controlled by the processes thread manager (unbound threads). This means a lot more control for the process on how to schedule thous threads. Less reliance on the [[Operating system (OS)|OS]] features making it more portable. Less [[Operating system (OS)|OS]] calls which can speed up applications. Though this means if any of the [[Process|process]] threads block the kernel thread then all threads are blocked. The [[Operating system (OS)|OS]] is not aware of what the [[Process|process]] is doing and can not prioritise that thread using its normal polices. 
+[[Process]] threads sharing the same [[Kernel|kernel]] thread have their scheduling controlled by the processes thread manager (unbound threads). This means a lot more control for the process on how to schedule thous threads. Less reliance on the [[Operating system (OS)|OS]] features making it more portable. Less [[Operating system (OS)|OS]] calls which can speed up applications. Though this means if any of the [[Process|process]] threads block the kernel thread then all threads are blocked. The [[Operating system (OS)|OS]] is not aware of what the [[Process|process]] is doing and can not prioritise that thread using its normal polices. 
 
 You can also take a hybrid approach that gets the best of both worlds but requires coordination between the kernel thread scheduler  and the process scheduler. 
 
+## [[Multi-threading]] patterns
 
+### Boss-worker pattern
 
+In this pattern there is one thread in control of allocating work to a pool of workers. The throughput is determined by the number of tasks the boss processes. There are two main ways for the boss to allocate work to the workers:
+- The boss keeps track of which workers are free and allocates new work to free workers. This gives more tasks to the boss as they need to track which workers are free as well as requires a shared interface between the workers and boss to indicate they are free.
+- There is a work [[Queue|queue]] that the boss allocates tasks to once they have processed them. This decouples the worker from the boss but means workers have to synchronise when accessing work from the list. The boss will also have to manage the list when it is full.
+
+An important decision when using this pattern is to decide on the number of workers. This can be done statically up front or dynamically based on the number of tasks through a pool of workers. Most approaches use a hybrid of approaches.
+
+A downside to this model is if the boss is not tracking what workers are doing it can not make efficiencies from specialisations of workers on particular tasks. We can get around this by having workers specialise the tasks they perform which should make them more efficient but means the boss needs to keep track of which workers are specialised to do what and to load balance between them.
+
+### Pipeline pattern
+
+In this pattern we break down the task into sub-tasks. Then we let a subset of workers handle each stage of the pipeline. This allows workers to specialise speeding up throughput. Though this means something will have to re-balance worker allocation to the different stages of the pipeline. To hand off workers from one another we require synchronisation of the workers or to pass tasks to a [[Queue|queue]].
+
+### Layer pattern
+
+In this pattern we group similar sub-tasks and assign them to a layer. Then layers pass tasks between them. This allows for specialisation but reduces the level of fine grained control between each sub-task. Though this suffers from synchronisation between the layers and might not be applicable to all situations.
 
 
 
