@@ -16,5 +16,5 @@ type: definition
 > - Current mutex owner, and
 > - List of threads waiting on the mutex.
 > 
-> Birrells original [[Application Programming Interface (API)|API]] used a [[Context manager|context manager]] syntax but common [[Application Programming Interface (API)|apis]] use an lock and unlock command. The code in the [[Context manager|context manager]] or between the lock and unlock commands is called the critical [[section]].
+> Birrells original [[Application Programming Interface (API)|API]] used a [[Context manager|context manager]] syntax but common [[Application Programming Interface (API)|apis]] use an lock and unlock command. The code in the [[Context manager|context manager]] or between the lock and unlock commands is called the *critical section*.
 
