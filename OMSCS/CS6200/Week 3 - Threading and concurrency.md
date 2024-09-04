@@ -231,5 +231,9 @@ There are a couple techniques for solving or preventing deadlocks:
 - Ostrich technique: Hope it does not happen and if it does restart the system.
 	- Terrible to do but very easy to implement.
 
+## Thread level
+
+The concept of the [[Thread|thread]] exists at the kernel level and at the process level that can have its own thread scheduler. Then it is up to the process how it wants to map the threads within the process to threads on the kernel. Threads on the kernel are allocated to the [[Central processing unit (CPU)|CPU]] so to get use [[Parallelisation|parallelism]] whereas multiple [[Process|process]] [[Thread|threads]] on the same kernel [[Thread|thread]] run [[Concurrency|concurrently]] but not in [[Parallelisation|parallel]].
+
 
 
