@@ -235,5 +235,14 @@ There are a couple techniques for solving or preventing deadlocks:
 
 The concept of the [[Thread|thread]] exists at the kernel level and at the process level that can have its own thread scheduler. Then it is up to the process how it wants to map the threads within the process to threads on the kernel. Threads on the kernel are allocated to the [[Central processing unit (CPU)|CPU]] so to get use [[Parallelisation|parallelism]] whereas multiple [[Process|process]] [[Thread|threads]] on the same kernel [[Thread|thread]] run [[Concurrency|concurrently]] but not in [[Parallelisation|parallel]].
 
+[[Process]] threads that are directly mapped to kernel threads (bound threads) allows the [[Operating system (OS)|OS]] to fully understand that [[Thread|threads]] requirements and in tern use all the [[Operating system (OS)|OS]] features such as synchronisation, blocks, prioritisation directly. This also gives that whole [[Process|process]] thread the priority of one system thread. Though this means all operations must go through the [[Operating system (OS)|OS]] which can be slow. You have to use the [[Operating system (OS)|OS]] thread scheduler meaning less control. Limited by the system you are on such as max thread count, or thread policies which can make your application less portable.
+
+[[Process]] threads sharing the same kernel thread have their scheduling controlled by the processes thread manager (unbound threads). This means a lot more control for the process on how to schedule thous threads. Less reliance on the [[Operating system (OS)|OS]] features making it more portable. Less [[Operating system (OS)|OS]] calls which can speed up applications. Though this means if any of the [[Process|process]] threads block the kernel thread then all threads are blocked. The [[Operating system (OS)|OS]] is not aware of what the [[Process|process]] is doing and can not prioritise that thread using its normal polices. 
+
+You can also take a hybrid approach that gets the best of both worlds but requires coordination between the kernel thread scheduler  and the process scheduler. 
+
+
+
+
 
 
