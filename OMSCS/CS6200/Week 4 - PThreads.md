@@ -16,3 +16,14 @@ week: 4
 
 ![[POSIX threads (PThreads)|PThreads]]
 
+## Thread interface
+
+The core [[Data structure|data structure]] in the [[POSIX threads (PThreads)|PThreads]] library is `pthread_t` which represents a thread. This can be created through:
+```
+int pthread_create(
+	pthread_t *thread,
+	const pthread_attr_t *attr,
+	void * (*start_routine)(void *),
+	void *arg
+)
+```
