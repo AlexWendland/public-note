@@ -1,6 +1,7 @@
 ---
 aliases:
-  - conditional mutex
+  - conditional variables
+  - Conditional variables
 checked: false
 created: 2024-09-04
 last_edited: 2024-09-04
@@ -9,7 +10,7 @@ tags:
   - OS
 type: definition
 ---
->[!tldr] Conditional mutex
+>[!tldr] Conditional variables (Mutex)
 > A [[Mutex|mutex]] may need special operations applied upon some condition being met. (For example processing a list when it is full.) To implement this we use [[Data structure|data structure]] called conditional variable that holds at least:
 > - A reference to the [[Mutex|mutex]] it is related to, and
 > - A list of waiting [[Thread|threads]].

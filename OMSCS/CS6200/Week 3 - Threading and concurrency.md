@@ -86,7 +86,7 @@ A [[Thread|thread]] can be terminated using the `join` command which makes the t
 
 ![[Mutex]]
 
-![[Conditional mutex]]
+![[Conditional variables (Mutex)]]
 
 ### Example: Reader/writer Problem
 
