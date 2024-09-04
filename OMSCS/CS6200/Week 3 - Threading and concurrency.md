@@ -88,9 +88,148 @@ A [[Thread|thread]] can be terminated using the `join` command which makes the t
 
 ![[Conditional mutex]]
 
+### Example: Reader/writer Problem
+
+Suppose we want to read and write to some resource. We are fine with multiple [[Thread|threads]] reading the resource but we only want one writer ever writing to it and we do not want anyone reading from it at that time.
+
+We could put a [[Mutex|mutex]] on the resource operations though that would only let one reader access it at one time. Instead we make a proxy variable and put a [[Mutex|mutex]] to access that. Lets consider the different states:
+- No writer or reader accessing it (counter == 0),
+- Any number of readers accessing it (counter > 0), or
+- A single writer accessing it (counter == -1).
+
+``` psuedocode
+Mutex: counter_mutex
+Condition: write_phase
+Condition: read_phase
+int: resource_counter
+
+// Reader code
+...
+lock(mutex){
+	while (resource_counter == -1):
+		wait(mutex, read_phase)
+	resource_counter++
+}
+// READ RESOURCE
+lock(mutex){
+	resource_counter--
+	if(resource_counter == 0):
+		signal(write_phase)
+}
+...
+// Writer code
+...
+lock(mutex){
+	while (resource_counter != 0):
+		wait(mutex, write_phase)
+	resource_conter = -1
+}
+// WRITE RESOURCE
+lock(mutex){
+	resource_counter = 0
+	broadcast(read_phase)
+	signal(write_phase)
+}
+...
+```
+
 >[!note] Use while on the condition in the critical section instead of if
 > There are multiple reasons this is best practice:
 > - This allows for multiple threads waiting on the same condition,
 > - Anyone thread might not be the first thread to access it after it has been released,
 > - The condition might have changed since it has been woken up.
+
+The critical sections follow a similar structure. 
+
+```pseudocode
+lock(mutex){
+	while !predicate_for_ok_state:
+		wait(mutex, conditional_variable)
+	update state => update predicate
+	signal/broadcast conditional variables
+}
+```
+
+In this example the real critical code is not protected by a [[Mutex|mutex]] which is the reading and writing of the resource. This proxy variable pattern is common and follows a general stricture.
+
+### Proxy variable pattern
+
+When controlling an operation using a proxy variable it uses the following pattern:
+
+```pseudocode
+// ENTER BLOCK
+Controlled operation
+// EXIT BLOCK
+
+// ENTER BLOCK
+lock(mutex){
+	while(!predicate_for_access):
+		wait(mutex, conditional_variable)
+	update predicate for access
+}
+
+//EXIT BLOCK
+lock(mutex){
+	update predicate for stopping access
+	signal/broadcast depending on predicate
+}
+```
+
+### Common bugs with [[Mutex|mutexs]] and how to avoid them
+
+- Use clear names for mutexs and conditional variables so you know what they refer too.
+- Check you are locking and unlocking when accessing the resource.
+- Check you have matched lock and unlock blocks when using the proxy pattern.
+- Remember to use a single mutex for a single resource.
+- Check the conditions for signalling and broadcasting. 
+- Check you are not using signal when you need to use broadcast.
+	- The other-way around is not an issue for correctness just efficiency as it will wake up the thread and should still execute correctly.
+	- If you use signal the other threads may never wake up.
+- Do you need execution order guarantees? 
+	- Waking up threads does not guarantee this. 
+- Spurious wakeups
+- Deadlocks
+
+### Spurious wakeups
+
+When waking up threads in a mutex block using signal/broadcast lf you still hold the mutex then the threads will just be moved to waiting on the mutex as it is still held. This is a *spurious wakeup* as we pay the cost of  [[Context switch (CPU)|context switching]] to the thread just to hand back control to the [[Central processing unit (CPU)|CPU]].
+
+This can sometimes be mitigated by moving the signal/broadcast out of the [[Mutex|mutex]] block.
+
+```psuedocode
+// WRITE RESOURCE WITH SPURIOUS WAKEUP
+lock(mutex){
+	resource_counter = 0
+	broadcast(read_phase)
+	signal(write_phase)
+}
+// WRITE RSOURCE WITHOUT SPURIOUS WAKEUP
+lock(mutex){
+	resource_counter = 0
+}
+broadcast(read_phase)
+signal(write_phase)
+```
+
+Though this can only be done if the signal/broadcast does not rely on a controlled resource like the resource counter in the above example.
+
+### Deadlocks
+
+![[Deadlock]]
+
+There are a couple techniques for solving or preventing deadlocks:
+- Fine-grain locking: Forcing threads to only hold one [[Mutex|mutex]] at a time
+	- This is very limiting to what locks can be used for.
+- Composite [[Mutex|mutex]] that combine access to multiple [[Mutex|mutex]]. 
+	- This can be hard to implement and enforce across a wide code base.
+- [[Mutex]] ordering: You have to obtain [[Mutex|mutex]] in a given order.
+	- This is the most common solution.
+	- You have to enforce this order which can be complicated in a large code base.
+- Rollback: Detect when deadlocks occur and rollback one of the threads to before the deadlock.
+	- This is very expensive to implement and involves writing code that can be rolled back.
+	- You can not use external code that can not be rolled back.
+- Ostrich technique: Hope it does not happen and if it does restart the system.
+	- Terrible to do but very easy to implement.
+
+
 
