@@ -86,4 +86,11 @@ A [[Thread|thread]] can be terminated using the `join` command which makes the t
 
 ![[Mutex]]
 
+![[Conditional mutex]]
+
+>[!note] Use while on the condition in the critical section instead of if
+> There are multiple reasons this is best practice:
+> - This allows for multiple threads waiting on the same condition,
+> - Anyone thread might not be the first thread to access it after it has been released,
+> - The condition might have changed since it has been woken up.
 
