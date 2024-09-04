@@ -82,4 +82,8 @@ A [[Thread|thread]] can be terminated using the `join` command which makes the t
 >[!note] Different threads execute operations in a non-deterministic manner
 > If two threads are safely writing to a list the order of those writes are non-deterministic as it is up to the kernel to schedule them.
 
+## Mutex
+
+![[Mutex]]
+
 
