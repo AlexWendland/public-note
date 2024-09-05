@@ -192,7 +192,7 @@ lock(mutex){
 
 ### Spurious wakeups
 
-When waking up threads in a mutex block using signal/broadcast lf you still hold the mutex then the threads will just be moved to waiting on the mutex as it is still held. This is a *spurious wakeup* as we pay the cost of  [[Context switch (CPU)|context switching]] to the thread just to hand back control to the [[Central processing unit (CPU)|CPU]].
+![[Spurious wakeups]]
 
 This can sometimes be mitigated by moving the signal/broadcast out of the [[Mutex|mutex]] block.
 

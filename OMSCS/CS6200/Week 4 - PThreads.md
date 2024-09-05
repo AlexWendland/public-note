@@ -12,6 +12,13 @@ week: 4
 ---
 # Week 4 - PThreads
 
+## Additional reading
+
+- ["An Introduction to Programming with Threads"](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-birrell-paper.pd)
+- [PThreads Programming Resource](https://computing.llnl.gov/tutorials/pthreads/)
+
+## Background
+
 ![[Portable operating system interface (POSIX)|POSIX]]
 
 ![[POSIX threads (PThreads)|PThreads]]
@@ -106,4 +113,85 @@ When using Pthreads:
 - Compile code using the pthreads flag: either `-lpthread` or `-pthread`.
 - Check the return value of pthread function calls in case of errors.
 
+## [[Mutex]]
 
+The [[POSIX threads (PThreads)|PThreads]] library allows you to create and use [[Mutex|mutexes]].  
+
+```c
+pthread_mutex_t aMutex;
+int pthread_mutex_lock(pthread_mutex_t *mutex);
+int pthread_mutex_unlock(pthread_mutex_t *mutex);
+```
+
+For example to implement safe lock and unlock using this would be:
+
+```c
+list<int> my_list;
+pthread_mutex_t list_mutex;
+
+void safe_insert(int to_add){
+	pthread_lock(list_mutex);
+	my_list.insert(to_add);
+	pthread_unlock(list_mutex);
+}
+```
+
+You must initialise and cleanup mutexes.
+
+```c
+int pthread_mutex_init(
+	pthread_mutex_t *mutex,
+	pthread_mutexattr_t *attr,
+);
+int pthread_mutex_destroy(pthread_mutex_t *mutex);
+```
+
+[[Mutex]] have 3 attributes:
+- Mutex Type: can be changed to allow for [[Deadlock|deadlock]] detection.
+- Mutex Protocol: Determines the thread priority when holding the mutex.
+- Process-Shared Attribute: Determines if the mutex applies just to this process or can be shared.
+- Robustness Attribute: Determines if the mutex should be recoverable from a crash or not.
+
+Another nice feature is the trylock which allows a thread to check if a mutex is free without getting blocked by it.
+
+```c
+int pthread_mutex_trylock(pthread *mutex);
+```
+
+This will return 0 if it is free or `EBUSY` if not.
+
+Lastly a couple reminders about working with mutexes:
+- Shared data must be accessed through a single mutex.
+- A mutex must be visible to all threads. i.e. declare them as global variables.
+- Globally order locks to prevent [[Deadlock|deadlock]].
+- Always unlock the correct mutex.
+
+## [[Conditional variables (Mutex)|Conditional variables]]
+
+[[POSIX threads (PThreads)|PThreads]] supports the [[Application Programming Interface (API)|API]] we saw in the last lecture.
+
+```c
+pthread_cond_t aCond;
+int pthread_cond_wait(pthread_cond_t *cond, pthread_mutex_t *mutex);
+int pthread_cond_signal(pthread_cond_t *cond);
+int pthread_cond_broadcast(pthread_cond_t *cond);
+```
+
+Conditional variables need to be created and destroyed.
+
+```c
+int pthread_cond_init(
+	pthread_cond_t *cond,
+	pthread_condattr_t *attr,
+);
+int pthread_cond_destroy(pthread_cond_t *cond);
+```
+
+The attributes you can provide are:
+- **Process-Shared (`PTHREAD_PROCESS_SHARED`, `PTHREAD_PROCESS_PRIVATE`)**: Determines whether the condition variable is shared between processes or only within a single process.
+- **Clock (`CLOCK_REALTIME`, `CLOCK_MONOTONIC`)**: Specifies which clock to use for timed wait operations on the condition variable.
+
+Some notes on [[Conditional variables (Mutex)|conditional variables]]:
+- Make sure any predicate change is followed by the required signal/broadcast.
+- If you do not know whether to use signal or broadcast, use broadcast (though check this later as you will lose performance).
+- To avoid [[Spurious wakeups|spurious wakeups]] think about if you need to hold the [[Mutex|mutex]] when doing your signal or broadcast.
