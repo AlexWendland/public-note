@@ -16,6 +16,8 @@ Ref: [Beyond Multiprocessing ... Multithreading the SunOS Kernel](https://s3.ama
 
 ## Notes
 
+### Architecture
+
 In this paper they introduce the concept of a Light Weight Process (LWP) that sits as an intermediary between kernel level threads and user level threads. Each LWP is mapped to a kernel thread but not all kernel threads need to be mapped to a LWP.
 
 ![[SunOS_fig_1.png]]
@@ -52,5 +54,11 @@ The LWP data structure contains:
 	- the associated kernel thread, and
 	- process structures.
 
+### Scheduling
 
+SunOS uses real time scheduling. On each CPU the highest priority kernal thread gets scheduled. Simultaneously the highest priority user thread gets scheduled on that LWP. If joint it uses round robin.
+
+SunOS implements preemptive threads. This means as soon as a higher priority thread becomes runable it is scheduled immediately to be running on a CPU. This can cause strange reordering of threads where an event causing a change of executing thread may happen on another CPU which then effects the running thread on another CPU.
+
+### System threads
 
