@@ -17,6 +17,9 @@ year: "2023"
 
 This is a graduate-level introductory course in operating systems. This course teaches the basic operating system abstractions, mechanisms, and their implementations. The core of the course focuses on OS support for concurrency (threads) and synchronisation, resource management (CPU, memory, I/O), and distributed services. The practical component of the course teaches multi-thread programming, inter-process communication, and distributed interactions via RPC.
 
+>[!bug] Break
+>I retook this course so there is a slight break in dates between lectures 4 and 5. The content was the same for both times I took it.
+
 ## Lectures
 - [[Week 1 - Are you ready?]]
 - [[Week 1 - Course material]]
@@ -24,6 +27,9 @@ This is a graduate-level introductory course in operating systems. This course t
 - [[Week 2 - Processes and Process Management]]
 - [[Week 3 - Threading and concurrency]]
 - [[Week 4 - PThreads]]
+- [[Week 5 - Thread design Considerations]]
+
+
 ## Links
 
 - [Central](https://www.omscentral.com/courses/graduate-introduction-to-operating-systems/reviews)
