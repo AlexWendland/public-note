@@ -27,9 +27,9 @@ This is a graduate-level introductory course in operating systems. This course t
 - [[Week 2 - Processes and Process Management]]
 - [[Week 3 - Threading and concurrency]]
 - [[Week 4 - PThreads]]
+- [[Week 5 - Beyond Multiprocessing ... Multithreading and the SunOS Kernel]]
+- [[Week 5 - Implementing Lightweight Threads (paper)]]
 - [[Week 5 - Thread design Considerations]]
-
-
 ## Links
 
 - [Central](https://www.omscentral.com/courses/graduate-introduction-to-operating-systems/reviews)
