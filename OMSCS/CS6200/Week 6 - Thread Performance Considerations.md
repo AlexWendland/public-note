@@ -78,6 +78,96 @@ In this model we will use an event-bus to determine what our machine needs to do
 This can be spun out to support multiple CPU's but it adds complexity to ensure each CPU only gets the correct tasks. However, for this analysis we will not consider this.
 
 This model has some payoffs also:
-- More complicated to program as you need to use non-blocking I/O calls.
+- More complicated to program as you need to use non-blocking I/O calls using poll or epoll to scan open file descriptors.
 - More efficient as you do not waste any time on context switching.
+- Smaller memory requirement as there is a single context.
+- No synchronization. 
 
+#### Async I/O operations
+
+![[async_io_operations.png]]
+
+The main drawback of asyncronous I/O operations is the need to poll open file descriptors for responses. To get around this we can use helper-functions that run on a thread that will handle the blocking I/O operations and put an event on the event dispatcher after they have completed.
+
+![[helper_functions.png]]
+
+Note: In the paper it suggestions using processes for this - however as discussed before it is faster to use threads.
+
+This has the following payoffs:
+- resolves portability limitations of basic event-driven model.
+- Smaller footprint than regular worker threads.
+- Limited applicability in other services.
+- Event routing in multiple CPU systems can be complicated.
+
+### Flash web-server
+
+The flash web-server uses the helpers as laid out above but makes some additional optimizations. 
+
+![[flash_web_server_optimisations.png]]
+
+### Apache web server
+
+The Apache webserver uses a mix of the boss worker pattern and a pipeline model with modules that can be plugged in.
+
+![[apache_web_server.png]]
+
+### Comparison
+
+Whenever comparing two systems you need to define:
+- What are you comparing? (Only change this)
+- What work loads will be used?
+- How will you measure performance?
+
+In this comparison they choose:
+- They compared different implementations of the web-server (all of these had the flash optimizations around caching of file descriptors headers):
+	- Multi-process
+	- Multi-threaded with boss-worker pattern
+	- Single process even-driven (SPED) model (without helper functions)
+	- Zeus (similar to SPED but with 2 processes)
+	- Apache
+	- Flash
+- Workload:
+	- They used trace-based workloads (i.e. capture real world connections to a webserver and replay it):
+		- They used one webserver that served files that did not fit in memory.
+		- Another webserver which was smaller and could easily be cached.
+	- They also generated synthetic loads.
+- Metrics:
+	- Bandwidth, measured in bytes/time
+	- Connection rate, requests/time
+
+They evaluated these metrics on file size:
+- larger file size can be ammortized per connection, so can achieve higher bandwidth.
+- Larger file size means more work per connection so lower connection rate.
+
+#### Best case
+
+The best case analysis was lots of connections for the same page. They varied the page size and looked at the performance of different servers.
+
+![[comparison_best_case.png]]
+
+#### Trace small files
+
+The small file trace (Owlnet) followed a similar pattern to the best case analysis.
+
+![[comparison_small_files.png]]
+
+#### Trace large files
+
+For large files SPED was the worst for the need to do I/O operations which mean time spent polling for non-blocking I/O operations.
+
+![[flash_large_file_trace.png]]
+
+#### Optimisations
+
+To understand why Apache performed so poorly, it is useful to see the impact of the optimizations the paper suggests. 
+
+![[comparison_optimisations.png]]
+
+#### Summary
+
+- When data is in cache:
+	- SPED performed better than Flash as there was an unneeded test for memory presence.
+	- Both SPED and Flash outperformed MT/MP implementations.
+- When data was not in cache
+	- Flash outperformed SPED as there was no blocking I/O operations.
+	- Flash outperformed MT/MP approach as it was more memory efficient and used less context switching.
