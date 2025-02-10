@@ -153,3 +153,24 @@ There are two types of signals:
 
 ### Threads handling interrupts
 
+One way to get around deadlocks within interrupt handling is to spin the thread handler out in its own thread. That way if the handler gets blocked on a mutex it can context switch back to the interrupted thread to finish before it can finish execution.
+
+The main downside to this is dynamic thread creation is quite costly. Therefore there is optimizations here to be made:
+- If the handler does not lock, it can be executed on the original thread.
+- If the handler does lock, then make it a separate thread.
+- Create and initialize threads for interrupt routines before they are called.
+
+![[top_vs_bottom_thread_handling.png]]
+
+There is a concept of top and bottom of the thread handler.
+- The top is the part that executes within the interupted thread.
+- The bottom is the part that executes within the spun out thread.
+	- In the bottom we can enable interupts that were disabled in the top - as it should be safe here to handle other signals.
+
+If we use a new thread instead of blocking signals whilst in the critical section we have the following changes:
+- It adds about 40 instructions per interrupt, and
+- It saves about 12 instructions per mutex opeation.
+
+>[!note] Optimize for the common case 
+> As there are fewer interrupts than mutex operations this causes a net saving.
+
