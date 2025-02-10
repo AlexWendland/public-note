@@ -62,3 +62,5 @@ With the broken down state we:
 
 ## SunOS 5.0
 
+This OS implements Light Weight Process as laid out in [[Week 5 - Beyond Multiprocessing ... Multithreading and the SunOS Kernel]]. 
+
