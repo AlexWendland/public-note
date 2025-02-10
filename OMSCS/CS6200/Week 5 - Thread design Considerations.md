@@ -151,3 +151,5 @@ There are two types of signals:
 - One-shot signals: If multiple signals are queued it is only guaranteed to run the handler at least once. Also user specific handlers must be re-enabled after execution otherwise we default back to the OS's handler.
 - Real time signals: If n signals are raised then the handler is called n times.
 
+### Threads handling interrupts
+
