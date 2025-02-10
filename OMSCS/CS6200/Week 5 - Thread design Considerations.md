@@ -139,7 +139,15 @@ Creation of threads takes a while so instead of destroying them it is efficient 
 
 Switching immediately to handler code for either signals or interrupts can cause code to become incredibly complicated. For example if the code that is interrupted is holding a mutex, but the handler code needs another mutex it risks deadlocks within your system.
 
-The solution to this is to mask (i.e. block) certain signals/interrupts from happening around critical sections to stop this happening. Signals/interrupts when blocked get queued up. If multiple of the same signal are queued up whilst it is blocked the handler will only trigger once still.
+The solution to this is to mask (i.e. block) certain signals/interrupts from happening around critical sections to stop this happening. Signals/interrupts when blocked get queued up.
 
+Interupt masks are per CPU. If a mask disables the interrupt, the hardware interrupt routing mechanism will not deliver interrupts to that CPU.
 
+On a multi-core system the interrupt is handled by whichever CPU has that interrupt unmasked. It is common practice to have a single core unmask the interrupts and be the main handler. This avoids overheads and instability on the other cores.
+
+Signal masks are per execution context. If the mask disables a signal, kernal sees the mask and will not interrupt the corresponding thread. 
+
+There are two types of signals:
+- One-shot signals: If multiple signals are queued it is only guaranteed to run the handler at least once. Also user specific handlers must be re-enabled after execution otherwise we default back to the OS's handler.
+- Real time signals: If n signals are raised then the handler is called n times.
 
