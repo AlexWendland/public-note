@@ -108,3 +108,38 @@ Creation of threads takes a while so instead of destroying them it is efficient 
 - periodically a reaper thread destroys unused threads.
 - Otherwise when a new create call is made it reuses an old thread structure.
 
+### Interrupts and signals
+
+![[difference_interrupts_signals.png]]
+
+![[similar_interrupts_vs_singals.png]]
+
+#### Interrupts
+
+- Interrupts are caused by hardware devices.
+- The OS defines a handler table going from the interrupt to the address of the handling code.
+- When the interrupt is given if it is NOT masked then the current thread's execution counter is moved to the handling code.
+- This is all defined in the OS and can not be remapped by the process.
+- Interrupts are always asynchronous. 
+
+#### Signals
+
+- Signals are caused by the CPU/process - such as accessing memory not allocated to it.
+- The OS defines a handler table mapping signals to the address of the handling code.
+- The process can change the address of some of these handlers.
+- When the signal is given if it is NOT masked then the current thread's execution counter is moved to the handling code.
+- Signals are defined by the OS.
+- Signals are either synchronous or asynchronous. 
+	- Synchronous: Segmenation fault, dividing by 0, or sigkill sent from one thread to another.
+	- Asynchronous: Sigkill from outside or sigalarm.
+
+### Masking
+
+![[masking_interupts_signals.png]]
+
+Switching immediately to handler code for either signals or interrupts can cause code to become incredibly complicated. For example if the code that is interrupted is holding a mutex, but the handler code needs another mutex it risks deadlocks within your system.
+
+The solution to this is to mask (i.e. block) certain signals/interrupts from happening around critical sections to stop this happening. Signals/interrupts when blocked get queued up. If multiple of the same signal are queued up whilst it is blocked the handler will only trigger once still.
+
+
+
