@@ -30,7 +30,7 @@ This is a graduate-level introductory course in operating systems. This course t
 - [[Week 5 - Beyond Multiprocessing ... Multithreading and the SunOS Kernel]]
 - [[Week 5 - Implementing Lightweight Threads (paper)]]
 - [[Week 5 - Thread design Considerations]]
-## Links
+- [[Week 6 - Thread Performance Considerations]]## Links
 
 - [Central](https://www.omscentral.com/courses/graduate-introduction-to-operating-systems/reviews)
 - [OMSCS page](https://omscs.gatech.edu/cs-6200-introduction-operating-systems)
