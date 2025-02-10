@@ -174,3 +174,27 @@ If we use a new thread instead of blocking signals whilst in the critical sectio
 >[!note] Optimize for the common case 
 > As there are fewer interrupts than mutex operations this causes a net saving.
 
+### User vs kernel masks
+
+Both the kernel level thread and the user level thread have signal masks. For the user level thread to update the kernel level threads mask this takes a system call - which is slow. So these are kept in sync via lazy updates.
+
+![[signal_handling_user_kernel.png]]
+
+The threading library loads its own code into the signal handler for a particular signal. Then there are multiple cases on what should happen. 
+- Case 1: Both user and kernel threads have mask set to 1, threading library lets the user level thread handle the signal.
+- Case 2: Kernel thread has the mask set to 1, but the current executing thread has it set to 0. However there is a non-executing thread with the handler set to 1 - so we context switch.
+- Case 3: Kernel thread has the mask set to 1, but the current executing thread has it set to 0. However there is an executing thread with the handler set to 1 - so this thread passes the signal onto the kernel level thread executing that user level thread.
+- Case 4: Kernel thread has the mask set to 1, but the current executing thread has it set to 0. All other user level threads have the mask set to 0. We invoke a system call to set the kernel level mask to 0 and throw the same signal in another executing thread.
+- Case 5: All kernel threads have the mask set to 0 and the user level thread switches its mask to 1. Then we make a system call to switch the mask to 1 on this kernel level thread.
+
+## Linux
+
+In linux it supports the Native POSIX Threads library (NPTL):
+- This is a 1:1 model so avoids the complexity on the many:many model in SunOS.
+- Kernel sees each user level thread.
+- Kernel traps are cheaper in linux.
+- More resource so limitations like the number of threads matter less.
+
+Linux used to use LinuxThreads a many:many model similar to SunOS above.
+
+In linux it calls the thread IDs PID (process ID's) which is mildly confusing. All the threads have a group ID which is the PID of the first thread. When you fork a process it only copies the first thread. To create a new thread us use clone with a mask that indicates how much you want to copy over.
