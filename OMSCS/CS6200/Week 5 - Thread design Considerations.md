@@ -62,5 +62,49 @@ With the broken down state we:
 
 ## SunOS 5.0
 
-This OS implements Light Weight Process as laid out in [[Week 5 - Beyond Multiprocessing ... Multithreading and the SunOS Kernel]]. 
+This OS implements Light Weight Process as laid out in [[Week 5 - Beyond Multiprocessing ... Multithreading and the SunOS Kernel]]. The data structures to implement this are laid out in [[Week 5 - Implementing Lightweight Threads (paper)]].
+
+### User level structures
+
+![[user_level_thread_data.png]]
+
+Two key points:
+- Threads point to their ID within a table of pointers - this enables that table to contain metadata about the thread and stops it pointing to corrupt memory. 
+- The stack for each thread can grow beyond the bounds of the initial allocated stack size. If this happens it would corrupt another thread but it would not be known until that thread ran. To mitigate this they implement red zones which if edited will throw a seg fault.
+
+### Kernel level structures
+
+![[kernel_level_data_structures.png]]
+
+Key notes:
+- Resource usage is tracked per LWP this means to get the resource usage for a kernel-level thread, we need to traverse the linked list of LWP.
+- The kernel-level thread always has to be loaded in memory for access however the LWP does not. This allows for larger LWP support with a lower memory foot print.
+- 
+
+![[SunOs_fig_2.png]]
+
+### Thread management
+
+The kernel level does not understand what is happening at the user level and vice versa. Therefore we can get into situations where all kernel level threads are blocked on I/O whilst there are user level threads that could execute. Therefore SunOS introduce new system calls to allow the kernel level threads to communicate to the threading library.
+
+![[kernel_vs_user_visability.png]]
+
+Notes:
+- It is possible for threading library to lock a user level thread onto a kernel level thread.
+- There are situations where when the kernel doesn't know about mutexs or conditional variables, the user level threads are blocked by the kernel without it knowing.
+- The threading library gets called at different points such as: Via signals, ULT yielding, blocked threads becoming runnable, or timers expiring.
+
+### Multiple CPU 'fun'
+
+There are situations where actions on one CPU effect another, such as:
+- With 3 threads $T_3 > T_2 > T_1$ and 2 CPUs. If $T_2$ holds a mutex $T_3$ needs then $T_2$ and $T_1$ are scheduled. When $T_2$ releases the mutex it needs to signal to $T_1$ to run the threading library to switch $T_1$ for $T_3$. This is called preempting $T_1$. 
+	- This is enabled by $T_2$ signaling $T_1$.
+- In the case where 2 threads are running on two CPU's $T_1$ and $T_4$ (see picture) it may be the case where $T_4$ needs a mutex $T_1$ is holding. If the critical section of $T_1$ is short it may be faster for $T_4$ to stay loaded on the CPU than to context switch out. This case is called an adaptive mutex.
+
+![[sync_related_issues.png]]
+
+Creation of threads takes a while so instead of destroying them it is efficient to reuse them. Therefore when a thread is marked for distruction:
+- It is put on 'death row'
+- periodically a reaper thread destroys unused threads.
+- Otherwise when a new create call is made it reuses an old thread structure.
 
