@@ -103,7 +103,7 @@ User mode application have to access hardware through system calls. The [[Operat
 
 ![[System call]]
 
-## OS arcitecture
+## OS architecture
  
 At first [[Operating system (OS)|OS]] included all the features within one monolithic application. This had the following advantages:
 - You have everything already, you do not need to go somewhere else, and
