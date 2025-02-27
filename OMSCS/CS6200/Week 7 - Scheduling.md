@@ -40,3 +40,37 @@ To evaluate different algorithms we will compare different metrics:
 - Average job wait time.
 - CPU utilization.
 
+Lets assume we are in a situation with 3 tasks $T1$, $T2$, and $T3$ which take 1, 10 and 1 seconds to complete respectively. 
+
+### First come first served (FCFS)
+
+Implements a [[First in first out (FIFO) queue|FIFO]] queue and does tasks in order.
+
+Throughput: 3/12s = 0.25 tasks/s
+
+Average completion time: (1 + 11 + 12) / 3 = 8 secs
+
+Average wait time: (0 + 1 + 11) / 3 = 4 seconds
+
+### Shortest job first (SJF)
+
+Schedule tasks in the order of their execution times. 
+
+For this we can make the run queue either an ordered queue with $O(n)$ insertion time but $O(1)$ retrieval time or a ordered tree with $O(log(n))$ insertion time and $O(log(n))$ retrieval time (with re-balancing). 
+
+Throughput: 3/12s = 0.25 tasks/s
+
+Average completion time: (1 + 2 + 12) / 3 = 5 secs
+
+Average wait time: (0 + 1 + 2) / 3 = 1 seconds
+
+## Preemptive scheduling
+
+In this model we now allow the CPU to switch which task it is now working on. We also assume tasks do not arrive at the same time.
+
+| Task | Exection time | Arrival time |
+| ---- | ------------- | ------------ |
+| $T1$ | 1 sec         | 2            |
+| $T2$ | 10 sec        | 0            |
+| $T3$ | 1 sec         | 2            |
+
