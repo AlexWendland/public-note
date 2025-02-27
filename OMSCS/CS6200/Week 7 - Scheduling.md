@@ -74,3 +74,34 @@ In this model we now allow the CPU to switch which task it is now working on. We
 | $T2$ | 10 sec        | 0            |
 | $T3$ | 1 sec         | 2            |
 
+>[!note] Execution time
+>In the real world we don't know the execution time, however we can try to guess it using:
+>- How long it ran the last time?
+>- How long did it run for the last $n$ runs?
+
+## Preemptive priority scheduling
+
+In this model we not only allow for interruptions but also a priority between tasks. In this model you want to run the highest priority tasks first.
+
+| Task | Exection time | Arrival time | Priority |
+| ---- | ------------- | ------------ | -------- |
+| $T1$ | 1 sec         | 2            | $P1$     |
+| $T2$ | 10 sec        | 0            | $P2$     |
+| $T3$ | 1 sec         | 2            | $P3$     |
+
+Where $P1 < P2 < P3$.
+
+We use a data structure to embed the priority of the tasks. This can be achieved by either separate priority queues which get drained in order. Otherwise you can have a tree structure in which the priority is embedded in its subtrees.
+
+### Starvation
+
+If we have a very low priority task, this can never get ran if enough higher priority tasks are constantly generated. This can be an issue if it needs to eventually be ran.
+
+To avoid this we use *priority aging* we make the priority not just evaluated on its actual priority but on how long it has been in the run queue.
+
+### Priority inversion
+
+If lower priority tasks use mutexes that higher priority tasks requires we can generate a situation in which lots of lower priority tasks all complete before the low priority task holding the mutex unlocks it. This will mean the high priority task will essentially be locked back to the priority of the task that holds the mutex.
+
+To avoid this when a task is holding a mutex, its priority is the max of the priorities of all the tasks that need that mutex. This ensures it will not block higher priority tasks.
+
