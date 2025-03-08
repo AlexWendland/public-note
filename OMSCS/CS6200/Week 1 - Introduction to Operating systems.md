@@ -107,7 +107,7 @@ User mode application have to access hardware through system calls. The [[Operat
  
 At first [[Operating system (OS)|OS]] included all the features within one monolithic application. This had the following advantages:
 - You have everything already, you do not need to go somewhere else, and
-- You can use compile time optimisations to improve efficiency. 
+- You can use compile time optimizations to improve efficiency. 
 Though had the following downsides:
 - Lower customisation, protabability and manageability,
 - Higher memory footprint to run the OS, and
