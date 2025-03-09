@@ -10,7 +10,7 @@ tags: [excalidraw]
 # Text Elements
 VPN = virtual page number ^4de3wHVa
 
-Virtual address ^vma2PTnL
+Virtual address reference ^vma2PTnL
 
 VPN ^bwejMRXQ
 
@@ -18,10 +18,11 @@ Offset in page ^2IG6ssws
 
 Page table ^cRwGqWrj
 
-VPN ^NmYrxAIL
+PFN ^NmYrxAIL
 
-Physical memory
-location ^sPe7PA33
+Organisation
+bits (e.g.
+permissions) ^sPe7PA33
 
 Virtual memory ^qWo9M7st
 
@@ -30,20 +31,25 @@ page size ^cpyGzAcP
 pege entry size ^MAacaH0B
 
 number of
-VPN ^0JVl2cda
+VPNs ^0JVl2cda
 
 Limited by architecture ^cYGMfaGU
 
 Offset length will be
-log_2(size of the page)
-e.g. 8 bits will need an offset of length 3 ^C7hpeyyM
+log_2(size of the page in btyes)
+e.g. 1 kB will need an offset of length 10 ^C7hpeyyM
 
 So the number to page table entries is:
-2^(architecture_size - log_2(size of the page))
-2^(architecture_size)/size of the page ^8RQX6jzA
+2^(architecture_size - log_2(size of the page in bytes))
+2^(architecture_size)/size of the page in bytes ^8RQX6jzA
 
-The page table size is:
-#page entry size * number of VPN ^qEXMjfB5
+The page table size
+is:
+#page entry size * 
+number of VPN ^qEXMjfB5
+
+PFN = Physical frame number
+(this is the address of the physical memory) ^MUQBiNZM
 
 %%
 # Drawing
@@ -346,8 +352,8 @@ The page table size is:
 		},
 		{
 			"type": "text",
-			"version": 106,
-			"versionNonce": 1293552611,
+			"version": 144,
+			"versionNonce": 2083025790,
 			"isDeleted": false,
 			"id": "4de3wHVa",
 			"fillStyle": "hachure",
@@ -356,8 +362,8 @@ The page table size is:
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -537,
-			"y": -313.7578125,
+			"x": -568.6129032258065,
+			"y": -357.6287802419355,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
 			"width": 260.69970703125,
@@ -366,7 +372,7 @@ The page table size is:
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1741436367899,
+			"updated": 1741533287123,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -382,8 +388,8 @@ The page table size is:
 		},
 		{
 			"type": "text",
-			"version": 57,
-			"versionNonce": 843536333,
+			"version": 133,
+			"versionNonce": 1226049662,
 			"isDeleted": false,
 			"id": "vma2PTnL",
 			"fillStyle": "hachure",
@@ -392,34 +398,34 @@ The page table size is:
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -488,
-			"y": -257.7578125,
+			"x": -533.1612903225806,
+			"y": -300.9836189516129,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
-			"width": 151.9398193359375,
+			"width": 251.9997100830078,
 			"height": 25,
 			"seed": 1066016557,
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1741436367899,
+			"updated": 1741533290976,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
 			"fontFamily": 1,
-			"text": "Virtual address",
-			"rawText": "Virtual address",
+			"text": "Virtual address reference",
+			"rawText": "Virtual address reference",
 			"textAlign": "left",
 			"verticalAlign": "top",
 			"containerId": null,
-			"originalText": "Virtual address",
+			"originalText": "Virtual address reference",
 			"lineHeight": 1.25,
 			"baseline": 18
 		},
 		{
 			"type": "text",
-			"version": 68,
-			"versionNonce": 2052364163,
+			"version": 91,
+			"versionNonce": 45370494,
 			"isDeleted": false,
 			"id": "bwejMRXQ",
 			"fillStyle": "hachure",
@@ -428,8 +434,8 @@ The page table size is:
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -518,
-			"y": -225.7578125,
+			"x": -525.741935483871,
+			"y": -243.82232862903226,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
 			"width": 36.439971923828125,
@@ -438,7 +444,7 @@ The page table size is:
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1741436367900,
+			"updated": 1741533294864,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -454,8 +460,8 @@ The page table size is:
 		},
 		{
 			"type": "text",
-			"version": 176,
-			"versionNonce": 1954862637,
+			"version": 193,
+			"versionNonce": 1592830114,
 			"isDeleted": false,
 			"id": "2IG6ssws",
 			"fillStyle": "hachure",
@@ -464,8 +470,8 @@ The page table size is:
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -436.7899169921875,
-			"y": -227.2578125,
+			"x": -432.918949250252,
+			"y": -242.74168346774195,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
 			"width": 144.9398193359375,
@@ -474,7 +480,7 @@ The page table size is:
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1741436367900,
+			"updated": 1741533292677,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -490,8 +496,8 @@ The page table size is:
 		},
 		{
 			"type": "text",
-			"version": 171,
-			"versionNonce": 595373859,
+			"version": 188,
+			"versionNonce": 669344574,
 			"isDeleted": false,
 			"id": "cRwGqWrj",
 			"fillStyle": "hachure",
@@ -500,8 +506,8 @@ The page table size is:
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -75.349853515625,
-			"y": -241.2578125,
+			"x": -70.83372448336695,
+			"y": -228.35458669354838,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
 			"width": 108.51986694335938,
@@ -510,7 +516,7 @@ The page table size is:
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1741436367900,
+			"updated": 1741533502144,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -559,8 +565,8 @@ The page table size is:
 		},
 		{
 			"type": "text",
-			"version": 71,
-			"versionNonce": 184603331,
+			"version": 83,
+			"versionNonce": 953840638,
 			"isDeleted": false,
 			"id": "NmYrxAIL",
 			"fillStyle": "hachure",
@@ -569,34 +575,34 @@ The page table size is:
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -117,
-			"y": -166.7578125,
+			"x": -114.41935483870964,
+			"y": -162.24168346774195,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
-			"width": 36.439971923828125,
+			"width": 37.57997131347656,
 			"height": 25,
 			"seed": 1466175885,
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1741436367900,
+			"updated": 1741533045263,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
 			"fontFamily": 1,
-			"text": "VPN",
-			"rawText": "VPN",
+			"text": "PFN",
+			"rawText": "PFN",
 			"textAlign": "left",
 			"verticalAlign": "top",
 			"containerId": null,
-			"originalText": "VPN",
+			"originalText": "PFN",
 			"lineHeight": 1.25,
 			"baseline": 18
 		},
 		{
 			"type": "text",
-			"version": 148,
-			"versionNonce": 1077735149,
+			"version": 205,
+			"versionNonce": 1962374910,
 			"isDeleted": false,
 			"id": "sPe7PA33",
 			"fillStyle": "hachure",
@@ -605,29 +611,29 @@ The page table size is:
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -65.21998596191406,
-			"y": -178.2578125,
+			"x": -48.339682302167375,
+			"y": -180.8384576612903,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
-			"width": 151.67982482910156,
-			"height": 50,
+			"width": 120.49986267089844,
+			"height": 75,
 			"seed": 1149527757,
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1741436367900,
+			"updated": 1741533331236,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
 			"fontFamily": 1,
-			"text": "Physical memory\nlocation",
-			"rawText": "Physical memory\nlocation",
+			"text": "Organisation\nbits (e.g.\npermissions)",
+			"rawText": "Organisation\nbits (e.g.\npermissions)",
 			"textAlign": "center",
 			"verticalAlign": "top",
 			"containerId": null,
-			"originalText": "Physical memory\nlocation",
+			"originalText": "Organisation\nbits (e.g.\npermissions)",
 			"lineHeight": 1.25,
-			"baseline": 43
+			"baseline": 68
 		},
 		{
 			"type": "rectangle",
@@ -932,8 +938,8 @@ The page table size is:
 		},
 		{
 			"type": "arrow",
-			"version": 119,
-			"versionNonce": 56332397,
+			"version": 182,
+			"versionNonce": 1285721086,
 			"isDeleted": false,
 			"id": "pNsVUWlnYLIxn7JFvacIr",
 			"fillStyle": "hachure",
@@ -942,19 +948,19 @@ The page table size is:
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 74,
-			"y": -263.7578125,
+			"x": 99.16129032258073,
+			"y": -243.11265120967744,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
-			"width": 185,
-			"height": 1,
+			"width": 218.54838709677426,
+			"height": 0.35483870967749453,
 			"seed": 1098974339,
 			"groupIds": [],
 			"roundness": {
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1741436367901,
+			"updated": 1741533504930,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -968,15 +974,15 @@ The page table size is:
 					0
 				],
 				[
-					-185,
-					1
+					-218.54838709677426,
+					0.35483870967749453
 				]
 			]
 		},
 		{
 			"type": "text",
-			"version": 90,
-			"versionNonce": 506837219,
+			"version": 111,
+			"versionNonce": 765115106,
 			"isDeleted": false,
 			"id": "MAacaH0B",
 			"fillStyle": "hachure",
@@ -985,8 +991,8 @@ The page table size is:
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -98.46990966796875,
-			"y": -307.7578125,
+			"x": -88.79249031312997,
+			"y": -289.69329637096774,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
 			"width": 148.9398193359375,
@@ -995,7 +1001,7 @@ The page table size is:
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1741436367901,
+			"updated": 1741533504930,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1054,8 +1060,8 @@ The page table size is:
 		},
 		{
 			"type": "text",
-			"version": 59,
-			"versionNonce": 1541019949,
+			"version": 88,
+			"versionNonce": 786970850,
 			"isDeleted": false,
 			"id": "0JVl2cda",
 			"fillStyle": "hachure",
@@ -1064,8 +1070,8 @@ The page table size is:
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -269.92994689941406,
-			"y": -4.7578125,
+			"x": -260.89768883489796,
+			"y": -34.43523185483872,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
 			"width": 93.85989379882812,
@@ -1074,17 +1080,17 @@ The page table size is:
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1741436367902,
+			"updated": 1741533510106,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
 			"fontFamily": 1,
-			"text": "number of\nVPN",
-			"rawText": "number of\nVPN",
+			"text": "number of\nVPNs",
+			"rawText": "number of\nVPNs",
 			"textAlign": "center",
 			"verticalAlign": "top",
 			"containerId": null,
-			"originalText": "number of\nVPN",
+			"originalText": "number of\nVPNs",
 			"lineHeight": 1.25,
 			"baseline": 43
 		},
@@ -1173,8 +1179,8 @@ The page table size is:
 		},
 		{
 			"type": "text",
-			"version": 116,
-			"versionNonce": 1894404109,
+			"version": 293,
+			"versionNonce": 315906750,
 			"isDeleted": false,
 			"id": "C7hpeyyM",
 			"fillStyle": "hachure",
@@ -1183,34 +1189,34 @@ The page table size is:
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -601.52978515625,
-			"y": 350.2421875,
+			"x": -613.1597900390625,
+			"y": 328.306703629032,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
-			"width": 421.0595703125,
+			"width": 404.319580078125,
 			"height": 75,
 			"seed": 1905741059,
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1741436522662,
+			"updated": 1741533456353,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
 			"fontFamily": 1,
-			"text": "Offset length will be\nlog_2(size of the page)\ne.g. 8 bits will need an offset of length 3",
-			"rawText": "Offset length will be\nlog_2(size of the page)\ne.g. 8 bits will need an offset of length 3",
+			"text": "Offset length will be\nlog_2(size of the page in btyes)\ne.g. 1 kB will need an offset of length 10",
+			"rawText": "Offset length will be\nlog_2(size of the page in btyes)\ne.g. 1 kB will need an offset of length 10",
 			"textAlign": "center",
 			"verticalAlign": "top",
 			"containerId": null,
-			"originalText": "Offset length will be\nlog_2(size of the page)\ne.g. 8 bits will need an offset of length 3",
+			"originalText": "Offset length will be\nlog_2(size of the page in btyes)\ne.g. 1 kB will need an offset of length 10",
 			"lineHeight": 1.25,
 			"baseline": 68
 		},
 		{
 			"type": "text",
-			"version": 381,
-			"versionNonce": 2065815778,
+			"version": 439,
+			"versionNonce": 1661519614,
 			"isDeleted": false,
 			"id": "8RQX6jzA",
 			"fillStyle": "hachure",
@@ -1219,34 +1225,34 @@ The page table size is:
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -228.06973266601562,
-			"y": 251.7421875,
+			"x": -278.9915997905115,
+			"y": 249.8067036290322,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
-			"width": 480.13946533203125,
+			"width": 566.4993286132812,
 			"height": 75,
 			"seed": 406806925,
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1741531745954,
+			"updated": 1741533580325,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
 			"fontFamily": 1,
-			"text": "So the number to page table entries is:\n2^(architecture_size - log_2(size of the page))\n2^(architecture_size)/size of the page",
-			"rawText": "So the number to page table entries is:\n2^(architecture_size - log_2(size of the page))\n2^(architecture_size)/size of the page",
+			"text": "So the number to page table entries is:\n2^(architecture_size - log_2(size of the page in bytes))\n2^(architecture_size)/size of the page in bytes",
+			"rawText": "So the number to page table entries is:\n2^(architecture_size - log_2(size of the page in bytes))\n2^(architecture_size)/size of the page in bytes",
 			"textAlign": "center",
 			"verticalAlign": "top",
 			"containerId": null,
-			"originalText": "So the number to page table entries is:\n2^(architecture_size - log_2(size of the page))\n2^(architecture_size)/size of the page",
+			"originalText": "So the number to page table entries is:\n2^(architecture_size - log_2(size of the page in bytes))\n2^(architecture_size)/size of the page in bytes",
 			"lineHeight": 1.25,
 			"baseline": 68
 		},
 		{
 			"type": "text",
-			"version": 510,
-			"versionNonce": 1440681086,
+			"version": 654,
+			"versionNonce": 976453502,
 			"isDeleted": false,
 			"id": "qEXMjfB5",
 			"fillStyle": "hachure",
@@ -1255,29 +1261,194 @@ The page table size is:
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -77.85303964922502,
-			"y": 364.6131552419355,
+			"x": -110.03342265467484,
+			"y": -20.54813508064524,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
-			"width": 337.8996276855469,
-			"height": 50,
+			"width": 199.67974853515625,
+			"height": 100,
 			"seed": 1577075245,
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1741531758717,
+			"updated": 1741533485154,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
 			"fontFamily": 1,
-			"text": "The page table size is:\n#page entry size * number of VPN",
-			"rawText": "The page table size is:\n#page entry size * number of VPN",
+			"text": "The page table size\nis:\n#page entry size * \nnumber of VPN",
+			"rawText": "The page table size\nis:\n#page entry size * \nnumber of VPN",
 			"textAlign": "center",
 			"verticalAlign": "top",
 			"containerId": null,
-			"originalText": "The page table size is:\n#page entry size * number of VPN",
+			"originalText": "The page table size\nis:\n#page entry size * \nnumber of VPN",
+			"lineHeight": 1.25,
+			"baseline": 93
+		},
+		{
+			"type": "text",
+			"version": 260,
+			"versionNonce": 209668706,
+			"isDeleted": false,
+			"id": "MUQBiNZM",
+			"fillStyle": "hachure",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": -216.1744251866494,
+			"y": -377.16607862903214,
+			"strokeColor": "#000000",
+			"backgroundColor": "transparent",
+			"width": 437.4394226074219,
+			"height": 50,
+			"seed": 478979746,
+			"groupIds": [],
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1741533288657,
+			"link": null,
+			"locked": false,
+			"fontSize": 20,
+			"fontFamily": 1,
+			"text": "PFN = Physical frame number\n(this is the address of the physical memory)",
+			"rawText": "PFN = Physical frame number\n(this is the address of the physical memory)",
+			"textAlign": "center",
+			"verticalAlign": "top",
+			"containerId": null,
+			"originalText": "PFN = Physical frame number\n(this is the address of the physical memory)",
 			"lineHeight": 1.25,
 			"baseline": 43
+		},
+		{
+			"type": "line",
+			"version": 192,
+			"versionNonce": 568872830,
+			"isDeleted": false,
+			"id": "EHl_-MieW9V3BZGNbHat4",
+			"fillStyle": "hachure",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": -121.18806085212819,
+			"y": -95.14099631154771,
+			"strokeColor": "#000000",
+			"backgroundColor": "transparent",
+			"width": 214.74193548387098,
+			"height": 0.7096774193548185,
+			"seed": 322996258,
+			"groupIds": [],
+			"roundness": {
+				"type": 2
+			},
+			"boundElements": [],
+			"updated": 1741533332758,
+			"link": null,
+			"locked": false,
+			"startBinding": null,
+			"endBinding": null,
+			"lastCommittedPoint": null,
+			"startArrowhead": null,
+			"endArrowhead": null,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					214.74193548387098,
+					0.7096774193548185
+				]
+			]
+		},
+		{
+			"id": "1ZUhjKRnJw4pV4BUIH1k6",
+			"type": "line",
+			"x": -461.90056856216916,
+			"y": -259.5047883064516,
+			"width": 1.2903225806451815,
+			"height": 57.41935483870964,
+			"angle": 0,
+			"strokeColor": "#000000",
+			"backgroundColor": "transparent",
+			"fillStyle": "hachure",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"roundness": {
+				"type": 2
+			},
+			"seed": 1793278562,
+			"version": 36,
+			"versionNonce": 870648062,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1741533300564,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					-1.2903225806451815,
+					57.41935483870964
+				]
+			],
+			"lastCommittedPoint": null,
+			"startBinding": null,
+			"endBinding": null,
+			"startArrowhead": null,
+			"endArrowhead": null
+		},
+		{
+			"type": "line",
+			"version": 109,
+			"versionNonce": 370504994,
+			"isDeleted": false,
+			"id": "QtioQukL_eVJktWnA_9oj",
+			"fillStyle": "hachure",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": -65.10842352314307,
+			"y": -182.4381711013536,
+			"strokeColor": "#000000",
+			"backgroundColor": "transparent",
+			"width": 5.684341886080802e-14,
+			"height": 77.41935483870964,
+			"seed": 593967714,
+			"groupIds": [],
+			"roundness": {
+				"type": 2
+			},
+			"boundElements": [],
+			"updated": 1741533323388,
+			"link": null,
+			"locked": false,
+			"startBinding": null,
+			"endBinding": null,
+			"lastCommittedPoint": null,
+			"startArrowhead": null,
+			"endArrowhead": null,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					-5.684341886080802e-14,
+					77.41935483870964
+				]
+			]
 		}
 	],
 	"appState": {
