@@ -49,7 +49,7 @@ is:
 number of VPN ^qEXMjfB5
 
 PFN = Physical frame number
-(this is the address of the physical memory) ^MUQBiNZM
+(converts into memory location) ^MUQBiNZM
 
 %%
 # Drawing
@@ -1287,8 +1287,8 @@ PFN = Physical frame number
 		},
 		{
 			"type": "text",
-			"version": 260,
-			"versionNonce": 209668706,
+			"version": 309,
+			"versionNonce": 130226430,
 			"isDeleted": false,
 			"id": "MUQBiNZM",
 			"fillStyle": "hachure",
@@ -1297,27 +1297,27 @@ PFN = Physical frame number
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -216.1744251866494,
+			"x": -149.91455275012595,
 			"y": -377.16607862903214,
 			"strokeColor": "#000000",
 			"backgroundColor": "transparent",
-			"width": 437.4394226074219,
+			"width": 304.919677734375,
 			"height": 50,
 			"seed": 478979746,
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1741533288657,
+			"updated": 1741535981698,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
 			"fontFamily": 1,
-			"text": "PFN = Physical frame number\n(this is the address of the physical memory)",
-			"rawText": "PFN = Physical frame number\n(this is the address of the physical memory)",
+			"text": "PFN = Physical frame number\n(converts into memory location)",
+			"rawText": "PFN = Physical frame number\n(converts into memory location)",
 			"textAlign": "center",
 			"verticalAlign": "top",
 			"containerId": null,
-			"originalText": "PFN = Physical frame number\n(this is the address of the physical memory)",
+			"originalText": "PFN = Physical frame number\n(converts into memory location)",
 			"lineHeight": 1.25,
 			"baseline": 43
 		},
@@ -1365,32 +1365,37 @@ PFN = Physical frame number
 			]
 		},
 		{
-			"id": "1ZUhjKRnJw4pV4BUIH1k6",
 			"type": "line",
-			"x": -461.90056856216916,
-			"y": -259.5047883064516,
-			"width": 1.2903225806451815,
-			"height": 57.41935483870964,
-			"angle": 0,
-			"strokeColor": "#000000",
-			"backgroundColor": "transparent",
+			"version": 36,
+			"versionNonce": 870648062,
+			"isDeleted": false,
+			"id": "1ZUhjKRnJw4pV4BUIH1k6",
 			"fillStyle": "hachure",
 			"strokeWidth": 1,
 			"strokeStyle": "solid",
 			"roughness": 1,
 			"opacity": 100,
+			"angle": 0,
+			"x": -461.90056856216916,
+			"y": -259.5047883064516,
+			"strokeColor": "#000000",
+			"backgroundColor": "transparent",
+			"width": 1.2903225806451815,
+			"height": 57.41935483870964,
+			"seed": 1793278562,
 			"groupIds": [],
 			"roundness": {
 				"type": 2
 			},
-			"seed": 1793278562,
-			"version": 36,
-			"versionNonce": 870648062,
-			"isDeleted": false,
-			"boundElements": null,
+			"boundElements": [],
 			"updated": 1741533300564,
 			"link": null,
 			"locked": false,
+			"startBinding": null,
+			"endBinding": null,
+			"lastCommittedPoint": null,
+			"startArrowhead": null,
+			"endArrowhead": null,
 			"points": [
 				[
 					0,
@@ -1400,12 +1405,7 @@ PFN = Physical frame number
 					-1.2903225806451815,
 					57.41935483870964
 				]
-			],
-			"lastCommittedPoint": null,
-			"startBinding": null,
-			"endBinding": null,
-			"startArrowhead": null,
-			"endArrowhead": null
+			]
 		},
 		{
 			"type": "line",
@@ -1466,10 +1466,10 @@ PFN = Physical frame number
 		"currentItemTextAlign": "center",
 		"currentItemStartArrowhead": "arrow",
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 673.5134717879756,
-		"scrollY": 400.22051411290323,
+		"scrollX": 657.0099258422852,
+		"scrollY": 403.2138671875001,
 		"zoom": {
-			"value": 1.55
+			"value": 1.6
 		},
 		"currentItemRoundness": "round",
 		"gridSize": null,
