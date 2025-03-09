@@ -48,7 +48,7 @@ is:
 #page entry size * 
 number of VPN ^qEXMjfB5
 
-PFN = Physical frame number
+PFN = Page frame number
 (converts into memory location) ^MUQBiNZM
 
 %%
@@ -1287,8 +1287,8 @@ PFN = Physical frame number
 		},
 		{
 			"type": "text",
-			"version": 309,
-			"versionNonce": 130226430,
+			"version": 313,
+			"versionNonce": 562336190,
 			"isDeleted": false,
 			"id": "MUQBiNZM",
 			"fillStyle": "hachure",
@@ -1307,17 +1307,17 @@ PFN = Physical frame number
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1741535981698,
+			"updated": 1741536916879,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
 			"fontFamily": 1,
-			"text": "PFN = Physical frame number\n(converts into memory location)",
-			"rawText": "PFN = Physical frame number\n(converts into memory location)",
+			"text": "PFN = Page frame number\n(converts into memory location)",
+			"rawText": "PFN = Page frame number\n(converts into memory location)",
 			"textAlign": "center",
 			"verticalAlign": "top",
 			"containerId": null,
-			"originalText": "PFN = Physical frame number\n(converts into memory location)",
+			"originalText": "PFN = Page frame number\n(converts into memory location)",
 			"lineHeight": 1.25,
 			"baseline": 43
 		},
