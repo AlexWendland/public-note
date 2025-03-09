@@ -36,3 +36,4 @@ This is a graduate-level introductory course in operating systems. This course t
 - [OMSCS page](https://omscs.gatech.edu/cs-6200-introduction-operating-systems)
 - [Course textbook](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf)
 - [[Week 7 - Scheduling]]
+- [[Week 8 - Page tables]]
