@@ -19,7 +19,7 @@ In [[Week 5 - Computational Learning Theory]] we developed a method to build a [
 Whilst the [[Modelling paradigm|hypothesis space]] might be infinite theoretically, the actual number of distinct hypothesises could be finite. Then we can fall back on the previous work.
 
 >[!example] Discrete problem domain
->Let $A=\{i \in \mathbb{N} \vert i \leq 10\}$ and $B = \{T,F\}$. Then notice that $Fun(A,B) = 2^{10}$ which is finite. If we had $H = \{\ln(x) \geq \theta \ \vert \ \theta \in \mathbb{R}\}$  then $H$ is infinite as $\theta \in \mathbb{R}$. However, in reality there are at most 11 realised functions here $\{x > n \vert 0 \leq n \leq 10, \ n \in \mathbb{Z}\}$ so we have a finite hypothesis space. 
+>Let $A=\{i \in \mathbb{N} \vert i \leq 10\}$ and $B = \{T,F\}$. Then notice that $Fun(A,B) = 2^{10}$ which is finite. If we had $H = \{x \geq \theta \ \vert \ \theta \in \mathbb{R}\}$  then $H$ is infinite as $\theta \in \mathbb{R}$. However, in reality there are at most 11 realised functions here $\{x > n \vert 0 \leq n \leq 10, \ n \in \mathbb{Z}\}$ so we have a finite hypothesis space. 
 
 ## VC-dimension
 
@@ -27,7 +27,7 @@ In the problem above the hypothesis space was in some way limited. We want to ca
 
 ![[Vapnik-Chervonenkis dimension|VC dimension]]
 
-In the example above we have [[Vapnik-Chervonenkis dimension|VC dimension]] 1. As for any two points $1 \leq l \leq u \leq 10$ if $f(l) = T$ and $f(u) = F$ then no such function $h_{\theta}(x) = [\ln(x) \geq \theta]$ can set $h_{\theta}(l) = T$ without setting $h_{\theta}(u) = T$. 
+In the example above we have [[Vapnik-Chervonenkis dimension|VC dimension]] 1. As for any two points $1 \leq l \leq u \leq 10$ if $f(l) = T$ and $f(u) = F$ then no such function $h_{\theta}(x) = [x \geq \theta]$ can set $h_{\theta}(l) = T$ without setting $h_{\theta}(u) = T$. 
 
 ## VC dimensions roughly follow degrees of freedom
 
