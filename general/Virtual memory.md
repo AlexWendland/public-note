@@ -2,6 +2,7 @@
 aliases:
   - virtual memory
   - virtual address space
+  - virtual addresses
 checked: false
 created: 2024-08-26
 last_edited: 2024-08-26
