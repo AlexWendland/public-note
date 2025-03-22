@@ -67,7 +67,7 @@ Page sizes are determined by the [[Operating system (OS)|operating system]] but 
 
 
 >[!example] 64-bit architecture with 4kB page size
->If we do the same calculation with a 64-bit architecture we get 64-12 = 62 bits for the number of page table entries. Therefore we get a page table size of $2^{64} * 4$B = 32PB per process! Way too large to hold in memory or disk for most computers!
+>If we do the same calculation with a 64-bit architecture we get 64-12 = 62 bits for the number of page table entries. Therefore we get a page table size of $2^{64} * 4$B = 64PB per process! Way too large to hold in memory or disk for most computers!
 
 ## Multi-level page tables
 
