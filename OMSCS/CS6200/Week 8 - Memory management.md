@@ -12,7 +12,7 @@ week: 8
 ---
 # Week 8 - Memory management
 
-## Goals
+## Overview
 
 The operation system supports the abstraction of [[Virtual memory|virtual memory]] for processes so it need to:
 - Map [[Virtual memory|virtual memory]] onto [[Physical memory|physical memory]].
@@ -23,7 +23,16 @@ When we speak about memory there are two main abstractions [[Operating system (O
 - [[Paging system]]: This uses [[Memory page|memory pages]] which fixes the size of the smallest unit that can be moved between memory locations. This is the currently the most popular way to manage memory. 
 - [[Memory segmentation]]: This uses [[Memory segment|memory segments]] which have variable sizes.
 
+To support these memory mapping there are 3 bits of hardware that take a [[Virtual memory|virtual address]] to a place on [[Random Access Memory (RAM)|RAM]].
+- [[Memory Management Unit (MMU)]]: A component on the [[Central processing unit (CPU)|CPU]] that performs the mapping from [[Virtual memory|virtual memory]] to [[Physical memory|physical memory]]. This is also responsible for raising faults for illegal access or accesses that require different permissions.
+- [[Translation Lookaside Buffer (TLB)]]: A cache within the [[Memory Management Unit (MMU)|MMU]] to speed up address mappings.
+- [[Memory controller]]: A component that maps different sticks of [[Random Access Memory (RAM)|RAM]] into one contiguous physical address space to be used by the [[Memory Management Unit (MMU)|MMU]].
 
+![[memory_hardware.excalidraw]]
+
+## Page tables
+
+![[Page tables]]
 
 ![[Page tables.excalidraw]]
 
