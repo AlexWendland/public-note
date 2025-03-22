@@ -34,6 +34,12 @@ To support these memory mapping there are 3 bits of hardware that take a [[Virtu
 
 ![[Page tables]]
 
+Note here in [[Paging system|paging]] that the physical address consists of a [[Virtual page number|virtual page number]] with an offset.
+
+>[!warning] [[Byte|Bytes]]
+>The minimum addressable unit of memory is a [[Byte|byte]] not a bit. So the offset within a [[Memory page|page]] is given in [[Byte|bytes]].
+
 ![[Page tables.excalidraw]]
 
+[[Physical memory]] is only allocated to [[Virtual memory|virtual memory]] when it is first referenced. This is identified by the operating system when a [[Physical memory|physical memories]] location is not in a [[Page tables|page table]] 
 

@@ -11,7 +11,5 @@ tags:
 type: definition
 ---
 >[!tldr] Page tables
->A page table maps [[Virtual memory|virtual memory]] that us used by a [[Process|process]] to [[Physical memory|physical memory]] that the computer actually has. Though more advanced memory management may even make the decision to write some of the [[Virtual memory|virtual memory]] into [[Disk storage|disk storage]] if it is not accessed regularly and needs to save [[Physical memory|physical memory]] for other applications.
->![[page_table.png]]
->
+>A *page table* maps addresses in the [[Virtual memory|virtual address space]] which is indexed by the [[Virtual page number|virtual page number]] and an offset within that page. The [[Virtual page number|virtual page number]] is mapped to a [[Physical Frame Number (PFN)|physical frame number]] which combined with the offset can identify a location in [[Physical memory|physical memory]].
 
