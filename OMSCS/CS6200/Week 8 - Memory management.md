@@ -32,14 +32,42 @@ To support these memory mapping there are 3 bits of hardware that take a [[Virtu
 
 ## Page tables
 
-![[Page tables]]
+![[Page table]]
 
-Note here in [[Paging system|paging]] that the physical address consists of a [[Virtual page number|virtual page number]] with an offset.
+Note here in [[Paging system|paging]] that the physical address consists of a [[Virtual page number (VPN)|virtual page number]] with an offset.
 
->[!warning] [[Byte|Bytes]]
->The minimum addressable unit of memory is a [[Byte|byte]] not a bit. So the offset within a [[Memory page|page]] is given in [[Byte|bytes]].
+>[!warning] Offset index
+>The minimum addressable unit of memory is a [[Byte|byte]] not a [[Bit|bit]]. So the offset within a [[Memory page|page]] is given in [[Byte|bytes]].
+
+[[Physical memory]] is only allocated to [[Virtual memory|virtual memory]] when it is first referenced. This is identified by the operating system when a [[Physical memory|physical memories]] location is not in a [[Page table|page table]]. When this happens the [[Operating system (OS)|operating system]] takes control and either allocates the memory or swaps something out of [[Random Access Memory (RAM)|RAM]] to provide space for the new memory. This is called 'allocation on first touch'. When a [[Memory page|page]] is removed from [[Random Access Memory (RAM)|RAM]] this is called 'reclaimed'.
+
+![[Page table entry]]
+
+
+The [[Memory Management Unit (MMU)|MMU]] uses the flags within the [[Page table entry|page table entry]] to determine if the [[Process|processes]] operation on that memory is valid. If not it raises a fault which triggers the kernels page fault handler.
+
+## Page table size
+
+There are two major factors that influence the page table size:
+- The [[CPU register|register]] size. I.e. if you are on a 32-[[Bit|bit]] architecture or a 64-[[Bit|bit]] architecture.
+- The size of the [[Memory page|pages]]. I.e. What size chunks are you cutting your [[Random Access Memory (RAM)|RAM]] into.
+
+The register size is important as it limits the size of the [[Virtual memory|virtual address]]. The size of the page is important as it determines how large the offset needs to be.
+
+Page sizes are determined by the [[Operating system (OS)|operating system]] but commonly are (4kB, 8kB, 2MB, 4MB, 1GB).
 
 ![[Page tables.excalidraw]]
 
-[[Physical memory]] is only allocated to [[Virtual memory|virtual memory]] when it is first referenced. This is identified by the operating system when a [[Physical memory|physical memories]] location is not in a [[Page tables|page table]] 
+>[!example] 32-bit architecture with 4kB page size
+>As a [[Byte|byte]] is the smallest addressable size, lets use this as our unit for the below calculations.
+>As we have a 32-bit architecture the [[Virtual memory|virtual addresses]] have size 32 [[Bit|bits]].
+>As the page size is 2kB = $2^2 * 2^{10} = 2^{12}$B we will need 12 bits for the offset.
+>Therefore we are left with 20 bits of the [[Virtual memory|virtual address]] for the [[Virtual page number (VPN)]]. This means there are $2^{20}$ [[Memory page|pages]].
+>With this we can now work out the size of the page table. For this architecture, 32-[[Bit|bit]] addresses are 4 [[Byte|bytes]] large which is the size of the [[Page table entry|page table entry]]. We have $2^{20}$ page entries so we get $4 * 2^{20}$B = 4 MB of size.
+
+
+>[!example] 64-bit architecture with 4kB page size
+>If we do the same calculation with a 64-bit architecture we get 64-12 = 62 bits for the number of page table entries. Therefore we get a page table size of $2^{64} * 4$B = 32PB per process! Way too large to hold in memory or disk for most computers!
+
+## Multi-level page tables
 
