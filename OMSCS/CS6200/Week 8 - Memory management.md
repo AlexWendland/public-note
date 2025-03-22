@@ -71,3 +71,4 @@ Page sizes are determined by the [[Operating system (OS)|operating system]] but 
 
 ## Multi-level page tables
 
+To reduce the size of the page table we can introduce a hierarchy of page tables.
