@@ -54,7 +54,7 @@ There are two major factors that influence the page table size:
 
 The register size is important as it limits the size of the [[Virtual memory|virtual address]]. The size of the page is important as it determines how large the offset needs to be.
 
-Page sizes are determined by the [[Operating system (OS)|operating system]] but commonly are (4kB, 8kB, 2MB, 4MB, 1GB).
+Page sizes are determined by the [[Operating system (OS)|operating system]] but commonly are 4kB, 2MB (large), and 1GB (huge).
 
 ![[Page tables.excalidraw]]
 
@@ -84,3 +84,18 @@ Page sizes are determined by the [[Operating system (OS)|operating system]] but 
 >In the flat table the page table has 64 entries in which 48 are used. In the second example the fist table has 4 entries with only 3 of these being used, the second layer has 16 entries and in all 3 tables all of these are used.
 >You can see in the second example we had in total 52 page table entries with only 1 not used but in the first we had 64 entries with 16 not being used.
 
+## Inverted page tables
+
+![[Inverted page tables (IPT)]]
+
+## Segmentation
+
+![[Memory segmentation|segmentation]]
+
+![[Descriptor table|descriptor table]]
+
+Normally [[Memory segmentation|segmentation]] is used in conjunction with [[Paging system|paging]]. First use segmentation to cut down the [[Virtual memory|virtual memory]] then using [[Paging system|paging]] to get pages within that segment. 
+
+## Page size
+
+What is the correct page size? This depends on your application
