@@ -71,4 +71,16 @@ Page sizes are determined by the [[Operating system (OS)|operating system]] but 
 
 ## Multi-level page tables
 
-To reduce the size of the page table we can introduce a hierarchy of page tables.
+![[Multi-level page tables]]
+
+>[!example] Single vs double size comparison
+>Suppose we have the same processes running only a 12-[[Bit|bit]] architecture. Though we run it on two different machines where: 
+>- the first uses flat page tables, with [[Virtual memory|virtual addresses]] having a 6 bit [[Virtual page number (VPN)|VPN]] and a 6-bit offset, and
+>- the second uses 2-level page tables, with the [[Virtual memory|virtual addresses]] having a 2 bit first index and 4 bit second index with a 6-bit offset.
+>
+>Suppose both of these processes use the first 2kB and last 1kB of memory. How large are the page tables and how many entries do they use?
+>
+>Notice as they both have 6 bit off sets the page size is $2^6 = 64$B. Therefore the first 2kB = $2^{11}$ B takes the first $2^{11}/2^{6}=2^5 = 32$ entries and the last 1kB takes the last $2^4 = 16$ entries.
+>In the flat table the page table has 64 entries in which 48 are used. In the second example the fist table has 4 entries with only 3 of these being used, the second layer has 16 entries and in all 3 tables all of these are used.
+>You can see in the second example we had in total 52 page table entries with only 1 not used but in the first we had 64 entries with 16 not being used.
+
