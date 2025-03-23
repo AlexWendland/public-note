@@ -104,11 +104,40 @@ Larger page sizes means smaller [[Page table|page tables]] as the offset does mo
 
 ## Memory allocation
 
-The memory allocator gets used when a process needs map some [[Physical memory|physical memory]] onto its [[Virtual memory|virtual memory]]. There are two different kinds of allocators:
-- Kernel-level allocators: That is used by the kernel to get memory for the kernel state but also the static process state.
-- User-level allocators: Dynamic process state on the [[Heap (OS)|heap]] obtained by calls to malloc/free.
+![[Memory allocator]]
 
-The main challenge memory allocators suffer from is [[External fragmentation|external fragmentation]].
+The main challenge [[Memory allocator|memory allocators]] suffer from is [[External fragmentation|external fragmentation]].
 
 ![[External fragmentation]]
+
+The linux kernel has two types of allocators.
+
+![[Buddy Allocator]]
+
+However, the objects the [[Linux|linux]] kernel normally stores are not powers of 2. Causing a lot of [[Internal fragmentation|internal fragmentation]] so another [[Memory allocator|memory allocator]] is also used.
+
+![[Slab allocator]]
+
+## Demand paging
+
+![[Demand paging]]
+
+### When should pages be swapped out?
+
+- When we are nearing full use of the memory.
+- When the CPU utilization is low.
+
+### What pages should be swapped out?
+
+- Pages that aren't going to be used in the future.
+	- Hard to tell in practice so we use heuristics.
+- History-based predictions such as [[ Least-recently used (LRU)|LRU]]
+	- Access bit in the [[Page table entry|page table entry]] can be used for this.
+- Pages that don't need to be written out.
+	- Dirty bit in the [[Page table entry|page table entry]] can be used for this.
+- Avoid swapping non-swappable pages, such as some kernel state. Applications can 'pin' their pages to guarantee they stay in memory.
+
+## Copy on write
+
+![[Copy on write (COW)]]
 
