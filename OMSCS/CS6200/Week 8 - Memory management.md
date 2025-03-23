@@ -98,4 +98,17 @@ Normally [[Memory segmentation|segmentation]] is used in conjunction with [[Pagi
 
 ## Page size
 
-What is the correct page size? This depends on your application
+What is the correct page size? This depends on your application, normally page sizes come in 3 different buckets 'regular' about 4kB, 'large' about 2MB and 'huge' about 1GB.
+
+Larger page sizes means smaller [[Page table|page tables]] as the offset does more of the work - however this can lead to [[Internal fragmentation|internal fragmentation]]. Therefore applications that are likely to need large contiguous blocks of memory such as databases are better off with larger or huge table sizes but applications that to store lots of small objects are better off with smaller page tables.
+
+## Memory allocation
+
+The memory allocator gets used when a process needs map some [[Physical memory|physical memory]] onto its [[Virtual memory|virtual memory]]. There are two different kinds of allocators:
+- Kernel-level allocators: That is used by the kernel to get memory for the kernel state but also the static process state.
+- User-level allocators: Dynamic process state on the [[Heap (OS)|heap]] obtained by calls to malloc/free.
+
+The main challenge memory allocators suffer from is [[External fragmentation|external fragmentation]].
+
+![[External fragmentation]]
+
