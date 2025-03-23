@@ -141,3 +141,7 @@ However, the objects the [[Linux|linux]] kernel normally stores are not powers o
 
 ![[Copy on write (COW)]]
 
+## Checkpointing
+
+![[Checkpointing]]
+
