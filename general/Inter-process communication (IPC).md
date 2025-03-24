@@ -16,4 +16,3 @@ type: definition
 >2. **Shared memory IPC**: This lets two processes share some [[Physical memory|physical memory]] which is mapped into both their [[Virtual memory|virtual memory]] space. This means the [[Operating system (OS)|OS]] is out of the way but the two processes must know how to use that shared memory with one another - sometimes having to re-implement code in the [[Operating system (OS)|OS]].
 >3. **Higher level semantics**: Such as shared files or [[Remote Procedure Calls (RPC)]].
 >4. **Synchronization**: Methods in which two processes can [[Synchronization|synchronize]] so not to adversely effect one an others operation. Examples are [[Mutex|mutexes]] or [[Semaphores|semaphores]].
-
