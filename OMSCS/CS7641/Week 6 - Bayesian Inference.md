@@ -55,8 +55,8 @@ $$
 \mathbb{P}[X_1, X_2, \ldots, X_n] = \prod_{k=1}^n \mathbb{P}[X_k \vert X_1, X_2, \ldots, X_{k-1}]
 $$
 and compare this to 
-$$\mathbb{P}[X] =\prod_{v \in V} \mathbb{P}[X_v \vert \bigcup_{(u,v) \in E} X_u].$$
-So for any $X_i$ and $j < i$ such that $(j,i) \not \in E$ then $X_i$ is [[Conditional independence|conditionally independent]] of $X_j$ given $\bigcup_{(u,v) \in E} X_u$.  
+$$\mathbb{P}[X] =\prod_{v \in V} \mathbb{P}[X_v \vert \bigcap_{(u,v) \in E} X_u].$$
+So for any $X_i$ and $j < i$ such that $(j,i) \not \in E$ then $X_i$ is [[Conditional independence|conditionally independent]] of $X_j$ given $\bigcup_{(u,i) \in E} X_u$.  
 
 This is in fact a defining property of [[Bayesian network]].
 

@@ -29,7 +29,7 @@ Reinforcement Learning is the area of Machine Learning concerned with the action
 
 ## Lectures
 - [[Week 1 - Decision Trees]]
-- [[Week 1 - Chapter 1 Machine Learning]] (Optimistically tried to do this each week ...)
+- [[Week 1 - Chapter 1 Machine Learning]]
 - [[Week 1 - Writing and reading papers]]
 - [[Week 2 - Regression and classification]]
 - [[Week 2 - Neural networks]]
@@ -53,3 +53,8 @@ Reinforcement Learning is the area of Machine Learning concerned with the action
 - [Central](https://www.omscentral.com/courses/machine-learning/reviews)
 - [OMSCS page](https://omscs.gatech.edu/cs-7641-machine-learning)
 - [[MachineLearningTomMitchell.pdf|Course textbook]]
+
+## Acknowledgements
+
+Fixes to the notes for this course where provided by:
+- [Charlie Tian](https://www.linkedin.com/in/charlie-tian-0b03ab117/)

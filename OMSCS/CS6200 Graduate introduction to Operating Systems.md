@@ -37,3 +37,4 @@ This is a graduate-level introductory course in operating systems. This course t
 - [Course textbook](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf)
 - [[Week 7 - Scheduling]]
 - [[Week 8 - Memory management]]
+- [[Week 9 - Inter-proccess communication]]
