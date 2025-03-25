@@ -27,3 +27,10 @@ Message based [[Inter-process communication (IPC)|IPC]] is simple to use as the 
  This form of [[Inter-process communication (IPC)|IPC]] maps a bit of memory into both processes. After it is mapped in neither processes need to go through the kernel to communicate. However that means both processes need [[Synchronization|synchronization]] to ensure they don't over-write one another. They also need to establish a shared protocol on how to communicate.
 
 The main APIs here are: SystemV and [[Portable operating system interface (POSIX)|POSIX]].
+
+### SystemV shared memory
+
+- Uses "segments" of shared memory which are not necessarily contiguous physical memory.
+- The memory is shared system wide. This means there are system wide limits on shared memory.
+- 
+- 
