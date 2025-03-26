@@ -32,5 +32,19 @@ The main APIs here are: SystemV and [[Portable operating system interface (POSIX
 
 - Uses "segments" of shared memory which are not necessarily contiguous physical memory.
 - The memory is shared system wide. This means there are system wide limits on shared memory.
-- 
-- 
+- The [[Operating system (OS)|operating system]] creates a shared memory segment and identifies it by a key.
+- Processes need to map that [[Physical memory|physical memory]] into their [[Virtual memory|virtual memory]].
+- This segment can be detached (so it no longer has a mapping in [[Virtual memory|virtual memory]]).
+- The segment can also be destroyed so it no longer has a system identifier.
+
+In comparison to SysV [[Portable operating system interface (POSIX)|POSIX]] uses a shared file descriptor to access the shared memory.
+
+### Synchronization
+
+As multiple processes can now access the same memory we need to be able to coordinate read and writes.
+
+Pthreads [[Mutex|mutexes]] and [[Conditional variables (Mutex)|conditional variables]] can be used for this but we will need to share their data structures in the shared memory to be accessed by both processes.
+
+This can also be achieved via a message queue by sending read write messages.
+
+Otheswise [[Semaphores|semaphores]] can be used for this which will be covered later.
