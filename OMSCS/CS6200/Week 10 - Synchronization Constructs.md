@@ -12,4 +12,3 @@ week: 10
 ---
 # Week 10 - Synchronization Constructs
 
-aa
