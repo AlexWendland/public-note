@@ -48,3 +48,18 @@ Pthreads [[Mutex|mutexes]] and [[Conditional variables (Mutex)|conditional varia
 This can also be achieved via a message queue by sending read write messages.
 
 Otheswise [[Semaphores|semaphores]] can be used for this which will be covered later.
+
+## Command line utility with IPC
+
+When using SysV you can use the following command line functions to manage IPC resources:
+- ipcs: This is used to display information about the utilities. The -m flag displays information on shared memory only.
+- ipcrm: This deletes IPC entities. You can specify an exact one using the -m flag with the shmid.
+
+When using the [[Portable operating system interface (POSIX)|POSIX]] API the IPC tools are saved as files and can be accessed via:
+- /dev/shm: For shared memory and semaphores.
+- /dev/mqueue: For shared queues.
+
+## Design considerations
+
+When using shared memory, you can choose between one large segment of shared memory for two processes or lots of smaller segment for each purpose.
+
