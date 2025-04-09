@@ -46,3 +46,25 @@ All these devices are represented as a special type of file. In linux these can 
 
 ![[Pseudo devices]]
 
+There are two methods in which the [[Central processing unit (CPU)|CPU]] communicates with devices.
+
+- *Memory-mapped I/O*: On boot some part of the main memory address space is registered for use by a device. The [[Central processing unit (CPU)|CPU]] can then write or read to these addresses to interact with the device.
+- *Port-mapped I/O*: On boot they get loaded into a separate address space reserved for I/O devices. This uses separate instructions such as IN/OUT. This was more common in legacy systems.
+
+Some architectures do support both. 
+
+There are two ways for the device to communicate with the [[Central processing unit (CPU)|CPU]]:
+
+- *Interrupts*: The device can generate interrupts that the [[Operating system (OS)|OS]] will need to handle. This gives the device the best access to the [[Operating system (OS)|OS]] but can be inefficient in terms of caching if the input is not needed.
+- *Polling*: The [[Central processing unit (CPU)|CPU]] can poll the device for information by checking its status registers. This means the [[Central processing unit (CPU)|CPU]] can only get the information when it needs it - however it can generate delay or overhead if the [[Central processing unit (CPU)|CPU]] needs to repeatedly poll the device.
+
+![[Programmed IO (PIO)]]
+
+![[Direct memory access (DMA)|direct memory access]]
+
+## Device access
+
+Device access is an intensive action as we need to parse through many different layers and processes. Thus why [[Input output (IO)|IO]] is considered slow.
+
+![[IO_access.png]]
+
