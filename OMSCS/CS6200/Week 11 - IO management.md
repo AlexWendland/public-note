@@ -33,3 +33,16 @@ Devices are mainly connected to the [[Central processing unit (CPU)|CPU]] throug
 
 ## Device driver
 
+![[Device driver]]
+
+![[device_drivers.png]]
+
+Devices fall into one of 3 types:
+- *Block device*: Read/writes blocks of data and offers an API to access a block at a particular index. E.g. Hard drive
+- *Character device*: Offers an API that gets or puts a single character. e.g. keyboard.
+- *Network device*: These offer ability to put or get data but no direct access to blocks of indexed data. E.g. [[Network Interface Card (NIC)|NIC]]
+
+All these devices are represented as a special type of file. In linux these can be accessed in the `/dev` directory and are stored in a different file system `tempfs` or `devfs`.
+
+![[Pseudo devices]]
+
