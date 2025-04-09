@@ -5,11 +5,11 @@ aliases:
 checked: false
 created: 2025-03-24
 last_edited: 2025-03-24
-publish: false
+publish: true
 tags:
   - OS
 type: definition
 ---
 >[!tldr] Synchronization
->Definition here
+>*Synchronization* is the processes by which two or more independent operators coordinate with one another to manage shared resources or coordinate work with one another.
 
