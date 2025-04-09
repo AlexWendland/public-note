@@ -68,3 +68,18 @@ Device access is an intensive action as we need to parse through many different 
 
 ![[IO_access.png]]
 
+Some devices support [[Operating system (OS)|OS]] bypass. This is where the [[Operating system (OS)|OS]] configures the device and the process to communicate directly through the [[Process|processes]] virtual address space with limited functionality. Though the device has some requirements for this:
+
+- The device producer must offer a user-level library to enable this.
+- The device must have sufficient registers for the process to have access but also for the [[Operating system (OS)|OS]] to have more fine-grained control over the device.
+- If the device supports multiple accesses then it must be sufficiently complex to deduplex the requests and send them to the correct device (i.e. looking at [[Port|port]] numbers).
+
+However, if the device does support this it can increase access speed dramatically.
+
+When accessing [[Input output (IO)|IO]] devices this can either happen synchronously or [[Asynchronous programming|async]]. Normally when issuing commands to a device the process needs to wait for a response from the device. This can either block the process and it gets moved to a wait queue or in a non-blocking way. When using async the process can either poll or get interrupted to get output from the device. 
+
+![[async_vs_sync_device_access.png]]
+
+## Block device access
+
+
