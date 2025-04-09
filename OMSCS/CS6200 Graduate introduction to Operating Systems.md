@@ -39,3 +39,4 @@ This is a graduate-level introductory course in operating systems. This course t
 - [[Week 8 - Memory management]]
 - [[Week 9 - Inter-proccess communication]]
 - [[Week 10 - Synchronization Constructs]]
+- [[Week 11 - IO management]]
