@@ -82,4 +82,23 @@ When accessing [[Input output (IO)|IO]] devices this can either happen synchrono
 
 ## Block device access
 
+When interacting with block devices, user programs actually interact with files that are on the computers filesystem. Files are considered one 'logical' storage unit. The [[Operating system (OS)|OS]] will specify how to support writing to files through an API - normally the [[Portable operating system interface (POSIX)|POSIX]] API.
 
+![[block_device_stack.png]]
+
+As well as having a device driver for particular devices a further abstraction is placed on top of these to standardize the interaction - this is the generic block layer. This is an [[Operating system (OS)|OS]] standard for interfacing with different block devices.
+
+## Virtual file system
+
+The [[Operating system (OS)|OS]] abstracts the concepts of block devices away from the user through a virtual file system. It uses this to combine potentially different types of block devices into one directory structure which is easy for humans to grasp.
+
+![[virtual_file_system.png]]
+
+As well as making this easy for human to use - it also offers an API the block device device drivers must conform to.
+
+This virtual file system supports a number of abstractions:
+
+- *File*: The basic elements on which the virtual file system operates.
+- *File descriptor*: An [[Operating system (OS)|OS]] representation of a file the supports standard operations like, read, write, lock, close ....
+- *inode*: A persistent on block device representation of a file (Index node). This lists all the data blocks that make up this file as well as metadata such as device, permissions, size ....
+- 
