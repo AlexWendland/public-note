@@ -101,4 +101,29 @@ This virtual file system supports a number of abstractions:
 - *File*: The basic elements on which the virtual file system operates.
 - *File descriptor*: An [[Operating system (OS)|OS]] representation of a file the supports standard operations like, read, write, lock, close ....
 - *inode*: A persistent on block device representation of a file (Index node). This lists all the data blocks that make up this file as well as metadata such as device, permissions, size ....
-- 
+	- Note: Directories are just special kind of files. They have the same metadata but instead of pointing to the blocks of memory that make the file up they point to blocks of memory that store the director entries (pairs of name and inode number for a file).
+- *dentry*: This is an in-memory data structure the [[Operating system (OS)|OS]] uses to represent a directory. There is one for every directory component.
+- *superblock*: This contains file-system-specific information regarding the file-system layout. For example the inode blocks, data blocks, and free blocks.
+
+## Second Extended Filesystem (ext2)
+
+![[ext2_structure.png]]
+
+The disk is broken down into sections. The first section is the boot section which is used if the disk is 'bootable'.
+
+The rest is broken down into 'block groups' which each have a similar structure.
+
+- Superblock as described above.
+- Group descriptor: Keeps track of the number of free nodes and directories.
+- Bitmaps: Keeps track of which blocks/inodes are free.
+- Inodes: Numbered from 1 to a max number - 1 per file.
+- Data blocks: The file data.
+
+## Inodes
+
+Inodes that represent files contain metadata about the file and a list of data-blocks that make up that file. 
+
+![[inode_structure.png]]
+
+This structure enables sequential or random access using the size of the data-blocks.
+
