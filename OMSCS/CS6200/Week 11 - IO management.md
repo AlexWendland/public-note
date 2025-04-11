@@ -125,5 +125,17 @@ Inodes that represent files contain metadata about the file and a list of data-b
 
 ![[inode_structure.png]]
 
-This structure enables sequential or random access using the size of the data-blocks.
+This structure enables sequential or random access using the size of the data-blocks. However, this provides a fairly hard limit on file size by the number of pointers a block can contain multiplied by the size of each block. To get around this we allow for indirect pointers - which point to blocks of pointers.
 
+![[inode_indirect.png]]
+
+This dramatically increases the size of the file we can reference. However, if you use the single, double, or triple indirect pointers this slows down file access.
+
+## Disk access optimizations
+
+To speed up disk access we can deploy multiple techniques:
+
+- Caching/buffering: Keeping discs in memory and only occasionally flushing the cache to disk.
+- I/O scheduling: Physically moving the needle on the disk is costly, so instead we order reads to reduce the number of reads.
+- Prefetching: If someone is reading block 17 with the next blocks being 18,19 we grab them also in anticipation of the next access.
+- Journaling/logging: Instead of immediately committing writes to disk we keep a log of writes that are going to happen. Then when the time is correct applying the log to disk.
