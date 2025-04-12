@@ -8,7 +8,7 @@ publish: false
 tags:
   - OMSCS
 type: lecture
-week:
+week: 12
 ---
 # Week 12 - Virtualization
 
@@ -58,3 +58,5 @@ Examples:
 - Kernel-based VM (KVM) which is linux based.
 	- Uses an [[Operating system (OS)|OS]] module on the host and a QEMU for hard ware virtualization in the VM.
 	- Leverages the linux open source community.
+
+##
