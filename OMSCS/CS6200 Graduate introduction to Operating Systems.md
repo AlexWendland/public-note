@@ -41,3 +41,4 @@ This is a graduate-level introductory course in operating systems. This course t
 - [[Week 10 - Synchronization Constructs]]
 - [[Week 11 - IO management]]
 - [[Week 12 - Virtualization]]
+- [[Week 13 - Remote Procedure Calls]]
