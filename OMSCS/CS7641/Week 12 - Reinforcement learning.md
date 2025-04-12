@@ -63,7 +63,7 @@ U^{\ast}(s) = \max_{a \in A_s} Q(s,a)
 $$
 from the definition of $Q$. But also we can write
 $$
-\pi^{\ast}(s) = \mbox{arg}\max_{a \in A_s} 
+\pi^{\ast}(s) = \mbox{arg}\max_{a \in A_s} Q(s,a)
 $$
 as both $\gamma$ and $R(s)$ don't effect the $\mbox{arg}\max$. 
 
