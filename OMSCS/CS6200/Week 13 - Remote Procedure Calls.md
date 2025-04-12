@@ -93,3 +93,13 @@ This is an [[Remote procedure calls (PRC)|RPC]] framework developed by Sun in th
 - Pointers are allowed and serialized.
 - It makes a best effort attempt to catch information about failures and has built in retries.
 
+## Java RMI
+
+This is an [[Remote procedure calls (PRC)|RPC]] framework also developed by Sun but specifically for the Java language.
+
+![[java_rmi.png]]
+
+As this is specific to Java, it uses that for its [[Interface definition language (IDL)|IDL]] the framework matches Java's [[Object Oriented Programming (OOP)|OOP]] semantics. The implementation is split into two layers:
+
+- Remote reference layer: How it communicates unicast, broadcast, return-first, response, return-if-all-match logic.
+- Transport layer: Whether it uses [[Transmission Control Protocol (TCP)|TCP]] [[User Datagram Protocol (UDP)|UDP]] or [[Inter-process communication (IPC)|IPC]].
