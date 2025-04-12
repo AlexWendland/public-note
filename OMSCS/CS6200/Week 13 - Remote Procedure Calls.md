@@ -20,4 +20,15 @@ week: 13
 
 ![[Remote procedure calls (PRC)]]
 
+To achieve this [[Remote procedure calls (PRC)|RPC]] has some requirements:
+- Offers a client and server interface.
+- Implements a procedure call Interface.
+	- When RPC was invented procedural languages where big, this is synchronous and when it is called remote procedure call. 
+- Type checking.
+	- This offers error handling, and
+	- packet bytes interpretation.
+- Cross-machine conversations.
+- Higher-level protocol.
+	- Access control, fault tolerance, and
+	- Can support different transport protocols.
 
