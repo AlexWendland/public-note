@@ -85,3 +85,11 @@ The registry can either be hosted centrally or placed on each machine. This will
 
 ## SunRPC
 
+This is an [[Remote procedure calls (PRC)|RPC]] framework developed by Sun in the 80s (bought by Oracle) for unix. They made the following design choices:
+
+- Hosts a registry on each machine,
+- It uses the XDR [[Interface definition language (IDL)|IDL]].
+	- This uses a rpcgen compiler to convert .x (XDR) files into language specific implementations.
+- Pointers are allowed and serialized.
+- It makes a best effort attempt to catch information about failures and has built in retries.
+
