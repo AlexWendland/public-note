@@ -59,4 +59,5 @@ Examples:
 	- Uses an [[Operating system (OS)|OS]] module on the host and a QEMU for hard ware virtualization in the VM.
 	- Leverages the linux open source community.
 
-##
+## Hardware protection levels
+
