@@ -44,3 +44,4 @@ This is a graduate-level introductory course in operating systems. This course t
 - [[Week 13 - Remote Procedure Calls]]
 - [[Week 14 - Distributed file systems]]
 - [[Week 15 - Distributed shared memory]]
+- [[Week 16 - Datacenter technologies]]
