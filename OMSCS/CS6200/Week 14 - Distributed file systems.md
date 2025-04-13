@@ -125,8 +125,73 @@ The server can implement *transactions* so that all edits to a file are atomic a
 ## Access patterns
 
 When choosing a type of semantics it is important to understand the file access patterns:
+
 - How often are files shared,
 - How often are files written too,
 - Importance of consistent view, or
 - Does the access pattern change based on the type of file? Does it change for directories?
+
+## Replication
+
+Replication is the process of keeping copies of the same file on multiple machines. This has the advantages of:
+
+- Load balancing,
+- availability, and
+- fault tolerance.
+
+Though you need to then not only keep consistency between the client and the server but also between the servers. This means writes become more complicated as they need to handle synchronicity. There a multiple different methods to handle this:
+
+- Writes get sent to all machines (slow), or
+- Write to one and propagate to others.
+
+Machines will need to keep in sync with each other, however when there is a descrepency there must be a method to bring everyone back together, e.g. voting.
+
+## Partitioning
+
+This is where files are separated out onto different machines, so not all the state is held on any one of them. This has the advantages of:
+
+- Higher availability (less requests per server),
+- Scalability (more storage), and
+- Single file writes are simpler than replicated setting.
+
+Though your fault tolerance reduces as any one server going down loses you files. Load balancing is harder due to different access patterns per file. 
+
+Normally replication and partitioning are combined to mitigate the flaws of both systems.
+
+## NFS
+
+![[Network file system (NFS)|NFS]]
+
+This application has changed over the years, NFSv3 is stateless whilst NFSv4 is stateful. The change made [[Network file system (NFS)|NFS]] to support caching and locking.
+
+- It uses session-based caching.
+- The server gets periodic updates from the client, every 3 seconds for files and 30 seconds for directories.
+	- Directory change less, and are easier to merge.
+- When a client checks a file out it avoids the update checks for that file.
+- It uses lease-based locks. These are time bounded and need to be extended or released within that window.
+- There are reader/writer locks with the ability to upgrade from read to write.
+
+## Sprite distributed file system
+
+Whilst not a production [[Distributed file system (DFS)|distributed file system]] like [[Network file system (NFS)|NFS]] the sprite network was a research file system. However it was built and used in Berkley and the design decisions were based of traces of network usage within real use cases. The collected the following data on their use case:
+
+- 33% of all file accesses are writes.
+	- -> Caching is ok, but write-through semantics is not sufficient.
+- 75% of files are opened for less than 0.5 seconds.
+- 90% of files are open for less than 10 seconds.
+	- -> Session semantics will cause too many connections to the server.
+- 20-30% of new data is deleted within 30 seconds.
+- 50% of new data is deleted within 5 minutes.
+	- -> Write back on close not really necessary.
+- File sharing was rare.
+	- -> No need to optimize for concurrent access, but must support it.
+
+With this data they made the following conclusions.
+
+- *Cache with write-backs*: Every 30 seconds write-back blocks that have NOT been modified for the last 30 seconds.
+- *Dirty files are synced on read*: When a users reads a file that is being modified by another user, it will sync those blocks to server for that client.
+- *Open goes to the server*: Directories can not be cached so will need to go to the server for that.
+- *Disable the cache on concurrent writes*: In this rare case, switch to both clients going via the server for writes.
+
+
 
