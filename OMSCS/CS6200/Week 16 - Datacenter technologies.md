@@ -76,6 +76,11 @@ The requirements to offer this kind of service are:
 	- Users don't need to think about physically where is their server or if it is being cooled sufficiently.
 - API-based access.
 	- Either web-based, open source libraries or command line utilities
+- Scale
+	- The business model is structured around scale, they must be able to manage the resource at large scale.
+	- Dealing with hardware/software failures. As you own more stuff - more stuff breaks.
+- Multi-tenancy:
+	- You have to be able to support multiple users and keep them isolated from one another.
 
 This is an economically viable model for cloud providers due to two main factors:
 
@@ -97,3 +102,38 @@ Cloud deployments can be for different purposes. This starts with who can use it
 - *Private*: Access is limited to a company or organisation.
 - *Hybrid*: This is a private cloud that utilities some functions of a public cloud for failover, handling spikes, or testing.
 - *Community*: A public cloud where it is restricted to a particular type of user.
+
+As well as the users they serve the level of autonomy they offer is a large differential.
+
+![[cloud_models.png]]
+
+## Cloud enabling technologies
+
+To set up a cloud, there are some foundational technologies that have to be used:
+
+- [[Virtualization]]
+- Resource provisioning (scheduling)
+- Big data processing (Hadoop map reduce, Spark)
+- Storage:
+	- Distributed file system,
+	- No SQL,
+	- Distributed memory
+- Software defined resources such as networking, storage, ...
+- Monitoring, real time monitoring and log processing to keep visibility over the whole system. 
+
+## Big data
+
+Given the access to resources, the cloud has enabled the proliferation of 'big data' technologies. To act as a platform for big data cloud needs to offer:
+
+- Data storage layer,
+- Data processing layer,
+- Caching layer,
+- Language front-ends,
+- Analytics libraries, and
+- Continuous streaming data.
+
+Some examples of these stacks are provided below.
+
+![[hadoop_stack.png]]
+
+![[bdas.png]]
