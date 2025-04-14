@@ -89,3 +89,11 @@ The system as it is today was first though up by John McCarthy in 1961
 
 The goal was compute to be completely fungible. It would not matter what CPU you are using you just need the compute done. However we are currently far away from that with issues like API lock-in, hardware dependency, latency, privacy, ...
 
+## Cloud deployment models
+
+Cloud deployments can be for different purposes. This starts with who can use it:
+
+- *Public*: Anyone with a credit card can use the cloud.
+- *Private*: Access is limited to a company or organisation.
+- *Hybrid*: This is a private cloud that utilities some functions of a public cloud for failover, handling spikes, or testing.
+- *Community*: A public cloud where it is restricted to a particular type of user.
