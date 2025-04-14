@@ -43,3 +43,49 @@ However, this adds considerable complexity to the front-end. As workers now are 
 
 ![[hetrogeneous_architectures.png]]
 
+## Cloud computing
+
+Before cloud computing, companies would host their own infrastructure. This would involve physically buying machines and forecasting demand. Your goal would always be to have enough capacity for the peak usage. Though if you get this wrong you lose potential sales.
+
+![[on_premise_compute.png]]
+
+As well as the potential risk, this also required a lot of expertise on running machines and managing a data center.
+
+Instead the goal of cloud computing was to outsource this to someone who has much more compute and you can only request the amount of compute you need at any given time.
+
+![[cloud_compute.png]]
+
+This allows for:
+
+- Capacity that scales elastically with demand,
+- Cost is proportional to demand/revenue,
+- All of this happens automatically with no need for forecasting, and
+- You can access the compute anytime and anywhere.
+
+Though you will not own this compute.
+
+The requirements to offer this kind of service are:
+
+- On-demand, elastic resources and services.
+	- Can either be through physical hardware rental or software/services based (e.g. AWS).
+- Fine-grained pricing based on usage.
+	- There has been a proliferation of different accounting models.
+	- Usually practically discrete based on compute/resource size.
+- Professionally managed and hosted compute.
+	- Managed by the cloud provider.
+	- Users don't need to think about physically where is their server or if it is being cooled sufficiently.
+- API-based access.
+	- Either web-based, open source libraries or command line utilities
+
+This is an economically viable model for cloud providers due to two main factors:
+
+- [[Law of large numbers]]: With sufficiently many independent users the peaks in usage should average out to a fairly constant load.
+- Economy of scale: Unit cost of providing resources or service drops at bulk.
+
+The system as it is today was first though up by John McCarthy in 1961
+
+>[!quote] John McCarthy, MIT Centennial, 1961
+>If computers of the kind I have advocated become the computers of the future, then computing may some day be organised as a public utility ... The compute utility could become the basis of a new and important industry.
+
+The goal was compute to be completely fungible. It would not matter what CPU you are using you just need the compute done. However we are currently far away from that with issues like API lock-in, hardware dependency, latency, privacy, ...
+
