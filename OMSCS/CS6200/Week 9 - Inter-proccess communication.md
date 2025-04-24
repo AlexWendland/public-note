@@ -47,7 +47,7 @@ Pthreads [[Mutex|mutexes]] and [[Conditional variables (Mutex)|conditional varia
 
 This can also be achieved via a message queue by sending read write messages.
 
-Otheswise [[Semaphores|semaphores]] can be used for this which will be covered later.
+Otherwise [[Semaphores|semaphores]] can be used for this which will be covered later.
 
 ## Command line utility with IPC
 
