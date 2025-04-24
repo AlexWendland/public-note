@@ -77,7 +77,7 @@ It is common for [[Central processing unit (CPU)|CPU]]'s to share memory and hav
 
 ## Atomic operations and cache coherence
 
-For two [[Central processing unit (CPU)|CPU]]'s to act independently whilst also supporting shared atomic instructions with one another they can not cache any value that support atomic instructions. They two CPUs could not guarantee two atomic instructions did not happen at the same time.
+For two [[Central processing unit (CPU)|CPU]]'s to act independently whilst also supporting shared atomic instructions with one another they can not cache any value that support atomic instructions. The two CPUs could not guarantee two atomic instructions did not happen at the same time.
 
 To contend with this [[Central processing unit (CPU)|CPU]]'s will not cache atomic values - however this means memory access in this case is very slow. Therefore shared memory [[Central processing unit (CPU)|CPU]]'s have very slow [[Atomic instruction|atomic instructions]].
 
