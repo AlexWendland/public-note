@@ -19,7 +19,7 @@ type: definition
 >2. **Object Reuse & Caching**
 > - Instead of frequently allocating and freeing memory from the general heap, the slab allocator maintains a **cache of preallocated objects**.
 > - When a new object is needed, it is taken from an available slot in a slab, avoiding costly memory allocation operations.
->3. *Memory Efficiency**
+>3. **Memory Efficiency**
 >- Because objects fit exactly into slab slots, there is no [[Internal fragmentation|internal fragmentation]] or [[External fragmentation|external fragmentation]].
 > - Slabs can be **partially filled**, fully allocated, or completely free. Fully free slabs can be **released back to the system**, reclaiming memory.
 >
