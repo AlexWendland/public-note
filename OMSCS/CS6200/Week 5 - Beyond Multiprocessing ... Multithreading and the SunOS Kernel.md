@@ -4,11 +4,11 @@ checked: false
 course: "[[CS6200 Graduate introduction to Operating Systems]]"
 created: 2025-02-09
 last_edited: 2025-02-09
-publish: false
+publish: true
 tags:
   - OMSCS
 type: lecture
-week:
+week: 5
 ---
 # Week 5 - Beyond Multiprocessing ... Multithreading and the SunOS Kernel
 
