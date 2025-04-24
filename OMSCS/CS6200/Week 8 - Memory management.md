@@ -61,7 +61,7 @@ Page sizes are determined by the [[Operating system (OS)|operating system]] but 
 >[!example] 32-bit architecture with 4kB page size
 >As a [[Byte|byte]] is the smallest addressable size, lets use this as our unit for the below calculations.
 >As we have a 32-bit architecture the [[Virtual memory|virtual addresses]] have size 32 [[Bit|bits]].
->As the page size is 2kB = $2^2 * 2^{10} = 2^{12}$B we will need 12 bits for the offset.
+>As the page size is 4kB = $2^2 * 2^{10} = 2^{12}$B we will need 12 bits for the offset.
 >Therefore we are left with 20 bits of the [[Virtual memory|virtual address]] for the [[Virtual page number (VPN)]]. This means there are $2^{20}$ [[Memory page|pages]].
 >With this we can now work out the size of the page table. For this architecture, 32-[[Bit|bit]] addresses are 4 [[Byte|bytes]] large which is the size of the [[Page table entry|page table entry]]. We have $2^{20}$ page entries so we get $4 * 2^{20}$B = 4 MB of size.
 
