@@ -30,11 +30,7 @@ This is a graduate-level introductory course in operating systems. This course t
 - [[Week 5 - Beyond Multiprocessing ... Multithreading and the SunOS Kernel]]
 - [[Week 5 - Implementing Lightweight Threads (paper)]]
 - [[Week 5 - Thread design Considerations]]
-- [[Week 6 - Thread Performance Considerations]]## Links
-
-- [Central](https://www.omscentral.com/courses/graduate-introduction-to-operating-systems/reviews)
-- [OMSCS page](https://omscs.gatech.edu/cs-6200-introduction-operating-systems)
-- [Course textbook](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf)
+- [[Week 6 - Thread Performance Considerations]]
 - [[Week 7 - Scheduling]]
 - [[Week 8 - Memory management]]
 - [[Week 9 - Inter-proccess communication]]
@@ -46,3 +42,9 @@ This is a graduate-level introductory course in operating systems. This course t
 - [[Week 15 - Distributed shared memory]]
 - [[Week 16 - Datacenter technologies]]
 - [[Week 17 - Exam prep]]
+
+## Links
+
+- [Central](https://www.omscentral.com/courses/graduate-introduction-to-operating-systems/reviews)
+- [OMSCS page](https://omscs.gatech.edu/cs-6200-introduction-operating-systems)
+- [Course textbook](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf)
