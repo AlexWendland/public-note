@@ -25,7 +25,7 @@ Students will replicate a result in a published paper in the area and work on mo
 The ability to run Docker locally or utilize a cloud computing service is strongly recommended. The instructional staff will not provide technical support or cloud computing credits
 
 ## Lectures
-- [[Week 1 - Getting started]]
+- [[Week 1 - Smoov & Curly's Bogus Journey]]
 
 ## Links
 - [Central](https://www.omscentral.com/courses/reinforcement-learning-and-decision-making/reviews)
