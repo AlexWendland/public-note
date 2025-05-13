@@ -19,3 +19,8 @@ Going down in levels of specificity:
 
 ![[learning_classifications.png]]
 
+Later in the course we will be adding deep learning into our use of [[Reinforcement learning|reinforcement learning]]. This is mainly using large [[Neural network|neural networks]] to assist with the learning process.
+
+![[deep_rl.png]]
+
+Another theme we will hit on during the course is how to adapt reinforcement learning to work with a changing environment or other actors in the world who can change their approach.
