@@ -15,5 +15,6 @@ week: 1
 The first part of this course is a review of:
 
 [[Week 12 - Reinforcement learning]]
-[[Week 13 - Game theory]]
+
+
 
