@@ -12,6 +12,8 @@ week: 1
 ---
 # Week 1 - Smoov & Curly's Bogus Journey
 
+## Review
+
 The first part of this course is a review of:
 
 [[Week 12 - Reinforcement learning]]
@@ -27,5 +29,20 @@ Reminder of the below notation.
 - **States**: $S$ is the set of all states.
 - **Actions**: $A$ is the set of all actions, it could depend on the state therefore we talk about $A_s$ for the actions at state $s \in S$.
 
+## Quality
 
+Within the [[Bellman equation]] if we take what is within the brackets and set it to a new function $Q(s,a)$ the quality of taking action $a$ in state $s$ we then derive the next set of equations.
+$$
+\begin{align*}
+V(s) & = \max_{a \in A_s} Q(s,a)\\
+Q(s,a) & = R(s,a) + \gamma \sum_{s' \in S} T(s,a,s') V(s')\\
+& = R(s,a) + \gamma \sum_{s' \in S} T(s,a,s') \max_{a' \in A_{s'}} Q(s',a')
+\end{align*}
+$$
+The motivation for doing this will come later, however intuitively this form will be more useful when you do not have access to $T(s,a,s')$ and $R(s,a)$ directly. Instead you can only sample 'experience data'.
 
+$$
+\begin{align*}
+C(s,a)
+\end{align*}
+$$
