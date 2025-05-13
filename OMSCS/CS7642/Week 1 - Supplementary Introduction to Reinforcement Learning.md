@@ -4,10 +4,11 @@ checked: false
 course: "[[CS6200 Graduate introduction to Operating Systems]]"
 created: 2025-05-13
 last_edited: 2025-05-13
-publish: false
+publish: true
 tags:
   - OMSCS
 type: lecture
-week:
+week: 1
 ---
-# Week 2 - Supplementary Introduction to Reinforcement Learning
+# Week 1 - Supplementary Introduction to Reinforcement Learning
+
