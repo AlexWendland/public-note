@@ -26,7 +26,7 @@ The ability to run Docker locally or utilize a cloud computing service is strong
 
 ## Lectures
 - [[Week 1 - Smoov & Curly's Bogus Journey]]
-
+- [[Week 2 - Supplementary Introduction to Reinforcement Learning]]
 ## Links
 - [Central](https://www.omscentral.com/courses/reinforcement-learning-and-decision-making/reviews)
 - [OMSCS page](https://omscs.gatech.edu/cs-7642-reinforcement-learning)
