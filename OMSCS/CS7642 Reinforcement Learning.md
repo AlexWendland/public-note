@@ -30,3 +30,4 @@ The ability to run Docker locally or utilize a cloud computing service is strong
 - [Central](https://www.omscentral.com/courses/reinforcement-learning-and-decision-making/reviews)
 - [OMSCS page](https://omscs.gatech.edu/cs-7642-reinforcement-learning)
 - [Course textbook](http://www.incompleteideas.net/book/the-book-2nd.html)
+- [[Week 2 - Reinforcement learning basics]]
