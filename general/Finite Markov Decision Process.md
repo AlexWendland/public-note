@@ -1,5 +1,6 @@
 ---
-aliases: 
+aliases:
+  - MDP
 checked: false
 created: 2025-05-14
 last_edited: 2025-05-14
@@ -19,3 +20,5 @@ type: definition
 > p(s_{t+1}, r_{t+1} \vert s_t, a_t): S \times R \times S \times A \rightarrow [0,1]
 > $$
 > read this as, the probability of ending up in state $s_{t+1}$ with reward $r_{t+1}$ given they are in state $s_t$ and take action $a_t$. This is what determines how the world progresses. Notice it is Markovian as it does not depend on $t$.
+>
+> It is sometimes useful to think of the state you are going to be in at time step $t$ as a random variable we refer to as $S_t$, similarly for rewards as $R_t$.
