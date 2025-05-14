@@ -1,7 +1,7 @@
 ---
 aliases: 
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: "[[CS7642 Reinforcement Learning]]"
 created: 2025-05-13
 last_edited: 2025-05-13
 publish: true
