@@ -61,29 +61,31 @@ $$
 
 However, calculating the full return $G_t$​ requires waiting until the end of an episode, which can be slow or impractical in long-running or continuous tasks. Temporal Difference Learning methods overcome this by updating estimates _based on other estimates_. This technique is known as **bootstrapping**.
 
-> [!example] TD(1) Rule
-> Suppose we want to apply temporal difference learning but as the observations are coming in rather than at the end.
-> ```pseudocode
-> For each episode t
-> 	For all s, set e(s) = 0 and V_t(s) = V_{t-1}(s).
-> 	For each step s_{n-1} -> s_{n} where reward r_t was gained
-> 		Set e(s_{n-1}) := e(s_{n-1}) + 1
-> 		For all state s,
-> 			V_t(s) := V_t(s) + \alpha_t (r_n + \gamma V_{t-1}(s_n) - V_{t-1}(s_{n-1})e(s)
-> 			e(s) := \gamma e(s)
-> ```
-> For each episode we are incrementally learning $V_{t}$ each step of the episode. The value $e(s)$ tracks how many times this episode we have visited $s$ weighted by how long ago it was. This is achieved by setting $e(s_{n-1}) = e(s_{n-1}) + 1$, as we were previously there, and $e(s) = \gamma e(s)$ at the end of the step decaying previous visits by $\gamma$.
-> 
-> To see why the update rule is equivalent, lets assume some state $s$ was the start of the episode and never visited again.
-> $$
-> \begin{align*}
-> V_t(s) & = V_{t-1}(s) + \sum_{n=0}^{\infty} \alpha_t (r_n + \gamma V_{t-1}(s_n) - V_{t-1}(s_{n-1})) e_n(s)\\
-> & = V_{t-1}(s) + \alpha_t \sum_{n=1}^{\infty} (r_n + \gamma V_{t-1}(s_n) - V_{t-1}(s_{n-1})) \gamma^{n-1}\\
-> & = V_{t-1}(s) + \alpha_t \sum_{n=1}^{\infty} (\gamma^{n-1}r_n + \gamma^n V_{t-1}(s_n) - \gamma^{n-1} V_{t-1}(s_{n-1}))\\
-> & = V_{t-1}(s) + \alpha_t \left ( \left (\sum_{n=1}^{\infty} \gamma^{n-1} r_n \right) + \left( \sum_{n=1}^{\infty} \gamma^n V_{t-1}(s_n) \right ) - \left (V_{t-1}(s_0) + \sum_{n=1}^{\infty} \gamma^n V_{t-1}(s_{n}) \right ) \right )\\
-> & = V_{t-1}(s) + \alpha_t (G_t(s) - V_{t-1}(s))\\
-> \end{align*}
-> $$
+## TD(1)
+
+Suppose we want to apply temporal difference learning but as the observations are coming in rather than at the end.
+```pseudocode
+For each episode t
+	For all s, set e(s) = 0 and V_t(s) = V_{t-1}(s).
+	 	For each step s_{n-1} -> s_{n} where reward r_t was gained
+	 		Set e(s_{n-1}) := e(s_{n-1}) + 1
+			For all state s,
+				V_t(s) := V_t(s) + \alpha_t (r_n + \gamma V_{t-1}(s_n) - V_{t-1}(s_{n-1})e(s)
+	 			e(s) := \gamma e(s)
+```
+
+For each episode we are incrementally learning $V_{t}$ each step of the episode. The value $e(s)$ tracks how many times this episode we have visited $s$ weighted by how long ago it was. This is achieved by setting $e(s_{n-1}) = e(s_{n-1}) + 1$, as we were previously there, and $e(s) = \gamma e(s)$ at the end of the step decaying previous visits by $\gamma$.
+
+To see why the update rule is equivalent, lets assume some state $s$ was the start of the episode and never visited again.
+$$
+\begin{align*}
+V_t(s) & = V_{t-1}(s) + \sum_{n=0}^{\infty} \alpha_t (r_n + \gamma V_{t-1}(s_n) - V_{t-1}(s_{n-1})) e_n(s)\\
+& = V_{t-1}(s) + \alpha_t \sum_{n=1}^{\infty} (r_n + \gamma V_{t-1}(s_n) - V_{t-1}(s_{n-1})) \gamma^{n-1}\\
+& = V_{t-1}(s) + \alpha_t \sum_{n=1}^{\infty} (\gamma^{n-1}r_n + \gamma^n V_{t-1}(s_n) - \gamma^{n-1} V_{t-1}(s_{n-1}))\\
+& = V_{t-1}(s) + \alpha_t \left ( \left (\sum_{n=1}^{\infty} \gamma^{n-1} r_n \right) + \left( \sum_{n=1}^{\infty} \gamma^n V_{t-1}(s_n) \right ) - \left (V_{t-1}(s_0) + \sum_{n=1}^{\infty} \gamma^n V_{t-1}(s_{n}) \right ) \right )\\
+& = V_{t-1}(s) + \alpha_t (G_t(s) - V_{t-1}(s))\\
+\end{align*}
+$$
 
 This method has a major drawback though, we only use
 
@@ -91,6 +93,8 @@ This method has a major drawback though, we only use
 - The states previous value function.
 
 This means we don't use the value function of different states to update one another. Like we do in the [[Bellman equation]], where the value of the state is based on the value of the surrounding states.
+
+## TD(0) rule
 
 
 
