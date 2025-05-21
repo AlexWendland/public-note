@@ -12,12 +12,12 @@ type: lemma
 # Statement
 
 > [!important] Lemma
-> Given a [[Markov decision process]] $M$ and infinite uniform random runs of $M$ where for some discount factor $0 < \gamma < 1$ we have $R_t(s)$ to be the discounted rewards for state $s$ in run $t$. The incrementally learnt value functions $V_t$
+> Given a [[Markov decision process]] $M$, let $V_t(s)$ be the value estimate for a state $s$ for the $t$'th state. If we update this using the following update rule:
 > $$
-> V_t(s) = V_{t-1} + \alpha_t (R_t(s) - V_{t-1}(s))
+> V_t(s) = V_{t-1} + \alpha_t (G_t(s) - V_{t-1}(s))
 > $$
-> will converge in the limit $\lim_{t \rightarrow \infty} V_t(s) = V(s)$ to $M$'s real value function if the learning rate $\alpha_t$ has the following properties:
-> 1. $\sum_{t=1}^{\infty} \alpha_t \rightarrow \infty$, and
-> 2. $\sum_{t=1}^{\infty} \alpha_t^2 < \infty$.
+> where $G_t(s)$ is a noisy sample of the true value $V^{\pi}(s)$ with noise of mean 0, and $\alpha_t$ is a learning rate. Then the incrementally learned $V_t(s)$ will converge in the limit $\lim_{t \rightarrow \infty} V_t(s) = V^{\pi}(s)$ provided that for every state $s$ is visited infinitely often:
+> 1. **The sum of the learning rates diverge**: $\sum_{t=1}^{\infty} \alpha_t \rightarrow \infty$, and
+> 2. **The sum of the squared learning rates converges**: $\sum_{t=1}^{\infty} \alpha_t^2 < \infty$.
 
 # Proof
