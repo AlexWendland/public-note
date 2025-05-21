@@ -32,35 +32,69 @@ The setup for *Temporal Difference Learning* involves a sequential interaction w
 
 For a single episode, say $E = (s_0, a_0, r_1, s_1, a_1, \ldots)$, we can define the **return** from a state $s_t$​ as the total [[Discounted rewards|discounted reward]] from that point on wards until the end of the episode (or indefinitely in a continuing task). This is often denoted as
 $$
-G_t​ := \sum_{k=0}^{\infty} \gamma^kr_{t+k+1}​
+G(s_n) := \sum_{k=0}^{\infty} \gamma^kr_{n+k+1}​
 $$
 where $\gamma \in [0,1)$ is the [[Discounted rewards|discount factor]]. The true [[Value function (MDP)|value function]] $V^{\pi}(s)$ for a policy $\pi$ is the _expected_ return when starting in state $s$ and following policy $\pi$:
 $$
-V^{\pi}(s) = \mathbb{E}\left [ G_t ​\vert s_t​ = s \right ]
+V^{\pi}(s) = \mathbb{E}\left [ G(s_n) ​\vert s_n​ = s \right ]
 $$
-Monte Carlo methods estimate $V^{\pi}(s)$ by averaging the _actual returns_ $G_t$​ observed from many episodes where state $s$ was visited. If we have $t$ previous estimates for the value of state $s$, say $V_1​(s),V_2​(s), \ldots ,V_{t−1}​(s)$, and we observe a new return $G_t​(s)$ for state $s$ in the current episode, a simple way to update our estimate $V_t​(s)$ is via an incremental average:
+We estimate $V^{\pi}(s)$ by averaging the _actual returns_ $G_t(s)$​ observed from many episodes where state $s$ was visited.
+
+>[!note] Notation
+> We can define $G_t(s)$ in multiple ways:
+> - **First visit**: Let $G_t(s) = G_t(s_n)$ where $s_n = s$ and that is the smallest such $n$ where this is true. Here $t$ counts the number of episodes $s$ has appeared in.
+> - **Every visit**: Let $G_t(s) = G_t(s_n)$ where $s_n = s$, and we run what is below every time we visit $s$. Here $t$ counts the number of times $s$ has appeared in previous episodes. 
+
+If we have $t-1$ previous estimates for the value of state $s$, say $V_1​(s),V_2​(s), \ldots ,V_{t−1}​(s)$, and we observe a new return $G_t​(s)$ for state $s$ in the current episode, a simple way to update our estimate $V_t​(s)$ is via an incremental average:
 $$
 \begin{align*}
 V_t(s) & = \frac{(t-1) V_{t-1}(s) + G_t(s)}{t}\\
 & = V_{t-1}(s) + \frac{1}{t} \left ( G_t(s) - V_{t-1}(s) \right )
 \end{align*}
 $$
-Here, $V_{t−1}​(s)$ is our previous estimate for the value of state $s$, and $G_t(s)$ is the observed return from state $s$ in the $t$'th time it was visited. This update moves the estimate $V_t​(s)$ a fraction of the way towards the newly observed return $G_t​(s)$.
-
-The weighting factor of $1/t$ was only an artifact of using equal weighting between each run, however we can update this to be more general.
+This update moves the estimate $V_t​(s)$ a fraction of the way towards the newly observed return $G_t​(s)$ by the difference between them (thus the name!) multiplied by a factor of $1/t$. The weighting factor of $1/t$ was only an artifact of using equal weighting between each run, however we can update this to be more general.
 $$
-V_t(s) = V_{t-1} + \alpha_t (R_t(s) - V_{t-1}(s))
+V_t(s) = V_{t-1} + \alpha_t (G_t(s) - V_{t-1}(s))
 $$
 
 ![[Learning rate convergence]]
 
 However, calculating the full return $G_t$​ requires waiting until the end of an episode, which can be slow or impractical in long-running or continuous tasks. Temporal Difference Learning methods overcome this by updating estimates _based on other estimates_. This technique is known as **bootstrapping**.
 
----
+> [!example] TD(1) Rule
+> Suppose we want to apply temporal difference learning but as the observations are coming in rather than at the end.
+> ```pseudocode
+> For each episode t
+> 	For all s, set e(s) = 0 and V_t(s) = V_{t-1}(s).
+> 	For each step s_{n-1} -> s_{n} where reward r_t was gained
+> 		Set e(s_{n-1}) := e(s_{n-1}) + 1
+> 		For all state s,
+> 			V_t(s) := V_t(s) + \alpha_t (r_n + \gamma V_{t-1}(s_n) - V_{t-1}(s_{n-1})e(s)
+> 			e(s) := \gamma e(s)
+> ```
+> For each episode we are incrementally learning $V_{t}$ each step of the episode. The value $e(s)$ tracks how many times this episode we have visited $s$ weighted by how long ago it was. This is achieved by setting $e(s_{n-1}) = e(s_{n-1}) + 1$, as we were previously there, and $e(s) = \gamma e(s)$ at the end of the step decaying previous visits by $\gamma$.
+> 
+> To see why the update rule is equivalent, lets assume some state $s$ was the start of the episode and never visited again.
+> $$
+> \begin{align*}
+> V_t(s) & = V_{t-1}(s) + \sum_{n=0}^{\infty} \alpha_t (r_n + \gamma V_{t-1}(s_n) - V_{t-1}(s_{n-1})) e_n(s)\\
+> & = V_{t-1}(s) + \alpha_t \sum_{n=1}^{\infty} (r_n + \gamma V_{t-1}(s_n) - V_{t-1}(s_{n-1})) \gamma^{n-1}\\
+> & = V_{t-1}(s) + \alpha_t \sum_{n=1}^{\infty} (\gamma^{n-1}r_n + \gamma^n V_{t-1}(s_n) - \gamma^{n-1} V_{t-1}(s_{n-1}))\\
+> & = V_{t-1}(s) + \alpha_t \left ( \left (\sum_{n=1}^{\infty} \gamma^{n-1} r_n \right) + \left( \sum_{n=1}^{\infty} \gamma^n V_{t-1}(s_n) \right ) - \left (V_{t-1}(s_0) + \sum_{n=1}^{\infty} \gamma^n V_{t-1}(s_{n}) \right ) \right )\\
+> & = V_{t-1}(s) + \alpha_t (G_t(s) - V_{t-1}(s))\\
+> \end{align*}
+> $$
 
-Instead of using the _actual future return_ $G_t$​, TD methods use an _estimated future return_. The simplest form, **TD(0)** (or one-step TD), uses the reward from the next time step plus the discounted value of the next state: rt+1​+γV(st+1​). This is the _target_ for our update. The difference between this target and our current estimate V(st​) is the **TD error**: $δt​=(rt+1​+γV(st+1​))−V(st​)$The TD(0) update rule for the value function V(st​) is then:V(st​)←V(st​)+α(rt+1​+γV(st+1​)−V(st​)) This means we are moving our estimate V(st​) a step closer to rt+1​+γV(st+1​). This fundamental idea allows learning to occur after each single step of interaction, making TD methods highly efficient. **Note:** Since updates occur after each step, TD methods inherently use an "every-visit" approach if a state appears multiple times within an episode.
+This method has a major drawback though, we only use
 
-It's important to recognize that this derivation focuses on the [[State-value function|state-value function]] V(s). For directly learning which actions to take (i.e., for control), we typically extend these ideas to [[Action-value function|action-value functions]] Q(s,a), which explicitly incorporate the chosen action. This leads to algorithms like [[SARSA]] and [[Q-learning]].
+- The values from the episodes the state was in, and 
+- The states previous value function.
+
+This means we don't use the value function of different states to update one another. Like we do in the [[Bellman equation]], where the value of the state is based on the value of the surrounding states.
+
+
+
+It's important to recognize that this derivation focuses on the [[Value function (MDP)|value function]] V(s). For directly learning which actions to take (i.e., for control), we typically extend these ideas to quality function $Q(s,a)$, which explicitly incorporate the chosen action. This leads to algorithms like [[SARSA]] and [[Q-learning]].
 
 
 ## K-step estimators
