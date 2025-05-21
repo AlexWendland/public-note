@@ -63,7 +63,35 @@ However, calculating the full return $G_t$​ requires waiting until the end of 
 
 ## TD(1)
 
-Suppose we want to apply temporal difference learning but as the observations are coming in rather than at the end.
+In [[Temporal Difference Learning|temporal difference (TD)]] methods, our aim is to update value function estimates incrementally as an episode unfolds, rather than waiting until the very end.
+
+Previously we update a state's value estimate based on the full return $G_t$ observed after visiting that state. However, this requires waiting until the end of an episode, which can be inefficient or impossible in continuous tasks.
+
+TD(1) offers an "online" way to achieve the same result as the full return method. It does this by distributing the credit for the eventual return back to all states visited earlier in the episode. It uses a mechanism called **eligibility traces** $e(s)$ within episodes, which essentially keep a decaying record of how recently and frequently a state has been visited within the current episode.
+
+### Eligibility Trace Mechanism for TD(1)
+
+Within each episode, we maintain an eligibility trace $e(s)$ for every state $s$, initialized to zero. When an agent transitions from state $s_t$​ to $s_{t+1​}$ and receives reward $r_{t+1​}$ at step t:
+
+1. **Increment Current State's Trace:** $e(s_t) \leftarrow e(s_t) + 1$
+2. **Decay All Traces:** For all states s, $e(s_t) \leftarrow \gamma e(s_t)$ (where $\gamma$ is the [[Discounted rewards|discount factor]])
+
+This decay by $\gamma$ means that older visits to a state have their eligibility reduced, reflecting the diminishing importance of past events due to discounting.
+
+### TD(1) Update Rule
+
+
+
+At each step $t$ within an episode, after the transition $(s_t, a_t, r_{t+1}, s_{t+1})$, we calculate a **TD error** for the current transition: $\delta_t = r_{t+1} + \gamma V(s_{t+1}) - V(s_t)$. This $\delta_t$​ is the fundamental prediction error: the difference between the current estimate $V(s_t​)$ and a one-step bootstrapped estimate of the true return.
+
+Then, we update the value estimate for _every state s_ based on this $\delta_t$​ and its eligibility trace $e(s)$:
+$$
+V(s) \leftarrow V(s) + \alpha \ \delta_t \ e(s)
+$$
+where $\alpha$ is the learning rate for this episode.
+
+Here's the pseudocode for TD(1) (with accumulating traces):
+
 ```pseudocode
 For each episode t
 	For all s, set e(s) = 0 and V_t(s) = V_{t-1}(s).
