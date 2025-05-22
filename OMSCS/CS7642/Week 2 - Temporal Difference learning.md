@@ -149,7 +149,20 @@ These issues motivate the need for methods that can leverage the benefits of boo
 
 ## TD(0)
 
-```pseudocode
+While TD(1) provides an elegant online method for computing total returns, it inherently suffers from practical issues, mainly high variance. The target for its effective update ($G_t$​) is a single, potentially very noisy, sample of the true expected return. This can lead to slow and unstable learning, especially in environments with long or stochastic episodes.
+
+A different perspective for learning value functions is to aim for **Bellman consistency**. The true [[Value function (MDP)|value function]] $V^{\pi}(s)$ is defined by the [[Bellman equation]], which states that the value of a state must be consistent with the expected value of its immediate successor states:
+$$V^{\pi}(s)=\mathbb{E}_{\pi}​[R_{t+1}​+\gamma V^{\pi}(S_{t+1}​)∣S_t​=s].$$From this viewpoint, we seek a value function $V$ that best "fits" the observed transitions according to this consistency principle.
+
+**TD(0)** (or one-step TD) directly addresses this. Instead of waiting for the full episodic return, TD(0) uses a **bootstrapped target** based on the very next observed reward and the _estimated value of the very next state_. This target, $r_{t+1}​ + \gamma V_{old}​(s_{t+1}​)$, is a sample of the right-hand side of the Bellman equation.
+
+The TD(0) update rule for a state $s_t$​ is:
+$$
+V_{new}​(s_t​) \leftarrow V_{new​}(s_t​)+ \alpha (r_{t+1​}+\gamma V_{old}​(s_{t+1}​)− V_{old}​(s_t​))
+$$
+where $V_{old}$​ is the value function from the beginning of the episode (or previous learning iteration), ensuring a stable target for the current episode's updates.
+
+```
 Initialize V(s) arbitrarily for all s in S
 
 For each episode:
@@ -166,8 +179,11 @@ For each episode:
 Output: V
 ```
 
-It's important to recognize that this derivation focuses on the [[Value function (MDP)|value function]] V(s). For directly learning which actions to take (i.e., for control), we typically extend these ideas to quality function $Q(s,a)$, which explicitly incorporate the chosen action. This leads to algorithms like [[SARSA]] and [[Q-learning]].
+### TD(0) and Maximum Likelihood Estimation
 
+From a theoretical standpoint, TD(0) can be seen as an approach to find the value function that is a **maximum likelihood estimate (MLE)** for the parameters of the [[Bellman equation]], given the observed single-step transitions. More precisely, it often corresponds to minimizing the sum of squared one-step TD errors over the dataset of transitions.
+
+While TD(1) aims to average the _true total returns_ (making it an unbiased estimator but with high variance), TD(0) aims to achieve _local consistency_ with the [[Bellman equation|Bellman equations]] for each observed transition. This means that TD(0) is trying to make the value of $s_t$​ as consistent as possible with the observed $r_{t+1}​+\gamma V_{old}​(s_{t+1​})$. This bootstrapping approach, even if it introduces some bias (because $V_{old}​(s_{t+1​})$ is itself an estimate), significantly **reduces variance** compared to TD(1). This lower variance often leads to faster and more stable convergence in practice, making TD(0) a cornerstone of many reinforcement learning algorithms.
 
 ## K-step estimators
 
