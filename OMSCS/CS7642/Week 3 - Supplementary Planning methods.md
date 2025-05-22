@@ -30,7 +30,7 @@ Which derives us the [[Bellman equation]] again.
 $$
 v_{\pi}(s) = \sum_{a \in A_s} \pi(a \vert s) \sum_{s \in S, r \in R}p(s', r \vert s, a)[r + \gamma v_{\pi}(s')].
 $$
-The first term $\pi(a \vert s)$ accounts for a probabilitistic policy $\pi$ otherwise it will be 0 for all $s$ other than $\pi(s)$.
+The first term $\pi(a \vert s)$ accounts for a probabilistic policy $\pi$ otherwise it will be 0 for all $s$ other than $\pi(s)$.
 
 ## Quality function
 
