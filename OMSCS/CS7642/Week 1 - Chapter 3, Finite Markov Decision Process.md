@@ -40,7 +40,7 @@ If we run a game with infinite steps which has positive expected reward for each
 
 The goal of [[Reinforcement learning|reinforcement learning]] is to determine the optimum policy that maximizes some reward function, such as [[Discounted rewards|discounted rewards]]. Though if the reward is too far in the future it can be hard to determine what to do earlier on. Therefore we determine the 'value' of a given state - this is a statement about its long term worth to the actor.
 
-![[Value function (MDP)]]
+![[Value function (RL)]]
 
 The best value function accurate evaluates the states long term worth to the actor. When using [[Discounted rewards|discounted rewards]] this can be given by the [[Bellman equation]].
 
