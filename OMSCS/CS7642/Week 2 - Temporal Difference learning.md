@@ -16,10 +16,10 @@ Within [[Reinforcement learning|reinforcement learning]] there are broadly 3 typ
 
 1. **Model-based**: These algorithms first aim to understand the environment by building or learning an explicit model of it. This model describes how the environment behaves (e.g., transition probabilities and rewards).
 	1. **Model Learning/Update**: Run through an example (an interaction with the environment) to collect data and update the parameters of a [[Markov decision process|MDP]] model. This typically involves estimating state transition probabilities and reward functions.
-	2. **Planning/Solving**: Use the learned [[Markov decision process|MDP]] model (e.g., using algorithms like [[Value iteration (MDP)]] or [[Policy Iteration (MDP)]]) to generate an optimal (or near-optimal) [[Value function (MDP)|value function]].
-	3. **Policy Derivation**: Use the calculated [[Value function (MDP)|value function]] and the learned model to derive an optimal [[Policy (MDP)|policy]]. This policy dictates the best action to take in each state, often by choosing the action that maximizes the expected future reward (e.g., using argmax over the Q-values derived from the value function and model).
-2. **Value-function based (model-free)**: These algorithms bypass the need to build an explicit model of the environment. Instead, they directly learn a [[Value function (MDP)|value function]] (or action-value function) that estimates the goodness of states or state-action pairs.
-	1. **Value Function Update**: Run through an example (an interaction with the environment) and use the observed outcomes (rewards and next states) to directly update the [[Value function (MDP)|value function]]. This might be a state-value function V(s) or, more commonly, an action-value function Q(s,a), which estimates the expected return of being in state s and taking action a.
+	2. **Planning/Solving**: Use the learned [[Markov decision process|MDP]] model (e.g., using algorithms like [[Value iteration (MDP)]] or [[Policy Iteration (MDP)]]) to generate an optimal (or near-optimal) [[Value function (RL)|value function]].
+	3. **Policy Derivation**: Use the calculated [[Value function (RL)|value function]] and the learned model to derive an optimal [[Policy (MDP)|policy]]. This policy dictates the best action to take in each state, often by choosing the action that maximizes the expected future reward (e.g., using argmax over the Q-values derived from the value function and model).
+2. **Value-function based (model-free)**: These algorithms bypass the need to build an explicit model of the environment. Instead, they directly learn a [[Value function (RL)|value function]] (or action-value function) that estimates the goodness of states or state-action pairs.
+	1. **Value Function Update**: Run through an example (an interaction with the environment) and use the observed outcomes (rewards and next states) to directly update the [[Value function (RL)|value function]]. This might be a state-value function V(s) or, more commonly, an action-value function Q(s,a), which estimates the expected return of being in state s and taking action a.
 	2. **Policy Extraction**: Implicitly or explicitly derive a [[Policy (MDP)|policy]] for each state by evaluating the actions that lead to the highest estimated value. For Q-functions, this often means choosing the action a that maximizes Q(s,a) for a given state s.
 3. **Policy Search (or Policy Optimization)**: This approach directly searches for an optimal [[Policy (MDP)|policy]] without necessarily learning a value function or a model. The goal is to find a policy that directly maps states to actions and maximizes the cumulative reward.
 	1. **Policy Evaluation and Update**: Run through an example using the current [[Policy (MDP)|policy]]. Based on the observed outcomes (rewards and trajectories), directly update the parameters of the policy to improve its performance. This often involves gradient-based methods where the policy parameters are adjusted in the direction that increases the expected return.
@@ -34,7 +34,7 @@ For a single episode, say $E = (s_0, a_0, r_1, s_1, a_1, \ldots)$, we can define
 $$
 G(s_n) := \sum_{k=0}^{\infty} \gamma^kr_{n+k+1}​
 $$
-where $\gamma \in [0,1)$ is the [[Discounted rewards|discount factor]]. The true [[Value function (MDP)|value function]] $V^{\pi}(s)$ for a policy $\pi$ is the _expected_ return when starting in state $s$ and following policy $\pi$:
+where $\gamma \in [0,1)$ is the [[Discounted rewards|discount factor]]. The true [[Value function (RL)|value function]] $V^{\pi}(s)$ for a policy $\pi$ is the _expected_ return when starting in state $s$ and following policy $\pi$:
 $$
 V^{\pi}(s) = \mathbb{E}\left [ G(s_n) ​\vert s_n​ = s \right ]
 $$
@@ -62,7 +62,7 @@ $$
 However, calculating the full return $G_t$​ requires waiting until the end of an episode, which can be slow or impractical in long-running or continuous tasks. Temporal Difference Learning methods overcome this by updating estimates _based on other estimates_. This technique is known as **bootstrapping**.
 
 >[!caution] What happened to the action?
-> It's important to recognize that this derivation focuses on the [[Value function (MDP)|value function]] V(s). For directly learning which actions to take (i.e., for control), we typically extend these ideas to quality function $Q(s,a)$, which explicitly incorporate the chosen action. This leads to algorithms like [[SARSA]] and [[Q-learning]].
+> It's important to recognize that this derivation focuses on the [[Value function (RL)|value function]] V(s). For directly learning which actions to take (i.e., for control), we typically extend these ideas to quality function $Q(s,a)$, which explicitly incorporate the chosen action. This leads to algorithms like [[SARSA]] and [[Q-learning]].
 
 ## TD(1)
 
@@ -151,7 +151,7 @@ These issues motivate the need for methods that can leverage the benefits of boo
 
 While TD(1) provides an elegant online method for computing total returns, it inherently suffers from practical issues, mainly high variance. The target for its effective update ($G_t$​) is a single, potentially very noisy, sample of the true expected return. This can lead to slow and unstable learning, especially in environments with long or stochastic episodes.
 
-A different perspective for learning value functions is to aim for **Bellman consistency**. The true [[Value function (MDP)|value function]] $V^{\pi}(s)$ is defined by the [[Bellman equation]], which states that the value of a state must be consistent with the expected value of its immediate successor states:
+A different perspective for learning value functions is to aim for **Bellman consistency**. The true [[Value function (RL)|value function]] $V^{\pi}(s)$ is defined by the [[Bellman equation]], which states that the value of a state must be consistent with the expected value of its immediate successor states:
 $$V^{\pi}(s)=\mathbb{E}_{\pi}​[R_{t+1}​+\gamma V^{\pi}(S_{t+1}​)∣S_t​=s].$$From this viewpoint, we seek a value function $V$ that best "fits" the observed transitions according to this consistency principle.
 
 **TD(0)** (or one-step TD) directly addresses this. Instead of waiting for the full episodic return, TD(0) uses a **bootstrapped target** based on the very next observed reward and the _estimated value of the very next state_. This target, $r_{t+1}​ + \gamma V_{old}​(s_{t+1}​)$, is a sample of the right-hand side of the Bellman equation.
