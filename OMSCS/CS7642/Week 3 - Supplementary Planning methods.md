@@ -37,6 +37,7 @@ The first term $\pi(a \vert s)$ accounts for a probabilistic policy $\pi$ otherw
 ![[Quality function (RL)]]
 
 Again using the recursive definition of return we get a recursive definition of the return we can derive the quality function in terms of the value function.
+probabilitistic
 $$
 q_{\pi}(s, a) = \mathbb{E}_{\pi}[R-t + \gamma G_{t+1} \vert S_t = s, A_t = a]
 $$
