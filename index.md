@@ -20,5 +20,5 @@ So some things I am interested in to start:
 
 I also like other things but don't think they really belong here, this is mainly for technical stuff.
 
-There are also some notes from the
+There are also some notes from the [[Online Masters of Science in Computer Science, Georgia Tech (OMSCS)]].
 

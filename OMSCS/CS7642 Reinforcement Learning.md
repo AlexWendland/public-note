@@ -13,7 +13,7 @@ term: summer
 type: course
 year: "2025"
 ---
-# CS7642 Machine Learning
+# CS7642 Reinforcement Learning
 
 The course explores automated decision-making from a computational perspective through a combination of classic papers and more recent work. It examines efficient algorithms, where they exist, for learning single-agent and multi-agent behavioral policies and approaches to learning near-optimal decisions from experience.
 
@@ -26,7 +26,9 @@ The ability to run Docker locally or utilize a cloud computing service is strong
 ## Lectures
 - [[Week 1 - Smoov & Curly's Bogus Journey]]
 - [[Week 1 - Supplementary Introduction to Reinforcement Learning]]
-- [[Week 1 - Chapter 3, Finite Markov Decision Process]]## Links
+- [[Week 1 - Chapter 3, Finite Markov Decision Process]]
+
+## Links
 - [Central](https://www.omscentral.com/courses/reinforcement-learning-and-decision-making/reviews)
 - [OMSCS page](https://omscs.gatech.edu/cs-7642-reinforcement-learning)
 - [Course textbook](http://www.incompleteideas.net/book/the-book-2nd.html)

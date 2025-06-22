@@ -8,4 +8,4 @@ type: readme
 ---
 # public-note
 
-This is my notes that are available on my [website](https://obsidian.awendland.co.uk/Welcome).
+These are my notes that are available on my [website](https://obsidian.awendland.co.uk/Welcome).

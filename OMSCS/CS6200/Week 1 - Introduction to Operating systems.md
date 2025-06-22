@@ -47,7 +47,7 @@ In comparison an [[Operating system (OS)|OS]] does the following:
 	- UNIX-based 
 		- Mac OS X (BSD)
 		- Linux
-- Embeded
+- Embedded
 	- Android
 		- A form of linux
 	- IOS
@@ -74,7 +74,7 @@ Mechanisms:
 - allocate.
 
 Policies:
-- [[ Least-recently used (LRU)]],
+- [[Least-recently used (LRU)]],
 - [[Earliest deadline first (EDF)]]
 
 ### Example: Memory management
@@ -88,7 +88,7 @@ Policies:
 	- In different settings different policies make more sense.
 - Optimise for common case
 	- Where will the [[OS]] be used?
-	- What wil the user want to execute on that machine?
+	- What will the user want to execute on that machine?
 	- What are the workload requirements?
 
 ## User/Kernel protection
@@ -109,7 +109,7 @@ At first [[Operating system (OS)|OS]] included all the features within one monol
 - You have everything already, you do not need to go somewhere else, and
 - You can use compile time optimizations to improve efficiency. 
 Though had the following downsides:
-- Lower customisation, protabability and manageability,
+- Lower customisation, portability and manageability,
 - Higher memory footprint to run the OS, and
 - Lower performance when you do not need all aspects of the OS.
 
