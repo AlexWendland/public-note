@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2024-02-14
 last_edited: 2024-02-14
-publish: true
+draft: false
 tags:
   - machine-learning
 type: definition

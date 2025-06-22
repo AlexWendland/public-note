@@ -6,7 +6,7 @@ aliases:
 checked: false
 created: 2024-01-10
 last_edited: 2024-01-10
-publish: true
+draft: false
 tags:
   - economics
   - finance

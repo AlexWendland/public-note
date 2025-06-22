@@ -4,7 +4,7 @@ checked: false
 course: "[[CS7641 Machine Learning]]"
 created: 2024-01-22
 last_edited: 2024-01-22
-publish: true
+draft: false
 tags:
   - OMSCS
 type: lecture

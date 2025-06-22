@@ -3,7 +3,7 @@ aliases: null
 checked: false
 created: 2023-11-16
 last_edited: 2023-11-18
-publish: true
+draft: false
 tags:
   - maths
 type: lemma

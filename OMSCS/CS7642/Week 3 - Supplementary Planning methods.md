@@ -4,7 +4,7 @@ checked: false
 course: "[[CS7642 Reinforcement Learning]]"
 created: 2025-05-22
 last_edited: 2025-05-22
-publish: false
+draft: true
 tags:
   - OMSCS
 type: lecture

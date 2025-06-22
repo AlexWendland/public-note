@@ -4,7 +4,7 @@ aliases:
 checked: false
 created: 2024-02-23
 last_edited: 2024-02-23
-publish: true
+draft: false
 tags:
   - probability
 type: definition

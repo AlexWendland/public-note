@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2024-01-11
 last_edited: 2024-01-11
-publish: true
+draft: false
 tags:
   - logic
   - maths

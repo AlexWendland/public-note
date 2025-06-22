@@ -2,7 +2,7 @@
 checked: false
 created: 2023-02-22
 last_edited: 2023-11-11
-publish: true
+draft: false
 tags: []
 type: intro
 ---

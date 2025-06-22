@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2024-02-25
 last_edited: 2024-02-25
-publish: true
+draft: false
 tags:
   - programming
 type: algorithm

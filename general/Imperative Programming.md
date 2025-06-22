@@ -6,7 +6,7 @@ aliases:
 checked: false
 created: 2023-02-24
 last_edited: 2023-11-11
-publish: true
+draft: false
 tags:
   - programming
   - language

@@ -4,7 +4,7 @@ aliases:
 checked: false
 created: 2023-10-10
 last_edited: 2023-11-11
-publish: false
+draft: true
 tags:
   - maths
 type: definition

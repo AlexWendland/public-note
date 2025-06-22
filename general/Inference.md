@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-09-09
 last_edited: 2023-11-11
-publish: true
+draft: false
 tags:
   - maths
 type: definition

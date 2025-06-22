@@ -5,7 +5,7 @@ aliases:
 checked: false
 created: 2024-01-18
 last_edited: 2024-01-18
-publish: true
+draft: false
 tags:
   - machine-learning
 type: definition

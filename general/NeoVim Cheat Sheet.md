@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2024-03-08
 last_edited: 2024-03-08
-publish: true
+draft: false
 tags:
   - personal
 type:

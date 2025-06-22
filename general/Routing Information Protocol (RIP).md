@@ -4,7 +4,7 @@ aliases:
 checked: false
 created: 2024-06-04
 last_edited: 2024-06-04
-publish: true
+draft: false
 tags:
   - networks
 type: definition

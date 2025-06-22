@@ -5,7 +5,7 @@ aliases:
 checked: false
 created: 2024-02-22
 last_edited: 2024-02-22
-publish: true
+draft: false
 tags:
   - probability
 type: definition

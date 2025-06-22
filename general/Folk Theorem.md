@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2024-04-07
 last_edited: 2024-04-07
-publish: true
+draft: false
 tags:
   - game-theory
 type: lemma

@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2025-04-12
 last_edited: 2025-04-12
-publish: true
+draft: false
 tags:
   - OS
 type: definition
