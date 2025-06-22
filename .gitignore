@@ -56,3 +56,7 @@ docs/_build/
 
 # Ingore any environement files
 *.env
+
+# Claude
+CLAUDE.md
+.claude/*
