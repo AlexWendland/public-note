@@ -4,7 +4,7 @@ checked: false
 course: "[[CS6200 Graduate introduction to Operating Systems]]"
 created: 2025-04-23
 last_edited: 2025-04-23
-publish: false
+draft: true
 tags:
   - OMSCS
 type: lecture

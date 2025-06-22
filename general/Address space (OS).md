@@ -4,7 +4,7 @@ aliases:
 checked: false
 created: 2024-08-26
 last_edited: 2024-08-26
-publish: true
+draft: false
 tags:
   - computer-science
   - OS

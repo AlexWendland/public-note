@@ -6,7 +6,7 @@ aliases:
 checked: false
 created: 2023-08-26
 last_edited: 2023-11-13
-publish: true
+draft: false
 tags:
   - programming
   - algorithms

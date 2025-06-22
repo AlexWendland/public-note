@@ -4,7 +4,7 @@ aliases:
 checked: false
 created: 2023-03-12
 last_edited: 2023-11-11
-publish: true
+draft: false
 tags:
   - programming
   - philosophy

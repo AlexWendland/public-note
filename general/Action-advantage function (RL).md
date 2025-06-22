@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2025-05-22
 last_edited: 2025-05-22
-publish: true
+draft: false
 tags:
   - reinforcement-learning
 type: definition

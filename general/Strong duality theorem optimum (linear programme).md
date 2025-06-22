@@ -3,7 +3,7 @@ aliases: null
 checked: false
 created: 2023-11-10
 last_edited: 2023-11-19
-publish: true
+draft: false
 tags:
   - maths
   - todo

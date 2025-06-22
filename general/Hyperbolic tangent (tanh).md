@@ -6,7 +6,7 @@ aliases:
 checked: false
 created: 2024-01-20
 last_edited: 2024-01-20
-publish: true
+draft: false
 tags:
   - maths
   - machine-learning

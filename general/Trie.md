@@ -6,7 +6,7 @@ aliases:
 checked: false
 created: 2024-06-13
 last_edited: 2024-06-13
-publish: true
+draft: false
 tags:
   - programming
 type: data structure

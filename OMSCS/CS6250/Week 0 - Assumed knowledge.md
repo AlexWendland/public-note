@@ -4,7 +4,7 @@ checked: false
 course: "[[CS6250 Computer Networks]]"
 created: 2024-05-19
 last_edited: 2024-05-19
-publish: true
+draft: false
 tags:
   - OMSCS
 type: lecture

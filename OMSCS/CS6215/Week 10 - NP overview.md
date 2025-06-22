@@ -4,7 +4,7 @@ checked: false
 course: "[[CS6215 Introduction to Graduate Algorithms]]"
 created: 2023-10-24
 last_edited: 2023-11-11
-publish: true
+draft: false
 tags:
   - OMSCS
 type: lecture

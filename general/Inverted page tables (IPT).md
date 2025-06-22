@@ -4,7 +4,7 @@ aliases:
 checked: false
 created: 2025-03-23
 last_edited: 2025-03-23
-publish: true
+draft: false
 tags:
   - OS
 type: definition

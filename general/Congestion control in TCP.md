@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2024-05-28
 last_edited: 2024-05-28
-publish: true
+draft: false
 tags:
   - networks
 type: explainer

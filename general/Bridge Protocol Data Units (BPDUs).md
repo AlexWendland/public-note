@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2024-05-24
 last_edited: 2024-05-24
-publish: false
+draft: true
 tags:
   - networks
 type: definition
