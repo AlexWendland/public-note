@@ -12,7 +12,7 @@ type: technique
 ---
 # Dynamic programming
 
-This is an algorithmic technique to solve some [[Recursion|recursion]] type problems in an [[Iterative algorithms|iterative]] way. This can speed up this processes dramatically especially when [[Recursion|recursion]] would compute a similar step multiple times.
+This is an algorithmic technique to solve some [[Recursion|recursion]] type problems in an [[Iterative algorithms|iterative]] way. This can speed up these processes dramatically especially when [[Recursion|recursion]] would compute a similar step multiple times.
 
 The basic structure of this technique is to:
 1. Break a problem down into smaller sub problems.

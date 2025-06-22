@@ -13,7 +13,7 @@ term: fall
 type: course
 year: "2023"
 ---
-# CS6215 Graduate introduction to Operating Systems
+# CS6200 Graduate introduction to Operating Systems
 
 This is a graduate-level introductory course in operating systems. This course teaches the basic operating system abstractions, mechanisms, and their implementations. The core of the course focuses on OS support for concurrency (threads) and synchronisation, resource management (CPU, memory, I/O), and distributed services. The practical component of the course teaches multi-thread programming, inter-process communication, and distributed interactions via RPC.
 
@@ -33,7 +33,7 @@ This is a graduate-level introductory course in operating systems. This course t
 - [[Week 6 - Thread Performance Considerations]]
 - [[Week 7 - Scheduling]]
 - [[Week 8 - Memory management]]
-- [[Week 9 - Inter-proccess communication]]
+- [[Week 9 - Inter-process communication]]
 - [[Week 10 - Synchronization Constructs]]
 - [[Week 11 - IO management]]
 - [[Week 12 - Virtualization]]
