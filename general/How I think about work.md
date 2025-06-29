@@ -230,17 +230,41 @@ Some things that are maybe just true for me:
 - If I halved my pay but also halved the amount of stuff I don't enjoy doing, that might be worthwhile
 - I am doing pretty well right now... I should probably not stress and chill out a bit
 
+## On delayed gratification and the journey vs destination problem
+
+Here's where I need to be honest about something that challenges this whole framework: I'm not sure optimizing for future outcomes is as smart as we think it is.
+
+My great skill is sinking lots of time into things. I did this during my undergrad, working away at studying because I thought getting my degree would be the best thing in the world. I got a good degree, but the moment I got it didn't feel amazing - it felt like somehow I had cheated the system to get it, not really proving I was that great. Though when I reflect on it, "doing the work" I actually found very rewarding.
+
+I then did a PhD - mainly because it was the path of least resistance. The PhD was transformative for me: I lost weight, I developed my thinking, and I made great friends. But during it, I always had the feeling that getting the PhD itself would be amazing... yet once again, when I got it, it felt cheap. I got it during COVID and one of the examiners said "If this was a real viva we would make you do..." Once again, I had somehow cheated the system.
+
+What I mean to say here is I thought I was doing each of these for the golden reward at the end - getting the piece of paper that said I was smart. But ultimately, that wasn't what was rewarding. It was the journey that I loved and the people I met way more than the destination.
+
+This connects to what I've been reading about Stoic and Taoist philosophy. The Stoics teach that you can only control your actions, not their outcomes. The Taoists talk about wu wei - going with the natural flow rather than forcing outcomes. Both traditions suggest that obsessing over destinations we can't control is a recipe for suffering.
+
+**The career capital trap**: We're constantly told to "invest in our careers," to take the boring job that teaches us skills, to network strategically, to build our "brand." But what if you spend years building capital for a career path you end up hating? What if the industry changes? What if you change?
+
+**The path of least resistance isn't lazy**: Maybe choosing what feels right now, what you actually enjoy doing, isn't short-sighted. Maybe it's wisdom. You know you'll take at least two steps in that direction. You don't know if you'll reach some imagined destination.
+
+This suggests we should weight "immediate satisfaction" much more heavily in our framework. Not because we're hedonistic, but because the process is what we actually experience. The destination might be a mirage.
+
+You should pick a journey you want to go on, not a destination you want to be at.
+
 ## What does this tell me
 
-I think there are several key takeaways from this framework:
+I think there are several key takeaways, though I'm holding them more lightly after that philosophical detour:
 
-1. **Evaluate trade-offs carefully**: If taking a promotion gives me an extra £1k post-tax monthly income but requires another 5 hours per week of work that I hate... don't do it. It's not worth it. Similarly, if a project is really high-profile (so the bonus is good) but means working with a team that sucks... don't do it.
+1. **Evaluate trade-offs carefully, but trust your gut**: The framework says if taking a promotion gives me an extra £1k post-tax monthly income but requires another 5 hours per week of work that I hate... don't do it. But maybe the real insight is simpler: if something feels wrong, it probably is. The framework just helps you articulate why.
 
-2. **Retirement doesn't require massive wealth**: When I am retired, I won't need that much money. Not having to work means my hobbies are cheap and I can cut down on lifestyle expenses.
+2. **The process matters more than the outcome**: I spent years optimizing for getting my degree, then my PhD, only to find the achievement hollow. The learning, growth, and relationships along the way were what mattered. This suggests I should weight "do I enjoy this journey?" much more heavily than "where will this lead?"
 
-3. **I'm not following my own advice**: Here's the awkward bit - I currently earn £7,500/month but only "need" £4,200 for my lifetime goals. If work is just about solving money problems, why aren't I already working part-time or taking a less stressful role? 
+3. **I'm not following my own advice (and that's okay)**: Here's the awkward bit - I currently earn £7,500/month but only "need" £4,200 for my lifetime goals. If work is just about solving money problems, why aren't I already working part-time?
 
-   The honest answer is that I'm building a buffer for uncertainty (what if I get sick? What if the industry changes?) and I actually don't hate my current work enough to optimize purely for happiness. My current weighted unhappiness is only 23.1 hours per week, which puts me in a pretty good spot on my own graph. But this framework should help me be more intentional about future decisions rather than just drifting into higher pay/higher stress situations.
+   The honest answer is that I'm building a buffer for uncertainty, and I actually don't hate my current work enough to optimize purely for happiness. My current weighted unhappiness is only 23.1 hours per week. More importantly, I'm enjoying the journey right now - learning, building things, working with good people. Maybe that's enough reason to stay.
+
+4. **Retirement doesn't require massive wealth**: When I am retired, I won't need that much money. Not having to work means my hobbies are cheap and I can cut down on lifestyle expenses.
+
+5. **The path of least resistance might be the wisest path**: Instead of constantly pushing uphill toward some imagined better future, maybe I should pay more attention to what feels natural and sustainable right now.
 
 ## Thoughts on FIRE
 
