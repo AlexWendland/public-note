@@ -128,15 +128,16 @@ I think you get the point - you can look at a job or project and roughly work ou
 >**Between two job offers:**
 >- Job A: £32k, boring but great training program (weighted score: 0.6)
 >- Job B: £35k, more interesting but dead-end role (weighted score: 0.7)
->- Job A might be worth the extra misery for the career capital
+>- The traditional advice says take Job A for "career capital." But what if you hate that career path once you've built the capital? What if Job B leads to unexpected opportunities through the people you meet?
 >
 >**Side hustles:**
 >- Weekend freelancing: Extra £500/month but 0.8 misery (tired, family time lost)
 >- Online course creation: Less immediate money but 0.3 misery (builds expertise, scalable income)
+>- The framework helps you weigh immediate vs future benefits, but remember - you only control the present choice
 >
 >**Skill development:**
 >- Professional certification: 6 months of 0.9 misery studying, but unlocks 20% salary bump
->- The framework helps you decide if that trade-off makes sense for your situation
+>- But ask yourself: Do you actually want that career path? Or are you optimizing for a future you might not even want?
 
 OK, so ideally we keep the 'Weighted unhappiness hours per week' to a bare minimum. 
 
