@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2025-06-29
 last_edited: 2025-06-29
-draft: true
+draft: false
 tags:
   - finance
   - work
@@ -37,8 +37,8 @@ But obviously not all work is created equal. Some work I love, some I hate. So l
 Instead of just thinking "do I like this job or not," I try to weight 1 hour of doing different activities on a scale from 0 (love it) to 1 (hate it). When scoring an activity you may want to factor in the following:
 
 - Do I enjoy the actual work?
-- Does it teach me valuable skills?
-- Does it position me for better opportunities?
+- Do I enjoy the skills it teaches me?
+- Do I like the people I do it with?
 - Does it contribute to something I care about?
 
 For example, as a developer:
@@ -47,13 +47,13 @@ For example, as a developer:
 - Debugging production issues: 0.7 (stressful and too much information)
 - Pointless status meetings: 1 (pure waste of time)
 
-Right now I work about 33 hours/week (after accounting for holidays - appendix) and my weighted unhappiness is around 0.7, so that's about 23 hours of "misery" per week. For at least £5,200/month, that feels pretty good.
+Right now I work about 33 hours/week (after accounting for holidays - appendix) and my weighted unhappiness is around 0.7, so that's about 23 hours of "misery" per week.
 
-Here's the awkward bit though: So I'm earning way over what I "need" according to my own math. You'd think this would make me immediately quit or go part-time, but... I haven't. Why?
-
-The framework is simple: map your income against your weighted unhappiness hours, and figure out what trade-offs make sense for you. More money for the same misery is better. Less misery for the same money is better. Though what is interesting is seeing the dividing lines between mental states. I personally found drawing a graph really helps with this:
+The framework is simple: map your income against your weighted unhappiness hours, and figure out what trade-offs make sense for you. More money for the same misery is better. Less misery for the same money is better. Though what is interesting is seeing the dividing lines between states of happiness. I personally found drawing a graph really helps with this:
 
 ![[Life graph contors.excalidraw]]
+
+Whilst there are two clear ways to make you life better more money or less hours not enjoyed. Watch how the pay off between the two changes as you increase the hours or increase the pay.
 
 I should acknowledge this assumes I have choices - I'm privileged to have in-demand skills, good health, and low responsibilities. But even with limited options, the core question remains: what trade-off between money and misery makes sense for you?
 
