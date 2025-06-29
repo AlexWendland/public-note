@@ -14,13 +14,13 @@ type: blog
 
 Several things in life have prompted me to think more deliberately about work:
 
-- I am doing a master's degree and working a job at the same time - which is stressing me out
-- I read [The 4-Hour Work Week](https://fourhourworkweek.com/)
-- I have been reading several books on philosophy
-- I got turned down for a promotion last year - without much explanation
-- I realized when my manager asks if I want to do a project or not, I don't have a system to think about my response
-- I am hopefully moving to the US soon
-- I spoke to a friend who asked what I wanted in a job
+- I am doing a master's degree and working a job at the same time - which is stressing me out,
+- I read [The 4-Hour Work Week](https://fourhourworkweek.com/),
+- I have been reading several books on stoic and Taoist philosophy, 
+- I got turned down for a promotion last year - without much explanation,
+- I realized when my manager asks if I want to do a project or not, I don't have a system to think about my response,
+- I am hopefully moving to the US soon, and
+- I spoke to a friend who asked what I wanted in a job.
 
 So I think it's time to do some thinking on paper and see what comes out!
 
@@ -35,6 +35,14 @@ So in this exploration I want to develop a framework that will aid me in making 
 - Do I want to do a startup?
 - Should I say yes to this promotion?
 - Should I agree to work on this project?
+
+## A note on privilege
+
+Before diving in, I should acknowledge that this entire framework assumes I have choices - the ability to turn down promotions, select projects, or even change jobs. This comes from significant privilege: I have a PhD in mathematics, my skills are in high demand, I have my health, and I have low family responsibilities.
+
+However, I believe this framework can still be useful even with limited choices. If you're choosing between two jobs you don't love, or weighing whether to take on extra responsibilities, the core question remains: what trade-off between money and misery makes sense for you? The framework just helps you be more systematic about that trade-off, even when your options are constrained.
+
+The key insight - that work is a solution to the problem of not having enough money - applies regardless of your privilege level. The main difference is how many alternative solutions you have access to.
 
 ## What do I want to do and what do I need to do it?
 
@@ -69,55 +77,88 @@ $$2500 × 60 ÷ 36 = 4166.66... ≈ 4200$$
 >[!note] FIRE people
 >For the Financially Independent Retire Early people, you can shorten the time horizon by just reducing the number of years you work.
 
-## Work is a cost?
+## A more nuanced "cost of work"
 
 OK, so work is the solution, but I am not going to pretend all work is created equal. It is perfectly possible to do work you love, so when thinking about work as a 'cost' I think that is a little harsh.
 
-Instead, let's use a metric called 'Hours not enjoyed per week'. This is a gross simplification, but please entertain me for a little bit.
+Instead, let's use a metric called 'Weighted unhappiness hours per week'. This isn't just about immediate enjoyment - it should factor in multiple dimensions:
 
-I am a developer. I love just being in my room working on code that does something cool. But being a developer isn't just that... it is a lot of other stuff, some of which I like - some of which I don't. You can roughly map hours of these different activities to some number between 0 and 1 based on how much you like or don't like them. For example:
+- **Immediate satisfaction**: Do you enjoy the actual work?
+- **Learning value**: Even if boring, does it teach you valuable skills?  
+- **Career capital**: Does it position you for better opportunities?
+- **Network effects**: Does it put you in rooms with interesting people?
+- **Future flexibility**: Does it give you more choices later?
+- **Purpose and meaning**: Does it contribute to something you care about?
+
+The key insight is that the 0-1 scale represents your overall assessment of how this time investment serves your goals - not just how fun it is in the moment.
+
+I am a developer. I love just being in my room working on code that does something cool. But being a developer isn't just that... it is a lot of other stuff. Here's how I might weight different activities considering all factors:
 
 - **No time pressure coding on something I am proud of: 0**
-	- Love it
+	- Love it, builds skills I want, creates portfolio pieces
 - **Pair programming with a brilliant mentor: 0**
-	- If it could go negative... I would let it
+	- If it could go negative... I would let it - massive learning value
+- **Boring project but learning new framework: 0.3** 
+	- Terrible day-to-day, but learning React opens up freelance opportunities
+- **High-profile project with difficult stakeholders: 0.4**
+	- Stressful and annoying, but great for career capital and network building
 - **Mentoring a junior engineer who is receptive to learning: 0.1**
-	- I am not good with people, but I find it very rewarding
-- **No time pressure coding in a rat's nest of a codebase: 0.3**
-	- OK... not fun, but I like complaining also
-- **Code reviewing someone who doesn't care about their code: 1**
-	- Ugh, the worst
+	- I am not good with people, but I find it very rewarding and builds leadership skills
+- **No time pressure coding in a rat's nest of a codebase: 0.5**
+	- OK... not fun, but I like complaining and it's still coding practice
+- **Code reviewing someone who doesn't care about their code: 0.9**
+	- Ugh, frustrating and teaches me nothing new
 - **Writing ADRs/RFCs, researching code: 0.2**
-	- I know a lot of people don't like it, but I love putting my detective hat on
-- **Debugging: 0.8**
-	- Controversial, I know some people love it - too much information for me, and normally too much at stake
-- **Meetings, syncs, project planning: 1**
-	- Mouth talking, ears listening, eyes drooping
-- **Slack: 1**
-	- Ugh, ping ping ping... please stop
+	- I know a lot of people don't like it, but I love putting my detective hat on plus builds communication skills
+- **Debugging production issues: 0.7**
+	- Stressful and information overload, but does build valuable troubleshooting skills
+- **Pointless status meetings: 1**
+	- Mouth talking, ears listening, eyes drooping - zero value add
+- **Slack notifications: 1**
+	- Ugh, ping ping ping... please stop - pure distraction
 
 I think you get the point - you can look at a job or project and roughly work out how much time you'll spend not enjoying yourself.
 
 >[!Example] Flow state
 >I think a pretty good judge of whether you like something or not is how time passes while you're doing it. If it is effortless action for you, you like it - whether you want to or not. Try to be honest with yourself.
 
-OK, so ideally we keep the 'Hours not enjoyed per week' to a bare minimum. 
+>[!Example] Framework with limited choices
+>Even if you can't turn down work, you can still optimize using this framework:
+>
+>**Between two job offers:**
+>- Job A: £32k, boring but great training program (weighted score: 0.6)
+>- Job B: £35k, more interesting but dead-end role (weighted score: 0.7)
+>- Job A might be worth the extra misery for the career capital
+>
+>**Side hustles:**
+>- Weekend freelancing: Extra £500/month but 0.8 misery (tired, family time lost)
+>- Online course creation: Less immediate money but 0.3 misery (builds expertise, scalable income)
+>
+>**Skill development:**
+>- Professional certification: 6 months of 0.9 misery studying, but unlocks 20% salary bump
+>- The framework helps you decide if that trade-off makes sense for your situation
+
+OK, so ideally we keep the 'Weighted unhappiness hours per week' to a bare minimum. 
 
 If you are shouting at the screen right now saying "life isn't this simple, I have other commitments like childcare, looking after relatives, doing university, or some other commitment" - then say every hour you have to work instead of doing those commitments is an hour you don't enjoy yourself, or simpler still, just use the total amount of hours you need to work.
 
-If you are shouting at the screen, "what about purpose? I don't enjoy my work but I feel like a great person for doing it" - then factor it in. Having purpose in your role is super meaningful and it makes the days go faster as you achieve something great. Therefore, the hours you work are a little less... terrible. 
+If you are shouting at the screen, "what about purpose? I don't enjoy my work but I feel like a great person for doing it" - then factor it in. Having purpose in your role is super meaningful and it makes the days go faster as you achieve something great. 
+
+For example, you might hate the day-to-day of being a teacher (dealing with bureaucracy, difficult parents, low pay) but find deep satisfaction in helping kids learn. In this case, you'd weight those "teaching moments" much lower (maybe 0.2) while the bureaucracy stays high (0.9). The overall weighted score might still justify the role despite the challenges.
+
+Purpose acts as a multiplier that can dramatically change how you experience otherwise difficult work. Therefore, the hours you work are a little less... terrible. 
 
 ## The Framework: A Visual Approach
 
 OK, so we have:
 1. **Post-tax monthly income** - my goal, enough to fund my hobbies and lifestyle
-2. **The cost of work** - hours spent not enjoying myself  
+2. **The cost of work** - weighted unhappiness hours per week (factoring in learning, career capital, purpose, etc.)
 3. **A rating** - how I feel about being in that situation
 
 We can express this as a function:
 
 $$
-f: \text{post-tax monthly income} × \text{unhappy hours per week} → \text{rating}
+f: \text{post-tax monthly income} × \text{weighted unhappiness hours per week} → \text{satisfaction rating}
 $$
 
 >[!note] I use hours per week as that is how I think
@@ -157,7 +198,7 @@ I work 9-6 with a 1-hour lunch break. That is 8 hours a day (assuming I enjoy ta
 
 Well, let's first talk about holiday. I get 25 days a year base, then I buy 8 additional days, and my company gives me 12 days off for university study. This means that 9 out of 52 weeks I am on holiday. That means I only work 40 × 43 ÷ 52 = 33 hours per week on average.
 
-How much do I enjoy work? This is hard and very project-dependent. If I am writing code, I am normally pretty content, but that depends on the project. Right now I would say I am at about 0.7 on the unhappiness scale for work hours (with no real justification). So that makes the total: 23.1 hours of unhappiness per week, but it is variable.
+How much do I enjoy work? This is hard and very project-dependent. If I am writing code, I am normally pretty content, but that depends on the project. Right now I would say I am at about 0.7 on the weighted unhappiness scale for work hours (factoring in that I'm learning, building career capital, and generally not hating the day-to-day). So that makes the total: 23.1 weighted unhappiness hours per week, but it is variable depending on the project mix.
 
 ![[Life graph.excalidraw]]
 
@@ -190,11 +231,15 @@ Some things that are maybe just true for me:
 
 ## What does this tell me
 
-I think there are two main takeaways from this framework:
+I think there are several key takeaways from this framework:
 
 1. **Evaluate trade-offs carefully**: If taking a promotion gives me an extra £1k post-tax monthly income but requires another 5 hours per week of work that I hate... don't do it. It's not worth it. Similarly, if a project is really high-profile (so the bonus is good) but means working with a team that sucks... don't do it.
 
 2. **Retirement doesn't require massive wealth**: When I am retired, I won't need that much money. Not having to work means my hobbies are cheap and I can cut down on lifestyle expenses.
+
+3. **I'm not following my own advice**: Here's the awkward bit - I currently earn £7,500/month but only "need" £4,200 for my lifetime goals. If work is just about solving money problems, why aren't I already working part-time or taking a less stressful role? 
+
+   The honest answer is that I'm building a buffer for uncertainty (what if I get sick? What if the industry changes?) and I actually don't hate my current work enough to optimize purely for happiness. My current weighted unhappiness is only 23.1 hours per week, which puts me in a pretty good spot on my own graph. But this framework should help me be more intentional about future decisions rather than just drifting into higher pay/higher stress situations.
 
 ## Thoughts on FIRE
 
@@ -203,3 +248,15 @@ I like the idea of FIRE (Financial Independence, Retire Early), but I think *The
 Doesn't a year doing what you want sound good? What did your older self (who you don't even know will be around) do to deserve so much money?
 
 When people used to not save at all for retirement, I agree it was an issue. But now retirement savings are so baked into most salaried work that I don't think the old version of me deserves quite so much sacrifice from the current me.
+
+## Framework limitations and evolution
+
+This framework is a snapshot in time, and I recognize it has limitations:
+
+**It's static**: What looks like a good trade-off at 30 might be terrible at 40 with kids, or during a recession. The framework needs regular recalibration as circumstances change.
+
+**It's individualistic**: It doesn't account for how your work affects others - colleagues, family, society. Sometimes the "right" choice for you personally isn't the right choice holistically.
+
+**It's reductive**: Reducing complex decisions to a 2D graph inevitably loses nuance. But I'd rather have an imperfect framework than no framework at all.
+
+The real value isn't in the specific numbers, but in being more intentional about work decisions. Instead of defaulting to "more money is always better" or "I should just be grateful to have a job," it forces me to think about what I'm actually optimizing for.
