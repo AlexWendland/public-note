@@ -3,8 +3,10 @@ aliases:
 checked: false
 created: 2025-07-05
 last_edited: 2025-07-05
-draft: true
+draft: false
 tags: 
+  - finance
+  - work
 type: thonk
 ---
 # My thoughts about a startup

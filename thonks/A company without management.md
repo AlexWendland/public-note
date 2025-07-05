@@ -1,3 +1,12 @@
+---
+aliases: 
+checked: false
+created: 2025-07-05
+last_edited: 2025-07-05
+draft: true
+tags: 
+type: thonk
+---
 
 If I work for a company, some things I want from it are:
 - I want to work in a company with as little 'management' as possible. (Should most probably expand on why in another note.)
