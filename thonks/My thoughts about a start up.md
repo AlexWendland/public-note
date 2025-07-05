@@ -60,9 +60,9 @@ If you haven't read the book - it is a bit dated but the concepts are there and 
 
 ### Unicorn startup
 
-**Max revenue:** High
-**Personal hours:** Very high
-**Personal interest:** Not required, but best of luck
+**Max revenue:** High  
+**Personal hours:** Very high  
+**Personal interest:** Not required, but best of luck  
 **Risk:** Very high
 
 Here we take a problem that is faced by a large group of people and think up a novel solution. This will likely have large profitability but intense competition. Think Uber (transport), Airbnb (accommodation), or Stripe (payments) - solving massive market problems with technology. These kind of ideas are ones where you need 'stealth startups' because ultimately the solution can and will be copied once people know it works.
@@ -74,7 +74,7 @@ Here we take a problem that is faced by a large group of people and think up a n
 
 ## What I want from work
 
-Read [[how-i-think-about-work]] for more on this.
+Read [[How I think about work]] for more on this.
 
 > [!note] Cost framework application
 > Whilst I may not be personally interested in the specific ideas in a 4-hour work week business, they are still my ideas rather than someone else's. If working on someone else's ideas has a weighted cost of 0.8 and working on my own ideas has a cost of 0.3, then more hours on my own projects could still result in lower total "cost" than fewer hours on someone else's work.
