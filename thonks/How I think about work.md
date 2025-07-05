@@ -16,8 +16,8 @@ Several things in life have prompted me to think more deliberately about work: d
 
 So I think it's time to do some thinking on paper and see what comes out!
 
->[!warning] Health warning: This is for overachievers
->This piece is aimed at people who already work hard and might be sacrificing too much present happiness for uncertain future rewards. Having a pension, going to school, striving is not a bad thing.
+>[!warning] Health warning
+> I am in a position where I have a solid foundation (have done a PhD), have enough of a job history to feel safe about finding the next one - so what comes next is pretty entitled but that is the way the world is structured right now.
 
 ## Work is just solving a money problem
 
@@ -30,11 +30,11 @@ So let's frame the problem correctly. I need about £2,500/month after tax to li
 
 More money is always good - but only if the cost is right.
 
-But obviously not all work is created equal. Some work I love, some I hate. So let's try to be systematic about the trade-off between money and misery.
+But obviously not all work is created equal. Some work I love, some I hate. So let's try to be precise about what I mean by cost.
 
-## A framework for the money/misery trade-off
+## The cost
 
-Instead of just thinking "do I like this job or not," I try to weight 1 hour of doing different activities on a scale from 0 (love it) to 1 (hate it). When scoring an activity you may want to factor in the following:
+Instead of just thinking "do I like this job or not," I try to weigh 1 hour of doing different activities on a scale from 0 (love it) to 1 (hate it). When scoring an activity you may want to factor in the following:
 
 - Do I enjoy the actual work?
 - Do I enjoy the skills it teaches me?
@@ -47,21 +47,29 @@ For example, as a developer:
 - Debugging production issues: 0.7 (stressful and too much information)
 - Pointless status meetings: 1 (pure waste of time)
 
-Right now I work about 33 hours/week (after accounting for holidays - appendix) and my weighted unhappiness is around 0.7, so that's about 23 hours of "misery" per week.
+Right now I work about 33 hours/week (after accounting for holidays - appendix) and my weighted average is around 0.7, so that's about 23 hours of "cost" per week.
 
-The framework is simple: map your income against your weighted unhappiness hours, and figure out what trade-offs make sense for you. More money for the same misery is better. Less misery for the same money is better. Though what is interesting is seeing the dividing lines between states of happiness. I personally found drawing a graph really helps with this:
+I don't, but you may have situations where you can only work 20 hours a week or so due to commitments like child care, family support, etc. In this case, I would weight any hour over 20 as 1 or more cost - even if it is something you enjoy.
+
+## Graph this
+
+The graph is simple with two axes income against your weighted work hours. At each point in this 2D graph I am going to think how I would feel being here. More money for the same hours is better. Less hours for the same money is better. Though what is interesting is looking at how valuable an extra hour of work is at different amounts of work/income. To make this simpler I picked 5 mental states: unbearable, bearable, fine, good, and made it - and then drew the dividing lines between them.
 
 ![[Life graph contors.excalidraw]]
 
-Whilst there are two clear ways to make you life better more money or less hours not enjoyed. Watch how the pay off between the two changes as you increase the hours or increase the pay.
+I should acknowledge this assumes I have choices - I'm privileged to have in-demand skills, good health, and low responsibilities. But even with limited options, the core question remains: what trade-off between money and hours makes sense for you?
 
-I should acknowledge this assumes I have choices - I'm privileged to have in-demand skills, good health, and low responsibilities. But even with limited options, the core question remains: what trade-off between money and misery makes sense for you?
+This is simple enough but doesn't really account for decisions like:
+- Should I do a PhD: low pay, high hours but as I can say, it sets you up well.
+- Should I risk it all on that start up: Large payout ... maybe.
+- Graduate jobs: If I can survive the grind then I'll make it to a cushy job eventually.
+In the past I have had the 'grid it out' mindset for the "growth".
 
 ## But here's the thing about "growth"
 
 Here's where I need to be controversial (or maybe just honest). I'm not sure optimizing for future outcomes is as smart as we think it is.
 
-I can sink lots of time into things. I did this during my undergrad because I thought getting my degree would feel amazing. I got a good degree, but the moment I got it felt hollow - like I'd somehow cheated the system or it was not worth achieving. The weird thing is, "doing the work" I actually found very rewarding - learning Math's with great people I loved.
+I can sink lots of time into things. I did this during my undergrad because I thought getting my degree would feel amazing. I got a good degree, but the moment I got it felt hollow - like I'd somehow cheated the system or it was not worth achieving. The weird thing is, "doing the work" I actually found very rewarding - learning Maths with great people I loved.
 
 Same with my PhD. It was transformational - I lost weight, had my first partner, made great friends, started to build an actual personality and first listened to philosophy. But I was always focused on getting the PhD itself, which again felt cheap when it happened (thanks, COVID). What I loved was the journey, not the destination.
 
@@ -78,13 +86,13 @@ I have been reading Stoic and Taoist philosophy recently. Stoics teach you can o
 
 **Why does older me deserve such a great life?**: Here's what really gets me - I'm in my early 30s, I have energy, I'm healthy, I'm curious about everything. Why am I optimizing so hard for the 65-year-old version of me? What did that guy do to deserve all this sacrifice from current me? That older version might not even exist, might have different priorities, might be dealing with health issues that make all this wealth accumulation pointless. Current me is here right now, full of energy and life - maybe he deserves some consideration too.
 
-This suggests we should weight "immediate satisfaction" much more heavily in our framework. Not because we're hedonistic, but because the process is what we actually experience. The destination might be a mirage.
+For me I am deciding to weight "immediate satisfaction" much more heavily in my graph. Not because I am hedonistic, but because the process is what we actually experience. The destination might be a mirage.
 
-## So how should I actually use this framework?
+## So how do I use this insight?
 
-So what does all this rambling actually mean? Some practical takeaways:
+Honestly, I don't right now. But I want to, I am trying to:
 
-1. **Trust your gut, but use the framework to sanity check**: If you are going to commit to a massive amount of time into something. Maybe just quickly check - is the pay off worth it? Should I do that high profile piece for a large bonus when I hate the team I am working with? Should I take that promotion that means spending more time on activities I hate?
+1. **Trust my gut, but use the graph to sanity check**: If I am going to commit a massive amount of time into something. Maybe just quickly check - is the payoff worth it? Should I do that high profile piece for a large bonus when I hate the team I am working with? Should I take that promotion that means spending more time on activities I hate?
 
 2. **Weight present satisfaction more heavily**: I used to think suffering now for future benefits was smart. Now I think it's often just delayed gratification that never pays off the way you expect.
 
@@ -92,7 +100,7 @@ So what does all this rambling actually mean? Some practical takeaways:
 
 4. **The path of least resistance might be wise**: What feels natural and sustainable right now might be better guidance than what looks strategically optimal.
 
-Maybe I should actually take my advice and halve my hours for half the pay - it would put me higher on my own satisfaction rating! Part of it is building a buffer for uncertainty, but honestly? Part of it is probably just the default mode of "more money = better" that this whole framework is supposed to challenge - because more money always feels better, we don't think about the cost.
+Maybe I should actually take my advice and halve my hours for half the pay - it would put me higher on my own satisfaction rating! Part of it is building a buffer for uncertainty, but honestly? Part of it is probably just the default mode of "more money = better" that this whole graph is supposed to challenge - because more money always feels better, we don't think about the cost.
 
 I believe some younger people need to be more skeptical of sacrificing present happiness for uncertain future rewards. The journey is what you actually experience.
 
@@ -126,4 +134,4 @@ It is good to be grounded in reality - when working some jobs normality feels a 
 
 > [Giving what we can](https://www.givingwhatwecan.org/how-rich-am-i)
 
-For the number in the graph, I used [plumbplot](https://www.plumplot.co.uk/London-salary-and-unemployment.html) which I put in to the [UK tax calculator](https://www.gov.uk/estimate-income-tax) and added 5% as employer contributions to your pension.
+For the number in the graph, I used [plumplot](https://www.plumplot.co.uk/London-salary-and-unemployment.html) which I put in to the [UK tax calculator](https://www.gov.uk/estimate-income-tax) and added 5% as employer contributions to your pension.

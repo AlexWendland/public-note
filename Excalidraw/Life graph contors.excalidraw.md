@@ -40,13 +40,15 @@ Hours not enjoyed per week ^becclhRG
 
 current ^KNMyqE39
 
-bareable ^eUf8fqtq
+Unbearable ^eUf8fqtq
 
 fine ^fQVSRPzk
 
 good ^jFDjQ6Y6
 
 Made it ^lfhzlVOp
+
+Bearable ^EMsWa2pH
 
 %%
 # Drawing
@@ -5283,8 +5285,8 @@ Made it ^lfhzlVOp
 		},
 		{
 			"type": "text",
-			"version": 68,
-			"versionNonce": 2041864009,
+			"version": 82,
+			"versionNonce": 260812492,
 			"isDeleted": false,
 			"id": "eUf8fqtq",
 			"fillStyle": "hachure",
@@ -5293,34 +5295,34 @@ Made it ^lfhzlVOp
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -567.1447527004191,
-			"y": 261.30831172373155,
+			"x": -554.1447527004191,
+			"y": 257.30831172373155,
 			"strokeColor": "#c92a2a",
 			"backgroundColor": "#7950f2",
-			"width": 115.83648681640625,
+			"width": 148.9046173095703,
 			"height": 35,
 			"seed": 1298341737,
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1751203438764,
+			"updated": 1751711917918,
 			"link": null,
 			"locked": false,
 			"fontSize": 28,
 			"fontFamily": 1,
-			"text": "bareable",
-			"rawText": "bareable",
+			"text": "Unbearable",
+			"rawText": "Unbearable",
 			"textAlign": "left",
 			"verticalAlign": "top",
 			"containerId": null,
-			"originalText": "bareable",
+			"originalText": "Unbearable",
 			"lineHeight": 1.25,
 			"baseline": 25
 		},
 		{
 			"type": "text",
-			"version": 102,
-			"versionNonce": 1947348745,
+			"version": 154,
+			"versionNonce": 926724172,
 			"isDeleted": false,
 			"id": "fQVSRPzk",
 			"fillStyle": "hachure",
@@ -5329,8 +5331,8 @@ Made it ^lfhzlVOp
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -505.0629961086222,
-			"y": 178.80831172373155,
+			"x": -429.0629961086222,
+			"y": 89.80831172373155,
 			"strokeColor": "#d9480f",
 			"backgroundColor": "#7950f2",
 			"width": 48.1322021484375,
@@ -5339,7 +5341,7 @@ Made it ^lfhzlVOp
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1751203440825,
+			"updated": 1751711817732,
 			"link": null,
 			"locked": false,
 			"fontSize": 28,
@@ -5355,8 +5357,8 @@ Made it ^lfhzlVOp
 		},
 		{
 			"type": "text",
-			"version": 124,
-			"versionNonce": 764202409,
+			"version": 151,
+			"versionNonce": 769339596,
 			"isDeleted": false,
 			"id": "jFDjQ6Y6",
 			"fillStyle": "hachure",
@@ -5365,8 +5367,8 @@ Made it ^lfhzlVOp
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -502.2108537746378,
-			"y": 89.80831172373155,
+			"x": -525.2108537746378,
+			"y": 33.80831172373155,
 			"strokeColor": "#e67700",
 			"backgroundColor": "#7950f2",
 			"width": 60.98426818847656,
@@ -5375,7 +5377,7 @@ Made it ^lfhzlVOp
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1751203443210,
+			"updated": 1751711814073,
 			"link": null,
 			"locked": false,
 			"fontSize": 28,
@@ -5427,39 +5429,39 @@ Made it ^lfhzlVOp
 		},
 		{
 			"type": "text",
-			"version": 464,
-			"versionNonce": 1546511361,
-			"isDeleted": true,
-			"id": "SCzUax0j",
+			"version": 100,
+			"versionNonce": 447153908,
+			"isDeleted": false,
+			"id": "EMsWa2pH",
 			"fillStyle": "hachure",
 			"strokeWidth": 1,
 			"strokeStyle": "dotted",
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -791.7599334716797,
-			"y": -523.4453125,
-			"strokeColor": "#5c940d",
-			"backgroundColor": "transparent",
-			"width": 9.999984741210938,
-			"height": 25,
-			"seed": 498487143,
+			"x": -505.15032500343113,
+			"y": 180.73618711186577,
+			"strokeColor": "#c92a2a",
+			"backgroundColor": "#7950f2",
+			"width": 121.968505859375,
+			"height": 35,
+			"seed": 211082228,
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1751214021668,
+			"updated": 1751711923566,
 			"link": null,
 			"locked": false,
-			"fontSize": 20,
+			"fontSize": 28,
 			"fontFamily": 1,
-			"text": "",
-			"rawText": "",
+			"text": "Bearable",
+			"rawText": "Bearable",
 			"textAlign": "left",
 			"verticalAlign": "top",
 			"containerId": null,
-			"originalText": "",
+			"originalText": "Bearable",
 			"lineHeight": 1.25,
-			"baseline": 18
+			"baseline": 25
 		}
 	],
 	"appState": {
@@ -5477,10 +5479,10 @@ Made it ^lfhzlVOp
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": null,
-		"scrollX": 936.1595548101844,
-		"scrollY": 1072.5180196189035,
+		"scrollX": 1324.698016348646,
+		"scrollY": 713.8731878881342,
 		"zoom": {
-			"value": 0.65
+			"value": 1
 		},
 		"currentItemRoundness": "sharp",
 		"gridSize": null,
