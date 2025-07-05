@@ -60,8 +60,8 @@ Bearable ^EMsWa2pH
 	"elements": [
 		{
 			"type": "text",
-			"version": 581,
-			"versionNonce": 1071338567,
+			"version": 591,
+			"versionNonce": 727292520,
 			"isDeleted": false,
 			"id": "ZB9Mqsfm",
 			"fillStyle": "hachure",
@@ -70,8 +70,8 @@ Bearable ^EMsWa2pH
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 4.703107991817843,
-			"x": -1141.810874652166,
-			"y": -107.60543719094233,
+			"x": -1121.810874652166,
+			"y": -98.71654830205341,
 			"strokeColor": "#5c940d",
 			"backgroundColor": "transparent",
 			"width": 573.0841674804688,
@@ -80,7 +80,7 @@ Bearable ^EMsWa2pH
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1751202769863,
+			"updated": 1751731618626,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -5479,10 +5479,10 @@ Bearable ^EMsWa2pH
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": null,
-		"scrollX": 1324.698016348646,
-		"scrollY": 713.8731878881342,
+		"scrollX": 1755.3156209662502,
+		"scrollY": 1352.8084557452753,
 		"zoom": {
-			"value": 1
+			"value": 0.44999999999999996
 		},
 		"currentItemRoundness": "sharp",
 		"gridSize": null,
