@@ -5,7 +5,7 @@ created: 2025-07-25
 last_edited: 2025-07-25
 draft: true
 tags:
-  - book
+  - book-notes
 type: note
 ---
 # The siren
