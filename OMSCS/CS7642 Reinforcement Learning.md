@@ -23,15 +23,18 @@ Students will replicate a result in a published paper in the area and work on mo
 
 The ability to run Docker locally or utilize a cloud computing service is strongly recommended. The instructional staff will not provide technical support or cloud computing credits
 
+>[!bug] Dropped
+>I dropped this course, so the lectures stop after week 3
+
 ## Lectures
 - [[Week 1 - Smoov & Curly's Bogus Journey]]
 - [[Week 1 - Supplementary Introduction to Reinforcement Learning]]
 - [[Week 1 - Chapter 3, Finite Markov Decision Process]]
+- [[Week 2 - Reinforcement learning basics]]
+- [[Week 2 - Temporal Difference learning]]
+- [[Week 3 - Supplementary Planning methods]]
 
 ## Links
 - [Central](https://www.omscentral.com/courses/reinforcement-learning-and-decision-making/reviews)
 - [OMSCS page](https://omscs.gatech.edu/cs-7642-reinforcement-learning)
 - [Course textbook](http://www.incompleteideas.net/book/the-book-2nd.html)
-- [[Week 2 - Reinforcement learning basics]]
-- [[Week 2 - Temporal Difference learning]]
-- [[Week 3 - Supplementary Planning methods]]
