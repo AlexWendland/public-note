@@ -572,7 +572,7 @@
             "folder": {
               "enabled": true,
               "folders": [
-                "OMSCS/CS7642"
+                "OMSCS/CS6210"
               ],
               "chooseWhenCreatingNote": false,
               "createInSameFolderAsActiveFile": false,
@@ -600,7 +600,7 @@
             "type": "Capture",
             "command": false,
             "appendLink": false,
-            "captureTo": "OMSCS/CS7642 Reinforcement Learning.md",
+            "captureTo": "OMSCS/CS6210 Advanced Operating Systems.md",
             "captureToActiveFile": false,
             "createFileIfItDoesntExist": {
               "enabled": false,
