@@ -26,7 +26,7 @@ By tracing the key ideas of today's most popular systems to their origins in res
 ## Lectures
 
 - [[Week 2 - OS Structure Overview]]
-
+- [[Week 3 - Virtualization]]
 
 ## Links
 
