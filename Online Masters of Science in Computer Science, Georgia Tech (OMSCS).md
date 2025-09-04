@@ -16,3 +16,7 @@ This [masters](https://omscs.gatech.edu/) course is aimed at making rigorous [[C
 
 - [[CS6215 Introduction to Graduate Algorithms]]
 - [[CS7641 Machine Learning]]
+
+## Resources
+
+- [OMSCS Rocks](https://docs.google.com/spreadsheets/d/e/2PACX-1vRyHrRhH2V52bsYFEtm-8oJDaFOlyGYz6AKXm8WwsthN3fNP3KGkEx7O7D9ZHV3j2iKnzU2XHqoh4pQ/pubhtml)
