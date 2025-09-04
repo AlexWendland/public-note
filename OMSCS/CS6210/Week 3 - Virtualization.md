@@ -12,7 +12,7 @@ week:
 ---
 # Week 3 - Virtualization
 
-As we refresher please read:
+As a refresher please read:
 
 [[Week 12 - Virtualization]]
 
