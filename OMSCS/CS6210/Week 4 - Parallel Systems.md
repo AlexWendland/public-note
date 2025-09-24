@@ -514,8 +514,165 @@ A major advantage of the tournament barrier is there is no need for a atomic ope
 Also notice that the memory needed for each thread is known before hand - so this can be placed close to the required CPU.
 The only interactions between threads is sending a signal that either they have arrived or the tournament is over, we do not actually need shared memory to run this system.
 This means it can be implemented on a cluster which only has message passing between nodes.
-A downside for the tournement barrier against MCS is that only 2 nodes can share the same cache line - whereas MCS can have 4.
+A downside for the tournament barrier against MCS is that only 2 nodes can share the same cache line - whereas MCS can have 4.
 
 ### Dissemination barrier
 
+Within the tree based barriers there are normally  a single thread which is responsible for kicking off the rest of the processes to wake up.
+This also means that the level of parallelism is limited by the height of the tree.
+In the dissemination barrier, instead all processes 'gossip' amongst one another to signal they have arrived at the barrier.
+This is done in a number of rounds where each thread $i$ messages node $i + 2^k$ saying it has arrived and waits for a message from node $i - 2^k$ on round $k$ (starting from $k=0$).
+This has the nice effect that to progress past round $k$, atleast $2^{k+1}$ nodes must have made it to the barrier.
+Therefore after round $ceil(log_2(n))$ all nodes must have arrived at the barrier - and we can safely proceed.
 
+```c
+int THREAD_COUNT;
+int ROUNDS = ceil(log_2(THREAD_COUNT));
+
+struct barrier{
+  int position;
+  bool flags[ROUNDS];
+};
+
+// Mapping from position to the barrier structure.
+barrier *get_barrier(int position);
+
+void bar(barrier B) {
+  for(int k = 0; k < ROUNDS; k++){
+    barrier *partner = get_barrier((B->position + 2^k) % THREAD_COUNT);
+    B->flags[k] = true; // signal partner I have arrived
+    while(B->flags[k] == false); // spin
+  }
+}
+```
+
+This barrier takes $O(n log(n))$ messages to complete, but each thread only needs $O(log(n))$ space.
+As these are just messages the thread do not need to share memory - so this can be implemented on a cluster.
+There is no hierarchy, so there is no single point of contention.
+
+### Aside: Architectures for the system
+
+When considering which barrier or lock to use, we need to consider the architecture we are running on.
+The 4 main ones discussed here are:
+
+- Cache coherent Shared Memory Processors (CC-SMP): These systems have hardware support for cache coherence.
+  This means that if one CPU updates a memory location, all other CPUs will see the updated value.
+  This is the most common architecture in modern systems.
+
+- Cache coherent Non-Uniform Memory Access (CC-NUMA): These systems have hardware support for cache coherence, but memory access time is not uniform.
+  This means that some memory locations are closer to some CPUs than others.
+
+- Non-Cache coherent Non-Uniform Memory Access (NC-NUMA): These systems do not have hardware support for cache coherence, and memory access time is not uniform.
+  This means that some memory locations are closer to some CPUs than others.
+
+- Message Passing clusters: These systems do not have shared memory, and all communication is done via message passing.
+
+### Performance comparison
+
+TODO: Read the MCS paper and fill in this.
+
+# Remote Procedure Calls (RPC)
+
+Within processes that are running on the same machine, we still use the client-server model.
+This enables safety as the processes can be running in separate protection domains (address spaces).
+When programming the client-server model between machines we would use RPC - however could we use it within the same machine?
+The main concern here is performance.
+
+> [!note] Procedure call
+> Within a process, a procedure call is a function call that is made within the same address space.
+> Normally, the arguments are moved from the scope of the caller within the stack for a procedure call and vice versa for the return value.
+> This all happens in compile time and is very fast.
+> However, within RPC this will all happen at run time and will be slower.
+
+## RPC performance concerns
+
+The main issue with RPC between processes is the involvement of the kernel and the copying of data.
+Lets break down the steps involved in an RPC call using message passing through the kernel:
+
+1. The client traps to the kernel to call the RPC method.
+The arguments get copied from the clients address space to the kernel's address space.
+The kernel may need to check that the client is allowed to communicate with the server process.
+
+2. The kernel switches to the server to execute the RPC method.
+The arguments get copied from the kernel's address space to the server's address space.
+
+3. The server then executes the RPC method with the arguments and calculates the return value.
+
+4. The server traps to the kernel to return the value.
+The return value gets copied from the server's address space to the kernel's address space.
+
+5. The kernel switches to the client to return the value.
+The return value gets copied from the kernel's address space to the client's address space.
+
+This is 4 copies of data and 4 context switches for a single RPC call.
+This is all happening at run time and is very slow.
+
+This is in fact slightly worse for RPC calls when you consider the different components of the RPC stack.
+For this we consider one direction client -> server.
+
+1. The client prepares the arguments for the RPC call in the clients stack.
+
+2. The client stub serialises the arguments into a message format.
+
+3. The kernel copies the serialised message from the clients address space to the kernel's address space.
+
+4. The kernel copies the serialised message from the kernel space to the server address space.
+
+5. The server stub deserialises the message into the server's stack.
+
+## Reducing RPC overhead (Bindings)
+
+To make this faster, we will used shared memory and optimise for the common case - which should be calling the RPC method.
+However, for this we make setting up the RPC connection more expensive (what we will call a binding).
+We follow this process below:
+
+1. The server registers its procedures with a 'name server'.
+
+2. The client uses the name server to try and call the RPC method, this traps to the kernel.
+
+3. The kernel checks with the server that the client is allowed to communicate with the server process.
+If so, the server grants permission to the client.
+
+4. The kernel then sets up a data structure called a Procedure Descriptor (PD) within the kernel.
+The PD stores which entrypoint within the server to use for this RPC, the size of the argument stack (A-stack), and the number of simultaneous calls that can be made to the method.
+
+5. The kernel also creates a shared memory region between the client and server (called the A-stack) for them to communicate without the intervention of the kernel.
+
+6. The kernel returns a Binding Object (BO) to the client - within the kernel this is lined to the PD but for the client acts as permission to call the RPC method.
+
+The for the client to call the method the following happens:
+
+1. The client stubs copies the arguments from the client stack into the A-stack (which have to be passed by value - not reference).
+
+2. The client then traps into the kernel presenting BO to call the method.
+
+3. The kernel uses the BO to find the PD and then switches to the server process on exactly the entry point specified for this method.
+
+4. The server stub then uses the A-stack to copy the arguments out into the server stack and can call the method.
+
+5. Once the server is done calculating the return value, it copies the return value into the A-stack.
+
+6. The server then traps back to the kernel to return control to the client.
+
+7. Finally, the client stub can use the A-stack to copy the return value into the client stack.
+
+This has the following advantages:
+
+- There are half as many copies of data, as we no longer need to pass the information through the kernel.
+
+- The stubs need to do less serialisation, as the message is doing less travelling so can stay in a format closer to how they would be represented in the stack of a process.
+
+- Simplified permissions, by presenting the BO the kernel does not need to validate the client has access to the server.
+
+However, we still suffer from the context switches to the kernel and the implicit costs of these switches from the loss of locality within the caches.
+
+## RPC using SMP
+
+For highly used RPC methods, in a shared memory processor we can avoid the loss of locality by pinning the server to a CPU.
+This way we can keep the caches on that CPU warm with the server process.
+The shared memory allows for the quick transfer between the client and server of the call arguments and returns.
+
+## Summary
+
+Using RPC within a machine is possible, but there are performance concerns.
+However, this opens up better protection between processes and a cleaner programming model.
