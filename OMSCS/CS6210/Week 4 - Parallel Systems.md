@@ -676,3 +676,23 @@ The shared memory allows for the quick transfer between the client and server of
 
 Using RPC within a machine is possible, but there are performance concerns.
 However, this opens up better protection between processes and a cleaner programming model.
+
+# Scheduling in multi-core systems
+
+Within scheduling in multi-core systems the main goal is to try and keep the caches as hot as possible to reduce overhead.
+
+## Cache affinity scheduling
+
+The difference between reading from the L1 cache to reading from memory is on the order of 100x slower.
+Therefore, when scheduling a thread we want to keep in mind where it has been scheduled previously.
+So we define 'cache affinity' as the property of a thread to run on the same CPU it has previously run on.
+However, this is a weaker association if lots of other threads have ran on it since it was last ran.
+
+We will discuss the following scheduling strategies:
+
+- FCFS (First Come First Served)
+
+- Fixed processor
+
+- Last processor:
+
