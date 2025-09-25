@@ -688,11 +688,96 @@ Therefore, when scheduling a thread we want to keep in mind where it has been sc
 So we define 'cache affinity' as the property of a thread to run on the same CPU it has previously run on.
 However, this is a weaker association if lots of other threads have ran on it since it was last ran.
 
-We will discuss the following scheduling strategies:
+> [!note] Cache importance
+> Threads with a large memory footprint are much more effected by cache affinity.
+> For small memory threads, the cache reload time is much more marginal compared to the total execution time.
+> Whereas for large memory threads, the cache reload time is a significant portion of the total execution time.
 
-- FCFS (First Come First Served)
+This leads to the following scheduling algorithms:
 
-- Fixed processor
+- FCFS (First Come First Served): Choose the first thread that is ready to run.
+  - Ignores all affinity.
+  - Prioritises fairness.
 
-- Last processor:
+- Fixed processor: Pin each thread to exactly one processor and always run it there.
+  - Focuses on catch affinity.
+  - Harder to load balance correctly.
 
+- Last processor: Choose the last processor the thread ran on.
+  - Focuses on cache affinity.
+  - Harder to load balance correctly.
+
+- Minimum Intervening: Choose the processor that has had the least number of other threads run on it since this thread last ran on it.
+It achieves this by tracking for any given thread the Intervening index - the number of threads that ran on a processor since that thread last ran.
+  - Focuses on cache affinity and cache pollution.
+  - Could lead to large overheads.
+
+- Limited Minimum Intervening: Don't track the intervening index for all processors, instead track it for the top few processors.
+  - Focuses on cache affinity and cache pollution.
+
+- Minimum Intervening plus queueing: Add the Intervening index to the current queue length to get a new index which is used to pick a processor.
+  - Focuses on cache affinity and cache pollution.
+  - Accounts for load balancing more.
+
+We call policies like fixed and last processor 'thread centric' as we focus on prioritising the preferences of the thread, whereas the MI polices as 'processor centric' storing data relating to each processor instead.
+
+## Implementation issues
+
+When trying to implement these policies you may choose to go for a 'global' queue of threads that get chosen from by the processors.
+However, this queue is a very large data structure that will need to be shared among all processors which is inefficient memory wise.
+
+Instead, we can use processor based local queues.
+Where each processor has a local queue of tasks, usually order using the thread priority.
+
+$$
+ThreadPriority_i = BasePriority_i + Age_i + Affinity_i
+$$
+
+The base priority is some dynamic or static priority given to each thread.
+Age is how long it has been unscheduled - to ensure fairness.
+Lastly Affinity will how we define affinity as above.
+
+In the local queue setting, it may be that processors finish their queue and have no other tasks to run.
+In this case, we can 'steal' tasks from other processors queues - and within the literature is called 'task stealing'.
+
+## Metrics
+
+For scheduling there are 3 key metrics:
+
+- *Throughput*: How many threads get executed or computed pre unit time. (System centric.)
+
+- *Response time*: How long on average does it take for a thread to complete. (User centric.)
+
+- *Variance*: Does the time it takes for a thread to complete vary based on when it was scheduled. (User centric.)
+
+Notice that these metrics may very for different strategies under different load.
+If the tasks all have very small memory foot print then the throughput may be highest with FCFS as affinity plays a smaller role.
+If there is a memory dense but light load throughput may be optimised by a cache affinity strategy.
+Whereas if the load is incredibly heavy then fixing the processor for each thread may yield the best throughput.
+There is not one optimal strategy, the best strategy will depend on the load and types of tasks.
+
+> [!warning] Procrastination
+> It may be the case that highest throughput is achieved by CPU's actively idling rather than scheduling ready tasks if these tasks require a large memory footprint.
+
+## Multi-core multi-threaded processors
+
+In modern systems, each core may have multiple thread contexts loaded on each core (hardware multi-threading) - they will still only have one CPU but this enables fast switching between threads when a thread is blocked on I/O.
+These CPU's are normally grouped together on a chip where they all have different L1 caches but share an L2/3 cache.
+This then increases the complexity of scheduling.
+We not only have to map multiple threads to a single CPU, we will want to group these threads to maximise cache L1 hits.
+Then we will want to select threads on the same chip that are likely to share the same context for the L2/3 cache.
+
+### Cache aware scheduling
+
+Now we have multiple threads on the same CPU sharing an L1 cache.
+Multiple CPU's on the same chip sharing a L2/3 cache.
+We know these caches have limited size - so we should try to schedule threads so the total size of the cache they require is less than the size of the cache available.
+To this extent the OS can track the amount of cache size each thread uses, and charracterise them as either:
+
+- *Cache frugal*: Doesn't use a lot of cache space.
+- *Cache hungry*: Uses a lot of cache space.
+
+This will enable better scheduling of threads to lower the amount of cache misses and therefore improve performance.
+
+> [!note] OS's overhead
+> If the OS spends too much time recording the memory usage of threads, any benefit maybe wiped out by that overhead.
