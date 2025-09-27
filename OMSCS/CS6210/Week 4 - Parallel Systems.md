@@ -781,3 +781,209 @@ This will enable better scheduling of threads to lower the amount of cache misse
 
 > [!note] OS's overhead
 > If the OS spends too much time recording the memory usage of threads, any benefit maybe wiped out by that overhead.
+
+# Parallel OS case studies
+
+There are key challenges for OS's that run on large parallel systems.
+
+- Size bloat: More features requires a larger OS.
+
+- Memory latency: As the system increases in size the latency difference between the cache and going to RAM increases.
+This is compounded in the NUMA setting, where some memory may be a lot slower to access than others.
+
+- Deep memory hierarchy: As the CPU cache gets split up, between a single multi-threaded CPU and the chip with NUMA memory disjointed - managing where memory is stored becomes more complicated.
+
+- False sharing: This is where two threads are using different memory locations, but these memory locations are on the same cache line.
+This is made worse as modern processors tend to have larger cache blocks, to reduce the amount of times they go out to memory.
+
+## Principles of good parallel OS design
+
+- Cache conscious decisions: Be aware of the cache hierarchy and try to make decisions that will keep the caches hot.
+
+- Limit shared system data structures: Shared data structures will cause contention and slow down the system.
+
+- Keep memory access local: If you need to access memory across an ICN (Inter-Connect Network) this will be slow.
+
+This issue breaks down into two opposite cases:
+
+- *Multi-process workloads*: If all the threads running on different CPU's are different processes, then we are ok.
+As they are difference processes, they do not share any data structures - so no sharing has to happen between CPU's.
+
+- *Multi-thread workloads*: If all the threads running on different CPU's are the same process, then we have a problem.
+Here a page-table update may effect multiple nodes or chips within the machine which means keeping state consistent between different memory locations.
+
+### Recipe for scalable structure in parallel OS
+
+For each subsystem:
+
+- Determine needs of that service.
+
+- To ensure concurrent execution of the service minimize shared data structures. (This is hard in practice.)
+
+- Where shared data structures are required replicate/ partition system data structures leading to less locking and more concurrency.
+
+## Page fault service
+
+To see this in practice we look at how a CPU handles a page fault in a large parallel system.
+
+1. (Thread specific) CPU request a VPN,
+
+2. (Thread specific) TLB lookup results in a miss,
+
+3. (Thread specific) PT lookup in memory results in a miss,
+
+4. (System based) System locates the file on disk,
+
+5. (System based) I/O operation happens and creates a page frame in memory,
+
+6. (System based) PT update to reflect the new page frame and create VPN,
+
+7. (Processor specific) TLB update to store new VPN -> PFN mapping,
+
+8. (Processor specific) Page fault completed and CPU can continue.
+
+The system based queries are the dangerous parts of this process.
+If this has to happen in series for all the threads, this will cause a bottleneck.
+
+## Tornado's innovation: Clustered object
+
+A clustered object, is one that is replicated by the OS.
+However, to the software programmer appears to be a single object.
+This allows for it to be quickly available to everywhere that needs it.
+
+The OS service designer can choose the level of replication:
+
+- Singleton representation: Only one copy of the object exists, relies upon hardware cache consistency to replicate it across CPU's.
+
+- One per core: This means it can be available in memory for each core and rely upon hardware consistency to keep the caches correct.
+
+- One per CPU: This means it can be fresh in each CPU's cache with no reliance on hardware consistency.
+
+- One representation per group of CPU's.
+
+When you are replicating objects not using the hardware's cache consistency it is up to the OS service programmer to maintain consistency.
+This is advantageous, as your service may not require the level of consistency guaranteed by the hardware.
+This will allow for lower contention on the ICN.
+
+In the Tornado paper, they propose using a protected procedure call when updating a clustered object - this will allow the OS and its services to make decisions about how the object should be updated.
+
+The advantages of these clustered objects are:
+
+- Allows incremental optimisation of the clustered object over time.
+
+- Different instances of the same object reduce locking and contention on the ICN.
+
+- Different instances can have different implementations depending on need.
+
+### Implementation of clustered objects
+
+The implementation of the clustered object on the tornado OS uses 3 critical objects, translation table (per clustered object), miss handling table (partitioned globally) and global miss handler (singledton replicated on every CPU).
+
+**Translation table**
+
+For each clustered object there is a translation table, the processes go to the translation table with their reference to the clustered object and if it exists it can return the local copy of the clustered object to the process.
+
+**Miss handling table**
+
+If the translation table does not have a local copy of the clustered object then it looks up that object in the miss handling table.
+The miss handling table is partitioned and if this CPU has a copy of the miss handler for this clustered object it then calls this handler for the clustered object.
+This will create a new instance of the clustered object and add this to the local translation table.
+
+**Global miss handler**
+
+However, as the miss handling table is partitioned, it may be the case that this CPU does not have a copy of the miss handler for this clustered object.
+In this case the global miss handler is called, and its job is to get the correct miss handler locally for this object.
+After this is done, then the proper miss handler can be called to create the object.
+
+The advantage of this system is it allows the OS to optimise the location of the miss handlers and objects over time.
+Used well this with the clustered object can increase the concurrency of the OS for its critical services.
+
+### Non-hierarchical locking: Reference counting
+
+When editing a shared data structure such as a PCB, your intuition maybe to lock it whilst you are editing it.
+However, this is not good for concurrency.
+If the object itself has been partitioned into multiple sub-regions when editing it you only need to guarantee that it is present whilst you are editing it.
+This will allow multiple changes to difference parts of the same object.
+
+So instead of locking objects, for clustered object you instead keep a reference count.
+If the reference count is greater than zero the OS knows it can not move that data structure if it need to move a process from one node to another (similar to python).
+
+## Case study: Virtual memory
+
+For a virtual memory system we have the following levels of backing:
+
+- Virtual memory: The abstraction of memory that the process sees.
+
+- Page cache: In DRAM.
+
+- Storage subsystem: On disk
+
+The virtual memories data structures are, PCB, TLB, PT, and virtual pages on disk.
+
+The tornado system 'objectizes' this process with the hope to break apart shared objects into smaller pieces.
+Lets walk through each of these objects.
+
+- PCB: The PCB is replicated per CPU as it is mostly read only - this allows for fast access to the PCB without contention.
+
+- Region: The address space is broken down into regions, the idea being that each thread may only use on region of the address space each.
+These can be partially replicated if two threads on different CPU's are uses the same part of the address space.
+This being separated out means that the OS at run time can see the access patterns to each region and choose to break it apart if too much contention is on one region or join together if two regions are only used by threads on the same CPU.
+
+- File Cache Manager: This knows the locations of the physical pages on the backing store for the references in the regions.
+The File cache manager is partitioned globally, so each CPU has a subset of the file cache manager objects.
+
+- DRAM manager: This is the physical memory, the FCM uses the DRAM to get the physical frame number it will use to load memory into.
+This has several representations - per CPU, per chip, and globally.
+
+- Cached Object Representation: This goes to the backing store on the disk to carry out the I/O whenever there is a page fault.
+This is a true singleton which uses the hardware cache coherence.
+
+This separation into different objects allows for memory access by different threads to not block one another when they are all running within the same process.
+Also the page faulting system can run concurrently instead of serially.
+
+Seperating out the responsibilities means these objects can have different levels or replication or partitioning as it is required.
+
+## IPC in tornado
+
+The Tornado OS is structured as a micro kernel, with the clustered objects enabling higher level OS services.
+One of the critical services a microkernel needs to implement well is IPC.
+This is implemented as a protected procedure call (PPC) - which is similar to RPC (particularly LRPC).
+
+- Local PPC: Are just procedure calls with no context switching.
+
+- Remote PPC: Requires a full context switch to the kernel.
+
+## Tornado summary
+
+- Object oriented design for scalability.
+
+- Multiple implementations of OS objects for different needs.
+
+- Allows optimisation for the common cases.
+
+- No hierarchical locking, using reference counting instead.
+
+- Limited sharing of OS data structures.
+
+## Corey system ideas
+
+The Corey system focuses on allowing the application telling the OS how it should treat the shared data structures.
+
+The Corey system also uses address ranges within the address space.
+However, this relies on the application to say where different threads will be operating, so the OS can choose to place these on the same node to share memory.
+
+The Corey system allows for threads to tell the OS that some data is private too it through the shares mechanism.
+This allows the OS to know this data will not be shared and so the OS does not need to maintain consistency between this object and the other threads within the same process.
+
+Corey dedicates cores for kernel activities - this way it does not need to share core kernel data structures between multiple cores.
+
+## Cellular disco: Virtualisation on a multi-core system
+
+The design of the OS is a complicated task that is specialised to the architecture of the machine.
+Though does this mean that for each architecture we need to redesign the OS?
+Most of the OS code is device driver (3rd party) code - this is for managing the I/O subsystem.
+Do these also need to be redesigned for each new architecture?
+
+Cellular Disco shows that virtualisation via the trap+emulate strategy can be used with only 10% overhead to abstract away architecture and allow for the same device drivers to be used for different architectures.
+It does this by handling the I/O calls for the guest OS's as if it was making them itself.
+This means when the kernel traps to return the output of an I/O call it uses the handler installed in the Host OS to jump straight into Cellular disco without needing another context switch from the host OS.
