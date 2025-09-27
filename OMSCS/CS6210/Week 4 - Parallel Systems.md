@@ -10,7 +10,7 @@ tags:
 type: lecture
 week: 4
 ---
-# Week 4 - Parallel Systems
+o# Week 4 - Parallel Systems
 
 In modern computing, nearly all processors are multi-core.
 This presents an interesting problem - how to share memory between them?
