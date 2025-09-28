@@ -52,11 +52,11 @@ However, the existence of a cache creates a problem - what if two CPUs have a co
 
 In my previous lectures we covered memory consistency models in detail.
 
-[[week-15-distributed-shared-memory]]
+[[Week 15 - Distributed shared memory]]
 
 This course mainly focuses on sequential consistency.
 
-![[sequential-consistency]]
+![[Sequential consistency]]
 
 ### Cache Coherence
 
@@ -94,7 +94,7 @@ Given the scalability challenges of cache coherence protocols, one radical solut
 
 This was covered in CS6200 also:
 
-[[week-10-synchronization-constructs]]
+[[Week 10 - Synchronization Constructs]]
 
 ### Exclusive Locks
 
