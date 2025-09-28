@@ -495,7 +495,7 @@ void bar_recursive(tournament_node * B, bool is_winner){
   if (is_winner){
     while(B->loser_arrived == false); // spin
     if(B->parent != NULL){
-      bar_recursive(B->parent, is_winner(B->parent_thread_id)); // signal parent
+      bar_recursive(B->parent, B->is_winner); // signal parent
     }
     B->tournament_over = true; // signal tournament is over
   } else {
