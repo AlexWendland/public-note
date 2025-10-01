@@ -23,3 +23,13 @@ Definition 3 is used a fair bit and within this you can consider a cluster of ma
 
 > [!note] Parallel vs Distributed
 > The concerns of parallel and distributed computing can overlap, however the main difference is that in parallel computing, the nodes share memory and are tightly coupled. In distributed computing, the nodes do not share memory and are loosely coupled.
+
+## Happened before relation
+
+In distributed systems, it is useful to work out what should happen when and which events could be interleaved in different orders.
+To this extent we define a relationship on events in a system, namely a -> b means a 'happened before b'. This is defined by the following:
+
+- Process: If a and b are on the same process and a comes before b, then a -> b.
+- Message: If a is a send event and b is the corresponding receive event, then a -> b.
+- Transitivity: If a -> b and b -> c, then a -> c.
+- Concurrency: If neither a -> b or b -> c, than a and b are concurrent (a || b).
