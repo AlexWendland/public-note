@@ -98,8 +98,9 @@ Then for these process clock times to be useful we need to bound their drift in 
 The faster you are communicating the more drift within your clocks matter.
 
 Let $\mu$ be a lower bound on IPC.
-To avoid anomalies if $e^i_x \mapsto e^j_y$ then
+Then suppose $P_i$ sends a message to $P_j$ at time $t$.
+To avoid anomalies we would want that:
 
-1. $c_i(t + \mu) - c_j(t) > 0$
+1. $c_i(t + \mu) - c_j(t) > 0$ (Clock time on P_i when the message has arrived is after the clock time on P_j when the message was sent.)
 
 2. $c_i(t + \mu) - c_i(t) > \mu(1-\kappa)$ (this comes from PC1).
