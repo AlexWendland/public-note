@@ -68,4 +68,38 @@ This is correct with the following assumptions:
 
 As described this lock takes $3(n-1)$ messages to obtain the lock, however there are efficiencies that can be made to make this alot better.
 
-### Real world time
+## Real world time
+
+Given the function $c$ is called a clock - in the real world we use a clock.
+We may assume clocks are all the same but in reality this is not commonly the case - two different machines may have different times.
+To handle this we try to make assumptions about 'how' off these clocks are from the consensus.
+
+Now instead of having a global clock $c$ we have a per-process clock $c_i: \mathbb{R} \rightarrow \mathbb{R}$ for each process $P_i$.
+
+### Lamports Physical Clock
+
+We say $e^i_x \mapsto e^j_y$ if $c_i(e^i_x) < c_j(e^j_y)$.
+For the system of clocks to be 'good' we require the following conditions:
+
+1. PC1: Bound on individual clock difference
+$$
+\left ( \frac{dc_i(t)}{dt} - 1 \right ) < \kappa, \forall i, (\kappa << 1).
+$$
+
+2. PC2: Bound on mutual drift
+$$
+c_i(t) - c_j(t) < \epsilon, \forall i,j.
+$$
+
+These rules in essence say that no clock is too far off real time and that no two clocks are that far away from eachother.
+This means they are all fairly consistent.
+
+Then for these process clock times to be useful we need to bound their drift in relation to interprocess communication time.
+The faster you are communicating the more drift within your clocks matter.
+
+Let $\mu$ be a lower bound on IPC.
+To avoid anomalies if $e^i_x \mapsto e^j_y$ then
+
+1. $c_i(t + \mu) - c_j(t) > 0$
+
+2. $c_i(t + \mu) - c_i(t) > \mu(1-\kappa)$ (this comes from PC1).
