@@ -48,3 +48,24 @@ We can derive a total order $\Rightarrow$ from a clock $c: {e^i_j}_{1 \leq i \le
 The we define $\Rightarrow$ by the following:
 - If $c(e^a_b) < c(e^x_y)$ then $e^a_b \Rightarrow e^x_y$.
 - If $c(e^a_b) = c(e^x_y)$ and $P_a < P_x$ then $e^a_b \Rightarrow e^x_y$.
+
+### Distributed M.E. Lock
+
+Suppose you have a set of processes $P_i$ that want to establish a distributed mutual exclusion lock.
+We can use the total ordering before to do this, each process messages all other processes with the clock time of when they want the clock with the PID.
+Upon receiving a message from another process, each process acks the message.
+As each process builds a queue of requests for the lock with a time associated to it, it can work out if it can hold the lock. Which can happen in the following situation:
+
+- It is at the top of the queue.
+- Each other process has acked its message or sent a message of its own.
+
+Once it knows it can hold the lock, it enters the critical section and when done sends each other process an unlock message.
+This is correct with the following assumptions:
+
+- Messages arrive in order.
+- No message is lost.
+- The Queue is totally ordered using the clock time with the PID.
+
+As described this lock takes $3(n-1)$ messages to obtain the lock, however there are efficiencies that can be made to make this alot better.
+
+### Real world time
