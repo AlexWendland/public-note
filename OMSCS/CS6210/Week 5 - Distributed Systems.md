@@ -10,7 +10,6 @@ tags:
 type: lecture
 week: 5
 ---
-
 # Week 5 - Distributed Systems
 
 The definition of what a distributed system is varies but in this course we use the following 3 properties:
