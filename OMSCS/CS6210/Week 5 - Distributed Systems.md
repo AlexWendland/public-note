@@ -32,3 +32,19 @@ To this extent we define a relationship on events in a system, namely a -> b mea
 - Message: If a is a send event and b is the corresponding receive event, then a -> b.
 - Transitivity: If a -> b and b -> c, then a -> c.
 - Concurrency: If neither a -> b or b -> c, than a and b are concurrent (a || b).
+
+## Lamports clock
+
+Suppose we have processes $P_i$ for $1 \leq i \leq n$ and each process has events $e^i_j$ for $j \in \mathbb{N}$, where $e^i_j -> e^i_{j+1}$.
+
+We then define a clock, $c: {e^i_j}_{1 \leq i \leq n, j \in \mathbb{N}} \rightarrow \mathbb{N}$ such that $e^a_b -> e^x_y \Rightarrow c(e^a_b) < c(e^x_y)$.
+
+> [!note] Concurrent events
+> Whilst $e^a_b -> e^x_y \Rightarrow c(e^a_b) < c(e^x_y)$ the opposite implication is NOT true, two concurrent events could be ordered arbitrarily.
+
+### Total order
+
+We can derive a total order $\Rightarrow$ from a clock $c: {e^i_j}_{1 \leq i \leq n, j \in \mathbb{N}} \rightarrow \mathbb{N}$ by ordering the processes $P_i$ (lets assume we do this by saying $P_i < P_j \Rightleftarrow i < j$.
+The we define $\Rightarrow$ by the following:
+- If $c(e^a_b) < c(e^x_y)$ then $e^a_b \Rightarrow e^x_y$.
+- If $c(e^a_b) = c(e^x_y)$ and $P_a < P_x$ then $e^a_b \Rightarrow e^x_y$.
