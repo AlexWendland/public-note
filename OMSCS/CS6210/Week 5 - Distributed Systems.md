@@ -104,3 +104,11 @@ To avoid anomalies we would want that:
 1. $c_i(t + \mu) - c_j(t) > 0$ (Clock time on P_i when the message has arrived is after the clock time on P_j when the message was sent.)
 
 2. $c_i(t + \mu) - c_i(t) > \mu(1-\kappa)$ (this comes from PC1).
+
+Combining these two we get:
+
+$$
+\mu \geq \frac{\epsilon}{1 - \kappa}
+$$
+
+
