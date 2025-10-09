@@ -111,4 +111,9 @@ $$
 \mu \geq \frac{\epsilon}{1 - \kappa}
 $$
 
+## Distributed systems
 
+Here it is important to differntiate between two terms:
+
+- Latency: The time it takes for a message to get from one process to another.
+- Throughput: The number of events per unit time (Bandwidth is a measure of throughput).
