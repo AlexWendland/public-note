@@ -113,7 +113,194 @@ $$
 
 ## Distributed systems
 
-Here it is important to differntiate between two terms:
+Here it is important to differentiate between two terms:
 
 - Latency: The time it takes for a message to get from one process to another.
 - Throughput: The number of events per unit time (Bandwidth is a measure of throughput).
+
+### RPC latency
+
+RCP has many repeated steps that cause latency such as:
+
+- Copying data
+
+- Control transfer
+
+- Protocol processing
+
+We look at ways to reduce these.
+
+#### Data copying
+
+There are normally 3 copies:
+
+- Client stubs copy arguments into a message.
+
+- Kernel copies message into kernel memory.
+
+- Server copies message from the kernel.
+
+The last one has to happen as the message needs to be passed to the server however we could skip the first one.
+There are two ways this could happen:
+
+1. The client stubs are loaded into the kernel and it marshals directly into the kernel memory.
+
+2. The client stubs stay in the user space but copy into a shared descriptor between the user and kernel space.
+
+The first option is unsafe for the operating system - however the second offers a real option to cut down on the amount of data copying.
+
+#### Control transfer
+
+There are four control transfers:
+
+- Client wait: This passes control from the client thread to another thread on the client to do work whilst we wait for the RPC process.
+
+- Server switch: This switches to the server thread to handle the RPC call.
+
+- Server wait: This passes control from the RPC server thread back to another server process.
+
+- Client switch: This switches back to the client thread to handle the response.
+
+In reality, only the switch waits are on the critical path.
+With the wait switches being able to be delayed until the network transfer is complete.
+However, in super critical RPC calls we can reduce this to one control transfer by spinning on the client thread meaning we do not need the client switch back at the end.
+Though this does waste CPU cycles on the client machine.
+
+#### Protocol processing
+
+When choosing the protocol to use RPC over - normally you have a realiability vs performance payoff.
+However, if you are only using reliable LAN networks - you don't need to prioritise reliability as much.
+Therefore you can drop a lot of reliablilty measures that cause delays such as:
+
+- No low level acks: We expect all packages to get through reducing the number of messages sent.
+
+- Remove hardware checksums: We assume no corruption on the LAN.
+
+- No client side buffering: Instead of buffering we can get the client to resend.
+
+- Overlap server side buffering with result transmission: Whilst running the whole RPC call again might be costly we can first send the message before buffering it for re-transmission.
+This removes buffering from the critical path.
+
+## Active networks
+
+We talk about active networks in the context of the internet.
+We can say that traditional internet routing is passive, it looks at the message identifies the destination and routes it accordingly.
+In comparison, an active network is one where the routers can be programmed or configured to route traffic based on the needs of the application.
+
+As a motivating example, think of needing to send a message to n individuals on the other side of the internet.
+In passive networks you need to send n message - each addressed to the different users.
+In an active network you could send one message to a node close to the recipients then branch the message off - reducing the network overhead.
+
+Due to the nature of the internet we can not guarantee that all nodes in our network are active.
+Therefore normally we use passive nodes to route our messages.
+However, we can seek to use active nodes on the edge of the network as we are using it.
+
+### Active Node Transfer System (ANTS)
+
+The ANTS tool kit is an application level process for building smarter routing.
+This comes with a small well defined API of what routers can do.
+The along with your IP-header and payload there is an additional ANTS header.
+
+```
+ANTS Packet
+
+           <--- ANTS Header --->
++---------+-------+----+----+---+-------+
+|IP-header|Version|Type|Prev|hdr|Payload|
++---------+-------+----+----+---+-------+
+           <------ ANTS Capsual ------->
+```
+
+This allows for normal routing of the packet using the IP-header.
+However, the ANTS header allows for more functionality, which there are two key fields:
+
+- Type: This is the hash of the code to be ran on the active node.
+
+- Prev: This is the previous node that ran this code.
+
+Instead of the packet containing the code, ANTS packets rely on the routers speaking to other nodes in the network to download the code.
+It will reach out to the node defined in the Prev (previous) field who ran the code last.
+Then it will download the code from them, and check it is valid using the type field.
+This requires more network activity per packet - however we really would only use this for 'network flows' i.e. lots of packets all following the same path.
+Then once the router has the code for the first packet it can simply run the same code for all subsequent packets.
+
+> [!note] What if Prev doesn't have the code?
+> In this case we just drop the packet - this happens on the internet a lot already.
+> Therefore, the sender needs to take precautions on this happening - similar to TCP.
+
+ANTS defines a basic API to use on each router:
+
+- getAddress, getChannel, time: Get information about the router.
+
+- routeForNode, deliverToApp: Send a capsual somewhere else.
+
+- put, get, remove: Manage local storage on the router.
+
+Most importantly, ANTS programmes can manipulate data on what is called the 'soft store' - data the router allows the packet to use.
+This is where the code for the application is stored itself.
+
+The important thing for all these applications is that they are lightweight and quick to execute.
+The minimal API supports that whilst still allowing for useful applications to be built.
+
+### Applications
+
+Below is a list of applications for ANTS:
+
+- Protocol independent multi-cast: As described before, we can use active nodes to branch messages to multiple recipients.
+
+- Reliable multi-cast: We can build reliability into the multi-cast application by having nodes ack messages and re-send lost messages.
+
+- Congestion notifications: We can have nodes monitor congestion and send messages back to the sender to slow down sending rates.
+
+- Private IP (PIP): We can have nodes encrypt data on the fly to allow for private communication over public networks.
+
+- Anycast routing: We can have nodes route messages to the 'best' node in a set of nodes - for example the least loaded web server.
+
+Though these are all network applications, which is why ANTS brought about in the 1990's didn't take off - as it didn't have a real problem to solve.
+However, in modern computing with data centers and cloud computing - active networks could have a real use case.
+This has evolved into the idea of programmable networks and software defined networking (SDN).
+
+### Payoffs
+
+Pro:
+
+- flexibility from App perspective
+
+Cons:
+
+- Protection threat: You are running anyones code on your router - this is a big security risk!
+You also need to ensure isolation for different network flows.
+
+  - ANTS runtime safety (this uses Java sandboxing to isolate code)
+
+  - Code spoofing (uses the type to ensure no tampering)
+
+  - Soft state integrity (very limited API means soft state can't be too complex)
+
+- Resource management threats: You need to ensure that no one application can hog all the resources on the router.
+
+  - At each node (restricted API ensures no complex resource usage)
+
+  - Flooding the network (the internet is already susceptible to this)
+
+### Feasibility
+
+There are some major blockers to making ANTS and active networks more generally feasible.
+
+1. Router makers loath to opening up the network.
+
+  a. The internet is ruled by mass adoption, so router makers don't want to rock the boat and lose market share.
+
+  b. Only feasible on the edge, not core routers.
+
+2. Software routing cannot match hardware routing speeds.
+
+  a. Hardware is VERY fast anything that needs to use software is going to run slower.
+
+  b. Only feasible on the edges, the core needs to be fast to manage with the vast amounts of data.
+
+3. Social + Psychological reasons.
+
+  a. People don't like the idea of letting anyone run code on their router - it is a big risk.
+
+
