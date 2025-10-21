@@ -4,7 +4,7 @@ checked: false
 course: "[[CS6210 Advanced Operating Systems]]"
 created: 2025-10-01
 last_edited: 2025-10-01
-draft: true
+draft: false
 tags:
   - OMSCS
 type: lecture
@@ -303,4 +303,81 @@ There are some major blockers to making ANTS and active networks more generally 
 
   a. People don't like the idea of letting anyone run code on their router - it is a big risk.
 
+## Component based OS services
+
+In this subsection we explore the approach to build OS services as described in:
+
+Building reliable, high-performance communication systems from components
+
+The core idea is to take the approach of Micro-kernels and apply it to building your OS services as well.
+This is define small building blocks and compose these to make our services.
+However, as with micro-kernels component driven software may have overheads, such as copying memory, conforming to interfaces, and loss of locality.
+This paper explores this and methods to get around it.
+
+### Development process
+
+In the paper they suggestion a 3 phase process to developing these components and services:
+
+1. Specification: Define the requirements of the service.
+
+  a. This is done using IOA (Input/Output Automata) which using c-like syntax and coposition operators.
+
+2. Code: Turn the requirements and specification into code that a computer can run.
+
+  a. This is done in OCAML - a functional programming language.
+It is object oriented but still as efficient as C.
+It also has good integration with the IOA specifications.
+
+3. Optimization: To remove the inefficiency layering our stack into different components has - we try to remove as much unneeded overhead as possible.
+
+  a. This is done using a tool suit called Nuprl - which optimizes OCAML code using formal methods which are proven to be correct.
+This guarantees the input and output code are equivalent.
+
+### Getting an implementation
+
+The first two steps can be iteratively built up over time.
+You first start by writing a Abstract Behavioral Specification (ABS) - which is a high level specification of the service.
+This will be written in IOA which you can use to prove properties about this service.
+
+Then you can refine the ABS into a more Concrete Behavioural specification (CBS) - which is closer to the code you will write.
+From this you can then convert the CBS into a implementation written in OCAML.
+This issue with the implementation is it can be derived from the ABS but you can not prove it is equivalent.
+Therefore, you don't know for sure it does have the properties you desire.
+
+When building this implementation we want to focus on build an ensemble of components that can be composed together to make our service.
+These components should have a well defined interface above and below so they fit together nicely.
+
+### Optimization
+
+The choice of using the layering ensemble method above can lead to inefficiencies mentioned above.
+However, this allows for more flexibility whilst developing the application.
+Though as a OS designer we need the system to be performant as it will be some of the most run code on a machine.
+
+There are several sources of inefficiency here:
+
+- Ocaml has implicit garbage collection, however this is costly and explicit garbage collection is much faster.
+
+- As we move between interfaces we will marshal/unmarshal arguments to move between interfaces.
+
+- When doing optimisations we want to focus on the common case and this can be 'fast tracked' at the expense of the other paths through the system.
+
+Nuprl is a tool box which takes in unoptimized code and returned optimized code which is provably equivalent to the input.
+There are tools which allow the conversion between Ocaml and the Nuprl coding language.
+The optimization is part automated and part manual.
+This is a 2 step process:
+
+1. Static Optimization.
+
+  a. This is where a Ocaml and Nuprl expert look at the code together and agree manual optimisations that can be done together.
+This is done layer by layer and requires checking that these optimizations are correct and useful for the code.
+For example, inlining functions in functional languages can make sizable performance improvements but need to be agreed that it is useful.
+
+  b. These optimizations are normally done within each component - not between the components.
+
+2. Dynamic Optimization.
+
+  a. This is driven by the Nuprl framework.
+This optimizes between layers, that collapses layers.
+This is driven by Common Case Predicates (CCP).
+This are checks that can be done against the input which if pass define the common case and can bypass layers to speed up their handling.
 
