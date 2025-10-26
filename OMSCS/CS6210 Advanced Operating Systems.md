@@ -33,3 +33,4 @@ By tracing the key ideas of today's most popular systems to their origins in res
 - [Central](https://www.omscentral.com/courses/advanced-operating-systems/reviews)
 - [OMSCS page](https://omscs.gatech.edu/cs-6210-advanced-operating-systems)
 - [[Week 6 - Distributed objects and middle ware]]
+- [[Week 7 - Distributed subsystems]]
