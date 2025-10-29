@@ -316,3 +316,133 @@ Therefore the old adage is still true for DSM - "Shared memory systems work best
 Ultimately, DSM is really a dead concept but structured DSM did take off as a way to reduce the complexity of writing distributed programs.
 
 ## Distributed File Systems (DFS)
+
+There are lots of different structures for network file systems (NFS).
+Though if it uses a single central server for controlling read/writes and metadata management that will quickly become the bottleneck.
+Therefore, distributing the file system across multiple nodes is a good way to scale out the file system.
+
+The goal of a DFS then is to distribute the responsibilities of a NFS across multiple nodes.
+This increases I/O rate of the cluster and cache memory foot print.
+Though there are the challenges of maintaining consistency across multiple nodes and handling failures.
+
+### Redundant Array of Inexpensive Disks (RAID) storage
+
+RAID storage uses multiple disks to store data.
+It will chop a file up into different chunks and store each chunk on a different disk.
+Then it will store an error correcting code (ECC) for that file on another disk.
+The ECC gives some level of recovery from failures.
+Putting across multiple disks allows for higher I/O rates as multiple disks can be read/written to in parallel.
+
+![[raid.pnd]]
+
+The draw backs of RAID are the cost of maintaining more disks.
+The other key issue is small files - if you cut a small file into even smaller chunks then reading it off all the different disks is slower than just having saved the file on one disk.
+
+### Log structured file system (LSFS)
+
+In a LSFS, we write all the changes to files instead of the files themselves.
+This means we can batch lots of changes all together into one log.
+We then can reconstruct files by reading the log.
+
+![[lsfs.png]]
+
+This is useful to do for multiple reasons:
+
+- All reads and writes are sequential - which is fast on HDDs.
+
+- All writes can be optimally sized to get around having to write small changes to the disk.
+
+Functionally this works by keeping the current log in memory and saving the cache to disk after a given period or once the file is maxed out.
+Over time, we will find our old logs have been overwritten by newer changes - therefore we need to do garbage collection intermittently to keep logs on the disk fresh.
+
+A downside to this is that we need to read the whole log to reconstruct any file - which can be slow.
+Normally, we will cache files we have done a full read file so subsequent reads are fast.
+
+>[!note] Journaling file systems
+> A journaling file system is similar to LSFS but it also keeps the data files, and applies the journal (which are the logs) intermittently.
+
+### Software RAID
+
+This combines the ideas of RAID and LSFS.
+
+![[software_raid.png]]
+
+This was first implemented in the Zebra file system.
+We will run a NFS but safe files to a distributed log.
+When we need to save the log we use different nodes on a LAN network as the different hardware disks in a RAID system.
+
+### XFS
+
+Next we will look at XFS - which is a distributed NFS that uses the ideas from before and others:
+
+- Log based striping (software RAID),
+
+- Cooperative caching,
+
+- Dynamic management of data + metadata,
+
+- subsetting storage servers, and
+
+- distributed log cleaning.
+
+We will go through the other ideas next.
+
+### Dynamic management
+
+In traditional NFS, servers have a lot of things cached in memory to speed up writes:
+
+- File metadata,
+
+- File caches, and
+
+- Client cache directory (how each client is handling the files - these are considered distinct from one another).
+
+This causes an issue if one server holds 'hot files' as there will be a lot of memory pressure on this server.
+In comparison you may have another server, which is not being accessed at all - wasting resources.
+
+The issue above is that if a server owns the file it also has the responsibility to also hold the metadata and client cache directory.
+In XFS, they can be handled by separate nodes.
+So if a server has a 'hot file' then it can use all its memory on caching the file content and another server can handle the metadata management.
+
+Another trick XFS implements is cooperative client caching - if a file is being used by 2 or more clients on the same peer network then they can utilise each others file cache instead of needing to go to the server at all.
+
+### Subsetting storage servers
+
+Instead of the logs being stored on the servers, clients build their own log locally.
+When the log is full or after a given period of time, it writes this out to the servers.
+
+![[stripe_groups.png]]
+
+However, instead of writing this log across all servers each client is given a subset of the servers (its stripe group).
+Then the log is written to the servers associated to it.
+
+This is good as it reduces contention on servers as not all clients are writing to the same servers.
+Also you increase availability as if some disks fail you don't effect all your clients.
+We will talk about later how we can also use this to increase the efficiency of log cleaning as we only need to handle a subset of servers when carrying out a clean.
+
+### Cooperative caching
+
+XFS instead of treating all clients as individuals instead allows them to know about one another and so can share information.
+It makes two assumptions to do this:
+
+- Uses single writer multiple reader (SWMR) protocol for consistency, and
+
+- It doesn't consider files as a whole but instead breaks files into blocks.
+
+Then a server maintaining the metadata for a file block stores all the clients who are reading and if there is a file writer for that block.
+
+When a client wants to write to a block the following happens:
+
+- The server tracking the metadata of the block invalidates everyones cache.
+
+- It then grants the writer a token saying it is allowed to write to the block, and gives a copy of the latest version of the block.
+
+- It then tells all readers the location of the client to get the latest state of the block from the writers cache.
+
+The server can invalidate the token of the writer if it needs to.
+What happens then is the old writer client hands its changes back to the stripe group for striping.
+Then the server can establish a new cache for that block and give it out to anyone that needs it.
+
+### Log cleaning
+
+
