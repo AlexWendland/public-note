@@ -445,4 +445,67 @@ Then the server can establish a new cache for that block and give it out to anyo
 
 ### Log cleaning
 
+Log cleaning is the process of garbage collecting the logs as described in the LSFS section.
+In XFS, this happens in a distributed manner - concurrently among the different stripe groups.
+Each stripe group has a leader who is responsible for garbage collection in that group.
+The garbage collection also happens on the client side rather than the server side.
 
+TODO: Read the paper to understand the details on this.
+
+### XFS data structures
+
+There are key data structures in XFS:
+
+- Manager map: This maps the file name to the manager responsible for that file.
+This is a replicated hash table all servers and clients keep a copy of.
+
+The below structures are all kept by the manager node:
+
+- File directory: This maps the file name to the i-node number for that file.
+
+- i-map: This maps the i-node number to the address that the i-node is stored on.
+
+- stripe group map: Maps from address to the storage servers that hold that data.
+
+These then can be used to find the data that relates to this file in the following way.
+
+- (Client) + (file name, offset) -> (server node) uses the (manager map) to get the (manager node).
+
+- (Client) + (file name, offset) -> (manager node) uses the (file directory) to get the (i-node number).
+
+- (Client) + (i-node number) -> (manager node) uses the (i-map) to get the (i-node address).
+
+- (Client) + (i-node address) -> (manager node) uses the (stripe group map) to get the (i-node storage server).
+
+- (Client) + (i-node address, offset) -> (i-node storage server) looks up the i-node containing the (data addresses).
+
+- (Client) + (data address) -> (manager node) uses (stripe group map) to get (data storage server).
+
+- (Client) + (data address) -> (data storage server) to get the (data).
+
+![[xfs_lookup.png]]
+
+This is a very long lookup - however with caching this can be sped up a lot.
+
+#### Already seen block
+
+If a client wants to access a filename and offset it has already looked at, this will be stored in a directory locally.
+Therefore, it can go directly to a local memory cache of that fine.
+In this path there is no call outs to XFS at all!
+
+#### No local cache (with peer)
+
+If a client has been reading a file before, then it will look in the directory for the offset it wants but find a missing cache for this offset.
+(This can happen for offsets it has read before if another client took the write token for this block.)
+The client can use the local copy of the manager map to find the manager node responsible for the file - so reaches out to the manager.
+If the file block is being read/written to by a peer on the network, then the manager informs the client of this location and leave them to get the cache from their peer.
+It is on the client to then talk to the peer for the latest copy of this block.
+
+This path takes 3 network hops to get the data.
+
+#### The long way
+
+This is the path described above - which uses 5 network hops to get the data.
+
+However, this can be cut shorter if the manager has looked up the i-node before and it may have cached the address of the data block.
+In this case, we cut it down to 3 network hops.
