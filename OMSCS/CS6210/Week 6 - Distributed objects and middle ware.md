@@ -57,7 +57,7 @@ The crucial difference emerges in **distributed systems**:
 Within Spring OS, they go for a Microkernel approach but the idea was to make a Networked OS.
 Therefore they wanted a clear separation between the kernel and other services - as these services could be running on a different machine.
 
-![[Spring OS.png]]
+![[spring_os.png]]
 
 For this to work they needed to encapsulate state and have a strong interface between the services.
 They reduce the size of the kernel to something they call the 'nucleus' and a vm manager.
@@ -68,8 +68,6 @@ One thing to highlight though is the network proxy will become increasingly impo
 
 This is the core part of the Spring OS - it offers two services, IPC and threads.
 However, it does this in a very decoupled way.
-
-![[Spring OS Nucleus.png]]
 
 In Spring OS, there is a concept of a domain that acts as an address space.
 Domains contact each other through the Nucleus using 'Doors' - these are a capability-based permission to access a part of the interface of another domain.
