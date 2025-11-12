@@ -238,7 +238,7 @@ What are the next steps to offer this as a service over your network?
 
 1. The server engineer needs to write an API to run on the server that gives outside users access to your inside object.
 
-2. The client then needs to write an code to connect to that API.
+2. The client then needs to write some code to connect to that API.
 
 3. The client then needs to write a local representation of this object which uses the API to connect to the remote object.
 
