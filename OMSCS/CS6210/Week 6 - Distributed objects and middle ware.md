@@ -437,9 +437,9 @@ Cons:
 
 - Adds an additional layer of indirection
 
-- Communication between session façade and entity beans can become a bottleneck
+- Communication between session facade and entity beans can become a bottleneck
 
-- Requires careful design to determine proper granularity of façade methods
+- Requires careful design to determine proper granularity of facade methods
 
 **Note:** The paper also evaluates a variant using **EJB 2.0 local interfaces**, where entity beans have only local interfaces (not remote). This allows calls between session facade beans and entity beans to bypass the RMI communication layers when both are in the same JVM, reducing overhead.
 
@@ -454,19 +454,19 @@ The paper evaluated all five EJB implementations using an auction site benchmark
 | Servlets-only (reference) | ~12,000 | 18% better than session beans |
 | **Session beans (Design 1)** | ~10,150 | **Baseline (best EJB)** |
 | Entity beans CMP/BMP (Design 2) | ~1,850 | **5.5× slower** |
-| Session façade - unoptimized (Design 3) | ~690 | **14.7× slower** |
-| Session façade - optimized | ~3,970 | 2.6× slower |
+| Session facade - unoptimized (Design 3) | ~690 | **14.7× slower** |
+| Session facade - optimized | ~3,970 | 2.6× slower |
 | EJB 2.0 local interfaces | ~4,600 | 2.2× slower |
 
 **Key Result:** Performance correlates directly with **number of network round-trips**.
 Session beans make one RMI call per operation (servlet → session bean → database).
 Entity beans require two (servlet → entity bean, entity bean → database).
-Session façade without optimization requires three (servlet → façade → entity bean → database), making it the worst performer.
+Session facade without optimization requires three (servlet → façade → entity bean → database), making it the worst performer.
 The poor performance of entity beans is NOT due to container-managed persistence (CMP and BMP performed identically) but rather the fine-grained network access pattern that exposes row-level database access over RMI.
 
-**Optimization Impact:** EJB 2.0 local interfaces bypass RMI for intra-JVM calls (façade ↔ entity beans), improving session façade performance 6.7× over unoptimized.
+**Optimization Impact:** EJB 2.0 local interfaces bypass RMI for intra-JVM calls (façade <-> entity beans), improving session façade performance 6.7× over unoptimized.
 Container design matters for entity beans (pre-compiled containers 3× faster than reflection-based) but has minimal impact on session beans where communication dominates 40-60% of execution time.
 The programmer's bean code represents <2% of total execution time—most time is spent in middleware (RMI, container, database).
 
 **Recommendation:** Use session beans for best performance.
-If using entity beans or session façade, you must use EJB 2.0 local interfaces or accept significant performance penalties.
+If using entity beans or session facade, you must use EJB 2.0 local interfaces or accept significant performance penalties.
