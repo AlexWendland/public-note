@@ -264,7 +264,7 @@ RMI is implemented similarly to subcontracts in Spring OS.
 Below we have a diagram which looks very similar to the Spring OS one.
 Instead of the subcontracts we instead use the Remote Reference Layer (RRL) which will handle getting the requests to the correct server.
 
-![[java_rmi_rll.png]]
+![[java_rmi_rrl.png]]
 
 The connection management between different servers is handled by the RMI transport layer.
 
