@@ -368,7 +368,7 @@ This combines the ideas of RAID and LSFS.
 ![[software_raid.png]]
 
 This was first implemented in the Zebra file system.
-We will run a NFS but safe files to a distributed log.
+We will run a NFS but save files to a distributed log.
 When we need to save the log we use different nodes on a LAN network as the different hardware disks in a RAID system.
 
 ### XFS
