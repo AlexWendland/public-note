@@ -168,9 +168,9 @@ Though this does waste CPU cycles on the client machine.
 
 #### Protocol processing
 
-When choosing the protocol to use RPC over - normally you have a realiability vs performance payoff.
+When choosing the protocol to use RPC over - normally you have a reliability vs performance payoff.
 However, if you are only using reliable LAN networks - you don't need to prioritise reliability as much.
-Therefore you can drop a lot of reliablilty measures that cause delays such as:
+Therefore you can drop a lot of reliability measures that cause delays such as:
 
 - No low level acks: We expect all packages to get through reducing the number of messages sent.
 
@@ -320,7 +320,7 @@ In the paper they suggestion a 3 phase process to developing these components an
 
 1. Specification: Define the requirements of the service.
 
-  a. This is done using IOA (Input/Output Automata) which using c-like syntax and coposition operators.
+  a. This is done using IOA (Input/Output Automata) which using c-like syntax and composition operators.
 
 2. Code: Turn the requirements and specification into code that a computer can run.
 
