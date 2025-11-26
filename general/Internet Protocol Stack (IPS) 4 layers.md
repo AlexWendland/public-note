@@ -16,5 +16,5 @@ type: definition
 >4. Network access Layer
 >
 >It is based of the [[Open Systems interconnection (OSI) model|OSI model]] and compares as follows.
->![[model-comparison.png]]
+>![Model Comparison](../images/model-comparison.png)
 

@@ -15,7 +15,7 @@ type: definition
 > - destination [[Port|port]],
 > - length of the header, and 
 > - [[Checksum|checksum]] of the data.
-> ![[udp-header.png]]
+> ![Udp Header](../images/udp-header.png)
 > This tends to be used in applications that are latency sensitive or have small number of messages to send.
 
 

@@ -79,7 +79,7 @@ During a processes time it goes through multiple different stages.
 - Running: It will have been [[Context switch (CPU)|context switched]] onto and the [[Process control block (PCB)|PCB]] loaded into the [[CPU register]].
 - Terminated: Once a process has exited or error-ed it moves state to terminated to be cleaned up. 
 
-![[process_life_cycle.png]]
+![Process Life Cycle](../../images/process_life_cycle.png)
 
 ### Creation
 
@@ -103,7 +103,7 @@ There are two important decisions that you must take when deciding on the schedu
 
 When a process is stopped by an [[Input output (IO)|IO]] operation this is then handled by the [[Device driver|device driver]] associated with that [[Input output (IO)|IO]] task. The [[Process|process]] will enter the waiting state until the [[Device driver|device driver]] interrupts the [[Central processing unit (CPU)|CPU]] to let it know the operation has been completed and the [[Process|process]] can move back to the ready state. Though there are other ways this waiting state can end - for example a time out.
 
-![[IO_process.png]]
+![Io Process](../../images/IO_process.png)
 
 ## Inter-process communication
 

@@ -18,7 +18,7 @@ week: 6
 
 ## Choosing a threading model
 
-![[threading_comparison.png]]
+![Threading Comparison](../../images/threading_comparison.png)
 
 When choosing a model for threading it is important to pick the metric you care about before deciding on implementation. In the example above the server would prefer the pipeline as it is cheaper in terms of CPU time whereas for clients they would prefer the boss-worker model as it reduced average order time completion.
 
@@ -44,13 +44,13 @@ To evaluate impacts of changes on our metrics we build a test bed to see the imp
 - Toy experiments with mocked payload.
 - Simulations.
 
-![[are_threads_useful.png]]
+![Are Threads Useful](../../images/are_threads_useful.png)
 
 ## Simple web server comparison
 
 In the rest of this lecture we are comparing different implementations for a web-server to see the pros and cons of each.
 
-![[simple_web_server.png]]
+![Simple Web Server](../../images/simple_web_server.png)
 
 The steps within a file server have different needs - some may be CPU bound such as parsing headers, others may be i/O bound like reading a file. 
 
@@ -73,7 +73,7 @@ We implement this similarly to the multi-process approach. With one thread handl
 
 In this model we will use an event-bus to determine what our machine needs to do. This will then switch to the appropriate action associated to that message. Operations will be non-blocking for I/O events. This will be running on a single process with a single thread.
 
-![[event_driven_model.png]]
+![Event Driven Model](../../images/event_driven_model.png)
 
 This can be spun out to support multiple CPU's but it adds complexity to ensure each CPU only gets the correct tasks. However, for this analysis we will not consider this.
 
@@ -85,11 +85,11 @@ This model has some payoffs also:
 
 #### Async I/O operations
 
-![[async_io_operations.png]]
+![Async Io Operations](../../images/async_io_operations.png)
 
 The main drawback of asyncronous I/O operations is the need to poll open file descriptors for responses. To get around this we can use helper-functions that run on a thread that will handle the blocking I/O operations and put an event on the event dispatcher after they have completed.
 
-![[helper_functions.png]]
+![Helper Functions](../../images/helper_functions.png)
 
 Note: In the paper it suggestions using processes for this - however as discussed before it is faster to use threads.
 
@@ -103,13 +103,13 @@ This has the following payoffs:
 
 The flash web-server uses the helpers as laid out above but makes some additional optimizations. 
 
-![[flash_web_server_optimisations.png]]
+![Flash Web Server Optimisations](../../images/flash_web_server_optimisations.png)
 
 ### Apache web server
 
 The Apache webserver uses a mix of the boss worker pattern and a pipeline model with modules that can be plugged in.
 
-![[apache_web_server.png]]
+![Apache Web Server](../../images/apache_web_server.png)
 
 ### Comparison
 
@@ -143,25 +143,25 @@ They evaluated these metrics on file size:
 
 The best case analysis was lots of connections for the same page. They varied the page size and looked at the performance of different servers.
 
-![[comparison_best_case.png]]
+![Comparison Best Case](../../images/comparison_best_case.png)
 
 #### Trace small files
 
 The small file trace (Owlnet) followed a similar pattern to the best case analysis.
 
-![[comparison_small_files.png]]
+![Comparison Small Files](../../images/comparison_small_files.png)
 
 #### Trace large files
 
 For large files SPED was the worst for the need to do I/O operations which mean time spent polling for non-blocking I/O operations.
 
-![[flash_large_file_trace.png]]
+![Flash Large File Trace](../../images/flash_large_file_trace.png)
 
 #### Optimisations
 
 To understand why Apache performed so poorly, it is useful to see the impact of the optimizations the paper suggests. 
 
-![[comparison_optimisations.png]]
+![Comparison Optimisations](../../images/comparison_optimisations.png)
 
 #### Summary
 

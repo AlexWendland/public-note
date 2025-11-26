@@ -38,7 +38,7 @@ Note that [[Linear regression|linear regression]] is [[Polynomial regression|pol
 
 Below is an example of [[Polynomial regression|polynomial regression]] done on different degree polynomials.
 
-![[polynomial regression example.png]]
+![Polynomial Regression Example](../../images/polynomial regression example.png)
 
 As we increase the degree the fitting polynomial, the fit to the points we are training on gets better. However, at a point the utility of the curve outside of these points gets less. 
 
@@ -48,7 +48,7 @@ This is easy to see by eye but how can we computationally infer this?
 
 ![[Cross validation]]
 
-![[cross validation example.png]]
+![Cross Validation Example](../../images/cross validation example.png)
 
 When using cross validation to assess the accuracy of our fit in the example before, you can see it agrees with our intuition. Whilst the high order approximations are a closer fit for the [[Training data|training data]], they are a worse fit for the [[Testing data|test data]]. Therefore we could use [[Cross validation|cross validation]] to pick the best polynomial without breaking the integrity of the [[Testing data|testing data]]. 
 

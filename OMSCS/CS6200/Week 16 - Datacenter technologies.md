@@ -33,7 +33,7 @@ To handle scale internet services are normally distributed across multi-process 
 
 These are ones where the workers are all equal. This enables a very simple load-balancer that does not need to keep much state about the different workers. It is very simple to scale up as you just add more of the same workers. However, this suffers from the workers not being able to utilize caching and if you need to process large amounts of data for each request - this can become slow.
 
-![[homogeneous_architectures.png]]
+![Homogeneous Architectures](../../images/homogeneous_architectures.png)
 
 ## Heterogeneous architecture
 
@@ -41,19 +41,19 @@ These are ones where the workers are specialized to some kind of logic. This mea
 
 However, this adds considerable complexity to the front-end. As workers now are different the load balancer needs to keep track of which workers can do what. When increased demand comes to the system scaling up is not as simple as adding more workers you need to work out what workers are needed.
 
-![[hetrogeneous_architectures.png]]
+![Hetrogeneous Architectures](../../images/hetrogeneous_architectures.png)
 
 ## Cloud computing
 
 Before cloud computing, companies would host their own infrastructure. This would involve physically buying machines and forecasting demand. Your goal would always be to have enough capacity for the peak usage. Though if you get this wrong you lose potential sales.
 
-![[on_premise_compute.png]]
+![On Premise Compute](../../images/on_premise_compute.png)
 
 As well as the potential risk, this also required a lot of expertise on running machines and managing a data center.
 
 Instead the goal of cloud computing was to outsource this to someone who has much more compute and you can only request the amount of compute you need at any given time.
 
-![[cloud_compute.png]]
+![Cloud Compute](../../images/cloud_compute.png)
 
 This allows for:
 
@@ -105,7 +105,7 @@ Cloud deployments can be for different purposes. This starts with who can use it
 
 As well as the users they serve the level of autonomy they offer is a large differential.
 
-![[cloud_models.png]]
+![Cloud Models](../../images/cloud_models.png)
 
 ## Cloud enabling technologies
 
@@ -134,6 +134,6 @@ Given the access to resources, the cloud has enabled the proliferation of 'big d
 
 Some examples of these stacks are provided below.
 
-![[hadoop_stack.png]]
+![Hadoop Stack](../../images/hadoop_stack.png)
 
-![[bdas.png]]
+![Bdas](../../images/bdas.png)

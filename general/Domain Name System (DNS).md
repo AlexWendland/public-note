@@ -21,10 +21,10 @@ type: definition
 >- **Top level domain (TLD) server**: These are responsible for top level domains such as .com, .org, ect.
 >- **Authoritative servers**: An organisations DNS server that control their domain.
 >- **Local DNS (LDNS) servers**: This can be owned my users or [[Internet Service Provider (ISP)|ISPs]] and act as a proxy to the root servers. 
->![[dns_hierarchy.png]]
+>![Dns Hierarchy](../images/dns_hierarchy.png)
 >When querying DNS servers requests can either be **iterative** meaning that the host that sends them keeps getting back another location to go to or **recursive** which means the host requested for the information goes directly to the next server.
 >An example of a typical request can be seen below.
->![[dns_request.png]]
+>![Dns Request](../images/dns_request.png)
 >DNS servers also offer other services such as:
 >- Mail server,
 >- Load distribution,

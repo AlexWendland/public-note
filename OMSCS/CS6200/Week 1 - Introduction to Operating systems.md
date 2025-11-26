@@ -133,15 +133,15 @@ Though they come with a lot of down sides:
 
 The linux [[Operating system (OS)|OS]] is built in a layer architecture to make it simpler to use. 
 
-![[linux_arcitecture.png]]
+![Linux Arcitecture](../../images/linux_arcitecture.png)
 
 The kernel itself has a couple of components that can all be switched out for specific users needs.
 
-![[linux_kernel.png]]
+![Linux Kernel](../../images/linux_kernel.png)
 
 ### Mac
 
 Mac uses a micro-kernel for all low level operations with a BSD component provides a unix interface for the rest of the OS. 
 
-![[mac_architecture.png]]
+![Mac Architecture](../../images/mac_architecture.png)
 

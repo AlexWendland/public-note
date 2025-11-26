@@ -38,7 +38,7 @@ This achieves fairness through [[Additive increase Multiplicative Decrease (AIMD
 
 This exponential vs linear dynamic allows for fast convergence to an equilibrium. 
 
-![[tcp_fairness.png]]
+![Tcp Fairness](../images/tcp_fairness.png)
 
 >[!attention] Fairness between connections not applications
 >If one application has multiple open connections each connection will reach a fair state but an application with many connections will have an unfair share of the network.
@@ -49,7 +49,7 @@ This exponential vs linear dynamic allows for fast convergence to an equilibrium
 
 Assuming we have a probability of $p$ of dropping a message - we can model what our expected throughput is for [[TCP Reno]]. For this model we assume the network delivers $1/p$ packets then drops one. This provides the following saw-tooth diagram.
 
-![[tcp_throughput.png]]
+![Tcp Throughput](../images/tcp_throughput.png)
 
 Assume the max window size is $W_{max}$, then as the number of packets is increasing linearly we have the width and height of the saw is $W_{max}/2$. Therefore the total packets sent is
 $$

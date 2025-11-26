@@ -133,7 +133,7 @@ Messages passed between [[Autonomous system (AS)|AS]] have some special properti
 
 We can model a [[Router|router]] running [[Boarder gateway protocol (BGP)|BGP]] as follows.
 
-![[router_diagram.png]]
+![Router Diagram](../../images/router_diagram.png)
 
 This has 3 main steps.
 1. Receive and store neighbours routing tables.
@@ -187,7 +187,7 @@ Routers can be strategic about what addresses it does this too and how sensitive
 
 Below is an example of such and [[Internet Exchange Points (IXPs)|IXP]] is Frankfurt.
 
-![[IXP_example.png]]
+![Ixp Example](../../images/IXP_example.png)
 
 This shows how an [[Internet Exchange Points (IXPs)|IXP]] is a massive set of switches creating a giant [[Network|network]]. It is normally distributed over a region or globally with different connection points such as DE-CIX1,2,3,4,7 all connecting in to a fault tolerant core Core 1 with backup Core2.
 
@@ -230,7 +230,7 @@ Normally the terms of accessing do not forbid reselling of access to the [[Inter
 
 Two [[Autonomous system (AS)|ASs]] in a [[Internet Exchange Points (IXPs)|IXP]] to transfer route information need to establish a bilateral [[Boarder gateway protocol (BGP)|BGP]] connection. However with so many participants at an [[Internet Exchange Points (IXPs)|IXP]] the number of open connections would be massive - which would not scale.
 
-![[route_server_example.png]]
+![Route Server Example](../../images/route_server_example.png)
 
 Instead if the [[Internet Exchange Points (IXPs)|IXP]] offers a route server [[Autonomous system (AS)|ASs]] connect to this single entity instead. This offers the following services:
 - It collects and shares routing information from its peers.
@@ -246,5 +246,5 @@ For example suppose AS X and AS Y exchange routes through a multi-lateral peerin
 3. The route server checks AS X's export filters to see if AS Y is allowed to recieve p1. If so it adds it to AS Y's RIB.
 4. Lastly the route server advertises p1 to AS Y with AS X as the next hop.
 
-![[route_server_process.png]]
+![Route Server Process](../../images/route_server_process.png)
 

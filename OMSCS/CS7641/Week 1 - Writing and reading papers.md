@@ -131,7 +131,7 @@ If you address a topic repeatedly - try to do so in a parallel way. Use a single
 
 ### Aside: Typical structure in biomedical papers
 
-![[structure of papers.png]]
+![Structure Of Papers](../../images/structure of papers.png)
 Figure 1 from [[Ten simple rules for structuring papers]]
 
 ### Rule 5: Tell a complete story in the abstract

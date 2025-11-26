@@ -17,4 +17,4 @@ For example [[Hyper Text Transfer Protocol (HTTP)|HTTP]] uses [[Cookies (web)|co
 This mix of these layers is normally dependent on the protocol - so normally rolled up into one thing.
 
 
-![[model-comparison.png]]
+![Model Comparison](../images/model-comparison.png)

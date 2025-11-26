@@ -45,7 +45,7 @@ Kurose-Ross Edition 7, Chapter 9
 
 Sounds and video are interesting internet applications due to their interesting requirements. First they have far higher [[Bit|bit]]-rates than other applications.
 
-![[media_bit_rates.png]]
+![Media Bit Rates](../../images/media_bit_rates.png)
 
 Where facebook is someone flicking through 1 picture per second. 
 
@@ -96,7 +96,7 @@ This includes:
 
 Delay is very important to the end user to stop people talking over one another. Below displays the acceptable levels.
 
-![[e2e_delay.png]]
+![E2E Delay](../../images/e2e_delay.png)
 
 ## Jitter
 
@@ -119,13 +119,13 @@ This transmits redundant data that can fill any gaps. This increases the bandwid
 - Transmitting a lower quality stream along side the high quality stream.
 The more redundant data you send the more bandwidth you use. Also some of these techniques require you to wait longer before playing out increasing end-to-end delay.
 
-![[fec_example.png]]
+![Fec Example](../../images/fec_example.png)
 
 ### Interleaving
 
 This technique does not require additional data to be transmitted instead it breaks up the chunks of data so that the data in one chunk does not contain consecutive bits. That way a lost packet generate many small gaps not noticeable by the human ear. The pay off is having to wait longer to receive consecutive chunks which increases end-to-end delay. 
 
-![[interleaving.png]]
+![Interleaving](../../images/interleaving.png)
 
 ### Error concealment
 
@@ -141,19 +141,19 @@ Streaming media content over the Internet accounts for nearly 60-70% of the Inte
 Whilst there restrictions differ by focusing on 2 we learn a lot of the general principles that apply to 1. 
 
 Generally on-demand video sharing follows the same common pattern.
-![[streaming_infra.png]]
+![Streaming Infra](../../images/streaming_infra.png)
 
 Most notably they will use [[Content delivery network (CDN)|CDN]] to distribute content to be closer to their users.
 
 To render the stored content correctly we need to make sure we do not drop any packets. With streaming the content to the user flow control will be important too. [[Transmission Control Protocol (TCP)|TCP]] provides these out of the box - therefore it is a better match that [[User Datagram Protocol (UDP)|UDP]].
 
-![[internet_picture.png]]
+![Internet Picture](../../images/internet_picture.png)
 
 ## How we got to [[Hyper Text Transfer Protocol (HTTP)|HTTP]]
 
 When streaming platforms were originally envisioned they wanted all the intelligence to be kept in a stateful server - with the client doing minimal work. 
 
-![[original_design.png]]
+![Original Design](../../images/original_design.png)
 
 However, this would:
 - Require providers to by specialist hardware.
@@ -166,7 +166,7 @@ Instead the [[Hyper Text Transfer Protocol (HTTP)|HTTP]] protocol was already we
 - [[Hyper Text Transfer Protocol (HTTP)|HTTP]] messages were already understood in firewalls and middleboxes.
 This meant that the original plan was abandoned and people moved to [[Hyper Text Transfer Protocol (HTTP)|HTTP]].
 
-![[video_application_logic.png]]
+![Video Application Logic](../../images/video_application_logic.png)
 
 ## Streaming vs progressive downloading
 
@@ -180,7 +180,7 @@ Therefore a hybrid approach is taken. We maintain a playout-buffer (normally 5 s
 1. **Filling state**: When the playout buffer is empty we try to fill it quickly - for example when we start the video or skip ahead.
 2. **Steady state**: With a large buffer we wait for that to drop to a lower limit and start downloading more of the video until we fill the buffer again. This switches from being in an ON/OFF state.
 
-![[video_playout.png]]
+![Video Playout](../../images/video_playout.png)
 
 ## Handling variation
 
@@ -214,7 +214,7 @@ Now we have our output metrics lets see the inputs to the calculation.
 
 One simple way to calculate the video quality is to look at your current bandwidth $C(t)$ and divide it by the available [[Bitrate|bitrates]] $R(t)$ and find the largest one such that $C(t)/R(t) > 1$ that way we are filling our buffer when downloading.
 
-![[throughput_based_adaption.png]]
+![Throughput Based Adaption](../../images/throughput_based_adaption.png)
 
 The issue is forecasting what $C(t)$ will be in the future.
 
@@ -230,7 +230,7 @@ When forecasting $C(t)$ we normally use a weighted average of the past [[Bitrate
 
 Suppose we are in the following competitive networking position where we have two clients using [[Transmission Control Protocol (TCP)|TCP]].
 
-![[DASH_underestimation.png]]
+![Dash Underestimation](../../images/DASH_underestimation.png)
 
 Consider the scenario when a client is watching a video over a 5 Mbps link. 
 
@@ -238,17 +238,17 @@ The available bitrates are {375kbps, 560 kbps, 750kbps, 1050kbps, 1400kbps, 1750
 
 Suppose the user initially starts with no competition then someone comes and downloads a larger file. They are both using [[Transmission Control Protocol (TCP)|TCP]] that should converge to a fair share - though this takes some time.
 
-![[DASH_under_graph.png]]
+![Dash Under Graph](../../images/DASH_under_graph.png)
 
 What happens in this case it we incrementally step down to the lowest quality video as the [[Bitrate adaption|bitrate adaption]] and [[Transmission Control Protocol (TCP)|TCP]] congestion window work together to drive down the videos share of the network.
 
 First note [[Dynamic Adaptive Streaming over HTTP (DASH)|DASH]] has an on off pattern as described above.
 
-![[DASH_flow.png]]
+![Dash Flow](../../images/DASH_flow.png)
 
 Then if the congestion window is reset in the off period it can allow the competing flow take more network share and this causes [[Dynamic Adaptive Streaming over HTTP (DASH)|DASH]] to pick a lower [[Bitrate|bitrate]]. Though this spiral continues as then the competition take a larger network share in the gaps throttling [[Dynamic Adaptive Streaming over HTTP (DASH)|DASH]]'s [[Bitrate|bitrate]] again.
 
-![[DASH_TCP_fail.png]]
+![Dash Tcp Fail](../../images/DASH_TCP_fail.png)
 
 This is a problem for [[Dynamic Adaptive Streaming over HTTP (DASH)|DASH]] so implementations have to try to handle this correctly.
 
@@ -256,7 +256,7 @@ This is a problem for [[Dynamic Adaptive Streaming over HTTP (DASH)|DASH]] so im
 
 There is a competing strategy which varies the [[Bitrate|bitrate]] based on the buffer size. The avoids the need to predict the network speed.
 
-![[buffer_size_bitrate_adaption.png]]
+![Buffer Size Bitrate Adaption](../../images/buffer_size_bitrate_adaption.png)
 
 Though comes with its own challenges.
 

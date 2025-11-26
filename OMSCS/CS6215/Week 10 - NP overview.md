@@ -72,7 +72,7 @@ Note that [[Nondeterministic Polynomial time (NP)|NP]] isn't Not [[Polynomial ti
 
 ![[Polynomial time is a subset of NP-complete]]
 
-![[P_vs_NP.png]]
+![P Vs Np](../../images/P_vs_NP.png)
 
 The question is, are there problems that are in [[Nondeterministic Polynomial time (NP)|NP]] but are not in [[Polynomial time|P]]?
 
@@ -80,7 +80,7 @@ The question is, are there problems that are in [[Nondeterministic Polynomial ti
 
 If [[P equals NP or P not equals NP|P not equal to NP]] then we would have a problem in [[Nondeterministic Polynomial time (NP)|NP]] that didn't lie in [[Polynomial time|P]]. Therefore the green region above would be non-empty.
 
-![[P_not_equal_to_NP.png]]
+![P Not Equal To Np](../../images/P_not_equal_to_NP.png)
 
 Therefore lets look at the hardest problems in [[Nondeterministic Polynomial time (NP)|NP]].
 

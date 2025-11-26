@@ -55,7 +55,7 @@ We assume another host Q has page X in its global memory.
 In this case, Host P will increase its local partition by 1 page by selecting a page y from its global partition.
 Host P and Q then swap: P sends y to Q (which becomes global on Q), and Q sends X to P (which becomes local on P).
 
-![[gms_fault_1.png]]
+![Gms Fault 1](../../images/gms_fault_1.png)
 
 #### Case 2: No global memory on host
 
@@ -75,7 +75,7 @@ Host R then evicts its oldest page Z, which happens in one of two ways:
 - If Z is clean (in either the global or local partition), it is simply discarded.
 - If Z is dirty (and in the local partition), it is written to disk before being discarded.
 
-![[gms_fault_3.png]]
+![Gms Fault 3](../../images/gms_fault_3.png)
 
 #### Case 4: Actively shared pages
 
@@ -84,7 +84,7 @@ However, host P does not currently have it in its local memory and it faults on 
 Therefore, host Q will send it over to host P.
 However, this then kicks off the whole of case 3 - as this page may as well have come from the disk.
 
-![[gms_fault_4.png]]
+![Gms Fault 4](../../images/gms_fault_4.png)
 
 ### Age management
 
@@ -104,7 +104,7 @@ Then the initiator sends to each node in the network the minAge and the mapping 
 So every node knows every other node's $w_i$.
 The node with the largest $w_i$ becomes the manager for the next epoch - since each node has all the $w_i$ values, everyone knows who the new manager is.
 
-![[gms_elections.png]]
+![Gms Elections](../../images/gms_elections.png)
 
 Each node then can use the minAge to separate its pages into 'active' pages and 'old' pages.
 When a page fault happens, it can locally decide if it should evict or store globally a page by looking at its age.
@@ -114,7 +114,7 @@ When evicting a page, it uses the weights to decide which node to send it to - i
 
 The paper uses a Unix OS called OSF/1 where they changed two key components: the virtual memory manager and the unified buffer cache (UBC) - this system is used to cache the pages of the disk.
 
-![[gms_os_1.png]]
+![Gms Os 1](../../images/gms_os_1.png)
 
 The additional two components on the layout above are:
 
@@ -125,7 +125,7 @@ The additional two components on the layout above are:
 Then to implement GMS we need to alter the checks that happen when a page fault happens.
 The GMS component will handle checking on the remote network if the page exists and all other management needs - but this needs to be 'plumbed in'.
 
-![[gms_os1_altered.png]]
+![Gms Os1 Altered](../../images/gms_os1_altered.png)
 
 Here you can see all the handling of free pages goes through the GMS.
 
@@ -167,7 +167,7 @@ Whilst not completely static, the POD should only update when nodes join/leave t
 It may seem like a lot of indirection, whereas we could just go from POD to PFD.
 However the GCD enables the node that contains the PFD to be dynamic without having to update a table on every node for any change.
 
-![[gms_getting_the_page.png]]
+![Gms Getting The Page](../../images/gms_getting_the_page.png)
 
 Whilst this may look like a lot of network activity to retrieve a page - in most cases each node looks after the GCD for its pages.
 Therefore Node A and Node B are the same, cutting one of the connections out.
@@ -231,7 +231,7 @@ Though the goal is for these different nodes to act like they have shared memory
 This means each node thinks it has access to all the memory within the application.
 Then the software DSM needs to intervene to make this happen.
 
-![[dsm_overview.png]]
+![Dsm Overview](../../images/dsm_overview.png)
 
 When processes share memory on the same system, they share memory at the level of variables.
 However, across a network that would be too expensive as every read/write hardware operation would need to run software to verify consistency.
@@ -344,7 +344,7 @@ In a LSFS, we write all the changes to files instead of the files themselves.
 This means we can batch lots of changes all together into one log.
 We then can reconstruct files by reading the log.
 
-![[lsfs.png]]
+![Lsfs](../../images/lsfs.png)
 
 This is useful to do for multiple reasons:
 
@@ -365,7 +365,7 @@ Normally, we will cache files we have done a full read file so subsequent reads 
 
 This combines the ideas of RAID and LSFS.
 
-![[software_raid.png]]
+![Software Raid](../../images/software_raid.png)
 
 This was first implemented in the Zebra file system.
 We will run a NFS but save files to a distributed log.
@@ -411,7 +411,7 @@ Another trick XFS implements is cooperative client caching - if a file is being 
 Instead of the logs being stored on the servers, clients build their own log locally.
 When the log is full or after a given period of time, it writes this out to the servers.
 
-![[stripe_groups.png]]
+![Stripe Groups](../../images/stripe_groups.png)
 
 However, instead of writing this log across all servers each client is given a subset of the servers (its stripe group).
 Then the log is written to the servers associated to it.
@@ -483,7 +483,7 @@ These then can be used to find the data that relates to this file in the followi
 
 - (Client) + (data address) -> (data storage server) to get the (data).
 
-![[xfs_lookup.png]]
+![Xfs Lookup](../../images/xfs_lookup.png)
 
 This is a very long lookup - however with caching this can be sped up a lot.
 

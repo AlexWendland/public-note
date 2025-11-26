@@ -33,7 +33,7 @@ type: definition
 >- Options, and
 >- Padding to make the header a multiple of 32 [[Bit|bits]].
 >
->![[tcp_header.png]]
+>![Tcp Header](../images/tcp_header.png)
 
 
 # Flow control in [[Transmission Control Protocol (TCP)|TCP]]

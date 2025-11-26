@@ -16,7 +16,7 @@ week: 11
 
 Whilst an [[Input output (IO)|IO]] device can come in many forms we model them similarly.
 
-![[IO device.png]]
+![Io Device](../../images/IO device.png)
 
 These have 3 registers:
 - Status: Some indicate the state of the device.
@@ -29,13 +29,13 @@ These have 3 registers:
 
 Devices are mainly connected to the [[Central processing unit (CPU)|CPU]] through the [[Peripheral component interconnect (PCI)]] or [[PCI Express (PCIe)]]. Though depending on the component it may be connected to that via another bus as well.
 
-![[inter_connect_to_cpu.png]]
+![Inter Connect To Cpu](../../images/inter_connect_to_cpu.png)
 
 ## Device driver
 
 ![[Device driver]]
 
-![[device_drivers.png]]
+![Device Drivers](../../images/device_drivers.png)
 
 Devices fall into one of 3 types:
 - *Block device*: Read/writes blocks of data and offers an API to access a block at a particular index. E.g. Hard drive
@@ -66,7 +66,7 @@ There are two ways for the device to communicate with the [[Central processing u
 
 Device access is an intensive action as we need to parse through many different layers and processes. Thus why [[Input output (IO)|IO]] is considered slow.
 
-![[IO_access.png]]
+![Io Access](../../images/IO_access.png)
 
 Some devices support [[Operating system (OS)|OS]] bypass. This is where the [[Operating system (OS)|OS]] configures the device and the process to communicate directly through the [[Process|processes]] virtual address space with limited functionality. Though the device has some requirements for this:
 
@@ -78,13 +78,13 @@ However, if the device does support this it can increase access speed dramatical
 
 When accessing [[Input output (IO)|IO]] devices this can either happen synchronously or [[Asynchronous programming|async]]. Normally when issuing commands to a device the process needs to wait for a response from the device. This can either block the process and it gets moved to a wait queue or in a non-blocking way. When using async the process can either poll or get interrupted to get output from the device. 
 
-![[async_vs_sync_device_access.png]]
+![Async Vs Sync Device Access](../../images/async_vs_sync_device_access.png)
 
 ## Block device access
 
 When interacting with block devices, user programs actually interact with files that are on the computers filesystem. Files are considered one 'logical' storage unit. The [[Operating system (OS)|OS]] will specify how to support writing to files through an API - normally the [[Portable operating system interface (POSIX)|POSIX]] API.
 
-![[block_device_stack.png]]
+![Block Device Stack](../../images/block_device_stack.png)
 
 As well as having a device driver for particular devices a further abstraction is placed on top of these to standardize the interaction - this is the generic block layer. This is an [[Operating system (OS)|OS]] standard for interfacing with different block devices.
 
@@ -92,7 +92,7 @@ As well as having a device driver for particular devices a further abstraction i
 
 The [[Operating system (OS)|OS]] abstracts the concepts of block devices away from the user through a virtual file system. It uses this to combine potentially different types of block devices into one directory structure which is easy for humans to grasp.
 
-![[virtual_file_system.png]]
+![Virtual File System](../../images/virtual_file_system.png)
 
 As well as making this easy for human to use - it also offers an API the block device device drivers must conform to.
 
@@ -107,7 +107,7 @@ This virtual file system supports a number of abstractions:
 
 ## Second Extended Filesystem (ext2)
 
-![[ext2_structure.png]]
+![Ext2 Structure](../../images/ext2_structure.png)
 
 The disk is broken down into sections. The first section is the boot section which is used if the disk is 'bootable'.
 
@@ -123,11 +123,11 @@ The rest is broken down into 'block groups' which each have a similar structure.
 
 Inodes that represent files contain metadata about the file and a list of data-blocks that make up that file. 
 
-![[inode_structure.png]]
+![Inode Structure](../../images/inode_structure.png)
 
 This structure enables sequential or random access using the size of the data-blocks. However, this provides a fairly hard limit on file size by the number of pointers a block can contain multiplied by the size of each block. To get around this we allow for indirect pointers - which point to blocks of pointers.
 
-![[inode_indirect.png]]
+![Inode Indirect](../../images/inode_indirect.png)
 
 This dramatically increases the size of the file we can reference. However, if you use the single, double, or triple indirect pointers this slows down file access.
 

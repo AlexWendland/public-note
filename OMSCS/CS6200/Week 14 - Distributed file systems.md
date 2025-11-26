@@ -36,7 +36,7 @@ There are different models for a [[Distributed file system (DFS)]] in the client
 
 In this model the client downloads the whole file from the server, applies any edits locally and re-uploads the file to the remote server.
 
-![[download_model.png]]
+![Download Model](../../images/download_model.png)
 
 This means:
 - edits to the file are done locally and are fast,
@@ -47,7 +47,7 @@ This means:
 
 In this model all commands the client wishes to do to the file are sent to the server who applies them on the server directly.
 
-![[fully_remote_model.png]]
+![Fully Remote Model](../../images/fully_remote_model.png)
 
 This means:
 - file accesses are centralized,
@@ -104,11 +104,11 @@ However with [[Depth-first search (DFS)|DFS]] we have much larger network latenc
 
 When two processes access a file on one machine changes become instantly available. (This is called UNIX semantics.)
 
-![[single_machine_semantics.png]]
+![Single Machine Semantics](../../images/single_machine_semantics.png)
 
 However on two machines this might not be the case and edits can happen on 'stale' data if the consistency model is not strong enough.
 
-![[second_machine_semantics.png]]
+![Second Machine Semantics](../../images/second_machine_semantics.png)
 
 *Session semantics*: This refers to syncs on open and close operations of a file. With the time between the open and close being a session. In this case the client checks on open they have the latest file and saves back to the server on close.
 

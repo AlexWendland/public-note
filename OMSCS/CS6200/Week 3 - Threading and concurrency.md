@@ -38,7 +38,7 @@ In comparison to a thread:
 
 Each [[Process|process]] has its own [[Address space (OS)|address space]] and [[Process control block (PCB)|PCB]] whereas each [[Thread|thread]] in a [[Process|process]] shares the same [[Address space (OS)|address space]], code and data but has its own [[CPU register|CPU registers]], [[Program counter (PC)|program counter]], and [[Stack (OS)|stack]]. A [[Thread|thread]] does not have its own [[Process control block (PCB)|PCB]] but its state is tracked in the [[Process|process]] [[Process control block (PCB)|PCB]].
 
-![[process_vs_thread.png]]
+![Process Vs Thread](../../images/process_vs_thread.png)
 
 ## Benefits of multithreading
 

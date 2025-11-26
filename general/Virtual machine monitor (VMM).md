@@ -17,5 +17,5 @@ type: definition
 >1. *fidelity*: essentially identical with the original machine.
 >2. *performance*: where programs show at worst only minor decrease in speed.
 >3. *safety and isolation*: where the VMM is in complete control of the system resources.
->![[vmm.png]]
+>![Vmm](../images/vmm.png)
 

@@ -15,7 +15,7 @@ type: definition
 >
 >Here videos are cut into chunk and each chunk it encoded at different [[Bitrate|bitrates]]. Each time the some video is downloaded it calls the [[Bitrate adaption|bitrate adaption]] function $f$ to determine the [[Bitrate|bitrate]].
 >
->![[DASH_function.png]]
+>![Dash Function](../images/DASH_function.png)
 >
 >Where $\{R_1, R_2, \ldots, R_m\}$ is the set of [[Bitrate|bitrates]]. 
 

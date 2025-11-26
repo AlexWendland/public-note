@@ -17,5 +17,5 @@ type: definition
 >- Protection: If the [[Process|process]] has read/write/execute permissions on the memory.
 >
 >Though these differ by architecture. See below for a particular example.
->![[page_table_entry.png]]
+>![Page Table Entry](../images/page_table_entry.png)
 

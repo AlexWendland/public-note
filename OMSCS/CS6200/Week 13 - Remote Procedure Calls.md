@@ -34,7 +34,7 @@ To achieve this [[Remote procedure calls (PRC)|RPC]] has some requirements:
 
 Below is an example flow of an [[Remote procedure calls (PRC)|RPC]] call:
 
-![[rpc_example.png]]
+![Rpc Example](../../images/rpc_example.png)
 
 ## Steps to carry out an RPC operation
 
@@ -97,7 +97,7 @@ This is an [[Remote procedure calls (PRC)|RPC]] framework developed by Sun in th
 
 This is an [[Remote procedure calls (PRC)|RPC]] framework also developed by Sun but specifically for the Java language.
 
-![[java_rmi.png]]
+![Java Rmi](../../images/java_rmi.png)
 
 As this is specific to Java, it uses that for its [[Interface definition language (IDL)|IDL]] the framework matches Java's [[Object Oriented Programming (OOP)|OOP]] semantics. The implementation is split into two layers:
 

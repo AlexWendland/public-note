@@ -30,5 +30,5 @@ type: definition
 >**Efficient for frequently used objects**: Great for kernel structures like inodes, task structs, and buffers.
 >**Not ideal for variable-sized allocations**: Works best when objects are of predictable, uniform sizes.
 >
->![[slab_allocator.png]]
+>![Slab Allocator](../images/slab_allocator.png)
 

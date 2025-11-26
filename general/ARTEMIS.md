@@ -19,7 +19,7 @@ type: definition
 >
 >ARTEMIS can detect different types of BGP prefix hijacking attacks by monitoring for unusual patterns in BGP announcements.
 >
->![[ARTEMIS_table.png]]
+>![Artemis Table](../images/ARTEMIS_table.png)
 >
 >The system aims to minimise [[Result types|false positives]] and [[Result types|false negatives]]. Operators can prioritise between accuracy and speed or opt for fewer inconsequential FNs at the cost of higher FPs.
 >

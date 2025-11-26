@@ -17,5 +17,5 @@ type: definition
 > 5. The [[Page table entry|page table entry]] is updated to reflect this change.
 > 6. Control is handed back to the [[Process|process]].
 >
-> ![[demand_paging.png]]
+> ![Demand Paging](../images/demand_paging.png)
 

@@ -74,7 +74,7 @@ Here are two main algorithms, these use two different approaches to how route [[
 
 When using [[Open Shortest Path First (OSPF)|OSPF]] the computation is handled by the [[Router|router]] processor as apposed to the [[Switching fabric|switching fabric]] which handles message forwarding.
 
-![[OSPF_processed.png]]
+![Ospf Processed](../../images/OSPF_processed.png)
 
 The process the router goes through is:
 1. Collect [[Open Shortest Path First (OSPF)|LSA]]'s from other routers.
@@ -83,7 +83,7 @@ The process the router goes through is:
 
 This can be summarised by the following flow chart.
 
-![[OSPF_flow_chart.png]]
+![Ospf Flow Chart](../../images/OSPF_flow_chart.png)
 
 ![[Hot potato routing]]
 
