@@ -28,10 +28,14 @@ By tracing the key ideas of today's most popular systems to their origins in res
 - [[Week 2 - OS Structure Overview]]
 - [[Week 3 - Virtualization]]
 - [[Week 4 - Parallel Systems]]
-- [[Week 5 - Distributed Systems]]## Links
-
-- [Central](https://www.omscentral.com/courses/advanced-operating-systems/reviews)
-- [OMSCS page](https://omscs.gatech.edu/cs-6210-advanced-operating-systems)
+- [[Week 5 - Distributed Systems]]
 - [[Week 6 - Distributed objects and middle ware]]
 - [[Week 7 - Distributed subsystems]]
 - [[Week 8 - Internet Computing]]
+- [[Week 9 - RT and Multimedia]]
+
+## Links
+
+- [Central](https://www.omscentral.com/courses/advanced-operating-systems/reviews)
+- [OMSCS page](https://omscs.gatech.edu/cs-6210-advanced-operating-systems)
+
