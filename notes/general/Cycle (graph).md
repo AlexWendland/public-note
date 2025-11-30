@@ -17,5 +17,5 @@ A *cycle* in a [[Graph|graph]] is [[Path (graph)|path]] $\{e_i = (x_i, y_i)\}_{i
 
 > [!example] Visual representation
 > Lets use our simple [[graph]] below
-> ![[simple_cycle]]
+> ![simple_cycle](../../images/excalidraw/simple_cycle.excalidraw.svg)
 > In this graph we have a cycle using the vertices $\{1,2,3\}$.

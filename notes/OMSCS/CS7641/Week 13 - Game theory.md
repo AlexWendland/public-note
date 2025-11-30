@@ -204,7 +204,7 @@ If player $A$ picks $x$ with probability $p$ and player $B$ picks $x$ with proba
 $$(pq2 + (1-p)(1-q), pq + 2(1-p)(1-q)).$$
 This gives us all the points in the convex hull of the points $\{(0,0), (2,1), (1,2)\}$.
 
-![[feasible_region.excalidraw]]
+![feasible_region](../../../images/excalidraw/feasible_region.excalidraw.svg)
 
 For example to get the line at the bottom set $p = 1$ $\{(2q, q) \vert q \in [0,1]\}$, for the line at the top set $p=0$ $\{((1-q), 2(1-q)) \vert q \in [0,1]\}$. For lines in-between let $p$ vary.
 
@@ -214,7 +214,7 @@ For example to get the line at the bottom set $p = 1$ $\{(2q, q) \vert q \in [0,
 
 In the [[Battle of the sexes]] example we have plotted the security region below. 
 
-![[feasible_region_with_security_region.excalidraw]]
+![feasible_region_with_security_region](../../../images/excalidraw/feasible_region_with_security_region.excalidraw.svg)
 
 ## Folk Theorem
 

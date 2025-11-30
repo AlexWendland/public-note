@@ -116,7 +116,7 @@ Lets picture a [[Bayesian network]] with one root node and all other nodes as ch
 
 First lets draw the Naive Bayes Classifier diagram.
 
-![[Naice Bayes]]
+![Naice Bayes](../../../images/excalidraw/Naice Bayes.excalidraw.svg)
 
 This is a model for if the email is spam or not. Lets assume the probability of spam is $\mathbb{P}[Spam] = 0.4$. Then we have the [[Conditional probability|conditional probabilities]] below.
 

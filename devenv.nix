@@ -8,41 +8,30 @@
     };
   };
 
+  languages.javascript = {
+    enable = true;
+    npm = {
+      enable = true;
+      install = {
+        enable = true;
+      };
+    };
+  };
+
   packages = [
     pkgs.ruff
     pkgs.git-lfs
     pkgs.docker
+    # Dependencies for node-canvas (required by excalidraw_export)
+    pkgs.pkg-config
+    pkgs.cairo
+    pkgs.pango
+    pkgs.pixman
+    pkgs.giflib
+    pkgs.libjpeg
   ];
 
   scripts.lecture.exec = "uv run scripts/lecture.py";
-
-  scripts.excalidraw-setup.exec = ''
-    #!/bin/bash
-    set -e
-
-    echo "Building excalidraw-brute-export-cli Docker image..."
-
-    # Create temp directory
-    TEMP_DIR=$(mktemp -d)
-    echo "Cloning repository to $TEMP_DIR..."
-
-    # Clone the repo
-    git clone https://github.com/realazthat/excalidraw-brute-export-cli.git "$TEMP_DIR"
-
-    # Build the Docker image
-    cd "$TEMP_DIR"
-    echo "Building Docker image (this may take a few minutes)..."
-    docker build -t excalidraw-brute-export-cli:local .
-
-    # Clean up
-    cd -
-    echo "Cleaning up temporary files..."
-    rm -rf "$TEMP_DIR"
-
-    echo ""
-    echo "✓ Docker image 'excalidraw-brute-export-cli:local' built successfully!"
-    echo "You can now use the 'excalidraw-compile' command."
-  '';
 
   scripts.excalidraw.exec = ''
     echo "Starting Excalidraw on http://localhost:5173"
@@ -65,23 +54,18 @@
       exit 0
     fi
 
-    echo "Exporting Excalidraw diagrams to PNG..."
-    count=0
+    echo "Exporting Excalidraw diagrams to SVG..."
 
-    # Export all .excalidraw files to .png using Docker
-    for file in excalidraw/*.excalidraw; do
-      if [ -f "$file" ]; then
-        basename=$(basename "$file" .excalidraw)
-        echo "  • $basename.excalidraw → images/excalidraw/$basename.png"
-        docker run --rm --tty \
-          -u "$(id -u):$(id -g)" \
-          -v "$(pwd):/data" \
-          excalidraw-brute-export-cli:local \
-          -i "/data/$file" \
-          -o "/data/images/excalidraw/$basename.png" \
-          --format png \
-          --background 1 \
-          --quiet
+    # Export all .excalidraw files to .svg using excalidraw_export
+    npx excalidraw_export excalidraw/*.excalidraw
+
+    # Move generated SVG files to images/excalidraw/
+    count=0
+    for svg in excalidraw/*.svg; do
+      if [ -f "$svg" ]; then
+        basename=$(basename "$svg")
+        mv "$svg" "images/excalidraw/$basename"
+        echo "  • ''${basename%.svg}.excalidraw → images/excalidraw/$basename"
         ((count++))
       fi
     done

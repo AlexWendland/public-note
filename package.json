@@ -1,0 +1,9 @@
+{
+  "name": "public-note",
+  "version": "1.0.0",
+  "description": "Development dependencies for public notes repository",
+  "private": true,
+  "dependencies": {
+    "excalidraw_export": "^1.1.0"
+  }
+}

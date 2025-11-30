@@ -28,7 +28,7 @@ To support these memory mapping there are 3 bits of hardware that take a [[Virtu
 - [[Translation Lookaside Buffer (TLB)]]: A cache within the [[Memory Management Unit (MMU)|MMU]] to speed up address mappings.
 - [[Memory controller]]: A component that maps different sticks of [[Random Access Memory (RAM)|RAM]] into one contiguous physical address space to be used by the [[Memory Management Unit (MMU)|MMU]].
 
-![[memory_hardware.excalidraw]]
+![memory_hardware](../../../images/excalidraw/memory_hardware.excalidraw.svg)
 
 ## Page tables
 
@@ -56,7 +56,7 @@ The register size is important as it limits the size of the [[Virtual memory|vir
 
 Page sizes are determined by the [[Operating system (OS)|operating system]] but commonly are 4kB, 2MB (large), and 1GB (huge).
 
-![[Page tables.excalidraw]]
+![Page tables](../../../images/excalidraw/Page tables.excalidraw.svg)
 
 >[!example] 32-bit architecture with 4kB page size
 >As a [[Byte|byte]] is the smallest addressable size, lets use this as our unit for the below calculations.

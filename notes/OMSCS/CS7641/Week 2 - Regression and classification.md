@@ -54,6 +54,6 @@ When using cross validation to assess the accuracy of our fit in the example bef
 
 Generally you need to find the right sweet spot between [[Underfitting|underfitting]] and [[Overfitting|overfitting]] by varying the degree of the polynomial.
 
-![[Getting the right fit]]
+![Getting the right fit](../../../images/excalidraw/Getting the right fit.excalidraw.svg)
 
 ![[Transforming discrete input for regression]]

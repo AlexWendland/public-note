@@ -54,7 +54,7 @@ Each row of $Ax \leq b$ defines a half space, so the feasible $x$ lie in the pos
 >$$ x_1 \leq 300, \ x_2 \leq 200, \mbox{ and } x_1 + 3 x_2 \leq 700.$$
 >This region can be visualised as follows.
 >
->![[2d_feasible_region]]
+>![2d_feasible_region](../../../images/excalidraw/2d_feasible_region.excalidraw.svg)
 
 So the feasible region is cut out by $n + m$ half spaces in $\mathbb{R}^n$.
 

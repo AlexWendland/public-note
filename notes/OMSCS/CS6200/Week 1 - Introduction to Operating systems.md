@@ -79,7 +79,7 @@ Policies:
 
 ### Example: Memory management
 
-![[memory_management_example.excalidraw]]
+![memory_management_example](../../../images/excalidraw/memory_management_example.excalidraw.svg)
 
 ## Design principles
 

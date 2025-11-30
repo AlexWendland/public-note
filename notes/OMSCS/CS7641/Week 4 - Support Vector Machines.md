@@ -28,7 +28,7 @@ for every $t \in T$.
 
 Geometrically $w$ and $b$ represent a [[Hyperplane|hyperplane]] defined by $w$ being the [[Tangent vector|tangent vector]] and $bw$ being a point on the [[Hyperplane|hyperplane]]. 
 
-![[SVM example]]
+![SVM example](../../../images/excalidraw/SVM example.excalidraw.svg)
 
 >[!Note] Direction of $w$
 >When defining a [[Hyperplane|hyperplane]] you always have a choice of [[Tangent vector|tangent vector]] both in scaler (we will come back to that later) and direction. The direction of $w$ dictates which side of the [[Hyperplane|hyperplane]] is "positive", 
@@ -131,12 +131,12 @@ The form should remind you of [[Boosting]] where we take an average of lots of d
 In reality data could be far from linearly separable. For example for [[Exclusive or|xor]] we have the following embedding in $\mathbb{R}^2$ of the 4 training points  
 $$\{((1,1), -1), ((1,-1), 1), ((-1,-1), -1), ((-1,1), 1)\}.$$
 
-![[xor_embedding]]
+![xor_embedding](../../../images/excalidraw/xor_embedding.excalidraw.svg)
 
 This is far from linearly separable. However, we can define a new embedding mapping
 $$K: \mathbb{R}^2 \rightarrow \mathbb{R}^6, \ \mbox{ by } \ (x_1, x_2) \mapsto (x_1^2, x_2^2, \sqrt{2} x_1x_2, \sqrt{2} x_1, \sqrt{2} x_2, 1)$$ which when applied to the [[Function domain|domain]] of our training data rearranges our points to be
 
-![[xor_mapped_embedding]]
+![xor_mapped_embedding](../../../images/excalidraw/xor_mapped_embedding.excalidraw.svg)
 
 which are easily [[Linearly separable|linearly separable]].
 

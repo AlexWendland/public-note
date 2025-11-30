@@ -17,7 +17,7 @@ Given a [[Graph|graph]] $G = (V, E)$ a path is a [[Sequence|sequence]] of edges 
 
 > [!example] Visual representation
 > Lets use our simple [[graph]] below
-> ![[simple_path]]
+> ![simple_path](../../images/excalidraw/simple_path.excalidraw.svg)
 > There is a path that goes $(1,3), (3,4)$ from vertex 1 to vertex 4. Note there is an implicit directionality when we say this.
 
 ## The path graph

@@ -100,7 +100,7 @@ A classic [[NP-Complete]] problem is the [[Satisfiability problem (SAT problem)|
 
 To show a [[Many-one reduction (problem)|many-one reduction]] from $A$ to $B$ you need to construct $f$ a way to transform an instance of problem $A$ into some input to the problem $B$. This needs to be done in polynomial time. Then the solution from solving $f(I)$ in problem $B$ should relate back to the solution of problem $A$. Either you should construct $h$ a way to transform the solution from problem $B$ into a solution to problem $A$ or forward on the fact that no solution can exist.
 
-![[reduction]]
+![reduction](../../../images/excalidraw/reduction.excalidraw.svg)
 
 Therefore to show $A$ reduces to $B$ we need:
 - **Define $f$:** Show how an instance of problem $A$ can be converted into an instance of problem $B$ in polynomial time.

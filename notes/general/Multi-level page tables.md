@@ -13,7 +13,7 @@ type: definition
 >
 >At the top level, an **outer page table** contains pointers to **lower-level page tables**, continuing down the hierarchy until reaching the **final level** (the "inner page table"), which directly maps virtual pages to physical frames.
 >
->![[multi_level_page_tables.excalidraw]]
+>![multi_level_page_tables](../../images/excalidraw/multi_level_page_tables.excalidraw.svg)
 >
 >This approach optimizes memory usage by allocating **only the page tables that are needed**—a technique known as **"on-demand allocation"** or **"sparse paging"**. If a virtual memory region is never accessed, its corresponding page tables are never created, saving memory.
 >

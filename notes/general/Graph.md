@@ -22,7 +22,7 @@ type: definition
 
 > [!example] Visual representation
 > This is normally represented as a series of points and lines like the simple graph below.
-> ![[simple_graph]]
+> ![simple_graph](../../images/excalidraw/simple_graph.excalidraw.svg)
 > This graph would have formal definition
 > $$V = \{1,2,3,4\} \ \mbox{ and } \ E = \{(1,2), (1,3), (2,3), (3,4)\}.$$
 

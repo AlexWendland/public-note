@@ -30,7 +30,7 @@ Key summary:
 
 ## Thread data structures
 
-![[thread_data_structures.excalidraw]]
+![thread_data_structures](../../../images/excalidraw/thread_data_structures.excalidraw.svg)
 
 In previous lecturers we spoke about a [[Process control block (PCB)]] as a single entity. However, when adding threads into the equation it is more convent to break this down into the bit.
 - The hard state that is shared by all threads - like the memory mapping, 

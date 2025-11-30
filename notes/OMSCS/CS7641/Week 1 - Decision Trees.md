@@ -60,13 +60,13 @@ Then a [[Decision tree]] is a [[Rooted tree|rooted tree]] where
 
 An example for the problem of restaurant choosing is below.
 
-![[decision tree example.excalidraw]]
+![decision tree example](../../../images/excalidraw/decision tree example.excalidraw.svg)
 
 ## Boolean decision trees
 
 Suppose our domain consists of $A_i = \{T, F\}$ [[Boolean variable|Boolean's]], either true or false as well as our [[Function codomain|codomain]] $B = \{T, F\}$. Then our function $f^{\ast}$ represented by the [[Decision tree|decision trees]] is a [[Boolean function|boolean function]].
 
-![[boolean decision trees.excalidraw]]
+![boolean decision trees](../../../images/excalidraw/boolean decision trees.excalidraw.svg)
 
 
 These can expand to many variables, and for different functions can grow with different rates.

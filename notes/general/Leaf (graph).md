@@ -19,4 +19,4 @@ In a [[Graph|graph]] we say a vertex $v \in V$ is a leaf if the [[Degree (graph)
 >[!example] Visual example
 >In the graph below $4$ is a leaf vertex.
 >
->![[simple_graph]]
+>![simple_graph](../../images/excalidraw/simple_graph.excalidraw.svg)

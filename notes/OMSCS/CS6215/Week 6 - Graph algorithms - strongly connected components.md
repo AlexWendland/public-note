@@ -175,7 +175,7 @@ We would hope for the analogous statements in a general [[Directed graph|directe
 
 The first statement is false consider the following counter example.
 
-![[sink_counter_example]]
+![sink_counter_example](../../../images/excalidraw/sink_counter_example.excalidraw.svg)
 
 If we run a [[Depth-first search (DFS)|DFS]] algorithm starting at $A$ using an alphabetical ordering on the vertices then $B$ has the lowest post order number but is in the source [[Strongly connected components (directed graphs)|strongly connected component]].
 
