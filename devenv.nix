@@ -10,6 +10,7 @@
 
   packages = [
     pkgs.ruff
+    pkgs.git-lfs
   ];
 
   scripts.lecture.exec = "uv run scripts/lecture.py";
