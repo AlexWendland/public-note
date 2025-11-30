@@ -95,4 +95,54 @@ After that we throw away the redo log.
 ![Log truncation](../../../images/log_truncation_struct.png)
 
 Though we want to do this in parallel to letting the application code running.
-Therefore, we break the redo logs into epoch's so we can clean up one epoch at a time.
+Therefore, we break the redo logs into epoch's so we can clean up one epoch at a time whilst letting the application code to add new redo logs to the current epoch.
+The truncation process is one of the most complex and time consuming parts of LRVM.
+
+## Riovista
+
+There are two sources of system failures:
+
+- Power outages: Where the power for the whole system stops.
+
+- Software bugs: Where the software causes the machine to crash.
+
+In the LRVM system we handled both these cases.
+However, if we attach an external battery to our virtual memory we could guarantee the first cause of outages never happens.
+This is the premise of the Riovista system: We have a portion of main memory which has an external battery and is resilient to crashes, we call this persistent memory.
+
+### Rio file cache
+
+A file cache is a in memory representation of a file.
+This allows for:
+
+- Fast writes to a file without needing to go to disk.
+
+- Mmapped files to be read and written to in memory - to be reflected on disk later.
+
+If we make the region of this memory that we put the file cache into persistent, we can guarantee these writes will be reflected in the disk eventually.
+Without the persistent storage, any writes that happen in memory but are not reflected on disk risk failure causing them to be eliminated leaving the disk in a broken state.
+The Persistent file cache means that synchronous writes to disk no longer need to happen (space allowing).
+Files that are written to are replicated back to disk after the program has stopped using it.
+
+![Rio file cache](../../../images/rio_file_cache.png)
+
+### Vista
+
+Visa is an RVM that is built on top of the Rio file cache.
+
+![Vista](../../../images/vista.png)
+
+Vista follows the same interface as LRVM but uses the file cache instead of logs to persist the memory.
+When we initialise the persistence of some virtual memory locations, we just back them onto our persistent file cache.
+During `begin_xact` we make an in memory copy of the memory location we are persisting and save it as the undo log in the file cache.
+
+During the critical section, edits are made to the original memory location which are persisted onto the persistent file cache.
+In the case of a commit we simply delete the undo log and move on.
+In the case of the abort we copy the undo log back to the original memory location restoring the state to what it was at the beginning of the transaction.
+We treat system failures as an abort and use the undo log to wipe temporary changes.
+
+This implementation is incredibly simple, a lot of heavy lifting is coming from the file cache.
+This means that it has 3 orders of magnitude better performance than LRVM.
+Though it does require having a battery backed persistent memory.
+
+## Quick silver
