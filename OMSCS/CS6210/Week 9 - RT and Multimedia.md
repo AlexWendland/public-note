@@ -126,3 +126,122 @@ Priority scheduling accounts for this.
 If a high priority tasks blocks on another - the lower priority task takes the priority of the task that is waiting for it.
 This ensures the highest priority tasks complete first and do not get blocked by medium priority tasks.
 
+## Persistent Temporal Streams
+
+In the previous section we looked at how to deal with time sensitive applications in commodity hardware.
+This section will move to looking at handling them in large scale services.
+
+On a single machine, we would use the pthreads library to write parallel programs.
+In distributed systems we would instead use a sockets API for this task.
+However, this is too low level for large scale applications - so we want to develop a framework for distributed real time applications.
+
+### Novel multi-media applications
+
+Novel multi-media applications follow the below structure:
+
+- The uses sensors such as cameras, radars, noise sensors to gather data about the world.
+
+- These sensors are distributed and communicate over the internet.
+
+- There is normally computationally intensive real-time processing of the data (in some cloud cluster).
+
+- This computation leads to actions either within the sensors or for other entities in the systems, which could involve humans.
+
+There is a common action loop that happens:
+
+- Sense: Collect data from the sensors.
+
+- Prioritise: Decide what information is important or relevant.
+
+- Process: Pass this data into a useful format for making decisions.
+
+- Act: Trigger actions based on the output, this can be effecting the sensors or other systems.
+
+> [!example] Airport management
+> Within an airport you will have on the order of 1000's cameras and other sensors.
+> Traditionally these were all processed by humans in a control room.
+> However, more modern airports are using automatic systems to pick up anomalies and track activity throughout the airport.
+
+These systems face common challenges:
+
+- Infrastructure overhead: The amount of data coming from the sensors is overwhelming, so you need a way to prune the data at the source so not to overload your core network.
+
+- Cognitive overhead: If humans or even programs are making decisions we need to prioritise the information that is relevant to that decision - so as not to over complicate the decision.
+
+- Tolerance for errors: We need to minimise both false negative but also false positives, for fear people distrust the system or ignore alerts.
+
+A system that addresses these challenges needs to:
+
+- The programming model needs to allow the domain expert to focus on the domain and not the framework.
+Therefore, ease of use and the right level abstractions is important - simplicity is the key.
+
+- Seamless integration of resources on the edge of the system (the sensors) and the core of the system (the cloud).
+
+- Correct temporal ordering of events happening at different sensors.
+This includes temporal reasoning, the image may be captured at one time step but processed later - it may even integrate into the core much later.
+Though this information still needs to be integrated with information that might be working on a different time scale.
+
+ - Integration of live data and historical data.
+ For example, you may have a speeding car today and you will want to know if it has been involved in any incidents over the past couple of days.
+
+- Scale: The system has to scale from writing a tracking algorithm on 1 camera to using the same system on 1000 cameras.
+
+### PTS programming model
+
+The PTS model has two core components:
+
+- A thread: This is used for execution of a program.
+
+- A channel: This is used to store messages between threads.
+
+Threads listen to and write to channels.
+Although channels use socket like terminology, they are in fact more like a database.
+They associate an item in them to a time it was added to the channel.
+This way threads can use time based queries on items within a channel.
+These channels and threads can form large computational graphs.
+
+To add an item to a channel a thread calls `put(item, timestamp)`.
+Whereas to get an item from a channel a thread calls `get(lower_bound, upper_bound)`, this will return all items between the lower and upper bound.
+There are other predicates like, get latest item or closest item to a timestamp.
+
+Quite often there will be related channels: For example, the camera, audio, door sensor for a given room.
+In these cases we define a 'stream group' that indicates these are all related.
+To do this we just need to choose one channel which will be the 'Anchor' stream (with the others being dependent).
+We can then use the `groupget` function on the Anchor stream to get all the related events.
+
+The channel is what makes this programming model suitable for this use case.
+The channel:
+
+- Can be anywhere in the system.
+
+- Can be accessible from anywhere.
+
+- Has a network-wide unique name.
+
+- Uses time as a first class entity.
+
+- Persists streams under App control.
+
+- Seamlessly goes from live data to historical, using the same API.
+
+This is all handled by the PTS library under the hood.
+
+### PTS implementation
+
+The channel abstraction is implemented in 4 layers:
+
+- Live channel: This is a queue of the latest items that have been added to this channel.
+
+- Interaction layer: This moves items from live into a historic queue using the persist trigger.
+This also supports get queries that span across live and historical data.
+
+- Persistence layer: This does the heavy lifting of taking historical items and pickling then saving them appropriately.
+Users can choose how to pickle different types of objects that can be stored on this channel.
+
+- Backend layer: This is the physical storage of historical data.
+There is a choice of backend MySQL or a choice of file systems.
+
+This is all managed by worker threads that are running within the library, these pick up tasks given by the triggers.
+For example when a thread calls put on a new object this generates a new item trigger, which is responsible for moving an item into the live channel.
+The user can also configure garbage collection triggers to automatically clean out old data if it is not being saved down into the historical data.
+This is normally handled by a separate garbage collection thread.
