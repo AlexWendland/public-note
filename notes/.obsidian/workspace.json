@@ -1,0 +1,326 @@
+{
+  "main": {
+    "id": "f4ee406e9b588cf8",
+    "type": "split",
+    "children": [
+      {
+        "id": "c7dc0d4d0e60c0da",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e9110721a6fb44ea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "OMSCS/CS6210/Week 2 - OS Structure Overview.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Week 2 - OS Structure Overview"
+            }
+          },
+          {
+            "id": "6d08e918f5677668",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "OMSCS/CS6210/Week 3 - Virtualization.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Week 3 - Virtualization"
+            }
+          },
+          {
+            "id": "4e58b5503de7eace",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "OMSCS/CS6210/Week 4 - Parallel Systems.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Week 4 - Parallel Systems"
+            }
+          },
+          {
+            "id": "330e1bd9053a7e36",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "OMSCS/CS6210/Week 6 - Distributed objects and middle ware.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Week 6 - Distributed objects and middle ware"
+            }
+          },
+          {
+            "id": "7ee7e1adef627776",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "OMSCS/CS6210/Week 8 - Internet Computing.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Week 8 - Internet Computing"
+            }
+          },
+          {
+            "id": "fa5052e5f541f6c0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "planning/Review pages.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Review pages"
+            }
+          },
+          {
+            "id": "ac0df502d4facefa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "thonks/My thoughts about a start up.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "My thoughts about a start up"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d5e199e180ad1171",
+    "type": "split",
+    "children": [
+      {
+        "id": "71b37de848fe60cd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c942312844c14129",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "f5cdaba4fa895a7d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "05735a89d60a6930",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4161096cf8cb2bf5",
+    "type": "split",
+    "children": [
+      {
+        "id": "35e9d6767102d8d1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f84be8cbf0633d77",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Excalidraw/multi_level_page_tables.excalidraw.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for multi_level_page_tables.excalidraw"
+            }
+          },
+          {
+            "id": "79e7f95fc5d24580",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Excalidraw/multi_level_page_tables.excalidraw.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from multi_level_page_tables.excalidraw"
+            }
+          },
+          {
+            "id": "d528548ebaa26605",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "50007f71e71d8534",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "801807fc8f5c1f32",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Excalidraw/multi_level_page_tables.excalidraw.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of multi_level_page_tables.excalidraw"
+            }
+          },
+          {
+            "id": "f0f4a05299c85380",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "publish:Publish changes...": false,
+      "templater-obsidian:Templater": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "obsidian-advanced-slides:Show Slide Preview": false,
+      "periodic-notes:Open this week": false
+    }
+  },
+  "active": "7ee7e1adef627776",
+  "lastOpenFiles": [
+    "OMSCS/CS6210/Week 6 - Distributed objects and middle ware.md",
+    "OMSCS/CS6210/Week 8 - Internet Computing.md",
+    "OMSCS/CS6210/Week 7 - Distributed subsystems.md",
+    "planning/Review pages.md",
+    "Untitled 1.md",
+    "Untitled.md",
+    "OMSCS/CS6210/Week 5 - Distributed Systems.md",
+    "thonks/My thoughts about a start up.md",
+    "OMSCS/CS6210/Week 6 - Distributed objects and middle ware.md~",
+    "planning/Page Ideas.md",
+    "CLAUDE.md",
+    "OMSCS/CS6210/Week 5 - Distributed Systems.md~",
+    "OMSCS/CS6210/Week 4 - Parallel Systems.md",
+    "OMSCS/CS6200/Week 10 - Synchronization Constructs.md",
+    "OMSCS/CS6200/Week 15 - Distributed shared memory.md",
+    "OMSCS/CS6200/Week 12 - Virtualization.md",
+    "OMSCS/CS6200/Week 8 - Memory management.md",
+    "Excalidraw/Page tables.excalidraw.md",
+    "OMSCS/CS6210/Week 4 - Parallel Systems.md~",
+    "images/dsm.png",
+    "images/smp.png",
+    "images/dance_hall.png",
+    "OMSCS/CS6210/Week 3 - Virtualization.md",
+    "OMSCS/CS6210/Week 2 - OS Structure Overview.md",
+    "notes/art_of_seduction/Anti-seducer.md",
+    "OMSCS/CS6210",
+    "OMSCS/CS6210 Advanced Operating Systems.md",
+    "notes/art_of_seduction/Types of seducer.md",
+    "Excalidraw/Life graph contors.excalidraw.md",
+    "notes/art_of_seduction",
+    "notes",
+    "thonks/How I think about work.md",
+    "thonks",
+    "Excalidraw/meta_3_4_2.md",
+    "Excalidraw/memory_hardware.excalidraw.md",
+    "Excalidraw/Life graph.excalidraw.md"
+  ]
+}

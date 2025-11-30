@@ -1,0 +1,64 @@
+[project]
+name = "obsidian-helper"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Alex Wendland", email = "a.p.wendland@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11.8"
+dependencies = [
+    "pyyaml>=6.0.1",
+    "pydantic>=2.4.2",
+    "gitpython>=3.1.40",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.2",
+    "mypy>=1.0.0",
+    "types-pyyaml>=6.0.0",  # Type stubs for PyYAML
+]
+
+[project.scripts]
+lecture = "scripts.lecture:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # Pyflakes
+    "I",      # isort
+    "UP",     # pyupgrade - modernize Python syntax
+    "B",      # flake8-bugbear - common bugs and design issues
+    "C4",     # flake8-comprehensions - better list/set/dict comprehensions
+    "SIM",    # flake8-simplify - simplify code
+    "RUF",    # Ruff-specific rules
+    "PTH",    # flake8-use-pathlib - prefer pathlib over os.path
+    "N",      # pep8-naming - enforce naming conventions
+]
+
+# Optionally ignore specific rules that might be too strict
+ignore = [
+    "E501",   # Line too long (handled by formatter)
+    "N999",   # Invalid module name (for scripts)
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false  # Start lenient, can tighten later
+check_untyped_defs = true
+ignore_missing_imports = true  # Don't fail on libraries without type stubs
