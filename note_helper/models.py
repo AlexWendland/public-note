@@ -22,7 +22,7 @@ class MarkdownSection(pydantic.BaseModel):
         self.lines = lines
 
 
-class ObsidianFile(pydantic.BaseModel):
+class NoteFile(pydantic.BaseModel):
     file_path: str
     metadata: dict[str, Any]
     sections: list[MarkdownSection]
@@ -39,7 +39,7 @@ class ObsidianFile(pydantic.BaseModel):
         return value
 
 
-class ObsidianLink(pydantic.BaseModel):
+class NoteLink(pydantic.BaseModel):
     file_name: str
     section: str | None = None
     alias: str | None = None
@@ -57,7 +57,7 @@ class ObsidianLink(pydantic.BaseModel):
         return self.alias if self.alias else self.file_name
 
     @classmethod
-    def from_string(cls, text: str) -> "ObsidianLink":
+    def from_string(cls, text: str) -> "NoteLink":
         file_name = text
         section = None
         alias = None

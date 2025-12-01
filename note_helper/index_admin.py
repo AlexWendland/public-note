@@ -4,18 +4,18 @@ from pathlib import Path
 
 import pydantic
 
-from obsidian_helper import constants, models, read_obsidian, write_obsidian
+from note_helper import constants, models, read_note, write_note
 
-GIT_INDEX_FILE = str(Path(constants.OBSIDIAN_DIR) / "Git Index.md")
-MATHS_INDEX_FILE = str(Path(constants.OBSIDIAN_DIR) / "Maths Index.md")
-PROGRAMMING_INDEX_FILE = str(Path(constants.OBSIDIAN_DIR) / "Programming Index.md")
-PYTHON_INDEX_FILE = str(Path(constants.OBSIDIAN_DIR) / "Python Index.md")
+GIT_INDEX_FILE = str(Path(constants.NOTES_DIR) / "Git Index.md")
+MATHS_INDEX_FILE = str(Path(constants.NOTES_DIR) / "Maths Index.md")
+PROGRAMMING_INDEX_FILE = str(Path(constants.NOTES_DIR) / "Programming Index.md")
+PYTHON_INDEX_FILE = str(Path(constants.NOTES_DIR) / "Python Index.md")
 
 logger = logging.getLogger(__name__)
 
 
 class IndexFile(pydantic.BaseModel):
-    obsidian_file: models.ObsidianFile
+    note_file: models.NoteFile
     is_in_index: Callable[[list[str]], bool]
 
     def update_index(self, notes: list[str]):
@@ -27,7 +27,7 @@ class IndexFile(pydantic.BaseModel):
         for note in sorted(notes):
             lines.append(self.make_index_entry(note))
         self.get_index_section().lines = lines
-        write_obsidian.write_obsidian_file(self.obsidian_file)
+        write_note.write_note_file(self.note_file)
 
     def log_difference_between_index_and_notes(self, notes: list[str]):
         """
@@ -37,11 +37,11 @@ class IndexFile(pydantic.BaseModel):
 
         notes_not_in_index = [note for note in notes if note not in current_index_entries]
         if notes_not_in_index:
-            logger.info(f"{self.obsidian_file.file_path} INFO: Notes not in index: {notes_not_in_index}")
+            logger.info(f"{self.note_file.file_path} INFO: Notes not in index: {notes_not_in_index}")
 
         removed_notes = [note for note in current_index_entries if note not in notes]
         if removed_notes:
-            logger.info(f"{self.obsidian_file.file_path} INFO: Notes removed from index: {removed_notes}")
+            logger.info(f"{self.note_file.file_path} INFO: Notes removed from index: {removed_notes}")
 
     def get_current_index_entries(self):
         """
@@ -70,31 +70,31 @@ class IndexFile(pydantic.BaseModel):
 
     def get_index_section(self):
         """
-        Returns the section of the obsidian file that contains the index.
+        Returns the section of the note file that contains the index.
         """
-        for section in self.obsidian_file.sections:
+        for section in self.note_file.sections:
             if section.title == "Index":
                 return section
         index_section = models.MarkdownSection(title="Index", depth=1, lines=[])
-        self.obsidian_file.sections.append(index_section)
+        self.note_file.sections.append(index_section)
         return index_section
 
 
 INDEX_FILES = [
     IndexFile(
-        obsidian_file=read_obsidian.read_obsidian_file(GIT_INDEX_FILE),
+        note_file=read_note.read_note_file(GIT_INDEX_FILE),
         is_in_index=lambda tags: "git" in tags,
     ),
     IndexFile(
-        obsidian_file=read_obsidian.read_obsidian_file(MATHS_INDEX_FILE),
+        note_file=read_note.read_note_file(MATHS_INDEX_FILE),
         is_in_index=lambda tags: "maths" in tags,
     ),
     IndexFile(
-        obsidian_file=read_obsidian.read_obsidian_file(PROGRAMMING_INDEX_FILE),
+        note_file=read_note.read_note_file(PROGRAMMING_INDEX_FILE),
         is_in_index=lambda tags: "programming" in tags and "python" not in tags and "git" not in tags,
     ),
     IndexFile(
-        obsidian_file=read_obsidian.read_obsidian_file(PYTHON_INDEX_FILE),
+        note_file=read_note.read_note_file(PYTHON_INDEX_FILE),
         is_in_index=lambda tags: "python" in tags,
     ),
 ]
@@ -111,11 +111,11 @@ def update_indices():
 
 def get_all_notes(index_file: IndexFile):
     """
-    Returns a list of all the notes in the vault.
+    Returns a list of all the notes in the repository.
     """
     notes = []
-    for file in read_obsidian.get_obsidian_files(templates=False):
-        obsidian_file = read_obsidian.read_obsidian_file(str(file))
-        if index_file.is_in_index(obsidian_file.metadata.get("tags", [])):
-            notes.append(obsidian_file.file_name)
+    for file in read_note.get_note_files(templates=False):
+        note_file = read_note.read_note_file(str(file))
+        if index_file.is_in_index(note_file.metadata.get("tags", [])):
+            notes.append(note_file.file_name)
     return notes

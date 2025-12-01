@@ -4,7 +4,7 @@ from typing import Any
 
 import yaml
 
-from obsidian_helper import models
+from note_helper import models
 
 
 class IndentedDumper(yaml.Dumper):
@@ -16,15 +16,15 @@ class IndentedDumper(yaml.Dumper):
         return super().increase_indent(flow, False)
 
 
-def write_obsidian_file(obsidian_file: models.ObsidianFile):
+def write_note_file(note_file: models.NoteFile):
     """
-    Writes an ObsidianFile object to a markdown file.
+    Writes a NoteFile object to a markdown file.
     """
-    with Path(obsidian_file.file_path).open("w") as file:
-        if obsidian_file.metadata:
-            write_metadata(file, obsidian_file.metadata)
+    with Path(note_file.file_path).open("w") as file:
+        if note_file.metadata:
+            write_metadata(file, note_file.metadata)
 
-        for section in obsidian_file.sections:
+        for section in note_file.sections:
             file.write(turn_section_to_string(section))
 
 

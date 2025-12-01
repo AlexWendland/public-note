@@ -5,13 +5,13 @@ from typing import Any, TextIO
 import pydantic
 import yaml
 
-from obsidian_helper.constants import OBSIDIAN_DIR
-from obsidian_helper.models import MarkdownSection, ObsidianFile
+from note_helper.constants import NOTES_DIR
+from note_helper.models import MarkdownSection, NoteFile
 
 
-def read_metadata_from_obsidian_file(metadata_lines: list[str]) -> dict[str, Any]:
+def read_metadata_from_note_file(metadata_lines: list[str]) -> dict[str, Any]:
     """
-    Reads YAML metadata from an obsidian file.
+    Reads YAML metadata from a note file.
 
     Parameters:
     - file_name (str): Path to the markdown file.
@@ -26,20 +26,20 @@ def read_metadata_from_obsidian_file(metadata_lines: list[str]) -> dict[str, Any
     return result if isinstance(result, dict) else {}
 
 
-def read_obsidian_file(file_path: str) -> ObsidianFile:
+def read_note_file(file_path: str) -> NoteFile:
     """
-    Reads a markdown file and returns an ObsidianFile object.
+    Reads a markdown file and returns a NoteFile object.
 
     Parameters:
     - file_name (str): Path to the markdown file.
 
     Returns:
-    - ObsidianFile: An ObsidianFile object containing the file's metadata and sections.
+    - NoteFile: A NoteFile object containing the file's metadata and sections.
     """
     with Path(file_path).open(errors="ignore") as file:
         first_line_raw = next(file, None)
         if first_line_raw is None:
-            return ObsidianFile(file_path=file_path, metadata={}, sections=[])
+            return NoteFile(file_path=file_path, metadata={}, sections=[])
         first_line = first_line_raw.strip()
 
         metadata = {}
@@ -50,7 +50,7 @@ def read_obsidian_file(file_path: str) -> ObsidianFile:
 
         sections = extract_all_sections(first_line_for_sections, file)
 
-        return ObsidianFile(file_path=file_path, metadata=metadata, sections=sections)
+        return NoteFile(file_path=file_path, metadata=metadata, sections=sections)
 
 
 def extract_metadata(file: TextIO) -> dict[str, Any]:
@@ -140,17 +140,17 @@ EXCLUDED_DIRECTORIES = [
 ]
 
 
-def get_obsidian_files(templates: bool = True) -> Generator[str, None, None]:
+def get_note_files(templates: bool = True) -> Generator[str]:
     """
-    Gets all obsidian files in the vault. It skips over some common files you will want to ignore.
+    Gets all note files in the repository. It skips over some common files you will want to ignore.
 
     Parameters:
         templates (bool,optional): Whether to include templates in the search. Defaults to True.
 
     Yields:
-        Generator[str, None, None]: The files in the vault.
+        Generator[str, None, None]: The files in the repository.
     """
-    directory = Path(OBSIDIAN_DIR)
+    directory = Path(NOTES_DIR)
 
     excluded_directories = EXCLUDED_DIRECTORIES.copy()
     if not templates:

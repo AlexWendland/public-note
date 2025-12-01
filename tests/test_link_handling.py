@@ -1,4 +1,4 @@
-from obsidian_helper.link_handling import _clean_string_of_aliases, build_rehydration_map
+from note_helper.link_handling import _clean_string_of_aliases, build_rehydration_map
 
 
 def test_build_rehydration_map():

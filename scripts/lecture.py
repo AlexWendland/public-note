@@ -1,13 +1,12 @@
-#!/usr/bin/env python3
 """CLI tool to create a new OMSCS lecture note."""
 
 import sys
 from datetime import datetime
 from pathlib import Path
 
-from obsidian_helper.models import MarkdownSection, ObsidianFile
-from obsidian_helper.read_obsidian import read_obsidian_file
-from obsidian_helper.write_obsidian import write_obsidian_file
+from note_helper.models import MarkdownSection, NoteFile
+from note_helper.read_note import read_note_file
+from note_helper.write_note import write_note_file
 
 
 def prompt_input(prompt: str) -> str:
@@ -43,10 +42,10 @@ def create_lecture_file(name: str, week: str, repo_root: Path) -> Path:
     # Create the file content
     sections = [MarkdownSection(title=name, depth=1, lines=[])]
 
-    obsidian_file = ObsidianFile(file_path=str(file_path), metadata=metadata, sections=sections)
+    note_file = NoteFile(file_path=str(file_path), metadata=metadata, sections=sections)
 
     # Write the file
-    write_obsidian_file(obsidian_file)
+    write_note_file(note_file)
     print(f"Created lecture file: {file_path}")
 
     return file_path
@@ -57,7 +56,7 @@ def add_lecture_to_course_file(name: str, week: str, repo_root: Path) -> None:
     course_file_path = repo_root / "notes" / "OMSCS" / "CS6210 Advanced Operating Systems.md"
 
     # Read the existing course file
-    course_file = read_obsidian_file(str(course_file_path))
+    course_file = read_note_file(str(course_file_path))
 
     # Find the Lectures section
     lectures_section = None
@@ -97,7 +96,7 @@ def add_lecture_to_course_file(name: str, week: str, repo_root: Path) -> None:
         lectures_section.lines.append(new_lecture_link)
 
     # Write the updated course file
-    write_obsidian_file(course_file)
+    write_note_file(course_file)
     print(f"Added lecture to course file: {course_file_path}")
 
 
