@@ -22,6 +22,7 @@
     pkgs.ruff
     pkgs.git-lfs
     pkgs.docker
+    pkgs.hugo
     # Dependencies for node-canvas (required by excalidraw_export)
     pkgs.pkg-config
     pkgs.cairo
