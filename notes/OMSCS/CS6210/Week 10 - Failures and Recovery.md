@@ -147,4 +147,75 @@ Though it does require having a battery backed persistent memory.
 
 ## Quick silver
 
+Both Riovist and LRVM took a narrow view of what crash recovery is.
+They looked only at the state that needs to be saved during a crash but not what state needs to be cleaned up after a crash.
+For example, if you use a NFS and they crash your local computer may still have open connections and state reserved for that NFS.
+This consumes resources and can cause problems.
+Quicksilver is an OS that takes a recovery first approach to make sure all applications are hygienic.
 
+### Quicksilver structure
+
+Quicksilver is built on what is now a typical micro kernel architecture.
+
+![Quicksilver architecture](../../../images/quicksilver_architecture.png)
+
+For IPC quicksilver uses a service queue structure.
+This allows clients to put requests on and get responses, as well as for servers to subscribe to the service queue to carry out requests.
+The OS ensures exactly once semantics, this means no request is dropped and isn't handled twice.
+This can be carried out either synchronously or asynchronously - where clients can choose to wait at some point later for the response.
+Multiple servers can wait on requests, to do this they make an 'offer' to the service queue.
+(Historical note: Quicksilver was developed around the same time as RPC.)
+
+IPC can work across nodes, when requests are made they are managed by a communication manager.
+This communication manager can choose the communication method that is best for the request that is being made.
+
+IPC and the communication manager are important for how the recovery mechanism works.
+When a client talks to a server they both also spin up a transaction manager.
+It is the clients responsibility for managing transactions, that is recording what happens to the request it makes and propagating that back.
+As servers can be clients for other services, these naturally form a tree structure of requests that have been made.
+This way if the transaction is to fail in anyway the client has all the information to clean up after itself.
+
+![Quicksilver transactions](../../../images/transaction_graph.png)
+
+Whilst the client owns the transaction, this may be a risk - due to clients sometimes being the least reliable link in a transaction.
+Therefore it is possible for the owner to delegate the responsibility of managing this transaction to another node in the system (this will be called a coordinator).
+
+![Transaction Manager](../../../images/transaction_manager.png)
+
+The transaction manager on each node (server/client) saves the part of the transaction it is aware of into local logs into persistent memory.
+To reduce the amount of network traffic servers just report logs up to the node above it in the transaction tree.
+
+There are different types of failures in the system:
+
+- Network failures between nodes.
+
+- Node failure.
+
+These all need to be tracked and dealt with by the nodes above them in the system.
+However, transactions are not aborted by a single failure within the transaction graph.
+The responsibility for aborting and cleaning up transactions lies with the transaction coordinator (or owner).
+This means error reporting doesn't stop due to one failure - you can get more information about the errors if it continues.
+
+Within the transaction tree different messages can be passed up or down the tree.
+Responses to the requests flow up from servers to clients.
+However, transaction managers on the client can make 3 requests from the server:
+
+- Vote request: If the coordinator wants to commit the transaction, it asks all the nodes to vote on if this request should commit or abort.
+Notes then respond with vote-commit or vote-abort.
+
+- Abort request: Similarly if the coordinator wants to inform nodes that it is aborting the request, it sends an abort request.
+Then servers say when they are ready to abort the request.
+
+- End commit/abort: Lastly to note the request has been fully completed it sends a message to say the commit or abort has completed.
+
+In the case of the transaction origin failing with a different transaction coordinator - in this case the transaction coordinate propagates the abort to all nodes in the transaction tree.
+
+The advantage of bundling the IPC and recovery mechanisms is that the recovery mechanism is simpler.
+Any failed request you can walk through the nodes and find out what happened.
+There is also no extra communication for recovery as it comes built into the IPC protocol.
+
+An important note is that the OS implements the mechanism but not the policy itself.
+It is up to the subsystems to implement the recovery policies it needs for the state it is managing.
+This allows them to fine tune how impactful this recovery mechanism is on the service.
+Nodes uses a similar mechanism to LRVM for logs - and it is also up to the node how regularly it needs to write a redo logs to disk.
+In the Quicksilver case it is possible for clients to do a 'log force' to make the servers write logs to disk however, this impacts performance for ALL clients of this server.
