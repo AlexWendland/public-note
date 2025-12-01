@@ -89,7 +89,7 @@ When an application first tries to create a door for an application, that applic
 The door given out is attached to that 'front object' within the applications domain.
 That way upon using the door the application already has applied permissions - so the front object can check the users is doing an allowed operation.
 
-![Auth In Spring Os](../../../images/auth_in_spring_os.png)
+![Auth In Spring Os](../../../images/spring_auth.png)
 
 As a door reference can be shared - this means a user who is permissioned on the ACL can give permission to a user who is not on the ACL to access this application.
 This is useful for operations like printing - or any time another application wants to give out temporary permissions to another application.

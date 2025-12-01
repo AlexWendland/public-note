@@ -483,7 +483,7 @@ These then can be used to find the data that relates to this file in the followi
 
 - (Client) + (data address) -> (data storage server) to get the (data).
 
-![Xfs Lookup](../../../images/xfs_lookup.png)
+![Xfs Lookup](../../../images/xfs_storage_lookup.png)
 
 This is a very long lookup - however with caching this can be sped up a lot.
 
