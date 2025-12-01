@@ -8,7 +8,7 @@ draft: true
 tags:
   - OMSCS
 type: lecture
-week:
+week: 3
 ---
 # Week 3 - Virtualization
 

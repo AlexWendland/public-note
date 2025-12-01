@@ -8,7 +8,7 @@ draft: false
 tags:
   - OMSCS
 type: lecture
-week:
+week: 2
 ---
 # Week 2 - OS Structure Overview
 

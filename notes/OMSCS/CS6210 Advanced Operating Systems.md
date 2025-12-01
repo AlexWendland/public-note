@@ -43,6 +43,8 @@ By tracing the key ideas of today's most popular systems to their origins in res
 
 - [[Week 10 - Failures and Recovery]]
 
+- [[Week 11 - Security]]
+
 ## Links
 
 - [Central](https://www.omscentral.com/courses/advanced-operating-systems/reviews)
