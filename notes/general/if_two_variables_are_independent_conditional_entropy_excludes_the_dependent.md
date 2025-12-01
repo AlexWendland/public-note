@@ -1,0 +1,28 @@
+---
+aliases:
+checked: false
+created: 2024-02-24
+draft: false
+last_edited: 2024-02-24
+name: If two variables are independent conditional entropy excludes the dependent
+tags:
+  - probability
+type: lemma
+---
+# Statement
+
+> [!important] Lemma
+> Suppose we have two [independent](independent_events.md) [random variables](random_variable.md) $X$ and $Y$ over different [domains](function_domain.md) $A$ and $B$. Then the [Conditional entropy](conditional_entropy.md) is excludes the dependent
+> $$H(Y \vert X) = H(Y).$$
+
+# Proof
+
+This follows from the definitions
+$$
+\begin{align*}
+H(Y \vert X) = & - \sum_{a \in A} \sum_{b \in B} \mathbb{P}[X = a, Y = b] \log(\mathbb{P}[Y = b \vert X = a])\\
+= &- \sum_{a \in A} \sum_{b \in B} \mathbb{P}[X = a] \mathbb{P}[Y = b] \log(\mathbb{P}[Y = b])\\
+= &\sum_{a \in A} \mathbb{P}[X = a] \left ( - \sum_{b \in B} \mathbb{P}[Y = b] \log(\mathbb{P}[Y = b]) \right )\\
+= &H(Y).
+\end{align*}
+$$

@@ -1,0 +1,19 @@
+---
+aliases:
+  - activation function
+checked: false
+created: 2024-01-20
+draft: false
+last_edited: 2024-01-20
+name: Activation function
+tags:
+  - machine-learning
+type: definition
+---
+>[!tldr] Activation function
+>An *activation function* $a: \mathbb{R} \rightarrow \mathbb{R}$ gets applied in a [perceptron](perceptron_(neural_network).md) after the weighted sum of the inputs. It is the non-linear term. Classic activation functions are
+>- Identity function,
+>- [Binary step](binary_step.md),
+>- [Sigmoid function](sigmoid_function.md),
+>- [Rectified linear unit (ReLU)](rectified_linear_unit_(relu).md), or
+>- [Hyperbolic tangent (tanh)](hyperbolic_tangent_(tanh).md).

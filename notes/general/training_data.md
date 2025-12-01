@@ -1,0 +1,15 @@
+---
+aliases:
+  - training data
+checked: false
+created: 2024-01-13
+draft: false
+last_edited: 2024-01-13
+name: Training data
+tags:
+  - machine-learning
+type: definition
+---
+>[!tldr] Training data
+>Within the [modelling framework](modelling_framework.md), *training data* is a set of observations $T \subset A \times B$ which are normally samples from $X$ and $Y$. You would use this to train models. This should be kept distinct from you [Testing data](testing_data.md).
+

@@ -1,0 +1,20 @@
+---
+aliases:
+  - recall
+  - sensitivity
+checked: false
+created: 2024-02-02
+draft: false
+last_edited: 2024-02-02
+name: Recall
+tags:
+  - machine-learning
+  - statistics
+type: definition
+---
+>[!tldr] Recall
+> For some [binary](binary.md) [classification problem](classification_problems.md) where we are using $\hat{f}: A \rightarrow \{1, -1\}$ to [predict](prediction.md) $f: A \rightarrow \{1, -1\}$ for some [testing data](testing_data.md) $T$ we define
+> $$\mbox{Recall}(\hat{f}, T) = \frac{\vert \{ t \in T \vert f(t) = \hat{f}(t) = 1\} \vert}{\vert \{ t \in T \vert f(t) = \hat{f}(t) = 1\} \vert + \vert \{ t \in T \vert \hat{f}(t) = -1, f(t) = 1\} \vert}  $$
+> in terms [result types](result_types.md) this is
+> $$\mbox{Precision}(\hat{f}, T) = \frac{\mbox{True positives}}{\mbox{True positives} + \mbox{False negatives}}.$$
+

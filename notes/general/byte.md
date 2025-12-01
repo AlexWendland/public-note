@@ -1,0 +1,17 @@
+---
+aliases:
+  - Bytes
+  - bytes
+  - byte
+checked: false
+created: 2023-04-20
+draft: false
+last_edited: 2023-11-11
+name: Byte
+tags:
+  - programming
+type: data-type
+---
+# Byte
+
+This is a group of 8 [bits](bit.md) i.e. a 1 or 0.

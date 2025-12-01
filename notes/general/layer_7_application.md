@@ -1,0 +1,15 @@
+---
+aliases:
+  - layer 7
+  - Application layer
+checked: false
+created: 2024-05-23
+draft: false
+last_edited: 2024-05-23
+name: Layer 7 Application
+tags:
+  - networks
+type: definition
+---
+>[!tldr] Layer 7 Application
+>This layer determines what to do with this data. In a [HTTP](hyper_text_transfer_protocol_(http).md) web server these would be the key words get, post, head ect.

@@ -1,0 +1,15 @@
+---
+aliases:
+  - cross validation
+checked: false
+created: 2024-01-17
+draft: false
+last_edited: 2024-01-17
+name: Cross validation
+tags:
+  - machine-learning
+type: definition
+---
+>[!tldr] Cross validation
+> Suppose we are training a model on some [training data](training_data.md) $T$. If we [partition](partition_(set).md) $T$ into [folds](fold_(cross_validation).md) $T_i$ for $1 \leq i \leq k$. Then *cross validation* is the practice of training the model on all but one [fold](fold_(cross_validation).md) $T_j$ then assessing it on $T_j$ using our [objective function](objective_function.md). The practice usually involves doing this for all possible [folds](fold_(cross_validation).md) and picking the model with least error.
+

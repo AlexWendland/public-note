@@ -1,0 +1,17 @@
+---
+aliases:
+  - concurrency
+  - concurrently
+checked: false
+created: 2024-09-04
+draft: false
+last_edited: 2024-09-04
+name: Concurrency
+tags:
+  - OS
+  - computer-science
+type: definition
+---
+>[!tldr] Concurrency
+> This is a technique to handle large tasks that require waiting on different resources outside the control of the executor. This means starting lots of different tasks and switching to a different task whenever you are blocked from progressing on your current task. A common technique here is [asynchronous programming](asynchronous_programming.md) or [multi-threading](multi-threading.md) using a single kernel [thread](thread.md).
+

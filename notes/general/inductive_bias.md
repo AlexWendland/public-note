@@ -1,0 +1,19 @@
+---
+aliases:
+  - inductive bias
+  - learning bias
+  - Learning bias
+checked: false
+created: 2024-01-13
+draft: false
+last_edited: 2024-01-13
+name: Inductive bias
+tags:
+  - machine-learning
+type: definition
+---
+>[!tldr] Inductive bias
+>This is any preference in a [machine learning](machine_learning.md) algorithm to pick one model over another. Examples of this are:
+>- [Preference bias](preference_bias.md), and
+>- [Restriction bias](restriction_bias.md).
+

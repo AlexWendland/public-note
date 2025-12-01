@@ -1,0 +1,16 @@
+---
+aliases:
+  - disk storage
+checked: false
+created: 2024-08-26
+draft: true
+last_edited: 2024-08-26
+name: Disk storage
+tags:
+  - hardware
+  - computer-science
+type: definition
+---
+>[!tldr] Disk storage
+>Definition here
+
