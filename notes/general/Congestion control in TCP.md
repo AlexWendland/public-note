@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-05-28
-last_edited: 2024-05-28
 draft: false
+last_edited: 2024-05-28
 tags:
   - networks
 type: explainer
@@ -16,7 +16,7 @@ Congestion control is use to utilise the network with the following goals in min
 - Low delay: We should not overwhelm the switches and routers buffers causing a large delay within the network.
 - Fast convergence: We want to get to a stable point that achieves all the above quickly.
 
-There are two approaches when it comes to congestion control. 
+There are two approaches when it comes to congestion control.
 - Network assisted: You rely on the network to provide some signal about how congested it is. This could be done via:
 	- ICMP source quench.
 - End-to-end congestion control: Hosts need to infer congestion from the traffic they receive. This can use different signal such as:
@@ -26,7 +26,7 @@ There are two approaches when it comes to congestion control.
 
 [[Transmission Control Protocol (TCP)|TCP]] uses the end-to-end approach. It mainly uses packet loss to detect congestion as packet delay can have quite a bit of noise in the system. It uses major network delay to reset itself.
 
-[[Transmission Control Protocol (TCP)|TCP]] uses ACK messages as a probes and adopts a probe-and-adapt approach to adjusting the window size (number of unacknowledged packets) for congestion control. 
+[[Transmission Control Protocol (TCP)|TCP]] uses ACK messages as a probes and adopts a probe-and-adapt approach to adjusting the window size (number of unacknowledged packets) for congestion control.
 
 ![[Additive increase Multiplicative Decrease (AIMD)]]
 
@@ -34,9 +34,9 @@ There are two approaches when it comes to congestion control.
 
 ## Fairness
 
-This achieves fairness through [[Additive increase Multiplicative Decrease (AIMD)|AIMD]]. As the punishment for dropping a packet is exponential vs an increase which is linear. If you are using more of the network your probability of dropping a packet is higher and equally that punishment is larger. Whilst you are not dropping packets your increase is the same as every other network participant. 
+This achieves fairness through [[Additive increase Multiplicative Decrease (AIMD)|AIMD]]. As the punishment for dropping a packet is exponential vs an increase which is linear. If you are using more of the network your probability of dropping a packet is higher and equally that punishment is larger. Whilst you are not dropping packets your increase is the same as every other network participant.
 
-This exponential vs linear dynamic allows for fast convergence to an equilibrium. 
+This exponential vs linear dynamic allows for fast convergence to an equilibrium.
 
 ![Tcp Fairness](../../images/tcp_fairness.png)
 
@@ -53,7 +53,7 @@ Assuming we have a probability of $p$ of dropping a message - we can model what 
 
 Assume the max window size is $W_{max}$, then as the number of packets is increasing linearly we have the width and height of the saw is $W_{max}/2$. Therefore the total packets sent is
 $$
-\left(\frac{W_{max}}{2}\right)^2 + \frac{1}{2} \left(\frac{W_{max}}{2}\right)^2 = \frac{3}{8} W_{max}^2 
+\left(\frac{W_{max}}{2}\right)^2 + \frac{1}{2} \left(\frac{W_{max}}{2}\right)^2 = \frac{3}{8} W_{max}^2
 $$
 Which using our assumption means that
 $$

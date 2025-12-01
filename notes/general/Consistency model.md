@@ -3,8 +3,8 @@ aliases:
   - consistency model
 checked: false
 created: 2025-04-13
-last_edited: 2025-04-13
 draft: false
+last_edited: 2025-04-13
 tags:
   - OS
 type: definition

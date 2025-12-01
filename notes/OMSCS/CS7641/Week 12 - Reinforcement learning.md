@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS7641 Machine Learning]]"
+course: '[[CS7641 Machine Learning]]'
 created: 2024-04-06
-last_edited: 2024-04-06
 draft: false
+last_edited: 2024-04-06
 tags:
   - OMSCS
 type: lecture
@@ -16,7 +16,7 @@ week: 12
 
 ![[Reinforcement learning]]
 
-There are 4 kinds of process we think about: 
+There are 4 kinds of process we think about:
 - Planning:
 	- Input: Model (such as [[Markov decision process]])
 	- Output: Policy
@@ -34,7 +34,7 @@ There are 4 kinds of process we think about:
 
 We can compose these strategies in two major ways.
 
-The first uses a simulator and learner to generate at [[Reinforcement learning|RL]] planner. This method was the first major successful [[Reinforcement learning|RL]] algorithm creating a competitive backgammon solver. 
+The first uses a simulator and learner to generate at [[Reinforcement learning|RL]] planner. This method was the first major successful [[Reinforcement learning|RL]] algorithm creating a competitive backgammon solver.
 
 ![[Model-based reinforcement learning]]
 
@@ -42,7 +42,7 @@ The first uses a simulator and learner to generate at [[Reinforcement learning|R
 
 There are 3 different approaches to [[Reinforcement learning|RL]],
 - Policy search: Here you iterate through different polices to get the closest fit to the data.
-- Value-function based: Here you use your example transitions to generate a utility function which maps state to value. Which like in [[Policy Iteration (MDP)]] you can use make policy. 
+- Value-function based: Here you use your example transitions to generate a utility function which maps state to value. Which like in [[Policy Iteration (MDP)]] you can use make policy.
 - [[Model-based reinforcement learning]]: You use the transitions to generate a model, which consists of a transition function and reward function.
 
 ## Value-function based
@@ -53,7 +53,7 @@ U^{\ast}(s) = R(s) + \gamma \max_{a \in A(s)} \sum_{s' \in S} T(s,a,s') U^{\ast}
 $$
 Whereas for [[Policy Iteration (MDP)]] we look for the optimum policy given a utility function
 $$\pi^{\ast} = \mbox{arg}\max_{a \in A_s} \sum_{s' \in S} T(s,a,s')U^{\ast}(s').$$
-We would like a way to incorporate both approaches. 
+We would like a way to incorporate both approaches.
 
 ![[Q-function (RL)]]
 
@@ -65,13 +65,13 @@ from the definition of $Q$. But also we can write
 $$
 \pi^{\ast}(s) = \mbox{arg}\max_{a \in A_s} Q(s,a)
 $$
-as both $\gamma$ and $R(s)$ don't effect the $\mbox{arg}\max$. 
+as both $\gamma$ and $R(s)$ don't effect the $\mbox{arg}\max$.
 
 ## Incremental learning
 
 ![[Incremental learning ]]
 
-If we have a sequence where 
+If we have a sequence where
 $$\sum_{t \in \mathbb{N}} \alpha_t = \infty, \mbox{ and } \sum_{t \in \mathbb{N}} \alpha_t^2 < \infty
 $$
 with $X$ is a random variable and $x_t$ are all [[Independent identically distributed samples|i.i.d.]] then $V = \mathbb{E}[X]$.
@@ -93,6 +93,6 @@ You want to pick a balance between the two of them.
 
 ![[Epsilon-greedy exploration]]
 
-In the case where you really do explore infinitely if $\epsilon_t \rightarrow 0$ then $\hat{Q} \rightarrow Q$ and $\hat{\pi} \rightarrow \pi^{\ast}$. 
+In the case where you really do explore infinitely if $\epsilon_t \rightarrow 0$ then $\hat{Q} \rightarrow Q$ and $\hat{\pi} \rightarrow \pi^{\ast}$.
 
 ![[Optimistic exploration]]

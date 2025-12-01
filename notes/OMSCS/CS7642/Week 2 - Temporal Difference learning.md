@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS7642 Reinforcement Learning]]"
+course: '[[CS7642 Reinforcement Learning]]'
 created: 2025-05-20
-last_edited: 2025-05-20
 draft: false
+last_edited: 2025-05-20
 tags:
   - OMSCS
 type: lecture
@@ -83,7 +83,7 @@ This decay by $\gamma$ means that older visits to a state have their eligibility
 
 ### TD(1) Update Rule
 
-When an episode begins we have the value function from the previous episode $V_{old}$ and our job is to create a new value function $V_{new}$. At each step $t$ within this episode, after the transition $(s_t, a_t, r_{t+1}, s_{t+1})$, we calculate a **TD error** for the current transition: 
+When an episode begins we have the value function from the previous episode $V_{old}$ and our job is to create a new value function $V_{new}$. At each step $t$ within this episode, after the transition $(s_t, a_t, r_{t+1}, s_{t+1})$, we calculate a **TD error** for the current transition:
 $$\delta_t = r_{t+1} + \gamma V_{old}(s_{t+1}) - V_{old}(s_t).$$This $\delta_t$​ is the fundamental prediction error: the difference between the current estimate $V_{new}(s_t​)$ and a one-step bootstrapped estimate of the true return.
 
 Then, we update the value estimate for _every state s_ based on this $\delta_t$​ and its eligibility trace $e(s)$:
@@ -99,18 +99,18 @@ Initialize V(s) arbitrarily for all s in S
 
 For each episode:
 	Set V_old = V
-	// We will use V for V_new 
+	// We will use V for V_new
 	Set e(s) = 0 for all s in S (reset traces for new episode)
-	Initialize starting state s_0 
-	
+	Initialize starting state s_0
+
 	For each step t from 0 until episode terminates (s_t -> a_t -> r_{t+1} -> s_{t+1}):
 		// 1. Calculate TD Error for current step using V_old
 		// Note: if s_{t+1} is terminal, V_old(s_{t+1}) is 0
 		delta_t = r_{t+1} + gamma * V_old(s_{t+1}) - V_old(s_t)
-		
+
 		// 2. Update eligibility trace for current state
 		e(s_t) = e(s_t) + 1
-		
+
 		// 3. Update all state values in V_new and decay all eligibility traces
 		For each state s in S:
 			V(s) = V(s) + alpha * delta_t * e(s)
@@ -167,13 +167,13 @@ Initialize V(s) arbitrarily for all s in S
 
 For each episode:
 	Set V_old = V
-	// We will use V for V_new 
+	// We will use V for V_new
 
 	For each step t from 0 until episode terminates (s_t -> a_t -> r_{t+1} -> s_{t+1}):
 		// 1. Calculate TD Error for current step using V_old
 		// Note: if s_{t+1} is terminal, V_old(s_{t+1}) is 0
 		delta_t = r_{t+1} + gamma * V_old(s_{t+1}) - V_old(s_t)
-	
+
 		Set V(s_t) = V(s_t) + alpha delta_t
 
 Output: V
@@ -188,4 +188,4 @@ While TD(1) aims to average the _true total returns_ (making it an unbiased esti
 ## K-step estimators
 
 
-## Empirical evidence 
+## Empirical evidence

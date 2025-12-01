@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6215 Introduction to Graduate Algorithms]]"
+course: '[[CS6215 Introduction to Graduate Algorithms]]'
 created: 2024-04-06
-last_edited: 2024-04-06
 draft: false
+last_edited: 2024-04-06
 tags:
   - OMSCS
 type: lecture
@@ -19,7 +19,7 @@ week: 13
 This is a lot of words but these games are like tick tack toe or noughts and crosses. Whilst these are fun they all boil down to a payoff matrix for the different strategies you take. Like the following
 $$
 \begin{array}{c|ccc}
- \ 1 & a & b & c\\ \hline 
+ \ 1 & a & b & c\\ \hline
 x & 1 & 0 & -1 \\
 y & -1 & 0 & 1 \\
 \end{array}
@@ -34,13 +34,13 @@ We call the options $a$, $b$, $c$, $x$ and $y$ strategies.
 
 ![[Optimum play exists for 2-player zero-sum games with perfect information]]
 
-This means we can determine the value of the game by both players following their best strategy we can work out the value of the game.  
+This means we can determine the value of the game by both players following their best strategy we can work out the value of the game.
 
 >[!warning]
 >I don't really understand what happens in the case
 >$$
 > \begin{array}{c|cc}
->  \ 1 & a & b \\ \hline 
+>  \ 1 & a & b \\ \hline
 > x & 1 &  -1 \\
 > y & -1 &  1 \\
 > \end{array}
@@ -52,7 +52,7 @@ This means we can determine the value of the game by both players following thei
 [[Perfect information]] means that all the knowledge is known by all players at the start of the game. A good example where this is not the case is poker.
 
 >[!example] Mini-poker
->Suppose we are in a game where the following happens: 
+>Suppose we are in a game where the following happens:
 >1. Player one is dealt a card, 50% of the time it is red and the other 50% it is black.
 >2. If player one is dealt a black card they can resign or keep playing. If they are dealt a red card they have to keep playing. If they resign they get -20 score.
 >3. Player two then gets to choose to resign or for player one to show them their card.
@@ -65,17 +65,17 @@ This means we can determine the value of the game by both players following thei
 In this case we can still calculate the payoff matrix. Note if player one chooses a resign strategy by they get dealt a red card they have to keep going.
 $$
 \begin{array}{c|cc}
- \ \mbox{red} & \mbox{resign} & \mbox{hold}\\ \hline 
+ \ \mbox{red} & \mbox{resign} & \mbox{hold}\\ \hline
 \mbox{resign} & -20 & 10 \\
 \mbox{show} & -20 & -40\\
 \end{array} \ \ \ \ \
 \begin{array}{c|cc}
- \ \mbox{black} & \mbox{resign} & \mbox{hold}\\ \hline 
+ \ \mbox{black} & \mbox{resign} & \mbox{hold}\\ \hline
 \mbox{resign} & 10 & 10 \\
 \mbox{show} & 30 & 30\\
 \end{array}  \ \ \ \ \
 \begin{array}{c|cc}
- \ \mbox{either} & \mbox{resign} & \mbox{hold}\\ \hline 
+ \ \mbox{either} & \mbox{resign} & \mbox{hold}\\ \hline
 \mbox{resign} & -5 & 10 \\
 \mbox{show} & 5 & -5\\
 \end{array}
@@ -91,7 +91,7 @@ However you can have non-deterministic strategies.
 
 ![[Mixed strategy]]
 
-In the game above, if player one holds with probability $p$ then we get expected return $15p- 5$ if player two resigns otherwise we get $5 - 10p$ profit if player two sees the card. Therefore if we choose $p = 0.4$ we can get expected profit of $1$ no matter what player $B$ does. 
+In the game above, if player one holds with probability $p$ then we get expected return $15p- 5$ if player two resigns otherwise we get $5 - 10p$ profit if player two sees the card. Therefore if we choose $p = 0.4$ we can get expected profit of $1$ no matter what player $B$ does.
 
 If you do the same for player two, picking to see with probability $q$ then we get expected return $10q - 5$ if player one resigns but $10 - 15q$ if they hold. Then we get optimum $q = 3/5$ which also gives player one a profit of 1.
 
@@ -103,7 +103,7 @@ In the [[Prisoner's dilemma]] the dominating strategy is for them both to testif
 
 ![[Nash equilibrium]]
 
-This works for both pure or mixed strategies. 
+This works for both pure or mixed strategies.
 
 ## Dominating strategies
 
@@ -156,7 +156,7 @@ When in the above situation there are some meta strategies you can adopt. For ex
 >Suppose we do this with the prisoners dilemma. Now lets consider 4 strategies, always stay silent (silent), always testify (testify) or tit for tat (tft) where you start silent or testify. Lets consider the strategy matrix (to simplify things I took a factor of $\frac{1}{1 - \gamma}$ out)
 > $$
 > \begin{array}{c|cc}
-> \ \mbox{A \\ B} & \mbox{silent} & \mbox{testify} & \mbox{tft-silent} & \mbox{tft-testify}\\ \hline 
+> \ \mbox{A \\ B} & \mbox{silent} & \mbox{testify} & \mbox{tft-silent} & \mbox{tft-testify}\\ \hline
 > \mbox{silent} & (1,1) & (3,0) & (1,1) & (3-2\gamma, \gamma) \\
 > \mbox{testify} & (0,3) & (2,2) & (2 \gamma, 3 - \gamma) & (2,2) \\
 > \mbox{tft-silent} & (1,1) & (3 - \gamma, 2 \gamma) & (1,1) & (\frac{3}{1 + \gamma}, \frac{3 \gamma}{1 + \gamma})\\
@@ -179,20 +179,20 @@ Here no matter what $\gamma$ we have that testify is a [[Nash equilibrium]]. Tho
 
 ## Picturing Mixed strategies for repeated games
 
-Now we are repeating games we could adopt a [[Mixed strategy]] of meta strategies. i.e. decide a probability distribution over the strategies and use them dependent on a random variable. 
+Now we are repeating games we could adopt a [[Mixed strategy]] of meta strategies. i.e. decide a probability distribution over the strategies and use them dependent on a random variable.
 
 ![[Minmax profile]]
 
 ![[Battle of the sexes]]
 
-To calculate the [[Minmax profile]] of the [[Battle of the sexes]] we have to think about how one player could punish the other player the most. (This game is simpler as it is symmetric.) Using a [[Pure strategy]] if $B$ wanted to punish $A$ they would go for $y$ and so the best $A$ could do would be 1 point. 
+To calculate the [[Minmax profile]] of the [[Battle of the sexes]] we have to think about how one player could punish the other player the most. (This game is simpler as it is symmetric.) Using a [[Pure strategy]] if $B$ wanted to punish $A$ they would go for $y$ and so the best $A$ could do would be 1 point.
 
 However, this is not the worst player $B$ could do. Instead they use a mixed strategy and went to $x$ with probability $p$ and $y$ with probability $(1-p)$. Then player $A$ choosing $x$ would give them $2p$ whereas choosing $y$ gives them $(1 - p)$. Which setting $p = 1/3$ gives the expected return of either decision to be $2/3$.
 
 This gives the following [[Minmax profile]].
 > $$
  \begin{array}{c|c}
- \ \mbox{A} & \mbox{B} \\ \hline 
+ \ \mbox{A} & \mbox{B} \\ \hline
  \frac{2}{3} & \frac{2}{3} \\
  \end{array}
 $$
@@ -212,7 +212,7 @@ For example to get the line at the bottom set $p = 1$ $\{(2q, q) \vert q \in [0,
 
 ![[Security region]]
 
-In the [[Battle of the sexes]] example we have plotted the security region below. 
+In the [[Battle of the sexes]] example we have plotted the security region below.
 
 ![feasible_region_with_security_region](../../../images/excalidraw/feasible_region_with_security_region.excalidraw.svg)
 
@@ -239,7 +239,7 @@ This strategy feels counter intuitive - like a punch me twice and its all ok men
 The strategy is in [[Nash equilibrium]] with itself, as both players start out cooperating and will continue forever. However it is also [[Subgame perfect]] and therefore a plausible threat. To see this lets start a game in every previous state. We will represents turns as $(*,*)$ where the first position is what player $A$ did and the second is what player $B$ did. There are two options are moves cooperate $C$ and defect $D$.
 > $$
  \begin{array}{c|cc}
- \ \mbox{Last} & 1 & 2 \\ \hline 
+ \ \mbox{Last} & 1 & 2 \\ \hline
  (C,C) & (C,C) & (C,C) \\
  (C,D) & (D,D) & (C,C) \\
  (D,C) & (D,D) & (C,C) \\
@@ -253,7 +253,7 @@ We see from this no matter what happened last round the [[Pavlov strategy]] self
 
 ## Stochastic games
 
-[[Stochastic games]] are the multi-agent analogy to a [[Markov decision process]]. 
+[[Stochastic games]] are the multi-agent analogy to a [[Markov decision process]].
 
 ![[Stochastic games]]
 

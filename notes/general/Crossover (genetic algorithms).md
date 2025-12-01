@@ -3,8 +3,8 @@ aliases:
   - crossover function
 checked: false
 created: 2024-02-24
-last_edited: 2024-02-24
 draft: false
+last_edited: 2024-02-24
 tags:
   - machine-learning
 type: definition

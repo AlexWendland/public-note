@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: '[[CS6200 Graduate introduction to Operating Systems]]'
 created: 2025-03-09
-last_edited: 2025-03-09
 draft: false
+last_edited: 2025-03-09
 tags:
   - OMSCS
 type: lecture
@@ -20,7 +20,7 @@ The operation system supports the abstraction of [[Virtual memory|virtual memory
 - Validate memory access of processes.
 
 When we speak about memory there are two main abstractions [[Operating system (OS)|OS]] can use for memory:
-- [[Paging system]]: This uses [[Memory page|memory pages]] which fixes the size of the smallest unit that can be moved between memory locations. This is the currently the most popular way to manage memory. 
+- [[Paging system]]: This uses [[Memory page|memory pages]] which fixes the size of the smallest unit that can be moved between memory locations. This is the currently the most popular way to manage memory.
 - [[Memory segmentation]]: This uses [[Memory segment|memory segments]] which have variable sizes.
 
 To support these memory mapping there are 3 bits of hardware that take a [[Virtual memory|virtual address]] to a place on [[Random Access Memory (RAM)|RAM]].
@@ -74,7 +74,7 @@ Page sizes are determined by the [[Operating system (OS)|operating system]] but 
 ![[Multi-level page tables]]
 
 >[!example] Single vs double size comparison
->Suppose we have the same processes running only a 12-[[Bit|bit]] architecture. Though we run it on two different machines where: 
+>Suppose we have the same processes running only a 12-[[Bit|bit]] architecture. Though we run it on two different machines where:
 >- the first uses flat page tables, with [[Virtual memory|virtual addresses]] having a 6 bit [[Virtual page number (VPN)|VPN]] and a 6-bit offset, and
 >- the second uses 2-level page tables, with the [[Virtual memory|virtual addresses]] having a 2 bit first index and 4 bit second index with a 6-bit offset.
 >
@@ -94,7 +94,7 @@ Page sizes are determined by the [[Operating system (OS)|operating system]] but 
 
 ![[Descriptor table|descriptor table]]
 
-Normally [[Memory segmentation|segmentation]] is used in conjunction with [[Paging system|paging]]. First use segmentation to cut down the [[Virtual memory|virtual memory]] then using [[Paging system|paging]] to get pages within that segment. 
+Normally [[Memory segmentation|segmentation]] is used in conjunction with [[Paging system|paging]]. First use segmentation to cut down the [[Virtual memory|virtual memory]] then using [[Paging system|paging]] to get pages within that segment.
 
 ## Page size
 

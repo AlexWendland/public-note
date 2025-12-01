@@ -3,8 +3,8 @@ aliases:
   - routing
 checked: false
 created: 2024-05-21
-last_edited: 2024-05-21
 draft: false
+last_edited: 2024-05-21
 tags:
   - networks
 type: definition
@@ -12,7 +12,7 @@ type: definition
 >[!tldr] Routing
 >The process of routing is getting a [[Packets|packet]] the network associated to its [[Internet Protocol (IP)|IP address]]. To do this all routers store a [[Routing table|routing table]] which maps the tuple of an IP address and a [[Network mask|network mask]] to either a interface or a IP address.
 >
->There are two types of routing [[Intradomain routing]], how routers exchange information within the same [[Autonomous system (AS)]], and [[Interdomain routing|interdomain routing]] how routes get shared between [[Autonomous system (AS)]]. 
+>There are two types of routing [[Intradomain routing]], how routers exchange information within the same [[Autonomous system (AS)]], and [[Interdomain routing|interdomain routing]] how routes get shared between [[Autonomous system (AS)]].
 >
 >There are 3 ways a router can populate its routing table
 >1. Directly connected: This is for networks directly connected to the router. It adds an entry for that networks and the interface of the [[Router|router]] it is connected to.

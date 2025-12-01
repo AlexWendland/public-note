@@ -4,8 +4,8 @@ aliases:
   - synchronize
 checked: false
 created: 2025-03-24
-last_edited: 2025-03-24
 draft: false
+last_edited: 2025-03-24
 tags:
   - OS
 type: definition

@@ -3,8 +3,8 @@ aliases:
   - Knapsack-search
 checked: false
 created: 2023-11-02
-last_edited: 2023-11-13
 draft: false
+last_edited: 2023-11-13
 tags:
   - programming
 type: problem

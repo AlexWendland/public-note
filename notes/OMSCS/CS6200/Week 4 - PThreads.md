@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: '[[CS6200 Graduate introduction to Operating Systems]]'
 created: 2024-09-04
-last_edited: 2024-09-04
 draft: false
+last_edited: 2024-09-04
 tags:
   - OMSCS
 type: lecture
@@ -52,7 +52,7 @@ where `thread` is the thread you want to join and `status` will be the return ob
 
 The `pthread_attr_t` type controls the type of thread created with the properties:
 - Stack size,
-- Scheduling policy, 
+- Scheduling policy,
 - Priority,
 - System/process thread,
 - inheritance (if it should inherit attributes from the parent thread), and
@@ -66,7 +66,7 @@ You can then set/get attribute values through the following function.
 ```c
 pthread_attr_{set/get}{attribute}
 ```
-For example `pthread_attr_setjoinable`. 
+For example `pthread_attr_setjoinable`.
 
 ### Detachable threads
 
@@ -97,7 +97,7 @@ int main (void) {
 
 	int i;
 	pthread_t tid;
-	
+
 	pthread_attr_t attr;
 	pthread_attr_init(&attr); // Required!!!
 	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
@@ -115,7 +115,7 @@ When using Pthreads:
 
 ## [[Mutex]]
 
-The [[POSIX threads (PThreads)|PThreads]] library allows you to create and use [[Mutex|mutexes]].  
+The [[POSIX threads (PThreads)|PThreads]] library allows you to create and use [[Mutex|mutexes]].
 
 ```c
 pthread_mutex_t aMutex;

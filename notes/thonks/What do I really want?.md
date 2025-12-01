@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2025-07-23
-last_edited: 2025-07-23
 draft: true
+last_edited: 2025-07-23
 tags:
   - thoughts
   - life

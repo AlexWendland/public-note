@@ -1,18 +1,18 @@
 ---
-aliases: 
+aliases:
 checked: true
 created: 2024-05-27
-last_edited: 2024-05-27
 draft: false
+last_edited: 2024-05-27
 tags:
   - networks
 type: explainer
 ---
 # Checksum in layer 4
 
-To compute the [[Checksum|checksum]] for a [[Layer 4 Transport|layer 4]] header (either [[Transmission Control Protocol (TCP)|TCP]] or [[User Datagram Protocol (UDP)|UDP]]): 
-- You first construct the header with an all zeros [[Checksum]]. 
-- Then you append the [[Pseudo-header|pseudo-header]] to the message. 
+To compute the [[Checksum|checksum]] for a [[Layer 4 Transport|layer 4]] header (either [[Transmission Control Protocol (TCP)|TCP]] or [[User Datagram Protocol (UDP)|UDP]]):
+- You first construct the header with an all zeros [[Checksum]].
+- Then you append the [[Pseudo-header|pseudo-header]] to the message.
 - You break the message down into 16-[[Bit|bit]] segments potentially adding 0's if needed.
 - Then compute the [[Ones complement|ones complement]] addition off all segments. If this is all 0's it is sent as all 1's. An all 0 header means that the checksum was not computed.
 - Fill this in as the [[Checksum|checksum]] component. (Now if you perform the [[Ones complement|ones complement]] addition of all the 16-[[Bit|bit]] segments you should end up with all 1's.)

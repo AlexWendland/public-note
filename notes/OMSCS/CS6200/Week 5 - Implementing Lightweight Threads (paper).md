@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: '[[CS6200 Graduate introduction to Operating Systems]]'
 created: 2025-02-09
-last_edited: 2025-02-09
 draft: false
+last_edited: 2025-02-09
 tags:
   - OMSCS
 type: paper
@@ -24,4 +24,4 @@ This paper describes an implementation of light weight threads in the SunOS arch
 	- If all threads have it masked it is left pending on the process until a thread unmasks it.
 - Signals can be sent to a particular thread.
 - All threads within a process share signal handlers.
-- 
+-

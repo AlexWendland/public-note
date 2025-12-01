@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS7641 Machine Learning]]"
+course: '[[CS7641 Machine Learning]]'
 created: 2024-01-22
-last_edited: 2024-01-22
 draft: false
+last_edited: 2024-01-22
 tags:
   - OMSCS
 type: lecture
@@ -41,5 +41,5 @@ Quite often [[Instance-based learning]] is called "lazy" learning as you are del
 
 You can use [[k-nearest neighbour]] in [[Regression problems|regression problems]] along with an algorithm like [[Polynomial regression|polynomial regression]] to replace you voting function $V$. This means at each point $a \in A$ you will construct a local polynomial to map that which you can piece together to fit a larger curve.
 
-This has a nice property that whilst your [[Modelling paradigm|modelling paradigm]] of your regression might limit you to certain types of functions - your actual output can be a far more complex function. 
+This has a nice property that whilst your [[Modelling paradigm|modelling paradigm]] of your regression might limit you to certain types of functions - your actual output can be a far more complex function.
 

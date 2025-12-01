@@ -7,8 +7,8 @@ aliases:
   - Trivial Fermat witness
 checked: false
 created: 2023-10-10
-last_edited: 2023-11-11
 draft: false
+last_edited: 2023-11-11
 tags:
   - maths
 type: definition

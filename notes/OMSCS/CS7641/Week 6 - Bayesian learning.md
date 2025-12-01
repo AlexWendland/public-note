@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS7641 Machine Learning]]"
+course: '[[CS7641 Machine Learning]]'
 created: 2024-02-19
-last_edited: 2024-02-19
 draft: false
+last_edited: 2024-02-19
 tags:
   - OMSCS
 type: lecture
@@ -29,7 +29,7 @@ Here we apply [[Bayes rule]].
 $$\mathbb{P}[I \ \vert +ve] = \frac{\mathbb{P}[+ve \ \vert \ I] \cdot \mathbb{P}[I]}{\mathbb{P}[+ve]} = \frac{0.98 \cdot 0.008}{\mathbb{P}[+ve]} = \frac{0.00784}{\mathbb{P}[+ve]} $$
 whereas
 $$\mathbb{P}[\lnot I \ \vert +ve] = \frac{\mathbb{P}[+ve \ \vert \ \lnot I] \cdot \mathbb{P}[\lnot I]}{\mathbb{P}[+ve]} = \frac{(1 - \mathbb{P}[-ve \vert \lnot I]) \cdot (1 - \mathbb{P}[I])}{\mathbb{P}[+ve]} = \frac{0.02976}{\mathbb{P}[+ve]}$$
-giving that we are more likely to not have the illness than have it with a positive result. 
+giving that we are more likely to not have the illness than have it with a positive result.
 
 ## Applying this to learning
 
@@ -37,8 +37,8 @@ Suppose $h \in H$ is a hypothesis belonging to our [[Modelling paradigm|hypothes
 $$
 \mathbb{P}[h \vert D] = \frac{\mathbb{P}[D \vert h]\mathbb{P}[h]}{\mathbb{P}[D]}.
 $$
-- Here $\mathbb{P}[D \vert h]$ is the accuracy of our prediction. 
-- Then $\mathbb{P}[h]$ is a reflection of prior knowledge about which hypothesis are likely or not. 
+- Here $\mathbb{P}[D \vert h]$ is the accuracy of our prediction.
+- Then $\mathbb{P}[h]$ is a reflection of prior knowledge about which hypothesis are likely or not.
 - Lastly $\mathbb{P}[D]$ reflects our prior knowledge about the data we are sampling from.
 
 When we are training our model on [[Training data|training data]] $T$, we are trying to find
@@ -59,7 +59,7 @@ Though to actually calculate these would be very hard - as the [[Modelling parad
 
 Suppose:
 - There is some target $c : A \rightarrow B$.
-- We have some [[Irreducible error|irreducible error]] free (noise free) [[Training data|training data]] $T$, so for $(a,b) \in T$ we have $b = c(a)$.  
+- We have some [[Irreducible error|irreducible error]] free (noise free) [[Training data|training data]] $T$, so for $(a,b) \in T$ we have $b = c(a)$.
 - We have a finite [[Modelling paradigm|hypothesis space]] $H$ which contains the target $c \in H$.
 - We have no prior preference on the [[Modelling paradigm|hypothesis space]] $H$.
 - Each hypothesis is an [[Independent events|independent event]].
@@ -83,7 +83,7 @@ In the previous set up we assumed there was no noise, this time we will introduc
 Suppose:
 - There is some target $c : A \rightarrow \mathbb{R}$.
 - We have some [[Independent identically distributed samples|i.i.d.]] [[Normal distribution|normally distributed]] noise values $\epsilon \sim N(0,\sigma^2)$ for each of our [[Training data|training data]] $t \in T$.
-- The [[Training data|training data]] $T$ is such that $(a_i,b_i) \in T$ we have $b_i = c(a_i) + \epsilon_i$.  
+- The [[Training data|training data]] $T$ is such that $(a_i,b_i) \in T$ we have $b_i = c(a_i) + \epsilon_i$.
 
 Now lets try to compute the [[Maximum likelihood estimation (MLE)|maximum likelihood estimation]] for our [[Modelling paradigm|hypothesis space]] $H$.
 $$
@@ -98,7 +98,7 @@ h_{MLE} & = \mbox{arg}\max_{h \in H} \mathbb{P}[T \vert h]\\
 & = \mbox{arg}\min_{h \in H} mse(h,T) & \mbox{definition of MSE.}
 \end{align*}
 $$
-So this shows that [[Finding the maximum likelihood estimation for normally distributed noise is the same as minimising mean squared error|finding the maximum likelihood estimation for normally distributed noise is the same as minimising mean squared error]]. 
+So this shows that [[Finding the maximum likelihood estimation for normally distributed noise is the same as minimising mean squared error|finding the maximum likelihood estimation for normally distributed noise is the same as minimising mean squared error]].
 
 >[!note]
 >If we switch our assumption about how the noise is distributed, then we find a different loss function will be appropriate.

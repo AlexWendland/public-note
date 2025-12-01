@@ -1,9 +1,9 @@
 ---
-aliases: null
+aliases:
 checked: false
 created: 2023-11-10
-last_edited: 2023-11-19
 draft: false
+last_edited: 2023-11-19
 tags:
   - maths
   - todo

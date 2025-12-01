@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-04-06
-last_edited: 2024-04-06
 draft: false
+last_edited: 2024-04-06
 tags:
   - programming
 type: algorithm
@@ -12,7 +12,7 @@ type: algorithm
 
 Q-learning is a [[Reinforcement learning|reinforcement learning]] **class** of algorithms which are value function based. It uses the approach of [[Incremental learning]] of the [[Q-function (RL)]]. We use the model of [[Transitions (MDP)|transitions]] where the learning can provide the action each iteration.
 
-Pick an initial estimation $\hat{Q}(s,a)$ of the [[Q-function (RL)]]. 
+Pick an initial estimation $\hat{Q}(s,a)$ of the [[Q-function (RL)]].
 
 We need to pick a learning rate $\alpha_t$ such that
 $$

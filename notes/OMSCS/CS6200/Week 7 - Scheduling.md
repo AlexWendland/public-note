@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: '[[CS6200 Graduate introduction to Operating Systems]]'
 created: 2025-02-26
-last_edited: 2025-02-26
 draft: false
+last_edited: 2025-02-26
 tags:
   - OMSCS
 type: lecture
@@ -31,7 +31,7 @@ The scheduling algorithm is tied to the data structure of the runqueue - the que
 This model will run tasks until complete. To discus this we make simplifications:
 - There is a fixed group of tasks.
 - We know the execution time of these tasks.
-- We will not interrupt tasks once they are running. 
+- We will not interrupt tasks once they are running.
 - We have a single CPU.
 
 To evaluate different algorithms we will compare different metrics:
@@ -40,7 +40,7 @@ To evaluate different algorithms we will compare different metrics:
 - Average job wait time.
 - CPU utilization.
 
-Lets assume we are in a situation with 3 tasks $T1$, $T2$, and $T3$ which take 1, 10 and 1 seconds to complete respectively. 
+Lets assume we are in a situation with 3 tasks $T1$, $T2$, and $T3$ which take 1, 10 and 1 seconds to complete respectively.
 
 ### First come first served (FCFS)
 
@@ -54,9 +54,9 @@ Average wait time: (0 + 1 + 11) / 3 = 4 seconds
 
 ### Shortest job first (SJF)
 
-Schedule tasks in the order of their execution times. 
+Schedule tasks in the order of their execution times.
 
-For this we can make the run queue either an ordered queue with $O(n)$ insertion time but $O(1)$ retrieval time or a ordered tree with $O(log(n))$ insertion time and $O(log(n))$ retrieval time (with re-balancing). 
+For this we can make the run queue either an ordered queue with $O(n)$ insertion time but $O(1)$ retrieval time or a ordered tree with $O(log(n))$ insertion time and $O(log(n))$ retrieval time (with re-balancing).
 
 Throughput: 3/12s = 0.25 tasks/s
 

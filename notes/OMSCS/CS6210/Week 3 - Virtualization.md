@@ -1,10 +1,10 @@
 ---
 aliases:
 checked: false
-course: "[[CS6210 Advanced Operating Systems]]"
+course: '[[CS6210 Advanced Operating Systems]]'
 created: 2025-09-04
-last_edited: 2025-09-04
 draft: true
+last_edited: 2025-09-04
 tags:
   - OMSCS
 type: lecture
@@ -48,7 +48,7 @@ The hypervisor maintains **shadow page tables** that store mapping PPN -> MPN di
 
 1. **Traps the write operation** (expensive VMM trap)
 2. **Looks up the PPN -> MPN mapping** from its shadow page table
-3. **Calculates the composite VPN -> MPN mapping** 
+3. **Calculates the composite VPN -> MPN mapping**
 4. **Writes the composite mapping** to the actual hardware PT/TLB
 
 This allows hardware to operate with direct VPN -> MPN translations, avoiding two-level lookups on every memory access.
@@ -80,7 +80,7 @@ In the para virtualised setting, the guest OS is aware it is running on a hyperv
 This means the guest OS can also be aware of what MPN's it as an operating system has been allocated.
 This will uses these addresses to assign to VPN's when dealing with applications it controls.
 Therefore, it can make special hypercalls to the hypervisor when it wants to update its page tables.
-In Zen, this is done using 3 special hypercalls: 
+In Zen, this is done using 3 special hypercalls:
 
 1. **Create PT**: When it needs to create a new page table
 

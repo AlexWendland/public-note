@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS7641 Machine Learning]]"
+course: '[[CS7641 Machine Learning]]'
 created: 2024-03-09
-last_edited: 2024-03-09
 draft: false
+last_edited: 2024-03-09
 tags:
   - OMSCS
 type: lecture
@@ -13,14 +13,14 @@ week: 10
 # Week 10 - Feature selection
 
 Feature selection is the process of deciding what features of the data are worth training on. Then picking the subset of them that are the most important. The reason to do this is:
-- Knowledge discovery, interpretability, and insight. 
+- Knowledge discovery, interpretability, and insight.
 	- When you get the results back you are going to have to be able to explain them.
 - [[The curse of dimensionality]]
 	- If you put too many dimensions in - it will decrease the accuracy of your models!
 
 ## How hard is this problem?
 
-Assume we want to know the best $m \leq n$ subset of columns. The only way to verify it is the best is to check them all so it is $\binom{n}{m}$. If you don't know $m$ then it is $2^n$. 
+Assume we want to know the best $m \leq n$ subset of columns. The only way to verify it is the best is to check them all so it is $\binom{n}{m}$. If you don't know $m$ then it is $2^n$.
 
 This problem is know to be [[NP-hard]].
 
@@ -31,13 +31,13 @@ There are 2 main families of techniques to solve this problem
 - [[Wrapping (feature selection)|Wrapping]], using the learning algorithm to decide which features to keep.
 
 [[Filtering (feature selection)|Filtering]] has the following pay offs
-- It is faster normally as it doesn't need to retrain models, 
-- It is invariant of the learning problem making it more generic but also receiving no feedback from it, and 
+- It is faster normally as it doesn't need to retrain models,
+- It is invariant of the learning problem making it more generic but also receiving no feedback from it, and
 - The speed can come from looking at features in isolation that may not provide the full picture.
 
 [[Wrapping (feature selection)|Wrapping]] has the following pay offs
 - It takes into account the models bias and can account for it, and
-- It can be very slow depending on the algorithm. 
+- It can be very slow depending on the algorithm.
 
 We have already come across methods of doing filtering
 - [[Information entropy]],

@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: '[[CS6200 Graduate introduction to Operating Systems]]'
 created: 2024-08-26
-last_edited: 2024-08-26
 draft: false
+last_edited: 2024-08-26
 tags:
   - OMSCS
 type: lecture
@@ -44,7 +44,7 @@ In comparison an [[Operating system (OS)|OS]] does the following:
 
 - Desktop
 	- Microsoft Windows
-	- UNIX-based 
+	- UNIX-based
 		- Mac OS X (BSD)
 		- Linux
 - Embedded
@@ -83,7 +83,7 @@ Policies:
 
 ## Design principles
 
-- Separation of mechanism and policy 
+- Separation of mechanism and policy
 	- Implement flexible mechanisms that support many policies
 	- In different settings different policies make more sense.
 - Optimise for common case
@@ -97,17 +97,17 @@ Policies:
 
 ![[Trap instruction]]
 
-User mode application have to access hardware through system calls. The [[Operating system (OS)|OS]] can notify applications through signals. 
+User mode application have to access hardware through system calls. The [[Operating system (OS)|OS]] can notify applications through signals.
 
 ## System call flow chart
 
 ![[System call]]
 
 ## OS architecture
- 
+
 At first [[Operating system (OS)|OS]] included all the features within one monolithic application. This had the following advantages:
 - You have everything already, you do not need to go somewhere else, and
-- You can use compile time optimizations to improve efficiency. 
+- You can use compile time optimizations to improve efficiency.
 Though had the following downsides:
 - Lower customisation, portability and manageability,
 - Higher memory footprint to run the OS, and
@@ -125,13 +125,13 @@ For embedded devices another architecture is common called a Micro-kernel. These
 - They are normally a very small code base.
 - It is easy to verify behaviour, so you can be sure the [[Operating system (OS)|OS]] behaves well.
 Though they come with a lot of down sides:
-- They are not normally portable as they are designed for a specific bit of hardware. 
+- They are not normally portable as they are designed for a specific bit of hardware.
 - Software development is more complex as they need to interact with difference processes that normally would be part of the [[Operating system (OS)|OS]].
 - There is lots of user/kernel crossing as they need to use the IPC a lot.
 
 ### Linux
 
-The linux [[Operating system (OS)|OS]] is built in a layer architecture to make it simpler to use. 
+The linux [[Operating system (OS)|OS]] is built in a layer architecture to make it simpler to use.
 
 ![Linux Arcitecture](../../../images/linux_arcitecture.png)
 
@@ -141,7 +141,7 @@ The kernel itself has a couple of components that can all be switched out for sp
 
 ### Mac
 
-Mac uses a micro-kernel for all low level operations with a BSD component provides a unix interface for the rest of the OS. 
+Mac uses a micro-kernel for all low level operations with a BSD component provides a unix interface for the rest of the OS.
 
 ![Mac Architecture](../../../images/mac_architecture.png)
 

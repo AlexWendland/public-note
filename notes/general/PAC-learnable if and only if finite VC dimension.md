@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-02-19
-last_edited: 2024-02-19
 draft: false
+last_edited: 2024-02-19
 tags:
   - machine-learning
 type: lemma

@@ -7,8 +7,8 @@ aliases:
   - registered ports
 checked: false
 created: 2024-05-21
-last_edited: 2024-05-21
 draft: false
+last_edited: 2024-05-21
 tags:
   - networks
 type: definition
@@ -23,4 +23,4 @@ type: definition
 >
 >Registered ports are used for user applications that need a port to work off of.
 >
->The ephemeral ports or dynamic ports are used for private or temporary uses for example to connect to a web browser and receive a web page. 
+>The ephemeral ports or dynamic ports are used for private or temporary uses for example to connect to a web browser and receive a web page.

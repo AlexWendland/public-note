@@ -6,8 +6,8 @@ aliases:
   - MX record
 checked: false
 created: 2024-07-22
-last_edited: 2024-07-22
 draft: false
+last_edited: 2024-07-22
 tags:
   - networks
 type: definition
@@ -20,8 +20,8 @@ type: definition
 >- Value: What is associated to the Domain name.
 >This is given in the following format
 >![Dns Message Format](../../images/dns_message_format.png)
->The flags provide information such as the type of query iterative or recursive. 
->There are different types of responses you can get from a [[Domain Name System (DNS)|DNS]] resolver. 
+>The flags provide information such as the type of query iterative or recursive.
+>There are different types of responses you can get from a [[Domain Name System (DNS)|DNS]] resolver.
 >1. **A (Address) Record**: Maps a domain name to an [[Internet Protocol (IPv4)|IPv4]] address.
 >2. **AAAA (Quad-A) Record**: Maps a domain name to an [[Internet Protocol (IPv6)|IPv6]] address.
 >3. **CNAME (Canonical Name) Record**: Alias of one domain name to another. The DNS lookup will continue by retrying the lookup with the new name.

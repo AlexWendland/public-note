@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS7641 Machine Learning]]"
+course: '[[CS7641 Machine Learning]]'
 created: 2024-01-18
-last_edited: 2024-01-18
 draft: false
+last_edited: 2024-01-18
 tags:
   - OMSCS
 type: lecture
@@ -41,9 +41,9 @@ Let $n = 1$ and have $x \in \{0,1\}$ then if we set $w = -1$ and $\theta = 0$ th
 $$p(x) = \begin{cases} 1 & \mbox{if } x = 0\\ 0 & \mbox{otherwise.}\end{cases}$$
 ### Xor
 
-Define two perceptron's $p_{\land} : \mathbb{R}^2 \rightarrow \{0,1\}$ (from before) and $p : \mathbb{R}^3 \rightarrow \{0,1\}$ with $w_1 = w_2 = 1$, $w_3 = -2$ and $\theta = 0.5$ then 
+Define two perceptron's $p_{\land} : \mathbb{R}^2 \rightarrow \{0,1\}$ (from before) and $p : \mathbb{R}^3 \rightarrow \{0,1\}$ with $w_1 = w_2 = 1$, $w_3 = -2$ and $\theta = 0.5$ then
 $$p(x) = \begin{cases} 1 & \mbox{if } x \in \{(1,0,0), (0,1,0), (1,1,0)\}\\ 0 & \mbox{otherwise.}\end{cases}$$
-Now consider $x_1, x_2 \in \{0,1\}$ and the conjunction 
+Now consider $x_1, x_2 \in \{0,1\}$ and the conjunction
 $$p(x_1, x_2, p_{\land}(x_1,x_2)) = \begin{cases} 1 & \mbox{if } (x_1, x_2) \in \{(1,0), (0,1)\} \\ 0 & \mbox{otherwise.} \end{cases}$$
 ## Perceptron rule
 
@@ -51,7 +51,7 @@ $$p(x_1, x_2, p_{\land}(x_1,x_2)) = \begin{cases} 1 & \mbox{if } (x_1, x_2) \in 
 
 ## Gradient decent
 
-With the [[Perceptron rule|perceptron rule]] we applied an activation function that made $p$ [[Differentiation|non-differentiable]]. Lets get rid of this for now and see if we can use [[Differentiation|differentiation]] to get another training method. 
+With the [[Perceptron rule|perceptron rule]] we applied an activation function that made $p$ [[Differentiation|non-differentiable]]. Lets get rid of this for now and see if we can use [[Differentiation|differentiation]] to get another training method.
 
 Let our [[Training data|training data]] $(x,y) \in T$ have $x = (x_1, x_2, \ldots, x_n) \in \mathbb{R}^n$ and $w = (w_1, w_2, \ldots w_n)$ be our weights for a [[Perceptron (neural network)|perceptron]] as before. The define the following [[Error function (modelling)|error function]]
 $$
@@ -77,9 +77,9 @@ Whilst the [[Perceptron rule|perceptron rule]] [[The perceptron rule using binar
 
 ![[Sigmoid function]]
 
-Where this function looks similar to the [[Binary step|binary step]] function with one big advantage, that it is [[Differentiation|differentiable]]. 
+Where this function looks similar to the [[Binary step|binary step]] function with one big advantage, that it is [[Differentiation|differentiable]].
 $$\frac{d \sigma}{d a} = \sigma(a) (1 - \sigma(a))$$
-Which shows the function is relative stable when $\sigma(a)$ is close to either $0$ or $1$ but will have the largest change when it is close to $1/2$. 
+Which shows the function is relative stable when $\sigma(a)$ is close to either $0$ or $1$ but will have the largest change when it is close to $1/2$.
 
 This allow us to use [[Gradient decent|gradient decent]] on a [[Perceptron (neural network)|perceptron]] that is using the [[Sigmoid function]] as its [[Activation function|activation function]].
 
@@ -91,7 +91,7 @@ If we use the [[Sigmoid function]] for each of the [[Perceptron (neural network)
 
 ![[Backward propagation of errors (Back propagation)]]
 
-This will still have the issue with local optimum vs global optimum. Therefore there are some more advanced techniques people use: 
+This will still have the issue with local optimum vs global optimum. Therefore there are some more advanced techniques people use:
 
 - Momentum: Making the learning term very large to skip over local minima,
 - Higher order derivatives,
@@ -102,7 +102,7 @@ Complexity in a [[Neural network|neural network]] is defined by:
 
 - more nodes,
 - more layers, and
-- larger numbers as the parameters. 
+- larger numbers as the parameters.
 
 ## Bias for [[Neural network|neural networks]]
 
@@ -115,7 +115,7 @@ This is the types of functions [[Neural network|neural networks]] can represent.
 - Multi [[Perceptron (neural network)|perceptron]] with [[Sigmoid function|Sigmoid]] [[Activation function|activation function]] with one hidden layer: Can represent any [[Continuous function|continuous function]].
 - Multi [[Perceptron (neural network)|perceptron]] with [[Sigmoid function|Sigmoid]] [[Activation function|activation function]] with two hidden layers: Can represent any function.
 
-Whilst this appears like a multi [[Perceptron (neural network)|perceptron]] with [[Sigmoid function|Sigmoid]] [[Activation function|activation function]] with two hidden layers has no restriction bias - once you have picked your hyper parameters, i.e. the number of layers and nodes, then you have restricted the number of functions you can represent. 
+Whilst this appears like a multi [[Perceptron (neural network)|perceptron]] with [[Sigmoid function|Sigmoid]] [[Activation function|activation function]] with two hidden layers has no restriction bias - once you have picked your hyper parameters, i.e. the number of layers and nodes, then you have restricted the number of functions you can represent.
 
 >[!warning] Danger of [[Overfitting|overfitting]]
 >It is important to use ideas like [[Cross validation|cross validation]] to avoid [[Overfitting|overfitting]]. For [[Neural network|neural networks]] it is important to avoid large values also.

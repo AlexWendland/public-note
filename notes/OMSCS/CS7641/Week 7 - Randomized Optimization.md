@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS7641 Machine Learning]]"
+course: '[[CS7641 Machine Learning]]'
 created: 2024-02-24
-last_edited: 2024-02-24
 draft: false
+last_edited: 2024-02-24
 tags:
   - OMSCS
 type: lecture
@@ -29,7 +29,7 @@ There are lots of examples of this.
 - Neural network weights.
 - Minimising error in another model!
 
-There are a couple of good methods here: 
+There are a couple of good methods here:
 - Generate and test
 	- Good when we have a small input space but complex function.
 - Calculus:
@@ -52,13 +52,13 @@ The next class of algorithms is like hill climbing but we allow for a bit more r
 
 ![[Simulated Annealing]]
 
-Notice with the formula that if $T \rightarrow 0$ then this will make $P(x, x_t, T) \rightarrow 0$ for points where $f(x_t) < f(x)$ so it will start acting like [[Hill climbing]] whereas as $T \rightarrow \infty$ we have $P(x, x_t, T) \rightarrow 1$ so it will be close to a random walk.  
+Notice with the formula that if $T \rightarrow 0$ then this will make $P(x, x_t, T) \rightarrow 0$ for points where $f(x_t) < f(x)$ so it will start acting like [[Hill climbing]] whereas as $T \rightarrow \infty$ we have $P(x, x_t, T) \rightarrow 1$ so it will be close to a random walk.
 
 ![[Simulated annealing ending probability]]
 
 ## Genetic Algorithms
 
-In all the above examples, we just updated our next guess based on local properties. However, we might find a couple of points with good fitness and want to combine them to find out what properties they have that provide that good fit. 
+In all the above examples, we just updated our next guess based on local properties. However, we might find a couple of points with good fitness and want to combine them to find out what properties they have that provide that good fit.
 
 ![[Genetic algorithm (meta)]]
 
@@ -83,7 +83,7 @@ Notice that any choice of [[Crossover (genetic algorithms)|crossover function]] 
 
 ## Randomised algorithms
 
-All the randomised algorithms here have been fairly simply and don't use history. There are more complicated ones that combine ideas from different algorithms and try to model the area they are searching. 
+All the randomised algorithms here have been fairly simply and don't use history. There are more complicated ones that combine ideas from different algorithms and try to model the area they are searching.
 
 ## MIMIC
 
@@ -93,11 +93,11 @@ All the randomised algorithms here have been fairly simply and don't use history
 
 ![[Dependency Trees (Bayesian Network)]]
 
-As always lets assume we are in the [[Modelling framework|modelling framework]] and we can break down our [[Function domain|domain]] $A = \oplus_{i=1}^n A_i$ into features, we assume similarly the random variable $X$ breaks down equally $X = \oplus_{i=1}^n X_i$. 
+As always lets assume we are in the [[Modelling framework|modelling framework]] and we can break down our [[Function domain|domain]] $A = \oplus_{i=1}^n A_i$ into features, we assume similarly the random variable $X$ breaks down equally $X = \oplus_{i=1}^n X_i$.
 
 To build a probability distribution on $A$ we will model it using a [[Dependency Trees (Bayesian Network)|dependency tree]].  Where $\mathbb{P}[X_i = a_i]$ will be the probability that an input uses $a_i$ in the $i'th$ feature and has a fitness function larger that $\theta_j$ for some step $j$. Similarly for $\mathbb{P}[X_i = a_i \vert X_j = a_j]$ however we are assuming that $i'th$ feature is for some reason dependent on the $j'th$.
 
-Just like with [[Bayesian network]] we can calculate $\mathbb{P}[X_i = a_i]$ and $\mathbb{P}[X_i = a_i \vert X_j = a_j]$ using the samples - however unlike the [[Bayesian network]] each time we do this we need to pick the most meaningful relationships to use. 
+Just like with [[Bayesian network]] we can calculate $\mathbb{P}[X_i = a_i]$ and $\mathbb{P}[X_i = a_i \vert X_j = a_j]$ using the samples - however unlike the [[Bayesian network]] each time we do this we need to pick the most meaningful relationships to use.
 
 ## Generating your dependency tree
 
@@ -124,7 +124,7 @@ $$
 & = \sum_{i = 1}^n - I(a_i, a_{\pi(i)}) & \mbox{by definition of mutual information}\\
 \end{align*}
 $$
-Where $I(a_i, a_{\pi(i)})$ is [[Mutual information]]. We get a cool result here before we had $p(a_i \vert a_{\pi(i)})$ is which is directional but $I(a_i,\pi(a_i))$ is not as [[Mutual information is symmetric]]. 
+Where $I(a_i, a_{\pi(i)})$ is [[Mutual information]]. We get a cool result here before we had $p(a_i \vert a_{\pi(i)})$ is which is directional but $I(a_i,\pi(a_i))$ is not as [[Mutual information is symmetric]].
 
 So we just need to calculate $-I(a_i, a_j)$ for every pair of $i$ and $j$. Then we can find an [[Minimum Spanning Tree problem (MST)|MST]] in the complete graph on $\{1, 2, \ldots  n\}$ where the edges $(i,j)$ are weighted by $-I(a_i ; a_j)$.
 

@@ -8,28 +8,45 @@ from note_helper import constants, file_admin, models, read_note, write_note
 
 logger = logging.getLogger(__name__)
 
+# Migration date to skip (when files were moved/frontmatter was reformatted)
+MIGRATION_DATE = datetime.date(2025, 12, 1)
+
 
 def update_last_edited(note_file: models.NoteFile):
     """
     Updates the last edited timestamp of a NoteFile object.
     """
+
     last_edited = get_last_edited(note_file.file_path)
     if not last_edited:
         last_edited = datetime.date.fromtimestamp(Path(note_file.file_path).stat().st_mtime)
         logger.info(
             f"{note_file.file_path} INFO: No commit history found for file using local last edited date {last_edited}."
         )
+
+    # Skip migration date - don't update if git shows only a migration commit
+    if last_edited <= MIGRATION_DATE:
+        logger.debug(f"{note_file.file_path} INFO: Skipping migration date {MIGRATION_DATE}.")
+        return
+
     if constants.LAST_EDITED_FIELD not in note_file.metadata:
         logger.info(f"{note_file.file_path} CHANGE: Adding last edited timestamp {last_edited}.")
-    elif note_file.metadata[constants.LAST_EDITED_FIELD] < last_edited:
-        logger.info(
-            f"{note_file.file_path} CHANGE: Updating last edited timestamp from "
-            f"{note_file.metadata[constants.LAST_EDITED_FIELD]} to {last_edited}."
-        )
-    note_file.metadata[constants.LAST_EDITED_FIELD] = last_edited
+        note_file.metadata[constants.LAST_EDITED_FIELD] = last_edited
+    else:
+        # Get existing last_edited (may be date object or string)
+        existing = note_file.metadata[constants.LAST_EDITED_FIELD]
+        if isinstance(existing, str):
+            existing = datetime.datetime.strptime(existing, "%Y-%m-%d").date()
+
+        if existing < last_edited:
+            logger.info(
+                f"{note_file.file_path} CHANGE: Updating last edited timestamp from "
+                f"{note_file.metadata[constants.LAST_EDITED_FIELD]} to {last_edited}."
+            )
+            note_file.metadata[constants.LAST_EDITED_FIELD] = last_edited
 
 
-def get_last_edited(file_path, repo_path=constants.NOTES_DIR) -> datetime.date | None:
+def get_last_edited(file_path, repo_path=constants.REPO_ROOT) -> datetime.date | None:
     repo = Repo(repo_path)
 
     try:

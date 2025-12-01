@@ -3,15 +3,15 @@ aliases:
   - CS7642
 checked: false
 created: 2024-01-10
-last_edited: 2024-01-10
 draft: false
+last_edited: 2024-01-10
 tags:
   - OMSCS
   - maths
   - programming
 term: summer
 type: course
-year: "2025"
+year: '2025'
 ---
 # CS7642 Reinforcement Learning
 

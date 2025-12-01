@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-07-21
-last_edited: 2024-07-21
 draft: false
+last_edited: 2024-07-21
 tags:
   - networks
   - security
@@ -22,13 +22,13 @@ type: definition
 >1. **Using an Upstream Provider**:
 >    - The victim network announces a blackholing message to its upstream provider, specifying the attacked IP and the blackholing community.
 >    - The provider then recognises this message and sets the next-hop field to a blackholing IP, effectively discarding all traffic to the attacked IP.
->    
->![Bgp Bh Provider](../../images/bgp_bh_provider.png) 
 >
->2. **Using an Internet Exchange Point (IXP)**:  
+>![Bgp Bh Provider](../../images/bgp_bh_provider.png)
+>
+>2. **Using an Internet Exchange Point (IXP)**:
 >    - If the victim network is part of an IXP, it sends a blackholing message to the IXP route server.
 >    - The route server then propagates this message to all connected IXP member networks, which drop the traffic to the blackholed IP.
-> 
+>
 >![Bgp Bh Ixp](../../images/bgp_bh_ixp.png)
 >
 >Key Benefits of BGP Blackholing:

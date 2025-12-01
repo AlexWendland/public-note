@@ -4,19 +4,19 @@ aliases:
   - ID3
 checked: false
 created: 2024-01-11
-last_edited: 2024-01-11
 draft: false
+last_edited: 2024-01-11
 tags:
   - programming
 type: algorithm
 ---
 # Iterative Dichotomiser 3 (ID3)
 
-This algorithm works on [[Classification problems|classification problems]]. It is a greedy algorithm to design a maximal [[Decision tree|decision tree]].  Therefore are looking for the tree to represent some function $f: A \rightarrow B$, where we may only have access to some training data $D \subset f$. 
+This algorithm works on [[Classification problems|classification problems]]. It is a greedy algorithm to design a maximal [[Decision tree|decision tree]].  Therefore are looking for the tree to represent some function $f: A \rightarrow B$, where we may only have access to some training data $D \subset f$.
 
-This decision tree will be maximal with regards to the [[Information entropy|information entropy]] of each of the leaf nodes within that [[Decision tree|decision tree]].  For any $A' \subset A$ we can define $Entropy(A')$ by considering drawing a random element in $A'$ out with a probability of them being mapped to some element of $B$. 
+This decision tree will be maximal with regards to the [[Information entropy|information entropy]] of each of the leaf nodes within that [[Decision tree|decision tree]].  For any $A' \subset A$ we can define $Entropy(A')$ by considering drawing a random element in $A'$ out with a probability of them being mapped to some element of $B$.
 
-To make this decision tree assume we have a set of attributes $t \in T$ where $t: A \rightarrow \{1, \ldots, n_t\}$ that split the set $A$ up into subsets of variable length for $n_t \in \mathbb{N}$. Let $\mathcal{P}(A)$ be the subsets of $A$ and define $Gain: \mathcal{P} \times T \rightarrow \mathbb{R}$ where  
+To make this decision tree assume we have a set of attributes $t \in T$ where $t: A \rightarrow \{1, \ldots, n_t\}$ that split the set $A$ up into subsets of variable length for $n_t \in \mathbb{N}$. Let $\mathcal{P}(A)$ be the subsets of $A$ and define $Gain: \mathcal{P} \times T \rightarrow \mathbb{R}$ where
 $$
 Gain(A', t) := Entropy(S) - \sum_{j = 1}^{n_i} \frac{\vert A'_j \vert}{\vert A' \vert} Entropy(A'_j), \ \ \ \mbox{with} \ A'_j :=t^{-1}(j) \cap A'.
 $$
@@ -46,7 +46,7 @@ ID3(training_data, attributes):
 ```
 
 ## Run time
-- $O(\vert A' \vert 2^{\vert T \vert})$  
+- $O(\vert A' \vert 2^{\vert T \vert})$
 
 ## Correctness
 

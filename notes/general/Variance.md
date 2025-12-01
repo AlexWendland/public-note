@@ -3,8 +3,8 @@ aliases:
   - variance
 checked: false
 created: 2024-03-10
-last_edited: 2024-03-10
 draft: false
+last_edited: 2024-03-10
 tags:
   - probability
 type: definition

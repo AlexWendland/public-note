@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: '[[CS6200 Graduate introduction to Operating Systems]]'
 created: 2025-02-10
-last_edited: 2025-02-10
 draft: false
+last_edited: 2025-02-10
 tags:
   - OMSCS
 type: lecture
@@ -24,15 +24,15 @@ When choosing a model for threading it is important to pick the metric you care 
 
 ### Metric
 
-A metric is a measurement standard. I needs to be a measurable and quantifiable property of the system we are interested in that can be used to evaluate the system behavior. 
+A metric is a measurement standard. I needs to be a measurable and quantifiable property of the system we are interested in that can be used to evaluate the system behavior.
 
 Some examples are:
 - Execution time: The amount of time it takes to complete a job.
 - Throughput: The amount of jobs completed per unit of time. This measures the actual work done.
-- Request rate: The amount of requests received per unit of time. This represents how many requests the system can accept but not necessarily complete. 
+- Request rate: The amount of requests received per unit of time. This represents how many requests the system can accept but not necessarily complete.
 - Resource utilization: How much of the CPU time is idling or memory used, ect.
 - Wait time: The average amount of time spent waiting to start a request.
-- Platform efficiency: How well I can utilize the resources within my platform. 
+- Platform efficiency: How well I can utilize the resources within my platform.
 - Performance / currency spent: This is useful when comparing different hardware choices for a data center.
 - Performance / Watts: This is useful when considering environmental impacts of your operation.
 - Percentage of SLA violations: The amount of requests that violate your service level agreement with your users.
@@ -52,7 +52,7 @@ In the rest of this lecture we are comparing different implementations for a web
 
 ![Simple Web Server](../../../images/simple_web_server.png)
 
-The steps within a file server have different needs - some may be CPU bound such as parsing headers, others may be i/O bound like reading a file. 
+The steps within a file server have different needs - some may be CPU bound such as parsing headers, others may be i/O bound like reading a file.
 
 ### Multi-processing
 
@@ -60,7 +60,7 @@ We implement this by simply take a working single process single threaded implem
 - Simple in terms of coding.
 - High overheads to context switch.
 - High memory usage for different [[Process control block (PCB)|PCB]].
-- Complicated to make is share resources like a bound port, or file handlers. 
+- Complicated to make is share resources like a bound port, or file handlers.
 
 ### Simple multi-threading approach
 
@@ -81,7 +81,7 @@ This model has some payoffs also:
 - More complicated to program as you need to use non-blocking I/O calls using poll or epoll to scan open file descriptors.
 - More efficient as you do not waste any time on context switching.
 - Smaller memory requirement as there is a single context.
-- No synchronization. 
+- No synchronization.
 
 #### Async I/O operations
 
@@ -101,7 +101,7 @@ This has the following payoffs:
 
 ### Flash web-server
 
-The flash web-server uses the helpers as laid out above but makes some additional optimizations. 
+The flash web-server uses the helpers as laid out above but makes some additional optimizations.
 
 ![Flash Web Server Optimisations](../../../images/flash_web_server_optimisations.png)
 
@@ -159,7 +159,7 @@ For large files SPED was the worst for the need to do I/O operations which mean 
 
 #### Optimisations
 
-To understand why Apache performed so poorly, it is useful to see the impact of the optimizations the paper suggests. 
+To understand why Apache performed so poorly, it is useful to see the impact of the optimizations the paper suggests.
 
 ![Comparison Optimisations](../../../images/comparison_optimisations.png)
 

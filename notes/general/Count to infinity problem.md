@@ -4,8 +4,8 @@ aliases:
   - poison reverse
 checked: false
 created: 2024-06-04
-last_edited: 2024-06-04
 draft: false
+last_edited: 2024-06-04
 tags:
   - networks
 type: explainer
@@ -26,10 +26,10 @@ Suppose we have an [[Autonomous system (AS)|AS]] with 3 routers $\{x,y,z\}$ whic
 
 The suppose the edge $(x,z)$ breaks. If the [[Distance vector routing algorithms]] don't take this problem into account then we get a slow escalation of distance.
 
-Router $x$ requests its neighbour $y$ distances it updates $D(x,z) = 1 + 2 =3$ and broadcasts this. Then $y$ updates its distances $D(y,z) = 3 + 1 = 4$ and broadcasts this. Then the problem goes on. 
+Router $x$ requests its neighbour $y$ distances it updates $D(x,z) = 1 + 2 =3$ and broadcasts this. Then $y$ updates its distances $D(y,z) = 3 + 1 = 4$ and broadcasts this. Then the problem goes on.
 
 ## Avoidance
 
 To get around this we track who we are planning on sending the update two to achieve the current minimum distance. If that is the same as the person we broadcast to then we set that distance to infinity. This method is called Poison reverse.
 
-Whilst this solves the simple cases like above - it is easy to imagine chains for [[Router|routers]] having this exact problem without being able to realise it. 
+Whilst this solves the simple cases like above - it is easy to imagine chains for [[Router|routers]] having this exact problem without being able to realise it.

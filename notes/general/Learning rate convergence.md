@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2025-05-20
-last_edited: 2025-05-20
 draft: false
+last_edited: 2025-05-20
 tags:
   - maths
   - reinforcement-learning

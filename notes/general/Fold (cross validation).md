@@ -4,8 +4,8 @@ aliases:
   - folds
 checked: false
 created: 2024-01-17
-last_edited: 2024-01-17
 draft: false
+last_edited: 2024-01-17
 tags:
   - machine-learning
 type: definition

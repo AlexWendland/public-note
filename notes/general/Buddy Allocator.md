@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2025-03-23
-last_edited: 2025-03-23
 draft: false
+last_edited: 2025-03-23
 tags:
   - OS
 type: definition
@@ -21,12 +21,12 @@ type: definition
 >- When memory is freed, the allocator checks whether its **buddy (the adjacent block of the same size)** is also free.
 >- If both buddies are free, they are **merged** back into a larger block.
 >- This process continues up the hierarchy, helping to reduce fragmentation.
->  
+>
 > **Advantages & Trade-offs**
 >
-> **Fast allocation & deallocation**: Simple bitwise operations track buddy pairs.  
-> **Merging reduces fragmentation**: Helps prevent [[External fragmentation|external fragmentation]].  
+> **Fast allocation & deallocation**: Simple bitwise operations track buddy pairs.
+> **Merging reduces fragmentation**: Helps prevent [[External fragmentation|external fragmentation]].
 > **[[Internal fragmentation]]** → Requests that don’t match a power-of-2 size may waste memory.
-> 
+>
 >![Buddy Allocator](../../images/buddy_allocator.png)
 

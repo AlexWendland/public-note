@@ -9,11 +9,19 @@ from note_helper import models
 
 class IndentedDumper(yaml.Dumper):
     """
-    A Dumper that will indent lists by two spaces.
+    A Dumper that will indent lists by two spaces and represent None as empty.
     """
 
     def increase_indent(self, flow=False, indentless=False):
         return super().increase_indent(flow, False)
+
+
+# Represent None as empty string instead of 'null'
+def represent_none(self, data):
+    return self.represent_scalar("tag:yaml.org,2002:null", "")
+
+
+IndentedDumper.add_representer(type(None), represent_none)
 
 
 def write_note_file(note_file: models.NoteFile):
@@ -30,7 +38,7 @@ def write_note_file(note_file: models.NoteFile):
 
 def write_metadata(file: io.TextIOWrapper, metadata: dict[str, Any]) -> None:
     file.write("---\n")
-    yaml.dump(metadata, file, Dumper=IndentedDumper)
+    yaml.dump(metadata, file, Dumper=IndentedDumper, sort_keys=True)
     file.write("---\n")
 
 

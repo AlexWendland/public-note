@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-03-09
-last_edited: 2024-03-09
 draft: false
+last_edited: 2024-03-09
 tags:
   - programming
   - machine-learning
@@ -31,7 +31,7 @@ Name(k, d, T):
 		A function from f splitting T into k groups
 1. Set f to be the identity function.
 2. While the codain of f has size larger than k:
-	1. Set C_a, C_b, min_distance to be empty 
+	1. Set C_a, C_b, min_distance to be empty
 	2. For add X, Y in f^{-1}(T):
 		1. Caluclate dist = min_{x in X, y in Y} d(x,y)
 		2. if dist < min_distance:

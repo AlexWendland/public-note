@@ -1,10 +1,10 @@
 ---
 aliases:
 checked: false
-course: "[[CS6210 Advanced Operating Systems]]"
+course: '[[CS6210 Advanced Operating Systems]]'
 created: 2025-11-20
-last_edited: 2025-11-20
 draft: true
+last_edited: 2025-11-20
 tags:
   - OMSCS
 type: lecture
@@ -48,7 +48,7 @@ As of 2000:
 There are distinct advantages of structuring a system like this:
 
 - Horizontal scaling: adding more nodes to the system scales it up.
-- Cost control: 
+- Cost control:
 
 ### Load manager
 

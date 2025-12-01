@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: '[[CS6200 Graduate introduction to Operating Systems]]'
 created: 2024-08-25
-last_edited: 2024-08-25
 draft: false
+last_edited: 2024-08-25
 tags:
   - OMSCS
 type: lecture

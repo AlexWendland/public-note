@@ -1,5 +1,5 @@
 ---
-aliases: null
+aliases:
 checked: false
 course: '[[CS6210 Advanced Operating Systems]]'
 created: '2025-11-30'
@@ -63,7 +63,7 @@ The above operations are all developers need to know - however there are a coupl
 
 #### Managing aborts
 
-When the developer calls `set_range` the LRVM will make a 'undo record' of that range. 
+When the developer calls `set_range` the LRVM will make a 'undo record' of that range.
 Then if the transaction is aborted, this copy will be applied to the region to clear any changes made to it.
 (This can be toggled off using no_restore mode in the `begin_xact` call.
 This will make LRVM more performant.)

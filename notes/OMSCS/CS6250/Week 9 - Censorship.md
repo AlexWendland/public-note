@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6250 Computer Networks]]"
+course: '[[CS6250 Computer Networks]]'
 created: 2024-07-22
-last_edited: 2024-07-22
 draft: false
+last_edited: 2024-07-22
 tags:
   - OMSCS
 type: lecture
@@ -16,25 +16,25 @@ week: 9
 
 ### Important Readings
 
-Towards a Comprehensive Picture of the Great Firewall’s DNS Censorship  
+Towards a Comprehensive Picture of the Great Firewall’s DNS Censorship
 [https://www.usenix.org/system/files/conference/foci14/foci14-anonymous.pdfLinks to an external site.](https://www.usenix.org/system/files/conference/foci14/foci14-anonymous.pdf)
 
-Ignoring the Great Firewall of China  
+Ignoring the Great Firewall of China
 [https://www.cl.cam.ac.uk/~rnc1/ignoring.pdfLinks to an external site.](https://www.cl.cam.ac.uk/~rnc1/ignoring.pdf)
 
-Global Measurement of DNS Manipulation  
+Global Measurement of DNS Manipulation
 [https://www.cc.gatech.edu/~pearce/papers/dns_usenix_2017.pdfLinks to an external site.](https://www.cc.gatech.edu/~pearce/papers/dns_usenix_2017.pdf)
 
-Analysis of Country-wide Internet Outages Caused by Censorship  
+Analysis of Country-wide Internet Outages Caused by Censorship
 [https://www.caida.org/publications/papers/2011/outages_censorship/outages_censorship.pdfLinks to an external site.](https://www.caida.org/publications/papers/2011/outages_censorship/outages_censorship.pdf)
 
-Augur: Internet-Wide Detection of Connectivity Disruptions  
+Augur: Internet-Wide Detection of Connectivity Disruptions
 [https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7958591Links to an external site.](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7958591)
 
-Adapting Social Spam Infrastructure for Political Censorship  
+Adapting Social Spam Infrastructure for Political Censorship
 [https://www.icir.org/vern/papers/kremlin-bots.leet11.pdfLinks to an external site.](https://www.icir.org/vern/papers/kremlin-bots.leet11.pdf)
 
-Five incidents, one theme: Twitter spam as a weapon to drown voices of protests   
+Five incidents, one theme: Twitter spam as a weapon to drown voices of protests
 [https://www.usenix.org/system/files/conference/foci13/foci13-verkamp.pdfLinks to an external site.](https://www.usenix.org/system/files/conference/foci13/foci13-verkamp.pdf)
 
 ## DNS censorship
@@ -43,7 +43,7 @@ Five incidents, one theme: Twitter spam as a weapon to drown voices of protests�
 
 ![[Great Firewall of China (GFW)]]
 
-Researchers have tried to reverse engineer the GFW and to understand how it works. Researchers have started to identify some of the properties: 
+Researchers have tried to reverse engineer the GFW and to understand how it works. Researchers have started to identify some of the properties:
 
 1. _Locality of [[Great Firewall of China (GFW)|GFW]] nodes_: There are two differing notions on whether the GFW nodes are present only at the edge [[Internet Service Provider (ISP)|ISPs]] or whether they are also present in non-bordering Chinese [[Autonomous system (AS)|ASs]]. The majority view is that censorship nodes are present at the edge.
 2. _Centralized management_: Since the blocklists obtained from two distinct GFW locations are the same, there is a high possibility of a central management (GFW Manager) entity that orchestrates blocklists.
@@ -53,9 +53,9 @@ Researchers have tried to reverse engineer the GFW and to understand how it work
 
 ![[DNS injection]]
 
-To detect [[DNS injection]] you can use probing techniques to search for injected paths. 
+To detect [[DNS injection]] you can use probing techniques to search for injected paths.
 
-There are multiple different techniques to use here. 
+There are multiple different techniques to use here.
 
 1. **Packet dropping**: For a specific set of [[Internet Protocol (IP)|IP addresses]] you drop packets going to or from that address.
 	- Strengths:
@@ -78,28 +78,28 @@ There are multiple different techniques to use here.
 4. **Blocking with Resets**: This technique sends a [[Transmission Control Protocol (TCP)|TCP]] reset (RST) to block individual connections that contain requests with objectionable content. We can see this by packet capturing of requests that are normal and requests that contain potentially flaggable keywords. Let’s look at one such example of packet capture.
 Ok request
 ```
-cam(53382)  → china(http) [SYN]   
-china(http) → cam(53382) [SYN, ACK]   
-cam(53382)  → china(http) [ACK]   
-**cam(53382)  → china(http) GET / HTTP/1.0**   
-**china(http) → cam(53382) HTTP/1.1 200 OK (text/html) etc...  
-china(http) → cam(53382) ..._more of the web page_**   
-**cam(53382)  → china(http) [ACK]  
+cam(53382)  → china(http) [SYN]
+china(http) → cam(53382) [SYN, ACK]
+cam(53382)  → china(http) [ACK]
+**cam(53382)  → china(http) GET / HTTP/1.0**
+**china(http) → cam(53382) HTTP/1.1 200 OK (text/html) etc...
+china(http) → cam(53382) ..._more of the web page_**
+**cam(53382)  → china(http) [ACK]
             ..._and so on until the page was complete_**
 ```
 Blocked request
 ```
-cam(54190)  → china(http) [SYN]   
-china(http) → cam(54190) [SYN, ACK] TTL=39   
-cam(54190)  → china(http) [ACK]   
-cam(54190)  → china(http) GET /?falun HTTP/1.0   
-**china(http) → cam(54190) [RST] TTL=47, seq=1, ack=1**  
-**china(http) → cam(54190) [RST] TTL=47, seq=1461, ack=1**   
-**china(http) → cam(54190) [RST] TTL=47, seq=4381, ack=1**   
-china(http) → cam(54190) HTTP/1.1 200 OK (text/html) _etc..._  
-cam(54190)  → china(http) [RST] TTL=64, seq=25, ack zeroed   
-china(http) → cam(54190) ..._more of the web page_   
-cam(54190)  → china(http) [RST] TTL=64, seq=25, ack zeroed   
+cam(54190)  → china(http) [SYN]
+china(http) → cam(54190) [SYN, ACK] TTL=39
+cam(54190)  → china(http) [ACK]
+cam(54190)  → china(http) GET /?falun HTTP/1.0
+**china(http) → cam(54190) [RST] TTL=47, seq=1, ack=1**
+**china(http) → cam(54190) [RST] TTL=47, seq=1461, ack=1**
+**china(http) → cam(54190) [RST] TTL=47, seq=4381, ack=1**
+china(http) → cam(54190) HTTP/1.1 200 OK (text/html) _etc..._
+cam(54190)  → china(http) [RST] TTL=64, seq=25, ack zeroed
+china(http) → cam(54190) ..._more of the web page_
+cam(54190)  → china(http) [RST] TTL=64, seq=25, ack zeroed
 china(http) → cam(54190) [RST] TTL=47, seq=2921, ack=25
 ```
 After the client (cam54190) sends the request containing flaggable keywords, it receives 3 TCP RSTs corresponding to one request, possibly to ensure that the sender receives a reset. The RST packets received correspond to the sequence number of 1460 sent in the GET request.
@@ -108,9 +108,9 @@ After the client (cam54190) sends the request containing flaggable keywords, it 
 
 After the request above
 ```
-cam(54191)  → china(http) [SYN]  
-china(http) → cam(54191) [SYN, ACK] TTL=41  
-cam(54191)  → china(http) [ACK]  
+cam(54191)  → china(http) [SYN]
+china(http) → cam(54191) [SYN, ACK] TTL=41
+cam(54191)  → china(http) [ACK]
 china(http) → cam(54191) [RST] TTL=49, seq=1
 ```
 The reset packet received by the client is from the firewall. It does not matter that the client sends out legitimate GET requests following one “questionable” request. It will continue to receive resets from the firewall for a particular duration. Running different experiments suggests that this blocking period is variable for “questionable” requests.
@@ -147,7 +147,7 @@ It is believed over 60 countries are impacted by some form of [[DNS censorship]]
         - Avoid using home network DNS resolvers or forwarders.
         - Prefer open DNS resolvers within Internet infrastructure, such as those hosted by ISPs or cloud providers.
 
-Good method to measure censorship require different vantage points on the internet. Some of these did use servers to rent such as CensMon others such as OpenNet used volunteers - though this can be difficult in exactly the places where you would want to measure it. 
+Good method to measure censorship require different vantage points on the internet. Some of these did use servers to rent such as CensMon others such as OpenNet used volunteers - though this can be difficult in exactly the places where you would want to measure it.
 
 ![[Iris]]
 

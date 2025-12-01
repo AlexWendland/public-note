@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6250 Computer Networks]]"
+course: '[[CS6250 Computer Networks]]'
 created: 2024-05-18
-last_edited: 2024-05-18
 draft: false
+last_edited: 2024-05-18
 tags:
   - OMSCS
 type: lecture
@@ -17,21 +17,21 @@ Here are some questions you should be able to answer to start the course:
 • What are the advantages and disadvantages of a layered architecture?
 Modularity, Separation of concerns, and interchange of methods at different layers.
 Duplication of effort, more covert coupling, and additional overhead.
-• What are the differences and similarities between the OSI model and the five-layered Internet model?  
+• What are the differences and similarities between the OSI model and the five-layered Internet model?
 ![[Connection between OSI and IPS models]]
-• What are sockets?  
+• What are sockets?
 ![[Socket]]
-• Describe each layer of the OSI model.  
+• Describe each layer of the OSI model.
 ![[Open Systems interconnection (OSI) model|OSI]]
-• Provide examples of popular protocols at each layer of the five-layered Internet model.  
+• Provide examples of popular protocols at each layer of the five-layered Internet model.
 [[Hyper Text Transfer Protocol (HTTP)|HTTP]]
 [[Transmission Control Protocol (TCP)|TCP]]
 [[Address Resolution Protocol (ARP)|ARP]]
-• What is encapsulation, and how is it used in a layered model?  
+• What is encapsulation, and how is it used in a layered model?
 ![[Encapsulation|encapsulation]]
-• What is the end-to-end (e2e) principle? 
+• What is the end-to-end (e2e) principle?
 ![[End to end principle]]
-• What are the examples of a violation of e2e principle? 
+• What are the examples of a violation of e2e principle?
 
 1. **Network Address Translation (NAT)**: NAT modifies the IP address information in packet headers while they are in transit, which breaks the end-to-end connectivity and transparency. This complicates end-to-end communication protocols that rely on unique IP addresses.
 2. **Firewalls and Deep Packet Inspection (DPI)**: Firewalls and DPI devices inspect and sometimes modify the content of data packets as they pass through the network. This interferes with end-to-end encryption and data integrity checks.
@@ -39,27 +39,27 @@ Duplication of effort, more covert coupling, and additional overhead.
 4. **QoS (Quality of Service) Mechanisms**: QoS techniques prioritize certain types of traffic over others within the network. While this can improve performance for specific applications, it introduces complexity and control within the network itself, rather than at the endpoints.
 5. **Proxy Servers**: Proxy servers act as intermediaries for requests from clients seeking resources from other servers. They can modify requests and responses, breaking the direct communication path and potentially interfering with end-to-end data handling.
 
-• What is the EvoArch model?  
-• Explain a round in the EvoArch model.  
-• What are the ramifications of the hourglass shape of the internet?  
-• Repeaters, hubs, bridges, and routers operate on which layers?  
-• What is a bridge, and how does it “learn”?  
-• What is a distributed algorithm?  
-• Explain the Spanning Tree Algorithm.  
+• What is the EvoArch model?
+• Explain a round in the EvoArch model.
+• What are the ramifications of the hourglass shape of the internet?
+• Repeaters, hubs, bridges, and routers operate on which layers?
+• What is a bridge, and how does it “learn”?
+• What is a distributed algorithm?
+• Explain the Spanning Tree Algorithm.
 • What is the purpose of the Spanning Tree Algorithm?
 
 ## Additional readings
 
 ### Important Readings
 
-How to Read a Paper  
-[https://people.cs.umass.edu/~phillipa/CSE390/paper-reading.pdfLinks to an external site.](https://people.cs.umass.edu/~phillipa/CSE390/paper-reading.pdf) 
+How to Read a Paper
+[https://people.cs.umass.edu/~phillipa/CSE390/paper-reading.pdfLinks to an external site.](https://people.cs.umass.edu/~phillipa/CSE390/paper-reading.pdf)
 
-How to Read a Research Paper  
+How to Read a Research Paper
 [https://www.cs.tufts.edu/comp/150PLD/ReadingPapers.pdfLinks to an external site.](https://www.cs.tufts.edu/comp/150PLD/ReadingPapers.pdf)
 
-The Design Philosophy of the DARPA Internet Protocols  
-[http://ccr.sigcomm.org/archive/1995/jan95/ccr-9501-clark.pdfLinks to an external site.](http://ccr.sigcomm.org/archive/1995/jan95/ccr-9501-clark.pdf) 
+The Design Philosophy of the DARPA Internet Protocols
+[http://ccr.sigcomm.org/archive/1995/jan95/ccr-9501-clark.pdfLinks to an external site.](http://ccr.sigcomm.org/archive/1995/jan95/ccr-9501-clark.pdf)
 
 The Evolution of Layered Protocol Stacks Leads to an Hourglass-Shaped Architecture [https://www.cc.gatech.edu/~dovrolis/Papers/evoarch.pdfLinks to an external site.](https://www.cc.gatech.edu/~dovrolis/Papers/evoarch.pdf)
 
@@ -75,22 +75,22 @@ If you have access to the Kurose-Ross book and the Peterson book, you can find t
 
 ### Optional Readings
 
-Brief History of the Internet (1997)  
+Brief History of the Internet (1997)
 [https://www.internetsociety.org/wp-content/uploads/2017/09/ISOC-History-of-the-Internet_1997.pdfLinks to an external site.](https://www.internetsociety.org/wp-content/uploads/2017/09/ISOC-History-of-the-Internet_1997.pdf)
 
-Rethinking the design of the Internet  
+Rethinking the design of the Internet
 [https://dspace.mit.edu/bitstream/handle/1721.1/1519/TPRC_Clark_Blumenthal.pdf?sequence=1&origin=publication_detailLinks to an external site.](https://dspace.mit.edu/bitstream/handle/1721.1/1519/TPRC_Clark_Blumenthal.pdf?sequence=1&origin=publication_detail)
 
-The End-To-End Argument  
-[http://web.mit.edu/Saltzer/www/publications/endtoend/ANe2ecomment.htmlLinks to an external site.](http://web.mit.edu/Saltzer/www/publications/endtoend/ANe2ecomment.html)  
+The End-To-End Argument
+[http://web.mit.edu/Saltzer/www/publications/endtoend/ANe2ecomment.htmlLinks to an external site.](http://web.mit.edu/Saltzer/www/publications/endtoend/ANe2ecomment.html)
 [http://web.mit.edu/Saltzer/www/publications/endtoend/endtoend.pdfLinks to an external site.](http://web.mit.edu/Saltzer/www/publications/endtoend/endtoend.pdf)
 
-Internet Clean-Slate Design: What and Why?  
+Internet Clean-Slate Design: What and Why?
 [https://citeseerx.ist.psu.edu/pdf/700ba413874b914557742ab688cf4c7a445e7c47Links to an external site.](https://citeseerx.ist.psu.edu/pdf/700ba413874b914557742ab688cf4c7a445e7c47)
 
 A Clean Slate 4D Approach to Network Control and Management [https://www.cs.princeton.edu/~jrex/papers/ccr05-4d.pdfLinks to an external site.](https://www.cs.princeton.edu/~jrex/papers/ccr05-4d.pdf)
 
-Holding the Internet Accountable  
+Holding the Internet Accountable
 [https://conferences.sigcomm.org/hotnets/2007/papers/hotnets6-final71.pdfLinks to an external site.](https://conferences.sigcomm.org/hotnets/2007/papers/hotnets6-final71.pdf)
 
 An Algorithm for Distributed Computation of a Spanning Tree in an Extended LAN [https://www.it.uu.se/edu/course/homepage/datakom/ht06/slides/sta-perlman.pdfLinks to an external site.](https://www.it.uu.se/edu/course/homepage/datakom/ht06/slides/sta-perlman.pdf)
@@ -120,8 +120,8 @@ This is responsible for merging different transport streams that are intended fo
 This is responsible for getting the data correctly from one end to another. It uses protocols such as [[User Datagram Protocol (UDP)|UDP]] and [[Transmission Control Protocol (TCP)|TCP]]. This attaches source and destination [[Port|ports]] to the message to make it a [[Segment|segment]].
 
 Note that [[Transmission Control Protocol (TCP)|TCP]] adds
-- multiplexing, 
-- congestion control and 
+- multiplexing,
+- congestion control and
 - reliable, in-order delivery.
 
 Though for this is slower and more complex to implement.
@@ -164,7 +164,7 @@ There is a model that was purposed to explain this shape.
 
 In some set ups of this model the width of the layers tend to follow that of the internet with a similar hourglass shape. Implying there might not be anything particularly special about [[Internet Protocol (IP)]], [[User Datagram Protocol (UDP)|UDP]], or [[Transmission Control Protocol (TCP)|TCP]] but more there was always going to be a bottle neck here.
 
-These [[Protocol (networks)|protocols]] do defend one another for a replacement to [[Internet Protocol (IP)|IP]] to come about it would have to rival being used by both [[Transmission Control Protocol (TCP)|TCP]] and [[User Datagram Protocol (UDP)|UDP]]. 
+These [[Protocol (networks)|protocols]] do defend one another for a replacement to [[Internet Protocol (IP)|IP]] to come about it would have to rival being used by both [[Transmission Control Protocol (TCP)|TCP]] and [[User Datagram Protocol (UDP)|UDP]].
 
 This is good to keep in mind for development for any layered system - if you don't want monopolies to form you need to garentee a variety of non-competing protocols at each layer.
 

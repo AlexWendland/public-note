@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6250 Computer Networks]]"
+course: '[[CS6250 Computer Networks]]'
 created: 2024-07-19
-last_edited: 2024-07-19
 draft: false
+last_edited: 2024-07-19
 tags:
   - OMSCS
 type: lecture
@@ -18,7 +18,7 @@ week: 7
 
 ### Important Readings
 
-The Road to SDN: An Intellectual History of Programmable Networks  
+The Road to SDN: An Intellectual History of Programmable Networks
 [https://www.sigcomm.org/sites/default/files/ccr/papers/2014/April/0000000-0000012.pdfLinks to an external site.](https://www.sigcomm.org/sites/default/files/ccr/papers/2014/April/0000000-0000012.pdf "Link")
 
 ### Book References
@@ -29,10 +29,10 @@ Kurose-Ross, 7th Edition. Chapter 5
 
 ### Optional Readings
 
-SDN Controllers: Benchmarking & Performance Evaluation  
+SDN Controllers: Benchmarking & Performance Evaluation
 [https://arxiv.org/pdf/1902.04491.pdfLinks to an external site.](https://arxiv.org/pdf/1902.04491.pdf)
 
-SDN Architecture  
+SDN Architecture
 [https://www.opennetworking.org/wp-content/uploads/2013/02/TR_SDN_ARCH_1.0_06062014.pdfLinks to an external site.](https://www.opennetworking.org/wp-content/uploads/2013/02/TR_SDN_ARCH_1.0_06062014.pdf)
 
 ### Optional Activity
@@ -112,7 +112,7 @@ There were two main pushes for this:
 
 This led to developments in many areas such as: Data centres, routing, enterprise networks, and research networks. Through the ability to control the behaviour of all devices through a single centralised point.
 
-The main role of the data plane is the forwarding of packets based on some [[Forwarding information base (FIB)|FIB]], whereas the main role of the control plane is [[Routing|routing]] which mainly involves updating the [[Forwarding information base (FIB)|FIB]] once it has computed the route a particular packet should take. 
+The main role of the data plane is the forwarding of packets based on some [[Forwarding information base (FIB)|FIB]], whereas the main role of the control plane is [[Routing|routing]] which mainly involves updating the [[Forwarding information base (FIB)|FIB]] once it has computed the route a particular packet should take.
 
 A [[Software defined networks (SDN)|SDN]] moves the control plane from being on the device to being located somewhere else on the network. It defines a clean API on how this networked control plane can interact and update the [[Forwarding information base (FIB)|FIB]] on the device.
 
@@ -122,8 +122,8 @@ A [[Software defined networks (SDN)|SDN]] moves the control plane from being on 
 
 There are 3 separate layers to the architecture:
 
-- **SDN-controlled network elements**: The SDN-controlled network elements, sometimes called the infrastructure layer, is responsible for the forwarding of traffic in a network based on the rules computed by the SDN control plane. 
-- **SDN controller**: The **SDN controller** is a logically centralized entity that acts as an **interface between the network elements and the network-control applications.** 
+- **SDN-controlled network elements**: The SDN-controlled network elements, sometimes called the infrastructure layer, is responsible for the forwarding of traffic in a network based on the rules computed by the SDN control plane.
+- **SDN controller**: The **SDN controller** is a logically centralized entity that acts as an **interface between the network elements and the network-control applications.**
 - **Network-control applications**: The network-control applications are programs that manage the underlying network by collecting information about the network elements with the help of SDN controller.
 
 ![Sdn Arciteture](../../../images/sdn_arciteture.png)
@@ -134,14 +134,14 @@ These components have two important interfaces.
 
 There are 4 important features of this architecture:
 
-1. **Flow-based forwarding:** The rules for forwarding packets in the SDN-controlled switches can be computed based on any number of header field values in various layers such as the transport-layer, network-layer and link-layer. This differs from the traditional approach where only the destination IP address determines the forwarding of a packet. For example, [[OpenFlow]] allows up to 11 header field values to be considered. 
-2. **Separation of data plane and control plane:** The SDN-controlled switches operate on the data plane and they only execute the rules in the flow tables. Those rules are computed, installed, and managed by software that runs on separate servers. 
-3. **Network control functions:** The SDN control plane, (running on multiple servers for increased performance and availability) consists of two components: the controller and the network applications. The controller maintains up-to-date network state information about the network devices and elements (for example, hosts, switches, links) and provides it to the network-control applications. This information, in turn, is used by the applications to monitor and control the network devices. 
+1. **Flow-based forwarding:** The rules for forwarding packets in the SDN-controlled switches can be computed based on any number of header field values in various layers such as the transport-layer, network-layer and link-layer. This differs from the traditional approach where only the destination IP address determines the forwarding of a packet. For example, [[OpenFlow]] allows up to 11 header field values to be considered.
+2. **Separation of data plane and control plane:** The SDN-controlled switches operate on the data plane and they only execute the rules in the flow tables. Those rules are computed, installed, and managed by software that runs on separate servers.
+3. **Network control functions:** The SDN control plane, (running on multiple servers for increased performance and availability) consists of two components: the controller and the network applications. The controller maintains up-to-date network state information about the network devices and elements (for example, hosts, switches, links) and provides it to the network-control applications. This information, in turn, is used by the applications to monitor and control the network devices.
 4. **A programmable network:** The network-control applications act as the “brain” of SDN control plane by managing the network. Example applications can include network management, traffic engineering, security, automation, analytics, etc. For example, we can have an application that determines the end-to-end path between sources and destinations in the network using Dijkstra’s algorithm.
 
 ### Controller Architecture
 
-The controller itself is broken down into a further 3 layers. These handle each of its separate responsibilities. 
+The controller itself is broken down into a further 3 layers. These handle each of its separate responsibilities.
 
 1. **Communication Layer**: This layer consists of a protocol through which the SDN controller and the network controlled elements communicate. Using this protocol, the devices send locally observed events to the SDN controller providing the controller with a current view of the network state. For example, these events can be a new device joining the network, heartbeat indicating the device is up, etc. The communication between SDN controller and the controlled devices is known as the “southbound” interface. [[OpenFlow]] is an example of this protocol, which is broadly used by SDN controllers today.
 2. **Network-wide state-management layer**: This layer is about the network-state that is maintained by the controller. The network-state includes any information about the state of the hosts, links, switches and other controlled elements in the network. It also includes copies of the flow tables of the switches. Network-state information is needed by the SDN control plane to configure the flow tables.
@@ -155,24 +155,24 @@ The SDN controller, although viewed as a monolithic service by external devices 
 
 ### Important Readings
 
-Software-Defined Networking: A Comprehensive Survey  
+Software-Defined Networking: A Comprehensive Survey
 [https://arxiv.org/pdf/1406.0440.pdfLinks to an external site.](https://arxiv.org/pdf/1406.0440.pdf "Link")
 
-ONOS: Towards an Open, Distributed SDN OS  
+ONOS: Towards an Open, Distributed SDN OS
 [https://www-cs-students.stanford.edu/~rlantz/papers/onos-hotsdn.pdf Links to an external site.](https://www-cs-students.stanford.edu/~rlantz/papers/onos-hotsdn.pdf)
 
-P4: Programming Protocol-Independent Packet Processors  
+P4: Programming Protocol-Independent Packet Processors
 [https://www.sigcomm.org/sites/default/files/ccr/papers/2014/July/0000000-0000004.pdfLinks to an external site.](https://www.sigcomm.org/sites/default/files/ccr/papers/2014/July/0000000-0000004.pdf)
 
-A Software-Defined Internet Exchange  
+A Software-Defined Internet Exchange
 [https://dl.acm.org/doi/pdf/10.1145/2740070.2626300?download=trueLinks to an external site.](https://dl.acm.org/doi/pdf/10.1145/2740070.2626300?download=true)
 
 ### Optional Readings
 
-P4 Language tutorial  
+P4 Language tutorial
 [https://github.com/p4lang/tutorials/tree/master/exercises/basicLinks to an external site.](https://github.com/p4lang/tutorials/tree/master/exercises/basic)
 
-An Industrial-Scale Software Defined Internet Exchange Point  
+An Industrial-Scale Software Defined Internet Exchange Point
 [https://www.usenix.org/system/files/conference/nsdi16/nsdi16-paper-gupta.pdfLinks to an external site.](https://www.usenix.org/system/files/conference/nsdi16/nsdi16-paper-gupta.pdf)
 
  _As you go through this lesson, there will be links for optional tutorials on various SDN technologies._
@@ -231,7 +231,7 @@ Next we highlight the key features of an SDN.
 
 ## SDN infrastructure layer
 
-This is the network-controlled devices. These are built on top of open standard interfaces that ensure cross-compatibility between vendors. 
+This is the network-controlled devices. These are built on top of open standard interfaces that ensure cross-compatibility between vendors.
 
 In [[OpenFlow]] how they handle packets is based on a flow table which has 3 entries
 - A matching rule
@@ -253,9 +253,9 @@ Once a packet matches with one rule it is normally executed meaning order matter
 1. Event-based messages that are sent by forwarding devices to the controller when there is a link or port change
 2. Flow statistics are generated by forwarding devices and collected by the controller
 3. Packet messages are sent by forwarding devices to the controller when they do not know what to do with a new incoming flow
-These all communicate with the SDN controller. 
+These all communicate with the SDN controller.
 
-There are alternatives to [[OpenFlow]] such as ForCES which provides mo flexible approach to traditional networking without changing infrastructure. 
+There are alternatives to [[OpenFlow]] such as ForCES which provides mo flexible approach to traditional networking without changing infrastructure.
 
 ## Centralised vs decentralised controllers
 
@@ -271,7 +271,7 @@ There are alternatives to [[OpenFlow]] such as ForCES which provides mo flexible
 ### Controller Architectures
 
 1. **Centralized Controllers:**
-    
+
     - **Characteristics:**
         - Single entity managing all network devices.
         - Potential single point of failure.
@@ -281,7 +281,7 @@ There are alternatives to [[OpenFlow]] such as ForCES which provides mo flexible
         - **Trema, Ryu NOS:** Target specific environments like data centres and cloud infrastructure.
         - **Rosemary:** Ensures security and isolation using a container-based micro-NOS architecture.
 2. **Distributed Controllers:**
-    
+
     - **Characteristics:**
         - Scalable to various network sizes.
         - Can be centralised clusters or physically distributed elements.
@@ -337,7 +337,7 @@ Here we will review the ONOS distributed SDN control platform. This is based on 
 
 This operates within the switch in two steps:
 
-1. **Configure**: These sets of operations are used to program the parser. They specify the header fields to be processed in each match+action stage and also define the order of these stages. 
+1. **Configure**: These sets of operations are used to program the parser. They specify the header fields to be processed in each match+action stage and also define the order of these stages.
 2. **Populate**: The entries in the match+action tables specified during configuration may be altered using the populate operations. It allows addition and deletion of the entries in the tables.
 
 ![P4 Model](../../../images/P4_model.png)
@@ -396,9 +396,9 @@ Routing using [[Boarder gateway protocol (BGP)|BGP]] has some serious limitation
 These could be addressed using [[Software defined networks (SDN)|SDN]].
 
 This has been implemented in [[Internet Exchange Points (IXPs)|IXPs]] using SDX. This allows for:
-- Application specific peering - Custom peering rules can be installed for certain applications, such as high-bandwidth video applications like Netflix or YouTube which constitute a significant amount of traffic volume. 
+- Application specific peering - Custom peering rules can be installed for certain applications, such as high-bandwidth video applications like Netflix or YouTube which constitute a significant amount of traffic volume.
 - Traffic engineering - Controlling the inbound traffic based on source IP or port numbers by setting forwarding rules.
-- Traffic load balancing - The destination IP address can be rewritten based on any field in the packet header to balance the load. 
+- Traffic load balancing - The destination IP address can be rewritten based on any field in the packet header to balance the load.
 - Traffic redirection through [[Middleboxes|middleboxes]] - Targeted subsets of traffic can be redirected to [[Middleboxes|middleboxes]].
 
 At an [[Internet Exchange Points (IXPs)|IXP]] each participant connects to the route server - there they get a virtual sdn switch where they decide the in/outbound rules for traffic leaving and entering their network. These do not effect other participants switches but does effect how traffic is routed through the [[Internet Exchange Points (IXPs)|IXP]]. This differs from a standard route server which uses [[Boarder gateway protocol (BGP)|BGP]] rules to control traffic form/to participant [[Autonomous system (AS)|AS]].

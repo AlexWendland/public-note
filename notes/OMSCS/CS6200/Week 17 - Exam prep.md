@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: '[[CS6200 Graduate introduction to Operating Systems]]'
 created: 2025-04-23
-last_edited: 2025-04-23
 draft: true
+last_edited: 2025-04-23
 tags:
   - OMSCS
 type: lecture
@@ -32,7 +32,7 @@ week:
 
 8.      How does address translation work? What’s the role of the TLB?
 
-9.      Do you understand the relationships between the size of an address, the size of the address space, the size of a page, the size of the page table…   
+9.      Do you understand the relationships between the size of an address, the size of the address space, the size of a page, the size of the page table…
 
 10.   Do you understand the benefits of hierarchical page tables? For a given address format, can you workout the sizes of the page table structures in different layers?
 
@@ -44,7 +44,7 @@ week:
 
 3.   What are different ways you can implement synchronization between different processes (think what kids of options you had in Project 3).
 
-## Synchronization 
+## Synchronization
 
 4.   To implement a synchronization mechanism, at the lowest level you need to rely on a hardware atomic instruction. Why? What are some examples?
 5.   Why are spinlocks useful? Would you use a spinlock in every place where you’re currently using a mutex?

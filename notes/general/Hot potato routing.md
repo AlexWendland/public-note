@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-06-08
-last_edited: 2024-06-08
 draft: false
+last_edited: 2024-06-08
 tags:
   - networks
 type: definition

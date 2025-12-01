@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS7642 Reinforcement Learning]]"
+course: '[[CS7642 Reinforcement Learning]]'
 created: 2025-05-12
-last_edited: 2025-05-12
 draft: false
+last_edited: 2025-05-12
 tags:
   - OMSCS
 type: lecture
@@ -53,7 +53,7 @@ C(s,a) & = \gamma \sum_{s' \in S} T(s,a,s') \max_{a' \in A} Q(s',a')\\
 \end{align*}
 $$
 
-Each of these will enable us to do reinforcement learning in different circumstances - but notice how they relate to one another. 
+Each of these will enable us to do reinforcement learning in different circumstances - but notice how they relate to one another.
 
 |          | $V(s)$                                                     | $Q(s, a)$                                                                  | $C(s,a)$                                                 |
 | -------- | ---------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------- |
@@ -61,4 +61,4 @@ Each of these will enable us to do reinforcement learning in different circumsta
 | $Q(s,a)$ | $Q(s,a) = R(s,a) + \gamma \sum_{s' \in A} T(s,a,s') V(s')$ | $Q(s,a) = Q(s,a)$                                                          | $Q(s,a) = R(s,a) + C(s,a)$                               |
 | $T(s,a)$ | $C(s,a) = \gamma \sum_{s' \in S} T(s,a,s')V(s')$           | $C(s,a) = \gamma \sum_{s' \in S} T(s,a,s') \max_{a' \in A_{s'}} Q(s', a')$ | $C(s,a) = C(s,a)$                                        |
 
-If we find $V(s)$ we need to know both the transition probabilities and the reward to derive either $Q$ or $T$ however $Q$ and $T$ have a nice property that from $Q$ we only need to know the transition probabilities to find $C$ and $V$ whereas from $C$ we only need to know the reward to determine $V$ and $Q$. 
+If we find $V(s)$ we need to know both the transition probabilities and the reward to derive either $Q$ or $T$ however $Q$ and $T$ have a nice property that from $Q$ we only need to know the transition probabilities to find $C$ and $V$ whereas from $C$ we only need to know the reward to determine $V$ and $Q$.

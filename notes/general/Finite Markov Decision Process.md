@@ -3,8 +3,8 @@ aliases:
   - MDP
 checked: false
 created: 2025-05-14
-last_edited: 2025-05-14
 draft: false
+last_edited: 2025-05-14
 tags:
   - probability
 type: definition

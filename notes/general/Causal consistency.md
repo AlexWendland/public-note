@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2025-04-13
-last_edited: 2025-04-13
 draft: false
-tags: 
+last_edited: 2025-04-13
+tags: []
 type: definition
 ---
 >[!tldr] Causal consistency

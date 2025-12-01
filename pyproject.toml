@@ -24,6 +24,7 @@ dev = [
 
 [project.scripts]
 lecture = "scripts.lecture:main"
+admin = "scripts.admin:main"
 
 [build-system]
 requires = ["hatchling"]

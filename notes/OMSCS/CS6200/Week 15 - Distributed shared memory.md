@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: '[[CS6200 Graduate introduction to Operating Systems]]'
 created: 2025-04-13
-last_edited: 2025-04-13
 draft: false
+last_edited: 2025-04-13
 tags:
   - OMSCS
 type: lecture
@@ -34,12 +34,12 @@ The basic concept in distributed shared memory is when memory access is not loca
 
 ![Shared Memory](../../../images/shared_memory.png)
 
-Whilst in data-centers they use hardware such as [[Remote direct memory access (RDMA)]] this is an expensive option. Other applications can achieve the same using software. 
+Whilst in data-centers they use hardware such as [[Remote direct memory access (RDMA)]] this is an expensive option. Other applications can achieve the same using software.
 
 ## Sharing granularity
 
 When looking at shared memory within a processor the share locations at the variable level. However if we go out to the network for each variable that will cause too large a slowdown for a system. Instead we can to it at a less granular level:
-- Page level: The [[Operating system (OS)|OS]] understands memory at the page level which makes this an attractive option. 
+- Page level: The [[Operating system (OS)|OS]] understands memory at the page level which makes this an attractive option.
 - Object level: If all nodes are using the same language they can share at a larger object level.
 
 >[!warning] False sharing
@@ -105,7 +105,7 @@ To maintain this system we need a way to identify each page of memory and speak 
 
 The first method is simple but means if a node leaves the system for any reason it invalidates all the memory it war managing. The second allows for updates to the home node though relies on replicating that map to all nodes in the system.
 
-For each page we require to store metadata about the page. This will just need to be stored on the home node so can be partitioned. 
+For each page we require to store metadata about the page. This will just need to be stored on the home node so can be partitioned.
 
 For this to work we need to intercept all messages that involve writing or reading shared memory.
 

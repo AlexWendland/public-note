@@ -3,8 +3,8 @@ aliases:
   - step function methods
 checked: false
 created: 2024-06-09
-last_edited: 2024-06-09
 draft: false
+last_edited: 2024-06-09
 tags:
   - machine-learning
 type: definition

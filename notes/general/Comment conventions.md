@@ -5,8 +5,8 @@ aliases:
   - comment conventions
 checked: false
 created: 2023-07-01
-last_edited: 2023-11-11
 draft: false
+last_edited: 2023-11-11
 tags:
   - programming
   - clean-code

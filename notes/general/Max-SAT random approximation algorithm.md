@@ -1,9 +1,9 @@
 ---
-aliases: null
+aliases:
 checked: false
 created: 2023-11-12
-last_edited: 2023-11-12
 draft: false
+last_edited: 2023-11-12
 tags:
   - programming
 type: algorithm

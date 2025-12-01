@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS7641 Machine Learning]]"
+course: '[[CS7641 Machine Learning]]'
 created: 2024-02-21
-last_edited: 2024-02-21
 draft: false
+last_edited: 2024-02-21
 tags:
   - OMSCS
 type: lecture
@@ -40,13 +40,13 @@ $\mathbb{P}[X_1 = a_1, X_2 = a_2, .... X_n = a_n] = \prod_{i=1}^n \mathbb{P}[X_i
 
 >[!example] Independent variables
 >Let $A$ and $B$ be [[Independent events|independent event]]. Then $G = (\{A, B\}, \emptyset )$ forms a [[Bayesian network]] as
->$$\mathbb{P}[A,B] = \mathbb{P}[A]\mathbb{P}[B].$$ 
+>$$\mathbb{P}[A,B] = \mathbb{P}[A]\mathbb{P}[B].$$
 >Note that it also forms a [[Bayesian network]] with $G = (\{A, B\}, \{(A,B)\} )$ or $G = (\{A, B\}, \{(B,A)\} )$ but it would not be minimal.
 
 >[!example] Conditionally independent
 >Suppose we have [[Random variable|random variables]] $A$, $B$, and $C$ where $C$ is [[Conditional independence|conditionally independent]] of $A$ given $B$. Then $G = (\{A, B, C\}, \{(A,B), (B,C)\})$ forms as [[Bayesian network]].
 
-The property of being [[Conditional independence|conditionally independent]] is deducible from the [[Bayesian network]] $(G, X)$ by using the [[Chain rule (probability)|chain rule]]. 
+The property of being [[Conditional independence|conditionally independent]] is deducible from the [[Bayesian network]] $(G, X)$ by using the [[Chain rule (probability)|chain rule]].
 
 ![[Chain rule (probability)|chain rule]]
 
@@ -54,9 +54,9 @@ Lets [[Topological sorting (DAG)|topological order]] $V$ so $V = \{1, 2, \ldots,
 $$
 \mathbb{P}[X_1, X_2, \ldots, X_n] = \prod_{k=1}^n \mathbb{P}[X_k \vert X_1, X_2, \ldots, X_{k-1}]
 $$
-and compare this to 
+and compare this to
 $$\mathbb{P}[X] =\prod_{v \in V} \mathbb{P}[X_v \vert \bigcap_{(u,v) \in E} X_u].$$
-So for any $X_i$ and $j < i$ such that $(j,i) \not \in E$ then $X_i$ is [[Conditional independence|conditionally independent]] of $X_j$ given $\bigcup_{(u,i) \in E} X_u$.  
+So for any $X_i$ and $j < i$ such that $(j,i) \not \in E$ then $X_i$ is [[Conditional independence|conditionally independent]] of $X_j$ given $\bigcup_{(u,i) \in E} X_u$.
 
 This is in fact a defining property of [[Bayesian network]].
 
@@ -75,8 +75,8 @@ Once you have a [[Bayesian network]] you can use it to calculate all kinds of co
 ![[Bayes rule#Statement]]
 
 >[!example]
->Suppose we have two boxes, the first box has 3 green balls and 1 orange, the second has 3 blue and 2 green. Then we do the following, we pick a box with a half chance of picking either $P$, we draw and do not replace 1 ball from that box $D1$, lastly we draw another ball from the same box $D2$. 
->This can be represented as a [[Bayesian network]] with the following graph $(\{P, D1, D2\}, \{(P, D1), (D1, D2), (P, D2)\})$. Note this means $D1$ depends on $P$ and $D2$ depends on $P$ and $D1$. 
+>Suppose we have two boxes, the first box has 3 green balls and 1 orange, the second has 3 blue and 2 green. Then we do the following, we pick a box with a half chance of picking either $P$, we draw and do not replace 1 ball from that box $D1$, lastly we draw another ball from the same box $D2$.
+>This can be represented as a [[Bayesian network]] with the following graph $(\{P, D1, D2\}, \{(P, D1), (D1, D2), (P, D2)\})$. Note this means $D1$ depends on $P$ and $D2$ depends on $P$ and $D1$.
 >What is $\mathbb{P}[D2 =$ blue $\vert D1 =$ green$]$?
 
 We can write out the [[Conditional probability|conditional probability]] tables when they rely on all their dependents quite easily. First note $\mathbb{P}[P = 1] = \mathbb{P}[P = 2] = 0.5$. For the first joint distribution, we have what is below.
@@ -100,7 +100,7 @@ $$\mathbb{P}[D2 = blue \vert D1 = green] = \frac{\mathbb{P}[D2 = blue, D1 = gree
 Next lets use [[Marginalisation (probability)|marginalisation]] to add in the first variable.
 $$\mathbb{P}[D2 = blue \vert D1 = green] = \frac{\mathbb{P}[D2 = blue, D1 = green, P=1] + \mathbb{P}[D2 = blue, D1 = green, P=2]}{\mathbb{P}[D1 = green, P = 1] + \mathbb{P}[D1 = green, P = 2]}$$
 
-Lastly lets use the [[Chain rule (probability)|chain rule]] to turn them into the probabilities we have in the tables above. For example 
+Lastly lets use the [[Chain rule (probability)|chain rule]] to turn them into the probabilities we have in the tables above. For example
 $$\mathbb{P}[D2 = blue, D1 = green, P=1] = \mathbb{P}[P=1] * \mathbb{P}[D1 = green \vert P=1] * \mathbb{P}[D2 = blue \vert D1 = green, P=1]$$
 
 doing this for each quantity we get
@@ -112,7 +112,7 @@ $$\mathbb{P}[D2 = blue \vert D1 = green] = \frac{1/2*3/4*0 + 1/2*2/5*3/4}{1/2*3/
 Lets picture a [[Bayesian network]] with one root node and all other nodes as children of it. For this it is useful to think of an example.
 
 >[!example] Spam mail
->We are given 3 words Viagra, Price and Udacity and depending on the existence of these words in an email we have to decide if it is spam or not. We can sample for already labelled data to understand the probabilities of these words appearing or not appearing. 
+>We are given 3 words Viagra, Price and Udacity and depending on the existence of these words in an email we have to decide if it is spam or not. We can sample for already labelled data to understand the probabilities of these words appearing or not appearing.
 
 First lets draw the Naive Bayes Classifier diagram.
 
@@ -127,7 +127,7 @@ This is a model for if the email is spam or not. Lets assume the probability of 
 
 To work these out we have only had to sample from our spam and non-spam mail how many times they contain the word $V$.
 
-Now we would like to know 
+Now we would like to know
 $$\mathbb{P}[Spam \vert Viagra, \lnot Prince, \lnot Udacity]$$
 To turn this into something we can use from above we apply [[Bayes rule]] to this
 $$\mathbb{P}[S \vert V, \lnot P, \lnot U] = \frac{\mathbb{P}[V, \lnot P, \lnot U \vert S] \mathbb{P}[S]}{\mathbb{P}[V, \lnot P, \lnot U]}.$$
@@ -144,7 +144,7 @@ $$
 \end{align*}
 $$
 
-We want to do this but not have to crack out the pen and paper every time. 
+We want to do this but not have to crack out the pen and paper every time.
 
 ![[Naive Bayes classifier]]
 
@@ -153,7 +153,7 @@ This is cool as,
 - The model has few parameters so has low [[Spacial complexity|spacial complexity]].
 - If you have sufficient data you can make very good estimates on these probabilities.
 - This connects [[Inference]] and [[Classification problems|classification problems]].
-- Empirically widely successful. 
+- Empirically widely successful.
 
 Though the main consideration when using this is you will need to smooth the data to make sure we don't zero out options due to limitations of our data.
 
@@ -163,4 +163,4 @@ Though the main consideration when using this is you will need to smooth the dat
 - To simulate a complex process by sampling smaller bits of it.
 - Approximate inference, the process of looking at samples that only have a certain property to understand joint distributions.
 	- Actual inference is hard!
-- To "visualise" or get a feel for the data so we have intuition to reason about the state. 
+- To "visualise" or get a feel for the data so we have intuition to reason about the state.

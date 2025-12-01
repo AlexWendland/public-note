@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-07-23
-last_edited: 2024-07-23
 draft: false
+last_edited: 2024-07-23
 tags:
   - networks
   - security
@@ -20,10 +20,10 @@ type: definition
 >
 >3. Perform global [[Domain Name System (DNS)|DNS]] queries - establish a based line using 3 of them within the control of the Iris team.
 >4. Annotate [[Domain Name System (DNS)|DNS]] responses with auxiliary information to assist classification.
->5. Additional [[DNS records|PTR]] and [[Transport Layer Security (TLS)|TLS]] scanning - this is to allow inconsistencies due to virtual hosting to be resolved. 
+>5. Additional [[DNS records|PTR]] and [[Transport Layer Security (TLS)|TLS]] scanning - this is to allow inconsistencies due to virtual hosting to be resolved.
 >
 > After the dataset is gathered we then calculate two types of metrics:
 > - **Consistency metrics**: Checking if the same look up in different locations provides different responses for [[Internet Protocol (IP)|IP address]], [[Autonomous system (AS)|AS]], [[Hyper Text Transfer Protocol (HTTP)|HTTP]] content, ect.
-> - **Independent verifiable metrics**: These are metrics that use other datasets to verify they are correct such as [[Hypertext Transfer Protocol Secure (HTTPS)|HTTPS]] certificates. 
-> 
+> - **Independent verifiable metrics**: These are metrics that use other datasets to verify they are correct such as [[Hypertext Transfer Protocol Secure (HTTPS)|HTTPS]] certificates.
+>
 > If both of these metrics are satisfied then the response is considered correct otherwise it is labelled as incorrect.

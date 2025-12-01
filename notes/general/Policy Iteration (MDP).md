@@ -1,16 +1,16 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-04-06
-last_edited: 2024-04-06
 draft: false
+last_edited: 2024-04-06
 tags:
   - programming
 type: algorithm
 ---
 # Policy Iteration (MDP)
 
-This is a method of solving [[Markov decision process|Markov decision processes]]. It uses [[Discounted rewards|discounted rewards]] to get a local as well as global optimum solution. 
+This is a method of solving [[Markov decision process|Markov decision processes]]. It uses [[Discounted rewards|discounted rewards]] to get a local as well as global optimum solution.
 
 It uses the same set up as [[Value iteration (MDP)]] but instead we use the policy to decide the utility and iterate that.
 

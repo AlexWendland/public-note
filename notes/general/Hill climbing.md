@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-02-24
-last_edited: 2024-02-24
 draft: false
+last_edited: 2024-02-24
 tags:
   - programming
 type: algorithm
@@ -12,7 +12,7 @@ type: algorithm
 
 This is the most naïve random optimisation algorithm. Suppose we have a [[Optimisation problem|optimisation problem]] where $A$ has some sense of neighbourhood $N(a)$ for each point $a \in A$.
 
-Start at some random point $a_s \in A$ then move to the point 
+Start at some random point $a_s \in A$ then move to the point
 $$a' = \mbox{arg}\max_{a' \in N(a_s)} f(a')$$
 keep iterating until $a_s = a'$.
 
@@ -38,9 +38,9 @@ hill_climber(optimise, neighourhood):
 
 ## Run time
 
-This strongly depends on the sense of neighbourhood. For example if the neighbourhoods were the entire domain this might be very slow. 
+This strongly depends on the sense of neighbourhood. For example if the neighbourhoods were the entire domain this might be very slow.
 
 ## Correctness
 
-It will only return you a local optimum but no guarantee it will hit a global optimum. 
+It will only return you a local optimum but no guarantee it will hit a global optimum.
 We need that the sense of neighbourhood kind of aligns with how the function behaves otherwise we are just looking at random subsets of points.

@@ -3,8 +3,8 @@ aliases:
   - linear programming problem
 checked: false
 created: 2023-11-07
-last_edited: 2023-11-12
 draft: false
+last_edited: 2023-11-12
 tags:
   - programming
 type: problem

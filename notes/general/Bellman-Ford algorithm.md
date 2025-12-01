@@ -4,8 +4,8 @@ aliases:
   - Bellman-Ford equation
 checked: false
 created: 2023-09-05
-last_edited: 2023-11-11
 draft: false
+last_edited: 2023-11-11
 tags:
   - programming
 type: algorithm

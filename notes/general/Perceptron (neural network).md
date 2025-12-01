@@ -4,8 +4,8 @@ aliases:
   - perceptron
 checked: false
 created: 2024-01-18
-last_edited: 2024-01-18
 draft: false
+last_edited: 2024-01-18
 tags:
   - machine-learning
 type: definition

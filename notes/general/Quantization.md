@@ -3,8 +3,8 @@ aliases:
   - quantization
 checked: false
 created: 2024-07-25
-last_edited: 2024-07-25
 draft: false
+last_edited: 2024-07-25
 tags:
   - networks
 type: definition

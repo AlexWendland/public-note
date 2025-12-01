@@ -80,24 +80,37 @@ class IndexFile(pydantic.BaseModel):
         return index_section
 
 
-INDEX_FILES = [
-    IndexFile(
-        note_file=read_note.read_note_file(GIT_INDEX_FILE),
-        is_in_index=lambda tags: "git" in tags,
-    ),
-    IndexFile(
-        note_file=read_note.read_note_file(MATHS_INDEX_FILE),
-        is_in_index=lambda tags: "maths" in tags,
-    ),
-    IndexFile(
-        note_file=read_note.read_note_file(PROGRAMMING_INDEX_FILE),
-        is_in_index=lambda tags: "programming" in tags and "python" not in tags and "git" not in tags,
-    ),
-    IndexFile(
-        note_file=read_note.read_note_file(PYTHON_INDEX_FILE),
-        is_in_index=lambda tags: "python" in tags,
-    ),
-]
+def get_index_files() -> list[IndexFile]:
+    """
+    Lazy-load index files to avoid import-time failures if files don't exist.
+    Returns only the index files that actually exist.
+    """
+    from pathlib import Path
+
+    index_configs = [
+        (GIT_INDEX_FILE, lambda tags: "git" in tags),
+        (MATHS_INDEX_FILE, lambda tags: "maths" in tags),
+        (PROGRAMMING_INDEX_FILE, lambda tags: "programming" in tags and "python" not in tags and "git" not in tags),
+        (PYTHON_INDEX_FILE, lambda tags: "python" in tags),
+    ]
+
+    index_files = []
+    for file_path, is_in_index_fn in index_configs:
+        # Only load index if the file exists
+        if Path(file_path).exists():
+            try:
+                index_files.append(
+                    IndexFile(
+                        note_file=read_note.read_note_file(file_path),
+                        is_in_index=is_in_index_fn,
+                    )
+                )
+            except Exception as e:
+                logger.warning(f"Failed to load index file {file_path}: {e}")
+        else:
+            logger.debug(f"Skipping non-existent index file: {file_path}")
+
+    return index_files
 
 
 def update_indices():
@@ -105,7 +118,13 @@ def update_indices():
     Updates all the indices.
     """
     logger.info("Updating indices.")
-    for index_file in INDEX_FILES:
+    index_files = get_index_files()
+
+    if not index_files:
+        logger.info("No index files found to update.")
+        return
+
+    for index_file in index_files:
         index_file.update_index(get_all_notes(index_file))
 
 

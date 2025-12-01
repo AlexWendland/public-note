@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2025-07-05
-last_edited: 2025-07-05
 draft: false
-tags: 
+last_edited: 2025-07-05
+tags:
   - finance
   - work
 type: thonk
@@ -30,9 +30,9 @@ To compare these approaches, I'll evaluate each on four dimensions: maximum reve
 
 ### Passion-driven business
 
-**Max revenue:** Likely small  
-**Personal hours:** Quite likely high  
-**Personal interest:** Required  
+**Max revenue:** Likely small
+**Personal hours:** Quite likely high
+**Personal interest:** Required
 **Risk:** Medium
 
 Think of a board games cafe or a charity. This business is a passion project - it is taking your hobby and trying to make that a source of money. You are expecting to not make a huge profit but just enough to keep afloat. The main benefit of this option is working on it should feel fun!
@@ -45,9 +45,9 @@ Think of a board games cafe or a charity. This business is a passion project - i
 
 ### 4-hour work week solution
 
-**Max revenue:** Likely small  
-**Personal hours:** As small as possible  
-**Personal interest:** Not required  
+**Max revenue:** Likely small
+**Personal hours:** As small as possible
+**Personal interest:** Not required
 **Risk:** Low
 
 If you haven't read the book - it is a bit dated but the concepts are there and is worth a read. The basic premise relates a lot to my [[How I think about work]] piece. It is a form of lifestyle design where you simply work out what you need to achieve the things you want to do - then make work fit into that plan.
@@ -60,9 +60,9 @@ If you haven't read the book - it is a bit dated but the concepts are there and 
 
 ### Unicorn startup
 
-**Max revenue:** High  
-**Personal hours:** Very high  
-**Personal interest:** Not required, but best of luck  
+**Max revenue:** High
+**Personal hours:** Very high
+**Personal interest:** Not required, but best of luck
 **Risk:** Very high
 
 Here we take a problem that is faced by a large group of people and think up a novel solution. This will likely have large profitability but intense competition. Think Uber (transport), Airbnb (accommodation), or Stripe (payments) - solving massive market problems with technology. These kind of ideas are ones where you need 'stealth startups' because ultimately the solution can and will be copied once people know it works.

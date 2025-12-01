@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS7642 Reinforcement Learning]]"
+course: '[[CS7642 Reinforcement Learning]]'
 created: 2025-05-13
-last_edited: 2025-05-13
 draft: false
+last_edited: 2025-05-13
 tags:
   - OMSCS
 type: lecture

@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2025-05-22
-last_edited: 2025-05-22
 draft: false
+last_edited: 2025-05-22
 tags:
   - reinforcement-learning
 type: definition

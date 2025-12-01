@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2025-06-29
-last_edited: 2025-06-29
 draft: false
+last_edited: 2025-06-29
 tags:
   - finance
   - work

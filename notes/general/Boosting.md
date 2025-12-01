@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-01-24
-last_edited: 2024-01-24
 draft: false
+last_edited: 2024-01-24
 tags:
   - programming
 type: algorithm
@@ -12,19 +12,19 @@ type: algorithm
 
 Boosting is an [[Ensemble learning]] method that uses multiple instances of another model to average them out to make a classifier that is better than any one individual one.
 
-Suppose we are in the [[Modelling framework|modelling framework]] where $B = \{-1,1\}$ and we have a training set $T$ where $(a_t, b_t) = t \in T$. Boosting iteratively train classifiers $h_i: A \rightarrow \mathbb{R}$ based on how the past classifiers have performed. To do this before training $h_i$ we define a distribution $\mathbb{D}_i$ on $A_T = \{a_t \vert t \in T\}$. 
+Suppose we are in the [[Modelling framework|modelling framework]] where $B = \{-1,1\}$ and we have a training set $T$ where $(a_t, b_t) = t \in T$. Boosting iteratively train classifiers $h_i: A \rightarrow \mathbb{R}$ based on how the past classifiers have performed. To do this before training $h_i$ we define a distribution $\mathbb{D}_i$ on $A_T = \{a_t \vert t \in T\}$.
 
-We set  
+We set
 $$\mathbb{D}_1(a) = \frac{1}{\vert T \vert}.$$
 To define the other terms lets introduce some notation.
 
-Let $\epsilon_i$ be the [[Error rate (modelling)|error rate]] of $h_i$ with respect to $\mathbb{D}_i$ 
+Let $\epsilon_i$ be the [[Error rate (modelling)|error rate]] of $h_i$ with respect to $\mathbb{D}_i$
 
 Set our learning rate
 $$
 \alpha_i = \frac{1}{2} \ln \left ( \frac{1 - \epsilon_i}{\epsilon_i} \right ).
 $$
-Other choices of $\alpha_i$ can be made. 
+Other choices of $\alpha_i$ can be made.
 
 Now define $\mathbb{D}_{i+1}$ iteratively by setting
 $$
@@ -34,7 +34,7 @@ $$\mathbb{D}_{i+1}(a_t) = \frac{C_{i,t}}{Z_i}.
 $$
 Note that if $b_t$ and $h_i(a_t)$ share the same sign then the power of $e$ is negative and we decrease the weight of $a_t$ whereas if they don't we increase the weight of $a_t$ (generally there are some cases where this isn't true!).
 
-Once we have trained for some large number times $N$ we aggregate this all by defining our output 
+Once we have trained for some large number times $N$ we aggregate this all by defining our output
 $$\hat{f}(a) = \mbox{sgn}\left ( \sum_{i = 1}^N \alpha_t h_t(a) \right )$$ with $\mbox{sgn}$ being the [[Sign function]].
 
 ## Pseudocode
@@ -56,7 +56,7 @@ Name(classifier, N, T):
 
 calculate_learning_rate(h, T, D):
 	Input:
-		h - A classifier mapping points in A to a real number 
+		h - A classifier mapping points in A to a real number
 		T - pairs of points (a_t, b_t) to train on.
 		D - A distrubution over T
 	Output:
@@ -69,7 +69,7 @@ calculate_learning_rate(h, T, D):
 
 Update_distrubution(h, T, D, alpha)
 	Input:
-		h - A classifier mapping points in A to a real number 
+		h - A classifier mapping points in A to a real number
 		T - pairs of points (a_t, b_t) to train on.
 		D - A distrubution over T
 		alhpa - a learning rate

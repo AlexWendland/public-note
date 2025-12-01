@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: '[[CS6200 Graduate introduction to Operating Systems]]'
 created: 2025-04-12
-last_edited: 2025-04-12
 draft: false
+last_edited: 2025-04-12
 tags:
   - OMSCS
 type: lecture
@@ -30,13 +30,13 @@ Benefits for vitualisation:
 - *Support for legacy OS*: Easy to host an application that needs a legacy operating system to run.
 - *Support for OS research*: Makes it easy to change an operating system and observe the effects of that.
 
-There are two main methods of virtualization: 
+There are two main methods of virtualization:
 - *Bare-metal*: This is where a [[Virtual machine monitor (VMM)|hypervisor]] is installed on top of the hardware.
 - *Hosted*: This is where the [[Virtual machine monitor (VMM)|hypervisor]] is installed on top of another [[Operating system (OS)|OS]].
 
 ## Bare-metal
 
-In this model the [[Virtual machine monitor (VMM)|hypervisor]] is in direct control of the hardware. The main difficulty of the model is integrating different devices - as device manufacturers would need to write a device driver for the hypervisor also. The way most [[Virtual machine monitor (VMM)|hypervisors]] get around this is by hosting a privileged VM that integrates with devices. This also runs other management tasks. 
+In this model the [[Virtual machine monitor (VMM)|hypervisor]] is in direct control of the hardware. The main difficulty of the model is integrating different devices - as device manufacturers would need to write a device driver for the hypervisor also. The way most [[Virtual machine monitor (VMM)|hypervisors]] get around this is by hosting a privileged VM that integrates with devices. This also runs other management tasks.
 
 ![Bare Metal](../../../images/bare-metal.png)
 
@@ -50,7 +50,7 @@ There are two main hypervisor producers:
 
 ## Hosted
 
-In the hosted model the [[Virtual machine monitor (VMM)|VMM]] runs as  module on a host [[Operating system (OS)|OS]]. This module provides hardware interfaces to VM's and deals with VM context switching. The advantage of this mode is you can utilize all the components of the host VM making the [[Virtual machine monitor (VMM)|VMM]] smaller in size. 
+In the hosted model the [[Virtual machine monitor (VMM)|VMM]] runs as  module on a host [[Operating system (OS)|OS]]. This module provides hardware interfaces to VM's and deals with VM context switching. The advantage of this mode is you can utilize all the components of the host VM making the [[Virtual machine monitor (VMM)|VMM]] smaller in size.
 
 ![Hosted Virtualization](../../../images/hosted_virtualization.png)
 

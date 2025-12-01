@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-07-21
-last_edited: 2024-07-21
 draft: false
+last_edited: 2024-07-21
 tags:
   - networks
 type: definition
@@ -11,7 +11,7 @@ type: definition
 >[!tldr] Finding rouge networks (FIRE)
 >The FIRE (FInding Rogue nEtworks) system is designed to monitor the Internet for rogue networks—networks primarily used for malicious activities such as phishing, hosting spam pages, and distributing pirated software. It utilises three main data sources to identify potential rogue networks:
 >
->1. **Botnet Command and Control Providers**:  
+>1. **Botnet Command and Control Providers**:
  >   - Monitors networks hosting command and control (C&C) servers for botnets, focusing on [[Internet relay chat protocol (IRC)|IRC]]-based and [[Hyper Text Transfer Protocol (HTTP)|HTTP]]-based botnets.
 >    - These networks are chosen by bot-masters to avoid take-down.
 >2. **Drive-by-Download Hosting Providers**:

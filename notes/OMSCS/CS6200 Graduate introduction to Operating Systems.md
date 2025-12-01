@@ -3,15 +3,15 @@ aliases:
   - CS6200
 checked: false
 created: 2023-08-26
-last_edited: 2023-12-03
 draft: false
+last_edited: 2023-12-03
 tags:
   - OMSCS
   - maths
   - programming
 term: fall
 type: course
-year: "2023"
+year: '2023'
 ---
 # CS6200 Graduate introduction to Operating Systems
 

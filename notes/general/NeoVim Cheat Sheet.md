@@ -1,16 +1,16 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-03-08
-last_edited: 2024-03-08
 draft: false
+last_edited: 2024-03-08
 tags:
   - personal
 type:
 ---
 # NeoVim Cheat Sheet
 
-Every NeoVim set up is personal, I am using my website it document how I have it set up - not universally true. :) 
+Every NeoVim set up is personal, I am using my website it document how I have it set up - not universally true. :)
 
 ## Basics
 
@@ -55,7 +55,7 @@ Every NeoVim set up is personal, I am using my website it document how I have it
 - Directory tree: leader e
 	- Help: ?
 	- New file: a
-	- 
+	-
 - Search in files: leader s g
 - Switch colour scheme: leader u C
 - Search key maps: leader s k

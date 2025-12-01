@@ -4,8 +4,8 @@ aliases:
   - AM-GM
 checked: false
 created: 2023-11-12
-last_edited: 2023-11-12
 draft: false
+last_edited: 2023-11-12
 tags:
   - maths
 type: lemma

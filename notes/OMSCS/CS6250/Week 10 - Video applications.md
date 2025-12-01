@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6250 Computer Networks]]"
+course: '[[CS6250 Computer Networks]]'
 created: 2024-07-24
-last_edited: 2024-07-24
 draft: false
+last_edited: 2024-07-24
 tags:
   - OMSCS
 type: lecture
@@ -16,25 +16,25 @@ week: 10
 
 ### Important Readings
 
-VoIP: A comprehensive survey on a promising technology  
+VoIP: A comprehensive survey on a promising technology
 [https://www.sciencedirect.com/science/article/abs/pii/S1389128609001200Links to an external site.](https://www.sciencedirect.com/science/article/abs/pii/S1389128609001200)
 
-MPEG: A Video Compression Standard for Multimedia Application  
+MPEG: A Video Compression Standard for Multimedia Application
 [https://dl.acm.org/doi/pdf/10.1145/103085.103090Links to an external site.](https://dl.acm.org/doi/pdf/10.1145/103085.103090)
 
-The JPEG Compression standard  
+The JPEG Compression standard
 [https://ieeexplore.ieee.org/document/125072Links to an external site.](https://ieeexplore.ieee.org/document/125072)
 
-JPEG File Interchange Format  
+JPEG File Interchange Format
 [https://www.w3.org/Graphics/JPEG/jfif3.pdfLinks to an external site.](https://www.w3.org/Graphics/JPEG/jfif3.pdf)
 
-Watching Video over the Web: Part 1: Streaming Protocols  
+Watching Video over the Web: Part 1: Streaming Protocols
 [https://ieeexplore.ieee.org/document/5677508Links to an external site.](https://ieeexplore.ieee.org/document/5677508)
 
-A Quest for an Internet Video: Quality-of-Experience Metric  
+A Quest for an Internet Video: Quality-of-Experience Metric
 [https://www.cs.cmu.edu/~xia/resources/Documents/Balachandran-hotnets2012.pdfLinks to an external site.](https://www.cs.cmu.edu/~xia/resources/Documents/Balachandran-hotnets2012.pdf)
 
-Confused, Timid, and Unstable: Picking a Video Streaming Rate is Hard  
+Confused, Timid, and Unstable: Picking a Video Streaming Rate is Hard
 [https://dl.acm.org/doi/pdf/10.1145/2398776.2398800Links to an external site.](https://dl.acm.org/doi/pdf/10.1145/2398776.2398800)
 
 ### Book References
@@ -47,7 +47,7 @@ Sounds and video are interesting internet applications due to their interesting 
 
 ![Media Bit Rates](../../../images/media_bit_rates.png)
 
-Where facebook is someone flicking through 1 picture per second. 
+Where facebook is someone flicking through 1 picture per second.
 
 Whilst video does have a much larger bit-rate you may be ok with skipping [[Bit|bits]] or there being a slight delay - in contrast with voice where skipped  [[Bit|bits]] or delayed audio may make the stream unusable. Therefore they have different dynamics at play.
 
@@ -58,12 +58,12 @@ There are three different types of multi-media applications we will look at:
 	- It should have continuous playout i.e. play out as it was recorded without freezing.
 2. Conversational audio/video, and
 	- Multiple users connecting to the same stream.
-	- These are highly delay sensitive - normally 150ms is a bench mark to being acceptable. 
-	- They are loss-tolerant. i.e. it is ok if there is a small skip or small sections are scrambled.  
+	- These are highly delay sensitive - normally 150ms is a bench mark to being acceptable.
+	- They are loss-tolerant. i.e. it is ok if there is a small skip or small sections are scrambled.
 3. Live audio/video.
 	- This is similar to streamed but you have a one to many dynamic.
 	- The users are geographically displaced.
-	- They are very delay sensitive. 
+	- They are very delay sensitive.
 
 ## [[Voice over IP (VoIP)]]
 
@@ -77,7 +77,7 @@ There are three different types of multi-media applications we will look at:
 	2. Session establishment - handling the callee accepting, rejecting or redirecting the call,
 	3. Session negotiation - endpoint synchronizing on the same standard,
 	4. Call participation management - handling people joining or leaving.
-	
+
 ## Quality of service metrics
 
 There are 3 major quality of service metrics in [[Voice over IP (VoIP)|VoIP]]:
@@ -85,12 +85,12 @@ There are 3 major quality of service metrics in [[Voice over IP (VoIP)|VoIP]]:
 - **Jitter**: Scrambled or jumpy audio and video.
 - **Packet loss**: The amount of missing data there is at the end of the call.
 
-## End to end 
+## End to end
 
 This includes:
 - the time it takes to encode the audio,
-- the time it takes to put it in packets, 
-- all the normal sources of network delay that network traffic encounters such as queueing delays, 
+- the time it takes to put it in packets,
+- all the normal sources of network delay that network traffic encounters such as queueing delays,
 - “playback delay,” which comes from the receiver’s playback buffer (which is a mitigation technique for delay jitter, which we’ll be discussing next),
 - and decoding delay, which is the time it takes to reconstruct the signal.
 
@@ -123,7 +123,7 @@ The more redundant data you send the more bandwidth you use. Also some of these 
 
 ### Interleaving
 
-This technique does not require additional data to be transmitted instead it breaks up the chunks of data so that the data in one chunk does not contain consecutive bits. That way a lost packet generate many small gaps not noticeable by the human ear. The pay off is having to wait longer to receive consecutive chunks which increases end-to-end delay. 
+This technique does not require additional data to be transmitted instead it breaks up the chunks of data so that the data in one chunk does not contain consecutive bits. That way a lost packet generate many small gaps not noticeable by the human ear. The pay off is having to wait longer to receive consecutive chunks which increases end-to-end delay.
 
 ![Interleaving](../../../images/interleaving.png)
 
@@ -138,7 +138,7 @@ This involves filling in the gaps using the packets around it. There are two bas
 Streaming media content over the Internet accounts for nearly 60-70% of the Internet traffic. There are two flavours will we talk about here:
 1. Live streaming of events.
 2. On demand streaming of videos already recorded.
-Whilst there restrictions differ by focusing on 2 we learn a lot of the general principles that apply to 1. 
+Whilst there restrictions differ by focusing on 2 we learn a lot of the general principles that apply to 1.
 
 Generally on-demand video sharing follows the same common pattern.
 ![Streaming Infra](../../../images/streaming_infra.png)
@@ -151,7 +151,7 @@ To render the stored content correctly we need to make sure we do not drop any p
 
 ## How we got to [[Hyper Text Transfer Protocol (HTTP)|HTTP]]
 
-When streaming platforms were originally envisioned they wanted all the intelligence to be kept in a stateful server - with the client doing minimal work. 
+When streaming platforms were originally envisioned they wanted all the intelligence to be kept in a stateful server - with the client doing minimal work.
 
 ![Original Design](../../../images/original_design.png)
 
@@ -191,7 +191,7 @@ There is a lot of variation with playing videos:
 
 ![[Bitrate]]
 
-Therefore a single [[Bitrate|bitrate]] would not handle this . Therefore normally producers make encodings for different required [[Bitrate|bitrates]]for streaming, such as 250 kbps, 500 kbps, 1.5 Mbps, 3 Mbps. Then we us [[Bitrate adaption|bitrate adaption]] to adjust the provided quality to the user depending on network and device requirements. 
+Therefore a single [[Bitrate|bitrate]] would not handle this . Therefore normally producers make encodings for different required [[Bitrate|bitrates]]for streaming, such as 250 kbps, 500 kbps, 1.5 Mbps, 3 Mbps. Then we us [[Bitrate adaption|bitrate adaption]] to adjust the provided quality to the user depending on network and device requirements.
 
 To find out these quality ranges and the URLs for each download - when clients first connect to a server they download a manifest file with details all this.
 
@@ -232,7 +232,7 @@ Suppose we are in the following competitive networking position where we have tw
 
 ![Dash Underestimation](../../../images/DASH_underestimation.png)
 
-Consider the scenario when a client is watching a video over a 5 Mbps link. 
+Consider the scenario when a client is watching a video over a 5 Mbps link.
 
 The available bitrates are {375kbps, 560 kbps, 750kbps, 1050kbps, 1400kbps, 1750kbs}. Clearly, the client would end up streaming at 1.75 Mbps under rate-based adaptation.
 

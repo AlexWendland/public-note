@@ -32,6 +32,7 @@
   ];
 
   scripts.lecture.exec = "uv run scripts/lecture.py";
+  scripts.admin.exec = "uv run scripts/admin.py";
 
   scripts.excalidraw.exec = ''
     echo "Starting Excalidraw on http://localhost:5173"
@@ -74,6 +75,14 @@
     echo "✓ Exported $count diagram(s) to images/excalidraw/"
   '';
 
+  # Run admin tasks when entering the devenv shell
+  enterShell = ''
+    # Only run admin if we're in an interactive shell (not in a script/CI)
+    if [[ $- == *i* ]]; then
+      admin
+    fi
+  '';
+
   git-hooks.hooks = {
     ruff-check = {
       enable = true;
@@ -98,6 +107,14 @@
       files = "\\.py$";
       language = "system";
       pass_filenames = true;
+    };
+    pytest = {
+      enable = true;
+      name = "pytest";
+      entry = "uv run pytest";
+      files = "\\.py$";
+      language = "system";
+      pass_filenames = false;
     };
   };
 }

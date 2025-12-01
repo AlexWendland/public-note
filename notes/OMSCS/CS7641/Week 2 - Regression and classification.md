@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS7641 Machine Learning]]"
+course: '[[CS7641 Machine Learning]]'
 created: 2024-01-17
-last_edited: 2024-01-17
 draft: false
+last_edited: 2024-01-17
 tags:
   - OMSCS
 type: lecture
@@ -40,7 +40,7 @@ Below is an example of [[Polynomial regression|polynomial regression]] done on d
 
 ![Polynomial Regression Example](../../../images/polynomial regression example.png)
 
-As we increase the degree the fitting polynomial, the fit to the points we are training on gets better. However, at a point the utility of the curve outside of these points gets less. 
+As we increase the degree the fitting polynomial, the fit to the points we are training on gets better. However, at a point the utility of the curve outside of these points gets less.
 
 This is easy to see by eye but how can we computationally infer this?
 
@@ -50,7 +50,7 @@ This is easy to see by eye but how can we computationally infer this?
 
 ![Cross Validation Example](../../../images/cross validation example.png)
 
-When using cross validation to assess the accuracy of our fit in the example before, you can see it agrees with our intuition. Whilst the high order approximations are a closer fit for the [[Training data|training data]], they are a worse fit for the [[Testing data|test data]]. Therefore we could use [[Cross validation|cross validation]] to pick the best polynomial without breaking the integrity of the [[Testing data|testing data]]. 
+When using cross validation to assess the accuracy of our fit in the example before, you can see it agrees with our intuition. Whilst the high order approximations are a closer fit for the [[Training data|training data]], they are a worse fit for the [[Testing data|test data]]. Therefore we could use [[Cross validation|cross validation]] to pick the best polynomial without breaking the integrity of the [[Testing data|testing data]].
 
 Generally you need to find the right sweet spot between [[Underfitting|underfitting]] and [[Overfitting|overfitting]] by varying the degree of the polynomial.
 

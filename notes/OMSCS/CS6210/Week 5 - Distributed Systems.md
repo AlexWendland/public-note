@@ -1,10 +1,10 @@
 ---
 aliases:
 checked: false
-course: "[[CS6210 Advanced Operating Systems]]"
+course: '[[CS6210 Advanced Operating Systems]]'
 created: 2025-10-01
-last_edited: 2025-10-01
 draft: false
+last_edited: 2025-10-01
 tags:
   - OMSCS
 type: lecture

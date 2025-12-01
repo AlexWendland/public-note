@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS7641 Machine Learning]]"
+course: '[[CS7641 Machine Learning]]'
 created: 2024-02-24
-last_edited: 2024-02-24
 draft: false
+last_edited: 2024-02-24
 tags:
   - OMSCS
 type: lecture
@@ -14,7 +14,7 @@ week: 7
 
 ## Information
 
-We want to measure the amount of information we need to transmit to send a message. However, the underlying facts about the message we will receive effect the length of that message. 
+We want to measure the amount of information we need to transmit to send a message. However, the underlying facts about the message we will receive effect the length of that message.
 
 For example, if we have a fair coin and I need to tell you about 10 flips of this coin - I will need to transmit a message of 10 [[Bit|bits]]. There are $2^{10}$ potential outcomes which are evenly weighted so we can do no better than a message of size 10.
 
@@ -32,7 +32,7 @@ Instead lets suppose the first letter has probability $0.5$ of being in each pla
 
 Using the underlying probability distribution we can design representations of these letters to reduce the expected length of a single letter to 1.75 therefore making the 4 letter word we can use only 7 bits on expectation.
 
-This has the interesting side effect of the further away from being uniformly random the background distribution is the less information it takes to transmit a message about it will be. 
+This has the interesting side effect of the further away from being uniformly random the background distribution is the less information it takes to transmit a message about it will be.
 
 Mathematically we use [[Information entropy]] to inform us about how close a [[Random variable|random variable]] is to being uniform. With higher value indicating it is closer to [[Uniform distribution|uniformly random]].
 
@@ -58,13 +58,13 @@ Notice how independence plays out here.
 
 ![[If two variables are independent conditional entropy excludes the dependent]]
 
-In the first case by looking at their joint distributions we still need the same amount of information as if we considered them individually. Secondly by telling you about $X$ it doesn't take any less information to tell you about $Y$. 
+In the first case by looking at their joint distributions we still need the same amount of information as if we considered them individually. Secondly by telling you about $X$ it doesn't take any less information to tell you about $Y$.
 
 [[Conditional entropy]] could be small in two cases - either $X$ tells us a lot about $Y$ (i.e. $\mathbb{P}[Y\vert X] = 1$) or that $H(Y)$ was very small to begin with. So we need a better idea to tell us how related $X$ and $Y$ are.
 
 ![[Mutual information]]
 
-Let $X$ and $Y$ represent two [[Independent identically distributed samples|i.i.d.]] fair coin tosses then we have $I(X,Y) = 0$ i.e. these events tell us nothing about one another. Whereas $I(X,X) = 1$ $X$ completely tells us about $X$. 
+Let $X$ and $Y$ represent two [[Independent identically distributed samples|i.i.d.]] fair coin tosses then we have $I(X,Y) = 0$ i.e. these events tell us nothing about one another. Whereas $I(X,X) = 1$ $X$ completely tells us about $X$.
 
 ![[Mutual information is symmetric]]
 

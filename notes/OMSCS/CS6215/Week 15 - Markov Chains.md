@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6215 Introduction to Graduate Algorithms]]"
+course: '[[CS6215 Introduction to Graduate Algorithms]]'
 created: 2023-11-11
-last_edited: 2023-12-03
 draft: false
+last_edited: 2023-12-03
 tags:
   - OMSCS
 type: lecture

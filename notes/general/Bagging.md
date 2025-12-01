@@ -6,8 +6,8 @@ aliases:
   - bootstrap aggregation
 checked: false
 created: 2024-01-24
-last_edited: 2024-01-24
 draft: false
+last_edited: 2024-01-24
 tags:
   - programming
 type: algorithm
@@ -24,11 +24,11 @@ Suppose we are in the [[Modelling framework|modelling framework]]. The bagging i
 
 ## Example
 
-Suppose we want to use [[Polynomial regression|polynomial regression]] on a simple function $f: \mathbb{R} \rightarrow \mathbb{R}$ with training data $T$. 
+Suppose we want to use [[Polynomial regression|polynomial regression]] on a simple function $f: \mathbb{R} \rightarrow \mathbb{R}$ with training data $T$.
 
 We could instead of running it once randomly select some $T_i \subset T$ then train $\hat{f}_i$ using [[Polynomial regression|polynomial regression]] on $T_i$.
 
-Then we set our final $\hat{f} = \frac{1}{k} \sum_{i=1}^k \hat{f}_i$. 
+Then we set our final $\hat{f} = \frac{1}{k} \sum_{i=1}^k \hat{f}_i$.
 
 ## Correctness
 

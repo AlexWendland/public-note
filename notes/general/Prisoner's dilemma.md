@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-04-06
-last_edited: 2024-04-06
 draft: false
+last_edited: 2024-04-06
 tags:
   - game-theory
 type: example
@@ -13,11 +13,11 @@ type: example
 > - If they both cooperate with each other and stay silent they both get one month in jail,
 > - If one of them defects and testifies and the other doesn't whoever testify gets off free whilst the other stays in jail for 3 months, however
 > - If they both defect and testify they both get sent away for 2 months.
-> 
+>
 > This can be summarised in the following matrix
 > $$
 > \begin{array}{c|cc}
-> \ \mbox{A \\ B} & \mbox{cooperate} & \mbox{defect}\\ \hline 
+> \ \mbox{A \\ B} & \mbox{cooperate} & \mbox{defect}\\ \hline
 > \mbox{cooperate} & (1,1) & (0,3) \\
 > \mbox{defect} & (3,0) & (2,2) \\
 > \end{array}

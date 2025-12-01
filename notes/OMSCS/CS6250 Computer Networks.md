@@ -4,15 +4,15 @@ aliases:
   - OMSCS Machine learning
 checked: false
 created: 2024-01-10
-last_edited: 2024-01-10
 draft: false
+last_edited: 2024-01-10
 tags:
   - OMSCS
   - maths
   - programming
 term: spring
 type: course
-year: "2024"
+year: '2024'
 ---
 # CS7641 Machine Learning
 

@@ -6,8 +6,8 @@ aliases:
   - Hypervisor
 checked: false
 created: 2025-04-12
-last_edited: 2025-04-12
 draft: false
+last_edited: 2025-04-12
 tags:
   - OS
 type: definition

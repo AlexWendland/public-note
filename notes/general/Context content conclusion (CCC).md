@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-01-21
-last_edited: 2024-01-21
 draft: false
+last_edited: 2024-01-21
 tags:
   - best-practices
 type: method
@@ -13,9 +13,9 @@ type: method
 This is a model to structure writing. The idea is to separate what you are writing into 3 discernible blocks:
 - Context: Sufficient background information for people to read the content with purpose. This should include motivation and the set up for the problem.
 - Content: The substance to what you want to say and you show your approach to the problem.
-- Conclusion: Summarise what you have solved and how. 
+- Conclusion: Summarise what you have solved and how.
 
-Remember [[Start and end point bias]]!  
+Remember [[Start and end point bias]]!
 
 # Advantages
 
@@ -23,7 +23,7 @@ This will provide the reader the full context to understand what you are trying 
 
 # Disadvantages
 
-This is assuming a patient reader that is happy to understand the context before getting to the point. This should be used when people already have buy in to what you want to say. 
+This is assuming a patient reader that is happy to understand the context before getting to the point. This should be used when people already have buy in to what you want to say.
 
 # Reference
 - [[Ten simple rules for structuring papers]]

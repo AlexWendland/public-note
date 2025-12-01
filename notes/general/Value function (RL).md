@@ -3,8 +3,8 @@ aliases:
   - value function
 checked: false
 created: 2025-05-14
-last_edited: 2025-05-14
 draft: false
+last_edited: 2025-05-14
 tags:
   - reinforcement-learning
 type: definition

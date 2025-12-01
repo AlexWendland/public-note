@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-05-21
-last_edited: 2024-05-21
 draft: false
-tags: 
+last_edited: 2024-05-21
+tags: []
 type: definition
 ---
 >[!tldr] Router (IPv6)

@@ -3,8 +3,8 @@ aliases:
   - lazy learner
 checked: false
 created: 2024-01-22
-last_edited: 2024-01-22
 draft: false
+last_edited: 2024-01-22
 tags:
   - machine-learning
 type: definition

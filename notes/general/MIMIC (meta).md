@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-02-24
-last_edited: 2024-02-24
 draft: false
+last_edited: 2024-02-24
 tags:
   - programming
 type: algorithm
@@ -17,7 +17,7 @@ P^{\theta}(a) = \begin{cases} \frac{1}{Z_{\theta}} & \mbox{if } f(a) \geq \theta
 
 The goal if MIMIC is to simulate $P^{\theta}$ whilst slowing increasing $\theta$ to find the maximum.
 
-Functionally how we do that is similar to [[Genetic algorithm (meta)|genetic algorithm]]. We will suppose we currently have our [[Probability distribution|probability distribution]] $P^{\theta_t} : A \rightarrow [0,1] \subset \mathbb{R}$ we will obtain samples $S$ from $A$ using $P^{\theta_t}$. Let $\theta_{t+1}$ to be some predefined quartile of $f(S)$ for example the median. Then we have some positive sample $S' = \{s \in S \vert f(s) \geq \theta_{t+1}\}$ and negative samples $S \backslash S'$ to try and estimate the distribution $P^{\theta_{t+1}}$. 
+Functionally how we do that is similar to [[Genetic algorithm (meta)|genetic algorithm]]. We will suppose we currently have our [[Probability distribution|probability distribution]] $P^{\theta_t} : A \rightarrow [0,1] \subset \mathbb{R}$ we will obtain samples $S$ from $A$ using $P^{\theta_t}$. Let $\theta_{t+1}$ to be some predefined quartile of $f(S)$ for example the median. Then we have some positive sample $S' = \{s \in S \vert f(s) \geq \theta_{t+1}\}$ and negative samples $S \backslash S'$ to try and estimate the distribution $P^{\theta_{t+1}}$.
 
 The method to estimate $P^{\theta_{t+1}}$ from $S'$ encodes some domain knowledge about the system - this can very from problem to problem.
 
@@ -43,9 +43,9 @@ mimic(optimise, number_of_samples, percentile, probability_constructor, stopping
 
 ## Run time
 
-This strongly depends on how we construct our probability distribution. However, normally this takes longer than other randomised algorithms to run one iteration though it will take fewer iterations all together. This is useful when optimising on a function that is hard to compute. 
+This strongly depends on how we construct our probability distribution. However, normally this takes longer than other randomised algorithms to run one iteration though it will take fewer iterations all together. This is useful when optimising on a function that is hard to compute.
 
 ## Correctness
 
-- MIMIC performs well when your feature space has structure within it that relates to the fitness function. 
-- It can get stuck in local optima with the probability distribution but you can use different sampling methods from probability theory to help you in these situations. 
+- MIMIC performs well when your feature space has structure within it that relates to the fitness function.
+- It can get stuck in local optima with the probability distribution but you can use different sampling methods from probability theory to help you in these situations.

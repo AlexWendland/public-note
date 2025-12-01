@@ -4,8 +4,8 @@ aliases:
   - DASH
 checked: false
 created: 2024-07-27
-last_edited: 2024-07-27
 draft: false
+last_edited: 2024-07-27
 tags:
   - networks
 type: definition
@@ -17,5 +17,5 @@ type: definition
 >
 >![Dash Function](../../images/DASH_function.png)
 >
->Where $\{R_1, R_2, \ldots, R_m\}$ is the set of [[Bitrate|bitrates]]. 
+>Where $\{R_1, R_2, \ldots, R_m\}$ is the set of [[Bitrate|bitrates]].
 

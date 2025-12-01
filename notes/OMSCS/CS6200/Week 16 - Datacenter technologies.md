@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: '[[CS6200 Graduate introduction to Operating Systems]]'
 created: 2025-04-13
-last_edited: 2025-04-13
 draft: false
+last_edited: 2025-04-13
 tags:
   - OMSCS
 type: lecture
@@ -37,7 +37,7 @@ These are ones where the workers are all equal. This enables a very simple load-
 
 ## Heterogeneous architecture
 
-These are ones where the workers are specialized to some kind of logic. This means each worker can optimism its cache or use devices that are specialized for that task. 
+These are ones where the workers are specialized to some kind of logic. This means each worker can optimism its cache or use devices that are specialized for that task.
 
 However, this adds considerable complexity to the front-end. As workers now are different the load balancer needs to keep track of which workers can do what. When increased demand comes to the system scaling up is not as simple as adding more workers you need to work out what workers are needed.
 
@@ -119,7 +119,7 @@ To set up a cloud, there are some foundational technologies that have to be used
 	- No SQL,
 	- Distributed memory
 - Software defined resources such as networking, storage, ...
-- Monitoring, real time monitoring and log processing to keep visibility over the whole system. 
+- Monitoring, real time monitoring and log processing to keep visibility over the whole system.
 
 ## Big data
 

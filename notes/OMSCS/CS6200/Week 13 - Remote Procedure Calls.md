@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: '[[CS6200 Graduate introduction to Operating Systems]]'
 created: 2025-04-12
-last_edited: 2025-04-12
 draft: false
+last_edited: 2025-04-12
 tags:
   - OMSCS
 type: lecture
@@ -23,7 +23,7 @@ week: 13
 To achieve this [[Remote procedure calls (PRC)|RPC]] has some requirements:
 - Offers a client and server interface.
 - Implements a procedure call Interface.
-	- When RPC was invented procedural languages where big, this is synchronous and when it is called remote procedure call. 
+	- When RPC was invented procedural languages where big, this is synchronous and when it is called remote procedure call.
 - Type checking.
 	- This offers error handling, and
 	- packet bytes interpretation.
@@ -59,7 +59,7 @@ An important aspect to any [[Interface definition language (IDL)|IDL]] is it inc
 
 ## Marshalling
 
-Marshalling is the process of taking input parameters that could be anywhere within a processes address space and putting them into a message to be sent to the other party. This will include some standards on how to serialize different types such as arrays and integers. 
+Marshalling is the process of taking input parameters that could be anywhere within a processes address space and putting them into a message to be sent to the other party. This will include some standards on how to serialize different types such as arrays and integers.
 
 Unmarshalling is the opposite procedure when the other party receives the message.
 
@@ -69,7 +69,7 @@ Both these will not need to be written by the developer - instead they will be b
 
 RPC frameworks have two choices when a pointer is passed in:
 - Don't support it and throw an error, or
-- Serialize the object the pointer is pointing at. 
+- Serialize the object the pointer is pointing at.
 
 ## Binding and Registry
 
@@ -81,7 +81,7 @@ The registry can either be hosted centrally or placed on each machine. This will
 
 ## Handling failure
 
-[[Remote procedure calls (PRC)|RPC]] frameworks implement error handling however, due to the framework operating over a network it sometimes can not know the cause of the issue. Therefore it offers a best guess at issues within this framework. 
+[[Remote procedure calls (PRC)|RPC]] frameworks implement error handling however, due to the framework operating over a network it sometimes can not know the cause of the issue. Therefore it offers a best guess at issues within this framework.
 
 ## SunRPC
 

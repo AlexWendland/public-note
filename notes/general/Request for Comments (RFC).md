@@ -3,8 +3,8 @@ aliases:
   - RFC
 checked: false
 created: 2024-05-23
-last_edited: 2024-05-23
 draft: false
+last_edited: 2024-05-23
 tags:
   - networks
 type: definition

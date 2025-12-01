@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6250 Computer Networks]]"
+course: '[[CS6250 Computer Networks]]'
 created: 2024-05-19
-last_edited: 2024-05-19
 draft: false
+last_edited: 2024-05-19
 tags:
   - OMSCS
 type: lecture
@@ -26,7 +26,7 @@ Some terminology first:
 
 ![[Server]]
 
-> [!Note] 
+> [!Note]
 > These terms are relative to a single request a host can be a client in another request.
 
 ![[Internet Protocol (IPv4)]]
@@ -165,7 +165,7 @@ As this all works on layer 2 and doesn't involve IP addresses the router on the 
 
 #### Unicast flooding vs Brodcasts
 
-Flooding is an action the switch takes when it does not know the port for a provided MAC address. This replicates the frame and sends it on all available ports. 
+Flooding is an action the switch takes when it does not know the port for a provided MAC address. This replicates the frame and sends it on all available ports.
 
 Broadcast is a type of frame that has the destination MAC address set as all f's. These will always get flooded by the switch as it will not have a port for the MAC address of all f's.
 
@@ -173,7 +173,7 @@ Broadcast is a type of frame that has the destination MAC address set as all f's
 
 #### Multiple switches
 
-To handle loops in the network we have to use the [[Spanning Tree Protocol (STP)]] to turn off certain connections. 
+To handle loops in the network we have to use the [[Spanning Tree Protocol (STP)]] to turn off certain connections.
 
 ### Lesson 5: Everything a router does to communicate between networks
 
@@ -200,7 +200,7 @@ There are many different Dynamic routing protocols RIP, OSPF, BGP, EIGRP, IS-IS,
 
 As routers have IP addresses on the networks associated to their interfaces they therefor have to have ARP tables for these networks.
 
-The main difference between ARP tables and router tables is that ARP tables always start empty and can be fully populated through ARP. If the router gets a frame it doesn't have an ARP entry for it will use ARP to discover it - whereas if a router gets a packet it doesn't have a routing entry for it will drop that packet. 
+The main difference between ARP tables and router tables is that ARP tables always start empty and can be fully populated through ARP. If the router gets a frame it doesn't have an ARP entry for it will use ARP to discover it - whereas if a router gets a packet it doesn't have a routing entry for it will drop that packet.
 
 #### Hierarchy helps with scaling
 
@@ -265,7 +265,7 @@ The Open System Interconnection model is the 7 conceptual layers of how connecte
 
 - How does the layered architecture of the internet allow fundamentally different technologies (such as WiFi vs. Ethernet) to be used together?
 
-It established clear separation of concerns and the interfaces in which the operate by. For example for ethernet or Wifi as long as the data has been encapsulated properly these Physical layers are only responsible for getting data to the next entity in the network. 
+It established clear separation of concerns and the interfaces in which the operate by. For example for ethernet or Wifi as long as the data has been encapsulated properly these Physical layers are only responsible for getting data to the next entity in the network.
 
 - What is the client-server model? What is the peer-to-peer model? What are the strengths and weaknesses of each?
 

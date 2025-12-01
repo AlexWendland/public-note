@@ -3,8 +3,8 @@ aliases:
   - perceptron rule
 checked: false
 created: 2024-01-18
-last_edited: 2024-01-18
 draft: false
+last_edited: 2024-01-18
 tags:
   - programming
 type: algorithm
@@ -49,6 +49,6 @@ set_y_hat(T, w_i):
 
 ## Runtime
 
-To make sure $\eta$ is low enough we might reduce it slowly over time (though we have to make sure the sequence of $\eta$ converge to zero whilst the sum of $\eta$ diverge to infinity) and then stop when $y = \hat{y}$ for all our training data. In the example above I choose the sequence $1/n$ for our $\eta$ where $n$ is the iteration count. 
+To make sure $\eta$ is low enough we might reduce it slowly over time (though we have to make sure the sequence of $\eta$ converge to zero whilst the sum of $\eta$ diverge to infinity) and then stop when $y = \hat{y}$ for all our training data. In the example above I choose the sequence $1/n$ for our $\eta$ where $n$ is the iteration count.
 
 This will only stop if $T$ is [[Linearly separable|linearly separable]]. Moreover, [[The perceptron rule using binary step converges in finite time if the dataset is linearly separable]].

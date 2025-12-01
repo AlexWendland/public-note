@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-01-17
-last_edited: 2024-01-17
 draft: false
+last_edited: 2024-01-17
 tags:
   - machine-learning
 type: method
@@ -18,4 +18,4 @@ We would then replace $A'$ by $\tilde{A}$ in the input space $A$.
 
 In the case of [[Boolean variable|boolean]] input variables, this is as simple as saying $0$ is for False and $1$ is for True.
 
-You may wonder why no expand this to an $n$-dimensional space. This would ruin independence of the variables, as we would know that always these values in these $n$ dimensional spaces have to add to 1 - this causes instability in our [[Polynomial regression|polynomial regression]]. 
+You may wonder why no expand this to an $n$-dimensional space. This would ruin independence of the variables, as we would know that always these values in these $n$ dimensional spaces have to add to 1 - this causes instability in our [[Polynomial regression|polynomial regression]].

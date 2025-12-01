@@ -5,8 +5,8 @@ aliases:
   - SVMs
 checked: false
 created: 2024-02-02
-last_edited: 2024-02-02
 draft: false
+last_edited: 2024-02-02
 tags:
   - programming
 type: algorithm
@@ -19,7 +19,7 @@ $$ \alpha_t \geq 0 \mbox{ for all } t \in T, \mbox{ and } \sum_{t \in T} \alpha_
 Which we turn this into a classifier by setting:
 $$
 \hat{f}(x) = \mbox{sgn}\left ( \sum_{t \in T} \alpha_t y^t K(x^t \cdot x) + b^t \right )$$
-where 
+where
 $$
 b^s = y^s - \sum_{t \in T} \alpha_t y^t K(x^t, x^s), \mbox{ for any } s \in T \mbox{ such that } \alpha^s \not = 0.
 $$
@@ -31,4 +31,4 @@ The complexity of the kernel function can add large overhead to the run time for
 
 ## Correctness
 
-The accuracy of this model highly depends on the choice of the kernel function. This definition of similarity between two vectors. 
+The accuracy of this model highly depends on the choice of the kernel function. This definition of similarity between two vectors.

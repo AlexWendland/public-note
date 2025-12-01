@@ -3,8 +3,8 @@ aliases:
   - vertex colouring
 checked: false
 created: 2023-11-02
-last_edited: 2023-11-11
 draft: false
+last_edited: 2023-11-11
 tags:
   - maths
   - graph-theory

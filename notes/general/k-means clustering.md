@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-03-09
-last_edited: 2024-03-09
 draft: false
+last_edited: 2024-03-09
 tags:
   - programming
   - machine-learning
@@ -11,11 +11,11 @@ type: algorithm
 ---
 # k-means clustering
 
-Suppose we are in the [[Clustering problem|clustering problem]] set up. Suppose we are provided $k$ the number of clusters. Further assume $A$ is a space with some method of averaging $Avg:2^A \rightarrow A$ which satisfies 
+Suppose we are in the [[Clustering problem|clustering problem]] set up. Suppose we are provided $k$ the number of clusters. Further assume $A$ is a space with some method of averaging $Avg:2^A \rightarrow A$ which satisfies
 $$
 \sum_{x \in X} d(x, Avg(X)) = \min_{a \in A} \sum_{x \in X} d(x,a), \mbox{ for all } X \subset A.
 $$
-In the Euclidian example we will have 
+In the Euclidian example we will have
 $$
 Avg(X) = \frac{1}{\vert X \vert} \sum_{x \in X} x.
 $$
@@ -23,7 +23,7 @@ To start the algorithm we pick $k$ random points in our [[Training data|training
 $$
 C^t_i = \left \{t \in T \Bigg \vert \left ( \mbox{ arg}\min_{1 \leq j \leq k} d(t, center_j^{t-1}) \right ) = i \right \}
 $$
-Then we update our centres $center_i^t = Avg(C_i^t)$. We keep iterating until $C_i^t = C_i^{t+1}$ for all $1 \leq i \leq k$. 
+Then we update our centres $center_i^t = Avg(C_i^t)$. We keep iterating until $C_i^t = C_i^{t+1}$ for all $1 \leq i \leq k$.
 
 ## Pseudocode
 
@@ -47,7 +47,7 @@ Name(k, T, d, Avg):
 
 ## Run time
 
-We will go on to "hand wave" that this algorithm can never return to the same state without stopping. Let $n = \vert T \vert$ then the number of possible iterations is $O(k^n)$ (lazy estimations on the number of partitions). Each iteration takes $O(k(n+O(Avg(n)))$ as we need to calculate the distance between each of the centres for each point and then calculate overages of each of the centres.  
+We will go on to "hand wave" that this algorithm can never return to the same state without stopping. Let $n = \vert T \vert$ then the number of possible iterations is $O(k^n)$ (lazy estimations on the number of partitions). Each iteration takes $O(k(n+O(Avg(n)))$ as we need to calculate the distance between each of the centres for each point and then calculate overages of each of the centres.
 
 This gives the run time to be $O(k^{n+1}(n + O(Avg(n))))$.
 
@@ -69,11 +69,11 @@ $$E(C_i,center_i) \geq E(C_i, center_i'), \mbox{ and } E(C_i,center_i) \geq E(C_
 $$
 The first inequality follows from the property of average we have required. The second one follows as we picked $C'_i$ to minimise distance between the points and the centres.
 
-Then our algorithm is identical to the [[Hill climbing]] algorithm in this set up. 
+Then our algorithm is identical to the [[Hill climbing]] algorithm in this set up.
 
 >[!note] Double hop
 > This argument only works when you think of one iteration of our algorithm being 2 steps in the [[Hill climbing]]. First you update the centres, one hop, then you update the partition, two hop.
-> The state we visit after the first state will only have at most 1 neighbour as the previous step we will have picked either the center or partitions to be optimal. 
+> The state we visit after the first state will only have at most 1 neighbour as the previous step we will have picked either the center or partitions to be optimal.
 
 Therefore we don't revisit a state?
 

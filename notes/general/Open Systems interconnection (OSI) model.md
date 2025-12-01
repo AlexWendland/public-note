@@ -4,8 +4,8 @@ aliases:
   - OSI model
 checked: false
 created: 2024-05-21
-last_edited: 2024-05-21
 draft: false
+last_edited: 2024-05-21
 tags:
   - networks
 type: definition
@@ -22,6 +22,6 @@ type: definition
 >
 >This separation allows for scalability, molecularity and flexibility to add or remove components. Though comes with some down sides such as
 >- Some layers' functionality depends on the information from other layers, which can violate the goal of layer separation.
->- One layer may duplicate lower-layer functionalities. For example, the functionality of error recovery can occur in lower layers but also in upper layers as well. 
+>- One layer may duplicate lower-layer functionalities. For example, the functionality of error recovery can occur in lower layers but also in upper layers as well.
 >- Some additional overhead that is caused by the abstraction between layers.
 

@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-04-06
-last_edited: 2024-04-06
 draft: false
+last_edited: 2024-04-06
 tags:
   - programming
   - machine-learning
@@ -11,7 +11,7 @@ type: algorithm
 ---
 # Value iteration (MDP)
 
-This is a method of solving [[Markov decision process|Markov decision processes]]. It uses [[Discounted rewards|discounted rewards]] to get a local as well as global optimum solution. 
+This is a method of solving [[Markov decision process|Markov decision processes]]. It uses [[Discounted rewards|discounted rewards]] to get a local as well as global optimum solution.
 
 We ideally would like to work out what the best policy is
 $$
@@ -29,7 +29,7 @@ This equation should concern you as to work out $\pi^{\ast}$ you would have to k
 $$
 U^{\pi^{\ast}}(s) = R(s) + \gamma \max_{a \in A(s)} \sum_{s' \in S} T(s,a,s') U^{\pi^{\ast}}(s')
 $$
-What is above is a [[Bellman equation]]. They are simultaneous-like due to the max in it. 
+What is above is a [[Bellman equation]]. They are simultaneous-like due to the max in it.
 
 ## Pseudocode
 

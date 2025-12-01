@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6250 Computer Networks]]"
+course: '[[CS6250 Computer Networks]]'
 created: 2024-05-29
-last_edited: 2024-05-29
 draft: false
+last_edited: 2024-05-29
 tags:
   - OMSCS
 type: lecture
@@ -12,9 +12,9 @@ week: 3
 ---
 # Week 3 - Intradomain routing
 
-###Important Readings
+### Important Readings
 
-Experience in Black-box OSPF Measurements  
+Experience in Black-box OSPF Measurements
 [http://conferences.sigcomm.org/imc/2001/imw2001-papers/82.pdfLinks to an external site.](http://conferences.sigcomm.org/imc/2001/imw2001-papers/82.pdf)
 
 ## Book References
@@ -38,16 +38,16 @@ If you have access to the Kurose-Ross book and the Peterson book, you can find t
 
 ## Optional Readings
 
-Hot Potatoes Heat Up BGP Routing  
-[https://www.cs.princeton.edu/~jrex/papers/hotpotato.pdfLinks to an external site.](https://www.cs.princeton.edu/~jrex/papers/hotpotato.pdf "Link")  
+Hot Potatoes Heat Up BGP Routing
+[https://www.cs.princeton.edu/~jrex/papers/hotpotato.pdfLinks to an external site.](https://www.cs.princeton.edu/~jrex/papers/hotpotato.pdf "Link")
 
-Traffic Engineering With Traditional IP Routing Protocols  
-[https://www.cs.princeton.edu/~jrex/teaching/spring2005/reading/fortz02.pdfLinks to an external site.](https://www.cs.princeton.edu/~jrex/teaching/spring2005/reading/fortz02.pdf "Link")  
+Traffic Engineering With Traditional IP Routing Protocols
+[https://www.cs.princeton.edu/~jrex/teaching/spring2005/reading/fortz02.pdfLinks to an external site.](https://www.cs.princeton.edu/~jrex/teaching/spring2005/reading/fortz02.pdf "Link")
 
-Dynamics of Hot-Potato Routing in IP Networks  
-[https://www.cs.princeton.edu/~jrex/papers/sigmetrics04.pdfLinks to an external site.](https://www.cs.princeton.edu/~jrex/papers/sigmetrics04.pdf "Link")  
+Dynamics of Hot-Potato Routing in IP Networks
+[https://www.cs.princeton.edu/~jrex/papers/sigmetrics04.pdfLinks to an external site.](https://www.cs.princeton.edu/~jrex/papers/sigmetrics04.pdf "Link")
 
-OSPF Monitoring: Architecture, Design and Deployment Experience  
+OSPF Monitoring: Architecture, Design and Deployment Experience
 [https://www.cs.princeton.edu/~jrex/teaching/spring2005/reading/shaikh04.pdfLinks to an external site.](https://www.cs.princeton.edu/~jrex/teaching/spring2005/reading/shaikh04.pdf "Link")
 
 ## Routing

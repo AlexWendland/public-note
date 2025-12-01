@@ -1,18 +1,18 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2025-08-07
-last_edited: 2025-08-07
 draft: true
-tags: 
+last_edited: 2025-08-07
+tags:
   - work
 type: thonk
 ---
 
 # Agenda
 
-- Share interest/experiences/capabilities 
-- Pitch first 2-3 ideas each 
+- Share interest/experiences/capabilities
+- Pitch first 2-3 ideas each
 - Discuss income requirements
 - AOB
 
@@ -99,7 +99,7 @@ type: thonk
     - Second hand games market.
     - Integrate with board game Cafe's.
 
-- Data focused debating 
+- Data focused debating
 
 ## AOB
 
@@ -129,7 +129,7 @@ type: thonk
   - Knowledge AI based on publications.
   - Summarising research papers.
   - True academic research.
-  - Build MCP for papers / research. 
+  - Build MCP for papers / research.
   - Licensing of the papers.
 
 

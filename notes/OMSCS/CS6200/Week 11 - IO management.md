@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: '[[CS6200 Graduate introduction to Operating Systems]]'
 created: 2025-04-09
-last_edited: 2025-04-09
 draft: false
+last_edited: 2025-04-09
 tags:
   - OMSCS
 type: lecture
@@ -23,7 +23,7 @@ These have 3 registers:
 - Command: Used by the [[Central processing unit (CPU)|CPU]] to control the device.
 - Data: Used to transfer data in and out of the device.
 
- Then what happens internally is controlled by the micro controller on the device. 
+ Then what happens internally is controlled by the micro controller on the device.
 
 ## Connections to the [[Central processing unit (CPU)|CPU]]
 
@@ -51,7 +51,7 @@ There are two methods in which the [[Central processing unit (CPU)|CPU]] communi
 - *Memory-mapped I/O*: On boot some part of the main memory address space is registered for use by a device. The [[Central processing unit (CPU)|CPU]] can then write or read to these addresses to interact with the device.
 - *Port-mapped I/O*: On boot they get loaded into a separate address space reserved for I/O devices. This uses separate instructions such as IN/OUT. This was more common in legacy systems.
 
-Some architectures do support both. 
+Some architectures do support both.
 
 There are two ways for the device to communicate with the [[Central processing unit (CPU)|CPU]]:
 
@@ -76,7 +76,7 @@ Some devices support [[Operating system (OS)|OS]] bypass. This is where the [[Op
 
 However, if the device does support this it can increase access speed dramatically.
 
-When accessing [[Input output (IO)|IO]] devices this can either happen synchronously or [[Asynchronous programming|async]]. Normally when issuing commands to a device the process needs to wait for a response from the device. This can either block the process and it gets moved to a wait queue or in a non-blocking way. When using async the process can either poll or get interrupted to get output from the device. 
+When accessing [[Input output (IO)|IO]] devices this can either happen synchronously or [[Asynchronous programming|async]]. Normally when issuing commands to a device the process needs to wait for a response from the device. This can either block the process and it gets moved to a wait queue or in a non-blocking way. When using async the process can either poll or get interrupted to get output from the device.
 
 ![Async Vs Sync Device Access](../../../images/async_vs_sync_device_access.png)
 
@@ -121,7 +121,7 @@ The rest is broken down into 'block groups' which each have a similar structure.
 
 ## Inodes
 
-Inodes that represent files contain metadata about the file and a list of data-blocks that make up that file. 
+Inodes that represent files contain metadata about the file and a list of data-blocks that make up that file.
 
 ![Inode Structure](../../../images/inode_structure.png)
 

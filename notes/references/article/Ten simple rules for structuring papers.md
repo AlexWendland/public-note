@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-01-21
-last_edited: 2024-01-21
 draft: false
-tags: 
+last_edited: 2024-01-21
+tags: []
 type: article
 ---
 # Ten simple rules for structuring papers

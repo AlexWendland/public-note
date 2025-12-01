@@ -3,9 +3,9 @@ aliases:
   - computational learning theory
 checked: false
 created: 2024-02-13
-last_edited: 2024-02-13
 draft: true
-tags: 
+last_edited: 2024-02-13
+tags: []
 type: definition
 ---
 >[!tldr] Computational learning theory

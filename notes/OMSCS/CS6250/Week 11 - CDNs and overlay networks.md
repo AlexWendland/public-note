@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6250 Computer Networks]]"
+course: '[[CS6250 Computer Networks]]'
 created: 2024-07-27
-last_edited: 2024-07-27
 draft: false
+last_edited: 2024-07-27
 tags:
   - OMSCS
 type: lecture
@@ -16,10 +16,10 @@ week: 11
 
 ### Important Readings
 
-The Akamai Network: A Platform for High-Performance Internet Applications  
+The Akamai Network: A Platform for High-Performance Internet Applications
 [https://dl.acm.org/doi/10.1145/1842733.1842736Links to an external site.](https://dl.acm.org/doi/10.1145/1842733.1842736)
 
-Open Connect Everywhere: A Glimpse at the Internet Ecosystem through the Lens of the Netflix CDN  
+Open Connect Everywhere: A Glimpse at the Internet Ecosystem through the Lens of the Netflix CDN
 [https://arxiv.org/pdf/1606.05519.pdf Links to an external site.](https://arxiv.org/pdf/1606.05519.pdf)
 
 ### Book References
@@ -32,51 +32,51 @@ Kurose-Ross, 7e, Section 2.6, Video Streaming and Content Distribution Networks
 
 **Server Selection**
 
-C3: Internet-Scale Control Plane for Video Quality Optimization  
+C3: Internet-Scale Control Plane for Video Quality Optimization
 [https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-ganjam.pdf Links to an external site.](https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-ganjam.pdf)
 
-Shedding Light on the Structure of Internet Video Quality Problems in the Wild  
+Shedding Light on the Structure of Internet Video Quality Problems in the Wild
 [https://conferences.sigcomm.org/co-next/2013/program/p357.pdfLinks to an external site.](https://conferences.sigcomm.org/co-next/2013/program/p357.pdf)
 
-Where Do You “Tube”? Uncovering YouTube Server Selection Strategy  
+Where Do You “Tube”? Uncovering YouTube Server Selection Strategy
 [https://ieeexplore.ieee.org/document/6006028Links to an external site.](https://ieeexplore.ieee.org/document/6006028)
 
-Google Data Centers  
+Google Data Centers
 [https://www.google.com/about/datacenters/inside/locations/index.htmlLinks to an external site.](https://www.google.com/about/datacenters/inside/locations/index.html)
 
-Understanding Hybrid CDN-P2P: Why Limelight Needs Its Own Red Swoosh,  
+Understanding Hybrid CDN-P2P: Why Limelight Needs Its Own Red Swoosh,
 [https://dl-acm-org.prx.library.gatech.edu/doi/10.1145/1496046.1496064Links to an external site.](https://dl-acm-org.prx.library.gatech.edu/doi/10.1145/1496046.1496064)
 
 **User-perceived application experience**
 
-Shedding Light on the Structure of Internet Video Quality Problems in the Wild  
+Shedding Light on the Structure of Internet Video Quality Problems in the Wild
 [https://conferences.sigcomm.org/co-next/2013/program/p357.pdfLinks to an external site.](https://conferences.sigcomm.org/co-next/2013/program/p357.pdf)
 
-EONA: Experience-Oriented Network Architecture  
+EONA: Experience-Oriented Network Architecture
 [https://conferences.sigcomm.org/hotnets/2014/papers/hotnets-XIII-final121.pdfLinks to an external site.](https://conferences.sigcomm.org/hotnets/2014/papers/hotnets-XIII-final121.pdf)
 
-Assessing Affinity Between Users and CDN Sites  
+Assessing Affinity Between Users and CDN Sites
 [https://www.isi.edu/~johnh/PAPERS/Fan15a.pdfLinks to an external site.](https://www.isi.edu/~johnh/PAPERS/Fan15a.pdf)
 
-Developing a Predictive Model of Quality of Experience for Internet Video  
+Developing a Predictive Model of Quality of Experience for Internet Video
 [https://www.cs.cmu.edu/~srini/papers/2013.Balachandran.sigcomm.pdf Links to an external site.](https://www.cs.cmu.edu/~srini/papers/2013.Balachandran.sigcomm.pdf)
 
-Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications  
+Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications
 [https://pdos.csail.mit.edu/papers/chord:sigcomm01/chord_sigcomm.pdf Links to an external site.](https://pdos.csail.mit.edu/papers/chord:sigcomm01/chord_sigcomm.pdf)
 
-Reverse Engineering the Youtube Video Delivery Cloud  
+Reverse Engineering the Youtube Video Delivery Cloud
 [https://pdfs.semanticscholar.org/4c48/501e2aa3e9c3e2507617f8cec2db16b01490.pdf Links to an external site.](https://pdfs.semanticscholar.org/4c48/501e2aa3e9c3e2507617f8cec2db16b01490.pdf)
 
 **On CDNs and ISPs Interplay**
 
-Pushing CDN-ISP Collaboration to the Limit  
+Pushing CDN-ISP Collaboration to the Limit
 [https://www.akamai.com/content/dam/site/en/documents/research-paper/pushing-cdn-isp-collaboration-to-the-limit-technical-publication.pdf Links to an external site.](https://www.akamai.com/content/dam/site/en/documents/research-paper/pushing-cdn-isp-collaboration-to-the-limit-technical-publication.pdf)
 
-**P2P and Gaming:** 
+**P2P and Gaming:**
 
-[http://ccr.sigcomm.org/online/files/p315.pdf Links to an external site.](http://ccr.sigcomm.org/online/files/p315.pdf)  
-[https://conferences.sigcomm.org/sigcomm/2011/papers/sigcomm/p474.pdf Links to an external site.](https://conferences.sigcomm.org/sigcomm/2011/papers/sigcomm/p474.pdf)  
-[http://ccr.sigcomm.org/online/files/p2p_gaming.pdf Links to an external site.](http://ccr.sigcomm.org/online/files/p2p_gaming.pdf)  
+[http://ccr.sigcomm.org/online/files/p315.pdf Links to an external site.](http://ccr.sigcomm.org/online/files/p315.pdf)
+[https://conferences.sigcomm.org/sigcomm/2011/papers/sigcomm/p474.pdf Links to an external site.](https://conferences.sigcomm.org/sigcomm/2011/papers/sigcomm/p474.pdf)
+[http://ccr.sigcomm.org/online/files/p2p_gaming.pdf Links to an external site.](http://ccr.sigcomm.org/online/files/p2p_gaming.pdf)
 [https://www.cs.cmu.edu/~junchenj/c3.pdfLinks to an external site.](https://www.cs.cmu.edu/~junchenj/c3.pdf)
 
 ## [[Content delivery network (CDN)|CDN]] revisited
@@ -102,13 +102,13 @@ However even using [[Content delivery network (CDN)|CDNs]] there are still massi
 
 There have been two massive shifts in the internet infrastructure recently:
 1. The sheer scale of users - this has pushed old [[Protocol (networks)|protocols]] and infrastructure to its limits.
-2. The flattening of the internet - the rise of [[Internet Exchange Points (IXPs)|IXPs]] has shifted us from having [[Internet Service Provider (ISP)|ISPs]] as the backbone of the internet with a few connection points into a more flat well connected structure. 
+2. The flattening of the internet - the rise of [[Internet Exchange Points (IXPs)|IXPs]] has shifted us from having [[Internet Service Provider (ISP)|ISPs]] as the backbone of the internet with a few connection points into a more flat well connected structure.
 
 Both these changes mean that more traffic is exchanged locally instead of traversing the whole hierarchy of the internet. This has been driven by large players such as google, facebook, and netfilx. For example see below netflixs [[Content delivery network (CDN)|CDN]] infrastructure across the globe.
 
 ![Netflix Infra](../../../images/netflix_infra.png)
 
-[[Content delivery network (CDN)|CDNs]] can be privately owned like in Netflix's case or owned by a third party such as Akamai and Limelight. 
+[[Content delivery network (CDN)|CDNs]] can be privately owned like in Netflix's case or owned by a third party such as Akamai and Limelight.
 
 Owning a [[Content delivery network (CDN)|CDN]] comes with many challenges:
 - Owning lots of real-estate and physical hardware.
@@ -126,7 +126,7 @@ There is a spectrum with the philosophy on server placement. With the extremes r
 ![Enter Deep](../../../images/enter_deep.png)
 - **Bring home**: Using a few larger server clusters at key points.
 	- Much easier to maintain and keep synchronised.
-	- Larger latency and bandwidth use to get to end consumers. 
+	- Larger latency and bandwidth use to get to end consumers.
 
 There are lots of hybrid approaches. Such as Google with 16 mega data-centers and 50 smaller clusters deeper into the network.
 
@@ -140,7 +140,7 @@ Below is and example for the site www.NetCinema.com who use [[Domain Name System
 
 1. The user is on the NetCinema website finding some content they want to watch.
 2. User clicks on a link that has a subdomain linked to the [[Content delivery network (CDN)|CDN]] part of NetCinemas network i.e. video.netcinema.com. This sends a request to their local [[Domain Name System (DNS)|DNS]] server.
-3. An iterative [[Domain Name System (DNS)|DNS]] lookup happens returning a [[DNS records|NS record]] first the the authoritative [[Domain Name System (DNS)|DNS]] server for netcinema. This redirects the to KingCDN's authoritative server. 
+3. An iterative [[Domain Name System (DNS)|DNS]] lookup happens returning a [[DNS records|NS record]] first the the authoritative [[Domain Name System (DNS)|DNS]] server for netcinema. This redirects the to KingCDN's authoritative server.
 4. KingDNS authorative server then has to work out what the best cluster to send the user to. Once it has done that it returns the [[Internet Protocol (IP)|IP address]] in a [[DNS records|DNS A record]].
 5. Their local [[Domain Name System (DNS)|DNS]] then returns them the [[Internet Protocol (IP)|IP address]] of the selected [[Content delivery network (CDN)|CDN]] server.
 6. The user then requests the content from the [[Content delivery network (CDN)|CDN]] content server.
@@ -153,7 +153,7 @@ This leaves the question - how does the authoritative [[Content delivery network
 
 ## Cluster selection
 
-The most intuitive answer to this question is choose the cluster geographically closest to the end user. 
+The most intuitive answer to this question is choose the cluster geographically closest to the end user.
 ![Geography](../../../images/geography.png)
 This can work well in a lot of cases but it is harder and maybe more sub-optimal than you might expect.
 - You do not know the IP of the end user only the IP of there local [[Domain Name System (DNS)|DNS]] server.
@@ -178,7 +178,7 @@ Implicitly in both these approaches there exists a central controller that deter
 
 Researchers have proposed the design of a distributed system that uses a two-layered system.
 
-- A coarse-grained global layer operates at larger time scales (timescale of a few tens of seconds (or minutes)). This layer has a global view of client quality measurements. It builds a data-driven prediction model of video quality. 
+- A coarse-grained global layer operates at larger time scales (timescale of a few tens of seconds (or minutes)). This layer has a global view of client quality measurements. It builds a data-driven prediction model of video quality.
 - A fine-grained per-client decision layer that operates at the millisecond timescale. It makes actual decisions upon a client request. This is based on the latest (but possibly stale) pre-computed global model and up-to-date per-client state.
 
 ![Distrubuted Cdn Controller](../../../images/distrubuted_cdn_controller.png)
@@ -187,9 +187,9 @@ A second challenge in the above approach is that it needs to have data for diffe
 
 ## Server selection
 
-Once we have selected a cluster we need to choose a server inside that cluster. Lets go through the ideas we might have. 
-- The simplest approach is to round robin requests to available server. 
-Though due to the random nature of different requests this will likely cause one server to become overloaded. 
+Once we have selected a cluster we need to choose a server inside that cluster. Lets go through the ideas we might have.
+- The simplest approach is to round robin requests to available server.
+Though due to the random nature of different requests this will likely cause one server to become overloaded.
 - Load balance to the least utilised server.
 However this is also not optimal in the [[Content delivery network (CDN)|CDN]] use case. As content servers will lazily load content - load balancing will mean all server will need to cauche most of the content they are offer. Each new request will have delay whilst the load it and free memory.
 - Divide requests based on the content they are requesting through a hashing technique.

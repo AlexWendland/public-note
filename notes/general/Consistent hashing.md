@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-07-27
-last_edited: 2024-07-27
 draft: false
+last_edited: 2024-07-27
 tags:
   - computer-science
 type: definition
@@ -13,5 +13,5 @@ type: definition
 >To understand the main idea consider a circle where we will allocate the IDs and nodes a number on this circle.
 >![Consistent Hashing](../../images/consistent_hashing.png)
 >We allocate IDs to nodes if they are the next highest node in the circle (looping back round once we get to the top). Then when a node exits all the IDs just overflow to the next node.
->![Consistent Hashing Exit](../../images/consistent_hashing_exit.png) 
+>![Consistent Hashing Exit](../../images/consistent_hashing_exit.png)
 

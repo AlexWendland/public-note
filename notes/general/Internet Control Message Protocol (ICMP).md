@@ -3,8 +3,8 @@ aliases:
   - ICMP
 checked: false
 created: 2024-06-13
-last_edited: 2024-06-13
 draft: true
+last_edited: 2024-06-13
 tags:
   - networks
 type: definition

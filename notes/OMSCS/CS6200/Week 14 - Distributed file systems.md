@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: '[[CS6200 Graduate introduction to Operating Systems]]'
 created: 2024-12-31
-last_edited: 2024-12-31
 draft: false
+last_edited: 2024-12-31
 tags:
   - OMSCS
 type: lecture
@@ -63,7 +63,7 @@ This means:
 - Server load is reduced in comparison to the fully remote model,
 - Server is aware of what clients are doing,
 - Server has control into whihc accesses can be permitted, however
-- The server is a lot more complex to handle all these consistency mechanisms. 
+- The server is a lot more complex to handle all these consistency mechanisms.
 
 ## State management
 
@@ -115,7 +115,7 @@ However on two machines this might not be the case and edits can happen on 'stal
 Sessions can be long if the client is editing a file for a long time - therefore it can be useful to introduce *periodic updates*. This could involve:
 
 - The client writes-back periodically.
-- The server invalidates the caches periodically which introduces a bound on inconsistency. 
+- The server invalidates the caches periodically which introduces a bound on inconsistency.
 - To support the above [[Distributed file system (DFS)]] can introduce flush/sync operations.
 
 The server can implement *immutable files* which never get modified only have new files created.
@@ -154,7 +154,7 @@ This is where files are separated out onto different machines, so not all the st
 - Scalability (more storage), and
 - Single file writes are simpler than replicated setting.
 
-Though your fault tolerance reduces as any one server going down loses you files. Load balancing is harder due to different access patterns per file. 
+Though your fault tolerance reduces as any one server going down loses you files. Load balancing is harder due to different access patterns per file.
 
 Normally replication and partitioning are combined to mitigate the flaws of both systems.
 

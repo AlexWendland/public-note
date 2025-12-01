@@ -3,15 +3,15 @@ aliases:
   - CPP
 checked: false
 created: 2024-02-02
-last_edited: 2024-02-02
 draft: false
+last_edited: 2024-02-02
 tags:
   - programming
 type: algorithm
 ---
 # Cost complexity pruning for decision trees (CPP)
 
-When making a [[Decision tree|decision tree]] with no pruning it can tend to [[Overfitting|overfit]] the [[Training data|training data]]. To reduce this we can "prune" the decision tree. We do this by looking at how useful each of the branches are - then removing the ones that don't add enough value. This is controlled by a variable $\alpha$ which increases the cost of having more leaf nodes. 
+When making a [[Decision tree|decision tree]] with no pruning it can tend to [[Overfitting|overfit]] the [[Training data|training data]]. To reduce this we can "prune" the decision tree. We do this by looking at how useful each of the branches are - then removing the ones that don't add enough value. This is controlled by a variable $\alpha$ which increases the cost of having more leaf nodes.
 
 Suppose we are in [[Modelling framework|modelling framework]] where $T$ is our [[Training data|training data]] and let $\hat{f}$ be our decision tree. Assume $R(\hat{f}, T)$ is our function for evaluating how good a fit our tree is (likely this will use [[Information entropy|information entropy]] or the [[Gini index]]). Lastly let $L(\hat{f})$ be the number of leaf nodes in our [[Decision tree|decision tree]] $\hat{f}$. Set
 $$
@@ -31,7 +31,7 @@ $$
 $$
 (It can be derived by equating the contribution of $v$ against the contribution of the terminal nodes $G_v$ contains.)
 
-The process then prunes branches with the lowest $\alpha_{eff}$ until that value is greater than $\alpha$. 
+The process then prunes branches with the lowest $\alpha_{eff}$ until that value is greater than $\alpha$.
 
 ## Pseudocode
 
@@ -41,7 +41,7 @@ CPP(decision_tree, alpha, R):
 		decision_tree with a set of vertices V
 		alpha positive constant to determine pruning
 		R the evaluation function such as Entropy or Gini, this will have to
-			defined on vertices of V (for the training data that gets 
+			defined on vertices of V (for the training data that gets
 			classifed to v)
 	Output:
 		a pruned decision tree
@@ -62,7 +62,7 @@ calculate_effective_alpha(tree, v, R):
 		tree is a decision tree
 		v is a vertex in V that is not a leaf node
 		R the evaluation function such as Entropy or Gini, this will have to
-			defined on vertices of V (for the training data that gets 
+			defined on vertices of V (for the training data that gets
 			classifed to v)
 	Output
 		alpha_eff the effective alpha for that vertex
@@ -77,4 +77,4 @@ Optimally we would iterate over all potential subtrees of $\hat{f}$ and find the
 
 ## Correctness
 
-This can reduce overfitting, however the parameter $\alpha$ needs to be fine tuned. It is best to use [[Cross validation|cross validation]] for this purpose. 
+This can reduce overfitting, however the parameter $\alpha$ needs to be fine tuned. It is best to use [[Cross validation|cross validation]] for this purpose.

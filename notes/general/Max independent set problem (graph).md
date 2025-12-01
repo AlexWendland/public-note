@@ -5,8 +5,8 @@ aliases:
   - independent set problem
 checked: false
 created: 2023-11-03
-last_edited: 2023-11-13
 draft: false
+last_edited: 2023-11-13
 tags:
   - programming
 type: problem

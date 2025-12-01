@@ -5,8 +5,8 @@ aliases:
   - mutexes
 checked: false
 created: 2024-09-04
-last_edited: 2024-09-04
 draft: false
+last_edited: 2024-09-04
 tags:
   - OS
 type: definition
@@ -16,6 +16,6 @@ type: definition
 > - Status of the mutex,
 > - Current mutex owner, and
 > - List of threads waiting on the mutex.
-> 
+>
 > Birrells original [[Application Programming Interface (API)|API]] used a [[Context manager|context manager]] syntax but common [[Application Programming Interface (API)|apis]] use an lock and unlock command. The code in the [[Context manager|context manager]] or between the lock and unlock commands is called the *critical section*.
 

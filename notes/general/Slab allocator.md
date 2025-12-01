@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2025-03-23
-last_edited: 2025-03-23
 draft: false
+last_edited: 2025-03-23
 tags:
   - OS
 type: definition
@@ -25,8 +25,8 @@ type: definition
 >
 >**Advantages & Trade-offs**
 >
->**Fast allocation & deallocation**: Objects are preallocated and reused.  
->**No fragmentation**: Objects fit precisely into preallocated slabs.  
+>**Fast allocation & deallocation**: Objects are preallocated and reused.
+>**No fragmentation**: Objects fit precisely into preallocated slabs.
 >**Efficient for frequently used objects**: Great for kernel structures like inodes, task structs, and buffers.
 >**Not ideal for variable-sized allocations**: Works best when objects are of predictable, uniform sizes.
 >

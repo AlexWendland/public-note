@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: '[[CS6200 Graduate introduction to Operating Systems]]'
 created: 2024-08-26
-last_edited: 2024-08-26
 draft: false
+last_edited: 2024-08-26
 tags:
   - OMSCS
 type: lecture
@@ -139,7 +139,7 @@ lock(mutex){
 > - Anyone thread might not be the first thread to access it after it has been released,
 > - The condition might have changed since it has been woken up.
 
-The critical sections follow a similar structure. 
+The critical sections follow a similar structure.
 
 ```pseudocode
 lock(mutex){
@@ -181,12 +181,12 @@ lock(mutex){
 - Check you are locking and unlocking when accessing the resource.
 - Check you have matched lock and unlock blocks when using the proxy pattern.
 - Remember to use a single mutex for a single resource.
-- Check the conditions for signalling and broadcasting. 
+- Check the conditions for signalling and broadcasting.
 - Check you are not using signal when you need to use broadcast.
 	- The other-way around is not an issue for correctness just efficiency as it will wake up the thread and should still execute correctly.
 	- If you use signal the other threads may never wake up.
-- Do you need execution order guarantees? 
-	- Waking up threads does not guarantee this. 
+- Do you need execution order guarantees?
+	- Waking up threads does not guarantee this.
 - Spurious wakeups
 - Deadlocks
 
@@ -220,7 +220,7 @@ Though this can only be done if the signal/broadcast does not rely on a controll
 There are a couple techniques for solving or preventing deadlocks:
 - Fine-grain locking: Forcing threads to only hold one [[Mutex|mutex]] at a time
 	- This is very limiting to what locks can be used for.
-- Composite [[Mutex|mutex]] that combine access to multiple [[Mutex|mutex]]. 
+- Composite [[Mutex|mutex]] that combine access to multiple [[Mutex|mutex]].
 	- This can be hard to implement and enforce across a wide code base.
 - [[Mutex]] ordering: You have to obtain [[Mutex|mutex]] in a given order.
 	- This is the most common solution.
@@ -237,9 +237,9 @@ The concept of the [[Thread|thread]] exists at the kernel level and at the proce
 
 [[Process]] threads that are directly mapped to kernel threads (bound threads) allows the [[Operating system (OS)|OS]] to fully understand that [[Thread|threads]] requirements and in tern use all the [[Operating system (OS)|OS]] features such as synchronisation, blocks, prioritisation directly. This also gives that whole [[Process|process]] thread the priority of one system thread. Though this means all operations must go through the [[Operating system (OS)|OS]] which can be slow. You have to use the [[Operating system (OS)|OS]] thread scheduler meaning less control. Limited by the system you are on such as max thread count, or thread policies which can make your application less portable.
 
-[[Process]] threads sharing the same [[Kernel|kernel]] thread have their scheduling controlled by the processes thread manager (unbound threads). This means a lot more control for the process on how to schedule thous threads. Less reliance on the [[Operating system (OS)|OS]] features making it more portable. Less [[Operating system (OS)|OS]] calls which can speed up applications. Though this means if any of the [[Process|process]] threads block the kernel thread then all threads are blocked. The [[Operating system (OS)|OS]] is not aware of what the [[Process|process]] is doing and can not prioritise that thread using its normal polices. 
+[[Process]] threads sharing the same [[Kernel|kernel]] thread have their scheduling controlled by the processes thread manager (unbound threads). This means a lot more control for the process on how to schedule thous threads. Less reliance on the [[Operating system (OS)|OS]] features making it more portable. Less [[Operating system (OS)|OS]] calls which can speed up applications. Though this means if any of the [[Process|process]] threads block the kernel thread then all threads are blocked. The [[Operating system (OS)|OS]] is not aware of what the [[Process|process]] is doing and can not prioritise that thread using its normal polices.
 
-You can also take a hybrid approach that gets the best of both worlds but requires coordination between the kernel thread scheduler  and the process scheduler. 
+You can also take a hybrid approach that gets the best of both worlds but requires coordination between the kernel thread scheduler  and the process scheduler.
 
 ## [[Multi-threading]] patterns
 

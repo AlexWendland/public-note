@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-02-20
-last_edited: 2024-02-20
 draft: false
+last_edited: 2024-02-20
 tags:
   - probability
 type: lemma
@@ -11,7 +11,7 @@ type: lemma
 # Statement
 
 > [!important] Bayes Rule
-> For two events $A$ and $B$ we have following equality on their [[Conditional probability|conditional probabilities]] 
+> For two events $A$ and $B$ we have following equality on their [[Conditional probability|conditional probabilities]]
 > $$\mathbb{P}[A \vert B] = \frac{\mathbb{P}[B \vert A] \ \mathbb{P}[A]}{\mathbb{P}[B]}$$
 
 # Proof

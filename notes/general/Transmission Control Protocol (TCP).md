@@ -3,14 +3,14 @@ aliases:
   - TCP
 checked: false
 created: 2024-05-22
-last_edited: 2024-05-22
 draft: false
+last_edited: 2024-05-22
 tags:
   - networks
 type: definition
 ---
 >[!tldr] Transmission Control Protocol (TCP)
->The transmission control protocol is a [[Layer 4 Transport|layer 4]] [[Protocol (networks)|protocol]] that allows for [[Multiplexing|multiplexing]] and a [[Duplex|duplex]] communication channel. It is defined in [RFC793](https://www.ietf.org/rfc/rfc793.txt). This is a connection orientated [[Protocol (networks)|protocol]] which establishes a connection with [[TCP 3 way handshake]] and closes connections with the [[TCP connection teardown]]. This gaurentees the following features. 
+>The transmission control protocol is a [[Layer 4 Transport|layer 4]] [[Protocol (networks)|protocol]] that allows for [[Multiplexing|multiplexing]] and a [[Duplex|duplex]] communication channel. It is defined in [RFC793](https://www.ietf.org/rfc/rfc793.txt). This is a connection orientated [[Protocol (networks)|protocol]] which establishes a connection with [[TCP 3 way handshake]] and closes connections with the [[TCP connection teardown]]. This gaurentees the following features.
 >- [[Reliable transmission of TCP messages|reliability]]: every message will be received and acknowledge or it will be redelivered,
 >- ordered delivery: messages have a sequence number and will only be parsed to the [[Layer 7 Application|Application layer]] in order,
 >- error checking: [[Checksum in layer 4]],
@@ -27,7 +27,7 @@ type: definition
 >- Data offset: the number of 32 [[Bit|bit]] words in the TCP header,
 >- Reserved: set to all 0's,
 >- control bits: these are 0 or 1 for the following 6 fields Urgent, Acknowledgement, Push, Reset, Synchronise, and Finish.
->- Window: The number of data octets number of data octets the sender of this segment is willing to receive. 
+>- Window: The number of data octets number of data octets the sender of this segment is willing to receive.
 >- Checksum: [[Checksum in layer 4]],
 >- Urgent pointer,
 >- Options, and
@@ -38,6 +38,6 @@ type: definition
 
 # Flow control in [[Transmission Control Protocol (TCP)|TCP]]
 
-	Suppose [[Host (networks)|host]] A is transmitting data to [[Host (networks)|host]] B. When this starts up [[Host (networks)|host]] B will reserve some amount of memory to buffer unprocessed packages. Lets say it can fit `RcvBuffer` bytes. Then it keeps track of `LastByteRead` and `LastByteRecieved` 
+	Suppose [[Host (networks)|host]] A is transmitting data to [[Host (networks)|host]] B. When this starts up [[Host (networks)|host]] B will reserve some amount of memory to buffer unprocessed packages. Lets say it can fit `RcvBuffer` bytes. Then it keeps track of `LastByteRead` and `LastByteRecieved`
 
 

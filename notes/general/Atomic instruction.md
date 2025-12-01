@@ -3,8 +3,8 @@ aliases:
   - atomic instruction
 checked: false
 created: 2025-04-08
-last_edited: 2025-04-08
 draft: false
+last_edited: 2025-04-08
 tags:
   - OS
 type: definition

@@ -5,14 +5,14 @@ aliases:
   - tries
 checked: false
 created: 2024-06-13
-last_edited: 2024-06-13
 draft: false
+last_edited: 2024-06-13
 tags:
   - programming
 type: data structure
 ---
 >[!tldr] Trie
->A *trie* or *prefix tree* is used for associating words in a given alphabet $A$ to some values in $X$. 
+>A *trie* or *prefix tree* is used for associating words in a given alphabet $A$ to some values in $X$.
 >- This is given by a directed rooted [[Tree (graph)|tree]] $(T = (V, E), r)$.
 >- An edge letter map $a: E \rightarrow A$, where $a(v,u) = a(v,w) \Rightarrow u = v$.
 >- A node key map $k: V \rightarrow X \cup \{ - \}$ where $-$ is a null value.

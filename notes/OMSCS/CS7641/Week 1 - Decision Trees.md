@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS7641 Machine Learning]]"
+course: '[[CS7641 Machine Learning]]'
 created: 2024-01-10
-last_edited: 2024-01-10
 draft: false
+last_edited: 2024-01-10
 tags:
   - OMSCS
 type: lecture
@@ -19,7 +19,7 @@ week: 1
 [[Classification problems]] - Mapping from a domain to some discrete set, and
 [[Regression problems]] - mapping from a domain to some continuous space like the [[Real numbers]] ($\mathbb{R}$).
 
-For example, making a decision on whether you should give someone a loan is a classification problem as there are only two outcomes - whereas mapping from someone's picture to their age would be a regression problem. 
+For example, making a decision on whether you should give someone a loan is a classification problem as there are only two outcomes - whereas mapping from someone's picture to their age would be a regression problem.
 
 # Classification
 
@@ -38,16 +38,16 @@ First lets start by defining terms used in this course.
 
 ## My mathematical interpretation
 
-Suppose we have two sets $A$ and $B$ and we are looking to find some function optimal function $f^{\ast}: A \rightarrow B$. 
+Suppose we have two sets $A$ and $B$ and we are looking to find some function optimal function $f^{\ast}: A \rightarrow B$.
 
 - Instance - some element $a \in A$.
 - Concept - a [[Function|function]] $f: A \rightarrow B$.
 - Target concept - the function $f^{\ast}$.
 - Hypothesis class - a restricted class $C \subset Func(A,B)$ that we will consider.
 	- This restriction may be applied due to the set of algorithms you are considering.
-- Sample / Training set - A set $T \subset A \times B$ of observations. 
+- Sample / Training set - A set $T \subset A \times B$ of observations.
 	- Ideally $T \subset \{(a,f^{\ast}(a)) \vert a \in A\}$ however this might not be possible.
-- Candidate - a function $f': A \rightarrow B$ which is our current guess at $f^{\ast}$. 
+- Candidate - a function $f': A \rightarrow B$ which is our current guess at $f^{\ast}$.
 - Testing set - A set $E \subset A \times B$ similar to training set but with intent to test the current candidate on.
 
 # Decision trees
@@ -55,7 +55,7 @@ Suppose we have two sets $A$ and $B$ and we are looking to find some function op
 Suppose your domain $A$ actually breaks down into many different aspects $A = \oplus_{i=1}^k A_i$. Like if you were making a decision about whether to go into the restaurant your aspects could be the type of restaurant, whether it is raining, and how full the restaurant is.
 
 Then a [[Decision tree]] is a [[Rooted tree|rooted tree]] where
-- Each parent node is affiliated with an aspect with each child branch being affiliated with a collection of potential values. We make sure all potential values of that aspect are covered by the branches.  
+- Each parent node is affiliated with an aspect with each child branch being affiliated with a collection of potential values. We make sure all potential values of that aspect are covered by the branches.
 - Each child node is associated to a value in the [[Function codomain|codomain]] $B$.
 
 An example for the problem of restaurant choosing is below.
@@ -72,7 +72,7 @@ Suppose our domain consists of $A_i = \{T, F\}$ [[Boolean variable|Boolean's]], 
 These can expand to many variables, and for different functions can grow with different rates.
 
 - [[Logical or]] and [[Logical and]] with $n$ variables uses $O(n)$ nodes.
-- Even/odd parity (true if an even/odd number of inputs are True) with $n$ variables uses $O(2^n)$ nodes. 
+- Even/odd parity (true if an even/odd number of inputs are True) with $n$ variables uses $O(2^n)$ nodes.
 
 # ID3
 
@@ -86,7 +86,7 @@ These can expand to many variables, and for different functions can grow with di
 
 ![[Restriction bias]]
 
-In [[Iterative Dichotomiser 3 (ID3)|ID3]] the [[Restriction bias|restriction bias]] comes from the fact that the have a [[Decision tree|decision tree]] based on a set of attributes. 
+In [[Iterative Dichotomiser 3 (ID3)|ID3]] the [[Restriction bias|restriction bias]] comes from the fact that the have a [[Decision tree|decision tree]] based on a set of attributes.
 
 For example, if you let the attributes $T = Func(A,B)$ then the [[Decision tree|decision tree]] can represent any function in $Func(A,B)$ trivially. Though this might be computationally completely infeasible in most cases!
 
@@ -113,11 +113,11 @@ The model can have [[Overfitting|overfitting]] if the tree gets too large. There
 
 ### Post-pruning decision trees
 
-Post-pruning is the process of letting the tree organically grown. Then evaluating if the branches are worth keeping or they [[Overfitting|overfit]] the data. 
+Post-pruning is the process of letting the tree organically grown. Then evaluating if the branches are worth keeping or they [[Overfitting|overfit]] the data.
 
 ![[Cost complexity pruning for decision trees (CPP)|CPP]]
 
-Due to the 
+Due to the
 
 ## [[Regression problems]]
 

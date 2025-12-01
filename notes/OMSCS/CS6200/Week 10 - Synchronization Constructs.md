@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: '[[CS6200 Graduate introduction to Operating Systems]]'
 created: 2025-03-26
-last_edited: 2025-03-26
 draft: false
+last_edited: 2025-03-26
 tags:
   - OMSCS
 type: lecture
@@ -47,7 +47,7 @@ The set of atomic instructions is different on different architectures. Some exa
 - test_and_set: Return the current value of a variable and set it to a given value.
 - read_and_increment: Return the current value of a variable and increase it by 1.
 - compare_and_swap: Return true/false comparing two values and swap them.
-Though as these are [[Atomic instruction|atomic instructions]] the hardware guarantees the operation will be completed without being interrupted. 
+Though as these are [[Atomic instruction|atomic instructions]] the hardware guarantees the operation will be completed without being interrupted.
 
 ## Test and set spinlock implementation
 
@@ -147,9 +147,9 @@ We can remove the inner while loop so it does not spin constantly but this hurts
 
 There are two main strategies here,
 - Static delay: Fixed delay based on some properties of the [[Thread|thread]] such as the [[Central processing unit (CPU)|CPU]] id.
-- Dynamic delay: Random delay in a range that increases with "perceived" contention. 
+- Dynamic delay: Random delay in a range that increases with "perceived" contention.
 
-A static delay normally multiplies the length of the critical section by some constant in hopes to space out lock access. This is simple but may cause unnecessary delay under low contention. 
+A static delay normally multiplies the length of the critical section by some constant in hopes to space out lock access. This is simple but may cause unnecessary delay under low contention.
 
 Dynamic delay normally operates more efficiently but requires to use a proxy to calculate the "perceived" contention. This is normally failed test_and_set operations which puts these systems vulnerable to variations in the critical section length causing extra delay.
 
@@ -176,7 +176,7 @@ When the lock is released the next process in the queue gets it. This has no con
 
 ## Performance comparison
 
-Within the referenced paper they compare the performance of different spinlock implementations using different numbers of processes all repeating a critical section 1 million times. Below surmises the results. 
+Within the referenced paper they compare the performance of different spinlock implementations using different numbers of processes all repeating a critical section 1 million times. Below surmises the results.
 
 ![Spin Lock Paper Fig 3](../../../images/spin_lock_paper_fig_3.png)
 
@@ -184,4 +184,4 @@ The value provided here is the real run time minus the theoretical best run time
 
 Under high load the queue structure performs the best, and as discussed previously the spin on read implementations high coherence causes massive delay.
 
-Under light load though the queue implementation is terrible due to the more complex logic to implement - the cost is not amortized over multiple threads. 
+Under light load though the queue implementation is terrible due to the more complex logic to implement - the cost is not amortized over multiple threads.

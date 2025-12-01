@@ -4,8 +4,8 @@ aliases:
   - register
 checked: false
 created: 2024-08-26
-last_edited: 2024-08-26
 draft: false
+last_edited: 2024-08-26
 tags:
   - OS
   - computer-science
@@ -16,7 +16,7 @@ type: definition
 >- **General-purpose registers (GRPs):** Used for all kinds of operations.
 >- **Special-purpose registers**: These have specific purposes for [[Process|processes]]:
 >	- **Instruction Register (IR)**: Holds the current instruction being executed.
->	- [[Program counter (PC)]]: Holds the address of the next operation to be executed. 
+>	- [[Program counter (PC)]]: Holds the address of the next operation to be executed.
 >	- [[Stack Pointer (SP)]]: Points to the top of the [[Stack (OS)|stack]].
->	- **Status register**: Contains flags that indicate the state of the CPU, such as whether an operation resulted in zero or incurred an overflow. 
+>	- **Status register**: Contains flags that indicate the state of the CPU, such as whether an operation resulted in zero or incurred an overflow.
 

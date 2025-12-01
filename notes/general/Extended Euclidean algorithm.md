@@ -3,8 +3,8 @@ aliases:
   - extended Euclidean algorithm
 checked: false
 created: 2023-10-09
-last_edited: 2023-11-11
 draft: false
+last_edited: 2023-11-11
 tags:
   - maths
 type: algorithm

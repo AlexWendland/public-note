@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6250 Computer Networks]]"
+course: '[[CS6250 Computer Networks]]'
 created: 2024-06-11
-last_edited: 2024-06-11
 draft: false
+last_edited: 2024-06-11
 tags:
   - OMSCS
 type: lecture
@@ -18,7 +18,7 @@ week: 5
 
 ### Important Readings
 
-Survey and Taxonomy of IP Address Lookup Algorithms  
+Survey and Taxonomy of IP Address Lookup Algorithms
 [https://pdfs.semanticscholar.org/71d9/018e900f99ff60653b3769160131e775873f.pdfLinks to an external site.](https://pdfs.semanticscholar.org/71d9/018e900f99ff60653b3769160131e775873f.pdf)
 
 ### Book References
@@ -104,7 +104,7 @@ Modern routing facing a lot of problems when handling the scale of the internet.
 
 **Switching limitation** Moving packets from the input to output link has some hard limitations to it as we will see with head of line blocking.
 
-**Bottlenecks about services** Providing performance guarantees at high speed such as measurements and security. 
+**Bottlenecks about services** Providing performance guarantees at high speed such as measurements and security.
 
 ## Prefix-match Lookups
 
@@ -126,7 +126,7 @@ In the early days of the [[Internet]] there were fixed length prefixes. Though t
 
 There are many problems that just the lookup process faces.
 
-1. Measurement studies on network traffic had shown a large number (in the order of hundreds of thousands - 250,000 according to a measurement study in the earlier days of the Internet) of concurrent flows of short duration. This already large number has only been increasing, and as a consequence, caching solutions will not work efficiently. 
+1. Measurement studies on network traffic had shown a large number (in the order of hundreds of thousands - 250,000 according to a measurement study in the earlier days of the Internet) of concurrent flows of short duration. This already large number has only been increasing, and as a consequence, caching solutions will not work efficiently.
 2. The important element of any lookup operation is how fast it is done (lookup speed). A large part of the cost of computation for lookup is accessing memory.
 3. An unstable routing protocol may adversely impact the update time in the table: add, delete or replace a prefix. Inefficient routing protocols increase this value up to additional milliseconds.
 4. A vital trade-off is memory usage. We can use expensive fast memory (cache in software, SRAM in hardware) or cheaper but slower memory (e.g., DRAM, SDRAM).
@@ -137,7 +137,7 @@ There are many problems that just the lookup process faces.
 
 ![[Trie]]
 
-We can use [[Subnets|subnet]] to form a [[Trie|trie]] over the alphabet of $\{0, 1\}$ with values being the [[Subnets|subnets]]. To generate the [[Trie|trie]] we build a path from the root for every address in our table and label the end node with that [[Subnets|subnet]]. 
+We can use [[Subnets|subnet]] to form a [[Trie|trie]] over the alphabet of $\{0, 1\}$ with values being the [[Subnets|subnets]]. To generate the [[Trie|trie]] we build a path from the root for every address in our table and label the end node with that [[Subnets|subnet]].
 
 > [!example] Prefix-match lookup
 > Suppose we have the following table
@@ -231,7 +231,7 @@ A simple way to do this would be to construct the destination [[Trie|trie]] then
 > Then we attach the following [[Trie|tries]] to the destination [[Trie|trie]].
 > ![Set Pruning Trie Example](../../../images/set_pruning_trie_example.png)
 > Note that for the 00\* source trie we need to include all rules that could match that prefix in particular even rules that only match the 0\*.
-> 
+>
 
 The need to match all rules that could fit with the prefix means we have to repeat the same rule in multiple branches. This leads to a memory explosion in large examples.
 
@@ -267,7 +267,7 @@ This is analogise to input lines taking a ticket to wait to be served by a given
 
 ![Take A Ticket Example](../../../images/take_a_ticket_example.png)
 
-However this algorithm has a clear problem if all the inputs want to connect to the same output. 
+However this algorithm has a clear problem if all the inputs want to connect to the same output.
 
 ![[Head of line (HOL) blocking]]
 
@@ -280,10 +280,10 @@ This uses output queuing to get around [[Head of line (HOL) blocking|HOL blockin
 ### Parallel iterative matching
 
 Here we let input lines request access for each output line they have a packet for. This goes as follows:
-1. Input lines request a route for each output lines they have a [[Packets|packet]] for. 
+1. Input lines request a route for each output lines they have a [[Packets|packet]] for.
 2. Output lines randomly select an input line to complete a transaction with.
 3. If an input line has more than one offer it randomly selects a transaction to complete.
-4. Connection happens. 
+4. Connection happens.
 
 ![Parallel Iterative Matching](../../../images/parallel_iterative_matching.png)
 
@@ -293,7 +293,7 @@ Scheduling can allow different types of packets to get different services. This 
 
 ### [[First in first out (FIFO) queue|FIFO]] with tail drop
 
-Traditional schedule approach. Each input link is a [[First in first out (FIFO) queue|FIFO]] queue where if the queue is full any new additions get dropped. 
+Traditional schedule approach. Each input link is a [[First in first out (FIFO) queue|FIFO]] queue where if the queue is full any new additions get dropped.
 
 ### Need for Quality of Service (QoS)
 
@@ -302,7 +302,7 @@ If you have some QoS guarantees such as maximum delay or a given bandwidth you e
 In the following examples you might want to make smarter routing decisions:
 - Router support for congestion.
 - Providing QoS guarantees to flows.
-- Fair sharing of links among competing flows. 
+- Fair sharing of links among competing flows.
 
 ## Round Robin
 
@@ -312,13 +312,13 @@ This is a method to control bandwidth reservations in schedulers for multiple fl
 
 If we could split [[Packets|packets]] into bits we could employ absolute fairness by switching from flow to flow delivering each [[Bit|bit]]. This is a round robin.
 
-We can not split packets up so we will simulate this by making a "round number" delivering packets based on this value assigned to each request. 
+We can not split packets up so we will simulate this by making a "round number" delivering packets based on this value assigned to each request.
 
 Let $R(t)$ be the round number at time $t$. If the router can deliver packets at $\mu$ [[Bit|bits]] a second and we have $N$ flows then
 $$
 \frac{dR}{dt} = \frac{\mu}{N}.
 $$
-For the $i$th packet in a flow of size $p(i)$ (in [[Bit|bits]]) we will assign $S(i)$ and $F(i)$ to be the start and finish round number for that packet when it arrives in a queue at time $t$. We set $S(i) = \max(R(t), F(i-1))$ and $F(i) = S(i) + p(i)$ i.e. if there are no packets waiting for that flow the start round number should be now - otherwise it should start after the last packet is sent. 
+For the $i$th packet in a flow of size $p(i)$ (in [[Bit|bits]]) we will assign $S(i)$ and $F(i)$ to be the start and finish round number for that packet when it arrives in a queue at time $t$. We set $S(i) = \max(R(t), F(i-1))$ and $F(i) = S(i) + p(i)$ i.e. if there are no packets waiting for that flow the start round number should be now - otherwise it should start after the last packet is sent.
 
 Though when do we send packets using this scheme?
 
@@ -340,7 +340,7 @@ Whilst this guarantees fairness keeping track of all the finishing time would re
 
 ### Deficit Round Robin (DRR)
 
-Whilst the bit-by-bit round robin was completely fair and ensured bandwidth and delay guarantees the time complexity made it infeasible. 
+Whilst the bit-by-bit round robin was completely fair and ensured bandwidth and delay guarantees the time complexity made it infeasible.
 
 Instead we can use round robin to given each flow some allocation to use for packets. If the next packet size is less than their current allowance we send it reducing their allowance by that size. For this we set some *quantum size* for each flow $Q_i$ (this can be the same or different for each flow) and we have a deficit counter $D(i)$ for each flow. Then we do the following procedure.
 
@@ -379,4 +379,4 @@ There is a middle ground between policing and shaping that combines the benefits
 
 ![Leaky Bucket](../../../images/leaky_bucket.png)
 
-This can take a irregular flow and regularise it. This has the benefit of having a controlled size of buffer which can offset overflow. 
+This can take a irregular flow and regularise it. This has the benefit of having a controlled size of buffer which can offset overflow.

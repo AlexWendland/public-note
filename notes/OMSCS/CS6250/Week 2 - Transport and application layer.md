@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6250 Computer Networks]]"
+course: '[[CS6250 Computer Networks]]'
 created: 2024-05-24
-last_edited: 2024-05-24
 draft: false
+last_edited: 2024-05-24
 tags:
   - OMSCS
 type: lecture
@@ -14,8 +14,8 @@ week: 2
 
 ## Important Readings
 
-CUBIC: A New TCP-Friendly High-Speed TCP Variant  
-[https://www.cs.princeton.edu/courses/archive/fall16/cos561/papers/Cubic08.pdfLinks to an external site.](https://www.cs.princeton.edu/courses/archive/fall16/cos561/papers/Cubic08.pdf)  
+CUBIC: A New TCP-Friendly High-Speed TCP Variant
+[https://www.cs.princeton.edu/courses/archive/fall16/cos561/papers/Cubic08.pdfLinks to an external site.](https://www.cs.princeton.edu/courses/archive/fall16/cos561/papers/Cubic08.pdf)
 
 ## Book References
 
@@ -25,25 +25,25 @@ Peterson Section 6.3
 
 ## Optional Readings
 
-Congestion Avoidance and Control  
-[https://ee.lbl.gov/papers/congavoid.pdfLinks to an external site.](https://ee.lbl.gov/papers/congavoid.pdf)  
+Congestion Avoidance and Control
+[https://ee.lbl.gov/papers/congavoid.pdfLinks to an external site.](https://ee.lbl.gov/papers/congavoid.pdf)
 
-A Protocol for Packet Network Intercommunication  
+A Protocol for Packet Network Intercommunication
 [https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdfLinks to an external site.](https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf)
 
-End-to-End Internet Packet Dynamics  
+End-to-End Internet Packet Dynamics
 [https://people.eecs.berkeley.edu/~sylvia/cs268-2019/papers//pktdynamics.pdfLinks to an external site.](https://people.eecs.berkeley.edu/~sylvia/cs268-2019/papers//pktdynamics.pdf)
 
-Data Center TCP (DCTCP)  
+Data Center TCP (DCTCP)
 [https://people.csail.mit.edu/alizadeh/papers/dctcp-sigcomm10.pdfLinks to an external site.](https://people.csail.mit.edu/alizadeh/papers/dctcp-sigcomm10.pdf "Link") [(Links to an external site.)](https://people.csail.mit.edu/alizadeh/papers/dctcp-sigcomm10.pdf)
 
-TIMELY: RTT-based Congestion Control for the Datacenter  
+TIMELY: RTT-based Congestion Control for the Datacenter
 [https://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p537.pdfLinks to an external site.](https://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p537.pdf "Link")
 
-Design, implementation and evaluation of congestion control for multipath TCP  
+Design, implementation and evaluation of congestion control for multipath TCP
 [https://www.usenix.org/legacy/events/nsdi11/tech/full_papers/Wischik.pdfLinks to an external site.](https://www.usenix.org/legacy/events/nsdi11/tech/full_papers/Wischik.pdf)
 
-Sizing Router Buffers  
+Sizing Router Buffers
 [https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/TR04-HPNG-060800.pdfLinks to an external site.](https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/TR04-HPNG-060800.pdf)
 
 ## [[Layer 4 Transport|Transport layer]] summary

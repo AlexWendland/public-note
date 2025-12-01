@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-07-27
-last_edited: 2024-07-27
 draft: true
+last_edited: 2024-07-27
 tags:
   - networks
   - organisation

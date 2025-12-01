@@ -3,8 +3,8 @@ aliases:
   - spurious wakeups
 checked: false
 created: 2024-09-05
-last_edited: 2024-09-05
 draft: false
+last_edited: 2024-09-05
 tags:
   - OS
 type: definition

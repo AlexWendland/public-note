@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-01-25
-last_edited: 2024-01-25
 draft: false
+last_edited: 2024-01-25
 tags:
   - maths
 type: definition

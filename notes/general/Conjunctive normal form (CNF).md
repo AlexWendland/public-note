@@ -2,8 +2,8 @@
 aliases: Conjunctive normal form, conjunctive normal form, CNF
 checked: false
 created: 2023-08-28
-last_edited: 2023-11-11
 draft: false
+last_edited: 2023-11-11
 tags:
   - maths
   - computer-sciecne

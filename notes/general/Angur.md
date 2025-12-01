@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-07-23
-last_edited: 2024-07-23
 draft: false
+last_edited: 2024-07-23
 tags:
   - networks
   - security

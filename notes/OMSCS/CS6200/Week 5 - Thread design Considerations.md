@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: '[[CS6200 Graduate introduction to Operating Systems]]'
 created: 2025-02-09
-last_edited: 2025-02-09
 draft: false
+last_edited: 2025-02-09
 tags:
   - OMSCS
 type: lecture
@@ -33,14 +33,14 @@ Key summary:
 ![thread_data_structures](../../../images/excalidraw/thread_data_structures.excalidraw.svg)
 
 In previous lecturers we spoke about a [[Process control block (PCB)]] as a single entity. However, when adding threads into the equation it is more convent to break this down into the bit.
-- The hard state that is shared by all threads - like the memory mapping, 
+- The hard state that is shared by all threads - like the memory mapping,
 - the soft state that is shared by some threads like how to handle signals and system calls, and
 - the thread specific state like its current stack and registers.
 
 As we discussed previously the threading library (which can be different for each process) controls the mapping between the user threads and the kernel threads. The kernel threads are the 'real' threads from the perspective of the CPU - these get scheduled onto the CPU. The user threads are not known by the CPU, it is the responsibility of the threading library to map these onto the kernel threads to be executed. This can be done in multiple relationships that have upsides and downsides.
 - Many user threads to one kernel threads. This was mainly used by old programming languages, whilst allowing for some parallelism if one threads is mapped onto the kernel thread and uses an I/O operation it blocks all user threads.
 - 1:1, common in modern programming languages like pthreads in c. Allows for the most parallelism but decreases portability as it demands a lot of resources from the system it is running on and increases the amount of overhead as it needs a kernel operation to switch user level threads.
-- Many to many, balance between both - allows for parallelism whilst also making optimizations to not need so many context switches. Used in programming languages like go. 
+- Many to many, balance between both - allows for parallelism whilst also making optimizations to not need so many context switches. Used in programming languages like go.
 
 The process control block go broken down into small components to increase:
 - Scalability,
@@ -69,7 +69,7 @@ This OS implements Light Weight Process as laid out in [[Week 5 - Beyond Multipr
 ![User Level Thread Data](../../../images/user_level_thread_data.png)
 
 Two key points:
-- Threads point to their ID within a table of pointers - this enables that table to contain metadata about the thread and stops it pointing to corrupt memory. 
+- Threads point to their ID within a table of pointers - this enables that table to contain metadata about the thread and stops it pointing to corrupt memory.
 - The stack for each thread can grow beyond the bounds of the initial allocated stack size. If this happens it would corrupt another thread but it would not be known until that thread ran. To mitigate this they implement red zones which if edited will throw a seg fault.
 
 ### Kernel level structures
@@ -79,7 +79,7 @@ Two key points:
 Key notes:
 - Resource usage is tracked per LWP this means to get the resource usage for a kernel-level thread, we need to traverse the linked list of LWP.
 - The kernel-level thread always has to be loaded in memory for access however the LWP does not. This allows for larger LWP support with a lower memory foot print.
-- 
+-
 
 ![Sunos Fig 2](../../../images/SunOs_fig_2.png)
 
@@ -97,7 +97,7 @@ Notes:
 ### Multiple CPU 'fun'
 
 There are situations where actions on one CPU effect another, such as:
-- With 3 threads $T_3 > T_2 > T_1$ and 2 CPUs. If $T_2$ holds a mutex $T_3$ needs then $T_2$ and $T_1$ are scheduled. When $T_2$ releases the mutex it needs to signal to $T_1$ to run the threading library to switch $T_1$ for $T_3$. This is called preempting $T_1$. 
+- With 3 threads $T_3 > T_2 > T_1$ and 2 CPUs. If $T_2$ holds a mutex $T_3$ needs then $T_2$ and $T_1$ are scheduled. When $T_2$ releases the mutex it needs to signal to $T_1$ to run the threading library to switch $T_1$ for $T_3$. This is called preempting $T_1$.
 	- This is enabled by $T_2$ signaling $T_1$.
 - In the case where 2 threads are running on two CPU's $T_1$ and $T_4$ (see picture) it may be the case where $T_4$ needs a mutex $T_1$ is holding. If the critical section of $T_1$ is short it may be faster for $T_4$ to stay loaded on the CPU than to context switch out. This case is called an adaptive mutex.
 
@@ -120,7 +120,7 @@ Creation of threads takes a while so instead of destroying them it is efficient 
 - The OS defines a handler table going from the interrupt to the address of the handling code.
 - When the interrupt is given if it is NOT masked then the current thread's execution counter is moved to the handling code.
 - This is all defined in the OS and can not be remapped by the process.
-- Interrupts are always asynchronous. 
+- Interrupts are always asynchronous.
 
 #### Signals
 
@@ -129,7 +129,7 @@ Creation of threads takes a while so instead of destroying them it is efficient 
 - The process can change the address of some of these handlers.
 - When the signal is given if it is NOT masked then the current thread's execution counter is moved to the handling code.
 - Signals are defined by the OS.
-- Signals are either synchronous or asynchronous. 
+- Signals are either synchronous or asynchronous.
 	- Synchronous: Segmenation fault, dividing by 0, or sigkill sent from one thread to another.
 	- Asynchronous: Sigkill from outside or sigalarm.
 
@@ -145,7 +145,7 @@ Interupt masks are per CPU. If a mask disables the interrupt, the hardware inter
 
 On a multi-core system the interrupt is handled by whichever CPU has that interrupt unmasked. It is common practice to have a single core unmask the interrupts and be the main handler. This avoids overheads and instability on the other cores.
 
-Signal masks are per execution context. If the mask disables a signal, kernal sees the mask and will not interrupt the corresponding thread. 
+Signal masks are per execution context. If the mask disables a signal, kernal sees the mask and will not interrupt the corresponding thread.
 
 There are two types of signals:
 - One-shot signals: If multiple signals are queued it is only guaranteed to run the handler at least once. Also user specific handlers must be re-enabled after execution otherwise we default back to the OS's handler.
@@ -171,7 +171,7 @@ If we use a new thread instead of blocking signals whilst in the critical sectio
 - It adds about 40 instructions per interrupt, and
 - It saves about 12 instructions per mutex opeation.
 
->[!note] Optimize for the common case 
+>[!note] Optimize for the common case
 > As there are fewer interrupts than mutex operations this causes a net saving.
 
 ### User vs kernel masks
@@ -180,7 +180,7 @@ Both the kernel level thread and the user level thread have signal masks. For th
 
 ![Signal Handling User Kernel](../../../images/signal_handling_user_kernel.png)
 
-The threading library loads its own code into the signal handler for a particular signal. Then there are multiple cases on what should happen. 
+The threading library loads its own code into the signal handler for a particular signal. Then there are multiple cases on what should happen.
 - Case 1: Both user and kernel threads have mask set to 1, threading library lets the user level thread handle the signal.
 - Case 2: Kernel thread has the mask set to 1, but the current executing thread has it set to 0. However there is a non-executing thread with the handler set to 1 - so we context switch.
 - Case 3: Kernel thread has the mask set to 1, but the current executing thread has it set to 0. However there is an executing thread with the handler set to 1 - so this thread passes the signal onto the kernel level thread executing that user level thread.

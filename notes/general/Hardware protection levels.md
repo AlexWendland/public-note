@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2025-04-12
-last_edited: 2025-04-12
 draft: false
+last_edited: 2025-04-12
 tags:
   - OS
 type: definition
@@ -16,13 +16,13 @@ type: definition
 >- Ring 1 & 2:
 >	- Intermediate privilege levels.
 >	- Rarely used in modern operating systems.
->	- Intended to be used by drivers or services that existed between the user and the kernel. 
+>	- Intended to be used by drivers or services that existed between the user and the kernel.
 >- Ring 3:
 >	- Lowest privilege level.
 >	- Used by user-mode applications.
 >	- Cannot directly access hardware.
 >
-> When using a bare-metal [[Virtual machine monitor (VMM)|hypervisor]] this introduces another set of distinctions. Root or non-root applications (so in total there are 8 levels). 
+> When using a bare-metal [[Virtual machine monitor (VMM)|hypervisor]] this introduces another set of distinctions. Root or non-root applications (so in total there are 8 levels).
 > - Root mode:
 > 	- Used by the hypervisor.
 > 	- Can control virtual machines and intercept privileged instructions.

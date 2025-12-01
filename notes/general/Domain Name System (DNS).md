@@ -8,8 +8,8 @@ aliases:
   - LDNS
 checked: false
 created: 2024-05-23
-last_edited: 2024-05-23
 draft: false
+last_edited: 2024-05-23
 tags:
   - networks
 type: definition
@@ -20,7 +20,7 @@ type: definition
 >- **Root DNS servers**: There are 13 mainly located in North America which are a network of replicated servers.
 >- **Top level domain (TLD) server**: These are responsible for top level domains such as .com, .org, ect.
 >- **Authoritative servers**: An organisations DNS server that control their domain.
->- **Local DNS (LDNS) servers**: This can be owned my users or [[Internet Service Provider (ISP)|ISPs]] and act as a proxy to the root servers. 
+>- **Local DNS (LDNS) servers**: This can be owned my users or [[Internet Service Provider (ISP)|ISPs]] and act as a proxy to the root servers.
 >![Dns Hierarchy](../../images/dns_hierarchy.png)
 >When querying DNS servers requests can either be **iterative** meaning that the host that sends them keeps getting back another location to go to or **recursive** which means the host requested for the information goes directly to the next server.
 >An example of a typical request can be seen below.

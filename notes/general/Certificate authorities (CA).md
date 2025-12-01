@@ -5,9 +5,9 @@ aliases:
   - CA
 checked: false
 created: 2024-07-22
-last_edited: 2024-07-22
 draft: true
-tags: 
+last_edited: 2024-07-22
+tags: []
 type: definition
 ---
 >[!tldr] Certificate authorities (CA)

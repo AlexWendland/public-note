@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-05-23
-last_edited: 2024-05-23
 draft: false
+last_edited: 2024-05-23
 tags:
   - networks
 type: definition
@@ -18,5 +18,5 @@ type: definition
 >
 >Disadvantages
 >- Security challenges as no central authority is dictating who is allowed into the network.
->- Can not guarantee data integrity of assets on the network. 
+>- Can not guarantee data integrity of assets on the network.
 >- Hard to manage and monitor as there is no central place collecting logs.

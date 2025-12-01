@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-05-28
-last_edited: 2024-05-28
 draft: false
+last_edited: 2024-05-28
 tags:
   - networks
 type: explainer
@@ -12,7 +12,7 @@ type: explainer
 
 Suppose [[Host (networks)|host]] A is transmitting data to [[Host (networks)|host]] B. When this starts up [[Host (networks)|host]] B will reserve some amount of memory to buffer unprocessed packages. Lets say it can fit `RcvBuffer` bytes. Then it keeps track of `LastByteRead` and `LastByteRecieved`.
 
-When returning an acknowledgement message to [[Host (networks)|host]] A for a [[Segment|segment]] it populates the window field with `RcvBuffer - [LastByteRecieved - LastByteRead]`. This informs [[Host (networks)|host]] A how much buffer [[Host (networks)|host]] B has left. 
+When returning an acknowledgement message to [[Host (networks)|host]] A for a [[Segment|segment]] it populates the window field with `RcvBuffer - [LastByteRecieved - LastByteRead]`. This informs [[Host (networks)|host]] A how much buffer [[Host (networks)|host]] B has left.
 
 [[Host (networks)|Host]] A will use this as one input to its [[Transmission control in TCP|Transmission control]].
 

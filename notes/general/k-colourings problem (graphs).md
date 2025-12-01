@@ -3,8 +3,8 @@ aliases:
   - k-vertex-colouring problem
 checked: false
 created: 2023-11-02
-last_edited: 2023-11-16
 draft: false
+last_edited: 2023-11-16
 tags:
   - programming
 type: problem

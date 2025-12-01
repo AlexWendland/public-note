@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS7642 Reinforcement Learning]]"
+course: '[[CS7642 Reinforcement Learning]]'
 created: 2025-05-14
-last_edited: 2025-05-14
 draft: false
+last_edited: 2025-05-14
 tags:
   - OMSCS
 type: lecture
@@ -22,7 +22,7 @@ Using the function $p$ we can calculate some other probabilities.
 
 **State transition probability**: When in state $s_t$ and you take the action $a_t$ the probability of ending up in $s_{t+1}$:
 $$
-t(s_t,a_t,s_{t+1}) = \sum_{r \in R} p(s_{t+1}, r \vert s_t, a_t) 
+t(s_t,a_t,s_{t+1}) = \sum_{r \in R} p(s_{t+1}, r \vert s_t, a_t)
 $$
 **Expected state-action reward**: Given you are in state $s_t$ and take action $a_t$ what is your expected reward:
 $$

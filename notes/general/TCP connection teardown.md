@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-05-27
-last_edited: 2024-05-27
 draft: false
+last_edited: 2024-05-27
 tags:
   - networks
 type: definition
@@ -13,4 +13,4 @@ type: definition
 > - The [[Client|client]] sends an empty finish message with the FIN [[Bit|bit]] set to 1.
 > - The [[Server|server]] sends an acknowledgement message for that closing message.
 > - After the [[Server|server]] has closed off the connection it sets an empty finish message with the FIN [[Bit|bit]] set to 1.
-> - Lastly the [[Client|client]] sends an empty acknowledgement message for that finish message. This is sent again after short delay to increase the chance that is received. 
+> - Lastly the [[Client|client]] sends an empty acknowledgement message for that finish message. This is sent again after short delay to increase the chance that is received.

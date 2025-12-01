@@ -1,15 +1,15 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-02-24
-last_edited: 2024-02-24
 draft: false
+last_edited: 2024-02-24
 tags:
   - programming
   - machine-learning
 type: algorithm
 ---
-# Random restart hill climbing 
+# Random restart hill climbing
 
 Suppose we have a [[Optimisation problem|optimisation problem]] where $A$ has some sense of neighbourhood $N(a)$ for each point $a \in A$.
 
@@ -28,4 +28,4 @@ The run time can vary, however if we use [[Memoization]] we will try to save on 
 
 ## Correctness
 
-This has a higher chance of finding a global optimum but no guarantee. 
+This has a higher chance of finding a global optimum but no guarantee.

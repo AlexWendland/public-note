@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6250 Computer Networks]]"
+course: '[[CS6250 Computer Networks]]'
 created: 2024-06-08
-last_edited: 2024-06-08
 draft: false
+last_edited: 2024-06-08
 tags:
   - OMSCS
 type: lecture
@@ -18,44 +18,44 @@ week: 4
 
 ### Important Readings
 
-Interdomain Internet Routing  
-[https://web.mit.edu/6.829/www/currentsemester/papers/AS-bgp-notes.pdfLinks to an external site.](https://web.mit.edu/6.829/www/currentsemester/papers/AS-bgp-notes.pdf)  
+Interdomain Internet Routing
+[https://web.mit.edu/6.829/www/currentsemester/papers/AS-bgp-notes.pdfLinks to an external site.](https://web.mit.edu/6.829/www/currentsemester/papers/AS-bgp-notes.pdf)
 
-BGP routing policies in ISP networks  
+BGP routing policies in ISP networks
 [https://www.cs.princeton.edu/~jrex/papers/policies.pdfLinks to an external site.](https://www.cs.princeton.edu/~jrex/papers/policies.pdf)
 
-On the importance of Internet eXchange Points for today’s Internet ecosystem  
+On the importance of Internet eXchange Points for today’s Internet ecosystem
 [https://cryptome.wikileaks.org/2013/07/ixp-importance.pdfLinks to an external site.](https://cryptome.wikileaks.org/2013/07/ixp-importance.pdf)
 
-Peering at Peerings: On the Role of IXP Route Servers  
-[https://people.csail.mit.edu/richterp/imc238-richterA.pdfLinks to an external site.](https://people.csail.mit.edu/richterp/imc238-richterA.pdf "Link")  
+Peering at Peerings: On the Role of IXP Route Servers
+[https://people.csail.mit.edu/richterp/imc238-richterA.pdfLinks to an external site.](https://people.csail.mit.edu/richterp/imc238-richterA.pdf "Link")
 
 ### Book References
 
 Kurose-Ross
 
-**6th Edition**: Section 1.3.3 (A Network of Networks), Section 4.6.3 (Inter-AS Routing: BGP)  
+**6th Edition**: Section 1.3.3 (A Network of Networks), Section 4.6.3 (Inter-AS Routing: BGP)
 
 **7th Edition**: Section 1.3.3 (A Network of Networks), Section 5.4.1 (The Role of BGP)
 
 ### Optional Readings
 
-Investigating Interdomain Routing Policies in the Wild  
+Investigating Interdomain Routing Policies in the Wild
 [https://people.cs.umass.edu/~phillipa/papers/AnwarIMC15.pdfLinks to an external site.](https://people.cs.umass.edu/~phillipa/papers/AnwarIMC15.pdf)
 
-BGP Communities: Even more Worms in the Routing Can  
+BGP Communities: Even more Worms in the Routing Can
 [https://people.mpi-inf.mpg.de/~fstreibelt/preprint/communities-imc2018.pdfLinks to an external site.](https://people.mpi-inf.mpg.de/~fstreibelt/preprint/communities-imc2018.pdf)
 
-On the scalability of BGP: the roles of topology growth and update rate-limiting  
+On the scalability of BGP: the roles of topology growth and update rate-limiting
 [https://www.cc.gatech.edu/home/dovrolis/Papers/bgp-scale-conext08.pdfLinks to an external site.](https://www.cc.gatech.edu/home/dovrolis/Papers/bgp-scale-conext08.pdf)
 
-O Peer, Where Art Thou? Uncovering Remote Peering Interconnections at IXPs  
+O Peer, Where Art Thou? Uncovering Remote Peering Interconnections at IXPs
 [https://www.inspire.edu.gr/wp-content/pdfs/uncovering_remote_peering_interconnections_v1.pdfLinks to an external site.](https://www.inspire.edu.gr/wp-content/pdfs/uncovering_remote_peering_interconnections_v1.pdf)
 
-Detecting BGP Configuration Faults with Static Analysis  
+Detecting BGP Configuration Faults with Static Analysis
 [https://www.usenix.org/legacy/events/nsdi05/tech/feamster/feamster.pdfLinks to an external site.](https://www.usenix.org/legacy/events/nsdi05/tech/feamster/feamster.pdf)
 
-##  Ecology of the internet
+## Ecology of the internet
 
 The internet has 3 major players:
 
@@ -77,11 +77,11 @@ Therefore two types of relationships form between [[Internet Service Provider (I
 - **Peering relationships**: If two providers see [[Host (networks)|hosts]] exchange traffic between there networks in roughly equal quantities they may agree to share traffic directly at no cost between the [[Internet Service Provider (ISP)|ISPs]].
 - **Customer-Provider relationships**: If one [[Internet Service Provider (ISP)|ISP]] has considerably more [[Host (networks)|hosts]] receiving traffic then they can sell access to these hosts to other [[Internet Service Provider (ISP)|ISPs]]. Here the larger [[Internet Service Provider (ISP)|ISP]] becomes the provider to the smaller customer [[Internet Service Provider (ISP)|ISP]] and picks up a fee.
 
-This has been the model since the beginning of the internet and was one of the main drivers for the hierarchical nature of [[Internet Service Provider (ISP)|ISPs]] and the internet as a whole. However [[Internet Exchange Points (IXPs)|IXPs]] are changing this. [[Internet Exchange Points (IXPs)|IXPs]] mean that [[Internet Service Provider (ISP)|ISPs]] don't need to go through eachother and instead can trade traffic directly. This is making the internet more flat. This is in part driven by [[Content delivery network (CDN)|CDNs]] using [[Internet Exchange Points (IXPs)|IXPs]] to have the lowest latency connections to their consumers.  
+This has been the model since the beginning of the internet and was one of the main drivers for the hierarchical nature of [[Internet Service Provider (ISP)|ISPs]] and the internet as a whole. However [[Internet Exchange Points (IXPs)|IXPs]] are changing this. [[Internet Exchange Points (IXPs)|IXPs]] mean that [[Internet Service Provider (ISP)|ISPs]] don't need to go through eachother and instead can trade traffic directly. This is making the internet more flat. This is in part driven by [[Content delivery network (CDN)|CDNs]] using [[Internet Exchange Points (IXPs)|IXPs]] to have the lowest latency connections to their consumers.
 
 ## Address exchange
 
-First consider which addresses [[Autonomous system (AS)|AS]] want to exchange with other internet entities. 
+First consider which addresses [[Autonomous system (AS)|AS]] want to exchange with other internet entities.
 
 ### Exporting routes
 
@@ -108,7 +108,7 @@ The goals of [[Boarder gateway protocol (BGP)|BGP]] are:
 - **Scalability**: How do you maintain a routing table when the size of the internet is expanding.
 - **Expressing route policies**: How do we allow for [[Autonomous system (AS)|AS]] to control which routes to use and to broadcast.
 - **Cooperation**: To let [[Autonomous system (AS)|AS]] to make local decisions with the information they are provided.
-- **Security**: Whist not an initial design goal [[Boarder gateway protocol (BGP)|BGP]] did not include security as the internet has expanded it has become more important. This needs to protect [[Autonomous system (AS)|AS]] from malicious attacks, misconfiguration, and faults. This includes different protocols, registries for the domains an [[Autonomous system (AS)|AS]] owns, private keys for [[Autonomous system (AS)|AS]]. 
+- **Security**: Whist not an initial design goal [[Boarder gateway protocol (BGP)|BGP]] did not include security as the internet has expanded it has become more important. This needs to protect [[Autonomous system (AS)|AS]] from malicious attacks, misconfiguration, and faults. This includes different protocols, registries for the domains an [[Autonomous system (AS)|AS]] owns, private keys for [[Autonomous system (AS)|AS]].
 
 ## The [[Boarder gateway protocol (BGP)|BGP]] [[Protocol (networks)|protocol]]
 
@@ -117,7 +117,7 @@ Two [[Router|routers]] connected over [[Boarder gateway protocol (BGP)|BGP]] are
 - eBGP: For communicating with other [[Autonomous system (AS)|AS]].
 
 There are three important messages [[Boarder gateway protocol (BGP)|BGP]] has.
-1. The **OPEN** message to start the conversation. 
+1. The **OPEN** message to start the conversation.
 2. The  **UPDATE** message that contains a change of available routes. This has two forms:
 	1. *Announcements* about new routes or updates to old routes.
 	2. *Withdrawls* messages about routes no longer available.
@@ -127,7 +127,7 @@ In the [[Boarder gateway protocol (BGP)|BGP]] the [[Router|routers]] exchange [[
 
 Messages passed between [[Autonomous system (AS)|AS]] have some special properties, two of which are:
 - **ASPATH**: A list of [[Autonomous system number (ASN)|ASN]] for each [[Autonomous system (AS)|AS]] the route has passed through. This is helpful to avoid loops.
-- **NEXTHOP**: The [[Internet Protocol (IP)|IP address]] of the next router in the hop. 
+- **NEXTHOP**: The [[Internet Protocol (IP)|IP address]] of the next router in the hop.
 
 ## The router process
 
@@ -171,13 +171,13 @@ This reflects the preferences we discussed above, customer then peer then provid
 
 If an [[Autonomous system (AS)|AS]] has two routers connecting to a neighbours [[Autonomous system (AS)|AS]] which are offering some of the same routes. Knowing the forwarding tables of these routers may give a preference for how a neighbouring [[Autonomous system (AS)|AS]] forwards traffic through your network. This is controlled by setting a MED value (for example as the [[Interior gateway protocol (IGP)|IGP]] cost to forward that traffic).
 
-## Challenges with [[Boarder gateway protocol (BGP)|BGP]]: Misconfiguration and scalability 
+## Challenges with [[Boarder gateway protocol (BGP)|BGP]]: Misconfiguration and scalability
 
 Routers are vulnerable to misconfiguration and faults. This can lead to an excessively large number of updates leading to further faults from overloading the network. This can be mediated by limiting the size of the routing table.
 
 To limit the size of the routing table it can filter out routes that are too specific. This encourages [[Route summarization|route summarization]]. The act of [[Route summarization|route summarization]] protects the whole network from getting overloaded and help with scalability. Small [[Autonomous system (AS)|AS]] sometimes just use a default gateway where they redirect all traffic without further knowledge.
 
-If a route is repeatedly updated due to some route instability this can risk messages getting sent in error or a patchy connection. Routers can implement **flap damping** where it tracks the number of updates to a prefix. If this goes over a certain threshold in a time interval it will suppress that route until it stabilises. 
+If a route is repeatedly updated due to some route instability this can risk messages getting sent in error or a patchy connection. Routers can implement **flap damping** where it tracks the number of updates to a prefix. If this goes over a certain threshold in a time interval it will suppress that route until it stabilises.
 
 Routers can be strategic about what addresses it does this too and how sensitive it is. If it has addresses it needs to have high availability for it can have a much higher threshold whereas other addresses it can be much lower.
 
@@ -207,7 +207,7 @@ An [[Autonomous system (AS)|AS]] must have an [[Autonomous system number (ASN)|A
 - A monthly fee for renting a port - this cost normally scales based on the speed/capacity of that [[Port|port]].
 - Sometimes there is a yearly subscription fee.
 
-Once connected to the [[Internet Exchange Points (IXPs)|IXP]] there is normally no cost to publicly peer there. That means getting access to all the other networks also publicly peering there. 
+Once connected to the [[Internet Exchange Points (IXPs)|IXP]] there is normally no cost to publicly peer there. That means getting access to all the other networks also publicly peering there.
 
 Normally the terms of accessing do not forbid reselling of access to the [[Internet Exchange Points (IXPs)|IXP]]. Therefore some providers link with an [[Internet Exchange Points (IXPs)|IXP]] the resale access to that [[Internet Exchange Points (IXPs)|IXP]] if it is too hard for another [[Autonomous system (AS)|AS]] to collocate a router there. This is called remote peering and is an active area of study.
 

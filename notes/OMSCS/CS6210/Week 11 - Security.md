@@ -1,5 +1,5 @@
 ---
-aliases: null
+aliases:
 checked: false
 course: '[[CS6210 Advanced Operating Systems.md]]'
 created: '2025-12-01'

@@ -4,10 +4,10 @@ aliases:
   - divide and conquer algorithm
 checked: false
 created: 2023-09-05
-last_edited: 2023-11-11
 draft: true
+last_edited: 2023-11-11
 tags:
   - programming
-type: null
+type:
 ---
 # Divide and conquer algorithms

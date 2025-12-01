@@ -1,9 +1,9 @@
 ---
-aliases: 
+aliases:
 checked: false
 created: 2024-01-11
-last_edited: 2024-01-11
 draft: true
+last_edited: 2024-01-11
 tags:
   - machine-learning
 type: definition

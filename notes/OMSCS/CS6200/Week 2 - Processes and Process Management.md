@@ -1,10 +1,10 @@
 ---
-aliases: 
+aliases:
 checked: false
-course: "[[CS6200 Graduate introduction to Operating Systems]]"
+course: '[[CS6200 Graduate introduction to Operating Systems]]'
 created: 2024-08-26
-last_edited: 2024-08-26
 draft: false
+last_edited: 2024-08-26
 tags:
   - OMSCS
 type: lecture
@@ -77,7 +77,7 @@ During a processes time it goes through multiple different stages.
 - Ready: This is a [[Process|process]] that has something to do but is not being ran on the [[Central processing unit (CPU)|CPU]] yet.
 - Waiting: If the process has to wait on some event from the network or I/O then it will be moved into a waiting stating for that to finish.
 - Running: It will have been [[Context switch (CPU)|context switched]] onto and the [[Process control block (PCB)|PCB]] loaded into the [[CPU register]].
-- Terminated: Once a process has exited or error-ed it moves state to terminated to be cleaned up. 
+- Terminated: Once a process has exited or error-ed it moves state to terminated to be cleaned up.
 
 ![Process Life Cycle](../../../images/process_life_cycle.png)
 

@@ -6,8 +6,8 @@ aliases:
   - maximum a posteriori probability
 checked: false
 created: 2024-02-20
-last_edited: 2024-02-20
 draft: false
+last_edited: 2024-02-20
 tags:
   - statistics
   - machine-learning
