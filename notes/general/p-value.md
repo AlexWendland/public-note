@@ -4,6 +4,7 @@ checked: false
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
+name: p-value
 tags:
   - statistics
 type: definition

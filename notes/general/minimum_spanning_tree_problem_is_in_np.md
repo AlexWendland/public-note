@@ -1,0 +1,22 @@
+---
+aliases:
+checked: false
+created: 2023-11-02
+draft: false
+last_edited: 2023-11-13
+name: Minimum Spanning Tree problem is in NP
+tags:
+  - maths
+type: lemma
+---
+# Statement
+
+> [!important] Lemma
+> [Minimum Spanning Tree problem (MST)](minimum_spanning_tree_problem_(mst).md) is in [NP](nondeterministic_polynomial_time_(np).md)
+
+# Proof
+
+The problem is in the correct form for a [search problem](search_problems.md). It outputs a [MST](minimum_spanning_tree_problem_(mst).md) always as one always exists from the definition.
+
+To verify a solution as we can first check it is a spanning tree by running [BFS](breath-first_search_(bfs).md) to verify it is connected and checking the size of the edge set is $\vert V \vert - 1$ to check it is a tree. To check it is minimal we can find a solution in polynomial time using [Kruskal's algorithm](kruskal's_algorithm.md). We can just check it's weight vs the weight of the proposed solution to check they match.
+

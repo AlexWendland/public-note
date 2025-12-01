@@ -1,0 +1,15 @@
+---
+aliases:
+checked: false
+created: 2023-11-15
+draft: false
+last_edited: 2023-11-15
+name: Rudrata cycle
+tags:
+  - maths
+  - graph-theory
+type: definition
+---
+>[!tldr] Rudrata cycle
+>Given a [graph](graph.md) ([undirected graph](graph.md) or [directed graph](directed_graph.md)) $G = (V,E)$  a [cycle](cycle_(graph).md) $c$ is a *Rudrata cycle* if it visits every vertex exactly once.
+

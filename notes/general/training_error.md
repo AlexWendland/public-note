@@ -1,0 +1,17 @@
+---
+aliases:
+  - training error
+checked: false
+created: 2024-02-16
+draft: false
+last_edited: 2024-02-16
+name: Training error
+tags:
+  - machine-learning
+type: definition
+---
+>[!tldr] Training error
+>Suppose we are in the [modelling framework](modelling_framework.md) with some [training data](training_data.md) $T$ and [hypothesis space](modelling_paradigm.md) $H$. For some candidate hypothesis $h \in H$ the *training error*
+>$$TrainingError(h,T) = \frac{\vert \{ (a,b) \in T \vert h(a) \neq b \}\vert}{\vert T \vert}.$$
+
+

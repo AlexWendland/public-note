@@ -1,0 +1,19 @@
+---
+aliases:
+  - complement graph
+checked: false
+created: 2023-11-03
+draft: false
+last_edited: 2023-11-11
+name: Complement graph
+tags:
+  - maths
+  - graph-theory
+type: definition
+---
+>[!tldr] Complement graph
+>Given an [undirected graph](graph.md) or [directed graph](directed_graph.md) $G = (V,E)$. We define the *complement graph*
+>$$G^C = (V, \{(u,v) \in V \times V \ \vert \ (u,v) \not \in E\}).$$
+
+
+
