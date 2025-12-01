@@ -28,7 +28,7 @@ for every $t \in T$.
 
 Geometrically $w$ and $b$ represent a [[Hyperplane|hyperplane]] defined by $w$ being the [[Tangent vector|tangent vector]] and $bw$ being a point on the [[Hyperplane|hyperplane]].
 
-![SVM example](../../../images/excalidraw/SVM example.excalidraw.svg)
+![SVM example](../../../images/excalidraw/SVM_example.excalidraw.svg)
 
 >[!Note] Direction of $w$
 >When defining a [[Hyperplane|hyperplane]] you always have a choice of [[Tangent vector|tangent vector]] both in scaler (we will come back to that later) and direction. The direction of $w$ dictates which side of the [[Hyperplane|hyperplane]] is "positive",

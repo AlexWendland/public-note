@@ -16,7 +16,7 @@ week: 11
 
 Whilst an [[Input output (IO)|IO]] device can come in many forms we model them similarly.
 
-![Io Device](../../../images/IO device.png)
+![Io Device](../../../images/IO_device.png)
 
 These have 3 registers:
 - Status: Some indicate the state of the device.

@@ -56,7 +56,7 @@ The register size is important as it limits the size of the [[Virtual memory|vir
 
 Page sizes are determined by the [[Operating system (OS)|operating system]] but commonly are 4kB, 2MB (large), and 1GB (huge).
 
-![Page tables](../../../images/excalidraw/Page tables.excalidraw.svg)
+![Page tables](../../../images/excalidraw/Page_tables.excalidraw.svg)
 
 >[!example] 32-bit architecture with 4kB page size
 >As a [[Byte|byte]] is the smallest addressable size, lets use this as our unit for the below calculations.
