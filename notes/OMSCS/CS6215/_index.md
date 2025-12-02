@@ -12,6 +12,8 @@ tags:
   - programming
 term: fall
 title: CS6215 Introduction to Graduate Algorithms
+course_code: CS6215
+course_name: Introduction to Graduate Algorithms
 type: course
 year: '2023'
 ---

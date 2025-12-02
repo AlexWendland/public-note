@@ -1,7 +1,8 @@
 ---
 aliases:
 checked: false
-course: CS6210 Advanced Operating Systems
+course_code: CS6210
+course_name: Advanced Operating Systems
 created: '2025-11-30'
 draft: true
 last_edited: '2025-11-30'

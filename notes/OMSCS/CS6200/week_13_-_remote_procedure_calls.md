@@ -1,7 +1,8 @@
 ---
 aliases:
 checked: false
-course: CS6200 Graduate introduction to Operating Systems
+course_code: CS6200
+course_name: Graduate introduction to Operating Systems
 created: 2025-04-12
 draft: false
 last_edited: 2025-04-12

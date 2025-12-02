@@ -1,7 +1,8 @@
 ---
 aliases:
 checked: false
-course: CS7642 Reinforcement Learning
+course_code: CS7642
+course_name: Reinforcement Learning
 created: 2025-05-22
 draft: true
 last_edited: 2025-05-22

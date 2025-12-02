@@ -9,8 +9,8 @@ import questionary
 from rich.console import Console
 from rich.table import Table
 
-from note_helper.file_admin import get_last_edited
 from note_helper.models import MarkdownSection, NoteFile
+from note_helper.read_note import read_note_file
 from note_helper.write_note import write_note_file
 
 console = Console()
@@ -49,29 +49,40 @@ def discover_courses(repo_root: Path) -> list[CourseInfo]:
 
     courses = []
 
-    # Find all course index files (e.g., "CS6210 Advanced Operating Systems.md")
-    for index_file in omscs_dir.glob("*.md"):
-        # Extract course code and name from filename
-        filename = index_file.stem  # Remove .md extension
-        match = re.match(r"(CS\d{4})\s+(.+)", filename)
-        if not match:
-            continue
-
-        code, name = match.groups()
-        course_dir = omscs_dir / code
-
-        # Skip if course directory doesn't exist
+    # Find all course directories (CS6210, CS6215, etc.)
+    for course_dir in sorted(omscs_dir.glob("CS*")):
         if not course_dir.is_dir():
             continue
 
-        # Get the most recent file edit in the course directory
-        last_edited = None
-        for file in course_dir.glob("*.md"):
-            file_last_edited = get_last_edited(str(file), repo_path=str(repo_root))
-            if file_last_edited and (not last_edited or file_last_edited > last_edited):
-                last_edited = file_last_edited
+        # Look for _index.md in the course directory
+        index_file = course_dir / "_index.md"
+        if not index_file.exists():
+            console.print(f"[yellow]Warning: No _index.md found in {course_dir}[/yellow]")
+            continue
 
-        courses.append(CourseInfo(code, name, course_dir, index_file, last_edited))
+        # Read the _index.md file to get course metadata
+        try:
+            note = read_note_file(str(index_file))
+            code = note.metadata.get("course_code")
+            name = note.metadata.get("course_name")
+
+            if not code or not name:
+                console.print(f"[yellow]Warning: Missing course_code or course_name in {index_file}[/yellow]")
+                continue
+
+            # Get last_edited from the index file metadata
+            last_edited = note.metadata.get("last_edited")
+            # Convert string date to date object if needed
+            if isinstance(last_edited, str):
+                try:
+                    last_edited = datetime.strptime(last_edited, "%Y-%m-%d").date()
+                except (ValueError, TypeError):
+                    last_edited = None
+
+            courses.append(CourseInfo(code, name, course_dir, index_file, last_edited))
+        except Exception as e:
+            console.print(f"[red]Error reading {index_file}: {e}[/red]")
+            continue
 
     # Sort by last edited date (most recent first), then by code
     courses.sort(key=lambda c: (c.last_edited is None, c.last_edited or date.min, c.code), reverse=True)
@@ -109,7 +120,8 @@ def create_lecture_file(name: str, week: str, course: CourseInfo) -> Path:
     metadata = {
         "aliases": None,
         "checked": False,
-        "course": f"[[{course.file}]]",
+        "course_code": course.code,
+        "course_name": course.name,
         "created": today,
         "last_edited": today,
         "draft": True,

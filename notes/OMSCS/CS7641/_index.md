@@ -12,6 +12,8 @@ tags:
   - programming
 term: spring
 title: CS7641 Machine Learning
+course_code: CS7641
+course_name: Machine Learning
 type: course
 year: '2024'
 ---

@@ -7,10 +7,11 @@ draft: false
 last_edited: 2023-12-03
 tags:
   - OMSCS
-  - maths
   - programming
 term: fall
 title: CS6200 Graduate introduction to Operating Systems
+course_code: CS6200
+course_name: Graduate introduction to Operating Systems
 type: course
 year: '2023'
 ---

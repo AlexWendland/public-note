@@ -7,10 +7,11 @@ draft: false
 last_edited: 2023-12-03
 tags:
   - OMSCS
-  - maths
   - programming
 term: fall
 title: CS6210 Advanced Operating Systems
+course_code: CS6210
+course_name: Advanced Operating Systems
 type: course
 year: '2023'
 ---

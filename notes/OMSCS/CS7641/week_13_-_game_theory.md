@@ -1,7 +1,8 @@
 ---
 aliases:
 checked: false
-course: CS6215 Introduction to Graduate Algorithms
+course_code: CS7641
+course_name: Machine Learning
 created: 2024-04-06
 draft: false
 last_edited: 2024-04-06

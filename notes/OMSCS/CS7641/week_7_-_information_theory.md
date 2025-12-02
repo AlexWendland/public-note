@@ -1,7 +1,8 @@
 ---
 aliases:
 checked: false
-course: CS7641 Machine Learning
+course_code: CS7641
+course_name: Machine Learning
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24

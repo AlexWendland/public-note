@@ -8,10 +8,11 @@ draft: false
 last_edited: 2024-01-10
 tags:
   - OMSCS
-  - maths
   - programming
 term: spring
 title: CS6250 Computer Networks
+course_code: CS6250
+course_name: Computer Networks
 type: course
 year: '2024'
 ---

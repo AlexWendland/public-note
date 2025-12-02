@@ -11,6 +11,8 @@ tags:
   - programming
 term: summer
 title: CS7642 Reinforcement Learning
+course_code: CS7642
+course_name: Reinforcement Learning
 type: course
 year: '2025'
 ---
