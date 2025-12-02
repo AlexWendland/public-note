@@ -6,7 +6,7 @@ checked: false
 created: 2024-08-26
 draft: false
 last_edited: 2024-08-26
-title: ' Least-recently used (LRU)'
+title: 'Least-recently used (LRU)'
 tags:
   - computer-sciecne
   - OS

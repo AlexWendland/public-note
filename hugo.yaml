@@ -3,3 +3,9 @@ languageCode: 'en-gb'
 title: "Alex's public notes"
 contentDir: "notes"
 theme: "PaperMod"
+
+markup:
+  goldmark:
+    renderHooks:
+      link:
+        enableDefault: true

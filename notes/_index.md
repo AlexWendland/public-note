@@ -1,14 +1,12 @@
 ---
-checked: true
-created: 2023-02-24
+checked: false
+created: 2023-02-22
 draft: false
 last_edited: 2023-11-11
 title: Alex Wendland
 tags: []
-type: personal
+type: intro
 ---
-# Alex Wendland
-
 Hi!
 
 I am a data specialist, Python programmer, product developer, avid podcast listener, amateur DevOps engineer, forgetful academic, Obsidian cult member, and quite a bad prioritizer.
