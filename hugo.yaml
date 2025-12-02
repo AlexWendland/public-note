@@ -29,3 +29,7 @@ markup:
 
 params:
   math: true
+
+caches:
+  images:
+    dir: :cacheDir/images
