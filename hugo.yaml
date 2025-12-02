@@ -17,6 +17,19 @@ module:
 
 markup:
   goldmark:
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+            - - $$
+              - $$
+          inline:
+            - - $
+              - $
+        enable: true
     renderHooks:
       link:
         useEmbedded: fallback
+
+params:
+  math: true
