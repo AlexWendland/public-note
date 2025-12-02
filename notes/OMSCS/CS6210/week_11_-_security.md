@@ -95,3 +95,159 @@ There are two very high level takeaways from all these principles:
 - Difficult to crack the protection boundary.
 
 - Detection rather than prevention: Prevention is incredibly hard, whereas detection is relatively easier.
+
+# Andrew file system
+
+The Andrew file system was built at a university and was for users to connect from any work station on campus.
+Core to the assumptions of the design is that the network is not to be trusted between the workstations and the servers (which worked only over LAN).
+However, we assume the servers themselves are in a trusted physical environment.
+
+![Andrew File System Architecture](../../../images/andrew_file_system_architecture.png)
+
+These workstations will run unix and will have a special subsytem called Venus that will run the authentication for them.
+It will use RPC to communicate with the file servers.
+The RPC messages are encrypted as we can not trust the connection between the user and the server.
+
+## Encryption primer
+
+The easiest way to encrypt is with a private key system.
+If we assume both parties have a shared private key (symmetric key system) then we can send data securely between them in the following fashion:
+
+1. Sender makes data: data,
+
+2. Sender encrypts data: Enc(data, key) = cypher_text
+
+3. Sender sends data to receiver.
+
+4. Receiver decrypts data: Dec(cypher_text, key) = data
+
+However, this requirement to both have the same private key is a big problem.
+There is a second problem which is to decrypt the message you also need to know 'who' is sending you the message - so you can use the correct private key to decypher there messages (if you have more than one).
+
+So the next step is to use a public key system, where the receiver has a private key they keep to themselves and a public key they share to everyone (asymmetric key system).
+
+1. Sender makes data: data,
+
+2. Sender encrypts data: Enc(data, public_key) = cypher_text
+
+3. Sender sends data to receiver.
+
+4. Receiver decrypts data: Dec(cypher_text, private_key) = data
+
+In this case, no one can decrypt the data encrypted using the public key without the private key.
+This can form symmetric channels if both parties have a public-private key pair.
+
+## Challenges for Andrew file system
+
+The setup of the Andrew file system presents some challenges its design will have to overcome:
+
+1. Authenticate the users: The server will need to be sure who they are talking to is the users they claim to be.
+
+2. Authenticate the server: The user has the symmetric problem to sever, it doesn't want to get spoofed.
+
+3. Prevent replay attacks: Both the server and the user need to stop a man-in-the-middle from replaying their messages to one another to gain access or trust.
+
+4. Isolated users: The server needs to be able to isolate users from each other.
+
+## Andrew file system structure
+
+The Andrew file system uses private key encryption - whilst this does suffer from the key sharing problem in a smaller campus setting this isn't 'so hard'.
+Each user will have a username and password.
+
+> [!warning] Passwords are a security hole
+> You can not use the password as your private key for all communications.
+> Whilst passwords correctly set are secure, repeated use of them as a private key is a security hole and can allow snoopers to work it out over the long term.
+
+To get around this issue, the login and password is only used to login to the system.
+After the initial login the rest of the communication uses ephemeral id's and keys.
+This means we will get 3 types of communication between the user and the server:
+
+1. Login: The user sends a login request to the server.
+
+2. RPC session establishment: The server sets up the session for subsequent requests with the ephemeral id and key.
+
+3. File system access: The usual file system calls, all using the session that was established before.
+
+Here a session is one short lived burst of activity such as getting a file, changing a file and saving it back again.
+However, periods of inactivity close the session down.
+
+## Login
+
+For the login to work the server keeps a key that it and only it knows, lets call this SERVER_KEY.
+Then the user logs in as follows:
+
+1. Users sends the login and encrypts the password using password.
+(I would imagine it also encrypts some random number - to verify the server is real, but this was not mentioned.)
+
+2. The server verifies who you are.
+
+3. Server generates a handshake key client (HKC).
+It then puts this into a data structure called the clear_token.
+It uses the SERVER_KEY to encrypt the clear token to make the secret_token.
+
+4. The server then encrypts the clear_token and secret_token using the password then sends it to the user.
+
+For the RPC session establishment it, we will use the secret_token the public identity and the handshake key as the private key.
+This is secure as only the server can decode the secret token with SERVER_KEY to recover the handshake key and decode the message.
+
+## RPC session establishment (bind operation)
+
+Once we have logged in, we still need to establish both the client and the server are genuine.
+In the server case this is proving they have the SERVER_KEY and the in the client case proving they have the HKC.
+The core mechanism for this if they will both encrypt a random number $X_r$ and $Y_r$ for the client and server respectively.
+Then check the other party can decrypt it and add 1 to it.
+After they have done this they will exchange a key to use for this session.
+This goes as follows:
+
+1. Client generates $X_r$.
+
+2. Client uses HKC to encrypt X_r E[$X_r$, HKC] and sends message (secret_token, E[$X_r$, HKC]) to the server.
+
+3. Server gets HKC using SERVER_KEY from the secrete_token.
+
+4. Server generates $Y_r$.
+
+5. Server uses HKC to encrypt $X_r + 1$ and $Y_r$ E[($X_r + 1$, $Y_r$), HKC] and sends message E[($X_r + 1$, $Y_r$), HKC] to the client.
+No need for the identity here as the client initialised the connection.
+
+6. Client uses HKC to decrypt the message and verifies it starts with $X_r + 1$.
+
+7. Client uses HKC to encrypt $Y_r + 1$ E[$Y_r + 1$, HKC] and sends it to the server.
+
+8. Server uses HKC to decrypt the message and verifies it starts with $Y_r + 1$.
+
+9. Server generates a session key $SK$ and a sequence number num.
+
+10. The server uses HKC to encrypt E[($SK$, num), HKC] and sends it to the client.
+
+11. Client uses HKC to decrypt the message and uses $SK$ as the private key for this session and will use num as the starting sequence number for requests.
+
+For similar reasons as not using a password to encrypt messages, we similarly don't want to over use HKC.
+Therefore for each session we use a new private key $SK$.
+We use the session number num to stop replay attacks as each request will need a different sequence number.
+
+## File system access
+
+Then all calls to use the file system we use the session key to encrypt the message and the client appends the sequence number to the message.
+
+## Security
+
+In this setup different keys get used proportional to their life span.
+
+- You password is long lived but you only use it once or twice a day when you log in.
+
+- The HKC is only to set up each session within your logged in session, it is medium term but only gets used to set up each session.
+
+- The SK is used for every RPC call to do with the file server and so is short lived to only a session.
+
+## Strengths and weaknesses of the Andrew file system
+
+- [y] Mutual suspicion: Neither the server nor the client trust each other and so the back and forth verification means no man in the middle can spoof eachother.
+
+- [n] Protection from the user: Once the users is logged in the server has no protection from the user, they can do what they want.
+
+- [n] Confinement of resource usage: A valid user has unlimited access to the servers resources, therefore there is no limit on their resource usage.
+
+- [y] Authentication: Assuming the user keeps their password secret then the system authenticates users.
+
+- [-] Sever integrity: Assuming the servers are physically isolated from hostile attackers then this is met but this is a fairly unreasonable assumption the paper makes.
