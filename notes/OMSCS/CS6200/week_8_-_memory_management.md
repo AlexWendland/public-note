@@ -1,19 +1,17 @@
 ---
 aliases:
 checked: false
-course: 'CS6200 Graduate introduction to Operating Systems'
+course: CS6200 Graduate introduction to Operating Systems
 created: 2025-03-09
 draft: false
 last_edited: 2025-03-09
-title: Week 8 - Memory management
 tags:
   - OMSCS
+title: Week 8 - Memory management
 type: lecture
 week: 8
 ---
-# Week 8 - Memory management
-
-## Overview
+# Overview
 
 The operation system supports the abstraction of [virtual memory](../../general/virtual_memory.md) for processes so it need to:
 - Map [virtual memory](../../general/virtual_memory.md) onto [physical memory](../../general/physical_memory.md).
@@ -31,7 +29,7 @@ To support these memory mapping there are 3 bits of hardware that take a [virtua
 
 ![memory_hardware](../../../images/excalidraw/memory_hardware.excalidraw.svg)
 
-## Page tables
+# Page tables
 
 [Page table](../../general/page_table.md)
 
@@ -47,7 +45,7 @@ Note here in [paging](../../general/paging_system.md) that the physical address 
 
 The [MMU](../../general/memory_management_unit_(mmu).md) uses the flags within the [page table entry](../../general/page_table_entry.md) to determine if the [processes](../../general/process.md) operation on that memory is valid. If not it raises a fault which triggers the kernels page fault handler.
 
-## Page table size
+# Page table size
 
 There are two major factors that influence the page table size:
 - The [register](../../general/cpu_register.md) size. I.e. if you are on a 32-[bit](../../general/bit.md) architecture or a 64-[bit](../../general/bit.md) architecture.
@@ -70,7 +68,7 @@ Page sizes are determined by the [operating system](../../general/operating_syst
 >[!example] 64-bit architecture with 4kB page size
 >If we do the same calculation with a 64-bit architecture we get 64-12 = 62 bits for the number of page table entries. Therefore we get a page table size of $2^{64} * 4$B = 64PB per process! Way too large to hold in memory or disk for most computers!
 
-## Multi-level page tables
+# Multi-level page tables
 
 [Multi-level page tables](../../general/multi-level_page_tables.md)
 
@@ -85,11 +83,11 @@ Page sizes are determined by the [operating system](../../general/operating_syst
 >In the flat table the page table has 64 entries in which 48 are used. In the second example the fist table has 4 entries with only 3 of these being used, the second layer has 16 entries and in all 3 tables all of these are used.
 >You can see in the second example we had in total 52 page table entries with only 1 not used but in the first we had 64 entries with 16 not being used.
 
-## Inverted page tables
+# Inverted page tables
 
 [Inverted page tables (IPT)](../../general/inverted_page_tables_(ipt).md)
 
-## Segmentation
+# Segmentation
 
 [segmentation](../../general/memory_segmentation.md)
 
@@ -97,13 +95,13 @@ Page sizes are determined by the [operating system](../../general/operating_syst
 
 Normally [segmentation](../../general/memory_segmentation.md) is used in conjunction with [paging](../../general/paging_system.md). First use segmentation to cut down the [virtual memory](../../general/virtual_memory.md) then using [paging](../../general/paging_system.md) to get pages within that segment.
 
-## Page size
+# Page size
 
 What is the correct page size? This depends on your application, normally page sizes come in 3 different buckets 'regular' about 4kB, 'large' about 2MB and 'huge' about 1GB.
 
 Larger page sizes means smaller [page tables](../../general/page_table.md) as the offset does more of the work - however this can lead to [internal fragmentation](../../general/internal_fragmentation.md). Therefore applications that are likely to need large contiguous blocks of memory such as databases are better off with larger or huge table sizes but applications that to store lots of small objects are better off with smaller page tables.
 
-## Memory allocation
+# Memory allocation
 
 [Memory allocator](../../general/memory_allocator.md)
 
@@ -119,16 +117,16 @@ However, the objects the [linux](../../general/linux.md) kernel normally stores 
 
 [Slab allocator](../../general/slab_allocator.md)
 
-## Demand paging
+# Demand paging
 
 [Demand paging](../../general/demand_paging.md)
 
-### When should pages be swapped out?
+## When should pages be swapped out?
 
 - When we are nearing full use of the memory.
 - When the CPU utilization is low.
 
-### What pages should be swapped out?
+## What pages should be swapped out?
 
 - Pages that aren't going to be used in the future.
 	- Hard to tell in practice so we use heuristics.
@@ -138,11 +136,11 @@ However, the objects the [linux](../../general/linux.md) kernel normally stores 
 	- Dirty bit in the [page table entry](../../general/page_table_entry.md) can be used for this.
 - Avoid swapping non-swappable pages, such as some kernel state. Applications can 'pin' their pages to guarantee they stay in memory.
 
-## Copy on write
+# Copy on write
 
 [Copy on write (COW)](../../general/copy_on_write_(cow).md)
 
-## Checkpointing
+# Checkpointing
 
 [Checkpointing](../../general/checkpointing.md)
 

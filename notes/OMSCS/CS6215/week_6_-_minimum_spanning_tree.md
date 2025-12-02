@@ -1,21 +1,20 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-10-01
 draft: false
 last_edited: 2023-11-11
-title: Week 6 - Minimum Spanning Tree
 tags:
   - OMSCS
+title: Week 6 - Minimum Spanning Tree
 type: lecture
 week: 6
 ---
-# Week 6 - Minimum Spanning Tree
 
 [Statement](../../general/minimum_spanning_tree_problem_(mst).md#statement)
 
-## Tree properties
+# Tree properties
 
 It is useful to remind ourselves of some [tree](../../general/tree_(graph).md) properties:
 
@@ -25,13 +24,13 @@ It is useful to remind ourselves of some [tree](../../general/tree_(graph).md) p
 
 These are all proved by the [equivalent tree definitions](../../general/equivalent_tree_definitions.md).
 
-## Greed is good ... in this case
+# Greed is good ... in this case
 
 The greedy approach of just starting with an empty graph and keep adding valid edges of minimum weight, solves the [MST](../../general/minimum_spanning_tree_problem_(mst).md) problem.
 
 The only problem is keeping track of the edges that are valid to include.
 
-## Kruskal's Algorithm
+# Kruskal's Algorithm
 
 [Pseudocode](../../general/kruskal's_algorithm.md#pseudocode)
 
@@ -43,7 +42,7 @@ So the only think left to prove [Kruskal's algorithm](../../general/kruskal's_al
 
 [Cut property](../../general/cut_property.md)
 
-## Prim's algorithm
+# Prim's algorithm
 
 [Algorithm](../../general/prim's_algorithm.md#algorithm)
 

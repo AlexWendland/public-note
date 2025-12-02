@@ -4,10 +4,10 @@ checked: false
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-title: BGP Hijacking
 tags:
   - networks
   - security
+title: BGP Hijacking
 type: definition
 ---
 >[!tldr] BGP Hijacking

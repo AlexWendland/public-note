@@ -4,12 +4,11 @@ checked: false
 created: 2024-02-25
 draft: false
 last_edited: 2024-02-25
-title: MIMIC by dependency trees
 tags:
   - programming
+title: MIMIC by dependency trees
 type: algorithm
 ---
-# MIMIC by dependency trees
 
 This follows on from [MIMIC (meta)](mimic_(meta).md). Where we are going to use [dependency trees](dependency_trees_(bayesian_network).md) to calculate the distribution. Here we are just implementing a version of the `probability_constructor`.
 
@@ -33,8 +32,8 @@ Then construct a [MST](minimum_spanning_tree_problem_(mst).md) on this graph and
 
 Once we have this [Bayesian network](bayesian_network.md) we can use it to simulate new samples to evaluate on.
 
-## Run time
+# Run time
 
 
-## Correctness
+# Correctness
 

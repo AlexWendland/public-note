@@ -7,10 +7,10 @@ checked: false
 created: 2024-08-26
 draft: false
 last_edited: 2024-08-26
-title: Page table
 tags:
   - OS
   - computer-science
+title: Page table
 type: definition
 ---
 >[!tldr] Page table

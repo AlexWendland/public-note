@@ -6,12 +6,11 @@ checked: false
 created: 2023-08-05
 draft: false
 last_edited: 2023-11-11
-title: Coupling
 tags:
   - programming
+title: Coupling
 type: meta
 ---
-# Coupling
 
 Two bits of code are 'Coupled' if they rely on one another. In other words if one changes then you are required to change the other bit of code. When we write programs we really want low coupling as these are easier to change and maintain.
 

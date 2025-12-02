@@ -4,9 +4,9 @@ checked: false
 created: 2024-03-10
 draft: false
 last_edited: 2024-03-10
-title: Cocktail party problem
 tags:
   - programming
+title: Cocktail party problem
 type: problem
 ---
 # Statement

@@ -4,10 +4,10 @@ checked: false
 created: 2024-01-21
 draft: false
 last_edited: 2024-01-21
-title: Occam's razor
 tags:
   - maths
   - philosophy
+title: Occam's razor
 type: theory
 ---
 >[!tldr] Occam's razor

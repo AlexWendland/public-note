@@ -4,9 +4,9 @@ checked: false
 created: 2024-02-02
 draft: false
 last_edited: 2024-02-02
-title: Sigmoid kernel (SVM)
 tags:
   - machine-learning
+title: Sigmoid kernel (SVM)
 type: definition
 ---
 >[!tldr] Sigmoid kernel

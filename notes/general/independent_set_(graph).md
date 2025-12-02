@@ -6,10 +6,10 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-title: Independent set (graph)
 tags:
   - maths
   - graph-theory
+title: Independent set (graph)
 type: definition
 ---
 >[!tldr] Independent set (graph)

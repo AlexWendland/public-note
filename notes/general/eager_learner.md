@@ -4,9 +4,9 @@ checked: false
 created: 2024-01-22
 draft: false
 last_edited: 2024-01-22
-title: Eager learner
 tags:
   - machine-learning
+title: Eager learner
 type: definition
 ---
 >[!tldr] Eager learner

@@ -1,30 +1,28 @@
 ---
 aliases:
 checked: false
-course: 'CS6200 Graduate introduction to Operating Systems'
+course: CS6200 Graduate introduction to Operating Systems
 created: 2024-09-04
 draft: false
 last_edited: 2024-09-04
-title: Week 4 - PThreads
 tags:
   - OMSCS
+title: Week 4 - PThreads
 type: lecture
 week: 4
 ---
-# Week 4 - PThreads
-
-## Additional reading
+# Additional reading
 
 - ["An Introduction to Programming with Threads"](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-birrell-paper.pd)
 - [PThreads Programming Resource](https://computing.llnl.gov/tutorials/pthreads/)
 
-## Background
+# Background
 
 [POSIX](../../general/portable_operating_system_interface_(posix).md)
 
 [PThreads](../../general/posix_threads_(pthreads).md)
 
-## Thread interface
+# Thread interface
 
 The core [data structure](../../general/data_structure.md) in the [PThreads](../../general/posix_threads_(pthreads).md) library is `pthread_t` which represents a thread. This can be created through:
 ``` c
@@ -49,7 +47,7 @@ int pthread_join(
 ```
 where `thread` is the thread you want to join and `status` will be the return object. It will return the status code of the operation.
 
-### Pthread attributes
+## Pthread attributes
 
 The `pthread_attr_t` type controls the type of thread created with the properties:
 - Stack size,
@@ -69,7 +67,7 @@ pthread_attr_{set/get}{attribute}
 ```
 For example `pthread_attr_setjoinable`.
 
-### Detachable threads
+## Detachable threads
 
 Threads that are created from a parent need to be joined by that parent in order for them to be cleaned up by the [OS](../../general/operating_system_(os).md). Though if the parent thread exits before this happens it can create zombie threads that can not be cleaned up.
 
@@ -83,7 +81,7 @@ pthread_attr_setjoinable(attr, PTHREAD_CREATE_DETACHED)
 int pthread_detach()
 ```
 
-### Example
+## Example
 
 ```c
 #include <stdio.h>
@@ -114,7 +112,7 @@ When using Pthreads:
 - Compile code using the pthreads flag: either `-lpthread` or `-pthread`.
 - Check the return value of pthread function calls in case of errors.
 
-## [Mutex](../../general/mutex.md)
+# [Mutex](../../general/mutex.md)
 
 The [PThreads](../../general/posix_threads_(pthreads).md) library allows you to create and use [mutexes](../../general/mutex.md).
 
@@ -167,7 +165,7 @@ Lastly a couple reminders about working with mutexes:
 - Globally order locks to prevent [deadlock](../../general/deadlock.md).
 - Always unlock the correct mutex.
 
-## [Conditional variables](../../general/conditional_variables_(mutex).md)
+# [Conditional variables](../../general/conditional_variables_(mutex).md)
 
 [PThreads](../../general/posix_threads_(pthreads).md) supports the [API](../../general/application_programming_interface_(api).md) we saw in the last lecture.
 

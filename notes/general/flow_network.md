@@ -5,9 +5,9 @@ checked: false
 created: 2023-10-02
 draft: false
 last_edited: 2023-11-11
-title: Flow network
 tags:
   - programming
+title: Flow network
 type: definition
 ---
 >[!tldr] Flow network

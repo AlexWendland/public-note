@@ -5,10 +5,10 @@ checked: false
 created: 2024-09-04
 draft: false
 last_edited: 2024-09-04
-title: Multi-processing
 tags:
   - OS
   - computer-science
+title: Multi-processing
 type: definition
 ---
 >[!tldr] Multi-processing

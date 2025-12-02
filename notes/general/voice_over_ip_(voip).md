@@ -6,9 +6,9 @@ checked: false
 created: 2024-07-24
 draft: false
 last_edited: 2024-07-24
-title: Voice over IP (VoIP)
 tags:
   - networks
+title: Voice over IP (VoIP)
 type: definition
 ---
 >[!tldr] Voice over IP (VoIP)

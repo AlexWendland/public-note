@@ -6,9 +6,9 @@ checked: false
 created: 2023-10-10
 draft: false
 last_edited: 2023-11-11
-title: Prime
 tags:
   - maths
+title: Prime
 type: definition
 ---
 >[!tldr] Prime

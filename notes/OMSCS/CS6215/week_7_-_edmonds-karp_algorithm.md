@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-10-05
 draft: false
 last_edited: 2023-11-11
-title: Week 7 - Edmonds-Karp algorithm
 tags:
   - OMSCS
+title: Week 7 - Edmonds-Karp algorithm
 type: lecture
 week: 7
 ---
-# Week 7 - Edmonds-Karp algorithm
 
 This algorithm is essentially the same as [Ford-Fulkerson Algorithm](../../general/ford-fulkerson_algorithm.md) but we use [BFS](breath-first_search_(bfs).md) instead of [DFS](../../general/depth-first_search_(dfs).md) to find the augmenting path in the [residual network](../../general/residual_network_(flow).md).
 

@@ -6,9 +6,9 @@ checked: false
 created: 2023-10-08
 draft: false
 last_edited: 2023-11-11
-title: Adjacency list format (graph)
 tags:
   - programming
+title: Adjacency list format (graph)
 type: data structure
 ---
 >[!tldr] Adjacency list

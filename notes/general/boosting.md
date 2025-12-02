@@ -4,12 +4,11 @@ checked: false
 created: 2024-01-24
 draft: false
 last_edited: 2024-01-24
-title: Boosting
 tags:
   - programming
+title: Boosting
 type: algorithm
 ---
-# Boosting
 
 Boosting is an [Ensemble learning](ensemble_learning.md) method that uses multiple instances of another model to average them out to make a classifier that is better than any one individual one.
 
@@ -38,7 +37,7 @@ Note that if $b_t$ and $h_i(a_t)$ share the same sign then the power of $e$ is n
 Once we have trained for some large number times $N$ we aggregate this all by defining our output
 $$\hat{f}(a) = \mbox{sgn}\left ( \sum_{i = 1}^N \alpha_t h_t(a) \right )$$ with $\mbox{sgn}$ being the [Sign function](sign_function.md).
 
-## Pseudocode
+# Pseudocode
 
 ```pseudocode
 Name(classifier, N, T):
@@ -85,5 +84,5 @@ Update_distrubution(h, T, D, alpha)
 5. Return D'
 ```
 
-## Correctness
+# Correctness
 

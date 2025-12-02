@@ -5,9 +5,9 @@ checked: false
 created: 2023-10-10
 draft: false
 last_edited: 2023-11-11
-title: Happens with high probability
 tags:
   - maths
+title: Happens with high probability
 type: definition
 ---
 >[!tldr] Happens with high probability

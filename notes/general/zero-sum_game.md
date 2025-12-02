@@ -5,9 +5,9 @@ checked: false
 created: 2024-04-06
 draft: false
 last_edited: 2024-04-06
-title: Zero-sum game
 tags:
   - game-theory
+title: Zero-sum game
 type: definition
 ---
 >[!tldr] Zero-sum game

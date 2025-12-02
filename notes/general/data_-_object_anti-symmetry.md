@@ -4,24 +4,23 @@ checked: false
 created: 2023-07-11
 draft: false
 last_edited: 2023-11-11
-title: Data - Object Anti-Symmetry
 tags:
   - programming
   - clean-code
+title: Data - Object Anti-Symmetry
 type: convention
 ---
-# Data - Object Anti-Symmetry
 
 > [!Quote] Clean Code
 > [Objects](object.md) hide their data behind abstractions and expose functions that operate on that data. [Data structures](data_structure.md) expose their data and have no meaningful functions.
 
 When we make objects we should have in mind whether this is simply a grouping of data or variables are going to be managed internally and we do not want the outside user to change them.
 
-## Hybrids
+# Hybrids
 
 In [Python Index](python_index.md) especially this might seem more like a spectrum than an anti-symmetry. However, a mid point tends to be bad practice and indicative that you may have low [Cohesion](cohesion.md) in your code.
 
-## [Procedural Programming](procedural_programming.md) vs [Object Oriented Programming (OOP)](object_oriented_programming_(oop).md)
+# [Procedural Programming](procedural_programming.md) vs [Object Oriented Programming (OOP)](object_oriented_programming_(oop).md)
 
 When we programme in a procedural manner, i.e. creating [Data structures](data_structure.md) and using functions to extract features, this makes it easy to to add new functions to all objects. This will not require rewriting any of the data structures but will involve handling the cases for each [Data structure](data_structure.md). However, this does make it hard to add new [Data structures](data_structure.md) as we will need to open up every function using these.
 

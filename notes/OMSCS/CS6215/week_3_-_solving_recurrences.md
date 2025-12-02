@@ -1,19 +1,17 @@
 ---
 aliases: []
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-09-11
 draft: false
 last_edited: 2023-11-11
-title: Week 3 - Solving Recurrences
 tags:
   - OMSCS
+title: Week 3 - Solving Recurrences
 type: lecture
 week: '3'
 ---
-# Week 3 - Solving Recurrences
-
-## $T(n) = 4T\left (\frac{n}{2}\right ) + O(n)$
+# $T(n) = 4T\left (\frac{n}{2}\right ) + O(n)$
 
 First step is to replace the [Big-O notation](../../general/big-o_notation.md). Let $c > 0$ such that
 $$T(n) \leq 4 T\left ( \frac{n}{2} \right ) + cn, \mbox{ and } T(1) \leq c.$$
@@ -28,12 +26,12 @@ $$\begin{align*} T(n) \leq & cn \left ( \sum_{i=0}^{\log_2(n)-1} \left ( \frac{4
 \leq & cn \ O\left ( \left ( \frac{4}{2} \right )^{\log_2(n)} \right ) + n^2c\\
 \leq & O(n) O(n) + O(n^2)\\
 \leq & O(n^2).\end{align*}$$
-## Geometric Series
+# Geometric Series
 
 For constant $\alpha > 0$
 $$\sum_{j=0}^k \alpha^k = 1 + \alpha + \alpha^2 + \ldots + \alpha^k = \begin{cases} O(\alpha^k) & \mbox{if } \alpha > 1\\ O(k) & \mbox{if } \alpha = 1\\ O(1) & \mbox{if } \alpha < 1\end{cases}.$$
 
-## General case
+# General case
 
 Let $a > 0$, $b > 1$, and suppose we have
 

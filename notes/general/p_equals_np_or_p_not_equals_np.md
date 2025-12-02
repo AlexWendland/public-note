@@ -8,11 +8,10 @@ checked: false
 created: 2023-10-24
 draft: false
 last_edited: 2023-11-11
-title: P equals NP or P not equals NP
 tags:
   - programming
+title: P equals NP or P not equals NP
 type: theory
 ---
-# P equals NP or P not equals NP
 
 This is the open problem whether the class of [Polynomial time](polynomial_time.md) problems is equal to the class of [Nondeterministic Polynomial time (NP)](nondeterministic_polynomial_time_(np).md) problems.

@@ -5,9 +5,9 @@ checked: false
 created: 2025-03-22
 draft: false
 last_edited: 2025-03-22
-title: Memory controller
 tags:
   - hardware
+title: Memory controller
 type: definition
 ---
 >[!tldr] Memory controller

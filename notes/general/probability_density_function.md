@@ -5,8 +5,8 @@ checked: false
 created: 2024-02-21
 draft: true
 last_edited: 2024-02-21
-title: Probability density function
 tags: []
+title: Probability density function
 type: definition
 ---
 >[!tldr] Probability density function

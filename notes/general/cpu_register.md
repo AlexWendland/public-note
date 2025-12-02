@@ -6,10 +6,10 @@ checked: false
 created: 2024-08-26
 draft: false
 last_edited: 2024-08-26
-title: CPU register
 tags:
   - OS
   - computer-science
+title: CPU register
 type: definition
 ---
 >[!tldr] CPU register

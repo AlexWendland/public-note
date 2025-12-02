@@ -4,9 +4,9 @@ checked: false
 created: 2024-02-21
 draft: false
 last_edited: 2024-02-21
-title: Length of a probability
 tags:
   - machine-learning
+title: Length of a probability
 type: definition
 ---
 >[!tldr] Length of a probability

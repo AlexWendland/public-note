@@ -5,9 +5,9 @@ checked: false
 created: 2024-06-02
 draft: false
 last_edited: 2024-06-02
-title: Distance vector routing algorithms
 tags:
   - networks
+title: Distance vector routing algorithms
 type: definition
 ---
 >[!tldr] Distance vector routing algorithms

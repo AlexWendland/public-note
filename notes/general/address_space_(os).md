@@ -5,10 +5,10 @@ checked: false
 created: 2024-08-26
 draft: false
 last_edited: 2024-08-26
-title: Address space (OS)
 tags:
   - computer-science
   - OS
+title: Address space (OS)
 type: definition
 ---
 >[!tldr] Address space (OS)

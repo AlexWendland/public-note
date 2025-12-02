@@ -4,8 +4,8 @@ checked: false
 created: 2025-07-05
 draft: true
 last_edited: 2025-07-05
-title: A company without management
 tags: []
+title: A company without management
 type: thonk
 ---
 

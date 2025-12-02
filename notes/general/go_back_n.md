@@ -4,9 +4,9 @@ checked: false
 created: 2024-05-27
 draft: false
 last_edited: 2024-05-27
-title: Go back N
 tags:
   - networks
+title: Go back N
 type: definition
 ---
 >[!tldr] Go back N

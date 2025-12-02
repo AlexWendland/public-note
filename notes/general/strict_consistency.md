@@ -4,9 +4,9 @@ checked: false
 created: 2025-04-13
 draft: false
 last_edited: 2025-04-13
-title: Strict consistency
 tags:
   - OS
+title: Strict consistency
 type: definition
 ---
 >[!tldr] Strict consistency

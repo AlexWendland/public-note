@@ -4,9 +4,9 @@ checked: false
 created: 2023-09-29
 draft: false
 last_edited: 2023-11-11
-title: How post order relates to strongly connected components
 tags:
   - maths
+title: How post order relates to strongly connected components
 type: lemma
 ---
 >[!important] Lemma

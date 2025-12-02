@@ -4,9 +4,9 @@ checked: false
 created: 2024-06-08
 draft: false
 last_edited: 2024-06-08
-title: Traffic Engineering Framework
 tags:
   - networks
+title: Traffic Engineering Framework
 type: definition
 ---
 >[!tldr] Traffic Engineering Framework

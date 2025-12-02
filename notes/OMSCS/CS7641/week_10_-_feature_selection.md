@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS7641 Machine Learning'
+course: CS7641 Machine Learning
 created: 2024-03-09
 draft: false
 last_edited: 2024-03-09
-title: Week 10 - Feature selection
 tags:
   - OMSCS
+title: Week 10 - Feature selection
 type: lecture
 week: 10
 ---
-# Week 10 - Feature selection
 
 Feature selection is the process of deciding what features of the data are worth training on. Then picking the subset of them that are the most important. The reason to do this is:
 - Knowledge discovery, interpretability, and insight.
@@ -19,13 +18,13 @@ Feature selection is the process of deciding what features of the data are worth
 - [The curse of dimensionality](../../general/the_curse_of_dimensionality.md)
 	- If you put too many dimensions in - it will decrease the accuracy of your models!
 
-## How hard is this problem?
+# How hard is this problem?
 
 Assume we want to know the best $m \leq n$ subset of columns. The only way to verify it is the best is to check them all so it is $\binom{n}{m}$. If you don't know $m$ then it is $2^n$.
 
 This problem is know to be [NP-hard](../../general/np-hard.md).
 
-## Techniques
+# Techniques
 
 There are 2 main families of techniques to solve this problem
 - [Filtering](../../general/filtering_(feature_selection).md), a process of deciding which features to keep before passing it to the learning algorithm, and
@@ -52,7 +51,7 @@ We have already come across some ways to do wrapping too
 - Forward search where we keep adding features until we don't get any better, and
 - Backward search where we keep removing features until the score starts to drop.
 
-## Relevance
+# Relevance
 
 [Strongly relevant feature](../../general/strongly_relevant_feature.md)
 

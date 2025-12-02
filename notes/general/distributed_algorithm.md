@@ -5,9 +5,9 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-title: Distributed algorithm
 tags:
   - computer-sciecne
+title: Distributed algorithm
 type: definition
 ---
 >[!tldr] Distributed algorithm

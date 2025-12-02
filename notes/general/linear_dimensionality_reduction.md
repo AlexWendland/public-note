@@ -6,9 +6,9 @@ checked: false
 created: 2024-03-10
 draft: false
 last_edited: 2024-03-10
-title: Linear dimensionality reduction
 tags:
   - machine-learning
+title: Linear dimensionality reduction
 type: definition
 ---
 >[!tldr] Linear dimensionality reduction

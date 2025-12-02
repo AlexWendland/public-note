@@ -4,9 +4,9 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-title: Mutual information is symmetric
 tags:
   - probability
+title: Mutual information is symmetric
 type: lemma
 ---
 # Statement

@@ -5,9 +5,9 @@ checked: false
 created: 2023-10-10
 draft: false
 last_edited: 2023-11-11
-title: Coprime
 tags:
   - maths
+title: Coprime
 type: definition
 ---
 >[!tldr] Coprime

@@ -7,12 +7,11 @@ checked: false
 created: 2023-08-26
 draft: false
 last_edited: 2023-11-11
-title: Iterative algorithms
 tags:
   - programming
+title: Iterative algorithms
 type: algorithm
 ---
-# Iterative algorithms
 
 An iterative algorithm is a computational procedure that solves a problem by repeating a set of steps until a specific condition is met, without making [recursive](recursion.md) calls. In other words, it uses loops (like `for`, `while`, etc.) to repeatedly execute code blocks, updating the state variables as it progresses, until it reaches an exit condition that signifies the problem has been solved.
 

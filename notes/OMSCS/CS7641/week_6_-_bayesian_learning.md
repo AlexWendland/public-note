@@ -1,19 +1,17 @@
 ---
 aliases:
 checked: false
-course: 'CS7641 Machine Learning'
+course: CS7641 Machine Learning
 created: 2024-02-19
 draft: false
 last_edited: 2024-02-19
-title: Week 6 - Bayesian learning
 tags:
   - OMSCS
+title: Week 6 - Bayesian learning
 type: lecture
 week: 6
 ---
-# Week 6 - Bayesian learning
-
-## Bayes rule
+# Bayes rule
 
 To start this lecture lets remind ourselves of the definition of [conditional probability](../../general/conditional_probability.md).
 
@@ -32,7 +30,7 @@ whereas
 $$\mathbb{P}[\lnot I \ \vert +ve] = \frac{\mathbb{P}[+ve \ \vert \ \lnot I] \cdot \mathbb{P}[\lnot I]}{\mathbb{P}[+ve]} = \frac{(1 - \mathbb{P}[-ve \vert \lnot I]) \cdot (1 - \mathbb{P}[I])}{\mathbb{P}[+ve]} = \frac{0.02976}{\mathbb{P}[+ve]}$$
 giving that we are more likely to not have the illness than have it with a positive result.
 
-## Applying this to learning
+# Applying this to learning
 
 Suppose $h \in H$ is a hypothesis belonging to our [hypothesis space](../../general/modelling_paradigm.md) and we have $D$ data. Then to see the probability our hypothesis is given the data $\mathbb{P}[h \vert D]$ we can use [Bayes rule](../../general/bayes_rule.md) to reduce it to things we can calculate
 $$
@@ -56,7 +54,7 @@ Sometimes we will have no prior preference on the [hypothesis space](../../gener
 
 Though to actually calculate these would be very hard - as the [hypothesis space](../../general/modelling_paradigm.md) might be very large.
 
-## Noise free data
+# Noise free data
 
 Suppose:
 - There is some target $c : A \rightarrow B$.
@@ -77,7 +75,7 @@ This gives
 $$
 \mathbb{P}(h \vert T) = \frac{\mathbb{P}[T \vert h] \mathbb{P}[h]}{\mathbb{P}[T]} = \frac{\mathbb{I}[h \in VS_H(T)]}{\vert VS_H(T) \vert}.
 $$
-## Gaussian noise
+# Gaussian noise
 
 In the previous set up we assumed there was no noise, this time we will introduce some.
 
@@ -106,7 +104,7 @@ So this shows that [finding the maximum likelihood estimation for normally distr
 
 This shows that the loss function we use really relates to the noise we have in our observations.
 
-## Probability length
+# Probability length
 
 [Length of a probability](../../general/length_of_a_probability.md)
 
@@ -121,7 +119,7 @@ h_{MAP} = & \mbox{arg}\max_{h \in H}  \ \mathbb{P}[T \vert h]\mathbb{P}[h]\\
 $$
 here we have a pay off. Longer length explanations in $\mbox{length}[h]$ may lead better explanations of $T$ by the hypothesis. Though this will have to be worth in increase in length of that hypothesis. This is [Occam's razor](../../general/occam's_razor.md) in an equation.
 
-## Bayesian classification
+# Bayesian classification
 
 [Bayeses optimal classifier](../../general/bayeses_optimal_classifier.md)
 

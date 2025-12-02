@@ -4,14 +4,13 @@ checked: false
 created: 2023-08-28
 draft: false
 last_edited: 2023-11-11
-title: Conjunctive normal form (CNF)
 tags:
   - maths
   - computer-sciecne
   - logic
+title: Conjunctive normal form (CNF)
 type: definition
 ---
-# Conjunctive normal form (CNF)
 
 A [Boolean function](boolean_function.md) is in *conjunctive normal form* if it is a collection of or statements unified by and operations. The or statements can contain negated variables but no further nesting.
 

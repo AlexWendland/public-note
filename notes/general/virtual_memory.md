@@ -7,9 +7,9 @@ checked: false
 created: 2024-08-26
 draft: false
 last_edited: 2024-08-26
-title: Virtual memory
 tags:
   - computer-science
+title: Virtual memory
 type: definition
 ---
 >[!tldr] Virtual memory

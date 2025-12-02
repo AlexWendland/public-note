@@ -4,10 +4,10 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-title: Simulated annealing ending probability
 tags:
   - probability
   - machine-learning
+title: Simulated annealing ending probability
 type: lemma
 ---
 # Statement

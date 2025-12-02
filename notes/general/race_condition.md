@@ -4,10 +4,10 @@ checked: false
 created: 2025-04-08
 draft: false
 last_edited: 2025-04-08
-title: Race condition
 tags:
   - computer-sciecne
   - OS
+title: Race condition
 type: definition
 ---
 >[!tldr] Race condition

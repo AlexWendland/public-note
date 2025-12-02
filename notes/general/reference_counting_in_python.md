@@ -6,13 +6,12 @@ checked: false
 created: 2023-07-17
 draft: false
 last_edited: 2023-11-11
-title: Reference counting in Python
 tags:
   - programming
   - python
+title: Reference counting in Python
 type: definition
 ---
-# Reference counting in Python
 
 In [Python Index](python_index.md) when objects are created, it also stores the number of references there are to that object. This is what we mean when we say the reference count of an object.
 

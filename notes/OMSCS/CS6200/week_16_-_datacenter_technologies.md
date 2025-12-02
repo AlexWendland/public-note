@@ -1,13 +1,13 @@
 ---
 aliases:
 checked: false
-course: 'CS6200 Graduate introduction to Operating Systems'
+course: CS6200 Graduate introduction to Operating Systems
 created: 2025-04-13
 draft: false
 last_edited: 2025-04-13
-title: Week 16 - Datacenter technologies
 tags:
   - OMSCS
+title: Week 16 - Datacenter technologies
 type: lecture
 week: 16
 ---

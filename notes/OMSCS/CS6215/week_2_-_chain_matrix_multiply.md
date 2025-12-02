@@ -1,23 +1,22 @@
 ---
 aliases: []
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-08-31
 draft: false
 last_edited: 2023-12-03
-title: Week 2 - Chain Matrix Multiply
 tags:
   - OMSCS
+title: Week 2 - Chain Matrix Multiply
 type: lecture
 week: 2
 ---
-# Week 2 - Chain Matrix Multiply
 
 The goal is this problem is, given a number of [matrices](../../general/matrix.md) what is the most efficient way to multiply them together?
 
 Lets say we have [matrices](../../general/matrix.md) $A$, $B$, $C$ and $D$ and they have different sizes such that we can multiply $A B C D$. Whilst matrix multiplication might be [associative](../../general/associativity.md) there might be a more efficient way to multiply them together!
 
-## Cost of multiplying two matrices
+# Cost of multiplying two matrices
 
 Lets say with have two [matrices](../../general/matrix.md) $W$ (of size $a \times b$) and $Y$ (of size $b \times c$) we set their product to be $Z = WY$ (of size $a \times c$). To calculate a single entry in $Z$ we need to multiply a row of $W$ (of size $b$) with a column of $Y$ (of size $b$)
 $$ z_{ij} = \sum_{k = 1}^b w_{ik} \ y_{kj}$$
@@ -27,7 +26,7 @@ Here the multiplications are the more costly operations so this is what we will 
 
 [Statement](../../general/chain_multiply_problem.md#statement)
 
-## Dynamic program set up
+# Dynamic program set up
 
 Let $C(i,j)$ with $1 \leq i \leq j \leq n$ be the minimum cost of multiplying $A_i A_{i+1} \ldots A_j$.
 
@@ -138,7 +137,7 @@ Working inside out, `_get_cost_of_multiplying_matrices` takes $O(1)$.  Then `_so
 
 So the cost of running `solve` $O(n^2) + O(n^3) = O(n^3)$.
 
-## Further questions
+# Further questions
 
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 
@@ -156,7 +155,7 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 >[!question] 6.7 Palindrome *substring* (altered)
 >Given a sequence $a_1, a_2, \ldots, a_n$ devise an algorithm that returns the length of the longest [palindromic](../../general/palindrome.md) [substring](../../general/substring.md). Its running time should be $O(n)$.
 
-## Tips
+# Tips
 
 - First find a solution using substrings.
 - Then consider if substrings was necessary, could you use prefixes?

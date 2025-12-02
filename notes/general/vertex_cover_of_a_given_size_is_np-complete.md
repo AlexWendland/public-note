@@ -4,10 +4,10 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-title: Vertex cover of a given size is NP-complete
 tags:
   - graph-theory
   - programming
+title: Vertex cover of a given size is NP-complete
 type: lemma
 ---
 # Statement

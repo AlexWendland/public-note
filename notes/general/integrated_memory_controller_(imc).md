@@ -5,9 +5,9 @@ checked: false
 created: 2025-03-22
 draft: false
 last_edited: 2025-03-22
-title: Integrated Memory Controller (IMC)
 tags:
   - hardware
+title: Integrated Memory Controller (IMC)
 type: definition
 ---
 >[!tldr] Integrated Memory Controller (IMC)

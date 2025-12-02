@@ -5,9 +5,9 @@ checked: false
 created: 2024-05-22
 draft: false
 last_edited: 2024-05-22
-title: Segment
 tags:
   - networks
+title: Segment
 type: definition
 ---
 >[!tldr] Segment

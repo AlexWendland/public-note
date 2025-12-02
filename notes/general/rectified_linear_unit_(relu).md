@@ -6,8 +6,8 @@ checked: false
 created: 2024-01-20
 draft: false
 last_edited: 2024-01-20
-title: Rectified linear unit (ReLU)
 tags: []
+title: Rectified linear unit (ReLU)
 type: definition
 ---
 >[!tldr] Rectified linear unit (ReLU)

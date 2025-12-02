@@ -4,9 +4,9 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-title: Internet Protocol Stack (IPS) 4 layers
 tags:
   - networks
+title: Internet Protocol Stack (IPS) 4 layers
 type: definition
 ---
 >[!tldr] Internet Protocol Stack (IPS) 4 layers

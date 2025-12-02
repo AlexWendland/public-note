@@ -7,12 +7,11 @@ checked: false
 created: 2024-02-02
 draft: false
 last_edited: 2024-02-02
-title: Support vector machines (SVM)
 tags:
   - programming
+title: Support vector machines (SVM)
 type: algorithm
 ---
-# Support Vector Machines (SVM)
 
 Support Vector Machines operate using the [modelling framework](modelling_framework.md) to try to [linearly separate](linearly_separable.md) data points. Suppose we have some [training data](training_data.md) $T \subset A \times B$. This utilises the [kernel trick](kernel_trick.md) to change the topology of the feature space of our data whilst still keeping the computation relatively simple. Let $K: A \times A \rightarrow \mathbb{R}$ represent such a kernel. Then we solve the following optimisation problem
 $$ \max_{\alpha} \sum_{t \in T} \alpha_t - \frac{1}{2} \sum_{t,s \in T} \alpha_t \alpha_s y^t y^s K(x^t, x^s)$$ such that
@@ -26,10 +25,10 @@ b^s = y^s - \sum_{t \in T} \alpha_t y^t K(x^t, x^s), \mbox{ for any } s \in T \m
 $$
 Note that $K$ needs to obey [Mercer’s condition](mercer’s_condition.md) for the underlying mapping of the feature space to exist.
 
-## Run time
+# Run time
 
 The complexity of the kernel function can add large overhead to the run time for training this model.
 
-## Correctness
+# Correctness
 
 The accuracy of this model highly depends on the choice of the kernel function. This definition of similarity between two vectors.

@@ -1,19 +1,17 @@
 ---
 aliases:
 checked: false
-course: 'CS7641 Machine Learning'
+course: CS7641 Machine Learning
 created: 2024-02-21
 draft: false
 last_edited: 2024-02-21
-title: Week 6 - Bayesian Inference
 tags:
   - OMSCS
+title: Week 6 - Bayesian Inference
 type: lecture
 week: 6
 ---
-# Week 6 - Bayesian Inference
-
-## Joint distributions
+# Joint distributions
 
 We can use the definition of [conditional probability](../../general/conditional_probability.md) to help calculate joint probabilities.
 $$\mathbb{P}]A \cap B] = \mathbb{P}[A, B] = \mathbb{P}[A \vert B] \mathbb{P}[B].$$
@@ -30,7 +28,7 @@ Therefore independence simplifies the amount of knowledge we need to store to co
 >$$\mathbb{P}[A \vert B] = \frac{\mathbb{P}[A, B]}{\mathbb{P}[B]} = \mathbb{P}[A].$$
 >We could say that $A$ is conditionally independent on $B$ given any event.
 
-## Bayesian networks (belief networks)
+# Bayesian networks (belief networks)
 
 For a set of [random variables](../../general/random_variable.md) $X_v$ for $v \in V$ we would like to [graph](../../general/graph.md) these relationships using a directed graph. We want an edge $(u,v) \in E$ to signify that $X_u$ is dependent on $X_v$. Though there is a lot of choice in this as for any two dependent variables we could choose $(u,v) \in E$ or $(v,u) \in E$ - however we want to make a directional choice.
 
@@ -65,7 +63,7 @@ This is in fact a defining property of [Bayesian network](../../general/bayesian
 
 [Bayesian network if and only if it satisfies the local Markov Property](../../general/bayesian_network_if_and_only_if_it_satisfies_the_local_markov_property.md)
 
-## Inference rules
+# Inference rules
 
 Once you have a [Bayesian network](../../general/bayesian_network.md) you can use it to calculate all kinds of conditional probabilities. There are 3 main rules that help you do this.
 
@@ -108,7 +106,7 @@ doing this for each quantity we get
 
 $$\mathbb{P}[D2 = blue \vert D1 = green] = \frac{1/2*3/4*0 + 1/2*2/5*3/4}{1/2*3/4 + 1/2*2/5} = \frac{3/10}{23/20} = \frac{6}{23}.$$
 
-## Naive Bayes Classifier
+# Naive Bayes Classifier
 
 Lets picture a [Bayesian network](../../general/bayesian_network.md) with one root node and all other nodes as children of it. For this it is useful to think of an example.
 
@@ -158,7 +156,7 @@ This is cool as,
 
 Though the main consideration when using this is you will need to smooth the data to make sure we don't zero out options due to limitations of our data.
 
-## Why sample
+# Why sample
 
 - To get indicative distributions of the date. Potentially this is costly and we can now use these probabilities to run simulations.
 - To simulate a complex process by sampling smaller bits of it.

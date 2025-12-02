@@ -4,10 +4,10 @@ checked: false
 created: 2024-04-07
 draft: false
 last_edited: 2024-04-07
-title: Tit for Tat
 tags:
   - machine-learning
   - game-theory
+title: Tit for Tat
 type: definition
 ---
 >[!tldr] Tit for Tat

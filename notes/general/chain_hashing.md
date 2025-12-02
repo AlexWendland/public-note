@@ -4,9 +4,9 @@ checked: false
 created: 2023-10-12
 draft: false
 last_edited: 2023-11-11
-title: Chain Hashing
 tags:
   - programming
+title: Chain Hashing
 type: data structure
 ---
 >[!tldr] Chain Hashing

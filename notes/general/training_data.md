@@ -5,9 +5,9 @@ checked: false
 created: 2024-01-13
 draft: false
 last_edited: 2024-01-13
-title: Training data
 tags:
   - machine-learning
+title: Training data
 type: definition
 ---
 >[!tldr] Training data

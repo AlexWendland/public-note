@@ -8,9 +8,9 @@ checked: false
 created: 2023-11-12
 draft: false
 last_edited: 2023-11-13
-title: Max-Satisfiability Problem
 tags:
   - programming
+title: Max-Satisfiability Problem
 type: problem
 ---
 # Statement

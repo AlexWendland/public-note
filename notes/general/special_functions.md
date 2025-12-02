@@ -10,13 +10,12 @@ checked: false
 created: 2023-02-25
 draft: false
 last_edited: 2023-11-11
-title: Special functions
 tags:
   - programming
   - python
+title: Special functions
 type: notation
 ---
-# Special Functions
 This are also known as [dunder](special_functions.md) (double underscore) or [magic](special_functions.md) functions. They are signified by two underscores before and after its name i.e. \_\_len\_\_.
 
 These functions are not normally called by the user, the are for the python interpreter to use. For example if you call

@@ -5,9 +5,9 @@ checked: false
 created: 2024-01-13
 draft: false
 last_edited: 2024-01-13
-title: Overfitting
 tags:
   - machine-learning
+title: Overfitting
 type: definition
 ---
 >[!tldr] Overfitting

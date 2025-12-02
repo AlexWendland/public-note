@@ -3,12 +3,11 @@ checked: false
 created: 2023-02-25
 draft: false
 last_edited: 2023-11-11
-title: First-class object
 tags:
   - programming
+title: First-class object
 type: definition
 ---
-# First-class object
 This is an entity that can be:
 - Created at runtime,
 - Assigned to a variable or element in a data structure,

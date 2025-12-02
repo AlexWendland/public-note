@@ -4,12 +4,11 @@ checked: false
 created: 2023-09-28
 draft: false
 last_edited: 2023-11-11
-title: DFS to find connected components in an undirected graph
 tags:
   - programming
+title: DFS to find connected components in an undirected graph
 type: algorithm
 ---
-# DFS to find connected components in an undirected graph
 
 To solve the following problem.
 [Statement](find_connected_components_in_a_undirected_graph.md#statement)

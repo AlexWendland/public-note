@@ -1,19 +1,17 @@
 ---
 aliases:
 checked: false
-course: 'CS7642 Reinforcement Learning'
+course: CS7642 Reinforcement Learning
 created: 2025-05-12
 draft: false
 last_edited: 2025-05-12
-title: Week 1 - Smoov & Curly's Bogus Journey
 tags:
   - OMSCS
+title: Week 1 - Smoov & Curly's Bogus Journey
 type: lecture
 week: 1
 ---
-# Week 1 - Smoov & Curly's Bogus Journey
-
-## Review
+# Review
 
 The first part of this course is a review of:
 
@@ -30,7 +28,7 @@ Reminder of the below notation.
 - **States**: $S$ is the set of all states.
 - **Actions**: $A$ is the set of all actions, it could depend on the state therefore we talk about $A_s$ for the actions at state $s \in S$.
 
-## Quality
+# Quality
 
 Within the [Bellman equation](../../general/bellman_equation.md) if we take what is within the brackets and set it to a new function $Q(s,a)$ the quality of taking action $a$ in state $s$ we then derive the next set of equations.
 $$
@@ -42,7 +40,7 @@ Q(s,a) & = R(s,a) + \gamma \sum_{s' \in S} T(s,a,s') V(s')\\
 $$
 The motivation for doing this will come later, however intuitively this form will be more useful when you do not have access to $T(s,a,s')$ and $R(s,a)$ directly. Instead you can only sample 'experience data'.
 
-## Continuations
+# Continuations
 
 We can apply a similar trick to derive a 3rd form of the [Bellman equation](../../general/bellman_equation.md) this time we just set $C(s,a)$ to be the summation within the definition of $Q(s,a)$.
 

@@ -5,9 +5,9 @@ checked: false
 created: 2024-02-22
 draft: false
 last_edited: 2024-02-22
-title: Chain rule (probability)
 tags:
   - probability
+title: Chain rule (probability)
 type: definition
 ---
 >[!tldr] Chain rule (probability)

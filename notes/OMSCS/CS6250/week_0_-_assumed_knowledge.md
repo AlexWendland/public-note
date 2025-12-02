@@ -1,23 +1,21 @@
 ---
 aliases:
 checked: false
-course: 'CS6250 Computer Networks'
+course: CS6250 Computer Networks
 created: 2024-05-19
 draft: false
 last_edited: 2024-05-19
-title: Week 0 - Assumed knowledge
 tags:
   - OMSCS
+title: Week 0 - Assumed knowledge
 type: lecture
 week: 0
 ---
-# Week 0 - Assumed knowledge
-
-## Notes from Fundamentals course
+# Notes from Fundamentals course
 
 I followed this [Fundamentals course](https://www.youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi) to understand the basics.
 
-### Lecture 1: Hosts and devices
+## Lecture 1: Hosts and devices
 
 Some terminology first:
 
@@ -63,7 +61,7 @@ Whilst these devices are called [routers](../../general/router.md) and [switches
 
 Many other devices can perform switching and routing other than a switch and a router.
 
-### Lesson 2: [Open Systems interconnection (OSI) model](../../general/open_systems_interconnection_(osi)_model.md)
+## Lesson 2: [Open Systems interconnection (OSI) model](../../general/open_systems_interconnection_(osi)_model.md)
 
 [Open Systems interconnection (OSI) model](../../general/open_systems_interconnection_(osi)_model.md)
 
@@ -93,14 +91,14 @@ The main other model of the internet is [IPS model](../../general/internet_proto
 
 [Encapsulation](../../general/encapsulation.md)
 
-### Lesson 3: How do hosts talk to one another
+## Lesson 3: How do hosts talk to one another
 
 There are two important different cases to cover.
 
 1. How host talk to one another on the same network, and
 2. How hosts talk to one another on different networks.
 
-#### Talking on the same network
+### Talking on the same network
 
 When hosts talk to each other on the same network they need 3 identifying bits of information.
 - [MAC address](../../general/mac_address.md),
@@ -125,7 +123,7 @@ Now with host B's MAC address host A can now safely send the data directly to ho
 
 This is how computers on the same network communicate with each they use ARP to populate their ARP cache so they can directly communicate with one another.
 
-#### Talking to computers on different networks
+### Talking to computers on different networks
 
 In this set up host A needs to send data to host C but there is a router in-between them. We assume host A already has host C's IP address.
 
@@ -137,9 +135,9 @@ Host A now constructs the frame to send to the router it sets the layer 3 header
 
 At this point the router takes the frame it receives strips out the layer 2 header to get a packet then it uses it's own ARP table to attach a new layer 2 header to send it further on. This could be directly to host C or to another router.
 
-### Lesson 4: Everything switches do to communicate within a network
+## Lesson 4: Everything switches do to communicate within a network
 
-#### Rules of a switch
+### Rules of a switch
 
 These are the rules for [Switching](../../general/switching.md) so applies to anything that can do switching.
 
@@ -164,7 +162,7 @@ As this all works on layer 2 and doesn't involve IP addresses the router on the 
 >[!note] Switches MAC address
 >Traffic going through a switch does not use a switches MAC address or IP address. However switches are hosts on that network so have an IP address and MAC address. These only get used if you are looking to connect directly to the switch to configure it.
 
-#### Unicast flooding vs Brodcasts
+### Unicast flooding vs Brodcasts
 
 Flooding is an action the switch takes when it does not know the port for a provided MAC address. This replicates the frame and sends it on all available ports.
 
@@ -172,11 +170,11 @@ Broadcast is a type of frame that has the destination MAC address set as all f's
 
 [Virtual Local Area Networks (VLAN)](../../general/virtual_local_area_networks_(vlan).md)
 
-#### Multiple switches
+### Multiple switches
 
 To handle loops in the network we have to use the [Spanning Tree Protocol (STP)](../../general/spanning_tree_protocol_(stp).md) to turn off certain connections.
 
-### Lesson 5: Everything a router does to communicate between networks
+## Lesson 5: Everything a router does to communicate between networks
 
 In [RFC2460 Internet Protocol, Version 6 (IPv6) Specification](../../general/rfc2460_internet_protocol,_version_6_(ipv6)_specification.md) it defines what a node, host, and router is.
 
@@ -197,13 +195,13 @@ A router keeps a table of all networks it knows about in its *routing table*. Di
 
 There are many different Dynamic routing protocols RIP, OSPF, BGP, EIGRP, IS-IS, ect They differ in how they discover new routers, what addresses they share, and how they share thous addresses.
 
-#### Difference between an ARP table and a Router table
+### Difference between an ARP table and a Router table
 
 As routers have IP addresses on the networks associated to their interfaces they therefor have to have ARP tables for these networks.
 
 The main difference between ARP tables and router tables is that ARP tables always start empty and can be fully populated through ARP. If the router gets a frame it doesn't have an ARP entry for it will use ARP to discover it - whereas if a router gets a packet it doesn't have a routing entry for it will drop that packet.
 
-#### Hierarchy helps with scaling
+### Hierarchy helps with scaling
 
 If you use a tree like network to connect routers the longest path grows like $\log(n)$ instead of linear designs that will grown as $n$. However there are more reasons to use a Hierarchy a base on the IP address.
 
@@ -221,7 +219,7 @@ You can set a default route - this is one that matches on 0 bits. Then instead o
 >[!note] Matching criteria
 >If you have a default gateway then it will match with all addresses which might cause a conflict. By default the more specific a routing entry the higher priority that rule. Though rules can get more complicated than this.
 
-### Lesson 6: Protocols
+## Lesson 6: Protocols
 
 Protocol: Set of rules and messages that form an Internet standard.
 
@@ -240,7 +238,7 @@ Some were already described above. Such as [ARP](../../general/address_resolutio
 [Domain Name System (DNS)](../../general/domain_name_system_(dns).md)
 
 [Dynamic Host Configuration Protocol (DHCP)](../../general/dynamic_host_configuration_protocol_(dhcp).md)
-## Preparation questions
+# Preparation questions
 
 - What is a “protocol”? What are some of the most well-known and used protocols?
 

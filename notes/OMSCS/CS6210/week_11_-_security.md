@@ -1,19 +1,17 @@
 ---
 aliases:
 checked: false
-course: 'CS6210 Advanced Operating Systems.md'
+course: CS6210 Advanced Operating Systems.md
 created: '2025-12-01'
 draft: true
 last_edited: '2025-12-01'
-title: Week 11 - Security
 tags:
   - OMSCS
+title: Week 11 - Security
 type: lecture
 week: 11
 ---
-# Week 11 - Security
-
-## Principles of information security
+# Principles of information security
 
 Information security is a large part of the developer industry.
 This field has whole masters courses dedicated to its study.
@@ -23,7 +21,7 @@ The notes in this section are based on the following paper:
 
 > Protection and the Control of Information in Computer Systems
 
-### Terminology
+## Terminology
 
 First we make a clear distinction between privacy and security:
 
@@ -51,7 +49,7 @@ A goal of a good system should prevent all the above.
 However, this statement is hard to prove as it is a negative statement such as 'there are no bugs in my code'.
 Instead we want a positive definition of things we can check.
 
-### Levels of protection
+## Levels of protection
 
 We can broadly group protection into levels.
 
@@ -70,7 +68,7 @@ For example, in the civil service documents will have a string relaying the secu
 These are very general and you should specialise these to fit your use case.
 We also need to be able to dynamically change these.
 
-### Design principles
+## Design principles
 
 There are some guiding principles for protection:
 

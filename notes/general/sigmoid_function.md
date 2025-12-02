@@ -5,10 +5,10 @@ checked: false
 created: 2024-01-20
 draft: false
 last_edited: 2024-01-20
-title: Sigmoid function
 tags:
   - machine-learning
   - maths
+title: Sigmoid function
 type: definition
 ---
 >[!tldr] Sigmoid function

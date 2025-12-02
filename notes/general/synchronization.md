@@ -6,9 +6,9 @@ checked: false
 created: 2025-03-24
 draft: false
 last_edited: 2025-03-24
-title: Synchronization
 tags:
   - OS
+title: Synchronization
 type: definition
 ---
 >[!tldr] Synchronization

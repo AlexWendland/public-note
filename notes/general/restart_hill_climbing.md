@@ -4,10 +4,10 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-title: Restart hill climbing
 tags:
   - programming
   - machine-learning
+title: Restart hill climbing
 type: algorithm
 ---
 # Random restart hill climbing

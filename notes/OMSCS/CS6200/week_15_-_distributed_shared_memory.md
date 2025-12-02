@@ -1,23 +1,21 @@
 ---
 aliases:
 checked: false
-course: 'CS6200 Graduate introduction to Operating Systems'
+course: CS6200 Graduate introduction to Operating Systems
 created: 2025-04-13
 draft: false
 last_edited: 2025-04-13
-title: Week 15 - Distributed shared memory
 tags:
   - OMSCS
+title: Week 15 - Distributed shared memory
 type: lecture
 week: 15
 ---
-# Week 15 - Distributed shared memory
-
-## Additional reading
+# Additional reading
 
 - [Distributed Shared Memory: Concepts and Systems](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-protic-paper.pdf)
 
-## Distributed shared memory
+# Distributed shared memory
 
 Distributed shared memory is similar to a [distributed file system](../../general/distributed_file_system_(dfs).md) however all clients are also clients to others. They share the state mutually.
 
@@ -29,7 +27,7 @@ This technology is become more relevant in data centers since the development of
 
 [Remote direct memory access (RDMA)](../../general/remote_direct_memory_access_(rdma).md)
 
-## Hardware vs software support
+# Hardware vs software support
 
 The basic concept in distributed shared memory is when memory access is not local it goes via the network.
 
@@ -37,7 +35,7 @@ The basic concept in distributed shared memory is when memory access is not loca
 
 Whilst in data-centers they use hardware such as [Remote direct memory access (RDMA)](../../general/remote_direct_memory_access_(rdma).md) this is an expensive option. Other applications can achieve the same using software.
 
-## Sharing granularity
+# Sharing granularity
 
 When looking at shared memory within a processor the share locations at the variable level. However if we go out to the network for each variable that will cause too large a slowdown for a system. Instead we can to it at a less granular level:
 - Page level: The [OS](../../general/operating_system_(os).md) understands memory at the page level which makes this an attractive option.
@@ -46,7 +44,7 @@ When looking at shared memory within a processor the share locations at the vari
 >[!warning] False sharing
 >If two clients are using a shared page, one writes and only uses a variable $x$ the other writes and only uses the variable $y$. If $x$ and $y$ are on the shared page the page will have to be kept in sync between the two machines whilst in reality there is no shared state.
 
-## Access patterns
+# Access patterns
 
 When designing a system to share memory it is good to understand how the memory will be used:
 
@@ -56,22 +54,22 @@ When designing a system to share memory it is good to understand how the memory 
 
 This lecture will cover the last of these.
 
-## State management
+# State management
 
 There are two techniques for moving state between members of our network.
 
-### Migration
+## Migration
 
 When a new user wants the data we move it off the node it is currently stored onto the node that needs to use it. This makes sense for the single reader/writer case however will require a lot of data movement in the network if multiple entities are using the data at the same time. The cost of moving the data ideally should me amortized across multiple operations on it.
 
-### Replication
+## Replication
 
 Instead of the data just being present on a single node it is copied onto multiple nodes who are using the data. (This is similar to caching.) This will allow multiple users quick access to the data whoever will require consistency management to keep replicated state aligned.
 
 >[!note] Difference between Caching and replicated
 >In a cached setup there is a single source of truth and clients hold a copy of that which is backed up by the source of truth. However in replication no one source is privileged over another.
 
-## Consistency management
+# Consistency management
 
 First lets review the consistency management we have seen before. Shared memory on a processor used:
 
@@ -85,7 +83,7 @@ These both happened as soon as a write happened which may course too much overhe
 
 When these methods get triggered depends on the consistency model for the shared state.
 
-## DSM Architecture
+# DSM Architecture
 
 We will look at one design for a page based [OS](../../general/operating_system_(os).md)-supported [Distributed shared memory (DSM)](../../general/distributed_shared_memory_(dsm).md) system.
 
@@ -121,7 +119,7 @@ To do this we need hardware support in the [MMU](../../general/memory_management
 - If it is locally cached we need to perform and coherence operations required.
 - We can us other [MMU](../../general/memory_management_unit_(mmu).md) state such as dirty pages to assist with this.
 
-## Consistency model
+# Consistency model
 
 [Consistency model](../../general/consistency_model.md)
 

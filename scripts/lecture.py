@@ -11,7 +11,6 @@ from rich.table import Table
 
 from note_helper.file_admin import get_last_edited
 from note_helper.models import MarkdownSection, NoteFile
-from note_helper.read_note import read_note_file
 from note_helper.write_note import write_note_file
 
 console = Console()
@@ -132,53 +131,6 @@ def create_lecture_file(name: str, week: str, course: CourseInfo) -> Path:
     return file_path
 
 
-def add_lecture_to_course_file(name: str, week: str, course: CourseInfo) -> None:
-    """Add the new lecture to the course index file."""
-    # Read the existing course file
-    course_file = read_note_file(str(course.index_file))
-
-    # Find the Lectures section
-    lectures_section = None
-    for section in course_file.sections:
-        if section.title == "Lectures":
-            lectures_section = section
-            break
-
-    if not lectures_section:
-        console.print("[yellow]Warning: Could not find Lectures section in course file[/yellow]")
-        return
-
-    # Create the new lecture link
-    lecture_name = f"Week {week} - {name}"
-    new_lecture_link = f"- [[{lecture_name}]]"
-
-    # Add the new lecture to the lines
-    if lectures_section.lines is None:
-        lectures_section.lines = []
-
-    # Insert in the correct position (sorted by week number)
-    inserted = False
-    for i, line in enumerate(lectures_section.lines):
-        if line.startswith("- [[Week "):
-            # Extract week number from existing line
-            try:
-                existing_week = int(line.split("Week ")[1].split(" ")[0])
-                if int(week) < existing_week:
-                    lectures_section.lines.insert(i, new_lecture_link)
-                    inserted = True
-                    break
-            except (IndexError, ValueError):
-                continue
-
-    # If not inserted, append to the end
-    if not inserted:
-        lectures_section.lines.append(new_lecture_link)
-
-    # Write the updated course file
-    write_note_file(course_file)
-    console.print(f"[green]✓ Added lecture to course file: {course.index_file}[/green]")
-
-
 def display_courses_table(courses: list[CourseInfo]) -> None:
     """Display a formatted table of available courses."""
     table = Table(title="Available OMSCS Courses", show_header=True, header_style="bold magenta")
@@ -261,9 +213,6 @@ def main():
     # Create the lecture file
     console.print()
     create_lecture_file(name, week, selected_course)
-
-    # Add to course file
-    add_lecture_to_course_file(name, week, selected_course)
 
     console.print("\n[bold green]✓ Lecture created successfully![/bold green]\n")
 

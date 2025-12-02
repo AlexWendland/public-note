@@ -5,9 +5,9 @@ checked: false
 created: 2024-01-24
 draft: false
 last_edited: 2024-01-24
-title: Weak learner
 tags:
   - machine-learning
+title: Weak learner
 type: definition
 ---
 >[!tldr] Weak learner

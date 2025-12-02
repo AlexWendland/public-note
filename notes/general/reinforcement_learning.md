@@ -6,9 +6,9 @@ checked: false
 created: 2024-04-03
 draft: false
 last_edited: 2024-04-03
-title: Reinforcement learning
 tags:
   - machine-learning
+title: Reinforcement learning
 type: definition
 ---
 >[!tldr] Reinforcement learning

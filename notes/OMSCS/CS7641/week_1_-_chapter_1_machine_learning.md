@@ -1,21 +1,20 @@
 ---
 aliases:
 checked: false
-course: 'CS7641 Machine Learning'
+course: CS7641 Machine Learning
 created: 2024-01-13
 draft: false
 last_edited: 2024-01-13
-title: Week 1 - Chapter 1 Machine Learning
 tags:
   - OMSCS
+title: Week 1 - Chapter 1 Machine Learning
 type: lecture
 week: 1
 ---
-# Week 1 - Chapter 1 Machine Learning
 
 This is my notes from the first chapter of [MachineLearningTomMitchell.pdf](machinelearningtommitchell.pdf.md).
 
-# 1.1 Well posed learning problems
+ 1.1 Well posed learning problems
 
 [Machine Learning](../../general/machine_learning.md)
 
@@ -26,7 +25,7 @@ This is my notes from the first chapter of [MachineLearningTomMitchell.pdf](mach
 >- Training experience $E$: playing practice games against itself.
 
 In what follows we use Checkers to provide an example of the process you go through to design a learning system.
-# Training experience
+ Training experience
 
 There are important classifications of training experience.
 
@@ -50,14 +49,14 @@ Lastly how representative the test samples are.
 	- However, one of the goals of machine learning is to generalise beyond this.
 	- In practice this is one of the most violated assumptions from the theory.
 
-# Designing a learning system
+ Designing a learning system
 
 Now we must make 3 more choices:
 1. the exact type of knowledge to be learned,
 2. a representation for this target knowledge, and
 3. a learning mechanism.
 
-## Type of knowledge to be learnt
+# Type of knowledge to be learnt
 
 This normally comes in the form of a target function.
 
@@ -73,7 +72,7 @@ In the example above we can may explicit expectations on $V$ such as $b \in B$
 
 The function as you right it down might be $V$ *non-operational* definition as it is not efficiently computable (as the last condition above makes it). The goal of learning is to make an *operational* description of $V$. This might not be known perfectly however a [prediction](../../general/prediction.md) of it $\hat{V}$ will suffice.
 
-# Choosing a representation of this target knowledge
+ Choosing a representation of this target knowledge
 
 This is equivalent to choosing a [modelling paradigm](../../general/modelling_paradigm.md).
 
@@ -82,7 +81,7 @@ In checkers you could represent $V$ as:
 - A neural network, or
 - A function on board features that are predefined.
 
-## A learning Mechanism
+# A learning Mechanism
 
 Now given a function $V: A \rightarrow B$ you need:
 - [training data](../../general/training_data.md) to build $\hat{V}$ of the form $T \subset A \times B$,
@@ -95,7 +94,7 @@ The evaluation process for a linear function is commonly something like [Mean sq
 
 In the example as would choose the algorithm appropriate for the representation of $V$ that we went for.
 
-# Summary
+ Summary
 
 A lot of learning systems follow the design below.
 
@@ -117,7 +116,7 @@ In our example:
 
 Learning problems can be summarised as searching through large "Hypothesis spaces" to find the best fitting function to a given curve.
 
-# Issues in Machine Learning
+ Issues in Machine Learning
 
 - What algorithms perform best for a given task?
 - How much training data does it take to make a learning process converge?

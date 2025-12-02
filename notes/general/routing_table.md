@@ -5,9 +5,9 @@ checked: false
 created: 2024-05-21
 draft: false
 last_edited: 2024-05-21
-title: Routing table
 tags:
   - networks
+title: Routing table
 type: definition
 ---
 >[!tldr] Routing table

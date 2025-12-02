@@ -5,9 +5,9 @@ checked: false
 created: 2023-10-27
 draft: false
 last_edited: 2023-11-11
-title: NP-Complete
 tags:
   - programming
+title: NP-Complete
 type: definition
 ---
 >[!tldr] NP-Complete

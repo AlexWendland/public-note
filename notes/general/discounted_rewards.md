@@ -5,9 +5,9 @@ checked: false
 created: 2024-04-03
 draft: false
 last_edited: 2024-04-03
-title: Discounted rewards
 tags:
   - machine-learning
+title: Discounted rewards
 type: definition
 ---
 >[!tldr] Discounted rewards

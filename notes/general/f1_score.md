@@ -4,9 +4,9 @@ checked: false
 created: 2024-02-02
 draft: false
 last_edited: 2024-02-02
-title: F1 score
 tags:
   - machine-learning
+title: F1 score
 type: definition
 ---
 >[!tldr] F1 score

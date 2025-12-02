@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS7641 Machine Learning'
+course: CS7641 Machine Learning
 created: 2024-01-24
 draft: false
 last_edited: 2024-01-24
-title: Week 3 - Ensemble Bagging and Boosting
 tags:
   - OMSCS
+title: Week 3 - Ensemble Bagging and Boosting
 type: lecture
 week: 3
 ---
-# Week 3 - Ensemble Bagging and Boosting
 
 [Ensemble learning](../../general/ensemble_learning.md)
 
@@ -19,7 +18,7 @@ The idea of Ensemble learning is to look at a subset of data and try to model th
 
 This is a powerful idea when the function we are trying to map doesn't globally generalise but instead locally generalises like when people try to filter out spam from your inbox.
 
-## Bagging
+# Bagging
 
 The simplest example of [Ensemble learning](../../general/ensemble_learning.md) is [Bagging](../../general/bagging.md).
 
@@ -27,7 +26,7 @@ The simplest example of [Ensemble learning](../../general/ensemble_learning.md) 
 
 [Bagging](../../general/bagging.md) treated all data points equally and didn't focus on whether we performed well or poorly on a given data point to pick the next subset. If we fixed this we could potentially tighten up our model.
 
-## Error rate and weak learners
+# Error rate and weak learners
 
 [Error rate (modelling)](../../general/error_rate_(modelling).md)
 
@@ -35,6 +34,6 @@ Models that are considered good should always do better than chance.
 
 [Weak learner](../../general/weak_learner.md)
 
-## Boosting
+# Boosting
 
 [Boosting](../../general/boosting.md)

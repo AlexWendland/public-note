@@ -4,10 +4,10 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-title: Clique of a given size problem
 tags:
   - programming
   - graph-theory
+title: Clique of a given size problem
 type: problem
 ---
 # Statement

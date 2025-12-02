@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS7642 Reinforcement Learning'
+course: CS7642 Reinforcement Learning
 created: 2025-05-14
 draft: false
 last_edited: 2025-05-14
-title: Week 2 - Reinforcement learning basics
 tags:
   - OMSCS
+title: Week 2 - Reinforcement learning basics
 type: lecture
 week: 2
 ---
-# Week 2 - Reinforcement learning basics
 
 When evaluating different learners we normally evaluate them by the [policy](../../general/policy_(mdp).md) they produce. However, different methods of learning can create policies in different ways - therefore we may need to also consider:
 

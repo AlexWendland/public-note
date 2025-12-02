@@ -5,9 +5,9 @@ checked: false
 created: 2025-04-09
 draft: false
 last_edited: 2025-04-09
-title: Peripheral component interconnect (PCI)
 tags:
   - OS
+title: Peripheral component interconnect (PCI)
 type: definition
 ---
 >[!tldr] Peripheral component interconnect (PCI)

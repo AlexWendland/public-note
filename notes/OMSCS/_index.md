@@ -1,5 +1,4 @@
 ---
-title: Online Masters of Science in Computer Science
 aliases:
   - OMSCS
 created: 2023-08-26
@@ -7,6 +6,7 @@ draft: false
 tags:
   - OMSCS
   - education
+title: Online Masters of Science in Computer Science
 type: index
 ---
 This [masters program](https://omscs.gatech.edu/) from Georgia Tech is aimed at making rigorous computer science education accessible to all through an affordable programme on an accessible platform.

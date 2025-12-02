@@ -5,16 +5,15 @@ checked: false
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
-title: CS7642 Reinforcement Learning
 tags:
   - OMSCS
   - maths
   - programming
 term: summer
+title: CS7642 Reinforcement Learning
 type: course
 year: '2025'
 ---
-# CS7642 Reinforcement Learning
 
 The course explores automated decision-making from a computational perspective through a combination of classic papers and more recent work. It examines efficient algorithms, where they exist, for learning single-agent and multi-agent behavioral policies and approaches to learning near-optimal decisions from experience.
 
@@ -27,7 +26,7 @@ The ability to run Docker locally or utilize a cloud computing service is strong
 >[!bug] Dropped
 >I dropped this course, so the lectures stop after week 3
 
-## Links
+# Links
 - [Central](https://www.omscentral.com/courses/reinforcement-learning-and-decision-making/reviews)
 - [OMSCS page](https://omscs.gatech.edu/cs-7642-reinforcement-learning)
 - [Course textbook](http://www.incompleteideas.net/book/the-book-2nd.html)

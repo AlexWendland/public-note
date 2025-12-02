@@ -4,9 +4,9 @@ checked: false
 created: 2023-11-07
 draft: false
 last_edited: 2023-11-11
-title: All linear programmes can be represented in standard form
 tags:
   - maths
+title: All linear programmes can be represented in standard form
 type: lemma
 ---
 # Statement

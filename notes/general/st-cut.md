@@ -5,9 +5,9 @@ checked: false
 created: 2023-10-03
 draft: false
 last_edited: 2023-11-11
-title: st-cut
 tags:
   - programming
+title: st-cut
 type: definition
 ---
 >[!tldr] st-cut

@@ -3,17 +3,16 @@ checked: false
 created: 2023-02-24
 draft: false
 last_edited: 2023-11-11
-title: Markdown
 tags:
   - programming
   - language
+title: Markdown
 type: tool
 ---
-# Markdown
 
 This is a [Markup Language](markup_language.md) that is widely used, for example it is used in [GitHub](github.md) README pages and [Obsidian](obsidian.md) notes. It has a fairly basic syntax, that I am going to have great fun describing in a [Markdown](markdown.md) file.
 
-# Syntax
+ Syntax
 I am sure there is more, but this is what I have found useful so far!
 
 | Format                | Syntax                                                                                  | Example                                              |

@@ -4,10 +4,10 @@ checked: false
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-title: DDoS reflection and amplification
 tags:
   - networks
   - security
+title: DDoS reflection and amplification
 type: definition
 ---
 >[!tldr] DDoS reflection and amplification

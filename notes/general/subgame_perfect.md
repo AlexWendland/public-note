@@ -4,9 +4,9 @@ checked: false
 created: 2024-04-07
 draft: false
 last_edited: 2024-04-07
-title: Subgame perfect
 tags:
   - game-theory
+title: Subgame perfect
 type: definition
 ---
 >[!tldr] Subgame perfect

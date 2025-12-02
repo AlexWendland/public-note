@@ -5,9 +5,9 @@ checked: false
 created: 2023-09-27
 draft: false
 last_edited: 2023-11-11
-title: Strongly connected (directed graphs)
 tags:
   - maths
+title: Strongly connected (directed graphs)
 type: definition
 ---
 > [!tldr] Strongly connected

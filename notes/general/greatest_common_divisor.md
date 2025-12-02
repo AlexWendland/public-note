@@ -6,9 +6,9 @@ checked: false
 created: 2023-10-09
 draft: false
 last_edited: 2023-11-11
-title: Greatest common divisor
 tags:
   - maths
+title: Greatest common divisor
 type: definition
 ---
 > [!tldr] Greatest Common divisor

@@ -4,9 +4,9 @@ checked: false
 created: 2023-10-10
 draft: false
 last_edited: 2023-11-11
-title: Eulers product formula (totient function)
 tags:
   - maths
+title: Eulers product formula (totient function)
 type: lemma
 ---
 # Statement

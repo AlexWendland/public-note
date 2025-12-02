@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-10-07
 draft: false
 last_edited: 2023-11-11
-title: Week 7 - Max-flow Generalizations
 tags:
   - OMSCS
+title: Week 7 - Max-flow Generalizations
 type: lecture
 week: 7
 ---
-# Week 7 - Max-flow Generalizations
 
 >[!tldr] [Max flow](../../general/max_flow_problem.md) with demands
 >Let $(G=(V,E), c, s, t)$ be a [flow network](../../general/flow_network.md) and assume we are provided with demands $d(e) \geq 0$ for $e \in E$. A flow $f$ is called feasible if
@@ -33,7 +32,7 @@ However, this will only be a valid [flow](../../general/flow.md) on $(G,c,s,t)$ 
 >[!important] Lemma
 >$G$ has a feasible flow $f$ if and only if $G'$ has a saturating flow $f'$.
 
-### $\Leftarrow$
+## $\Leftarrow$
 
 Define $f(e) = f'(e) + d(e)$ for $e \in E$ as above.
 
@@ -54,7 +53,7 @@ which similarly we get
 $$\sum_{(v,w) \in E'} f'(v,w) = \sum_{(v,w) \in E} f(v,w).$$
 This gives us validity of $f$ from the validity of $f'$.
 
-### $\Rightarrow$
+## $\Rightarrow$
 
 Define
 $$f'(e) = \begin{cases}
@@ -87,7 +86,7 @@ giving us validity.
 
 $\square$
 
-## Max feasible flow
+# Max feasible flow
 
 Now we have a feasible flow $f$ if one exists, how do we maximises it?
 

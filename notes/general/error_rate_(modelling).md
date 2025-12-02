@@ -4,9 +4,9 @@ checked: false
 created: 2024-01-24
 draft: false
 last_edited: 2024-01-24
-title: Error rate (modelling)
 tags:
   - machine-learning
+title: Error rate (modelling)
 type: definition
 ---
 >[!tldr] Error rate (modelling)

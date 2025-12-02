@@ -6,9 +6,9 @@ checked: false
 created: 2024-05-21
 draft: false
 last_edited: 2024-05-21
-title: Protocol (networks)
 tags:
   - networks
+title: Protocol (networks)
 type: definition
 ---
 >[!tldr] Protocol (networks)

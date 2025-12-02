@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS7641 Machine Learning'
+course: CS7641 Machine Learning
 created: 2024-01-18
 draft: false
 last_edited: 2024-01-18
-title: Week 2 - Neural networks
 tags:
   - OMSCS
+title: Week 2 - Neural networks
 type: lecture
 week: 2
 ---
-# Week 2 - Neural networks
 
 The basis of all neural networks is a simplified model of a neuron in the human body.
 
@@ -25,32 +24,32 @@ First we will just take the function to be [Binary step](../../general/binary_st
 
 [Binary step](../../general/binary_step.md)
 
-## Binary operations with perceptron's
+# Binary operations with perceptron's
 
-### [Logical and](../../general/logical_and.md) ($\land$)
+## [Logical and](../../general/logical_and.md) ($\land$)
 
 Let $n = 2$ and have $x_1, x_2 \in \{0,1\}$ then if we set $w_1 = w_2 = 0.5$ and $\theta = 1$ then $p$ becomes
 $$p(x_1, x_2) = \begin{cases} 1 & \mbox{if } x_1 = x_2 = 1\\ 0 & \mbox{otherwise.}\end{cases}$$
-### [Logical or](../../general/logical_or.md) ($\lor$)
+## [Logical or](../../general/logical_or.md) ($\lor$)
 
 Let $n = 2$ and have $x_1, x_2 \in \{0,1\}$ then if we set $w_1 = w_2 = 1$ and $\theta = 1$ then $p$ becomes
 $$p(x_1, x_2) = \begin{cases} 1 & \mbox{if } x_1 + x_2 \geq 1\\ 0 & \mbox{otherwise.}\end{cases}$$
-### Not
+## Not
 
 Let $n = 1$ and have $x \in \{0,1\}$ then if we set $w = -1$ and $\theta = 0$ then $p$ becomes
 
 $$p(x) = \begin{cases} 1 & \mbox{if } x = 0\\ 0 & \mbox{otherwise.}\end{cases}$$
-### Xor
+## Xor
 
 Define two perceptron's $p_{\land} : \mathbb{R}^2 \rightarrow \{0,1\}$ (from before) and $p : \mathbb{R}^3 \rightarrow \{0,1\}$ with $w_1 = w_2 = 1$, $w_3 = -2$ and $\theta = 0.5$ then
 $$p(x) = \begin{cases} 1 & \mbox{if } x \in \{(1,0,0), (0,1,0), (1,1,0)\}\\ 0 & \mbox{otherwise.}\end{cases}$$
 Now consider $x_1, x_2 \in \{0,1\}$ and the conjunction
 $$p(x_1, x_2, p_{\land}(x_1,x_2)) = \begin{cases} 1 & \mbox{if } (x_1, x_2) \in \{(1,0), (0,1)\} \\ 0 & \mbox{otherwise.} \end{cases}$$
-## Perceptron rule
+# Perceptron rule
 
 [Perceptron rule](../../general/perceptron_rule.md)
 
-## Gradient decent
+# Gradient decent
 
 With the [perceptron rule](../../general/perceptron_rule.md) we applied an activation function that made $p$ [non-differentiable](../../general/differentiation.md). Lets get rid of this for now and see if we can use [differentiation](../../general/differentiation.md) to get another training method.
 
@@ -70,11 +69,11 @@ $$
 This is very similar to the [perceptron rule](../../general/perceptron_rule.md). Now to completely the training using this we would travel in the opposite of the direction of found by this [derivative](../../general/differentiation.md). This method is called [Gradient decent](../../general/gradient_decent.md).
 
 [Gradient decent](../../general/gradient_decent.md)
-## Comparison
+# Comparison
 
 Whilst the [perceptron rule](../../general/perceptron_rule.md) [converges in finite time for linear separable datasets](../../general/the_perceptron_rule_using_binary_step_converges_in_finite_time_if_the_dataset_is_linearly_separable.md) it is unstable on datasets that are not [linearly separable](../../general/linearly_separable.md). The advantage of [gradient decent](../../general/gradient_decent.md) is that it is stable on all datasets but it has the issue of converging only to local minimum.
 
-## Sigmoid function
+# Sigmoid function
 
 [Sigmoid function](../../general/sigmoid_function.md)
 
@@ -84,7 +83,7 @@ Which shows the function is relative stable when $\sigma(a)$ is close to either 
 
 This allow us to use [gradient decent](../../general/gradient_decent.md) on a [perceptron](../../general/perceptron_(neural_network).md) that is using the [Sigmoid function](../../general/sigmoid_function.md) as its [activation function](../../general/activation_function.md).
 
-## Neural network
+# Neural network
 
 [Neural network](../../general/neural_network.md)
 
@@ -105,9 +104,9 @@ Complexity in a [neural network](../../general/neural_network.md) is defined by:
 - more layers, and
 - larger numbers as the parameters.
 
-## Bias for [neural networks](../../general/neural_network.md)
+# Bias for [neural networks](../../general/neural_network.md)
 
-### [Restriction bias](restriction_bias.md)
+## [Restriction bias](restriction_bias.md)
 
 This is the types of functions [neural networks](../../general/neural_network.md) can represent.
 
@@ -121,7 +120,7 @@ Whilst this appears like a multi [perceptron](../../general/perceptron_(neural_n
 >[!warning] Danger of [overfitting](../../general/overfitting.md)
 >It is important to use ideas like [cross validation](../../general/cross_validation.md) to avoid [overfitting](../../general/overfitting.md). For [neural networks](../../general/neural_network.md) it is important to avoid large values also.
 
-### [Preference bias](../../general/preference_bias.md)
+## [Preference bias](../../general/preference_bias.md)
 
 >[!Note] Starting weights
 >Normally when you start [back propagation](../../general/backward_propagation_of_errors_(back_propagation).md) the weights start with small random values. Random values helps us avoid the same local minima each run. Small values has low complexity.

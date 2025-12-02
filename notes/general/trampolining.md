@@ -4,12 +4,11 @@ checked: false
 created: 2023-08-26
 draft: false
 last_edited: 2023-11-11
-title: Trampolining
 tags:
   - programming
+title: Trampolining
 type: algorithm
 ---
-# Trampolining
 
 When using [recursion](recursion.md) you generate a large number of [namespaces](namespaces.md) for each function call you make. To get around this in the case of [tail recursion](recursion.md#tail-recursion) instead of leaving the function open whilst you call itself again - you can instead return a function to be called with the parameters already inside it. The runner for a trampoline looks like the following.
 
@@ -28,7 +27,7 @@ def run_trampoline(func_to_trampoline: Union[Callable, Any]) -> Any:
 
 Then you could write your [recursion](recursion.md) problem so that it either returns the answer or another function to get that answer.
 
-## Example
+# Example
 
 If you wanted to calculate the greatest common devisor of two positive integers you would apply the [Euclidean algorithm](euclidean_algorithm.md). This can be done by [recursion](recursion.md) using the following trampoline-able function.
 
@@ -63,8 +62,8 @@ if __name__ == "__main__":
 
 ```
 
-## Advantages
+# Advantages
 
 This method will stop
 
-## Limitations
+# Limitations

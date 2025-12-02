@@ -4,9 +4,9 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-title: Minimum vertex cover problem is NP-hard
 tags:
   - maths
+title: Minimum vertex cover problem is NP-hard
 type: lemma
 ---
 # Statement

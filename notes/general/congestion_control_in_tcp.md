@@ -4,9 +4,9 @@ checked: false
 created: 2024-05-28
 draft: false
 last_edited: 2024-05-28
-title: Congestion control in TCP
 tags:
   - networks
+title: Congestion control in TCP
 type: explainer
 ---
 # Congestion control in [TCP](transmission_control_protocol_(tcp).md)

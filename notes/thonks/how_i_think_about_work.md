@@ -4,14 +4,13 @@ checked: false
 created: 2025-06-29
 draft: false
 last_edited: 2025-06-29
-title: How I think about work
 tags:
   - finance
   - work
   - philosophy
+title: How I think about work
 type: blog
 ---
-# How I think about work
 
 Several things in life have prompted me to think more deliberately about work: doing a master's degree while working (stressful), reading *The 4-Hour Work Week*, diving into Stoic and Taoist philosophy, and getting turned down for a promotion.
 
@@ -20,7 +19,7 @@ So I think it's time to do some thinking on paper and see what comes out!
 >[!warning] Health warning
 > I am in a position where I have a solid foundation (have done a PhD), have enough of a job history to feel safe about finding the next one - so what comes next is pretty entitled but that is the way the world is structured right now.
 
-## Work is just solving a money problem
+# Work is just solving a money problem
 
 My main takeaway from *The 4-Hour Work Week* was this: work is the solution to a problem. The problem is not having enough money to do the things we want in life. When we face a problem, we should solve the problem, not fixate on the solution. No 'what job do you want to have when you grow up'.
 
@@ -33,7 +32,7 @@ More money is always good - but only if the cost is right.
 
 But obviously not all work is created equal. Some work I love, some I hate. So let's try to be precise about what I mean by cost.
 
-## The cost
+# The cost
 
 Instead of just thinking "do I like this job or not," I try to weigh 1 hour of doing different activities on a scale from 0 (love it) to 1 (hate it). When scoring an activity you may want to factor in the following:
 
@@ -52,7 +51,7 @@ Right now I work about 33 hours/week (after accounting for holidays - appendix) 
 
 I don't, but you may have situations where you can only work 20 hours a week or so due to commitments like child care, family support, etc. In this case, I would weight any hour over 20 as 1 or more cost - even if it is something you enjoy.
 
-## Graph this
+# Graph this
 
 The graph is simple with two axes income against your weighted work hours. At each point in this 2D graph I am going to think how I would feel being here. More money for the same hours is better. Less hours for the same money is better. Though what is interesting is looking at how valuable an extra hour of work is at different amounts of work/income. To make this simpler I picked 5 mental states: unbearable, bearable, fine, good, and made it - and then drew the dividing lines between them.
 
@@ -66,7 +65,7 @@ This is simple enough but doesn't really account for decisions like:
 - Graduate jobs: If I can survive the grind then I'll make it to a cushy job eventually.
 In the past I have had the 'grid it out' mindset for the "growth".
 
-## But here's the thing about "growth"
+# But here's the thing about "growth"
 
 Here's where I need to be controversial (or maybe just honest). I'm not sure optimizing for future outcomes is as smart as we think it is.
 
@@ -89,7 +88,7 @@ I have been reading Stoic and Taoist philosophy recently. Stoics teach you can o
 
 For me I am deciding to weight "immediate satisfaction" much more heavily in my graph. Not because I am hedonistic, but because the process is what we actually experience. The destination might be a mirage.
 
-## So how do I use this insight?
+# So how do I use this insight?
 
 Honestly, I don't right now. But I want to, I am trying to:
 
@@ -105,9 +104,9 @@ Maybe I should actually take my advice and halve my hours for half the pay - it 
 
 I believe some younger people need to be more skeptical of sacrificing present happiness for uncertain future rewards. The journey is what you actually experience.
 
-## Appendix: The boring math
+# Appendix: The boring math
 
-### Target pay
+## Target pay
 
 For the nerds who wanted to see how I got to £4,050/month:
 
@@ -121,7 +120,7 @@ If I want this lifestyle until I'm 85 (53 years) but only work until 65 (33 year
 
 So roughly £4,050/month after tax. Right now I earn at least £5,200/month.
 
-### Current hours
+## Current hours
 
 I work 9-6 with an hour for lunch putting that at 8 hours a day 5 days a week - 40 hours a week.
 
@@ -129,7 +128,7 @@ I have 25 days holiday standard with 8 days bought back and another 12 for doing
 
 Then multiplied by 0.7 puts me at 23.15 hours per week.
 
-### Average UK salaries
+## Average UK salaries
 
 It is good to be grounded in reality - when working some jobs normality feels a long way off. Personally I find the following calculator useful:
 

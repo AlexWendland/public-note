@@ -4,10 +4,10 @@ checked: false
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-title: Blackholing attack
 tags:
   - networks
   - security
+title: Blackholing attack
 type: definition
 ---
 >[!tldr] Blackholing attack

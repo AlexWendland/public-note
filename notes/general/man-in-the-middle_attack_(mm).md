@@ -6,10 +6,10 @@ checked: false
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-title: Man-in-the-middle attack (MM)
 tags:
   - networks
   - security
+title: Man-in-the-middle attack (MM)
 type: definition
 ---
 >[!tldr] Man-in-the-middle attack (MM)

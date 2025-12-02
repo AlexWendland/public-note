@@ -9,9 +9,9 @@ checked: false
 created: 2023-09-27
 draft: false
 last_edited: 2023-11-11
-title: DFS tree (algorithm)
 tags:
   - maths
+title: DFS tree (algorithm)
 type: definition
 ---
 > [!tldr] DFS tree

@@ -4,9 +4,9 @@ checked: false
 created: 2023-09-28
 draft: false
 last_edited: 2023-11-11
-title: A vertex with the highest post order number lies in a source SCC
 tags:
   - maths
+title: A vertex with the highest post order number lies in a source SCC
 type: lemma
 ---
 > [!important] Lemma

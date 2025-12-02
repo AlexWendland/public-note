@@ -4,9 +4,9 @@ checked: false
 created: 2024-03-09
 draft: false
 last_edited: 2024-03-09
-title: Irrelevant feature
 tags:
   - machine-learning
+title: Irrelevant feature
 type: definition
 ---
 >[!tldr] Irrelevant feature

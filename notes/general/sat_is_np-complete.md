@@ -4,9 +4,9 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-title: SAT is NP-complete
 tags:
   - maths
+title: SAT is NP-complete
 type: lemma
 ---
 # Statement

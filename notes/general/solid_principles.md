@@ -5,12 +5,11 @@ checked: false
 created: 2023-03-18
 draft: false
 last_edited: 2023-11-11
-title: SOLID principles
 tags:
   - programming
+title: SOLID principles
 type: theory
 ---
-# SOLID principles
 
 The SOLID principles are a set of five design guidelines for writing maintainable, scalable, and robust software in object-oriented programming. These principles were introduced by Robert C. Martin and are an acronym formed from the first letters of each principle:
 

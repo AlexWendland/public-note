@@ -7,9 +7,9 @@ checked: false
 created: 2023-10-01
 draft: false
 last_edited: 2023-11-11
-title: Partition (set)
 tags:
   - maths
+title: Partition (set)
 type: definition
 ---
 >[!tldr] Partition

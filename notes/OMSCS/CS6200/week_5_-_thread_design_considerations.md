@@ -1,24 +1,22 @@
 ---
 aliases:
 checked: false
-course: 'CS6200 Graduate introduction to Operating Systems'
+course: CS6200 Graduate introduction to Operating Systems
 created: 2025-02-09
 draft: false
 last_edited: 2025-02-09
-title: Week 5 - Thread design Considerations
 tags:
   - OMSCS
+title: Week 5 - Thread design Considerations
 type: lecture
 week: 5
 ---
-# Week 5 - Thread design Considerations
-
-## Additional reading
+# Additional reading
 
 - [Beyond Multiprocessing ... Multithreading the SunOS Kernel](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-eykholt-paper.pdf)
 - [Implementing Lightweight threads](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-stein-shah-paper.pdf)
 
-## Thread level
+# Thread level
 
 We will be revisiting the thread level from [Thread level](week_3_-_threading_and_concurrency.md#thread-level).
 
@@ -29,7 +27,7 @@ Key summary:
 - User level threads get mapped to kernel level threads - this is decided by the user threading library.
 	- These are functionally just an abstraction to assist application development.
 
-## Thread data structures
+# Thread data structures
 
 ![thread_data_structures](../../../images/excalidraw/thread_data_structures.excalidraw.svg)
 
@@ -61,11 +59,11 @@ With the broken down state we:
 - Context switches can update only what has changed - increasing performance.
 - Updates can be carried out on one component - making it more flexible.
 
-## SunOS 5.0
+# SunOS 5.0
 
 This OS implements Light Weight Process as laid out in [Week 5 - Beyond Multiprocessing ... Multithreading and the SunOS Kernel](week_5_-_beyond_multiprocessing_..._multithreading_and_the_sunos_kernel.md). The data structures to implement this are laid out in [Week 5 - Implementing Lightweight Threads (paper)](week_5_-_implementing_lightweight_threads_(paper).md).
 
-### User level structures
+## User level structures
 
 ![User Level Thread Data](../../../images/user_level_thread_data.png)
 
@@ -73,7 +71,7 @@ Two key points:
 - Threads point to their ID within a table of pointers - this enables that table to contain metadata about the thread and stops it pointing to corrupt memory.
 - The stack for each thread can grow beyond the bounds of the initial allocated stack size. If this happens it would corrupt another thread but it would not be known until that thread ran. To mitigate this they implement red zones which if edited will throw a seg fault.
 
-### Kernel level structures
+## Kernel level structures
 
 ![Kernel Level Data Structures](../../../images/kernel_level_data_structures.png)
 
@@ -84,7 +82,7 @@ Key notes:
 
 ![Sunos Fig 2](../../../images/SunOs_fig_2.png)
 
-### Thread management
+## Thread management
 
 The kernel level does not understand what is happening at the user level and vice versa. Therefore we can get into situations where all kernel level threads are blocked on I/O whilst there are user level threads that could execute. Therefore SunOS introduce new system calls to allow the kernel level threads to communicate to the threading library.
 
@@ -95,7 +93,7 @@ Notes:
 - There are situations where when the kernel doesn't know about mutexs or conditional variables, the user level threads are blocked by the kernel without it knowing.
 - The threading library gets called at different points such as: Via signals, ULT yielding, blocked threads becoming runnable, or timers expiring.
 
-### Multiple CPU 'fun'
+## Multiple CPU 'fun'
 
 There are situations where actions on one CPU effect another, such as:
 - With 3 threads $T_3 > T_2 > T_1$ and 2 CPUs. If $T_2$ holds a mutex $T_3$ needs then $T_2$ and $T_1$ are scheduled. When $T_2$ releases the mutex it needs to signal to $T_1$ to run the threading library to switch $T_1$ for $T_3$. This is called preempting $T_1$.
@@ -109,13 +107,13 @@ Creation of threads takes a while so instead of destroying them it is efficient 
 - periodically a reaper thread destroys unused threads.
 - Otherwise when a new create call is made it reuses an old thread structure.
 
-### Interrupts and signals
+## Interrupts and signals
 
 ![Difference Interrupts Signals](../../../images/difference_interrupts_signals.png)
 
 ![Similar Interrupts Vs Singals](../../../images/similar_interrupts_vs_singals.png)
 
-#### Interrupts
+### Interrupts
 
 - Interrupts are caused by hardware devices.
 - The OS defines a handler table going from the interrupt to the address of the handling code.
@@ -123,7 +121,7 @@ Creation of threads takes a while so instead of destroying them it is efficient 
 - This is all defined in the OS and can not be remapped by the process.
 - Interrupts are always asynchronous.
 
-#### Signals
+### Signals
 
 - Signals are caused by the CPU/process - such as accessing memory not allocated to it.
 - The OS defines a handler table mapping signals to the address of the handling code.
@@ -134,7 +132,7 @@ Creation of threads takes a while so instead of destroying them it is efficient 
 	- Synchronous: Segmenation fault, dividing by 0, or sigkill sent from one thread to another.
 	- Asynchronous: Sigkill from outside or sigalarm.
 
-### Masking
+## Masking
 
 ![Masking Interupts Signals](../../../images/masking_interupts_signals.png)
 
@@ -152,7 +150,7 @@ There are two types of signals:
 - One-shot signals: If multiple signals are queued it is only guaranteed to run the handler at least once. Also user specific handlers must be re-enabled after execution otherwise we default back to the OS's handler.
 - Real time signals: If n signals are raised then the handler is called n times.
 
-### Threads handling interrupts
+## Threads handling interrupts
 
 One way to get around deadlocks within interrupt handling is to spin the thread handler out in its own thread. That way if the handler gets blocked on a mutex it can context switch back to the interrupted thread to finish before it can finish execution.
 
@@ -175,7 +173,7 @@ If we use a new thread instead of blocking signals whilst in the critical sectio
 >[!note] Optimize for the common case
 > As there are fewer interrupts than mutex operations this causes a net saving.
 
-### User vs kernel masks
+## User vs kernel masks
 
 Both the kernel level thread and the user level thread have signal masks. For the user level thread to update the kernel level threads mask this takes a system call - which is slow. So these are kept in sync via lazy updates.
 
@@ -188,7 +186,7 @@ The threading library loads its own code into the signal handler for a particula
 - Case 4: Kernel thread has the mask set to 1, but the current executing thread has it set to 0. All other user level threads have the mask set to 0. We invoke a system call to set the kernel level mask to 0 and throw the same signal in another executing thread.
 - Case 5: All kernel threads have the mask set to 0 and the user level thread switches its mask to 1. Then we make a system call to switch the mask to 1 on this kernel level thread.
 
-## Linux
+# Linux
 
 In linux it supports the Native POSIX Threads library (NPTL):
 - This is a 1:1 model so avoids the complexity on the many:many model in SunOS.

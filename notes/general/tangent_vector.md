@@ -5,9 +5,9 @@ checked: false
 created: 2024-01-31
 draft: true
 last_edited: 2024-01-31
-title: Tangent vector
 tags:
   - maths
+title: Tangent vector
 type: definition
 ---
 >[!tldr] Tangent line

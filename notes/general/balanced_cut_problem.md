@@ -4,9 +4,9 @@ checked: false
 created: 2023-11-16
 draft: false
 last_edited: 2023-11-16
-title: Balanced cut problem
 tags:
   - programming
+title: Balanced cut problem
 type: problem
 ---
 # Statement

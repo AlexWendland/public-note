@@ -4,9 +4,9 @@ checked: false
 created: 2024-04-07
 draft: false
 last_edited: 2024-04-07
-title: Battle of the sexes
 tags:
   - game-theory
+title: Battle of the sexes
 type: example
 ---
 >[!example] Battle of the sexes

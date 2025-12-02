@@ -5,7 +5,7 @@ import logging
 from rich.console import Console
 from rich.progress import track
 
-from note_helper import file_admin, index_admin, read_note, write_note
+from note_helper import file_admin, read_note, write_note
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 logger = logging.getLogger(__name__)
@@ -22,9 +22,6 @@ def main():
         note_file = read_note.read_note_file(str(file_path))
         file_admin.update_tags(note_file)
         write_note.write_note_file(note_file)
-
-    console.print("[cyan]Updating indices...[/cyan]")
-    index_admin.update_indices()
 
     # Update last_edited timestamps (needs to be at the end as it may edit files)
     console.print("[cyan]Updating last_edited timestamps from git...[/cyan]")

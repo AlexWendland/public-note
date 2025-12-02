@@ -1,21 +1,19 @@
 ---
 aliases:
 checked: false
-course: 'CS6250 Computer Networks'
+course: CS6250 Computer Networks
 created: 2024-07-24
 draft: false
 last_edited: 2024-07-24
-title: Week 10 - Video applications
 tags:
   - OMSCS
+title: Week 10 - Video applications
 type: lecture
 week: 10
 ---
-# Week 10 - Video applications
+# Additional reading
 
-## Additional reading
-
-### Important Readings
+## Important Readings
 
 VoIP: A comprehensive survey on a promising technology
 [https://www.sciencedirect.com/science/article/abs/pii/S1389128609001200Links to an external site.](https://www.sciencedirect.com/science/article/abs/pii/S1389128609001200)
@@ -38,11 +36,11 @@ A Quest for an Internet Video: Quality-of-Experience Metric
 Confused, Timid, and Unstable: Picking a Video Streaming Rate is Hard
 [https://dl.acm.org/doi/pdf/10.1145/2398776.2398800Links to an external site.](https://dl.acm.org/doi/pdf/10.1145/2398776.2398800)
 
-### Book References
+## Book References
 
 Kurose-Ross Edition 7, Chapter 9
 
-## Basic requirements
+# Basic requirements
 
 Sounds and video are interesting internet applications due to their interesting requirements. First they have far higher [bit](../../general/bit.md)-rates than other applications.
 
@@ -66,7 +64,7 @@ There are three different types of multi-media applications we will look at:
 	- The users are geographically displaced.
 	- They are very delay sensitive.
 
-## [Voice over IP (VoIP)](../../general/voice_over_ip_(voip).md)
+# [Voice over IP (VoIP)](../../general/voice_over_ip_(voip).md)
 
 [VoIP](../../general/voice_over_ip_(voip).md)
 
@@ -79,14 +77,14 @@ There are three different types of multi-media applications we will look at:
 	3. Session negotiation - endpoint synchronizing on the same standard,
 	4. Call participation management - handling people joining or leaving.
 
-## Quality of service metrics
+# Quality of service metrics
 
 There are 3 major quality of service metrics in [VoIP](../../general/voice_over_ip_(voip).md):
 - **End to end delay**: The total time between speaking and hearing.
 - **Jitter**: Scrambled or jumpy audio and video.
 - **Packet loss**: The amount of missing data there is at the end of the call.
 
-## End to end
+# End to end
 
 This includes:
 - the time it takes to encode the audio,
@@ -99,13 +97,13 @@ Delay is very important to the end user to stop people talking over one another.
 
 ![E2E Delay](../../../images/e2e_delay.png)
 
-## Jitter
+# Jitter
 
 Due to the [Internet](../../general/internet.md) having unreliable network times - packets will be received in a different order than they were sent out. We call this phenomenon *jitter*. This is problematic for [VoIP](../../general/voice_over_ip_(voip).md) as we need to reconstruct a audio signal that has continuous playout - gaps in audio must be kept to less that 30-75ms.
 
 The main way to handle this is keeping a playout buffer or jitter window. This delays the playout on the receivers side to wait to collect all packets before playing out. This has a payoff, the longer you wait the less Jitter but the more end-to-end delay. The less you wait the more Jitter and packet loss.
 
-## Packet loss
+# Packet loss
 
 Due to the use of the [internet](../../general/internet.md) packet loss is inevitable in [VoIP](../../general/voice_over_ip_(voip).md). However, [VoIP](../../general/voice_over_ip_(voip).md) uses an even tougher definition of packet loss - which is either it is lost or it arrives after the jitter window. Luckily [VoIP](../../general/voice_over_ip_(voip).md) can tolerate between 1-20% packet loss depending on voice codex used.
 
@@ -113,7 +111,7 @@ To avoid packet loss we might want to use [TCP](../../general/transmission_contr
 
 There are 3 major techniques to handle packet loss in [VoIP](../../general/voice_over_ip_(voip).md)
 
-### Forward Error Correction
+## Forward Error Correction
 
 This transmits redundant data that can fill any gaps. This increases the bandwidth used but decreases packet loss. This can be done in a few different ways:
 - Breaking the data into chunks that are overlapping - then we can use xor to reconstruct the data.
@@ -122,19 +120,19 @@ The more redundant data you send the more bandwidth you use. Also some of these 
 
 ![Fec Example](../../../images/fec_example.png)
 
-### Interleaving
+## Interleaving
 
 This technique does not require additional data to be transmitted instead it breaks up the chunks of data so that the data in one chunk does not contain consecutive bits. That way a lost packet generate many small gaps not noticeable by the human ear. The pay off is having to wait longer to receive consecutive chunks which increases end-to-end delay.
 
 ![Interleaving](../../../images/interleaving.png)
 
-### Error concealment
+## Error concealment
 
 This involves filling in the gaps using the packets around it. There are two basic forms of this:
 - Simply replacing missing gaps with the chunk from before. This is easy to implement and is fairly good in most circumstances.
 - Interpolating from the chunks on either side. This is computationally more expensive but normally provides better estimates.
 
-## Live/on demand streaming
+# Live/on demand streaming
 
 Streaming media content over the Internet accounts for nearly 60-70% of the Internet traffic. There are two flavours will we talk about here:
 1. Live streaming of events.
@@ -150,7 +148,7 @@ To render the stored content correctly we need to make sure we do not drop any p
 
 ![Internet Picture](../../../images/internet_picture.png)
 
-## How we got to [HTTP](../../general/hyper_text_transfer_protocol_(http).md)
+# How we got to [HTTP](../../general/hyper_text_transfer_protocol_(http).md)
 
 When streaming platforms were originally envisioned they wanted all the intelligence to be kept in a stateful server - with the client doing minimal work.
 
@@ -169,7 +167,7 @@ This meant that the original plan was abandoned and people moved to [HTTP](../..
 
 ![Video Application Logic](../../../images/video_application_logic.png)
 
-## Streaming vs progressive downloading
+# Streaming vs progressive downloading
 
 Downloading large parts of the video has a couple of downsides:
 - The user often leaves halfway through leading to wasted bandwidth.
@@ -183,7 +181,7 @@ Therefore a hybrid approach is taken. We maintain a playout-buffer (normally 5 s
 
 ![Video Playout](../../../images/video_playout.png)
 
-## Handling variation
+# Handling variation
 
 There is a lot of variation with playing videos:
 - You might be streaming on a phone or  a 4k wide screen needing different [bit](../../general/bit.md)-rates.
@@ -198,7 +196,7 @@ To find out these quality ranges and the URLs for each download - when clients f
 
 [DASH](../../general/dynamic_adaptive_streaming_over_http_(dash).md)
 
-## Quality of Service metrics
+# Quality of Service metrics
 
 1. Low or no rebuffering: where the video stalls.
 2. High video quality.
@@ -211,7 +209,7 @@ Now we have our output metrics lets see the inputs to the calculation.
 - **Network throughput**: The [bitrate](../../general/bitrate.md) your network can currently sustain. This is constantly changing.
 - **Video buffer size**: The amount of buffer you currently have.
 
-## Rate-based adaption
+# Rate-based adaption
 
 One simple way to calculate the video quality is to look at your current bandwidth $C(t)$ and divide it by the available [bitrates](../../general/bitrate.md) $R(t)$ and find the largest one such that $C(t)/R(t) > 1$ that way we are filling our buffer when downloading.
 
@@ -253,7 +251,7 @@ Then if the congestion window is reset in the off period it can allow the compet
 
 This is a problem for [DASH](../../general/dynamic_adaptive_streaming_over_http_(dash).md) so implementations have to try to handle this correctly.
 
-## Buffer-based bitrate adaption
+# Buffer-based bitrate adaption
 
 There is a competing strategy which varies the [bitrate](../../general/bitrate.md) based on the buffer size. The avoids the need to predict the network speed.
 

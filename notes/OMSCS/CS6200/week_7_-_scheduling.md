@@ -1,23 +1,21 @@
 ---
 aliases:
 checked: false
-course: 'CS6200 Graduate introduction to Operating Systems'
+course: CS6200 Graduate introduction to Operating Systems
 created: 2025-02-26
 draft: false
 last_edited: 2025-02-26
-title: Week 7 - Scheduling
 tags:
   - OMSCS
+title: Week 7 - Scheduling
 type: lecture
 week: 7
 ---
-# Week 7 - Scheduling
-
-## Additional reading
+# Additional reading
 
 - [Chip Multithreading Systems Need a New Operating System Scheduler](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-fedorova-paper.pdf)
 
-## CPU scheduling
+# CPU scheduling
 
 In the following lesson we use the term 'task' to refer to either a Process or a Thread from the point of view of the scheduler these are the same.
 
@@ -27,7 +25,7 @@ The CPU scheduler picks tasks in the ready queue to run on available CPU's. It r
 
 The scheduling algorithm is tied to the data structure of the runqueue - the queue that holds the ready tasks.
 
-## Run-to-completion scheduling
+# Run-to-completion scheduling
 
 This model will run tasks until complete. To discus this we make simplifications:
 - There is a fixed group of tasks.
@@ -43,7 +41,7 @@ To evaluate different algorithms we will compare different metrics:
 
 Lets assume we are in a situation with 3 tasks $T1$, $T2$, and $T3$ which take 1, 10 and 1 seconds to complete respectively.
 
-### First come first served (FCFS)
+## First come first served (FCFS)
 
 Implements a [FIFO](../../general/first_in_first_out_(fifo)_queue.md) queue and does tasks in order.
 
@@ -53,7 +51,7 @@ Average completion time: (1 + 11 + 12) / 3 = 8 secs
 
 Average wait time: (0 + 1 + 11) / 3 = 4 seconds
 
-### Shortest job first (SJF)
+## Shortest job first (SJF)
 
 Schedule tasks in the order of their execution times.
 
@@ -65,7 +63,7 @@ Average completion time: (1 + 2 + 12) / 3 = 5 secs
 
 Average wait time: (0 + 1 + 2) / 3 = 1 seconds
 
-## Preemptive scheduling
+# Preemptive scheduling
 
 In this model we now allow the CPU to switch which task it is now working on. We also assume tasks do not arrive at the same time.
 
@@ -80,7 +78,7 @@ In this model we now allow the CPU to switch which task it is now working on. We
 >- How long it ran the last time?
 >- How long did it run for the last $n$ runs?
 
-## Preemptive priority scheduling
+# Preemptive priority scheduling
 
 In this model we not only allow for interruptions but also a priority between tasks. In this model you want to run the highest priority tasks first.
 
@@ -94,13 +92,13 @@ Where $P1 < P2 < P3$.
 
 We use a data structure to embed the priority of the tasks. This can be achieved by either separate priority queues which get drained in order. Otherwise you can have a tree structure in which the priority is embedded in its subtrees.
 
-### Starvation
+## Starvation
 
 If we have a very low priority task, this can never get ran if enough higher priority tasks are constantly generated. This can be an issue if it needs to eventually be ran.
 
 To avoid this we use *priority aging* we make the priority not just evaluated on its actual priority but on how long it has been in the run queue.
 
-### Priority inversion
+## Priority inversion
 
 If lower priority tasks use mutexes that higher priority tasks requires we can generate a situation in which lots of lower priority tasks all complete before the low priority task holding the mutex unlocks it. This will mean the high priority task will essentially be locked back to the priority of the task that holds the mutex.
 

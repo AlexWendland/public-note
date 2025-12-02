@@ -6,12 +6,11 @@ checked: false
 created: 2023-09-05
 draft: false
 last_edited: 2023-11-11
-title: Bellman-Ford algorithm
 tags:
   - programming
+title: Bellman-Ford algorithm
 type: algorithm
 ---
-# Bellman-Ford algorithm
 
 Suppose we are trying to solve the problem of how to [Find path in undirected graph](find_path_in_undirected_graph.md) where we have no negative weight cycles.
 
@@ -25,7 +24,7 @@ Base case: $D(0,s) = 0$ with $D(0,z) = \infty$ for $z \in V \backslash \{s\}$.
 
 Solution: $D(\vert V \vert - 1, \cdot)$
 
-## Pseudocode
+# Pseudocode
 
 For this let $n = \vert V \vert$
 
@@ -42,7 +41,7 @@ return D(n-1, . )
 
 The update equation used in the pseudocode is called the *Bellman-Ford equation*. This has applications in distributed path finding algorithms.
 
-## Run time
+# Run time
 
 This takes $O(\vert V \vert \vert E \vert)$ as you could rewrite this psudo-code like this:
 

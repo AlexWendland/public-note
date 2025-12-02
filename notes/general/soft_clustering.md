@@ -4,13 +4,12 @@ checked: false
 created: 2024-03-09
 draft: false
 last_edited: 2024-03-09
-title: Soft clustering
 tags:
   - programming
   - machine-learning
+title: Soft clustering
 type: algorithm
 ---
-# Soft clustering
 
 Suppose we are in the [clustering problem](clustering_problem.md) set up. Soft clustering will use [Expectation Maximisation](expectation_maximisation.md) with the [Gaussian distribution](normal_distribution.md). Here we fix a $\sigma^2$ and then we have
 $$
@@ -18,6 +17,6 @@ $$
 $$
 We will use a mean to optimise $\mu_j$ at each step.
 
-## Correctness
+# Correctness
 
 - It will have all the downsides of [Expectation Maximisation](expectation_maximisation.md) but we can use restarts to over come them.

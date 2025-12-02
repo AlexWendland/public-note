@@ -5,9 +5,8 @@ checked: false
 created: 2024-03-09
 draft: true
 last_edited: 2024-03-09
-title: Power set
 tags:
   - maths
+title: Power set
 type: str
 ---
-# Power set

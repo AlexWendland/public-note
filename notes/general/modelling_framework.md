@@ -5,10 +5,10 @@ checked: false
 created: 2024-01-11
 draft: false
 last_edited: 2024-01-11
-title: Modelling framework
 tags:
   - machine-learning
   - statistics
+title: Modelling framework
 type: definition
 ---
 >[!tldr] Modelling framwork

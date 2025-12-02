@@ -7,11 +7,10 @@ checked: false
 created: 2023-08-05
 draft: false
 last_edited: 2023-11-11
-title: Refactored
 tags:
   - programming
+title: Refactored
 type: meta
 ---
-# Refactored
 
 The process of refactoring is to review your code and make it more readable by breaking it down into smaller components.

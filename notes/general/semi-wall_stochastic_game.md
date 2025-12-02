@@ -4,9 +4,9 @@ checked: false
 created: 2024-04-07
 draft: false
 last_edited: 2024-04-07
-title: Semi-wall stochastic game
 tags:
   - game-theory
+title: Semi-wall stochastic game
 type: example
 ---
 >[!example] Semi-wall stochastic game

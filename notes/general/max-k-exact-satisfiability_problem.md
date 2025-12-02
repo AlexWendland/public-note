@@ -5,9 +5,9 @@ checked: false
 created: 2023-11-12
 draft: false
 last_edited: 2023-11-13
-title: Max-k-exact-satisfiability problem
 tags:
   - programming
+title: Max-k-exact-satisfiability problem
 type: problem
 ---
 # Statement

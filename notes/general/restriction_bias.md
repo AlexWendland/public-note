@@ -5,9 +5,9 @@ checked: false
 created: 2024-01-13
 draft: false
 last_edited: 2024-01-13
-title: Restriction Bias
 tags:
   - machine-learning
+title: Restriction Bias
 type: definition
 ---
 >[!tldr] Restriction bias

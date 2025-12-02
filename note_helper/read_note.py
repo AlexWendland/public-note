@@ -70,7 +70,11 @@ def extract_metadata(file: TextIO) -> dict[str, Any]:
 
 
 def extract_all_sections(first_line: str | None, file: TextIO) -> list[MarkdownSection]:
-    sections = []
+    sections: list[MarkdownSection] = []
+
+    # Handle empty file (no content after frontmatter)
+    if first_line is None:
+        return sections
 
     while True:
         first_line, next_section = extract_section(first_line, file)

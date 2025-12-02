@@ -4,12 +4,11 @@ checked: false
 created: 2024-01-17
 draft: false
 last_edited: 2024-01-17
-title: Calculate polynomial regression coefficients for MSE
 tags:
   - machine-learning
+title: Calculate polynomial regression coefficients for MSE
 type: method
 ---
-# Calculate polynomial regression coefficients for MSE
 
 To demonstrate the calculation of the coefficients for [polynomial regression](polynomial_regression.md) with [MSE](mean_squared_error_(mse).md) suppose we have 1-dimensional input $A$ and [training data](training_data.md) $(x_i, y_i)$. For an order $k$ polynomial we are looking for coefficients $c_j$ for $0 \leq j \leq k$ that roughly do the following
 $$

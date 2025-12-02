@@ -4,9 +4,9 @@ checked: false
 created: 2024-02-22
 draft: false
 last_edited: 2024-02-22
-title: Bayesian network if and only if it satisfies the local Markov Property
 tags:
   - probability
+title: Bayesian network if and only if it satisfies the local Markov Property
 type: lemma
 ---
 # Statement

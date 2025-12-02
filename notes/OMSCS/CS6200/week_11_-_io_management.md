@@ -1,19 +1,17 @@
 ---
 aliases:
 checked: false
-course: 'CS6200 Graduate introduction to Operating Systems'
+course: CS6200 Graduate introduction to Operating Systems
 created: 2025-04-09
 draft: false
 last_edited: 2025-04-09
-title: Week 11 - IO management
 tags:
   - OMSCS
+title: Week 11 - IO management
 type: lecture
 week: 11
 ---
-# Week 11 - IO management
-
-## Model of a [IO device](../../general/input_output_(io).md)
+# Model of a [IO device](../../general/input_output_(io).md)
 
 Whilst an [IO](../../general/input_output_(io).md) device can come in many forms we model them similarly.
 
@@ -26,13 +24,13 @@ These have 3 registers:
 
  Then what happens internally is controlled by the micro controller on the device.
 
-## Connections to the [CPU](../../general/central_processing_unit_(cpu).md)
+# Connections to the [CPU](../../general/central_processing_unit_(cpu).md)
 
 Devices are mainly connected to the [CPU](../../general/central_processing_unit_(cpu).md) through the [Peripheral component interconnect (PCI)](../../general/peripheral_component_interconnect_(pci).md) or [PCI Express (PCIe)](../../general/pci_express_(pcie).md). Though depending on the component it may be connected to that via another bus as well.
 
 ![Inter Connect To Cpu](../../../images/inter_connect_to_cpu.png)
 
-## Device driver
+# Device driver
 
 [Device driver](../../general/device_driver.md)
 
@@ -63,7 +61,7 @@ There are two ways for the device to communicate with the [CPU](../../general/ce
 
 [direct memory access](../../general/direct_memory_access_(dma).md)
 
-## Device access
+# Device access
 
 Device access is an intensive action as we need to parse through many different layers and processes. Thus why [IO](../../general/input_output_(io).md) is considered slow.
 
@@ -81,7 +79,7 @@ When accessing [IO](../../general/input_output_(io).md) devices this can either 
 
 ![Async Vs Sync Device Access](../../../images/async_vs_sync_device_access.png)
 
-## Block device access
+# Block device access
 
 When interacting with block devices, user programs actually interact with files that are on the computers filesystem. Files are considered one 'logical' storage unit. The [OS](../../general/operating_system_(os).md) will specify how to support writing to files through an API - normally the [POSIX](../../general/portable_operating_system_interface_(posix).md) API.
 
@@ -89,7 +87,7 @@ When interacting with block devices, user programs actually interact with files 
 
 As well as having a device driver for particular devices a further abstraction is placed on top of these to standardize the interaction - this is the generic block layer. This is an [OS](../../general/operating_system_(os).md) standard for interfacing with different block devices.
 
-## Virtual file system
+# Virtual file system
 
 The [OS](../../general/operating_system_(os).md) abstracts the concepts of block devices away from the user through a virtual file system. It uses this to combine potentially different types of block devices into one directory structure which is easy for humans to grasp.
 
@@ -106,7 +104,7 @@ This virtual file system supports a number of abstractions:
 - *dentry*: This is an in-memory data structure the [OS](../../general/operating_system_(os).md) uses to represent a directory. There is one for every directory component.
 - *superblock*: This contains file-system-specific information regarding the file-system layout. For example the inode blocks, data blocks, and free blocks.
 
-## Second Extended Filesystem (ext2)
+# Second Extended Filesystem (ext2)
 
 ![Ext2 Structure](../../../images/ext2_structure.png)
 
@@ -120,7 +118,7 @@ The rest is broken down into 'block groups' which each have a similar structure.
 - Inodes: Numbered from 1 to a max number - 1 per file.
 - Data blocks: The file data.
 
-## Inodes
+# Inodes
 
 Inodes that represent files contain metadata about the file and a list of data-blocks that make up that file.
 
@@ -132,7 +130,7 @@ This structure enables sequential or random access using the size of the data-bl
 
 This dramatically increases the size of the file we can reference. However, if you use the single, double, or triple indirect pointers this slows down file access.
 
-## Disk access optimizations
+# Disk access optimizations
 
 To speed up disk access we can deploy multiple techniques:
 

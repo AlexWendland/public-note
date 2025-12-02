@@ -10,8 +10,8 @@ checked: false
 created: 2024-01-20
 draft: false
 last_edited: 2024-01-20
-title: Neural network
 tags: []
+title: Neural network
 type: definition
 ---
 >[!tldr] Neural networks

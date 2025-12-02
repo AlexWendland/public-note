@@ -5,9 +5,9 @@ checked: false
 created: 2025-04-12
 draft: false
 last_edited: 2025-04-12
-title: Interface definition language (IDL)
 tags:
   - OS
+title: Interface definition language (IDL)
 type: definition
 ---
 >[!tldr] Interface definition language (IDL)

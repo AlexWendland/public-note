@@ -5,13 +5,12 @@ checked: false
 created: 2023-03-12
 draft: false
 last_edited: 2023-11-11
-title: The 5S Philosophy
 tags:
   - programming
   - philosophy
+title: The 5S Philosophy
 type: theory
 ---
-# The 5S Philosophy
 
 This was taken from the book [Clean Code](../references/books/clean_code.md) but was created else where:
 

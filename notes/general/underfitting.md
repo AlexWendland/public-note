@@ -5,9 +5,9 @@ checked: false
 created: 2024-01-17
 draft: false
 last_edited: 2024-01-17
-title: Underfitting
 tags:
   - machine-learning
+title: Underfitting
 type: definition
 ---
 >[!tldr] Underfitting

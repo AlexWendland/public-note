@@ -6,9 +6,9 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-title: Layer 6 Presentation
 tags:
   - networks
+title: Layer 6 Presentation
 type: definition
 ---
 >[!tldr] Layer 6 Presentation

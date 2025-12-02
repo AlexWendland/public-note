@@ -1,17 +1,16 @@
 ---
 aliases: []
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-09-05
 draft: false
 last_edited: 2023-11-11
-title: Week 2 - Shortest Paths
 tags:
   - OMSCS
+title: Week 2 - Shortest Paths
 type: lecture
 week: '2'
 ---
-# Week 2 - Shortest Paths
 
 > [!tldr] Shortest path problem
 > Given a [directed graph](../../general/directed_graph.md) $(V, E)$ with [edge weights](../../general/edge_weights.md) $w: E \rightarrow \mathbb{R}$ and a start vertex $s \in V$ - the shortest path problem is to find the shortest distance between $s \in V$ and $z \in V$ for every $x$. This is called $\mbox{dist}(z)$ with the formal definition
@@ -20,13 +19,13 @@ week: '2'
 
 The classic solution to this is [Dijkstra's algorithm](../../general/dijkstra's_algorithm.md) which runs in $O((\vert V \vert + \vert E \vert)\log(\vert V \vert))$ time - however this requires that $w(e) > 0$ for all $e \in E$. We are looking at a more generic problem.
 
-## Negative weight cycles
+# Negative weight cycles
 
 If there is a [cycle](../../general/cycle_(graph).md) that has negative total weight then the problem is not well defined as you can always extend you path with another loop of the cycle to reduce your weight.
 
 The first step of our algorithm will be looking up if there is such a cycle.
 
-## Case 1: No negative weight cycles
+# Case 1: No negative weight cycles
 
 In this case you can guarantee that paths will only visit each vertex at most once. So they will use at most $\vert V \vert - 1$ edges. So it is enough to solve the subproblem.
 
@@ -63,11 +62,11 @@ for i=1 -> n-1
 return D(n-1, . )
 ```
 
-## Case 2: Negative weight cycles
+# Case 2: Negative weight cycles
 
 If we run to the $\vert V \vert$ case (note before we stopped at $\vert V \vert - 1$) if any weights decrease then there was a shorter path visiting a vertex twice. This implies there is a negative weight cycle.
 
-## All-pairs shortest path
+# All-pairs shortest path
 
 > [!tldr] Shortest path problem (all pairs)
 > Given a [directed graph](../../general/directed_graph.md) $(V, E)$ with [edge weights](../../general/edge_weights.md) $w: E \rightarrow \mathbb{R}$  - the shortest path problem is to find the shortest distance between $y,z \in V$ for every $y,z$. This is called $\mbox{dist}(y,z)$ with the formal definition
@@ -103,14 +102,14 @@ return D(n, . , . )
 
 The run time of this algorithm is $O(n^2) + O(\vert E \vert) + O(n^3)$ as $\vert E \vert \leq n^2$ we have that the run time is $O(n^3)$.
 
-## Negative weight cycles
+# Negative weight cycles
 
 Within the [Floyd-Warshall algorithm](../../general/floyd-warshall_algorithm.md) you detect negative weight cycles by looking at the values $D(n,x,x)$ if a negative weight cycle exists - this diagonal will have negative values.
 
 > [!warning] [Bellman-Ford algorithm](../../general/bellman-ford_algorithm.md) vs [Floyd-Warshall algorithm](../../general/floyd-warshall_algorithm.md)
 > [Bellman-Ford algorithm](../../general/bellman-ford_algorithm.md) only finds negative weight cycles reachable from that start vertex. Whereas [Floyd-Warshall algorithm](../../general/floyd-warshall_algorithm.md) will find any negative weight cycle in the graph.
 
-## Further questions
+# Further questions
 
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 

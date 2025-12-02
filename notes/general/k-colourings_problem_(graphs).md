@@ -5,9 +5,9 @@ checked: false
 created: 2023-11-02
 draft: false
 last_edited: 2023-11-16
-title: k-colourings problem (graphs)
 tags:
   - programming
+title: k-colourings problem (graphs)
 type: problem
 ---
 # Statement

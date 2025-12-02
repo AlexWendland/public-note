@@ -7,13 +7,12 @@ checked: false
 created: 2023-02-24
 draft: false
 last_edited: 2023-11-11
-title: Imperative Programming
 tags:
   - programming
   - language
+title: Imperative Programming
 type: paradigm
 ---
-# Imperative Programming
 
 In this paradigm the language specifies a series of instructions to potentially get to an end state (*cough* [Holting Problem](holting_problem.md) *cough*). Lots of peoples first programs are imperative.
 
@@ -32,11 +31,11 @@ Here you provide the machine exact steps to what has to be done to produce the o
 
 There is a sub category of this called [Procedural Programming](procedural_programming.md) that uses this with [functions](function_conventions.md).
 
-## Advantages
+# Advantages
 
 - Efficient,
 - Emulates low level languages,
 
-# Disadvantages
+ Disadvantages
 
 -

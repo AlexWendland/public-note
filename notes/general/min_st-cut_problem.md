@@ -5,9 +5,9 @@ checked: false
 created: 2023-10-03
 draft: false
 last_edited: 2023-11-11
-title: Min st-cut problem
 tags:
   - programming
+title: Min st-cut problem
 type: problem
 ---
 # Statement

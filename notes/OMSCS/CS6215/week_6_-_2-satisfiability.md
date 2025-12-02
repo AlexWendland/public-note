@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-09-30
 draft: false
 last_edited: 2023-11-11
-title: Week 6 - 2-Satisfiability
 tags:
   - OMSCS
+title: Week 6 - 2-Satisfiability
 type: lecture
 week: int
 ---
-# Week 6 - 2-Satisfiability
 
 This week we will look at
 
@@ -35,13 +34,13 @@ This problem is generally quite hard so we look at the limited problem.
 
 [Theory](../../general/k-satisfiability_problem_(k-sat_problem).md#theory)
 
-## Solving [2-SAT](../../general/k-satisfiability_problem_(k-sat_problem).md) problem
+# Solving [2-SAT](../../general/k-satisfiability_problem_(k-sat_problem).md) problem
 
 >[!example] [2-SAT](../../general/k-satisfiability_problem_(k-sat_problem).md) example
 >Consider
 >$$(x_3 \lor \overline{x_2}) \land (\overline{x_1}) \land (x_1 \lor x_4) \land (\overline{x_4} \lor x_2) \land (\overline{x_3} \lor x_4).$$
 
-### Simplifying the problem
+## Simplifying the problem
 
 First we simplify the input by getting rid of forced decisions. We do this by repeatedly looking for unit clauses with 1 literal and reducing the problem by removing this variable.
 
@@ -61,7 +60,7 @@ We can repeat this until either:
 >[!note] Observation
 >$f$ is satisfiable if and only if $f'$ is satisfiable. Therefore this is a proper reduction.
 
-### Forming a graph
+## Forming a graph
 
 We can now assume our formula has all clauses of size 2, it will have $n$ variables $x_i$ and $m$ clauses $c_i = \alpha_i \lor \beta_i$ where $\alpha_i, \beta_i \in \{x_i, \overline{x_i} \vert 1 \leq i \leq n\}$. We want to form a [directed graph](../../general/directed_graph.md) $D = (V,E)$ to represent this problem.
 
@@ -81,7 +80,7 @@ This logic extends out to paths.
 >[!important] Lemma
 >If there is a [path](../../general/path_(graph).md) between $a$ and $b$ in $G$ then if $a$ is true in a assignment to the variables that satisfies $f$ then $b$ must be true also.
 
-#### Proof
+### Proof
 
 Prove this by induction on the length of [path](../../general/path_(graph).md).
 
@@ -104,7 +103,7 @@ This gives us an easy check for if $f$ is not satisfiable.
 > [!important] Lemma
 > If for some $i$, $x_i$ and $\overline{x_i}$ are in the same [strongly connected component](../../general/strongly_connected_components_(directed_graphs).md) then $f$ is not satisfiable.
 
-#### Proof
+### Proof
 
 This means there is a path from $x_i$ to $\overline{x_i}$ and $\overline{x_i}$ to $x_i$.
 
@@ -124,7 +123,7 @@ To prove this lets examine the structure of the graph.
 >[!important] Lemma
 >There is a path $a$ to $b$ if and only if there is a path $\overline{b}$ to $\overline{a}$.
 
-#### Proof
+### Proof
 
 Let $(x_1, x_2) (x_2, x_3) \ldots (x_{n-1}, x_n)$ be a path from $x_1$ to $x_n$.
 
@@ -146,7 +145,7 @@ This actually gives us quite a neat corollary.
 >[!important] Corollary
 >If $S$ is a [strongly connected component](../../general/strongly_connected_components_(directed_graphs).md) in $G$ then $\overline{S} = \{\overline{s} \vert s \in S\}$ is a [strongly connected component](../../general/strongly_connected_components_(directed_graphs).md) in $G$.
 
-#### Proof
+### Proof
 
 For any two $s_1, s_2 \in S$ there exists a path $p_{1,2}$ and $p_{2,1}$ connecting $s_1$ to $s_2$ and $s_2$ to $s_1$.
 
@@ -163,7 +162,7 @@ This this actually extends further.
 >[!important] Lemma
 >$S$ is a sink [strongly connected component](../../general/strongly_connected_components_(directed_graphs).md) if and only if $\overline{S}$ is a source [strongly connected component](../../general/strongly_connected_components_(directed_graphs).md)
 
-#### Proof
+### Proof
 
 Let $S$ be a [strongly connected component](../../general/strongly_connected_components_(directed_graphs).md) in the [strongly connected component graph](../../general/strongly_connected_component_graph_(directed_graph).md).
 
@@ -200,7 +199,7 @@ Using this we can prove.
 >[!important] Lemma
 >If for all $i$, $x_i$ and $\overline{x_i}$ are in different [strongly connected components](../../general/strongly_connected_components_(directed_graphs).md) then $f$ is satisfiable.
 
-#### Proof
+### Proof
 
 Find the [strongly connected component graph](../../general/strongly_connected_component_graph_(directed_graph).md) of $G$, $SCC(G)$.
 
@@ -226,7 +225,7 @@ $\square$
 
 This is exactly how our algorithm will go as well.
 
-## 2-Sat algorithm
+# 2-Sat algorithm
 
 Without the simplification step we have the following algorithm
 

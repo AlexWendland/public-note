@@ -4,16 +4,15 @@ checked: false
 created: 2023-10-01
 draft: false
 last_edited: 2023-11-11
-title: Kruskal's algorithm
 tags:
   - programming
+title: Kruskal's algorithm
 type: algorithm
 ---
-# Kruskal's algorithm
 
 This is an algorithm to solve the [MST](minimum_spanning_tree_problem_(mst).md) problem. It uses the [union-find](disjoint_set.md) data structure to help it identify cycles.
 
-## Pseudocode
+# Pseudocode
 
 ```pseudocode
 Kruskal's(G,w):
@@ -26,7 +25,7 @@ Kruskal's(G,w):
 4. Output X
 ```
 
-## Run time
+# Run time
 
 For step 1, we use [merge sort](merge_sort.md) so this takes $O(\vert E \vert \log(\vert E \vert))$ time. Though as $\vert E \vert \leq \vert V \vert^2$, we can think of this as $O(\vert E \vert \log(\vert V \vert))$.
 
@@ -34,7 +33,7 @@ Step 3, has $\vert E \vert$ steps in each one we run two operations in the [unio
 
 So in total this takes $O(\vert E \vert \log(\vert V \vert))$.
 
-## Correctness
+# Correctness
 
 We prove by induction on the size of $X$ that this must be a subset of some [MST](minimum_spanning_tree_problem_(mst).md).
 

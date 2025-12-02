@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS7641 Machine Learning'
+course: CS7641 Machine Learning
 created: 2024-04-06
 draft: false
 last_edited: 2024-04-06
-title: Week 12 - Reinforcement learning
 tags:
   - OMSCS
+title: Week 12 - Reinforcement learning
 type: lecture
 week: 12
 ---
-# Week 12 - Reinforcement learning
 
 [Transitions (MDP)](../../general/transitions_(mdp).md)
 
@@ -39,14 +38,14 @@ The first uses a simulator and learner to generate at [RL](../../general/reinfor
 
 [Model-based reinforcement learning](../../general/model-based_reinforcement_learning.md)
 
-## Approaches to [Reinforcement learning](../../general/reinforcement_learning.md)
+# Approaches to [Reinforcement learning](../../general/reinforcement_learning.md)
 
 There are 3 different approaches to [RL](../../general/reinforcement_learning.md),
 - Policy search: Here you iterate through different polices to get the closest fit to the data.
 - Value-function based: Here you use your example transitions to generate a utility function which maps state to value. Which like in [Policy Iteration (MDP)](../../general/policy_iteration_(mdp).md) you can use make policy.
 - [Model-based reinforcement learning](../../general/model-based_reinforcement_learning.md): You use the transitions to generate a model, which consists of a transition function and reward function.
 
-## Value-function based
+# Value-function based
 
 When using [Value iteration (MDP)](../../general/value_iteration_(mdp).md) we look for the optimum utility function
 $$
@@ -68,7 +67,7 @@ $$
 $$
 as both $\gamma$ and $R(s)$ don't effect the $\mbox{arg}\max$.
 
-## Incremental learning
+# Incremental learning
 
 [Incremental learning](../../general/incremental_learning.md)
 
@@ -79,7 +78,7 @@ with $X$ is a random variable and $x_t$ are all [i.i.d.](../../general/independe
 
 [Q-learning](../../general/q-learning.md)
 
-## Choosing an action
+# Choosing an action
 
 The two main ideas for choosing actions are:
 

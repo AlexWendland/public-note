@@ -6,11 +6,11 @@ checked: false
 created: 2023-08-26
 draft: false
 last_edited: 2023-11-11
-title: Stack (OS)
 tags:
   - programming
   - computer-science
   - OS
+title: Stack (OS)
 type: definition
 ---
 >[!tldr] Stack (OS)

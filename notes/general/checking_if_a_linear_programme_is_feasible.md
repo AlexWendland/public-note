@@ -4,12 +4,11 @@ checked: false
 created: 2023-11-09
 draft: false
 last_edited: 2023-11-11
-title: Checking if a linear programme is feasible
 tags:
   - programming
+title: Checking if a linear programme is feasible
 type: algorithm
 ---
-# Checking if a linear programme is feasible
 
 Suppose we are given a [linear programme in standard form](linear_programme_standard_form.md) specified by $x, c \in M_{n,1}(\mathbb{R})$, $A \in M_{m,n}(\mathbb{R})$, and $b \in M_{m,1}(\mathbb{R})$ and we have a standard form linear programme solver $linear\_programme\_solver$.
 

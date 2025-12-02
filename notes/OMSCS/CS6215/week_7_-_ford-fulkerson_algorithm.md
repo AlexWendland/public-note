@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-10-02
 draft: false
 last_edited: 2023-11-11
-title: Week 7 - Ford-Fulkerson Algorithm
 tags:
   - OMSCS
+title: Week 7 - Ford-Fulkerson Algorithm
 type: lecture
 week: 7
 ---
-# Week 7 - Ford-Fulkerson Algorithm
 
 This lecture will focus on the [Max flow problem](../../general/max_flow_problem.md). To define this we need some other definitions.
 
@@ -21,13 +20,13 @@ This lecture will focus on the [Max flow problem](../../general/max_flow_problem
 
 [Statement](../../general/max_flow_problem.md#statement)
 
-## Assume we have no parallel edges
+# Assume we have no parallel edges
 
 If we are in the case where there are parallel edges, we can split one edge into two by putting a vertex in the middle of it.
 
 We will assume from now on we have no parallel edges.
 
-## Algorithm idea
+# Algorithm idea
 
 We want to build a flow by finding paths from $s$ to $t$ in a [flow network](../../general/flow_network.md). However, if we greedily pick paths we do not get an optimal solution.
 

@@ -6,12 +6,11 @@ checked: false
 created: 2024-01-20
 draft: false
 last_edited: 2024-01-20
-title: Backward propagation of errors (Back propagation)
 tags:
   - programming
+title: Backward propagation of errors (Back propagation)
 type: algorithm
 ---
-# Backward propagation of errors (Back propagation)
 
 This is the specific implementation of [gradient decent](gradient_decent.md) applied to [neural networks](neural_network.md). There are two stages of this calculation:
 

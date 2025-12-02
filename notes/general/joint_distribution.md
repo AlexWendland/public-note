@@ -5,9 +5,9 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-title: Joint distribution
 tags:
   - probability
+title: Joint distribution
 type: definition
 ---
 >[!tldr] Joint distribution

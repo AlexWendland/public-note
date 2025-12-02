@@ -4,9 +4,9 @@ checked: false
 created: 2024-04-07
 draft: false
 last_edited: 2024-04-07
-title: Pavlov strategy
 tags:
   - game-theory
+title: Pavlov strategy
 type: definition
 ---
 >[!tldr] Pavlov strategy

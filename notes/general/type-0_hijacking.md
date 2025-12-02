@@ -4,10 +4,10 @@ checked: false
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-title: Type-0 hijacking
 tags:
   - networks
   - security
+title: Type-0 hijacking
 type: definition
 ---
 >[!tldr] Type-0 hijacking

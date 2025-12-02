@@ -4,9 +4,9 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-title: End to end principle
 tags:
   - networks
+title: End to end principle
 type: definition
 ---
 >[!tldr] End to end principle

@@ -1,19 +1,17 @@
 ---
 aliases:
 checked: false
-course: 'CS7641 Machine Learning'
+course: CS7641 Machine Learning
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-title: Week 7 - Information Theory
 tags:
   - OMSCS
+title: Week 7 - Information Theory
 type: lecture
 week: 7
 ---
-# Week 7 - Information Theory
-
-## Information
+# Information
 
 We want to measure the amount of information we need to transmit to send a message. However, the underlying facts about the message we will receive effect the length of that message.
 
@@ -39,7 +37,7 @@ Mathematically we use [Information entropy](../../general/information_entropy.md
 
 [Information entropy](../../general/information_entropy.md)
 
-## Information between two variables
+# Information between two variables
 
 First lets remind ourselves of
 
@@ -69,7 +67,7 @@ Let $X$ and $Y$ represent two [i.i.d.](../../general/independent_identically_dis
 
 [Mutual information is symmetric](../../general/mutual_information_is_symmetric.md)
 
-## KL-divergence
+# KL-divergence
 
 We would like to be able to tell when two distributions are similar. For this we use the following definition. Notice if $P = Q$ then $D_KL(P \vert \vert Q) = 0$.
 

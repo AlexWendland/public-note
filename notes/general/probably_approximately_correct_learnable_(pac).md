@@ -6,9 +6,9 @@ checked: false
 created: 2024-02-16
 draft: false
 last_edited: 2024-02-16
-title: Probably approximately correct learnable (PAC)
 tags:
   - machine-learning
+title: Probably approximately correct learnable (PAC)
 type: definition
 ---
 >[!tldr] Probably approximately correct learnable (PAC)

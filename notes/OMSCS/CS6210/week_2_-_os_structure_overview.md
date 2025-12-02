@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS6210 Advanced Operating Systems'
+course: CS6210 Advanced Operating Systems
 created: 2025-08-29
 draft: false
 last_edited: 2025-08-29
-title: Week 2 - OS Structure Overview
 tags:
   - OMSCS
+title: Week 2 - OS Structure Overview
 type: lecture
 week: 2
 ---
-# Week 2 - OS Structure Overview
 
 The OS structure is the way OS is organised with respect to the applications it serves and the underlying hardware it manages.
 
@@ -24,9 +23,9 @@ Some desirable traits for this to have are:
 - **Agility**: adapting to changes in application needs or resource availability.
 - **Responsiveness**: The ability to respond to events in a timely manner.
 
-## Different OS Structures
+# Different OS Structures
 
-### Monolithic OS
+## Monolithic OS
 In a monolithic OS, all OS services run in a separate address space from user applications.
 This means all access to the underlying hardware requires a context switch to kernel space.
 
@@ -34,7 +33,7 @@ This means all access to the underlying hardware requires a context switch to ke
 **Performance**: Mixed - context switching overhead for each system call, but efficient for complex operations requiring multiple services since everything runs in kernel space.
 **Flexibility**: Limited - all services are compiled into a single kernel, making it difficult to customize or replace individual components.
 
-### DOS (Disk Operating System)
+## DOS (Disk Operating System)
 In DOS, OS services share the same address space as user applications, eliminating the need for context switching.
 
 **Protection**: Poor - no isolation between user applications and OS services, making the system vulnerable to crashes and malicious code.
@@ -43,7 +42,7 @@ In DOS, OS services share the same address space as user applications, eliminati
 
 DOS was designed for single-user personal computers where the security trade-off was acceptable, but this makes it unsuitable for general-purpose or multi-user systems.
 
-### Microkernel
+## Microkernel
 A microkernel provides only core services like [inter-process-communication-ipc](inter-process-communication-ipc.md) and address space management. Other services (file systems, memory management, network drivers) run as user-level applications.
 
 **Protection**: Moderate - while the minimal kernel reduces the trusted computing base, the distributed architecture creates a larger attack surface and complex inter-service communication that can introduce vulnerabilities.
@@ -52,7 +51,7 @@ A microkernel provides only core services like [inter-process-communication-ipc]
 
 The performance cost comes not just from context switches but also from data copying between services and cache/TLB invalidation when switching between different user-space services.
 
-### Summary of Trade-offs
+## Summary of Trade-offs
 
 | Architecture | Protection | Performance | Flexibility |
 |-------------|------------|-------------|-------------|
@@ -64,7 +63,7 @@ The performance cost comes not just from context switches but also from data cop
 DOS prioritizes performance at the cost of security.
 Microkernels prioritize flexibility but suffer performance penalties and have complex security considerations.
 
-## Another way
+# Another way
 
 There are two other structures that attempt to get the best of all worlds:
 
@@ -80,7 +79,7 @@ We look at three different approaches to this
 
 They all try to do the above but in different ways.
 
-## Capabilities
+# Capabilities
 
 Capabilities are unforgeable tokens that combine both identity and permission into one object.
 Unlike traditional access control where the system checks "Who are you and what are you allowed to do?", capability-based systems ask "Do you have the right token?"
@@ -88,7 +87,7 @@ Unlike traditional access control where the system checks "Who are you and what 
 For example, in a c program once you have opened a file descriptor with certain privileges.
 Having this file descriptor in your file descriptor table is sufficient to say you have access to that file - you do not need to check permissions again.
 
-# SPIN approach
+ SPIN approach
 
 These notes are based on the paper: Extensibility, Safety and Performance in the SPIN Operating System
 
@@ -117,7 +116,7 @@ Then users can choose whichever implementation suits their needs whilst not addi
 
 Like monolithic systems, kernel extensions benefit from procedure call access to other kernel services. Unlike monolithic systems, only performance-critical code needs to run in kernel space - the rest of the application can remain safely in user space.
 
-## Modula-3
+# Modula-3
 
 Modula-3 is a strongly typed programming language with built in safety and encapsulation mechanisms.
 It is memory-safe with automatic garbage collection, preventing manual memory management errors.
@@ -133,7 +132,7 @@ The use of generic interfaces provides flexibility and fine-grained protection v
 
 These capabilities are supported as language pointers.
 
-## Protection domains
+# Protection domains
 
 Extensions exist within logical protection domains, which are kernel namespaces that contain code and exported interfaces.
 Interfaces, which are language-level units, represent views on system resources that are protected by the operating system.
@@ -151,7 +150,7 @@ This is to combat the proliferation of many small domains and make the extension
 The domains allow SPIN to be extended in a custom way.
 This makes the OS flexible to user preferences whilst also using Modula-3's strong typing to stay secure.
 
-## Examples
+# Examples
 
 Due to the flexibility of SPIN you can turn a lot of OS heavy operations into extensions of the OS to benefit similarly to the Monolith's consolidation.
 
@@ -160,7 +159,7 @@ Due to the flexibility of SPIN you can turn a lot of OS heavy operations into ex
 - **Client-server**: When designing client-server applications, you can implement the server/client as an extension to SPIN.
 This will dramatically speed up network operations as you can avoid context switching with system calls.
 
-## Events
+# Events
 
 Extensions execute in response to system events.
 An event can describe any potential action in the system, such as a virtual memory page fault, the scheduling of a thread, or an IP packet has arrived.
@@ -172,7 +171,7 @@ An event is a message that announces a change in the state of the system or a re
 An event handler is a procedure that receives the message.
 An extension installs a handler on an event by explicitly registering the handler with the event through a central dispatcher that routes events to handlers.
 
-### Two Levels of Event Protection
+## Two Levels of Event Protection
 
 **Import-level protection**: Controls which domains can define handlers on events within a domain.
 To handle any event, you must first be able to import the interface that defines it.
@@ -188,7 +187,7 @@ For example, with IP packet processing:
 This two-level system means domains can have fewer, more generic events (like one `PacketArrived` event) while still providing fine-grained access control.
 Extensions get precise filtering without requiring separate event types for every possible message variant.
 
-### Handler ordering
+## Handler ordering
 
 When multiple handlers are registered for the same event, the default behavior is sequential execution:
 
@@ -197,19 +196,19 @@ When multiple handlers are registered for the same event, the default behavior i
 
 The execution order is undefined, meaning you cannot rely on handlers running in any specific sequence. However, this behavior is configurable - the event owner (the module that defines the event) can customize how handlers execute, including setting them to run asynchronously, with time bounds, or in specific orders.
 
-## Core services of SPIN
+# Core services of SPIN
 
 SPIN provides the core services of a traditional OS, for example memory or CPU management.
 However, SPIN allows you to extend these implementations to follow whichever policy you would like.
 
-### Memory management
+## Memory management
 
 - Physical address: you can allocate, deallocate, and reclaim.
 - Virtual memory: you can allocate and deallocate.
 - Translation: you can create/destroy address spaces, and add/remove address mappings.
 - Event handlers: page fault, access faults, and bad addresses.
 
-### CPU management
+## CPU management
 
 For CPU management, SPIN introduces a new abstraction called strand which each group of extensions run on.
 These are all ran on time-slices which it can do anything with but the global scheduler controls who is in control between the strands.
@@ -218,7 +217,7 @@ These are all ran on time-slices which it can do anything with but the global sc
 - Event handlers: Block, unblock, checkpoint, resume.
 - SPIN global scheduler: Interacts with application thread packages.
 
-# Exokernel approach
+ Exokernel approach
 
 These notes are based on: Exokernel: An Operating System Architecture for Application-Level Resource Management On Micro-Kernel Construction.
 
@@ -231,7 +230,7 @@ Then it can use access tokens to make hardware calls.
 - **Downloading code**: It can download code into the exokernel to be run on different events such as traps.
 - **Software Caching**: It can use a software cache supported by the Exokernel
 
-## Hardware resource access
+# Hardware resource access
 
 To reduce the number of context switches the Exokernel exposes resources directly.
 To this extent it only protects certain operations, such as write - therefore allowing the Library OS to read without needing a context switch.
@@ -246,7 +245,7 @@ To this extent it only protects certain operations, such as write - therefore al
 Therefore the two, 'heavy' Exokernel operations are getting permissions and using the write permissions.
 Whereas the read (the more common operation) can be carried out multiple times with no Exokernel switch.
 
-### Revoking resources
+## Revoking resources
 
 If the Exokernel needs to take resources away from the Library OS, it passes a 'revoke vector' back to the Library OS.
 The Exokernel then allows the Library OS to take whichever corrective action it needs to to clean up the resources within its own address space.
@@ -255,7 +254,7 @@ To make this less cumbersome, the Exokernel offers options on resources such as 
 For example, with a page of RAM memory this would enable the Exokernel to save down what is in RAM to disk before clearing it out.
 This will save the amount of work the Library OS has to do when memory is revoked.
 
-## Downloading code (secure binding)
+# Downloading code (secure binding)
 
 Similarly to SPIN, you can download code into the Exokernel to run on events such as IP packet arrival.
 This can filter an only call the Library OS if it is of the correct type.
@@ -279,13 +278,13 @@ However, this is not in a strongly typed language so this code can be more destr
 Due to the security considerations of running code within the Kernel, not all applications can do this.
 This capability is restricted to a set of trusted applications.
 
-## Software caching
+# Software caching
 
 Due to the switching overhead of the Exokernel (bouncing between Library OS's) it enables processes to cache their TLB entries (S-TLB) and memory addresses by default.
 This reduces the amount of cleanup the Library OS's need to implement manually and instead can rely on the Exokernel to do it.
 This also provides a level of guarantee on what will be in the TLB - which can be a serious problem from efficiency with designs close to that of a Micro-kernel.
 
-## CPU scheduling
+# CPU scheduling
 
 To schedule different Library OS's the Exokernel uses a simple round-robin scheduler.
 Each Library OS gets a time quantum to run in, and it is informed about when this is going to end so it can prepare for the context switch.
@@ -294,7 +293,7 @@ If a Library OS overruns its time quantum it will have its overrun deducted from
 Outside of time switches, the Exokernel is only invoked when directly called or if a trap occurs.
 This technique should minimise the number of context switches.
 
-## Exokernel data structures
+# Exokernel data structures
 
 The main data structures within an Exokernel we have already covered are:
 
@@ -306,7 +305,7 @@ The other main data structure is the PE table,
 which is a table of handler entry points within the library OS to run on different events.
 Such traps would be exceptions, external interrupts, system calls and addressing context.
 
-# L3 Microkernel approach
+ L3 Microkernel approach
 
 Within the SPIN and Exokernel papers they compared their approaches to the Mach Microkernel.
 However, the Mach Microkernel was built for portability between many architectures rather than performance.
@@ -316,7 +315,7 @@ Typically, a Microkernel would run a small kernel in a privileged mode that cove
 Then all other services run as user level processes such as CPU scheduling, file system, and memory manager.
 This means there is a lot of switching between different address spaces, as well as IPC to share data between the processes.
 
-## Why Microkernels are slow
+# Why Microkernels are slow
 
 There are multiple reasons why the typical model of a Microkernel is slow:
 
@@ -340,7 +339,7 @@ This involves saving down all the state of the process.
 
 The L3 Microkernel aims to reduce all these costs by systematically building a Microkernel which avoids or reduces the costs.
 
-## Kernel-user switches
+# Kernel-user switches
 
 The Mach Microkernel takes 900 cycles to switch from the user to kernel space.
 This was due to Mach being optimised to work on any underlying architecture, meaning there is code bloat within these switches.
@@ -350,7 +349,7 @@ Within the paper they prove that the minimal number of cycles it could take is 1
 
 With this in hand, it discounts some of the results of the SPIN and Exokernel papers as they compared themselves against the Mach Microkernel.
 
-## Address space switches
+# Address space switches
 
 Here we concern ourself with TLB flushes.
 Traditionally, the TLB is broken into two parts:
@@ -387,14 +386,14 @@ So the paper suggests partitioning the TLB into 3 sections.
 When switching between two small applications we can preserve the TLB entries for both applications and the kernel.
 This means the frequent border crossings from a large application to the kernel and smaller OS services can be done without the cost of flushing the TLB.
 
-## Thread switches and IPC
+# Thread switches and IPC
 
 When we switch threads we need to save down the state of the registers into that process PCB (Process Control Block).
 In the L3 paper it shows this can be competitive in comparison to SPIN or the Exokernel.
 
 (No details provided on how.)
 
-## Memory effects
+# Memory effects
 
 Alongside the TLB, we have the CPU cache which is arranged in a hierarchical manner as below:
 
@@ -416,7 +415,7 @@ This means the memory effects of context switches can be mitigated by carefully 
 > This, similar to the TLB address space switching, only works for small protection domains.
 > If we context switch between large protection domains that are likely to use all the memory then we can't pack it together in one hardware address space.
 
-## Summary
+# Summary
 
 The L3 Microkernel states that the kernel itself only need to offer 4 services:
 

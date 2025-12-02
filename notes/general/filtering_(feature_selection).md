@@ -6,9 +6,9 @@ checked: false
 created: 2024-03-09
 draft: false
 last_edited: 2024-03-09
-title: Filtering (feature selection)
 tags:
   - machine-learning
+title: Filtering (feature selection)
 type: definition
 ---
 >[!tldr] Filtering (feature selection)

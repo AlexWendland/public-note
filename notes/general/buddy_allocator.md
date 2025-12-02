@@ -4,9 +4,9 @@ checked: false
 created: 2025-03-23
 draft: false
 last_edited: 2025-03-23
-title: Buddy Allocator
 tags:
   - OS
+title: Buddy Allocator
 type: definition
 ---
 >[!tldr] Buddy Allocator

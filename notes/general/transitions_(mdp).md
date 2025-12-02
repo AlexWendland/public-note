@@ -6,9 +6,9 @@ checked: false
 created: 2024-04-06
 draft: false
 last_edited: 2024-04-06
-title: Transitions (MDP)
 tags:
   - machine-learning
+title: Transitions (MDP)
 type: definition
 ---
 >[!tldr] Transitions (MDP)

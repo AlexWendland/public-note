@@ -8,9 +8,9 @@ checked: false
 created: 2023-08-26
 draft: false
 last_edited: 2023-11-11
-title: Parallelisation
 tags:
   - programming
+title: Parallelisation
 type: definition
 ---
 >[!tldr] Parallelisation

@@ -1,21 +1,19 @@
 ---
 aliases:
 checked: false
-course: 'CS6250 Computer Networks'
+course: CS6250 Computer Networks
 created: 2024-07-27
 draft: false
 last_edited: 2024-07-27
-title: Week 12 - Future of the internet
 tags:
   - OMSCS
+title: Week 12 - Future of the internet
 type: lecture
 week: 12
 ---
-# Week 12 - Future of the internet
+# Reading
 
-## Reading
-
-### Optional Readings
+## Optional Readings
 
 **Machine Learning and Applications Networking**
 

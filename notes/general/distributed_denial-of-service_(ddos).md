@@ -5,10 +5,10 @@ checked: false
 created: 2024-06-09
 draft: false
 last_edited: 2024-06-09
-title: Distributed Denial-of-Service (DDoS)
 tags:
   - networks
   - security
+title: Distributed Denial-of-Service (DDoS)
 type: definition
 ---
 >[!tldr] Distributed Denial-of-Service (DDoS)

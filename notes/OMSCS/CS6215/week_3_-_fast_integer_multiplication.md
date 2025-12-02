@@ -1,24 +1,23 @@
 ---
 aliases: []
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-09-05
 draft: false
 last_edited: 2023-11-11
-title: Week 3 - Fast Integer multiplication
 tags:
   - OMSCS
+title: Week 3 - Fast Integer multiplication
 type: lecture
 week: '3'
 ---
-# Week 3 - Fast Integer multiplication
 
 > [!tldr] Multiplying $n$-bit integers problem
 > Given $n$-bit integers $x$ and $y$ what is $z = xy$?
 
 Naïve approaches will do this in $O(n^2)$ time but you can do it faster with [divide and conquer](../../general/divide_and_conquer_algorithms.md).
 
-## Gauss's trick (aside)
+# Gauss's trick (aside)
 
 Suppose have two [complex numbers](../../general/complex_numbers.md) $a + bi$ and $c + di$ where you want to compute the product $(a + bi)(c + di)$ in the fastest way possible.
 
@@ -31,7 +30,7 @@ $$(a + b)(c + d) = ac + bd + (ad + bc).$$
 This tells us from computing $ac$, $bd$ and $(a+b)(c+d)$ we can in fact get all the components we need to work out the complex multiple:
 $$(a + bi)(c + di) = ac - bd + ((a + b)(c+d) - bd - ac)i.$$
 
-## Naïve divide and conquer approach
+# Naïve divide and conquer approach
 
 Suppose we have $x$ and $y$ which are $2^k=n$-bit numbers. We cut $x$ and $y$ in half so
 $$x = X_L2^{2^{k-1}} + X_R \mbox{ and } Y = Y_L2^{2^{k-1}} + Y_R.$$
@@ -56,7 +55,7 @@ else:
 To analyse the run time of this algorithm not the split and shift operations take $O(n)$ time, just the same as addition. So dividing $x$ and $y$ and computing the addition of the multiplied components are both $O(n)$ operations. However, if you let the run time of the algorithm be $T(n)$ then the sub multiplications take $4T(n/2)$. This gives
 $$T(n) = 4 T(n/2) + O(n) = O(n^2).$$
 
-## Better approach
+# Better approach
 
 This time we combine Gauss's trick with the [divide and conquer](../../general/divide_and_conquer_algorithms.md) approach to speed up this algorithm.
 

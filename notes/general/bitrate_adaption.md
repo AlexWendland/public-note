@@ -5,9 +5,9 @@ checked: false
 created: 2024-07-27
 draft: false
 last_edited: 2024-07-27
-title: Bitrate adaption
 tags:
   - networks
+title: Bitrate adaption
 type: definition
 ---
 >[!tldr] Bitrate adaption

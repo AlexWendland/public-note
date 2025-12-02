@@ -7,13 +7,12 @@ checked: false
 created: 2023-08-28
 draft: false
 last_edited: 2023-11-11
-title: Leaf (graph)
 tags:
   - maths
   - graph-theory
+title: Leaf (graph)
 type: definition
 ---
-# Leaf (graph)
 
 In a [graph](graph.md) we say a vertex $v \in V$ is a leaf if the [degree](degree_(graph).md) of the vertex is 1, i.e. $\mbox{deg}(v) = 1$.
 

@@ -5,9 +5,9 @@ checked: false
 created: 2024-02-16
 draft: false
 last_edited: 2024-02-16
-title: Version space
 tags:
   - machine-learning
+title: Version space
 type: definition
 ---
 >[!tldr] Version space

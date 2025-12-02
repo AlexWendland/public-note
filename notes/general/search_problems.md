@@ -6,8 +6,8 @@ checked: false
 created: 2023-10-24
 draft: false
 last_edited: 2023-11-11
-title: Search problems
 tags: []
+title: Search problems
 type: definition
 ---
 >[!tldr] Search problem

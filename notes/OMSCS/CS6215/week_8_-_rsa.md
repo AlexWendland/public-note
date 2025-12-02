@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-10-09
 draft: false
 last_edited: 2023-11-11
-title: Week 8 - RSA
 tags:
   - OMSCS
+title: Week 8 - RSA
 type: lecture
 week: 8
 ---
-# Week 8 - RSA
 
 To talk about the [RSA](../../general/rivest-shamir-adleman_algorithm_(rsa_algorithm).md) algorithm we first need a little more theory.
 
@@ -37,7 +36,7 @@ For [RSA](../../general/rivest-shamir-adleman_algorithm_(rsa_algorithm).md) it i
 
 Which as a corollary has $\phi(pq) = (p-1)(q-1)$ for two distinct prime numbers.
 
-## [RSA](../../general/rivest-shamir-adleman_algorithm_(rsa_algorithm).md) idea
+# [RSA](../../general/rivest-shamir-adleman_algorithm_(rsa_algorithm).md) idea
 
 Here we want to pass a message $z \in \mathbb{Z}$ from one person to another where the message sent between them is unintelligible without more information.
 
@@ -47,7 +46,7 @@ to recover a message.
 
 [Rivest-Shamir-Adleman algorithm (RSA algorithm)](../../general/rivest-shamir-adleman_algorithm_(rsa_algorithm).md)
 
-## Selecting random primes
+# Selecting random primes
 
 The first stage of the [RSA](../../general/rivest-shamir-adleman_algorithm_(rsa_algorithm).md) algorithm is to select two random $n$-bit primes. To do this we first select a random number by randomly selecting each bit in this number.
 
@@ -64,7 +63,7 @@ random_prime(n):
 
 Though how do we check if a number is [prime](../../general/prime.md).
 
-## Fermat's test
+# Fermat's test
 
 If $r$ is a [prime](../../general/prime.md) then for all $1 \leq z < r$ we have
 $$z^{r-1} = 1 \ (mod \ r).$$
@@ -82,7 +81,7 @@ Luckily for us the existence of [Carmichael numbers](../../general/carmichael_nu
 
 [Non-trivial Fermat witnesses are dense](../../general/non-trivial_fermat_witnesses_are_dense.md)
 
-## Simple Primality testing algorithm
+# Simple Primality testing algorithm
 
 We want to use the above to test the primality of a number randomly.
 

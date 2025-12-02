@@ -4,10 +4,10 @@ checked: false
 created: 2023-11-15
 draft: false
 last_edited: 2023-11-15
-title: Rudrata cycle problem
 tags:
   - programming
   - graph-theory
+title: Rudrata cycle problem
 type: problem
 ---
 # Statement

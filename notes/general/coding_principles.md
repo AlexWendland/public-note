@@ -4,12 +4,11 @@ checked: false
 created: 2023-08-05
 draft: false
 last_edited: 2023-11-11
-title: Coding Principles
 tags:
   - programming
+title: Coding Principles
 type: principles
 ---
-# Coding Principles
 
 There are many coding principles to stick to, these are just a collection of useful heuristics to avoid the pain of past programmers.
 

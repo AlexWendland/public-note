@@ -6,10 +6,10 @@ checked: false
 created: 2024-02-02
 draft: false
 last_edited: 2024-02-02
-title: Exclusive or
 tags:
   - maths
   - logic
+title: Exclusive or
 type: definition
 ---
 >[!tldr] Exclusive or

@@ -4,9 +4,9 @@ checked: false
 created: 2024-01-22
 draft: false
 last_edited: 2024-01-22
-title: Instance-based learning
 tags:
   - machine-learning
+title: Instance-based learning
 type: definition
 ---
 >[!tldr] Instance-based learning

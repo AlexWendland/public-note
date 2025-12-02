@@ -6,9 +6,9 @@ checked: false
 created: 2023-03-18
 draft: false
 last_edited: 2023-11-11
-title: Open Closed Principle (OCP)
 tags:
   - programming
+title: Open Closed Principle (OCP)
 type: theory
 ---
 # The Open Closed Principle (OCP)

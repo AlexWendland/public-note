@@ -6,9 +6,9 @@ checked: false
 created: 2025-03-22
 draft: false
 last_edited: 2025-03-22
-title: Physical Frame Number (PFN)
 tags:
   - OS
+title: Physical Frame Number (PFN)
 type: definition
 ---
 >[!tldr] Physical Frame Number (PFN)

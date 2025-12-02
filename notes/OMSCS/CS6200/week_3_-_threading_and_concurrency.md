@@ -1,23 +1,22 @@
 ---
 aliases:
 checked: false
-course: 'CS6200 Graduate introduction to Operating Systems'
+course: CS6200 Graduate introduction to Operating Systems
 created: 2024-08-26
 draft: false
 last_edited: 2024-08-26
-title: Week 3 - Threading and concurrency
 tags:
   - OMSCS
+title: Week 3 - Threading and concurrency
 type: lecture
 week: 3
 ---
-# Week 3 - Threading and concurrency
 
 ["An Introduction to Programming with Threads"](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-birrell-paper.pdf) by Birrell
 
 [Thread](../../general/thread.md)
 
-## Visual metaphor
+# Visual metaphor
 
 Threads are like workers in a toy shop:
 - is an active entity
@@ -35,37 +34,37 @@ In comparison to a thread:
 - requires coordination
 	- sharing of [IO](../../general/input_output_(io).md) devices, [CPU](../../general/central_processing_unit_(cpu).md), and [virtual memory](../../general/virtual_memory.md).
 
-## Difference between a process and a thread
+# Difference between a process and a thread
 
 Each [process](../../general/process.md) has its own [address space](../../general/address_space_(os).md) and [PCB](../../general/process_control_block_(pcb).md) whereas each [thread](../../general/thread.md) in a [process](../../general/process.md) shares the same [address space](../../general/address_space_(os).md), code and data but has its own [CPU registers](../../general/cpu_register.md), [program counter](../../general/program_counter_(pc).md), and [stack](../../general/stack_(os).md). A [thread](../../general/thread.md) does not have its own [PCB](../../general/process_control_block_(pcb).md) but its state is tracked in the [process](../../general/process.md) [PCB](../../general/process_control_block_(pcb).md).
 
 ![Process Vs Thread](../../../images/process_vs_thread.png)
 
-## Benefits of multithreading
+# Benefits of multithreading
 
 Threads allow us to parallelise a process over multiple cores without incurring the code complexity of [Inter-process communication (IPC)](../../general/inter-process_communication_(ipc).md) or the overhead of multiple [PCB](../../general/process_control_block_(pcb).md) instances. You can specialise threads for a particular task that needs the same items from the [cache](../../general/cache.md) this allows you to run the task off a hot cache all the time.
 
 Multi-threading on a single core also can be efficient. As one of the largest costs in [context switching](../../general/context_switch_(cpu).md) is to remap the [address space](../../general/address_space_(os).md) the time it takes to [context switch](../../general/context_switch_(cpu).md) between [threads](../../general/thread.md) is lower than that for [processes](../../general/process.md). Therefore if you have [I/O](../../general/input_output_(io).md) bound tasks using multi-threading can improve performance.
 
-## Downsides of mulitithreading
+# Downsides of mulitithreading
 
 Now threads have access to the same [virtual memory](../../general/virtual_memory.md) they can perform operations on the same bit of memory which can lead to unintended outcomes. For example two threads incrementing a number leading to the number only being incremented by one.
 
-## Concurrency control mechanisms
+# Concurrency control mechanisms
 
-### Mutual exclusion
+## Mutual exclusion
 
 You can limit certain actions to only be carried out by one thread at a time. This is called mutex.
 
-### Threads waiting
+## Threads waiting
 
 Similar to [processes](../../general/process.md) threads can enter a wait state for [I/O](../../general/input_output_(io).md) operations or other conditions. This is controlled by condition variables.
 
-### Threads getting woken up
+## Threads getting woken up
 
 Threads can also wake each other up.
 
-## Thread creation
+# Thread creation
 
 Threads interfaces are different between providers. In this course we follow on specific implementation.
 
@@ -83,13 +82,13 @@ A [thread](../../general/thread.md) can be terminated using the `join` command w
 >[!note] Different threads execute operations in a non-deterministic manner
 > If two threads are safely writing to a list the order of those writes are non-deterministic as it is up to the kernel to schedule them.
 
-## Mutex
+# Mutex
 
 [Mutex](../../general/mutex.md)
 
 [Conditional variables (Mutex)](../../general/conditional_variables_(mutex).md)
 
-### Example: Reader/writer Problem
+## Example: Reader/writer Problem
 
 Suppose we want to read and write to some resource. We are fine with multiple [threads](../../general/thread.md) reading the resource but we only want one writer ever writing to it and we do not want anyone reading from it at that time.
 
@@ -153,7 +152,7 @@ lock(mutex){
 
 In this example the real critical code is not protected by a [mutex](../../general/mutex.md) which is the reading and writing of the resource. This proxy variable pattern is common and follows a general stricture.
 
-### Proxy variable pattern
+## Proxy variable pattern
 
 When controlling an operation using a proxy variable it uses the following pattern:
 
@@ -176,7 +175,7 @@ lock(mutex){
 }
 ```
 
-### Common bugs with [mutexs](../../general/mutex.md) and how to avoid them
+## Common bugs with [mutexs](../../general/mutex.md) and how to avoid them
 
 - Use clear names for mutexs and conditional variables so you know what they refer too.
 - Check you are locking and unlocking when accessing the resource.
@@ -191,7 +190,7 @@ lock(mutex){
 - Spurious wakeups
 - Deadlocks
 
-### Spurious wakeups
+## Spurious wakeups
 
 [Spurious wakeups](../../general/spurious_wakeups.md)
 
@@ -214,7 +213,7 @@ signal(write_phase)
 
 Though this can only be done if the signal/broadcast does not rely on a controlled resource like the resource counter in the above example.
 
-### Deadlocks
+## Deadlocks
 
 [Deadlock](../../general/deadlock.md)
 
@@ -232,7 +231,7 @@ There are a couple techniques for solving or preventing deadlocks:
 - Ostrich technique: Hope it does not happen and if it does restart the system.
 	- Terrible to do but very easy to implement.
 
-## Thread level
+# Thread level
 
 The concept of the [thread](../../general/thread.md) exists at the kernel level and at the process level that can have its own thread scheduler. Then it is up to the process how it wants to map the threads within the process to threads on the kernel. Threads on the kernel are allocated to the [CPU](../../general/central_processing_unit_(cpu).md) so to get use [parallelism](../../general/parallelisation.md) whereas multiple [process](../../general/process.md) [threads](../../general/thread.md) on the same kernel [thread](../../general/thread.md) run [concurrently](../../general/concurrency.md) but not in [parallel](../../general/parallelisation.md).
 
@@ -242,9 +241,9 @@ The concept of the [thread](../../general/thread.md) exists at the kernel level 
 
 You can also take a hybrid approach that gets the best of both worlds but requires coordination between the kernel thread scheduler  and the process scheduler.
 
-## [Multi-threading](../../general/multi-threading.md) patterns
+# [Multi-threading](../../general/multi-threading.md) patterns
 
-### Boss-worker pattern
+## Boss-worker pattern
 
 In this pattern there is one thread in control of allocating work to a pool of workers. The throughput is determined by the number of tasks the boss processes. There are two main ways for the boss to allocate work to the workers:
 - The boss keeps track of which workers are free and allocates new work to free workers. This gives more tasks to the boss as they need to track which workers are free as well as requires a shared interface between the workers and boss to indicate they are free.
@@ -254,11 +253,11 @@ An important decision when using this pattern is to decide on the number of work
 
 A downside to this model is if the boss is not tracking what workers are doing it can not make efficiencies from specialisations of workers on particular tasks. We can get around this by having workers specialise the tasks they perform which should make them more efficient but means the boss needs to keep track of which workers are specialised to do what and to load balance between them.
 
-### Pipeline pattern
+## Pipeline pattern
 
 In this pattern we break down the task into sub-tasks. Then we let a subset of workers handle each stage of the pipeline. This allows workers to specialise speeding up throughput. Though this means something will have to re-balance worker allocation to the different stages of the pipeline. To hand off workers from one another we require synchronisation of the workers or to pass tasks to a [queue](../../general/queue.md).
 
-### Layer pattern
+## Layer pattern
 
 In this pattern we group similar sub-tasks and assign them to a layer. Then layers pass tasks between them. This allows for specialisation but reduces the level of fine grained control between each sub-task. Though this suffers from synchronisation between the layers and might not be applicable to all situations.
 

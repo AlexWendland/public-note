@@ -5,9 +5,9 @@ checked: false
 created: 2024-01-11
 draft: false
 last_edited: 2024-01-11
-title: Irreducible error
 tags:
   - machine-learning
+title: Irreducible error
 type: definition
 ---
 >[!tldr] Irreducible error

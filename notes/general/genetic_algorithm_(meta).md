@@ -6,13 +6,12 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-title: Genetic algorithm (meta)
 tags:
   - programming
   - machine-learning
+title: Genetic algorithm (meta)
 type: algorithm
 ---
-# Genetic algorithm (meta)
 
 Suppose we have a [optimisation problem](optimisation_problem.md) which as two properties associated to is [domain](function_domain.md) $A$
 - There is a method to make a small change to any $a \in A$ called a [mutation](mutation_(genetic_algorithms).md) $M: A \rightarrow \mathcal{P}(A)$ where any of $m(a)$ are a small change to $a$.
@@ -27,7 +26,7 @@ It then selects a subset $S \subset P$ to make the next generation. There are mu
 The from our subset $S \subset P$ use the [mutation](mutation_(genetic_algorithms).md) $M$ and [crossover function](crossover_(genetic_algorithms).md) $C$ to generate a new population.
 
 We keep doing this for a number of *generations* and then stop at some point determined by a stopping criteria.
-## Pseudocode
+# Pseudocode
 
 ```pseudocode
 genetic_algorithm(optimise, selection_function, mutation, crossover, stopping_condition, population_size):
@@ -46,9 +45,9 @@ genetic_algorithm(optimise, selection_function, mutation, crossover, stopping_co
 3. Return argmax optimise(a) for a in popluation
 ```
 
-## Run time
+# Run time
 
 
 
-## Correctness
+# Correctness
 

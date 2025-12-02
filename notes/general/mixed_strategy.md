@@ -4,9 +4,9 @@ checked: false
 created: 2024-04-06
 draft: false
 last_edited: 2024-04-06
-title: Mixed strategy
 tags:
   - game-theory
+title: Mixed strategy
 type: definition
 ---
 >[!tldr] Mixed strategy

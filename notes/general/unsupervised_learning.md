@@ -5,9 +5,9 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-title: Unsupervised learning
 tags:
   - machine-learning
+title: Unsupervised learning
 type: definition
 ---
 >[!tldr] Unsupervised learning

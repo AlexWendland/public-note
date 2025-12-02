@@ -1,17 +1,16 @@
 ---
 aliases: []
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-09-07
 draft: false
 last_edited: 2023-11-11
-title: Week 3 - Linear-Time Median
 tags:
   - OMSCS
+title: Week 3 - Linear-Time Median
 type: lecture
 week: '3'
 ---
-# Week 3 - Linear-Time Median
 
 > [!tldr] Median list problem
 > Given an unsorted list $A = [a_1, \ldots, a_n]$ of $n$ numbers - you want to find the [median](../../general/median.md) ($\lceil \frac{n}{2} \rceil$) element.
@@ -24,11 +23,11 @@ Though we can solve a more generic problem.
 > [!tldr] $k$th smallest element
 > Given an unsorted list $A = [a_1, \ldots, a_n]$ of $n$ numbers - you want to find the $k$'th smallest element.
 
-## Using [Merge sort](../../general/merge_sort.md)
+# Using [Merge sort](../../general/merge_sort.md)
 
 A basic algorithm would be to use [Merge sort](../../general/merge_sort.md) on $A$ then output the $k$-th element of that list which would take $O(n\log(n))$. Though is it possible to do this without sorting $A$?
 
-## Using [divide and conquer](../../general/divide_and_conquer_algorithms.md) better
+# Using [divide and conquer](../../general/divide_and_conquer_algorithms.md) better
 
 >[!Note] [Quick sort](../../general/quick_sort.md)
 >We are going to use ideas from [quick sort](../../general/quick_sort.md) algorithm.
@@ -46,7 +45,7 @@ Select(A, k):
 
 Though we have skipped how we choose a pivot. We need that pivot is close to the median to get a good running time. Lets assume the running time of this algorithm is $T(n)$ for input of size $n$.
 
-## Choosing the pivot
+# Choosing the pivot
 
 We say a pivot is good if
 $$\vert A_{<p}\vert \leq \frac{3n}{4}, \mbox{ and } \vert A_{>p} \vert \leq \frac{3n}{4}.$$
@@ -54,7 +53,7 @@ We want to find such a $p$ in $O(n)$ time. This will give us
 $$ T(n) = T(\frac{3n}{4}) + O(n),$$
 which by [Masters theorem](../../general/masters_theorem.md) gives $T(n) = \Theta(n)$.
 
-### Random pivot
+## Random pivot
 
 If I choose any random element $p \in A$ then it has
 $$\mathbb{P}(p \mbox{ is good}) = \frac{3n/4 - n/4}{n} = \frac{1}{2}$$
@@ -62,7 +61,7 @@ It takes $O(n)$ time to check if $p$ is good and if we kept randomly drawing ele
 $$\mathbb{E}(\mbox{draws untill } p \mbox{ is good}) = 2.$$
 Therefore this algorithm has expected runtime of $2n$ - though this is not [worst case run time](../../general/big-o_notation.md).
 
-### Recursive pivot
+## Recursive pivot
 
 Instead of finding a median of $A$ we could instead aim for a median of a "representative sample".
 
@@ -109,7 +108,7 @@ As $\frac{3}{4} + \frac{1}{5} < 1$ we have that $T(n) = O(n)$.
 > [!Note] Why is this true?
 > I don't know, but this looks like it could be solved using [Akra–Bazzi method](akra–bazzi_method.md) or [Recursion tree method](../../general/recursion_tree_method.md).
 
-### Useful discussion about this
+## Useful discussion about this
 
 Let me see if I can help explain this. I find the best way to solve recurrences with multiple sub-problems is to think in terms of the "recursive tree".
 
@@ -129,7 +128,7 @@ Now we see that at each level the work increases, so we no longer have a linear 
 
 What's the intuition behind this? The overall number of operations at each level is bounded by the total n at that level. As you make successive recursive calls, does n shrink? does it grow? or is it held constant?
 
-## Further questions
+# Further questions
 
 > [!question] Change 5 in the analysis
 > What happens to the run time if we switch out 5 for 3 or 7 in the analysis of this algorithm?

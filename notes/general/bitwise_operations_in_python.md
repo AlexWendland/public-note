@@ -5,11 +5,11 @@ checked: false
 created: 2023-04-20
 draft: false
 last_edited: 2023-11-11
-title: Bitwise operations in python
 tags:
   - programming
   - python
   - language
+title: Bitwise operations in python
 type: operations
 ---
 # Bitwise operations

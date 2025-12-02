@@ -4,9 +4,9 @@ checked: false
 created: 2024-04-06
 draft: false
 last_edited: 2024-04-06
-title: Perfect information
 tags:
   - probability
+title: Perfect information
 type: definition
 ---
 >[!tldr] Perfect information

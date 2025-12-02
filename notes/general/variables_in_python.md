@@ -5,13 +5,12 @@ checked: false
 created: 2023-07-17
 draft: false
 last_edited: 2023-11-11
-title: Variables in python
 tags:
   - programming
   - python
+title: Variables in python
 type: fundamentals
 ---
-# Variables in python
 
 To understand how variables work in python it is good to keep in mind the separation between [computer memory](random_access_memory_(ram).md) and references to places in [computer memory](random_access_memory_(ram).md). In [Python Index](python_index.md), variables are more like tags or labels that are attached to objects, rather than containers that store data, as they are in many other programming languages.
 
@@ -37,13 +36,13 @@ print(id(y)) #140703625587904
 
 ```python
 print(locals())
-# {
-# '__name__' : '__main__',
-# ...
-# '__cached__' : None,
-# 'x' : 10,
-# 'y' : 10
-# }
+ {
+ '__name__' : '__main__',
+ ...
+ '__cached__' : None,
+ 'x' : 10,
+ 'y' : 10
+ }
 ```
 
 You can also see the [reference count](reference_counting_in_python.md) of these objects using the `sys.getrefcount` function.

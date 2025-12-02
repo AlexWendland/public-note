@@ -6,12 +6,11 @@ checked: false
 created: 2024-01-11
 draft: false
 last_edited: 2024-01-11
-title: Iterative Dichotomiser 3 (ID3)
 tags:
   - programming
+title: Iterative Dichotomiser 3 (ID3)
 type: algorithm
 ---
-# Iterative Dichotomiser 3 (ID3)
 
 This algorithm works on [classification problems](classification_problems.md). It is a greedy algorithm to design a maximal [decision tree](decision_tree.md).  Therefore are looking for the tree to represent some function $f: A \rightarrow B$, where we may only have access to some training data $D \subset f$.
 
@@ -24,7 +23,7 @@ $$
 
 Lastly we will construct this tree using a [depth-first search](depth-first_search_(dfs).md) algorithm, where at each leaf node we will have a subset of our original training set.
 
-## Pseudocode
+# Pseudocode
 
 ```pseudocode
 ID3(training_data, attributes):
@@ -46,8 +45,8 @@ ID3(training_data, attributes):
 6. return decision tree T.
 ```
 
-## Run time
+# Run time
 - $O(\vert A' \vert 2^{\vert T \vert})$
 
-## Correctness
+# Correctness
 

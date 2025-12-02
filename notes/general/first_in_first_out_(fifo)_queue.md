@@ -5,9 +5,9 @@ checked: false
 created: 2024-06-15
 draft: false
 last_edited: 2024-06-15
-title: First in first out (FIFO) queue
 tags:
   - computer-science
+title: First in first out (FIFO) queue
 type: data structure
 ---
 >[!tldr] First in first out (FIFO) queue

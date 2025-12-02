@@ -8,11 +8,11 @@ checked: false
 created: 2023-07-17
 draft: false
 last_edited: 2023-11-11
-title: Random Access Memory (RAM)
 tags:
   - programming
   - OS
   - hardware
+title: Random Access Memory (RAM)
 type: definition
 ---
 >[!tldr] Random Access Memory (RAM)

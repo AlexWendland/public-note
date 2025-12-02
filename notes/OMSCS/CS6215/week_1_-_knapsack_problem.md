@@ -1,13 +1,13 @@
 ---
 aliases: []
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-08-29
 draft: false
 last_edited: 2023-12-03
-title: Week 1 - Knapsack Problem
 tags:
   - OMSCS
+title: Week 1 - Knapsack Problem
 type: lecture
 week: 1
 ---

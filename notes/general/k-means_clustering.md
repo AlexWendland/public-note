@@ -4,13 +4,12 @@ checked: false
 created: 2024-03-09
 draft: false
 last_edited: 2024-03-09
-title: k-means clustering
 tags:
   - programming
   - machine-learning
+title: k-means clustering
 type: algorithm
 ---
-# k-means clustering
 
 Suppose we are in the [clustering problem](clustering_problem.md) set up. Suppose we are provided $k$ the number of clusters. Further assume $A$ is a space with some method of averaging $Avg:2^A \rightarrow A$ which satisfies
 $$
@@ -26,7 +25,7 @@ C^t_i = \left \{t \in T \Bigg \vert \left ( \mbox{ arg}\min_{1 \leq j \leq k} d(
 $$
 Then we update our centres $center_i^t = Avg(C_i^t)$. We keep iterating until $C_i^t = C_i^{t+1}$ for all $1 \leq i \leq k$.
 
-## Pseudocode
+# Pseudocode
 
 ```pseudocode
 Name(k, T, d, Avg):
@@ -46,7 +45,7 @@ Name(k, T, d, Avg):
 4. Return f_current
 ```
 
-## Run time
+# Run time
 
 We will go on to "hand wave" that this algorithm can never return to the same state without stopping. Let $n = \vert T \vert$ then the number of possible iterations is $O(k^n)$ (lazy estimations on the number of partitions). Each iteration takes $O(k(n+O(Avg(n)))$ as we need to calculate the distance between each of the centres for each point and then calculate overages of each of the centres.
 
@@ -54,7 +53,7 @@ This gives the run time to be $O(k^{n+1}(n + O(Avg(n))))$.
 
 In practice this algorithm is much faster than the run time lets on.
 
-## Correctness
+# Correctness
 
 Correctness in this situation will mean that it will terminate eventually. To "handwave" this we will phrase this problem as a [Hill climbing](hill_climbing.md) problem.
 

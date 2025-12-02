@@ -5,9 +5,9 @@ checked: false
 created: 2025-04-09
 draft: false
 last_edited: 2025-04-09
-title: PCI Express (PCIe)
 tags:
   - OS
+title: PCI Express (PCIe)
 type: definition
 ---
 >[!tldr] PCI Express (PCIe)

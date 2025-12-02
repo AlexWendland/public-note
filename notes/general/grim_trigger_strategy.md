@@ -4,9 +4,9 @@ checked: false
 created: 2024-04-07
 draft: false
 last_edited: 2024-04-07
-title: Grim trigger strategy
 tags:
   - game-theory
+title: Grim trigger strategy
 type: definition
 ---
 >[!tldr] Grim trigger strategy

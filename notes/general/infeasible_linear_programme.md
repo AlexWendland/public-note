@@ -6,9 +6,9 @@ checked: false
 created: 2023-11-08
 draft: false
 last_edited: 2023-11-11
-title: Infeasible linear programme
 tags:
   - programming
+title: Infeasible linear programme
 type: definition
 ---
 >[!tldr] Infeasible linear programme

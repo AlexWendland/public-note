@@ -4,12 +4,11 @@ checked: true
 created: 2024-05-27
 draft: false
 last_edited: 2024-05-27
-title: Checksum in layer 4
 tags:
   - networks
+title: Checksum in layer 4
 type: explainer
 ---
-# Checksum in layer 4
 
 To compute the [checksum](checksum.md) for a [layer 4](layer_4_transport.md) header (either [TCP](transmission_control_protocol_(tcp).md) or [UDP](user_datagram_protocol_(udp).md)):
 - You first construct the header with an all zeros [Checksum](checksum.md).

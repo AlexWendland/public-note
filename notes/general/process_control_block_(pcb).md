@@ -5,10 +5,10 @@ checked: false
 created: 2024-08-26
 draft: false
 last_edited: 2024-08-26
-title: Process control block (PCB)
 tags:
   - OS
   - computer-science
+title: Process control block (PCB)
 type: definition
 ---
 >[!tldr] Process control block (PCB)

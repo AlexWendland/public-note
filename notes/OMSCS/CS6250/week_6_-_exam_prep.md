@@ -1,19 +1,17 @@
 ---
 aliases:
 checked: false
-course: 'CS6250 Computer Networks'
+course: CS6250 Computer Networks
 created: 2024-06-15
 draft: false
 last_edited: 2024-06-15
-title: Week 6 - Exam prep
 tags:
   - OMSCS
+title: Week 6 - Exam prep
 type: lecture
 week: 6
 ---
-# Week 6 - Exam prep
-
-## Lesson 1: Introduction, History, and Internet Architecture
+# Lesson 1: Introduction, History, and Internet Architecture
 
 - What are the advantages and disadvantages of a layered architecture?
 
@@ -47,7 +45,7 @@ week: 6
 
 - What is the purpose of the Spanning Tree Algorithm?
 
-## Lesson 2: Transport and Application Layers
+# Lesson 2: Transport and Application Layers
 
 - What does the transport layer provide?
 
@@ -105,7 +103,7 @@ week: 6
 
 - Explain TCP throughput calculation.
 
-## Lesson 3: Intradomain Routing
+# Lesson 3: Intradomain Routing
 
 - What is the difference between forwarding and routing?
 
@@ -133,7 +131,7 @@ week: 6
 
 - What is hot potato routing?
 
-## Lesson 4: AS Relationships and Interdomain Routing
+# Lesson 4: AS Relationships and Interdomain Routing
 
 - Describe the relationships between ISPs, IXPs, and CDNs.
 
@@ -165,7 +163,7 @@ week: 6
 
 - How does a route server work?
     ``
-## Lesson 5: Router Design and Algorithms (Part 1)
+# Lesson 5: Router Design and Algorithms (Part 1)
 
 - What are the basic components of a router?
 
@@ -199,7 +197,7 @@ week: 6
 
 - What are the benefits of variable-stride versus fixed-stride multibit tries?
 
-## Lesson 6: Router Design and Algorithms (Part 2)
+# Lesson 6: Router Design and Algorithms (Part 2)
 
 - Why is packet classification needed?
 

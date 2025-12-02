@@ -1,25 +1,23 @@
 ---
 aliases:
 checked: false
-course: 'CS7642 Reinforcement Learning'
+course: CS7642 Reinforcement Learning
 created: 2025-05-22
 draft: true
 last_edited: 2025-05-22
-title: Week 3 - Supplementary Planning methods
 tags:
   - OMSCS
+title: Week 3 - Supplementary Planning methods
 type: lecture
 week:
 ---
-# Week 3 - Supplementary Planning methods
-
-## Return
+# Return
 
 In [Reinforcement learning](../../general/reinforcement_learning.md) some people interpret the goal to be maximizing the rewards. However, with rewards sometimes distant from the current action - functionally most algorithms try to maximize the return.
 
 [Return (RL)](../../general/return_(rl).md)
 
-## Value function
+# Value function
 
 [value function](../../general/value_function_(rl).md)
 
@@ -33,7 +31,7 @@ v_{\pi}(s) = \sum_{a \in A_s} \pi(a \vert s) \sum_{s \in S, r \in R}p(s', r \ver
 $$
 The first term $\pi(a \vert s)$ accounts for a probabilistic policy $\pi$ otherwise it will be 0 for all $s$ other than $\pi(s)$.
 
-## Quality function
+# Quality function
 
 [Quality function (RL)](../../general/quality_function_(rl).md)
 
@@ -46,11 +44,11 @@ Which in simple terms is as follows.
 $$
 q^{\pi}(s,a) = \sum_{s' \in S, r \in R} p(s', r \vert s, a)[r + \gamma v_{\pi}(s')].
 $$
-## Action-advantage function
+# Action-advantage function
 
 [Action-advantage function (RL)](../../general/action-advantage_function_(rl).md)
 
-## Learning as you play
+# Learning as you play
 
 It is common that when you start interacting with a new environment that you don't know the [Markov decision process](../../general/markov_decision_process.md) up front. So instead of being able to calculate the [value function](../../general/value_function_(rl).md) or [quality function](../../general/quality_function_(rl).md) off the bat, you need to sample the environment to learn them.
 
@@ -79,11 +77,11 @@ v_{\ast}(s) & = \max_a \sum_{s' \in S, r \in R} p(s',r \vert s, a) [r + \gamma v
 q_{\ast}(s, a) & = \sum_{s' \in S, r \in R} p(s',r \vert s, a)[r + \gamma \max_{a' \in A} q_{\ast}(s',a')]
 \end{align*}
 $$
-## Policy iteration
+# Policy iteration
 
 [Policy Iteration (MDP)](../../general/policy_iteration_(mdp).md)
 
-## Value iteration
+# Value iteration
 
 Note: Slightly different notation in the note below.
 

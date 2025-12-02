@@ -6,9 +6,9 @@ checked: false
 created: 2024-01-24
 draft: false
 last_edited: 2024-01-24
-title: Indicator function
 tags:
   - maths
+title: Indicator function
 type: definition
 ---
 >[!tldr] Indicator function

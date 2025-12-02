@@ -4,9 +4,9 @@ checked: false
 created: 2024-03-10
 draft: true
 last_edited: 2024-03-10
-title: Central limit theorem
 tags:
   - maths
+title: Central limit theorem
 type: lemma
 ---
 # Statement

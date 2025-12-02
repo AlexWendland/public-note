@@ -4,16 +4,15 @@ checked: false
 created: 2023-10-09
 draft: false
 last_edited: 2023-11-11
-title: Modular exponent algorithm
 tags:
   - programming
+title: Modular exponent algorithm
 type: algorithm
 ---
-# Modular exponent algorithm
 
 This algorithm has a [polynomial run time](polynomial_time.md) in the size of the input to calculate powers in using [modular arithmetic](modular_arithmetic.md). This has not been sped up using [Euler's theorem (modular arithmetic)](euler's_theorem_(modular_arithmetic).md).
 
-# Algorithm
+ Algorithm
 
 ```pseudocode
 resursive_mod_exp(x,y,N):
@@ -25,10 +24,10 @@ resursive_mod_exp(x,y,N):
 4. if y is off return xz^2 mod N
 ```
 
-# Run time
+ Run time
 
 The algorithm runs for at most $n$ loops as $y$ is an $n$-bit integer. Calculating multiplication of $n$-bit integers takes $O(n^2)$. Therefore this algorithm runs in $O(n^3)$ time.
 
-# Correctness
+ Correctness
 
 This derives from basic properties of [modular arithmetic](modular_arithmetic.md).

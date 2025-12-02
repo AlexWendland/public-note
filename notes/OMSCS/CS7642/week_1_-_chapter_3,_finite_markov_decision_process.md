@@ -1,21 +1,20 @@
 ---
 aliases:
 checked: false
-course: 'CS7642 Reinforcement Learning'
+course: CS7642 Reinforcement Learning
 created: 2025-05-14
 draft: false
 last_edited: 2025-05-14
-title: Week 1 - Chapter 3, Finite Markov Decision Process
 tags:
   - OMSCS
+title: Week 1 - Chapter 3, Finite Markov Decision Process
 type: lecture
 week: 1
 ---
-# Week 1 - Chapter 3, Finite Markov Decision Process
 
 Compulsory reading from [Reinforcement learning: An introduction](http://www.incompleteideas.net/book/the-book-2nd.html).
 
-## Finite Markov Decision Process
+# Finite Markov Decision Process
 
 [Finite Markov Decision Process](../../general/finite_markov_decision_process.md)
 
@@ -29,13 +28,13 @@ $$
 $$
 r(s_t,a_t) = \mathbb{E}[R_t \vert s_t, a_t] = \sum_{r \in R} r \sum_{s_{t+1}}p(s_{t+1}, r \vert s_t, a_t)
 $$
-## Discounted returns
+# Discounted returns
 
 If we run a game with infinite steps which has positive expected reward for each step, then the value of the game is infinite. Which can make it hard to distinguish better options - as they both are over the long term worth infinite value. Therefore we instead consider [discounted rewards](../../general/discounted_rewards.md).
 
 [Discounted rewards](../../general/discounted_rewards.md)
 
-## Value and policy functions
+# Value and policy functions
 
 [policy](../../general/policy_(mdp).md)
 

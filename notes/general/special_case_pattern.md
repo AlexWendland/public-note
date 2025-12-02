@@ -5,16 +5,15 @@ checked: false
 created: 2023-08-20
 draft: false
 last_edited: 2023-11-11
-title: Special case pattern
 tags:
   - programming
+title: Special case pattern
 type: design pattern
 ---
-# Special case pattern
 
 The Special Case Pattern is a design pattern used in software development to handle exceptional conditions without resorting to conditional logic scattered throughout the code. Essentially, it allows you to model what would be a "special case" as an object of the same type as the typical cases. By doing so, you can reduce the need for conditional logic to check for these cases, making the code more maintainable and easier to understand.
 
-## How It Works
+# How It Works
 
 Let's consider a simple example in some accounting software to calculate the refund for an a business trip.
 
@@ -69,19 +68,19 @@ def get_trip_refund(
 	return total
 ```
 
-### Benefits
+## Benefits
 
 1. **Polymorphism**: Utilizes [polymorphism](polymorphism.md) to handle different behaviours between a regular object and its special case, keeping the API consistent.
 2. **Reduced Conditional Logic**: Helps in minimizing `if` or `switch` statements in your code to check for special cases.
 3. **Code Reusability**: Makes it easier to add more special cases in the future without modifying existing code, adhering to the [Open Closed principle](open_closed_principle_(ocp).md).
 4. **Readability**: Improves code readability by eliminating clutter introduced by numerous conditional statements.
 
-### When to Use
+## When to Use
 
 1. **Complex Exception Handling**: When you have complex rules for handling special cases that would otherwise clutter your main class with conditional logic.
 2. **Multiple Clients**: When multiple parts of your application need to deal with a special case, encapsulating this in a class prevents code duplication.
 3. **Future-Proofing**: When you anticipate adding more special cases or exceptions in the future.
 
-### Summary
+## Summary
 
 The Special Case Pattern provides a clean way to handle special or exceptional conditions by encapsulating them in their own classes. This makes the code more maintainable, readable, and adheres to the [Open Closed principle](open_closed_principle_(ocp).md). It's a technique that can be particularly useful in larger, more complex applications where special cases are numerous and subject to change.

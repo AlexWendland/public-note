@@ -1,13 +1,13 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-10-03
 draft: false
 last_edited: 2023-11-11
-title: Week 7 - Max-Flow Min-Cut
 tags:
   - OMSCS
+title: Week 7 - Max-Flow Min-Cut
 type: lecture
 week: 7
 ---

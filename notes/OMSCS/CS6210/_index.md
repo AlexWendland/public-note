@@ -5,16 +5,15 @@ checked: false
 created: 2023-08-26
 draft: false
 last_edited: 2023-12-03
-title: CS6210 Advanced Operating Systems
 tags:
   - OMSCS
   - maths
   - programming
 term: fall
+title: CS6210 Advanced Operating Systems
 type: course
 year: '2023'
 ---
-# CS6210 Advanced operating systems
 
 Advanced Operating Systems is a graduate-level course that addresses a broad range of topics in operating system design and implementation, including:
 - Operating system structuring
@@ -24,7 +23,7 @@ Advanced Operating Systems is a graduate-level course that addresses a broad ran
 - System support for Internet-scale computing
 By tracing the key ideas of today's most popular systems to their origins in research, the class highlights key developments in operating system design over the last two decades and illustrates how insight has evolved to implementation.
 
-## Links
+# Links
 
 - [Central](https://www.omscentral.com/courses/advanced-operating-systems/reviews)
 - [OMSCS page](https://omscs.gatech.edu/cs-6210-advanced-operating-systems)

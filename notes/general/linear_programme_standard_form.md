@@ -6,9 +6,9 @@ checked: false
 created: 2023-11-07
 draft: false
 last_edited: 2023-11-11
-title: Linear programme standard form
 tags:
   - programming
+title: Linear programme standard form
 type: definition
 ---
 >[!tldr] Linear programme standard form

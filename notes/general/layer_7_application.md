@@ -6,9 +6,9 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-title: Layer 7 Application
 tags:
   - networks
+title: Layer 7 Application
 type: definition
 ---
 >[!tldr] Layer 7 Application

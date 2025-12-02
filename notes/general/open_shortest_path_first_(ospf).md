@@ -6,9 +6,9 @@ checked: false
 created: 2024-06-08
 draft: false
 last_edited: 2024-06-08
-title: Open Shortest Path First (OSPF)
 tags:
   - networks
+title: Open Shortest Path First (OSPF)
 type: definition
 ---
 >[!tldr] Open Shortest Path First (OSPF)

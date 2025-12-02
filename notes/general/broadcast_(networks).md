@@ -7,9 +7,9 @@ checked: false
 created: 2024-05-21
 draft: false
 last_edited: 2024-05-21
-title: Broadcast (networks)
 tags:
   - networks
+title: Broadcast (networks)
 type: definition
 ---
 >[!tldr] Broadcast

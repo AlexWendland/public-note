@@ -5,10 +5,10 @@ checked: false
 created: 2023-09-03
 draft: false
 last_edited: 2023-11-11
-title: Substring
 tags:
   - maths
   - programming
+title: Substring
 type: definition
 ---
 > [!tldr] Substring

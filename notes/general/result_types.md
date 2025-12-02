@@ -12,9 +12,9 @@ checked: false
 created: 2024-02-02
 draft: false
 last_edited: 2024-02-02
-title: Result types
 tags:
   - statistics
+title: Result types
 type: definition
 ---
 >[!tldr] Result types

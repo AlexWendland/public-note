@@ -6,16 +6,15 @@ checked: false
 created: 2023-08-26
 draft: false
 last_edited: 2023-11-11
-title: Subsequence
 tags:
   - maths
+title: Subsequence
 type: definition
 ---
-# Subsequence
 
 Given a [sequence](sequence.md) $a_1, a_2, \ldots, a_n$ a subsequence is $a_{i_1}, a_{i_2}, \ldots a_{i_k}$ is such that $i_j < i_j + 1$ (note this can apply to infinite [sequences](sequence.md) as well). In other words, it is a subset of the sequence ordered such that the indices are increasing.
 
-## Example
+# Example
 
 For the sequence
 $$

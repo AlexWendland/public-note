@@ -4,9 +4,9 @@ checked: false
 created: 2024-02-22
 draft: false
 last_edited: 2024-02-22
-title: Local Markov property
 tags:
   - probability
+title: Local Markov property
 type: definition
 ---
 >[!tldr] Local Markov property

@@ -6,9 +6,9 @@ checked: false
 created: 2024-05-21
 draft: false
 last_edited: 2024-05-21
-title: Internet Protocol Stack (IPS) 5 layers
 tags:
   - networks
+title: Internet Protocol Stack (IPS) 5 layers
 type: definition
 ---
 >[!tldr] Internet Protocol Stack (IPS) 5 layers

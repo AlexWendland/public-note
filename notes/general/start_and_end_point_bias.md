@@ -4,9 +4,9 @@ checked: false
 created: 2024-01-21
 draft: false
 last_edited: 2024-01-21
-title: Start and end point bias
 tags:
   - psychology
+title: Start and end point bias
 type: definition
 ---
 >[!tldr] Start and end point bias

@@ -5,9 +5,9 @@ checked: false
 created: 2024-05-29
 draft: false
 last_edited: 2024-05-29
-title: Additive increase Multiplicative Decrease (AIMD)
 tags:
   - networks
+title: Additive increase Multiplicative Decrease (AIMD)
 type: definition
 ---
 >[!tldr] Additive increase Multiplicative Decrease (AIMD)

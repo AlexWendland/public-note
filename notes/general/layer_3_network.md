@@ -6,9 +6,9 @@ checked: false
 created: 2024-05-22
 draft: false
 last_edited: 2024-05-22
-title: Layer 3 Network
 tags:
   - networks
+title: Layer 3 Network
 type: definition
 ---
 >[!tldr] Layer 3 Network

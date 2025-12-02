@@ -9,9 +9,9 @@ checked: false
 created: 2023-10-10
 draft: false
 last_edited: 2023-11-11
-title: Fermat witness
 tags:
   - maths
+title: Fermat witness
 type: definition
 ---
 >[!tldr] Fermat Witness

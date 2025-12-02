@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-11-13
 draft: false
 last_edited: 2023-11-13
-title: Week 12 - Halting problem
 tags:
   - OMSCS
+title: Week 12 - Halting problem
 type: lecture
 week: 12
 ---
-# Week 12 - Halting problem
 
 [Statement](../../general/halting_problem.md#statement)
 

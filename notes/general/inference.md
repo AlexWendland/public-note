@@ -4,9 +4,9 @@ checked: false
 created: 2023-09-09
 draft: false
 last_edited: 2023-11-11
-title: Inference
 tags:
   - maths
+title: Inference
 type: definition
 ---
 >[!tldr] Inference

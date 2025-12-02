@@ -6,9 +6,9 @@ checked: false
 created: 2024-01-13
 draft: false
 last_edited: 2024-01-13
-title: Testing data
 tags:
   - machine-learning
+title: Testing data
 type: definition
 ---
 >[!tldr] Testing data

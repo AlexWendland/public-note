@@ -7,9 +7,9 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-13
-title: Max independent set problem (graph)
 tags:
   - programming
+title: Max independent set problem (graph)
 type: problem
 ---
 # Statement

@@ -5,16 +5,15 @@ checked: false
 created: 2023-10-09
 draft: false
 last_edited: 2023-11-11
-title: Extended Euclidean algorithm
 tags:
   - maths
+title: Extended Euclidean algorithm
 type: algorithm
 ---
-# Extended Euclidean algorithm
 
 This algorithm extends the [Euclidean algorithm](euclidean_algorithm.md) to be able to calculate the [greatest common divisor](greatest_common_divisor.md) of two integers.
 
-## Algorithm
+# Algorithm
 
 ```pseudocode
 extended_euclidean(x,y):
@@ -25,11 +24,11 @@ extended_euclidean(x,y):
 3. return (d, b', a' - floor(x/y)b')
 ```
 
-## Runtime
+# Runtime
 
 Notice this is functionally the same as [Euclidean algorithm](euclidean_algorithm.md). So if $x, y$ are $n$-bit integers then this takes $O(n^3)$.
 
-## Correctness
+# Correctness
 
 The fact that $d$ is correct follows from [Euclid's rule](euclid's_rule.md).
 

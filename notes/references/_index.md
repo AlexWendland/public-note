@@ -1,10 +1,9 @@
 ---
-title: References
 draft: false
 tags:
   - references
+title: References
 type: index
 ---
-# References
 
 Collection of reference materials, articles, books, videos, and other resources.

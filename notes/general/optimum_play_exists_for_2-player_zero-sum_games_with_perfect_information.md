@@ -4,9 +4,9 @@ checked: false
 created: 2024-04-06
 draft: false
 last_edited: 2024-04-06
-title: Optimum play exists for 2-player zero-sum games with perfect information
 tags:
   - game-theory
+title: Optimum play exists for 2-player zero-sum games with perfect information
 type: lemma
 ---
 # Statement

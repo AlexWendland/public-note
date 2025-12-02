@@ -6,9 +6,9 @@ checked: false
 created: 2025-04-08
 draft: false
 last_edited: 2025-04-08
-title: Cache coherence
 tags:
   - OS
+title: Cache coherence
 type: definition
 ---
 >[!tldr] Cache coherence

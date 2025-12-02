@@ -4,9 +4,9 @@ checked: false
 created: 2023-09-19
 draft: false
 last_edited: 2023-11-11
-title: Inverse of the Fourier matrix
 tags:
   - maths
+title: Inverse of the Fourier matrix
 type: lemma
 ---
 

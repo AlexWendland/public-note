@@ -4,10 +4,10 @@ checked: false
 created: 2023-11-09
 draft: false
 last_edited: 2023-11-11
-title: If a point in a linear programme has equal objective function to a point in
-  its dual linear programme they are both optimal
 tags:
   - maths
+title: If a point in a linear programme has equal objective function to a point in
+  its dual linear programme they are both optimal
 type: lemma
 ---
 # Statement

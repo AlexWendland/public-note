@@ -5,9 +5,9 @@ checked: false
 created: 2025-04-13
 draft: false
 last_edited: 2025-04-13
-title: Consistency model
 tags:
   - OS
+title: Consistency model
 type: definition
 ---
 >[!tldr] Consistency model

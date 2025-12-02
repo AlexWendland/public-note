@@ -4,9 +4,9 @@ checked: false
 created: 2024-02-02
 draft: false
 last_edited: 2024-02-02
-title: Gini index
 tags:
   - machine-learning
+title: Gini index
 type: definition
 ---
 >[!tldr] Gini index

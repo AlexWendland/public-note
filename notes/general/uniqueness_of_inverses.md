@@ -4,9 +4,9 @@ checked: false
 created: 2023-10-09
 draft: false
 last_edited: 2023-11-11
-title: Uniqueness of inverses
 tags:
   - maths
+title: Uniqueness of inverses
 type: lemma
 ---
 >[!important] Lemma

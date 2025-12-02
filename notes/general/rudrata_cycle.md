@@ -4,10 +4,10 @@ checked: false
 created: 2023-11-15
 draft: false
 last_edited: 2023-11-15
-title: Rudrata cycle
 tags:
   - maths
   - graph-theory
+title: Rudrata cycle
 type: definition
 ---
 >[!tldr] Rudrata cycle

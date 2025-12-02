@@ -4,9 +4,9 @@ checked: false
 created: 2023-12-03
 draft: false
 last_edited: 2023-12-03
-title: Ergodic Markov chain limiting distrubution
 tags:
   - maths
+title: Ergodic Markov chain limiting distrubution
 type: lemma
 ---
 # Statement

@@ -4,12 +4,11 @@ checked: false
 created: 2023-08-05
 draft: false
 last_edited: 2023-11-11
-title: Cohesion
 tags:
   - programming
+title: Cohesion
 type: meta
 ---
-# Cohesion
 
 When googling what this word means I got the following
 
@@ -18,6 +17,6 @@ When googling what this word means I got the following
 
 Which really does define what cohesion within code means. A class is highly cohesive if all the components of that class belong together. It has low cohesion if there are random functions or variables that don't contribute to the whole.
 
-## Heuristic for determining Cohesion
+# Heuristic for determining Cohesion
 
 Whenever two variables are used in the same line of code - consider these cohesive. They belong together. So if you can split your variables up based on whether they are in the same line of code your class or function has low cohesion. Normally this is indictive that your function or class can be [Refactored](refactored.md).

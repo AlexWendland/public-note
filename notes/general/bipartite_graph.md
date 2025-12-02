@@ -5,10 +5,10 @@ checked: false
 created: 2023-10-21
 draft: false
 last_edited: 2023-11-11
-title: Bipartite graph
 tags:
   - maths
   - graph-theory
+title: Bipartite graph
 type: definition
 ---
 >[!tldr] Bipartite graph

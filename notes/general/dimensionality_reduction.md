@@ -6,9 +6,9 @@ checked: false
 created: 2024-03-10
 draft: false
 last_edited: 2024-03-10
-title: Dimensionality reduction
 tags:
   - machine-learning
+title: Dimensionality reduction
 type: definition
 ---
 >[!tldr] Dimensionality reduction

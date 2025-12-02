@@ -1,17 +1,16 @@
 ---
 aliases: []
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-08-26
 draft: false
 last_edited: 2023-12-03
-title: Week 1 - Dynamic Programming
 tags:
   - OMSCS
+title: Week 1 - Dynamic Programming
 type: lecture
 week: 1
 ---
-# Week 1 - Dynamic Programming
 
 [Dynamic programming](../../general/dynamic_programming.md) is a method to speed up [recursion](../../general/recursion.md) especially when the recursive algorithm computes the same step multiple times.
 
@@ -53,7 +52,7 @@ Lets try to do this [iteratively](../../general/iterative_algorithms.md) instead
 >
 >This was done [iteratively](../../general/iterative_algorithms.md) so the [run time](../../general/run_time_complexity.md) is easy to compute. The set up step takes $O(1)$ time, then the loop takes $(n-2)O(1) = O(n)$ time giving the run time to be $O(1) + O(n) = O(n)$.
 
-## Dynamic programming
+# Dynamic programming
 
 The key features of [Dynamic programming](../../general/dynamic_programming.md) is that there is no [recursion](../../general/recursion.md) in the algorithm it is fully [iterative](../../general/iterative_algorithms.md).
 
@@ -65,7 +64,7 @@ The benefits to [Dynamic programming](../../general/dynamic_programming.md) over
 - They are faster as there is less overhead associated to [recursion](../../general/recursion.md), and
 - It is much simpler to analyse the [run time](../../general/run_time_complexity.md) of [dynamic programs](dynamic_programming.md) as they are [iterative](../../general/iterative_algorithms.md).
 
-## Longest increasing subsequence
+# Longest increasing subsequence
 
 We are provided with a [sequence](sequence.md) of $n$ numbers $a_1, a_2, \ldots, a_n$ and the goal is to find the length of the longest [increasing](../../general/increasing_sequence.md) [subsequence](../../general/subsequence.md) in $\{a_i\}_{i=1}^n$.
 
@@ -78,9 +77,9 @@ We are provided with a [sequence](sequence.md) of $n$ numbers $a_1, a_2, \ldots,
 >
 >**We don't need to find the sequence to answer the question.**
 
-## [Dynamic Programming](../../general/dynamic_programming.md) approach
+# [Dynamic Programming](../../general/dynamic_programming.md) approach
 
-### Step 1: define subproblem in words
+## Step 1: define subproblem in words
 
 For [Fibonacci numbers](../../general/fibonacci_sequence.md) this was simply to calculate $Fib(n)$.
 
@@ -89,7 +88,7 @@ For the longest increasing subsequence (LIS) problem, let $L(i)$ = the LIS on $a
 >[!warning] It must end with $a_i$
 >This definition of $L(i)$ was chosen carefully, so that we can frame the solution of $L(i)$ in terms of previous $L(j)$. If you drop this condition you can't do that.
 
-### Step 2: define recursive relation
+## Step 2: define recursive relation
 
 For [Fibonacci numbers](../../general/fibonacci_sequence.md) this was $Fib(n) = Fib(n-1) + Fib(n-2)$.
 
@@ -150,7 +149,7 @@ Therefore we work out that the LIS for this sequence is 6 as that is the maximum
 >& = O(n^2)\end{align*}$$
 >giving the run time of this algorithm to be $O(n^2)$.
 
-## Largest common subsequence (LCS)
+# Largest common subsequence (LCS)
 
 Given two [sequences](../../general/sequence.md) $X =\{x_i\}_{i=1}^n$ and $Y = \{y_i\}_{i=1}^n$ the goals is to find the length of the longest [sequence](../../general/sequence.md) which is a [subsequence](../../general/subsequence.md) of both $X$ and $Y$.
 
@@ -162,27 +161,27 @@ Given two [sequences](../../general/sequence.md) $X =\{x_i\}_{i=1}^n$ and $Y = \
 
 >[!Note] This is what the [Unix](unix.md) command diff does to two files.
 
-### Design attempt for this problem (my solution)
+## Design attempt for this problem (my solution)
 
-#### Step 1: define subproblem in words
+### Step 1: define subproblem in words
 
 $X\_len(k)$ = the longest common substring with $\{x_i\}_{i=1}^k$ and $Y$ using $x_i$.
 $X\_pos(k)$= the last position of the longest common substring with $\{x_i\}_{i=1}^k$ and $Y$ at $Y$.
 
-#### Step 2: define recursive relation
+### Step 2: define recursive relation
 
 $$X\_len(k) = \begin{cases} 0 & \mbox{if } x_k \not \in Y\\ 1 + \max\{0, X\_len(j) \ \vert \ 1 \leq j \leq k \mbox{ and } x_k \in Y[X\_pos(j)+1:] \ \} & \mbox{otherwise} \end{cases}$$
 $$ X\_pos(k) = \begin{cases} 0 & \mbox{if } x_k \not \in Y\\ \min\{j \ \vert \ y_j = x_k\} & \mbox{if } X\_len(k) = 1\\ \min \left \{ j \ \vert \substack{ \ y_j = x_k \mbox{ and } \exists \ r \mbox{ where }  \\ X\_len(k) = X\_len(r) + 1 \mbox{ and } j > X\_pos(r)} \right \} & \mbox{otherwise} \end{cases}$$
 
 >[!warning] I think this would work but the lecturers solution is way better!
 
-### Design attempt for this problem (lecturers)
+## Design attempt for this problem (lecturers)
 
-#### Step 1: define subproblem in words
+### Step 1: define subproblem in words
 
 Let $L(a,b)$ = the longest common substring with $\{x_i\}_{i=1}^{a}$ and $\{y_j\}_{j=1}^{b}$
 
-#### Step 2: define recursive relation
+### Step 2: define recursive relation
 
 Set $L(i,0) = L(0,i) = 0$ for all $1 \leq i \leq n$.
 
@@ -250,7 +249,7 @@ if __name__ == "__main__":
 
 The [runtime](../../general/run_time_complexity.md) of my algorithm can be broken down into 2 main steps. (For this I assume the [sequences](../../general/sequence.md) are of the same length $n$). Setting up the matrix which is $n^2$ operations and running the main for loop which has $n^2$ steps and uses $O(1)$ operations in each step. Giving the [run time](../../general/run_time_complexity.md) to be $O(n^2) + O(n^2) = O(n^2)$.
 
-## Further practice problems
+# Further practice problems
 
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 
@@ -293,7 +292,7 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 >[!question] 6.11 Longest common **substring**) - altered
 >Given two strings $x = x_1x_2 \ldots x_n$ and $y = y_1y_2 \ldots y_m$, we wish to find the length of their longest common **substring**, that is, the largest $k$ for which there are integers $i$ and $j$ with $x_{i+1} x_{i+2} \ldots x_{i+k} = y_{j+1} y_{j+2} \ldots y_{j+k}$. Show how to do this, what is the time complexity of this?
 
-## Summary
+# Summary
 
 To approach [Dynamic programming](../../general/dynamic_programming.md) problems follow these steps
 

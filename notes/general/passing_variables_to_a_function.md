@@ -10,13 +10,12 @@ checked: false
 created: 2023-07-17
 draft: false
 last_edited: 2023-11-11
-title: Passing variables to a function
 tags:
   - programming
   - fundamentals
+title: Passing variables to a function
 type: definition
 ---
-# Passing variables to a function
 
 When you pass a variable to a [function](function_conventions.md), what does the function actually receive?
 
@@ -29,7 +28,7 @@ def function(parameter):
 
 argument = ...
 
-# The variable we pass to the function is called the argument
+ The variable we pass to the function is called the argument
 
 function(argument)
 ```
@@ -41,11 +40,11 @@ There are two main choices of what can happen to the argument when it gets passe
 
 Different approaches can be useful in different contexts and what happens is language specific.
 
-## Passed by value
+# Passed by value
 
 Passing by value means that you make a copy of that argument when it is passed to the function (or something similar - [Python example](mutability_in_python.md)). This reduces the chances of [side effects](side_effect.md) and makes the code simpler to use but can mean slower programs with less efficient use of [computer memory](random_access_memory_(ram).md).
 
-## Passed by reference
+# Passed by reference
 
 Passing by reference means the parameter points to the same object as the argument. This is very efficient for larger data structures both in terms of [computer memory](random_access_memory_(ram).md) and program speed however it complicates your code by increasing the changes of [side effects](side_effect.md).
 

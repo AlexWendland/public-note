@@ -4,10 +4,10 @@ checked: false
 created: 2023-11-15
 draft: false
 last_edited: 2023-11-15
-title: Rudrata path
 tags:
   - maths
   - graph-theory
+title: Rudrata path
 type: definition
 ---
 >[!tldr] Rudrata path

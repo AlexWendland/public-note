@@ -5,10 +5,10 @@ checked: false
 created: 2024-09-04
 draft: false
 last_edited: 2024-09-04
-title: Kernel
 tags:
   - OS
   - computer-science
+title: Kernel
 type: definition
 ---
 >[!tldr] Kernel

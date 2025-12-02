@@ -6,9 +6,9 @@ checked: false
 created: 2024-07-27
 draft: false
 last_edited: 2024-07-27
-title: Dynamic Adaptive Streaming over HTTP (DASH)
 tags:
   - networks
+title: Dynamic Adaptive Streaming over HTTP (DASH)
 type: definition
 ---
 >[!tldr] Dynamic Adaptive Streaming over HTTP (DASH)

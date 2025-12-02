@@ -4,11 +4,11 @@ checked: false
 created: 2023-03-31
 draft: false
 last_edited: 2023-11-11
-title: Logging in python
 tags:
   - programming
   - python
   - best-practices
+title: Logging in python
 type: module
 ---
 # logging python

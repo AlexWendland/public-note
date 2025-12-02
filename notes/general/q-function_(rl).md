@@ -4,9 +4,9 @@ checked: false
 created: 2024-04-06
 draft: false
 last_edited: 2024-04-06
-title: Q-function (RL)
 tags:
   - machine-learning
+title: Q-function (RL)
 type: definition
 ---
 >[!tldr] Q-function (RL)

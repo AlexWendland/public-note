@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-10-09
 draft: false
 last_edited: 2023-11-11
-title: Week 8 - Modular Arithmetic
 tags:
   - OMSCS
+title: Week 8 - Modular Arithmetic
 type: lecture
 week: 8
 ---
-# Week 8 - Modular Arithmetic
 
 First lets remind ourselves of the definition of [modular arithmetic](../../general/modular_arithmetic.md).
 
@@ -19,7 +18,7 @@ First lets remind ourselves of the definition of [modular arithmetic](../../gene
 
 Within a computers architecture as numbers are stored in [binary](../../general/binary.md) calculating mod $2^k$ is simple as taking the $k$ least significant bits. Therefore it is quite cheap. However, when the value is not $2^k$ it can get harder.
 
-## Exponent problem
+# Exponent problem
 
 [Statement](../../general/modular_exponent_problem.md#statement)
 
@@ -29,7 +28,7 @@ It is quite easy to calculate $x^{2k}$ (mod $N$) as you recursively calculate $(
 
 [Modular exponent algorithm](../../general/modular_exponent_algorithm.md)
 
-## Multiplicative inverse problem
+# Multiplicative inverse problem
 
 >[!tldr] Modular multiplicative inverses
 >The multiplicative inverse of $z$ mod $N$ is $0 \leq x < N$ such that $x \cdot z = 1$.
@@ -54,7 +53,7 @@ Moreover we can extend this to calculate the inverse.
 
 [Extended Euclidean algorithm](../../general/extended_euclidean_algorithm.md)
 
-## Example
+# Example
 
 To compute $7^{-1}$ mod $360$  we run the [Extended Euclidean algorithm](../../general/extended_euclidean_algorithm.md) on $7$ and $360$.
 

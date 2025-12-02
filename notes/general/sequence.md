@@ -6,12 +6,11 @@ checked: false
 created: 2023-08-26
 draft: false
 last_edited: 2023-11-11
-title: Sequence
 tags:
   - maths
+title: Sequence
 type: definition
 ---
-# Sequence
 
 A sequence is a list of objects, potentially finite or infinite.
 

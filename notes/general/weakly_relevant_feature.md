@@ -4,9 +4,9 @@ checked: false
 created: 2024-03-09
 draft: false
 last_edited: 2024-03-09
-title: Weakly relevant feature
 tags:
   - machine-learning
+title: Weakly relevant feature
 type: definition
 ---
 >[!tldr] Weakly relevant feature

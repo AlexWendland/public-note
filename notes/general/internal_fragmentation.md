@@ -5,9 +5,9 @@ checked: false
 created: 2025-03-22
 draft: false
 last_edited: 2025-03-22
-title: Internal fragmentation
 tags:
   - OS
+title: Internal fragmentation
 type: definition
 ---
 >[!tldr] Internal fragmentation

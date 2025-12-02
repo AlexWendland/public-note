@@ -4,9 +4,9 @@ checked: false
 created: 2023-11-13
 draft: false
 last_edited: 2023-11-13
-title: Knapsack-search is NP-complete
 tags:
   - programming
+title: Knapsack-search is NP-complete
 type: lemma
 ---
 # Statement

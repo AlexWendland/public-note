@@ -5,9 +5,9 @@ checked: false
 created: 2024-09-04
 draft: false
 last_edited: 2024-09-04
-title: POSIX threads (PThreads)
 tags:
   - OS
+title: POSIX threads (PThreads)
 type: definition
 ---
 >[!tldr] POSIX threads (PThreads)

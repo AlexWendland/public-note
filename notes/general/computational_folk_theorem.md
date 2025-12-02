@@ -4,9 +4,9 @@ checked: false
 created: 2024-04-07
 draft: false
 last_edited: 2024-04-07
-title: Computational Folk theorem
 tags:
   - maths
+title: Computational Folk theorem
 type: lemma
 ---
 # Statement

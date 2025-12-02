@@ -6,9 +6,8 @@ checked: false
 created: 2023-09-05
 draft: true
 last_edited: 2023-11-11
-title: Divide and conquer algorithms
 tags:
   - programming
+title: Divide and conquer algorithms
 type:
 ---
-# Divide and conquer algorithms

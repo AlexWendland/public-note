@@ -6,12 +6,11 @@ checked: false
 created: 2023-03-18
 draft: false
 last_edited: 2023-11-11
-title: Single Responsibility Principle (SRP)
 tags:
   - programming
+title: Single Responsibility Principle (SRP)
 type: theory
 ---
-# Single Responsibility Principle (SRP)
 
 This is one of the [SOLID principles](solid_principles.md) and it states:
 
@@ -20,7 +19,7 @@ This is one of the [SOLID principles](solid_principles.md) and it states:
 
 In simpler terms, a module should have only one reason to change.
 
-## Example
+# Example
 
 Let's consider an example from the [Wikipedia article](https://en.wikipedia.org/wiki/Single-responsibility_principle) on SRP. Suppose you have some code that compiles and then produces a report. There might be two reasons for wanting to change the code:
 

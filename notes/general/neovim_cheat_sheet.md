@@ -4,16 +4,15 @@ checked: false
 created: 2024-03-08
 draft: false
 last_edited: 2024-03-08
-title: NeoVim Cheat Sheet
 tags:
   - personal
+title: NeoVim Cheat Sheet
 type:
 ---
-# NeoVim Cheat Sheet
 
 Every NeoVim set up is personal, I am using my website it document how I have it set up - not universally true. :)
 
-## Basics
+# Basics
 
 - Normal mode: Esc
 - Beginners guide: :Tutor
@@ -46,13 +45,13 @@ Every NeoVim set up is personal, I am using my website it document how I have it
 - Copy: y *motion* (use in visual mode too)
 - Set an option: :set
 - Edit different file: :e
-## Motions
+# Motions
 - Start of the next word: w
 - End of current word: e
 - End of line: $
 - Start of line: 0
 - Use numbers to do it multiple times.
-## Lazy
+# Lazy
 - Directory tree: leader e
 	- Help: ?
 	- New file: a

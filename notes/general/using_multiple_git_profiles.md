@@ -4,19 +4,17 @@ checked: false
 created: 2023-03-19
 draft: false
 last_edited: 2023-11-11
-title: Using multiple git profiles
 tags:
   - programming
   - git
   - issue
+title: Using multiple git profiles
 type: guide
 ---
-# Using multiple git profiles
-
-## Issue
+# Issue
 I am using a laptop where I have my personal repositories and some work ones. I would like to commit to these using different profiles and secure them using different [SSH keys](secure_shell_(ssh)_key.md).
 
-## Assumptions
+# Assumptions
 I will assume you are:
 - using a [linux](linux.md) system.
 - Have generated different [SSH keys](secure_shell_(ssh)_key.md) for each profile:
@@ -24,7 +22,7 @@ I will assume you are:
 `~/.ssh/work-key`
 - Your repositories are on [GitHub](github.md), though you can change the link from [GitHub](github.md) (`github.com`) to another repository host.
 
-## Solution
+# Solution
 
 \1. Add hosts to your `~/.ssh/config`  file such as:
 

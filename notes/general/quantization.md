@@ -5,9 +5,9 @@ checked: false
 created: 2024-07-25
 draft: false
 last_edited: 2024-07-25
-title: Quantization
 tags:
   - networks
+title: Quantization
 type: definition
 ---
 >[!tldr] Quantization

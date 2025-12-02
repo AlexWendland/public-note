@@ -1,21 +1,20 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-11-12
 draft: false
 last_edited: 2023-11-13
-title: Week 12 - Knapsack complexity
 tags:
   - OMSCS
+title: Week 12 - Knapsack complexity
 type: lecture
 week: 12
 ---
-# Week 12 - Knapsack complexity
 
 We are going to prove that the [Knapsack-search](../../general/knapsack-search_(without_replacement).md) is [NP-complete](../../general/np-complete.md). We will do this using the [3-SAT](../../general/k-satisfiability_problem_(k-sat_problem).md) but first going through the [Subset-sum problem](../../general/subset-sum_problem.md).
 
-## Subset-sum problem
+# Subset-sum problem
 
 [Statement](../../general/subset-sum_problem.md#statement)
 
@@ -27,7 +26,7 @@ Moreover it is [NP-complete](../../general/np-complete.md).
 
 [Subset-sum problem is NP-complete](../../general/subset-sum_problem_is_np-complete.md)
 
-## Knapsack problem
+# Knapsack problem
 
 This [subset-sum problem](../../general/subset-sum_problem.md) is very similar to the [Knapsack-search](../../general/knapsack-search_(without_replacement).md) problem so we have the following.
 

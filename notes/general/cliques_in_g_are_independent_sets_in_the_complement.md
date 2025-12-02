@@ -4,10 +4,10 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-title: Cliques in G are independent sets in the complement
 tags:
   - maths
   - graph-theory
+title: Cliques in G are independent sets in the complement
 type: lemma
 ---
 # Statement

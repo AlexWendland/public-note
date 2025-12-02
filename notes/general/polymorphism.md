@@ -7,12 +7,11 @@ checked: false
 created: 2023-03-19
 draft: false
 last_edited: 2023-11-11
-title: Polymorphism
 tags:
   - programming
+title: Polymorphism
 type: theory
 ---
-# Polymorphism
 
 This is the ability of a single interface or base class to represent multiple concrete types or classes. This allows objects of different classes to be treated as objects of a common superclass or interface.
 

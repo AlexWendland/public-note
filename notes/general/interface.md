@@ -6,13 +6,12 @@ checked: false
 created: 2023-03-10
 draft: false
 last_edited: 2023-11-11
-title: Interface
 tags:
   - programming
   - incomplete
+title: Interface
 type: definition
 ---
-# Interface
 
 An interface is a standard way for a someone else to interact with an object. There are lots of interfaces you will deal with such as [API's](application_programming_interface_(api).md), library functions, or [UI's](user_interface_(ui).md).
 

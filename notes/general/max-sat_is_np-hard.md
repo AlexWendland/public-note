@@ -4,9 +4,9 @@ checked: false
 created: 2023-11-12
 draft: false
 last_edited: 2023-11-12
-title: Max-SAT is NP-hard
 tags:
   - maths
+title: Max-SAT is NP-hard
 type: lemma
 ---
 # Statement

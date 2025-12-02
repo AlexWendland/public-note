@@ -1,21 +1,20 @@
 ---
 aliases:
 checked: false
-course: 'CS6200 Graduate introduction to Operating Systems'
+course: CS6200 Graduate introduction to Operating Systems
 created: 2025-02-09
 draft: false
 last_edited: 2025-02-09
-title: Week 5 - Implementing Lightweight Threads (paper)
 tags:
   - OMSCS
+title: Week 5 - Implementing Lightweight Threads (paper)
 type: paper
 week: 5
 ---
-# Week 5 - Implementing Lightweight Threads (paper)
 
 Ref: [Implementing Lightweight threads](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-stein-shah-paper.pdf)
 
-## Notes
+# Notes
 
 This paper describes an implementation of light weight threads in the SunOS architecture. This is laid out in [Week 5 - Beyond Multiprocessing ... Multithreading and the SunOS Kernel](week_5_-_beyond_multiprocessing_..._multithreading_and_the_sunos_kernel.md).
 

@@ -5,9 +5,9 @@ checked: false
 created: 2024-05-27
 draft: false
 last_edited: 2024-05-27
-title: Duplex
 tags:
   - networks
+title: Duplex
 type: definition
 ---
 >[!tldr] Duplex

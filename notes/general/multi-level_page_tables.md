@@ -4,9 +4,9 @@ checked: false
 created: 2025-03-22
 draft: false
 last_edited: 2025-03-22
-title: Multi-level page tables
 tags:
   - OS
+title: Multi-level page tables
 type: definition
 ---
 >[!tldr] Multi-level page tables

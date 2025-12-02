@@ -5,9 +5,9 @@ checked: false
 created: 2023-11-07
 draft: false
 last_edited: 2023-11-12
-title: Linear programming problem
 tags:
   - programming
+title: Linear programming problem
 type: problem
 ---
 # Statement

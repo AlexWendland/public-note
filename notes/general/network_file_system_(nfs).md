@@ -5,9 +5,9 @@ checked: false
 created: 2025-04-13
 draft: false
 last_edited: 2025-04-13
-title: Network file system (NFS)
 tags:
   - OS
+title: Network file system (NFS)
 type: definition
 ---
 >[!tldr] Network file system (NFS)

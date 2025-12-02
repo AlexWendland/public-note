@@ -4,9 +4,9 @@ checked: false
 created: 2024-04-06
 draft: false
 last_edited: 2024-04-06
-title: Epsilon-greedy exploration
 tags:
   - machine-learning
+title: Epsilon-greedy exploration
 type: definition
 ---
 >[!tldr] Epsilon-greedy exploration

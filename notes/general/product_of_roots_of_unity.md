@@ -4,18 +4,17 @@ checked: false
 created: 2023-09-22
 draft: false
 last_edited: 2023-11-11
-title: Product of roots of unity
 tags:
   - maths
+title: Product of roots of unity
 type: lemma
 ---
-# Product of roots of unity
 
 >[!important] Lemma
 >For any primitive $n$th root of unity $\omega$ we have
 >$$ \prod_{i=0}^{n-1} \omega^i = (-1)^{n+1}.$$
 
-## Proof
+# Proof
 
 Note that $\omega^n = 1$, suppose $n = 2k + 1$ then
 $$\begin{align} \prod_{i=0}^{2k} \omega^i & = \prod_{i=1}^{2k} \omega^i\\

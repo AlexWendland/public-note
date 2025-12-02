@@ -4,12 +4,11 @@ checked: false
 created: 2023-08-05
 draft: false
 last_edited: 2023-11-11
-title: Pipe
 tags:
   - programming
+title: Pipe
 type: terminology
 ---
-# Pipe
 
 This is where you do multiple manipulations to a data object in 'one line' but break it up over multiple. This is commonly used in [Python Index](python_index.md) with the [Pandas](pandas.md) library.
 

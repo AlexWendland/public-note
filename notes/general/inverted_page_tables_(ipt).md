@@ -5,9 +5,9 @@ checked: false
 created: 2025-03-23
 draft: false
 last_edited: 2025-03-23
-title: Inverted page tables (IPT)
 tags:
   - OS
+title: Inverted page tables (IPT)
 type: definition
 ---
 >[!tldr] Inverted page tables

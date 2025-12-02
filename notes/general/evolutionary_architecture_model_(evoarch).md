@@ -6,9 +6,9 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-title: Evolutionary Architecture model (EvoArch)
 tags:
   - networks
+title: Evolutionary Architecture model (EvoArch)
 type: definition
 ---
 >[!tldr] Evolutionary Architecture model (EvoArch)

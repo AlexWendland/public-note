@@ -1,21 +1,20 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2024-04-06
 draft: false
 last_edited: 2024-04-06
-title: Week 13 - Game theory
 tags:
   - OMSCS
+title: Week 13 - Game theory
 type: lecture
 week: 13
 ---
-# Week 13 - Game theory
 
 [Game theory](../../general/game_theory.md)
 
-## 2-player zero-sum finite game of perfect information
+# 2-player zero-sum finite game of perfect information
 
 This is a lot of words but these games are like tick tack toe or noughts and crosses. Whilst these are fun they all boil down to a payoff matrix for the different strategies you take. Like the following
 $$
@@ -48,7 +47,7 @@ This means we can determine the value of the game by both players following thei
 > $$
 > What would be the optimal pure strategy?
 
-## No more perfect information
+# No more perfect information
 
 [Perfect information](../../general/perfect_information.md) means that all the knowledge is known by all players at the start of the game. A good example where this is not the case is poker.
 
@@ -84,7 +83,7 @@ $$
 >[!warning] Don't understand
 >I don't really get how this situation is any different to the above ones. The lecturers say now the value of the game differ for both players but it still boils down to a matrix that you could have gotten with a normal game?
 
-## Mix strategies
+# Mix strategies
 
 [Pure strategy](../../general/pure_strategy.md)
 
@@ -96,7 +95,7 @@ In the game above, if player one holds with probability $p$ then we get expected
 
 If you do the same for player two, picking to see with probability $q$ then we get expected return $10q - 5$ if player one resigns but $10 - 15q$ if they hold. Then we get optimum $q = 3/5$ which also gives player one a profit of 1.
 
-## Removing [zero-sum](../../general/zero-sum_game.md)
+# Removing [zero-sum](../../general/zero-sum_game.md)
 
 [Prisoner's dilemma](../../general/prisoner's_dilemma.md)
 
@@ -106,7 +105,7 @@ In the [Prisoner's dilemma](../../general/prisoner's_dilemma.md) the dominating 
 
 This works for both pure or mixed strategies.
 
-## Dominating strategies
+# Dominating strategies
 
 [Strictly dominated strategy](../../general/strictly_dominated_strategy.md)
 
@@ -121,11 +120,11 @@ Though this doesn't guarantee finding it. Though there is always a [Nash equilib
 >[!Note]
 >Normally the best way to get out of the prisoners dilemma is to change the structure of the game.
 
-## Multiple rounds
+# Multiple rounds
 
 Suppose now you are in a situation where you are playing iterative rounds of a game with the same player.
 
-## Known number of rounds
+# Known number of rounds
 
 One approach to solving this issue is to combine possible series of strategies as a new series and to investigate the composite game. Though an easier solution to this situation can be found be thinking of them separately.
 
@@ -135,7 +134,7 @@ Though given this last game is already decided we might as well consider playing
 
 However, which [Nash equilibrium](../../general/nash_equilibrium.md) is an interesting problem!
 
-## Unknown number of rounds
+# Unknown number of rounds
 
 At the end of a round suppose there is a $\gamma$ chance you play again and a $1-\gamma$ chance you end. This stays constant and you use [discounted rewards](../../general/discounted_rewards.md) to evaluate performance.
 
@@ -147,7 +146,7 @@ At the end of a round suppose there is a $\gamma$ chance you play again and a $1
 
 The expected number of round in this set up is $\frac{1}{1-\gamma}$.
 
-## Tit for Tat
+# Tit for Tat
 
 When in the above situation there are some meta strategies you can adopt. For example you can always choose one option - like in the known number of rounds example. However, you can now adopt strategies that depend on the opponents move.
 
@@ -178,7 +177,7 @@ Here no matter what $\gamma$ we have that testify is a [Nash equilibrium](../../
 - for $\gamma \leq 0.5$ tft-testify is also a [Nash equilibrium](../../general/nash_equilibrium.md), and
 - for $\gamma \geq 0.5$ tft-silent is also a [Nash equilibrium](../../general/nash_equilibrium.md).
 
-## Picturing Mixed strategies for repeated games
+# Picturing Mixed strategies for repeated games
 
 Now we are repeating games we could adopt a [Mixed strategy](../../general/mixed_strategy.md) of meta strategies. i.e. decide a probability distribution over the strategies and use them dependent on a random variable.
 
@@ -197,7 +196,7 @@ This gives the following [Minmax profile](../../general/minmax_profile.md).
  \frac{2}{3} & \frac{2}{3} \\
  \end{array}
 $$
-## Feasible region
+# Feasible region
 
 In the [Battle of the sexes](../../general/battle_of_the_sexes.md) we saw that one player could in expectation guarantee another player a lower score by adopting a mixed strategy. Therefore they have made the pay off a point that isn't in $\{(0,0), (2,1), (1,2)\}$. So what is the feasible region of expected scores using [mixed strategies](../../general/mixed_strategy.md)?
 
@@ -209,7 +208,7 @@ This gives us all the points in the convex hull of the points $\{(0,0), (2,1), (
 
 For example to get the line at the bottom set $p = 1$ $\{(2q, q) \vert q \in [0,1]\}$, for the line at the top set $p=0$ $\{((1-q), 2(1-q)) \vert q \in [0,1]\}$. For lines in-between let $p$ vary.
 
-## Security region
+# Security region
 
 [Security region](../../general/security_region.md)
 
@@ -217,7 +216,7 @@ In the [Battle of the sexes](../../general/battle_of_the_sexes.md) example we ha
 
 ![feasible_region_with_security_region](../../../images/excalidraw/feasible_region_with_security_region.excalidraw.svg)
 
-## Folk Theorem
+# Folk Theorem
 
 We would like to think we could get any point which is feasible and in the security region with sufficient cooperation. That cooperation will have to be enforced with a penalty, such as forcing the opposition player into the [Minmax profile](../../general/minmax_profile.md). This will look as follows.
 
@@ -231,7 +230,7 @@ If we follow through with the threat in the [Grim trigger strategy](../../genera
 
 [Plausible threat](../../general/plausible_threat.md)
 
-## Pavlov
+# Pavlov
 
 [Pavlov strategy](../../general/pavlov_strategy.md)
 
@@ -252,7 +251,7 @@ We see from this no matter what happened last round the [Pavlov strategy](../../
 
 [Computational Folk theorem](../../general/computational_folk_theorem.md)
 
-## Stochastic games
+# Stochastic games
 
 [Stochastic games](../../general/stochastic_games.md) are the multi-agent analogy to a [Markov decision process](../../general/markov_decision_process.md).
 
@@ -260,7 +259,7 @@ We see from this no matter what happened last round the [Pavlov strategy](../../
 
 [Semi-wall stochastic game](../../general/semi-wall_stochastic_game.md)
 
-## Generalisations for [zero-sum](../../general/zero-sum_game.md) [Stochastic games](../../general/stochastic_games.md)
+# Generalisations for [zero-sum](../../general/zero-sum_game.md) [Stochastic games](../../general/stochastic_games.md)
 
 In the [zero-sum](../../general/zero-sum_game.md) setting we assume only two players, so $i = 2$. However, we leave the terminology general for syntactic ease.
 
@@ -274,7 +273,7 @@ This has some nice properties
 - We can update in [polynomial time](../../general/polynomial_time.md), and
 - Q-functions are sufficient to specify the policy.
 
-## Generalisation to [Stochastic games](../../general/stochastic_games.md)
+# Generalisation to [Stochastic games](../../general/stochastic_games.md)
 
 You can do the same for non-[Zero-sum game](../../general/zero-sum_game.md)s using [Nash equilibrium](../../general/nash_equilibrium.md) instead of [minmax](../../general/minmax_decision.md) but it doesn't have the nice properties.
 

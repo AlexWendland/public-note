@@ -7,13 +7,11 @@ checked: false
 created: 2023-10-01
 draft: true
 last_edited: 2023-11-11
-title: Disjoint set
 tags:
   - programming
+title: Disjoint set
 type: data structure
 ---
-# Disjoint set
-
-## Links
+# Links
 
 - https://www.geeksforgeeks.org/introduction-to-disjoint-set-data-structure-or-union-find-algorithm/

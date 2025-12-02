@@ -4,10 +4,10 @@ checked: false
 created: 2023-11-10
 draft: false
 last_edited: 2023-11-19
-title: Strong duality theorem optimum (linear programme)
 tags:
   - maths
   - todo
+title: Strong duality theorem optimum (linear programme)
 type: lemma
 ---
 # Statement

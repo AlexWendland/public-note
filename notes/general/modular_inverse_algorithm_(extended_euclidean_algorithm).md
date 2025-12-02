@@ -4,16 +4,15 @@ checked: false
 created: 2023-10-09
 draft: false
 last_edited: 2023-11-11
-title: Modular inverse algorithm (extended Euclidean algorithm)
 tags:
   - programming
+title: Modular inverse algorithm (extended Euclidean algorithm)
 type: algorithm
 ---
-# Modular inverse algorithm (extended Euclidean algorithm)
 
 This algorithm solves the [Modular inverse problem](modular_inverse_problem.md) and uses the [Extended Euclidean algorithm](extended_euclidean_algorithm.md) to do it.
 
-# Algorithm
+ Algorithm
 
 ```pseudocode
 modular_inverse_algorithm(x, N):
@@ -24,11 +23,11 @@ modular_inverse_algorithm(x, N):
 3. Return a
 ```
 
-# Runtime
+ Runtime
 
 As the [Extended Euclidean algorithm](extended_euclidean_algorithm.md) takes $O(n^3)$ so does this algorithm.
 
-# Correctness
+ Correctness
 
 From the [Modular multiplicative inverse existence](modular_multiplicative_inverse_existence.md) lemma we know the inverse only exists if the [Greatest common divisor](greatest_common_divisor.md) between $x$ and $N$ is 1.
 

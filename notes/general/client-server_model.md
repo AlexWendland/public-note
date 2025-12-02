@@ -4,9 +4,9 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-title: Client-Server model
 tags:
   - networks
+title: Client-Server model
 type: definition
 ---
 >[!tldr] Client-Server model

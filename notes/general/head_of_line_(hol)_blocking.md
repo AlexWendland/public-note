@@ -5,9 +5,9 @@ checked: false
 created: 2024-06-15
 draft: false
 last_edited: 2024-06-15
-title: Head of line (HOL) blocking
 tags:
   - networks
+title: Head of line (HOL) blocking
 type: definition
 ---
 >[!tldr] Head of line (HOL) blocking

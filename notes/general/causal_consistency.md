@@ -4,8 +4,8 @@ checked: false
 created: 2025-04-13
 draft: false
 last_edited: 2025-04-13
-title: Causal consistency
 tags: []
+title: Causal consistency
 type: definition
 ---
 >[!tldr] Causal consistency

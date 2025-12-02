@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-11-10
 draft: false
 last_edited: 2023-11-19
-title: Week 12 - Max-SAT approximation algorithm
 tags:
   - OMSCS
+title: Week 12 - Max-SAT approximation algorithm
 type: lecture
 week: 12
 ---
-# Week 12 - Max-SAT approximation algorithm
 
 In this lecture we consider the a similar problem to the [SAT problem](../../general/satisfiability_problem_(sat_problem).md).
 
@@ -23,13 +22,13 @@ This is [NP-hard](../../general/np-hard.md).
 
 Therefore it is unlikely to find any algorithm that will solve the problem quickly. However we will look at using [linear programming](../../general/linear_programme.md) to approximate a solution.
 
-## Approximate algorithms
+# Approximate algorithms
 
 Let $f$ be a [boolean function](../../general/boolean_function.md) in [CNF](../../general/conjunctive_normal_form_(cnf).md) with $m$ clauses. Let $m^{\ast}$ denote the solution to the [max-SAT](../../general/max-satisfiability_problem.md) problem for $f$.
 
 We want to construct an algorithm the on an input $f$ outputs $l$ where $l \geq m^{\ast}d$, this will be referred to as a $d$-approximation algorithm.
 
-## Simple half-approximation algorithm
+# Simple half-approximation algorithm
 
 Suppose we have $f$ with variables $x_i$ for $1 \leq i \leq n$ and clauses $c_i$ for $1 \leq i \leq m$.
 
@@ -71,7 +70,7 @@ If we calculate this expectation more exactly we can get $m(1-2^{-k})$ clauses a
 
 For the case of $k=3$ it has been shown that doing any better than a $7/8$-approximation algorithm is [NP-hard](../../general/np-hard.md).
 
-## Integer linear programming
+# Integer linear programming
 
 [Statement](../../general/integer_linear_programming_problem.md#statement)
 
@@ -81,7 +80,7 @@ We can use [Max-SAT](../../general/max-satisfiability_problem.md) to show this v
 
 However, what if we run the constructed [ILP](../../general/integer_linear_programming_problem.md) in the proof but don't require the points to be integers? We know [Linear programming problem](../../general/linear_programming_problem.md) can be solved in [polynomial time](../../general/polynomial_time.md) can we use this to get an approximate solution to the [max-SAT](../../general/max-satisfiability_problem.md) problem?
 
-## LP relaxation for max-SAT
+# LP relaxation for max-SAT
 
 Let $y_i^{\ast}$ and $z_j^{\ast}$ be optimal solutions to the constructed [ILP](../../general/integer_linear_programming_problem.md) for [max-SAT](../../general/max-satisfiability_problem.md). Whereas let $\hat{y_i^{\ast}}$ and $\hat{z_j^{\ast}}$ be optimal solutions to the constructed [ILP](../../general/integer_linear_programming_problem.md) for [max-SAT](../../general/max-satisfiability_problem.md) where we drop the need to be an [Integer](../../general/integer.md) solution.
 
@@ -104,7 +103,7 @@ $$
 $$
 Giving us a $\left ( 1 - \frac{1}{e} \right )$-approximation algorithm to the problem - in expectation.
 
-## Proof of Lemma 1
+# Proof of Lemma 1
 
 For this we are going to use the [AM-GM inequality](../../general/arithmetic_mean_is_greater_than_or_equal_to_the_geometric_mean.md). Break down the clause $c_j$ by its positive and negative literals
 $$
@@ -155,7 +154,7 @@ This completes the proof of the lemma.
 
 $\square$
 
-## Summary of the approach
+# Summary of the approach
 
 In abstract we did the following.
 - Take an [NP-hard](../../general/np-hard.md) problem,
@@ -165,7 +164,7 @@ In abstract we did the following.
 
 This is a general approach we can take to finding approximation algorithms for [NP-hard](../../general/np-hard.md) problems.
 
-## Comparison of approaches for [max-Ek-SAT](../../general/max-k-exact-satisfiability_problem.md)
+# Comparison of approaches for [max-Ek-SAT](../../general/max-k-exact-satisfiability_problem.md)
 
   | k   | Simple     | LP-based                    |
   | --- | ---------- | --------------------------- |

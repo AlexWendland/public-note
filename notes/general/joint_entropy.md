@@ -4,9 +4,9 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-title: Joint Entropy
 tags:
   - machine-learning
+title: Joint Entropy
 type: definition
 ---
 >[!tldr] Joint Entropy

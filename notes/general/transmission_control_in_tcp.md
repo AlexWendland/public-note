@@ -4,9 +4,9 @@ checked: false
 created: 2024-05-27
 draft: false
 last_edited: 2024-05-27
-title: Transmission control in TCP
 tags:
   - networks
+title: Transmission control in TCP
 type: explainer
 ---
 # Transmission control in [TCP](transmission_control_protocol_(tcp).md)

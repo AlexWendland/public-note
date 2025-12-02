@@ -6,9 +6,9 @@ checked: false
 created: 2023-09-26
 draft: false
 last_edited: 2023-11-11
-title: Acyclic graph
 tags:
   - maths
+title: Acyclic graph
 type: definition
 ---
 > [!tldr] Acyclic graph

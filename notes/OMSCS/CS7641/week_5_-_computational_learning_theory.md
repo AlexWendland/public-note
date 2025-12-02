@@ -1,13 +1,13 @@
 ---
 aliases:
 checked: false
-course: 'CS7641 Machine Learning'
+course: CS7641 Machine Learning
 created: 2024-02-13
 draft: false
 last_edited: 2024-02-13
-title: Week 5 - Computational Learning Theory
 tags:
   - OMSCS
+title: Week 5 - Computational Learning Theory
 type: lecture
 week: 5
 ---

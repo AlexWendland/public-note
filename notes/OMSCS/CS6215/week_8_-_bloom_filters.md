@@ -1,13 +1,13 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-10-10
 draft: false
 last_edited: 2023-11-11
-title: Week 8 - Bloom Filters
 tags:
   - OMSCS
+title: Week 8 - Bloom Filters
 type: lecture
 week: 8
 ---

@@ -6,9 +6,9 @@ checked: false
 created: 2024-07-22
 draft: false
 last_edited: 2024-07-22
-title: Great Firewall of China (GFW)
 tags:
   - networks
+title: Great Firewall of China (GFW)
 type: definition
 ---
 >[!tldr] Great Firewall of China (GFW)

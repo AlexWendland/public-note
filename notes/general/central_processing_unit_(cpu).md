@@ -5,10 +5,10 @@ checked: false
 created: 2024-08-26
 draft: true
 last_edited: 2024-08-26
-title: Central processing unit (CPU)
 tags:
   - computer-sciecne
   - hardware
+title: Central processing unit (CPU)
 type: definition
 ---
 >[!tldr] Central processing unit (CPU)

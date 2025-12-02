@@ -4,10 +4,10 @@ checked: false
 created: 2023-12-03
 draft: false
 last_edited: 2023-12-03
-title: Markov chain
 tags:
   - maths
   - probability
+title: Markov chain
 type: definition
 ---
 >[!tldr] Markov chain

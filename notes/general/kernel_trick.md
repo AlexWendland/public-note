@@ -7,10 +7,10 @@ checked: false
 created: 2024-02-02
 draft: false
 last_edited: 2024-02-02
-title: Kernel trick
 tags:
   - machine-learning
   - maths
+title: Kernel trick
 type: definition
 ---
 >[!tldr] Kernel trick

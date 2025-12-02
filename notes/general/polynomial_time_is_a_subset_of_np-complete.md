@@ -4,9 +4,9 @@ checked: false
 created: 2023-10-24
 draft: false
 last_edited: 2023-11-11
-title: Polynomial time is a subset of NP-complete
 tags:
   - programming
+title: Polynomial time is a subset of NP-complete
 type: lemma
 ---
 # Statement

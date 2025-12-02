@@ -4,9 +4,9 @@ checked: false
 created: 2023-11-09
 draft: false
 last_edited: 2023-11-11
-title: The dual dual linear programme is the original linear programme
 tags:
   - maths
+title: The dual dual linear programme is the original linear programme
 type: lemma
 ---
 # Statement

@@ -4,9 +4,9 @@ checked: false
 created: 2023-10-20
 draft: false
 last_edited: 2023-11-11
-title: Every min-cut is at full capacity in a max-flow
 tags:
   - programming
+title: Every min-cut is at full capacity in a max-flow
 type: lemma
 ---
 # Statement

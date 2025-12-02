@@ -8,9 +8,9 @@ checked: false
 created: 2024-07-22
 draft: false
 last_edited: 2024-07-22
-title: DNS records
 tags:
   - networks
+title: DNS records
 type: definition
 ---
 >[!tldr] DNS records

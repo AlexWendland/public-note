@@ -5,12 +5,11 @@ checked: false
 created: 2024-01-18
 draft: false
 last_edited: 2024-01-18
-title: Perceptron rule
 tags:
   - programming
+title: Perceptron rule
 type: algorithm
 ---
-# Perceptron rule
 
 This is a way to train a [perceptron](perceptron_(neural_network).md) using the [binary step](binary_step.md) activation function. To classify [training data](training_data.md) $T$ where $A = \mathbb{R}^n$ and $B = \{0,1\}$. We assume the [perceptron](perceptron_(neural_network).md) we are training is a function $p: \mathbb{R}^n \rightarrow \{0,1\}$ defined by weights $w_i, \theta \in \mathbb{R}$. For this we require a sufficiently small learning rate $\eta \in \mathbb{R}_{>0}$. The idea is to reply the data by nudging the weights ($\Delta w_i$) of the [perceptron](perceptron_(neural_network).md) slowly towards an even split.
 
@@ -22,7 +21,7 @@ Then checking a random training example $(x,y) \in T$ with current weights $w_i$
 $$
 (y - \hat{y}) = \begin{cases} 0 & \mbox{if } y = \hat{y}\\ 1 & \mbox{if } y = 1 \mbox{ and } \hat{y} = 0\\ -1 & \mbox{if } y = 0 \mbox{ and } \hat{y} = 1.\end{cases}
 $$
-## Pseudocode
+# Pseudocode
 
 ```pseudocode
 perceptron_rule(T):
@@ -48,7 +47,7 @@ set_y_hat(T, w_i):
 2. return hat{y}_t
 ```
 
-## Runtime
+# Runtime
 
 To make sure $\eta$ is low enough we might reduce it slowly over time (though we have to make sure the sequence of $\eta$ converge to zero whilst the sum of $\eta$ diverge to infinity) and then stop when $y = \hat{y}$ for all our training data. In the example above I choose the sequence $1/n$ for our $\eta$ where $n$ is the iteration count.
 

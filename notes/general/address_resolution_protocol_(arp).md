@@ -5,9 +5,9 @@ checked: false
 created: 2024-05-21
 draft: false
 last_edited: 2024-05-21
-title: Address Resolution Protocol (ARP)
 tags:
   - networks
+title: Address Resolution Protocol (ARP)
 type: definition
 ---
 >[!tldr] Address Resolution Protocol (ARP)

@@ -4,9 +4,9 @@ checked: false
 created: 2024-02-20
 draft: false
 last_edited: 2024-02-20
-title: Bayes rule
 tags:
   - probability
+title: Bayes rule
 type: lemma
 ---
 # Statement

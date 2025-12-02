@@ -4,9 +4,9 @@ checked: false
 created: 2023-09-07
 draft: true
 last_edited: 2023-11-11
-title: Masters theorem
 tags:
   - maths
+title: Masters theorem
 type: lemma
 ---
 >[!important] Masters theorem

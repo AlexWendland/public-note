@@ -9,10 +9,10 @@ checked: false
 created: 2024-08-26
 draft: false
 last_edited: 2024-08-26
-title: Process
 tags:
   - OS
   - computer-science
+title: Process
 type: definition
 ---
 >[!tldr] Process

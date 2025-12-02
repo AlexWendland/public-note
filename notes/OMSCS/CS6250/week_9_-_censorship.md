@@ -1,21 +1,19 @@
 ---
 aliases:
 checked: false
-course: 'CS6250 Computer Networks'
+course: CS6250 Computer Networks
 created: 2024-07-22
 draft: false
 last_edited: 2024-07-22
-title: Week 9 - Censorship
 tags:
   - OMSCS
+title: Week 9 - Censorship
 type: lecture
 week: 9
 ---
-# Week 9 - Censorship
+# Additional reading
 
-## Additional reading
-
-### Important Readings
+## Important Readings
 
 Towards a Comprehensive Picture of the Great Firewall’s DNS Censorship
 [https://www.usenix.org/system/files/conference/foci14/foci14-anonymous.pdfLinks to an external site.](https://www.usenix.org/system/files/conference/foci14/foci14-anonymous.pdf)
@@ -38,7 +36,7 @@ Adapting Social Spam Infrastructure for Political Censorship
 Five incidents, one theme: Twitter spam as a weapon to drown voices of protests
 [https://www.usenix.org/system/files/conference/foci13/foci13-verkamp.pdfLinks to an external site.](https://www.usenix.org/system/files/conference/foci13/foci13-verkamp.pdf)
 
-## DNS censorship
+# DNS censorship
 
 [DNS censorship](../../general/dns_censorship.md)
 
@@ -50,7 +48,7 @@ Researchers have tried to reverse engineer the GFW and to understand how it work
 2. _Centralized management_: Since the blocklists obtained from two distinct GFW locations are the same, there is a high possibility of a central management (GFW Manager) entity that orchestrates blocklists.
 3. _Load balancing_: GFW load balances between processes based on source and destination IP address. The processes are clustered together to collectively send injected DNS responses.
 
-## DNS injection
+# DNS injection
 
 [DNS injection](../../general/dns_injection.md)
 
@@ -116,7 +114,7 @@ china(http) → cam(54191) [RST] TTL=49, seq=1
 ```
 The reset packet received by the client is from the firewall. It does not matter that the client sends out legitimate GET requests following one “questionable” request. It will continue to receive resets from the firewall for a particular duration. Running different experiments suggests that this blocking period is variable for “questionable” requests.
 
-## Measuring DNS manipulation
+# Measuring DNS manipulation
 
 It is believed over 60 countries are impacted by some form of [DNS censorship](../../general/dns_censorship.md) byt there is little comprehensive knowledge of what is blocked in which country because of the following issues:
 
@@ -152,7 +150,7 @@ Good method to measure censorship require different vantage points on the intern
 
 [Iris](../../general/iris.md)
 
-## Censorship through connectivity disruptions
+# Censorship through connectivity disruptions
 
 The most direct way of censorship is to block access to the whole or parts of the internet at the [IP](../../general/internet_protocol_(ip).md) level. The main methods to do this are:
 - **Physically disconnecting infrastructure**: If the network is sufficiently small then you could take down the access points to the internet. This is hard however, as normally this infrastructure is distributed.

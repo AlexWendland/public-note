@@ -5,9 +5,9 @@ checked: false
 created: 2024-01-18
 draft: false
 last_edited: 2024-01-18
-title: Linearly separable
 tags:
   - maths
+title: Linearly separable
 type: definition
 ---
 >[!tldr] Linearly separable

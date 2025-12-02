@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS7641 Machine Learning'
+course: CS7641 Machine Learning
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-title: Week 7 - Randomized Optimization
 tags:
   - OMSCS
+title: Week 7 - Randomized Optimization
 type: lecture
 week: 7
 ---
-# Week 7 - Randomized Optimization
 
 We are now moving onto to [Unsupervised learning](../../general/unsupervised_learning.md).
 
@@ -19,7 +18,7 @@ We are now moving onto to [Unsupervised learning](../../general/unsupervised_lea
 
 The difference from [supervised learning](../../general/supervised_learning.md) is we don't get given labels - so how we actually learn the function is beyond me!
 
-## Optimisation problem
+# Optimisation problem
 
 [Optimisation problem](../../general/optimisation_problem.md)
 
@@ -39,15 +38,15 @@ There are a couple of good methods here:
 	- Similar problems to calculus.
 - Random Optimisation, todays lecture :)
 
-## Hill climbing
+# Hill climbing
 
 [Hill climbing](../../general/hill_climbing.md)
 
-## Restart Hill climbing
+# Restart Hill climbing
 
 [Restart hill climbing](../../general/restart_hill_climbing.md)
 
-## Simulated Annealing
+# Simulated Annealing
 
 The next class of algorithms is like hill climbing but we allow for a bit more random walking.
 
@@ -57,7 +56,7 @@ Notice with the formula that if $T \rightarrow 0$ then this will make $P(x, x_t,
 
 [Simulated annealing ending probability](../../general/simulated_annealing_ending_probability.md)
 
-## Genetic Algorithms
+# Genetic Algorithms
 
 In all the above examples, we just updated our next guess based on local properties. However, we might find a couple of points with good fitness and want to combine them to find out what properties they have that provide that good fit.
 
@@ -70,27 +69,27 @@ For the [crossover function](../../general/crossover_(genetic_algorithms).md) le
 
 Suppose we are merging $00011011$ and $00110010$.
 
-### One point crossover
+## One point crossover
 
 We could choose an arbitrary point and do a switch of bit before and after this point. For example $C(00011011, 00110010) = (00010010, 00111011)$ where the first 4 bits of the first output is from the 1st input and the second 4 bits if from the second input - then vice versa for the second output.
 
-### Uniform crossover
+## Uniform crossover
 
 We could instead choose bits at random - either uniformly or weighted by their fitness. For example $C(00011011, 00110010) = (00010010, 00111011)$ where for the 3rd, 5th and 8th bit we choose from the first, second and second for the first output and vice versa for the second.
 
-## Crossover choice
+# Crossover choice
 
 Notice that any choice of [crossover function](../../general/crossover_(genetic_algorithms).md) relies heavily on how you represent your data!
 
-## Randomised algorithms
+# Randomised algorithms
 
 All the randomised algorithms here have been fairly simply and don't use history. There are more complicated ones that combine ideas from different algorithms and try to model the area they are searching.
 
-## MIMIC
+# MIMIC
 
 [MIMIC (meta)](../../general/mimic_(meta).md)
 
-## Estimating the probability distribution using dependency trees
+# Estimating the probability distribution using dependency trees
 
 [Dependency Trees (Bayesian Network)](../../general/dependency_trees_(bayesian_network).md)
 
@@ -100,7 +99,7 @@ To build a probability distribution on $A$ we will model it using a [dependency 
 
 Just like with [Bayesian network](../../general/bayesian_network.md) we can calculate $\mathbb{P}[X_i = a_i]$ and $\mathbb{P}[X_i = a_i \vert X_j = a_j]$ using the samples - however unlike the [Bayesian network](../../general/bayesian_network.md) each time we do this we need to pick the most meaningful relationships to use.
 
-## Generating your dependency tree
+# Generating your dependency tree
 
 At this point it is best to listen to [Week 7 - Information Theory](week_7_-_information_theory.md) to get the terms required for this proof.
 

@@ -7,9 +7,9 @@ checked: false
 created: 2024-09-04
 draft: false
 last_edited: 2024-09-04
-title: Mutex
 tags:
   - OS
+title: Mutex
 type: definition
 ---
 >[!tldr] Mutex

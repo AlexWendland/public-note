@@ -5,13 +5,12 @@ checked: false
 created: 2023-03-03
 draft: false
 last_edited: 2023-11-11
-title: Pythonic
 tags:
   - programming
   - python
+title: Pythonic
 type: notation
 ---
-# Pythonic
 
 [Pythonic](pythonic.md) means code that doesn't just get the syntax right, but that follows the conventions of the Python community and uses the language in the way it is intended to be used. [^1]
 

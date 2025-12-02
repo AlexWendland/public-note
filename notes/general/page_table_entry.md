@@ -5,9 +5,9 @@ checked: false
 created: 2025-03-22
 draft: false
 last_edited: 2025-03-22
-title: Page table entry
 tags:
   - OS
+title: Page table entry
 type: definition
 ---
 >[!tldr] Page table entry

@@ -4,9 +4,8 @@ checked: false
 created: 2023-09-11
 draft: true
 last_edited: 2023-11-11
-title: Recursion tree method
 tags:
   - programming
+title: Recursion tree method
 type: theorem
 ---
-# Recursion tree method

@@ -6,9 +6,9 @@ checked: false
 created: 2024-08-26
 draft: false
 last_edited: 2024-08-26
-title: Inter-process communication (IPC)
 tags:
   - OS
+title: Inter-process communication (IPC)
 type: definition
 ---
 >[!tldr] Inter-process communication (IPC)

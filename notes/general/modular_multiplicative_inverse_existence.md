@@ -4,9 +4,9 @@ checked: false
 created: 2023-10-09
 draft: false
 last_edited: 2023-11-11
-title: Modular multiplicative inverse existence
 tags:
   - maths
+title: Modular multiplicative inverse existence
 type: lemma
 ---
 # Statement

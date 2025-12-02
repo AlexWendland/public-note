@@ -6,16 +6,15 @@ checked: false
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
-title: CS7641 Machine Learning
 tags:
   - OMSCS
   - maths
   - programming
 term: spring
+title: CS7641 Machine Learning
 type: course
 year: '2024'
 ---
-# CS7641 Machine Learning
 
 This is a 3-course Machine Learning Series, taught as a dialogue between Professors Charles Isbell (Georgia Tech) and Michael Littman (Brown University).
 
@@ -28,12 +27,12 @@ Ever wonder how Netflix can predict what movies you'll like? Or how Amazon knows
 **Reinforcement Learning**
 Reinforcement Learning is the area of Machine Learning concerned with the actions that software agents ought to take in a particular environment in order to maximize rewards. You can apply Reinforcement Learning to robot control, chess, backgammon, checkers and other activities that a software agent can learn. Reinforcement Learning uses behavioural psychology in order to achieve reward maximization.
 
-## Links
+# Links
 - [Central](https://www.omscentral.com/courses/machine-learning/reviews)
 - [OMSCS page](https://omscs.gatech.edu/cs-7641-machine-learning)
 - [Course textbook](machinelearningtommitchell.pdf.md)
 
-## Acknowledgements
+# Acknowledgements
 
 Fixes to the notes for this course where provided by:
 - [Charlie Tian](https://www.linkedin.com/in/charlie-tian-0b03ab117/)

@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS6250 Computer Networks'
+course: CS6250 Computer Networks
 created: 2024-05-18
 draft: false
 last_edited: 2024-05-18
-title: Week 1 - Introduction
 tags:
   - OMSCS
+title: Week 1 - Introduction
 type: lecture
 week: 1
 ---
-# Week 1 - Introduction
 
 Here are some questions you should be able to answer to start the course:
 
@@ -49,9 +48,9 @@ Duplication of effort, more covert coupling, and additional overhead.
 • Explain the Spanning Tree Algorithm.
 • What is the purpose of the Spanning Tree Algorithm?
 
-## Additional readings
+# Additional readings
 
-### Important Readings
+## Important Readings
 
 How to Read a Paper
 [https://people.cs.umass.edu/~phillipa/CSE390/paper-reading.pdfLinks to an external site.](https://people.cs.umass.edu/~phillipa/CSE390/paper-reading.pdf)
@@ -64,7 +63,7 @@ The Design Philosophy of the DARPA Internet Protocols
 
 The Evolution of Layered Protocol Stacks Leads to an Hourglass-Shaped Architecture [https://www.cc.gatech.edu/~dovrolis/Papers/evoarch.pdfLinks to an external site.](https://www.cc.gatech.edu/~dovrolis/Papers/evoarch.pdf)
 
-### Book References
+## Book References
 
 If you have access to the Kurose-Ross book and the Peterson book, you can find the chapters discussed in this lecture. As mentioned in the course schedule, purchasing the books is not required.
 
@@ -74,7 +73,7 @@ If you have access to the Kurose-Ross book and the Peterson book, you can find t
 4. Computer Networks: A Systems Approach - Edition 4, Section 3.2.1 (Learning Bridges)
 5. Computer Networks: A Systems Approach - Edition 4, Section 3.2.2 (The looping problem and the spanning tree algorithm)
 
-### Optional Readings
+## Optional Readings
 
 Brief History of the Internet (1997)
 [https://www.internetsociety.org/wp-content/uploads/2017/09/ISOC-History-of-the-Internet_1997.pdfLinks to an external site.](https://www.internetsociety.org/wp-content/uploads/2017/09/ISOC-History-of-the-Internet_1997.pdf)
@@ -96,7 +95,7 @@ Holding the Internet Accountable
 
 An Algorithm for Distributed Computation of a Spanning Tree in an Extended LAN [https://www.it.uu.se/edu/course/homepage/datakom/ht06/slides/sta-perlman.pdfLinks to an external site.](https://www.it.uu.se/edu/course/homepage/datakom/ht06/slides/sta-perlman.pdf)
 
-## Layer architecture of the internet
+# Layer architecture of the internet
 
 The internet stack is a layered stack of protocols where each layer depends loosely on the layer below and is requried by the layer above. This allows doe scalability molecularity and the flexibility to add or remove components.
 
@@ -147,7 +146,7 @@ The end hosts have to implement encapsulation and de-encapsulation however inter
 
 In simple terms this states that the network core should be simple and minimal, while the end systems should carry the intelligence. Any feature in the core of the network should be shared by all applications. Therefore there could be error checking at the physical layer if that error checking was done without needing to know the structure of the original message.
 
-### Violations of the end to end principle
+## Violations of the end to end principle
 
 [Network Address Translation (NAT)](../../general/network_address_translation_(nat).md)
 
@@ -155,7 +154,7 @@ Most home [routers](../../general/router.md) have a [NAT](../../general/network_
 
 [Firewall](../../general/firewall.md)
 
-## Shape of the internet
+# Shape of the internet
 
 [Internet protocol stack hourglass shape](../../general/internet_protocol_stack_hourglass_shape.md)
 
@@ -169,7 +168,7 @@ These [protocols](../../general/protocol_(networks).md) do defend one another fo
 
 This is good to keep in mind for development for any layered system - if you don't want monopolies to form you need to garentee a variety of non-competing protocols at each layer.
 
-## Devices
+# Devices
 
 [layer 1](../../general/layer_1_physical.md)
 
@@ -187,7 +186,7 @@ This is good to keep in mind for development for any layered system - if you don
 
 [Router](../../general/router.md)
 
-## Spanning tree algorithm
+# Spanning tree algorithm
 
 There is a problem with [Switching](../../general/switching.md) when there are multiple [switches](../../general/switch.md) that form loops. A message may go round infinitely. To get around this the switches in a [network](../../general/network.md) try to form a spanning tree amongst themselves so they stop infinite cycles.
 

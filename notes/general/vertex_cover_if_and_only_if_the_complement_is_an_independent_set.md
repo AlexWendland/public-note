@@ -4,10 +4,10 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-title: Vertex cover if and only if the complement is an independent set
 tags:
   - maths
   - graph-theory
+title: Vertex cover if and only if the complement is an independent set
 type: lemma
 ---
 # Statement

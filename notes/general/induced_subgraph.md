@@ -5,10 +5,10 @@ checked: false
 created: 2023-10-27
 draft: false
 last_edited: 2023-11-11
-title: Induced subgraph
 tags:
   - maths
   - graph-theory
+title: Induced subgraph
 type: definition
 ---
 >[!tldr] Induced subgraph

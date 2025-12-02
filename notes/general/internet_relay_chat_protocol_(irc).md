@@ -6,9 +6,9 @@ checked: false
 created: 2024-07-21
 draft: true
 last_edited: 2024-07-21
-title: Internet relay chat protocol (IRC)
 tags:
   - networks
+title: Internet relay chat protocol (IRC)
 type: definition
 ---
 >[!tldr] Internet relay chat protocol (IRC)

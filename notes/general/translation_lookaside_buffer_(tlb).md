@@ -5,10 +5,10 @@ checked: false
 created: 2025-03-22
 draft: false
 last_edited: 2025-03-22
-title: Translation Lookaside Buffer (TLB)
 tags:
   - hardware
   - OS
+title: Translation Lookaside Buffer (TLB)
 type: definition
 ---
 >[!tldr] Translation Lookaside Buffer (TLB)

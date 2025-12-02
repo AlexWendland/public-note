@@ -6,10 +6,10 @@ checked: false
 created: 2024-02-02
 draft: false
 last_edited: 2024-02-02
-title: Recall
 tags:
   - machine-learning
   - statistics
+title: Recall
 type: definition
 ---
 >[!tldr] Recall

@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-11-07
 draft: false
 last_edited: 2023-11-13
-title: Week 11 - Linear Programming
 tags:
   - OMSCS
+title: Week 11 - Linear Programming
 type: lecture
 week:
 ---
-# Week 11 - Linear Programming
 
 In broad terms a [linear programme](../../general/linear_programme.md) is an optimisation problem of a [linear](../../general/linear_function.md) function where there are [linear](../../general/linear_function.md) bounds on the variables.
 
@@ -26,7 +25,7 @@ In broad terms a [linear programme](../../general/linear_programme.md) is an opt
 >$$ \sum_{(u,v) \in E} f_{(u,v)} - \sum_{(v,w) \in E} f_{(v,w)} = 0 \mbox{ for } v \in V \backslash \{s,t\}.$$
 >This defines our [linear programme](../../general/linear_programme.md) and the solution to this provides a solution to the [max flow](../../general/max_flow_problem.md) problem.
 
-## Linear programme general form
+# Linear programme general form
 
 [Linear programme](../../general/linear_programme.md)
 
@@ -38,7 +37,7 @@ We can convert all [linear programmes](../../general/linear_programme.md) into s
 
 [All linear programmes can be represented in standard form](../../general/all_linear_programmes_can_be_represented_in_standard_form.md)
 
-## Geometric view
+# Geometric view
 
 From now on we just consider [linear programmes in standard form](../../general/linear_programme_standard_form.md).
 
@@ -62,7 +61,7 @@ So the feasible region is cut out by $n + m$ half spaces in $\mathbb{R}^n$.
 The *vertices* in this feasible space are ones that lie on a 0-dimensional intersection of the boundary of the half spaces. In the example above these would be
 $$(0,0), (0,200), (100,200), (300,0), \mbox{ and } (300, 133.33..).$$
 
-## Linear programme solvers
+# Linear programme solvers
 
 When it comes to solving a linear programming problem.
 
@@ -70,7 +69,7 @@ When it comes to solving a linear programming problem.
 
 There are [polynomial time](../../general/polynomial_time.md) algorithms like the [ellipsoid method](../../general/ellipsoid_method_(linear_programming).md) and [interior-point method](../../general/interior-point_method_(linear_programme).md) but in practice these can be slower than the much more widely used [simplex method](../../general/simplex_method_(linear_programme).md) which can be exponential in its worst cases.
 
-## Simplex method
+# Simplex method
 
 As vertices are extremal points with regards to the constraints we have that if the maximum of the objective function exists then it must be achieved on one of the vertices. Therefore the idea of the simplex algorithm is to start at a vertex then compare the objective function to all other vertices connecting to it.
 
@@ -95,7 +94,7 @@ These are summarised by the two types of linear programme.
 
 [Unbounded linear programme](../../general/unbounded_linear_programme.md)
 
-## Determining if a [linear programme](../../general/linear_programme.md) is infeasible
+# Determining if a [linear programme](../../general/linear_programme.md) is infeasible
 
 Suppose we have a [linear programme in standard form](../../general/linear_programme_standard_form.md) which may or may not be a [Infeasible linear programme](../../general/infeasible_linear_programme.md). For any inequality and $x \in \mathbb{R}^n$
 $$ \sum_i a_{i,j} x_j \leq b_i$$
@@ -109,7 +108,7 @@ Moreover, we can change the objective function of the linear programme to simply
 
 [Checking if a linear programme is feasible](../../general/checking_if_a_linear_programme_is_feasible.md)
 
-## Aside: How to verify solutions?
+# Aside: How to verify solutions?
 
 >[!example] Is a point optimal?
 >Define a [linear programme](../../general/linear_programme.md) where we need to
@@ -139,7 +138,7 @@ This then gives that the objective function is bounded above 2400, so the point 
 
 Though I picked some values for the linear combination, how do we more generically find them and when will I know the bound is low enough?
 
-## Dual linear programme
+# Dual linear programme
 
 How do we get which linear combinations will be "optimal"?
 
@@ -157,11 +156,11 @@ If in the original [linear programme](../../general/linear_programme.md) we have
 
 We call the initial [linear programme](../../general/linear_programme.md) the *primal linear programme* however we will try not to use that term.
 
-## Dual of a Dual
+# Dual of a Dual
 
 [The dual dual linear programme is the original linear programme](../../general/the_dual_dual_linear_programme_is_the_original_linear_programme.md)
 
-## Weak duality
+# Weak duality
 
 The intuition behind the [dual linear programme](../../general/dual_linear_programme.md) was that it bounded the objective function. So lets check if that is true.
 
@@ -171,7 +170,7 @@ This means the example above gives us a good way to check for optimal points.
 
 [If a point in a linear programme has equal objective function to a point in its dual linear programme they are both optimal](../../general/if_a_point_in_a_linear_programme_has_equal_objective_function_to_a_point_in_its_dual_linear_programme_they_are_both_optimal.md)
 
-## Check for unbounded linear programme
+# Check for unbounded linear programme
 
 Another corollary of the [Weak duality theorem](../../general/weak_duality_theorem_(linear_programme).md) helps us identify when we have [unbounded linear programmes](../../general/unbounded_linear_programme.md).
 
@@ -185,7 +184,7 @@ Therefore we have a nice algorithm to check if we have a solvable [linear progra
 
 [Algorithm](../../general/check_if_a_linear_programme_is_solvable.md#algorithm)
 
-## Strong duality theorem
+# Strong duality theorem
 
 [Strong duality theorem (linear programme)](../../general/strong_duality_theorem_(linear_programme).md)
 

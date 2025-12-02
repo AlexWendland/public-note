@@ -3,10 +3,10 @@ checked: false
 created: 2023-03-03
 draft: false
 last_edited: 2023-11-11
-title: Python Built-in Functions
 tags:
   - programming
   - python
+title: Python Built-in Functions
 type: feature
 ---
 # Python Builtin Functions

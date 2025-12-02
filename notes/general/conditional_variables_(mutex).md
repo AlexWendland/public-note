@@ -6,9 +6,9 @@ checked: false
 created: 2024-09-04
 draft: false
 last_edited: 2024-09-04
-title: Conditional variables (Mutex)
 tags:
   - OS
+title: Conditional variables (Mutex)
 type: definition
 ---
 >[!tldr] Conditional variables (Mutex)

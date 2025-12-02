@@ -4,9 +4,9 @@ checked: false
 created: 2024-05-21
 draft: false
 last_edited: 2024-05-21
-title: ARP cache
 tags:
   - networks
+title: ARP cache
 type: definition
 ---
 >[!tldr] ARP Cache

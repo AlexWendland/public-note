@@ -4,10 +4,10 @@ checked: false
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-title: Traffic Scrubbing Service
 tags:
   - networks
   - security
+title: Traffic Scrubbing Service
 type: definition
 ---
 >[!tldr] Traffic Scrubbing Services

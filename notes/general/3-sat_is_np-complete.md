@@ -4,9 +4,9 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-12
-title: 3-SAT is NP-complete
 tags:
   - programming
+title: 3-SAT is NP-complete
 type: lemma
 ---
 # Statement

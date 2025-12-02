@@ -6,9 +6,9 @@ checked: false
 created: 2024-01-17
 draft: false
 last_edited: 2024-01-17
-title: Fold (cross validation)
 tags:
   - machine-learning
+title: Fold (cross validation)
 type: definition
 ---
 >[!tldr] Fold (cross validation)

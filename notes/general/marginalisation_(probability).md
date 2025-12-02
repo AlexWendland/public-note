@@ -5,9 +5,9 @@ checked: false
 created: 2024-02-23
 draft: false
 last_edited: 2024-02-23
-title: Marginalisation (probability)
 tags:
   - probability
+title: Marginalisation (probability)
 type: definition
 ---
 >[!tldr] Marginalisation (probability)

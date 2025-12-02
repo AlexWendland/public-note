@@ -10,9 +10,9 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-title: Domain Name System (DNS)
 tags:
   - networks
+title: Domain Name System (DNS)
 type: definition
 ---
 >[!tldr] Domain Name System (DNS)

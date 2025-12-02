@@ -3,14 +3,13 @@ checked: false
 created: 2023-02-26
 draft: false
 last_edited: 2023-11-11
-title: Lambda functions
 tags:
   - programming
   - python
   - functional
+title: Lambda functions
 type: feature
 ---
-# Lambda functions
 These are [Anonymous Functions](anonymous_functions.md) that take multiple inputs and evaluate the output in a single statement. It has the following syntax:
 
 ```python
@@ -20,7 +19,7 @@ lambda arguments : expression
 > [!note] Syntactic Sugar
 > A `lambda` expression creates a function object just like the `def` statement.
 
-## Lundh's lambda Refactoring Recipe
+# Lundh's lambda Refactoring Recipe
 
 If you find a piece of code hard to understand because of a `lambda`, follow this refactoring procedure:
 1. Write a comment explaining what that `lambda` does.
@@ -28,15 +27,15 @@ If you find a piece of code hard to understand because of a `lambda`, follow thi
 3. Convert the `lambda` expression into a `def` expression with the name you found in (2) and the docstring with the comment you made in (1).
 4. Remove the comment and use of the `lambda` statement with the new function.
 
-## Examples
+# Examples
 
-### Invert strings
+## Invert strings
 
 ```python
 lambda string : string[::-1]
 ```
 
-### Custom key to sort by
+## Custom key to sort by
 
 ```python
 >>> test = [

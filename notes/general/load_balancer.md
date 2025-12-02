@@ -6,8 +6,8 @@ checked: false
 created: 2024-07-19
 draft: true
 last_edited: 2024-07-19
-title: Load balancer
 tags: []
+title: Load balancer
 type: definition
 ---
 >[!tldr] Load balancers

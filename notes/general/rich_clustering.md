@@ -6,9 +6,9 @@ checked: false
 created: 2024-03-09
 draft: false
 last_edited: 2024-03-09
-title: Rich clustering
 tags:
   - machine-learning
+title: Rich clustering
 type: definition
 ---
 >[!tldr] Rich clustering

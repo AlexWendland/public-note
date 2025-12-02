@@ -7,9 +7,9 @@ checked: false
 created: 2024-01-13
 draft: false
 last_edited: 2024-01-13
-title: Modelling paradigm
 tags:
   - machine-learning
+title: Modelling paradigm
 type: definition
 ---
 >[!tldr] Modelling paradigm

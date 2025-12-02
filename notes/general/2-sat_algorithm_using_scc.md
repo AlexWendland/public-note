@@ -4,12 +4,11 @@ checked: false
 created: 2023-10-01
 draft: false
 last_edited: 2023-11-12
-title: 2-SAT algorithm using SCC
 tags:
   - programming
+title: 2-SAT algorithm using SCC
 type: algorithm
 ---
-# 2-SAT algorithm using SCC
 
 ```pseudocode
 2SAT(f):
@@ -29,11 +28,11 @@ type: algorithm
 7. Return the assignment, excluding the value for Y.
 ```
 
-# Correctness
+ Correctness
 
 See [Week 6 - 2-Satisfiability](../OMSCS/CS6215/week_6_-_2-satisfiability.md) for the correctness of this algorithm.
 
-# Run time
+ Run time
 
 This has run time $O(n + m)$.
 

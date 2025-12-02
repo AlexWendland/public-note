@@ -4,10 +4,10 @@ checked: false
 created: 2024-07-27
 draft: true
 last_edited: 2024-07-27
-title: Moving Picture Experts Group (MPEG)
 tags:
   - networks
   - organisation
+title: Moving Picture Experts Group (MPEG)
 type: definition
 ---
 >[!tldr] Moving Picture Experts Group (MPEG)

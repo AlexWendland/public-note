@@ -6,9 +6,9 @@ checked: false
 created: 2024-02-22
 draft: false
 last_edited: 2024-02-22
-title: Bayesian network
 tags:
   - probability
+title: Bayesian network
 type: definition
 ---
 >[!tldr] Bayesian network

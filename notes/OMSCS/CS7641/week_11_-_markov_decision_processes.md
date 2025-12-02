@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS7641 Machine Learning'
+course: CS7641 Machine Learning
 created: 2024-04-03
 draft: false
 last_edited: 2024-04-03
-title: Week 11 - Markov Decision Processes
 tags:
   - OMSCS
+title: Week 11 - Markov Decision Processes
 type: lecture
 week: 11
 ---
-# Week 11 - Markov Decision Processes
 
 [Markov decision process](../../general/markov_decision_process.md)
 
@@ -29,19 +28,19 @@ week: 11
 
 Given a [Markov decision process](../../general/markov_decision_process.md) we want to come up with a policy $\pi: S \rightarrow A$ that determines what action we take in each state.
 
-## Assigning credit
+# Assigning credit
 
 In problems like the above we only get the reward at the end. Therefore at the end of the game we need to know which moves were good, and which were bad. This is hard to do without better feedback.
 
 [Credit assignment problem](../../general/credit_assignment_problem.md)
 
-## Cumulative rewards
+# Cumulative rewards
 
 Suppose we now get a reward for each state and the score of the run was the cumulative score of all the states we have visited.
 
 For example in the example above instead of just providing a reward for the pit of death and getting home instead we provided a reward for all the other squares it might influence what we want to do. If it were strongly positive we might want to stay out for longer. If it were strongly negative we might chance walking past the pit of death to get home sooner or even jump in the pit of death!
 
-## Trouble with cumulative rewards and infinite time
+# Trouble with cumulative rewards and infinite time
 
 Suppose our actions will lead to a [sequence](../../general/sequence.md) of rewards $r_i$ for $i \in \mathbb{N}$. If there exists some $c > 0$ such that for all $r_i > c$ then if we sum the rewards
 $$

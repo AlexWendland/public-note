@@ -1,28 +1,27 @@
 ---
 aliases:
 checked: false
-course: 'CS7641 Machine Learning'
+course: CS7641 Machine Learning
 created: 2024-02-16
 draft: false
 last_edited: 2024-02-16
-title: Week 5 - Infinite hypothesis spaces
 tags:
   - OMSCS
+title: Week 5 - Infinite hypothesis spaces
 type: lecture
 week: 5
 ---
-# Week 5 - Infinite hypothesis spaces
 
 In [Week 5 - Computational Learning Theory](week_5_-_computational_learning_theory.md) we developed a method to build a [PAC learner](../../general/probably_approximately_correct_learnable_(pac).md) on a finite dimensional hypothesis space. However this breaks down in infinite dimensions. We need to get around this.
 
-## Lets just cheat
+# Lets just cheat
 
 Whilst the [hypothesis space](../../general/modelling_paradigm.md) might be infinite theoretically, the actual number of distinct hypothesises could be finite. Then we can fall back on the previous work.
 
 >[!example] Discrete problem domain
 >Let $A=\{i \in \mathbb{N} \vert i \leq 10\}$ and $B = \{T,F\}$. Then notice that $Fun(A,B) = 2^{10}$ which is finite. If we had $H = \{x \geq \theta \ \vert \ \theta \in \mathbb{R}\}$  then $H$ is infinite as $\theta \in \mathbb{R}$. However, in reality there are at most 11 realised functions here $\{x > n \vert 0 \leq n \leq 10, \ n \in \mathbb{Z}\}$ so we have a finite hypothesis space.
 
-## VC-dimension
+# VC-dimension
 
 In the problem above the hypothesis space was in some way limited. We want to capture the idea of a limited hypothesis space when looking at proper infinite dimensional hypothesis spaces.
 
@@ -30,7 +29,7 @@ In the problem above the hypothesis space was in some way limited. We want to ca
 
 In the example above we have [VC dimension](../../general/vapnik-chervonenkis_dimension.md) 1. As for any two points $1 \leq l \leq u \leq 10$ if $f(l) = T$ and $f(u) = F$ then no such function $h_{\theta}(x) = [x \geq \theta]$ can set $h_{\theta}(l) = T$ without setting $h_{\theta}(u) = T$.
 
-## VC dimensions roughly follow degrees of freedom
+# VC dimensions roughly follow degrees of freedom
 
 | Separator                               | VC-dimension | parameters |
 | --------------------------------------- | ------------ | ---------- |
@@ -40,7 +39,7 @@ In the example above we have [VC dimension](../../general/vapnik-chervonenkis_di
 | d-dimesional hyperplane                 | d + 1        | -          |
 | Convex polygon in $\mathbb{R}^n, n > 1$ | $\infty$     | $\infty$   |
 
-## [PAC learnable](../../general/probably_approximately_correct_learnable_(pac).md) and [VC dimension](../../general/vapnik-chervonenkis_dimension.md)
+# [PAC learnable](../../general/probably_approximately_correct_learnable_(pac).md) and [VC dimension](../../general/vapnik-chervonenkis_dimension.md)
 
 [PAC learnable bound with VC-dimension](../../general/pac_learnable_bound_with_vc-dimension.md)
 
@@ -54,7 +53,7 @@ d \leq \log_2(\vert H \vert).
 $$
 This nicely connects the formulas.
 
-## [PAC learnable](../../general/probably_approximately_correct_learnable_(pac).md) if and only if finite [VC dimension](../../general/vapnik-chervonenkis_dimension.md)
+# [PAC learnable](../../general/probably_approximately_correct_learnable_(pac).md) if and only if finite [VC dimension](../../general/vapnik-chervonenkis_dimension.md)
 
 [PAC-learnable if and only if finite VC dimension](../../general/pac-learnable_if_and_only_if_finite_vc_dimension.md)
 

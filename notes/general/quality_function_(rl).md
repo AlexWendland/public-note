@@ -5,9 +5,9 @@ checked: false
 created: 2025-05-22
 draft: false
 last_edited: 2025-05-22
-title: Quality function (RL)
 tags:
   - reinforcement-learning
+title: Quality function (RL)
 type: definition
 ---
 >[!tldr] Quality function (RL)

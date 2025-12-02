@@ -4,9 +4,9 @@ checked: false
 created: 2024-04-07
 draft: false
 last_edited: 2024-04-07
-title: Stochastic games
 tags:
   - game-theory
+title: Stochastic games
 type: definition
 ---
 >[!tldr] Stochastic games

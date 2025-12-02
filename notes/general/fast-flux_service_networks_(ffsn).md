@@ -6,9 +6,9 @@ checked: false
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-title: Fast-Flux Service Networks (FFSN)
 tags:
   - networks
+title: Fast-Flux Service Networks (FFSN)
 type: definition
 ---
 >[!tldr] Fast-Flux Service Networks (FFSN)

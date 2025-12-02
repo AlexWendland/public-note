@@ -4,9 +4,9 @@ checked: false
 created: 2025-04-09
 draft: false
 last_edited: 2025-04-09
-title: Pseudo devices
 tags:
   - OS
+title: Pseudo devices
 type: definition
 ---
 >[!tldr] Pseudo devices

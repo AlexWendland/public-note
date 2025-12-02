@@ -4,9 +4,9 @@ checked: false
 created: 2023-09-29
 draft: false
 last_edited: 2023-11-11
-title: Find strongly connected components for an undirected graph
 tags:
   - programming
+title: Find strongly connected components for an undirected graph
 type: problem
 ---
 ## Statement

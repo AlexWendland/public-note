@@ -1,23 +1,21 @@
 ---
 aliases:
 checked: false
-course: 'CS6200 Graduate introduction to Operating Systems'
+course: CS6200 Graduate introduction to Operating Systems
 created: 2025-04-12
 draft: false
 last_edited: 2025-04-12
-title: Week 13 - Remote Procedure Calls
 tags:
   - OMSCS
+title: Week 13 - Remote Procedure Calls
 type: lecture
 week: 13
 ---
-# Week 13 - Remote Procedure Calls
-
-## Additional reading
+# Additional reading
 
 - [Implementing Remote Procedure Calls](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-birrell-nelson-paper.pdf)
 
-## Remote procedure calls (RPC)
+# Remote procedure calls (RPC)
 
 [Remote procedure calls (PRC)](../../general/remote_procedure_calls_(prc).md)
 
@@ -37,7 +35,7 @@ Below is an example flow of an [RPC](../../general/remote_procedure_calls_(prc).
 
 ![Rpc Example](../../../images/rpc_example.png)
 
-## Steps to carry out an RPC operation
+# Steps to carry out an RPC operation
 
 1. *Register*: (Optional) The server registers what procedures it offers, the argument types and location.
 2. *Bind*: Client binds to the connecting server (this bind can get reused for multiple connections).
@@ -50,7 +48,7 @@ Below is an example flow of an [RPC](../../general/remote_procedure_calls_(prc).
 9. *Result*: The local implementation hands the result back to the server stub.
 10. Similar operations to 4-7 happen to send the result back to the client.
 
-## Interface definition language
+# Interface definition language
 
 The goal of [RPC](../../general/remote_procedure_calls_(prc).md) is that the server and client do not need to be programmed together or even written in the same language. To achieve this we need some language agnostic way to define the methods that can be called and the messages that are needed by them. This is where an [Interface definition language (IDL)](../../general/interface_definition_language_(idl).md) comes in.
 
@@ -58,7 +56,7 @@ The goal of [RPC](../../general/remote_procedure_calls_(prc).md) is that the ser
 
 An important aspect to any [IDL](../../general/interface_definition_language_(idl).md) is it includes a version number. This allows for easy upgrades to any interface you have defined.
 
-## Marshalling
+# Marshalling
 
 Marshalling is the process of taking input parameters that could be anywhere within a processes address space and putting them into a message to be sent to the other party. This will include some standards on how to serialize different types such as arrays and integers.
 
@@ -66,13 +64,13 @@ Unmarshalling is the opposite procedure when the other party receives the messag
 
 Both these will not need to be written by the developer - instead they will be built into how the [RPC](../../general/remote_procedure_calls_(prc).md) framework is built.
 
-### What about pointers?
+## What about pointers?
 
 RPC frameworks have two choices when a pointer is passed in:
 - Don't support it and throw an error, or
 - Serialize the object the pointer is pointing at.
 
-## Binding and Registry
+# Binding and Registry
 
 For the server and client to connect the client needs to know the servers address and port that it is operating on. Also the client should know what functions the server offer and the expected inputs/outputs of these functions. After this is known the client can 'bind' to the server to make the calls.
 
@@ -80,11 +78,11 @@ Knowing where the server is and what functions it offers can either be done expl
 
 The registry can either be hosted centrally or placed on each machine. This will offer a central way to get the servers that support some function name and a version of the protocol.
 
-## Handling failure
+# Handling failure
 
 [RPC](../../general/remote_procedure_calls_(prc).md) frameworks implement error handling however, due to the framework operating over a network it sometimes can not know the cause of the issue. Therefore it offers a best guess at issues within this framework.
 
-## SunRPC
+# SunRPC
 
 This is an [RPC](../../general/remote_procedure_calls_(prc).md) framework developed by Sun in the 80s (bought by Oracle) for unix. They made the following design choices:
 
@@ -94,7 +92,7 @@ This is an [RPC](../../general/remote_procedure_calls_(prc).md) framework develo
 - Pointers are allowed and serialized.
 - It makes a best effort attempt to catch information about failures and has built in retries.
 
-## Java RMI
+# Java RMI
 
 This is an [RPC](../../general/remote_procedure_calls_(prc).md) framework also developed by Sun but specifically for the Java language.
 

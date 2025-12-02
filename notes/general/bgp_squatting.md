@@ -4,10 +4,10 @@ checked: false
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-title: BGP squatting
 tags:
   - networks
   - security
+title: BGP squatting
 type: definition
 ---
 >[!tldr] BGP squatting

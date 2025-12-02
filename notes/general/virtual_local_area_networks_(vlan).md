@@ -4,9 +4,9 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-title: Virtual Local Area Networks (VLAN)
 tags:
   - networks
+title: Virtual Local Area Networks (VLAN)
 type: definition
 ---
 >[!tldr] Virtual Local Area Networks (VLAN)

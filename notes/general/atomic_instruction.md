@@ -5,9 +5,9 @@ checked: false
 created: 2025-04-08
 draft: false
 last_edited: 2025-04-08
-title: Atomic instruction
 tags:
   - OS
+title: Atomic instruction
 type: definition
 ---
 >[!tldr] Atomic instruction

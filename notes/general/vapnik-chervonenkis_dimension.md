@@ -5,9 +5,9 @@ checked: false
 created: 2024-02-16
 draft: false
 last_edited: 2024-02-16
-title: Vapnik-Chervonenkis dimension
 tags:
   - machine-learning
+title: Vapnik-Chervonenkis dimension
 type: definition
 ---
 >[!tldr] Vapnik-Chervonenkis dimension

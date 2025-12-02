@@ -1,23 +1,22 @@
 ---
 aliases:
 checked: false
-course: 'CS6250 Computer Networks'
+course: CS6250 Computer Networks
 created: 2024-06-08
 draft: false
 last_edited: 2024-06-08
-title: Week 4 - AS relationships and interdomain routing
 tags:
   - OMSCS
+title: Week 4 - AS relationships and interdomain routing
 type: lecture
 week: 4
 ---
-# Week 4 - AS relationships and interdomain routing
 
 [Interdomain routing](../../general/interdomain_routing.md)
 
-## Additional reading
+# Additional reading
 
-### Important Readings
+## Important Readings
 
 Interdomain Internet Routing
 [https://web.mit.edu/6.829/www/currentsemester/papers/AS-bgp-notes.pdfLinks to an external site.](https://web.mit.edu/6.829/www/currentsemester/papers/AS-bgp-notes.pdf)
@@ -31,7 +30,7 @@ On the importance of Internet eXchange Points for today’s Internet ecosystem
 Peering at Peerings: On the Role of IXP Route Servers
 [https://people.csail.mit.edu/richterp/imc238-richterA.pdfLinks to an external site.](https://people.csail.mit.edu/richterp/imc238-richterA.pdf "Link")
 
-### Book References
+## Book References
 
 Kurose-Ross
 
@@ -39,7 +38,7 @@ Kurose-Ross
 
 **7th Edition**: Section 1.3.3 (A Network of Networks), Section 5.4.1 (The Role of BGP)
 
-### Optional Readings
+## Optional Readings
 
 Investigating Interdomain Routing Policies in the Wild
 [https://people.cs.umass.edu/~phillipa/papers/AnwarIMC15.pdfLinks to an external site.](https://people.cs.umass.edu/~phillipa/papers/AnwarIMC15.pdf)
@@ -56,7 +55,7 @@ O Peer, Where Art Thou? Uncovering Remote Peering Interconnections at IXPs
 Detecting BGP Configuration Faults with Static Analysis
 [https://www.usenix.org/legacy/events/nsdi05/tech/feamster/feamster.pdfLinks to an external site.](https://www.usenix.org/legacy/events/nsdi05/tech/feamster/feamster.pdf)
 
-## Ecology of the internet
+# Ecology of the internet
 
 The internet has 3 major players:
 
@@ -68,7 +67,7 @@ The internet has 3 major players:
 
 Each of these may operate as one [AS](../../general/autonomous_system_(as).md) or as multiple to allow different protocols to be used in different parts of the network.
 
-## Cooperation and competition among networks
+# Cooperation and competition among networks
 
 Whilst [ISPs](../../general/internet_service_provider_(isp).md) are in direct competition with eachother they also can not operate without cooperating with each other also. The [ISP](../../general/internet_service_provider_(isp).md) business model is based off selling access to internet - this is normally calculated via bandwidth used either for a fixed price with a cap or by taking the 95th percentile of measurements normally taken every 5 minutes. Either of these mean the [ISP](../../general/internet_service_provider_(isp).md) has incentives to make you use their service more. This relies on you having low latency connections to as many other [hosts](../../general/host_(networks).md) as possible.
 
@@ -80,11 +79,11 @@ Therefore two types of relationships form between [ISPs](../../general/internet_
 
 This has been the model since the beginning of the internet and was one of the main drivers for the hierarchical nature of [ISPs](../../general/internet_service_provider_(isp).md) and the internet as a whole. However [IXPs](../../general/internet_exchange_points_(ixps).md) are changing this. [IXPs](../../general/internet_exchange_points_(ixps).md) mean that [ISPs](../../general/internet_service_provider_(isp).md) don't need to go through eachother and instead can trade traffic directly. This is making the internet more flat. This is in part driven by [CDNs](../../general/content_delivery_network_(cdn).md) using [IXPs](../../general/internet_exchange_points_(ixps).md) to have the lowest latency connections to their consumers.
 
-## Address exchange
+# Address exchange
 
 First consider which addresses [AS](../../general/autonomous_system_(as).md) want to exchange with other internet entities.
 
-### Exporting routes
+## Exporting routes
 
 First lets look at what routes an [AS](../../general/autonomous_system_(as).md) would want to tell other internet entities about. This has financial repercussions as you will then have to carry that traffic on your network.
 
@@ -92,14 +91,14 @@ First lets look at what routes an [AS](../../general/autonomous_system_(as).md) 
 - **Routes from peers**: Whilst there is the network cost of carrying this traffic sharing these addresses keeps the free agreements in place or can turn peers into customers. It may make sense to share routes learnt from peers but it is circumstantial.
 - **Routes from providers**: A provider is paying for access to the provider. It has very little commercial incentive to share routes learnt from the provider.
 
-### Importing routes
+## Importing routes
 
 When an [AS](../../general/autonomous_system_(as).md) decides which route to send its traffic down this again is a symmetric decision to exporting. The goal of the [AS](../../general/autonomous_system_(as).md) is for the traffic of its customers to travel through the fewest other [AS](../../general/autonomous_system_(as).md) as possible as each one will generate it some cost and potentially reduce capacity of the route.
 
 - **Route offered by peer or customer**: These in the short term are completely free and so will preferably use these.
 - **Route offered by provider**: These cost the [AS](../../general/autonomous_system_(as).md) money so will be used as a last resort.
 
-### [Protocols](../../general/protocol_(networks).md)
+## [Protocols](../../general/protocol_(networks).md)
 
 [Interdomain routing](../../general/interdomain_routing.md)
 
@@ -111,7 +110,7 @@ The goals of [BGP](../../general/boarder_gateway_protocol_(bgp).md) are:
 - **Cooperation**: To let [AS](../../general/autonomous_system_(as).md) to make local decisions with the information they are provided.
 - **Security**: Whist not an initial design goal [BGP](../../general/boarder_gateway_protocol_(bgp).md) did not include security as the internet has expanded it has become more important. This needs to protect [AS](../../general/autonomous_system_(as).md) from malicious attacks, misconfiguration, and faults. This includes different protocols, registries for the domains an [AS](../../general/autonomous_system_(as).md) owns, private keys for [AS](../../general/autonomous_system_(as).md).
 
-## The [BGP](../../general/boarder_gateway_protocol_(bgp).md) [protocol](../../general/protocol_(networks).md)
+# The [BGP](../../general/boarder_gateway_protocol_(bgp).md) [protocol](../../general/protocol_(networks).md)
 
 Two [routers](../../general/router.md) connected over [BGP](../../general/boarder_gateway_protocol_(bgp).md) are called BGP peers. They open a semi-permanent [TCP](../../general/transmission_control_protocol_(tcp).md) connection where they exchange routes. There are two different varieties.
 - iBGP: For internal communication about what external routes are available.
@@ -130,7 +129,7 @@ Messages passed between [AS](../../general/autonomous_system_(as).md) have some 
 - **ASPATH**: A list of [ASN](../../general/autonomous_system_number_(asn).md) for each [AS](../../general/autonomous_system_(as).md) the route has passed through. This is helpful to avoid loops.
 - **NEXTHOP**: The [IP address](../../general/internet_protocol_(ip).md) of the next router in the hop.
 
-## The router process
+# The router process
 
 We can model a [router](../../general/router.md) running [BGP](../../general/boarder_gateway_protocol_(bgp).md) as follows.
 
@@ -155,7 +154,7 @@ How a router decides which route to use depends on many factors. It ranks these 
 
 There are two main ways [AS](../../general/autonomous_system_(as).md) can control which routes it uses and its neighbours uses.
 
-### LocalPref
+## LocalPref
 
 This is how an [AS](../../general/autonomous_system_(as).md) expresses its commercial best interest. It will set a value to neighbouring [AS](../../general/autonomous_system_(as).md) based on the financial relationship it has with it. These normally are:
 
@@ -168,11 +167,11 @@ This is how an [AS](../../general/autonomous_system_(as).md) expresses its comme
 
 This reflects the preferences we discussed above, customer then peer then provider.j
 
-### Multi-exit Discriminator (MED)
+## Multi-exit Discriminator (MED)
 
 If an [AS](../../general/autonomous_system_(as).md) has two routers connecting to a neighbours [AS](../../general/autonomous_system_(as).md) which are offering some of the same routes. Knowing the forwarding tables of these routers may give a preference for how a neighbouring [AS](../../general/autonomous_system_(as).md) forwards traffic through your network. This is controlled by setting a MED value (for example as the [IGP](../../general/interior_gateway_protocol_(igp).md) cost to forward that traffic).
 
-## Challenges with [BGP](../../general/boarder_gateway_protocol_(bgp).md): Misconfiguration and scalability
+# Challenges with [BGP](../../general/boarder_gateway_protocol_(bgp).md): Misconfiguration and scalability
 
 Routers are vulnerable to misconfiguration and faults. This can lead to an excessively large number of updates leading to further faults from overloading the network. This can be mediated by limiting the size of the routing table.
 
@@ -182,7 +181,7 @@ If a route is repeatedly updated due to some route instability this can risk mes
 
 Routers can be strategic about what addresses it does this too and how sensitive it is. If it has addresses it needs to have high availability for it can have a much higher threshold whereas other addresses it can be much lower.
 
-## Peering at an [IXP](../../general/internet_exchange_points_(ixps).md)
+# Peering at an [IXP](../../general/internet_exchange_points_(ixps).md)
 
 [IXP](../../general/internet_exchange_points_(ixps).md)
 
@@ -194,14 +193,14 @@ This shows how an [IXP](../../general/internet_exchange_points_(ixps).md) is a m
 
 To exchange with an [IXP](../../general/internet_exchange_points_(ixps).md) a [AS](../../general/autonomous_system_(as).md) needs to physically connect with it. Which is why being distributed makes this easier though carries technical cost to it.
 
-### [IXPs](../../general/internet_exchange_points_(ixps).md) have become increasingly popular, why?
+## [IXPs](../../general/internet_exchange_points_(ixps).md) have become increasingly popular, why?
 
 1. [IXP](../../general/internet_exchange_points_(ixps).md) can handle large quantities of traffic rivalling that of tier-1 [ISPs](../../general/internet_service_provider_(isp).md).
 2. [IXP](../../general/internet_exchange_points_(ixps).md) can mitigate [DDoS](../../general/distributed_denial-of-service_(ddos).md) attacks by monitoring traffic to particular [ASs](../../general/autonomous_system_(as).md).
 3. They provide excellent research hubs due to their open and large scale nature.
 4. They are active marketplaces offering services to the [ASs](../../general/autonomous_system_(as).md) that participate in them. This offering is expanding as more research happens providing innovation to the internet.
 
-### How to peer at an [AS](../../general/autonomous_system_(as).md)
+## How to peer at an [AS](../../general/autonomous_system_(as).md)
 
 An [AS](../../general/autonomous_system_(as).md) must have an [ASN](../../general/autonomous_system_number_(asn).md) to peer at an [IXP](../../general/internet_exchange_points_(ixps).md). Then they will need to physically collocate a router in the [AS](../../general/autonomous_system_(as).md) to one of the [IXP](../../general/internet_exchange_points_(ixps).md) access points. Lastly they must agree to the terms and conditions of using the [IXP](../../general/internet_exchange_points_(ixps).md). To do this they pay:
 - A one off access cost to locate the router at the access point,
@@ -212,13 +211,13 @@ Once connected to the [IXP](../../general/internet_exchange_points_(ixps).md) th
 
 Normally the terms of accessing do not forbid reselling of access to the [IXP](../../general/internet_exchange_points_(ixps).md). Therefore some providers link with an [IXP](../../general/internet_exchange_points_(ixps).md) the resale access to that [IXP](../../general/internet_exchange_points_(ixps).md) if it is too hard for another [AS](../../general/autonomous_system_(as).md) to collocate a router there. This is called remote peering and is an active area of study.
 
-### Why peer in an [IXP](../../general/internet_exchange_points_(ixps).md)
+## Why peer in an [IXP](../../general/internet_exchange_points_(ixps).md)
 
 - Keeps traffic local which is more reliable and faster.
 - Lower costs than negotiating with other [ASs](../../general/autonomous_system_(as).md) such as [ISP](../../general/internet_service_provider_(isp).md) for access.
 - Incentives - large content providers prefer use of [IXP](../../general/internet_exchange_points_(ixps).md) as it guarantees more control of how their users receive their content. Therefore they connect via [IXPs](../../general/internet_exchange_points_(ixps).md) which motivates other actors to use them.
 
-### Services offered by an [IXP](../../general/internet_exchange_points_(ixps).md)
+## Services offered by an [IXP](../../general/internet_exchange_points_(ixps).md)
 
 1. **Public peering**: This allows you to directly connect with any other participant who is also public peering opening up a massive number of new routes but also direct connections with other [ASs](../../general/autonomous_system_(as).md).
 2. **Private peering**: This allows for direct connection between two parties who know eachother at the [IXP](../../general/internet_exchange_points_(ixps).md). This won't use the pubic peering infrastructure. Though provides a high capacity stable connection.
@@ -227,7 +226,7 @@ Normally the terms of accessing do not forbid reselling of access to the [IXP](.
 5. **DDoS black-holing**: This is a customer triggered black-holing of traffic coming towards their [AS](../../general/autonomous_system_(as).md) to relieve the stress from [DDoS](../../general/distributed_denial-of-service_(ddos).md) attacks.
 6. **Free value add services**: Services that are for the public good like bandwidth testing, Internet Routing Registries,[DNS](../../general/domain_name_system_(dns).md) servers, ect.
 
-### How do route servers work
+## How do route servers work
 
 Two [ASs](../../general/autonomous_system_(as).md) in a [IXP](../../general/internet_exchange_points_(ixps).md) to transfer route information need to establish a bilateral [BGP](../../general/boarder_gateway_protocol_(bgp).md) connection. However with so many participants at an [IXP](../../general/internet_exchange_points_(ixps).md) the number of open connections would be massive - which would not scale.
 

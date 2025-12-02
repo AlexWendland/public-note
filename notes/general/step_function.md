@@ -5,9 +5,9 @@ checked: false
 created: 2024-06-09
 draft: false
 last_edited: 2024-06-09
-title: Step function
 tags:
   - maths
+title: Step function
 type: definition
 ---
 >[!tldr] Step function

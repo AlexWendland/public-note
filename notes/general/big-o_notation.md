@@ -5,13 +5,12 @@ checked: false
 created: 2023-08-27
 draft: false
 last_edited: 2023-11-11
-title: Big-O notation
 tags:
   - programming
   - maths
+title: Big-O notation
 type: notation
 ---
-# Big-O notation
 
 [Big-O notation](big-o_notation.md) is the main way people determine the [runtime](run_time_complexity.md) of algorithms. (Rightly or wrongly.) It is the worst case analysis and has a formal mathematical definition
 $$ f = O(g) \mbox{ if } \exists \ x_0 \in \mathbb{N}, m \in \mathbb{R}_{>0} \mbox{ such that } f(x) \leq m \ast g(x)\ \forall x > x_0.$$

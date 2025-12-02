@@ -6,9 +6,9 @@ checked: false
 created: 2023-09-05
 draft: false
 last_edited: 2023-11-11
-title: Directed graph
 tags:
   - maths
+title: Directed graph
 type: definition
 ---
 > [!tldr] Directed graph

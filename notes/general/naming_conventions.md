@@ -6,12 +6,11 @@ checked: false
 created: 2023-03-18
 draft: false
 last_edited: 2023-11-11
-title: Naming conventions
 tags:
   - programming
+title: Naming conventions
 type: convention
 ---
-# Naming conventions
 
 When coding we repeatedly have to name things. So having some go to standards for how to do this makes writing code quickly but it easier to read. The key thing is for the name to be fully expansive about what the variable is doing, if you can't do this maybe this variable is doing too much.
 
@@ -29,7 +28,7 @@ These are the following principles I try to follow:
 - [Use the correct level of context](naming_conventions.md#use-the-correct-level-of-context)
 - [Don't be afraid to rename something](naming_conventions.md#dont-be-afraid-to-rename-something)
 
-## Use intention-revealing names
+# Use intention-revealing names
 
 >[!quote] [Clean Code](../references/books/clean_code.md)
 >The name of a variable, function, or class, should answer all the big questions. It should tell you why it exists, what it does, and how it is used.
@@ -38,10 +37,10 @@ Using intention-revealing names is easier when you adhere to the [Single Respons
 
 Here's an example to illustrate the concept:
 ```python
-# Unclear variable name
+ Unclear variable name
 d = 86400
 
-# Intention-revealing variable name
+ Intention-revealing variable name
 seconds_in_a_day = 86400
 ```
 
@@ -52,7 +51,7 @@ Remember this heuristic to evaluate if you've chosen a good name:
 > [!quote] [Clean Code](../references/books/clean_code.md)
 > If a name requires a comment, then the name does not reveal its intent.
 
-## Don't include the type in the name
+# Don't include the type in the name
 
 As a [Python Index](python_index.md) programmer working in [Data](data.md), it's tempting to include data types in variable names, such as `df_football_results_data`.
 
@@ -76,7 +75,7 @@ Though also a couple of reasons to include them:
 
 Balancing these all against one another. I think it is best not to include the variable type in the name. If you are struggling to identify the type of the variable, it is indicative of the code being too long, the name of the variable needing to be changed or the variable is doing too much work.
 
-## No two names should look a like
+# No two names should look a like
 
 Using distinct variable names makes your code easier to read and scan. To prevent confusion, avoid creating variable names that look similar in the following ways:
 
@@ -90,7 +89,7 @@ Using distinct variable names makes your code easier to read and scan. To preven
 
 By ensuring that variable names are distinct and easy to differentiate.
 
-## Use pronounceable names
+# Use pronounceable names
 
 Modern IDEs make it easy to work with longer, more descriptive variable names. Therefore, there's no need to use:
 1.  **Single-letter characters**: Avoid using single-letter characters for variable names, as they can be ambiguous and hard to discuss.
@@ -99,7 +98,7 @@ Modern IDEs make it easy to work with longer, more descriptive variable names. T
 4. **Name hard coded variables**: If you turn numbers or strings into variables with pronounceable names, it will make the code easier to read, the variable more searchable, and easier to abstract. i.e. don't add a 7 to the code instead why not add ``DAYS_IN_THE_WEEK``.
 By using pronounceable names for your variables, you can facilitate more meaningful conversations when discussing your code with others, such as during code reviews.
 
-## Avoid mental mappings
+# Avoid mental mappings
 
 Mental mapping occurs when readers have to interpret or translate names in the code to understand their meaning. This makes the code harder to read and understand. To avoid mental mapping, use clear and descriptive names that don't require any additional interpretation. This includes not making in-jokes within the code or needing to have read your favourite reddit to understand what a variable is doing.
 
@@ -122,7 +121,7 @@ for index, football_team in enumerate(football_premiership_teams):
 >[!warning] Include units in the variable name
 > You might know that all timestamps in your code are unix second timestamps. However you in 5 days or another coder might not. So instead of `start_time` why not `start_unix_timestamp_seconds`
 
-## Be consistent
+# Be consistent
 
 Consistency is key when naming classes, methods, and concepts in your code. Using a single word for an abstract concept and sticking to a naming convention for classes and methods ensures a better understanding of the code.
 
@@ -134,17 +133,17 @@ Method names should be verbs or verb phrases, like `postPayment`, `deletePage`, 
 
 By maintaining consistency in your naming conventions, your code will be easier to read, understand, and maintain.
 
-## Use solution and problem domain names
+# Use solution and problem domain names
 
 When naming variables, methods, and classes in your code, it's important to strike a balance between using solution domain names and problem domain names. This ensures that your code is both understandable to fellow programmers and accurately represents the real-world concepts it models.
 
-### Solution Domain Names
+## Solution Domain Names
 
 Solution domain names come from computer science, algorithms, design patterns, and mathematics. They are familiar to programmers and help communicate the underlying structure and logic of your code. Don't shy away from using solution domain names, as they allow your colleagues to understand your code without needing to constantly ask for clarification.
 
 For example, use names like `Singleton`, `Factory`, or `Observer` when implementing design patterns, or `QuickSort` and `BinarySearch` for algorithms.
 
-### Problem Domain Names
+## Problem Domain Names
 
 Problem domain names come from the specific field or industry your software is addressing, like finance, healthcare, or e-commerce. They represent the real-world concepts and entities your software is modelling.
 
@@ -154,7 +153,7 @@ For instance, if you're building a finance application, you might use names like
 
 By using both solution and problem domain names, your code will be more understandable and maintainable for your team, while also accurately representing the concepts and entities it models.
 
-## Use the correct level of context
+# Use the correct level of context
 
 When naming variables, methods, and classes in your code, it's essential to use the appropriate level of context. Providing the right amount of context helps make your code more readable and understandable, while avoiding unnecessary confusion or verbosity.
 
@@ -164,7 +163,7 @@ On the other hand, adding too much context can make your names unnecessarily lon
 
 Striking the right balance between context and readability is key. If a name is too short or lacks context, it becomes unclear and difficult to understand. If it's too long or includes too much context, it can be cumbersome and challenging to read.
 
-## Don't be afraid to rename something
+# Don't be afraid to rename something
 
 If something is named poorly and when you come to the code base you don't understand it. Rename that variable!
 

@@ -4,16 +4,14 @@ checked: false
 created: 2023-10-05
 draft: false
 last_edited: 2023-11-11
-title: Image segmentation by max flow
 tags:
   - programming
+title: Image segmentation by max flow
 type: algorithm
 ---
-# Image segmentation by max flow
+# Theory
 
-## Theory
-
-### Reformulation
+## Reformulation
 
 Right now we have two problems, it is a maximalisation problem and the weights might not be non-negative.
 
@@ -24,7 +22,7 @@ $$\begin{align*}w(F,B) & = \sum_{v \in F} f(v) + \sum_{u \in B} b(u) - \sum_{(v,
 & = L - \sum_{u \in B} f(u) - \sum_{v \in F} b(v) - \sum_{(v,u) \in cut(F,B)} p(u,v)\end{align*}$$
 Therefore to maximise $w(F,B)$ we could instead minimise
 $$w'(F,B) = \sum_{u \in B} f(u) + \sum_{v \in F} b(v) + \sum_{(v,u) \in cut(F,B)} p(u,v).$$
-### New problem
+## New problem
 
 >[!tldr] Image segmentation altered
 >Given an undirected graph $G = (V,E)$ with weights:
@@ -33,7 +31,7 @@ $$w'(F,B) = \sum_{u \in B} f(u) + \sum_{v \in F} b(v) + \sum_{(v,u) \in cut(F,B)
 >We we find [cut](cut_(graph).md) $V = F \cup B$ that minimises
 >$$w'(F,B) = \sum_{u \in B} f(u) + \sum_{v \in F} b(v) + \sum_{(v,u) \in cut(F,B)} p(u,v).$$
 
-### Making a flow network
+## Making a flow network
 
 Define directed graph $G' = (V', E')$ where $V' = V \cup \{s,t\}$ and
 $$E' = \{ (u,v), (v,u), (s,x), (x,t) \vert (u,v) \in E, x \in V \}.$$
@@ -47,7 +45,7 @@ $$\begin{align*} capacity(F \cup \{s\}, B \cup \{t\}) & = \sum_{\substack{(v,w) 
 & = \sum_{u \in B} f(u) + \sum_{v \in F} b(v) + \sum_{\substack{(v,w) \in E\\ v \in F, w \in B}} p(v,w)\\
 & = w'(F,B).
 \end{align*}$$
-## Pseudo code
+# Pseudo code
 
 ```pseudocode
 Image_segmentation(G,f,b,p):
@@ -58,6 +56,6 @@ Image_segmentation(G,f,b,p):
 3. return F, b.
 ```
 
-## Runtime
+# Runtime
 
 Defining the graph takes at most $O(\vert V \vert + \vert E \vert)$ so the algorithm is dominated by the solution to your flow network problem.

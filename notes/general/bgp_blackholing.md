@@ -4,10 +4,10 @@ checked: false
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-title: BGP Blackholing
 tags:
   - networks
   - security
+title: BGP Blackholing
 type: definition
 ---
 >[!tldr] BGP Blackholing

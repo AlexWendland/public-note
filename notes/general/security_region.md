@@ -4,9 +4,9 @@ checked: false
 created: 2024-04-07
 draft: false
 last_edited: 2024-04-07
-title: Security region
 tags:
   - game-theory
+title: Security region
 type: definition
 ---
 >[!tldr] Security region

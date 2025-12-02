@@ -5,9 +5,9 @@ checked: false
 created: 2024-06-02
 draft: false
 last_edited: 2024-06-02
-title: Link-state routing algorithms
 tags:
   - networks
+title: Link-state routing algorithms
 type: definition
 ---
 >[!tldr] Link-state routing algorithms

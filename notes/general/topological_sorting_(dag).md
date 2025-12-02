@@ -7,9 +7,9 @@ checked: false
 created: 2023-09-27
 draft: false
 last_edited: 2023-11-11
-title: Topological sorting (DAG)
 tags:
   - maths
+title: Topological sorting (DAG)
 type: definition
 ---
 > [!tldr] Topological sorting

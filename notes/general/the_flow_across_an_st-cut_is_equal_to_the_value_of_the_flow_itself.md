@@ -4,9 +4,9 @@ checked: false
 created: 2023-10-20
 draft: false
 last_edited: 2023-11-13
-title: The flow across an st-cut is equal to the value of the flow itself
 tags:
   - programming
+title: The flow across an st-cut is equal to the value of the flow itself
 type: lemma
 ---
 # Statement

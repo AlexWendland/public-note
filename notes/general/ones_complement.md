@@ -5,9 +5,9 @@ checked: false
 created: 2024-05-27
 draft: false
 last_edited: 2024-05-27
-title: Ones complement
 tags:
   - programming
+title: Ones complement
 type: definition
 ---
 >[!tldr] Ones complement

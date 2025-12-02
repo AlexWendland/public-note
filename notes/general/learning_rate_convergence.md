@@ -4,10 +4,10 @@ checked: false
 created: 2025-05-20
 draft: false
 last_edited: 2025-05-20
-title: Learning rate convergence
 tags:
   - maths
   - reinforcement-learning
+title: Learning rate convergence
 type: lemma
 ---
 # Statement

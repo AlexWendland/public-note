@@ -4,9 +4,9 @@ checked: false
 created: 2024-05-29
 draft: false
 last_edited: 2024-05-29
-title: TCP CUBIC
 tags:
   - networks
+title: TCP CUBIC
 type: definition
 ---
 >[!tldr] TCP CUBIC

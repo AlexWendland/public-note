@@ -5,9 +5,9 @@ checked: false
 created: 2025-04-12
 draft: false
 last_edited: 2025-04-12
-title: Remote procedure calls (PRC)
 tags:
   - OS
+title: Remote procedure calls (PRC)
 type: definition
 ---
 >[!tldr] Remote procedure calls (PRC)

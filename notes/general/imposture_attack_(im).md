@@ -4,10 +4,10 @@ checked: false
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-title: Imposture attack (IM)
 tags:
   - networks
   - security
+title: Imposture attack (IM)
 type: definition
 ---
 >[!tldr] Imposture attack (IM)

@@ -5,9 +5,9 @@ checked: false
 created: 2024-05-21
 draft: false
 last_edited: 2024-05-21
-title: MAC address
 tags:
   - networks
+title: MAC address
 type: definition
 ---
 >[!tldr] MAC address

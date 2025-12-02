@@ -5,9 +5,9 @@ checked: false
 created: 2023-11-12
 draft: false
 last_edited: 2023-11-12
-title: Geometric mean
 tags:
   - maths
+title: Geometric mean
 type: definition
 ---
 >[!tldr] Arithmetic mean

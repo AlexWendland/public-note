@@ -1,30 +1,28 @@
 ---
 aliases:
 checked: false
-course: 'CS6250 Computer Networks'
+course: CS6250 Computer Networks
 created: 2024-05-24
 draft: false
 last_edited: 2024-05-24
-title: Week 2 - Transport and application layer
 tags:
   - OMSCS
+title: Week 2 - Transport and application layer
 type: lecture
 week: 2
 ---
-# Week 2 - Transport and application layer
-
-## Important Readings
+# Important Readings
 
 CUBIC: A New TCP-Friendly High-Speed TCP Variant
 [https://www.cs.princeton.edu/courses/archive/fall16/cos561/papers/Cubic08.pdfLinks to an external site.](https://www.cs.princeton.edu/courses/archive/fall16/cos561/papers/Cubic08.pdf)
 
-## Book References
+# Book References
 
 Kurose-Ross (Edition 6): Sections 3.1.1, 3.2, 3.3, 3.4, 3.5.5, 3.6
 
 Peterson Section 6.3
 
-## Optional Readings
+# Optional Readings
 
 Congestion Avoidance and Control
 [https://ee.lbl.gov/papers/congavoid.pdfLinks to an external site.](https://ee.lbl.gov/papers/congavoid.pdf)
@@ -47,19 +45,19 @@ Design, implementation and evaluation of congestion control for multipath TCP
 Sizing Router Buffers
 [https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/TR04-HPNG-060800.pdfLinks to an external site.](https://web.archive.org/web/20210120232627/http://yuba.stanford.edu/techreports/TR04-HPNG-060800.pdf)
 
-## [Transport layer](../../general/layer_4_transport.md) summary
+# [Transport layer](../../general/layer_4_transport.md) summary
 
 During [encapsulation](../../general/encapsulation.md) the [Application layer](../../general/layer_7_application.md) parses the [Transport layer](../../general/layer_4_transport.md) a message. It appends some headers to make into a [segment](../../general/segment.md). This then gets parsed to the [Network layer](../../general/layer_3_network.md) to make a best effort of delivery. The purpose of the [Transport layer](../../general/layer_4_transport.md) to bridge the gap between the [Network layers](../../general/layer_3_network.md) best effort delivery and something more reliable for the application to depend upon.
 
 The two main [protocols](../../general/protocol_(networks).md) here are [UDP](../../general/user_datagram_protocol_(udp).md) and [TCP](../../general/transmission_control_protocol_(tcp).md). These both offer the application different payoffs. Currently [TCP](../../general/transmission_control_protocol_(tcp).md) is the most dominant out of these and is pretty ubiquitous in the internet.
 
-## Multiplexing
+# Multiplexing
 
 [Multiplexing](../../general/multiplexing.md)
 
 [Port](../../general/port.md)
 
-## UDP
+# UDP
 
 [UDP](../../general/user_datagram_protocol_(udp).md)
 
@@ -69,7 +67,7 @@ The two main [protocols](../../general/protocol_(networks).md) here are [UDP](..
 
 [Ones complement](../../general/ones_complement.md)
 
-## TCP
+# TCP
 
 [TCP](../../general/transmission_control_protocol_(tcp).md)
 
@@ -77,11 +75,11 @@ The two main [protocols](../../general/protocol_(networks).md) here are [UDP](..
 
 [TCP connection teardown](../../general/tcp_connection_teardown.md)
 
-### Reliable Transmission
+## Reliable Transmission
 
 [Reliable transmission of TCP messages](../../general/reliable_transmission_of_tcp_messages.md)
 
-### Transmission control
+## Transmission control
 
 [Transmission control in TCP](../../general/transmission_control_in_tcp.md)
 

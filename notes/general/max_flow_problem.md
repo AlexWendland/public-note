@@ -5,9 +5,9 @@ checked: false
 created: 2023-10-02
 draft: false
 last_edited: 2023-11-11
-title: Max flow problem
 tags:
   - programming
+title: Max flow problem
 type: problem
 ---
 # Statement

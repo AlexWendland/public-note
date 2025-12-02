@@ -7,8 +7,8 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-title: Encapsulation
 tags: []
+title: Encapsulation
 type: definition
 ---
 >[!tldr] Encapsulation

@@ -5,12 +5,11 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-title: Spanning Tree Protocol (STP)
 tags:
   - programming
+title: Spanning Tree Protocol (STP)
 type: algorithm
 ---
-# Spanning Tree Protocol (STP)
 
 The spanning tree protocol was introduced to get rid of cycles in [networks](network.md) that used [bridges](bridge.md) and [hubs](hub.md). It does this by forming a [spanning](spanning_subgraph.md) [tree](tree_(graph).md) in the network so that the [layer 2](layer_2_data_link.md) devices use to send messages through.
 

@@ -5,10 +5,10 @@ checked: false
 created: 2023-08-26
 draft: false
 last_edited: 2023-11-11
-title: Heap (OS)
 tags:
   - programming
   - OS
+title: Heap (OS)
 type: definition
 ---
 > [!tldr] Heap

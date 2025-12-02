@@ -6,10 +6,10 @@ checked: false
 created: 2024-07-19
 draft: false
 last_edited: 2024-07-19
-title: Internet engineering task force (IETF)
 tags:
   - networks
   - organisation
+title: Internet engineering task force (IETF)
 type: definition
 ---
 

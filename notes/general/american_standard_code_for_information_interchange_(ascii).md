@@ -5,8 +5,8 @@ checked: false
 created: 2024-05-23
 draft: true
 last_edited: 2024-05-23
-title: American Standard Code for Information Interchange (ASCII)
 tags: []
+title: American Standard Code for Information Interchange (ASCII)
 type: definition
 ---
 >[!tldr] American Standard Code for Information Interchange (ASCII)

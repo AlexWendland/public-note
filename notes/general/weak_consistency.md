@@ -4,9 +4,9 @@ checked: false
 created: 2025-04-13
 draft: false
 last_edited: 2025-04-13
-title: Weak consistency
 tags:
   - OS
+title: Weak consistency
 type: definition
 ---
 >[!tldr] Weak consistency

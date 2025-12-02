@@ -7,13 +7,12 @@ checked: false
 created: 2023-07-11
 draft: false
 last_edited: 2023-11-11
-title: Object
 tags:
   - programming
   - oop
+title: Object
 type: theory
 ---
-# Object
 
 An object keeps data behind an interface. It makes its internal variables private. Then exposes setter functions that allow people to edit in there preferred way. It also has getter functions to provide the methods to get at the data how they would like to access it.
 

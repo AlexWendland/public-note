@@ -5,12 +5,11 @@ checked: false
 created: 2024-01-22
 draft: false
 last_edited: 2024-01-22
-title: k-nearest neighbour
 tags:
   - programming
+title: k-nearest neighbour
 type: algorithm
 ---
-# k-nearest neighbour
 
 This algorithm is an [Instance-based learning](instance-based_learning.md) model and uses closest neighbours to determine what values should be.
 
@@ -23,7 +22,7 @@ Then to model our data when given a new input point $a \in A$ we find the $k$-ne
 
 This model is very simple - however a lot of the complexity comes in defining $d$ and $V$.
 
-## Pseudocode
+# Pseudocode
 
 ```pseudocode
 KNN(T, d, k, V, a):
@@ -58,11 +57,11 @@ get_k_nearest_neighbours(T, d, k, a):
 5. Return N
 ```
 
-## Run time
+# Run time
 
 This algorithm is a [lazy learner](lazy_learner.md) and puts of compute until it is executed. This means learning is $O(1)$ but execution can take a while.
 
-## Correctness
+# Correctness
 
 This model has some [Bias (modelling)](bias_(modelling).md) for the representations it prefers:
 - Near points are similar,

@@ -5,12 +5,11 @@ checked: false
 created: 2024-02-02
 draft: false
 last_edited: 2024-02-02
-title: Cost complexity pruning for decision trees (CPP)
 tags:
   - programming
+title: Cost complexity pruning for decision trees (CPP)
 type: algorithm
 ---
-# Cost complexity pruning for decision trees (CPP)
 
 When making a [decision tree](decision_tree.md) with no pruning it can tend to [overfit](overfitting.md) the [training data](training_data.md). To reduce this we can "prune" the decision tree. We do this by looking at how useful each of the branches are - then removing the ones that don't add enough value. This is controlled by a variable $\alpha$ which increases the cost of having more leaf nodes.
 
@@ -34,7 +33,7 @@ $$
 
 The process then prunes branches with the lowest $\alpha_{eff}$ until that value is greater than $\alpha$.
 
-## Pseudocode
+# Pseudocode
 
 ```pseudocode
 CPP(decision_tree, alpha, R):
@@ -72,10 +71,10 @@ calculate_effective_alpha(tree, v, R):
 3. Return (R(v) - total_leaf_weight)/(|L| - 1)
 ```
 
-## Run time
+# Run time
 
 Optimally we would iterate over all potential subtrees of $\hat{f}$ and find the sub-tree that optimises $R_{\alpha}$ on $T$. However, computationally this can be expensive. Instead we can use effective cost complexity which cuts down run time but can still take $O(\vert V \vert^3)$.
 
-## Correctness
+# Correctness
 
 This can reduce overfitting, however the parameter $\alpha$ needs to be fine tuned. It is best to use [cross validation](cross_validation.md) for this purpose.

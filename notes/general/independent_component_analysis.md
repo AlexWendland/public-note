@@ -6,13 +6,12 @@ checked: false
 created: 2024-03-10
 draft: false
 last_edited: 2024-03-10
-title: Independent component analysis
 tags:
   - probability
   - machine-learning
+title: Independent component analysis
 type: algorithm
 ---
-# Independent component analysis
 
 Independent component analysis is a form of [linear dimension reduction](linear_dimensionality_reduction.md). The goal of independent component analysis is to form a [linear map](linear_map.md) to features which are [independent](independent_events.md) of one another.
 

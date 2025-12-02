@@ -6,9 +6,9 @@ checked: false
 created: 2024-05-22
 draft: false
 last_edited: 2024-05-22
-title: Layer 1 Physical
 tags:
   - networks
+title: Layer 1 Physical
 type: definition
 ---
 >[!tldr] Layer 1 Physical

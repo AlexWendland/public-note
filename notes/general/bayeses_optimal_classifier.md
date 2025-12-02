@@ -4,9 +4,9 @@ checked: false
 created: 2024-02-21
 draft: false
 last_edited: 2024-02-21
-title: Bayeses optimal classifier
 tags:
   - machine-learning
+title: Bayeses optimal classifier
 type: definition
 ---
 >[!tldr] Bayesian classification

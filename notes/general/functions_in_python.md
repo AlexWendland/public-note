@@ -3,13 +3,12 @@ checked: false
 created: 2023-02-25
 draft: false
 last_edited: 2023-11-11
-title: Functions in Python
 tags:
   - programming
   - python
+title: Functions in Python
 type: feature
 ---
-# Functions in Python
 
 [Functions](functions.md) in [Python Index](python_index.md) are a class and have type 'function'. i.e.
 
@@ -29,22 +28,22 @@ def some_function():
 
 a = 1
 print(locals())
-# {
-# '__name__' : '__main__',
-# ...
-# '__cached__' : None,
-# 'some_function': <function some_function at 0x0000026EB32BD1F0>
-# 'a': 1
-# }
+ {
+ '__name__' : '__main__',
+ ...
+ '__cached__' : None,
+ 'some_function': <function some_function at 0x0000026EB32BD1F0>
+ 'a': 1
+ }
 
 some_function()
-# {
-# 'b': 2
-# }
+ {
+ 'b': 2
+ }
 ```
 
-## Properties
+# Properties
 
-## \_\_doc\_\_
+# \_\_doc\_\_
 
 This returns the [Docstring](docstring.md) of the function.

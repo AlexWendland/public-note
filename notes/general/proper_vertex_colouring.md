@@ -5,10 +5,10 @@ checked: false
 created: 2023-11-02
 draft: false
 last_edited: 2023-11-11
-title: Proper vertex colouring
 tags:
   - maths
   - graph-theory
+title: Proper vertex colouring
 type: definition
 ---
 >[!tldr] Proper vertex colouring

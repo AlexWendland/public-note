@@ -5,10 +5,10 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-title: Complement graph
 tags:
   - maths
   - graph-theory
+title: Complement graph
 type: definition
 ---
 >[!tldr] Complement graph

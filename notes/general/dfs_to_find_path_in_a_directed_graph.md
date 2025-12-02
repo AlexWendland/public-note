@@ -4,9 +4,9 @@ checked: false
 created: 2023-09-29
 draft: false
 last_edited: 2023-11-11
-title: DFS to find path in a directed graph
 tags:
   - programming
+title: DFS to find path in a directed graph
 type: algorithm
 ---
 ## Finding paths in a [directed graph](directed_graph.md) via [DFS](depth-first_search_(dfs).md)

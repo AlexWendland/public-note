@@ -4,13 +4,12 @@ checked: false
 created: 2024-03-09
 draft: false
 last_edited: 2024-03-09
-title: Expectation Maximisation
 tags:
   - programming
   - machine-learning
+title: Expectation Maximisation
 type: algorithm
 ---
-# Expectation Maximisation
 
 Expectation maximising is an algorithm which can be used on problems such as [clustering problem](clustering_problem.md). It is used in situations where you assume your data follows some underlying distribution $\mathbb{D}$ which in this instance is given by parameters $\theta$. We assume $\theta \in H$ our [hypothesis space](modelling_paradigm.md).
 
@@ -30,7 +29,7 @@ $$
 
 If the function $Q(h' \vert h)$ is continuous for all $h', h \in H$ then we will converge to a local maximum however we don't know how long this will take us or if this local maximum is a global maximum.
 
-## Correctness
+# Correctness
 
 - We are monotonically decreasing [Maximum likelihood](maximum_likelihood_estimation_(mle).md) error of the groupings.
 - Though this is not guaranteed to converge.

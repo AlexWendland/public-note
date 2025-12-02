@@ -7,10 +7,10 @@ checked: false
 created: 2025-03-22
 draft: false
 last_edited: 2025-03-22
-title: Memory page
 tags:
   - OS
   - computer-science
+title: Memory page
 type: definition
 ---
 >[!tldr] Memory page

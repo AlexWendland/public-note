@@ -6,9 +6,9 @@ checked: false
 created: 2024-02-21
 draft: false
 last_edited: 2024-02-21
-title: Conditional Independence
 tags:
   - probability
+title: Conditional Independence
 type: definition
 ---
 >[!tldr] Conditional Independence

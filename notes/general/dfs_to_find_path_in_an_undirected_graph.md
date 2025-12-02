@@ -4,9 +4,9 @@ checked: false
 created: 2023-09-29
 draft: false
 last_edited: 2023-11-11
-title: DFS to find path in an undirected graph
 tags:
   - programming
+title: DFS to find path in an undirected graph
 type: algorithm
 ---
 # [DFS](depth-first_search_(dfs).md) to find path in an undirected graph

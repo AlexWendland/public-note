@@ -4,14 +4,12 @@ checked: false
 created: 2025-07-05
 draft: false
 last_edited: 2025-07-05
-title: My thoughts about a start up
 tags:
   - finance
   - work
+title: My thoughts about a start up
 type: thonk
 ---
-# My thoughts about a startup
-
 I'm at a crossroads and thinking about what comes next in my career.
 
 My journey so far: I did a PhD in Maths, which I loved for the intellectual freedom but found the culture of "love maths, do it all the time" a bit unhealthy. After that, I wanted to do good ('do good' really means control it and shape it the way I think it should be) in the world and moved to the UK government, which I found technophobic - my skills felt like they would atrophy rather than flourish. Then I moved to a scale-up but found the leadership toxic, with a CEO who thought it was better for members of the leadership team to fight it out rather than build consensus. Currently I work at a hedge fund which has a fairly free tech culture but is very corporate finance focused.
@@ -25,11 +23,11 @@ When we spoke about this recently, I was confronted with 3 options:
 
 I should acknowledge there are other options I'm not considering here - freelancing/consulting using existing skills, joining an early-stage startup, or bootstrapped medium-growth businesses. But let's limit the scope for now.
 
-## Options in depth
+# Options in depth
 
 To compare these approaches, I'll evaluate each on four dimensions: maximum revenue potential, personal hours required, whether personal interest in the work is necessary, and overall risk level. These criteria reflect what matters most to me based on my work philosophy - balancing financial needs with time commitment and personal satisfaction.
 
-### Passion-driven business
+## Passion-driven business
 
 **Max revenue:** Likely small
 **Personal hours:** Quite likely high
@@ -44,7 +42,7 @@ Think of a board games cafe or a charity. This business is a passion project - i
 
 **Risk factors:** Very much depends on the specific business, but only [39.4% of small businesses reach the 5-year mark](https://www.ukmoney.net/how-many-new-businesses-fail/).
 
-### 4-hour work week solution
+## 4-hour work week solution
 
 **Max revenue:** Likely small
 **Personal hours:** As small as possible
@@ -59,7 +57,7 @@ If you haven't read the book - it is a bit dated but the concepts are there and 
 
 **Key advantage:** You don't need to 'like' the business you make - it just needs to be financially viable. This means you can blast through different ideas - if one doesn't work you can destroy it and move on to the next one.
 
-### Unicorn startup
+## Unicorn startup
 
 **Max revenue:** High
 **Personal hours:** Very high
@@ -73,7 +71,7 @@ Here we take a problem that is faced by a large group of people and think up a n
 >[!note] You could love the idea
 >In some ways this and the passion-driven business aren't mutually exclusive. The difference here is the intensity.
 
-## What I want from work
+# What I want from work
 
 Read [How I think about work](how_i_think_about_work.md) for more on this.
 
@@ -92,7 +90,7 @@ Read [How I think about work](how_i_think_about_work.md) for more on this.
 
 If I were to work for a company again, I would want a company culture that is open, transparent, and meets people where they are. But given my current circumstances and philosophy, starting something of my own feels like the right path to explore.
 
-## So startups?
+# So startups?
 
 Given my personal circumstances and work philosophy, I'm evaluating these options based on:
 - **Time commitment** - I need flexibility to finish my masters and explore NYC.
@@ -109,7 +107,7 @@ When thinking about the options above, I rank them as follows:
 
 **3. Unicorn startup** - Violates almost all my criteria: very high hours when I need flexibility, high delayed gratification when I want present satisfaction, inflexible culture when I value adaptability, and brings me closer to people who are "just in it for the money" rather than sharing my work philosophy.
 
-## Summary
+# Summary
 
 Working through these startup options systematically helped me understand what I actually need right now. I started this thinking expecting the passion-driven business to win - after all, I want to work on my own ideas and enjoy what I do. But mapping out my specific circumstances (masters completion, NYC move, burnout tendencies) against each option revealed that the 4-hour work week solution best fits my current life stage.
 
@@ -119,7 +117,7 @@ I also caught myself engaging in fear-driven thinking - initially justifying thi
 
 The analysis clarified that this is a decision for my current circumstances, not a permanent philosophy. If my situation changes - masters finished, settled in NYC, different financial needs - I might well choose differently. That's the point of thinking systematically rather than just going with gut instinct.
 
-## Appendix: Deep tech vs. Solution assembly
+# Appendix: Deep tech vs. Solution assembly
 
 I want to comment on the focus of the startup. I've been discussing business models without considering what the company actually builds.
 

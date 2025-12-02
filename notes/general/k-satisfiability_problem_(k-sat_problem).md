@@ -10,9 +10,9 @@ checked: false
 created: 2023-09-30
 draft: false
 last_edited: 2023-11-11
-title: k-satisfiability problem (k-SAT problem)
 tags:
   - programming
+title: k-satisfiability problem (k-SAT problem)
 type: problem
 ---
 # Statement

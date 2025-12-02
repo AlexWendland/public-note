@@ -6,10 +6,8 @@ checked: false
 created: 2023-07-14
 draft: false
 last_edited: 2023-11-11
-title: Procedural Programming
 tags:
   - programming
+title: Procedural Programming
 type: paradigm
 ---
-# Procedural Programming
-

@@ -4,9 +4,9 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-title: Secure Socket Layer (SSL)
 tags:
   - networks
+title: Secure Socket Layer (SSL)
 type: definition
 ---
 >[!tldr] Secure Socket Layer (SSL)

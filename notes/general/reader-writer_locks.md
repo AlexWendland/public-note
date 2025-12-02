@@ -4,9 +4,9 @@ checked: false
 created: 2025-04-08
 draft: false
 last_edited: 2025-04-08
-title: Reader-writer locks
 tags:
   - OS
+title: Reader-writer locks
 type: definition
 ---
 >[!tldr] Reader-writer locks

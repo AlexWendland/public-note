@@ -7,8 +7,8 @@ checked: false
 created: 2024-01-11
 draft: true
 last_edited: 2024-01-11
-title: Random variable
 tags: []
+title: Random variable
 type: definition
 ---
 >[!tldr] Random variable

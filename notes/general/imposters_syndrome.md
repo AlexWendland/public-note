@@ -4,9 +4,9 @@ checked: false
 created: 2024-01-21
 draft: false
 last_edited: 2024-01-21
-title: Imposters syndrome
 tags:
   - psychology
+title: Imposters syndrome
 type: definition
 ---
 >[!tldr] Imposters syndrome

@@ -5,9 +5,9 @@ checked: false
 created: 2024-06-02
 draft: false
 last_edited: 2024-06-02
-title: Intradomain routing
 tags:
   - networks
+title: Intradomain routing
 type: definition
 ---
 > [!tldr] Intradomain routing

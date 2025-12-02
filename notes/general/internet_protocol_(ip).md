@@ -7,9 +7,9 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-title: Internet Protocol (IP)
 tags:
   - networks
+title: Internet Protocol (IP)
 type: definition
 ---
 >[!tldr] Internet Protocol (IP)

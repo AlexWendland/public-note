@@ -1,13 +1,13 @@
 ---
 aliases:
 checked: false
-course: 'CS6210 Advanced Operating Systems'
+course: CS6210 Advanced Operating Systems
 created: 2025-11-20
 draft: true
 last_edited: 2025-11-20
-title: Week 9 - RT and Multimedia
 tags:
   - OMSCS
+title: Week 9 - RT and Multimedia
 type: lecture
 week: 9
 ---

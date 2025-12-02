@@ -4,13 +4,12 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-title: Naive Bayes classifier
 tags:
   - programming
   - machine-learning
+title: Naive Bayes classifier
 type: algorithm
 ---
-# Naive Bayes classifier
 
 Suppose we have a [classification problem](classification_problems.md) and we are in the [modelling framework](modelling_framework.md). We are given features $A = \oplus_{i=1}^n A_i$ where each feature $A_i$ has finite values (also split up the [random variable](random_variable.md) $X$ into $X = \oplus_{i=1}^n X_i$ for our input). Let our classification also have finite [domain](function_domain.md) $B$.
 
@@ -29,15 +28,15 @@ f_{MAP}(a_1, a_2, \ldots, a_n) = \mbox{arg}\max_{b \in B} \mathbb{P}[Y=b] \prod_
 $$
 This exactly forms our Naive Bayes classifier for this problem.
 
-## Run time
+# Run time
 
 It is [eager learner](eager_learner.md) so requires you to sample the data initially. Though we only ever need to see each data point once - so is fairly fast. The estimating of the parameters is fairly simple. This model also has the minimum number of parameters you need to factor in most
 
-## Correctness
+# Correctness
 
 Whilst this does may a large assumption about the different attributes. Empirically this is considered very successful. It is thought that Google use this a lot in gmail for actual spam!
 
-## Limitations
+# Limitations
 
 - It makes a strong assumption that the attributes are not related to one another, which seems ridiculous.
 	- It is very venerable to co-dependent variables as its influence will grow exponentially the more variables are related. (i.e. if 3 variables were the same we would cube that term.)

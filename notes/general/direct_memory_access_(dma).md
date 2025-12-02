@@ -6,10 +6,10 @@ checked: false
 created: 2024-08-26
 draft: false
 last_edited: 2024-08-26
-title: Direct memory access (DMA)
 tags:
   - OS
   - computer-science
+title: Direct memory access (DMA)
 type: definition
 ---
 >[!tldr] Direct memory access (DMA)

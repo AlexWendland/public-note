@@ -4,9 +4,9 @@ checked: false
 created: 2024-07-27
 draft: false
 last_edited: 2024-07-27
-title: MPEG-DASH
 tags:
   - networks
+title: MPEG-DASH
 type: definition
 ---
 >[!tldr] MPEG-DASH

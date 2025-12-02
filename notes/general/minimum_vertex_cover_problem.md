@@ -4,10 +4,10 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-title: Minimum vertex cover problem
 tags:
   - programming
   - graph-theory
+title: Minimum vertex cover problem
 type: problem
 ---
 # Statement

@@ -5,10 +5,10 @@ checked: false
 created: 2023-11-02
 draft: false
 last_edited: 2023-11-11
-title: Vertex Colouring
 tags:
   - maths
   - graph-theory
+title: Vertex Colouring
 type: definition
 ---
 >[!tldr] Vertex Colouring

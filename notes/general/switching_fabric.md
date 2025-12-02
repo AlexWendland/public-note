@@ -5,8 +5,8 @@ checked: false
 created: 2024-06-08
 draft: true
 last_edited: 2024-06-08
-title: Switching fabric
 tags: []
+title: Switching fabric
 type: definition
 ---
 >[!tldr] Switching fabric

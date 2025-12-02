@@ -5,9 +5,9 @@ checked: false
 created: 2024-05-27
 draft: false
 last_edited: 2024-05-27
-title: Round trip time (RTT)
 tags:
   - networks
+title: Round trip time (RTT)
 type: definition
 ---
 >[!tldr] Round trip time (RTT)

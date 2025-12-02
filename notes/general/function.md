@@ -5,9 +5,9 @@ checked: false
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
-title: Function
 tags:
   - maths
+title: Function
 type: definition
 ---
 >[!tldr] Function

@@ -4,13 +4,12 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-title: Simulated Annealing
 tags:
   - programming
   - machine-learning
+title: Simulated Annealing
 type: algorithm
 ---
-# Simulated Annealing
 
 Suppose we have a [optimisation problem](optimisation_problem.md) where $A$ has some sense of neighbourhood $N(a)$ for each point $a \in A$.
 
@@ -18,7 +17,7 @@ Then we want to emulate [Hill climbing](hill_climbing.md) but probabilistically 
 $$P(x,x_t,T) = \begin{cases} 1 & \mbox{if } f(x_t) \geq f(x)\\ \exp{\frac{f(x_t) - f(x)}{T}} & \mbox{otherwise.} \end{cases}$$
 Then we just modify what is done in [Hill climbing](hill_climbing.md) with this and gradually decrease the temperature and we have simulated annealing.
 
-## Pseudocode
+# Pseudocode
 
 ```pseudocode
 simulated_annealing(optimise, neighourhood, max_itterations, update_temperature, starting_temperature):
@@ -38,9 +37,9 @@ simulated_annealing(optimise, neighourhood, max_itterations, update_temperature,
 4. Return current
 ```
 
-## Run time
+# Run time
 
 
 
-## Correctness
+# Correctness
 

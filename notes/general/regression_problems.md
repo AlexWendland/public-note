@@ -5,9 +5,9 @@ checked: false
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
-title: Regression problems
 tags:
   - machine-learning
+title: Regression problems
 type: definition
 ---
 >[!tldr] Regression problems

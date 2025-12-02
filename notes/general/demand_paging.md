@@ -4,9 +4,9 @@ checked: false
 created: 2025-03-23
 draft: false
 last_edited: 2025-03-23
-title: Demand paging
 tags:
   - OS
+title: Demand paging
 type: definition
 ---
 >[!tldr] Demand paging

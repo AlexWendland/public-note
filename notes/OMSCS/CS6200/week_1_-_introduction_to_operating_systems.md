@@ -1,21 +1,20 @@
 ---
 aliases:
 checked: false
-course: 'CS6200 Graduate introduction to Operating Systems'
+course: CS6200 Graduate introduction to Operating Systems
 created: 2024-08-26
 draft: false
 last_edited: 2024-08-26
-title: Week 1 - Introduction to Operating systems
 tags:
   - OMSCS
+title: Week 1 - Introduction to Operating systems
 type: lecture
 week: 1
 ---
-# Week 1 - Introduction to Operating systems
 
 [Operating system (OS)](../../general/operating_system_(os).md)
 
-## Metaphor
+# Metaphor
 
 The [OS](../../general/operating_system_(os).md) is a lot like a toyshop manager. They are required to:
 
@@ -41,7 +40,7 @@ In comparison an [OS](../../general/operating_system_(os).md) does the following
 - Mitigates difficulty of complex tasks
 	- Abstracts hardware (system calls).
 
-## Examples
+# Examples
 
 - Desktop
 	- Microsoft Windows
@@ -56,7 +55,7 @@ In comparison an [OS](../../general/operating_system_(os).md) does the following
 
 We will focus on Linux in this course.
 
-## OS elements
+# OS elements
 
 There are 3 main OS elements:
 
@@ -78,11 +77,11 @@ Policies:
 - [Least-recently used (LRU)](least-recently_used_(lru).md),
 - [Earliest deadline first (EDF)](../../general/earliest_deadline_first_(edf).md)
 
-### Example: Memory management
+## Example: Memory management
 
 ![memory_management_example](../../../images/excalidraw/memory_management_example.excalidraw.svg)
 
-## Design principles
+# Design principles
 
 - Separation of mechanism and policy
 	- Implement flexible mechanisms that support many policies
@@ -92,7 +91,7 @@ Policies:
 	- What will the user want to execute on that machine?
 	- What are the workload requirements?
 
-## User/Kernel protection
+# User/Kernel protection
 
 [Proccess modes](../../general/proccess_modes.md)
 
@@ -100,11 +99,11 @@ Policies:
 
 User mode application have to access hardware through system calls. The [OS](../../general/operating_system_(os).md) can notify applications through signals.
 
-## System call flow chart
+# System call flow chart
 
 [System call](../../general/system_call.md)
 
-## OS architecture
+# OS architecture
 
 At first [OS](../../general/operating_system_(os).md) included all the features within one monolithic application. This had the following advantages:
 - You have everything already, you do not need to go somewhere else, and
@@ -130,7 +129,7 @@ Though they come with a lot of down sides:
 - Software development is more complex as they need to interact with difference processes that normally would be part of the [OS](../../general/operating_system_(os).md).
 - There is lots of user/kernel crossing as they need to use the IPC a lot.
 
-### Linux
+## Linux
 
 The linux [OS](../../general/operating_system_(os).md) is built in a layer architecture to make it simpler to use.
 
@@ -140,7 +139,7 @@ The kernel itself has a couple of components that can all be switched out for sp
 
 ![Linux Kernel](../../../images/linux_kernel.png)
 
-### Mac
+## Mac
 
 Mac uses a micro-kernel for all low level operations with a BSD component provides a unix interface for the rest of the OS.
 

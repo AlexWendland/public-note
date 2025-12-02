@@ -5,9 +5,9 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-title: Conditional entropy
 tags:
   - probability
+title: Conditional entropy
 type: definition
 ---
 >[!tldr] Conditional entropy

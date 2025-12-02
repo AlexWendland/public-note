@@ -4,9 +4,9 @@ checked: false
 created: 2025-04-13
 draft: false
 last_edited: 2025-04-13
-title: Peer distributed application
 tags:
   - OS
+title: Peer distributed application
 type: definition
 ---
 >[!tldr] Peer distributed application

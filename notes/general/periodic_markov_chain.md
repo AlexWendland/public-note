@@ -6,10 +6,10 @@ checked: false
 created: 2023-12-03
 draft: false
 last_edited: 2023-12-03
-title: Periodic Markov chain
 tags:
   - maths
   - probability
+title: Periodic Markov chain
 type: definition
 ---
 >[!tldr] Periodic Markov chain

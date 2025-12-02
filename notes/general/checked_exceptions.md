@@ -5,17 +5,16 @@ checked: false
 created: 2023-08-20
 draft: false
 last_edited: 2023-11-11
-title: Checked exceptions
 tags:
   - programming
   - clean-code
+title: Checked exceptions
 type: str
 ---
-# Checked exceptions
 
 Checked exceptions are a feature of some programming languages, most notably [Java](java.md), that enforce a strong contract between a method that can fail (throw an exception) and the caller that must handle that failure. When a method might throw a checked exception, the language requires that the method declare this fact in its method signature using a `throws` clause. Any calling method is then obligated either to catch the exception and handle it or to declare that it, too, throws the [exception](exception.md), propagating it up the call stack.
 
-### Example in Java
+## Example in Java
 
 Here's a simple example in Java to illustrate how checked exceptions work:
 
@@ -43,7 +42,7 @@ public class CheckedExample {
 }
 ```
 
-### Distinguishing Features
+## Distinguishing Features
 
 The core features that distinguish checked exceptions from their unchecked counterparts are:
 
@@ -53,7 +52,7 @@ The core features that distinguish checked exceptions from their unchecked count
 
 3. **Intentionality**: The explicit nature of checked exceptions forces developers to think about the exceptional conditions a method may encounter, encouraging more robust error handling.
 
-### Criticisms and Limitations
+## Criticisms and Limitations
 
 While checked exceptions aim to improve software robustness by enforcing explicit error-handling, they have their critics. Some common criticisms are:
 

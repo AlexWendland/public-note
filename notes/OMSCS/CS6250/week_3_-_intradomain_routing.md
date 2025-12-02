@@ -1,24 +1,22 @@
 ---
 aliases:
 checked: false
-course: 'CS6250 Computer Networks'
+course: CS6250 Computer Networks
 created: 2024-05-29
 draft: false
 last_edited: 2024-05-29
-title: Week 3 - Intradomain routing
 tags:
   - OMSCS
+title: Week 3 - Intradomain routing
 type: lecture
 week: 3
 ---
-# Week 3 - Intradomain routing
-
-### Important Readings
+## Important Readings
 
 Experience in Black-box OSPF Measurements
 [http://conferences.sigcomm.org/imc/2001/imw2001-papers/82.pdfLinks to an external site.](http://conferences.sigcomm.org/imc/2001/imw2001-papers/82.pdf)
 
-## Book References
+# Book References
 
 If you have access to the Kurose-Ross book and the Peterson book, you can find the list of chapters discussed in this lecture. As mentioned in the course schedule, purchasing the books is not required.
 
@@ -37,7 +35,7 @@ If you have access to the Kurose-Ross book and the Peterson book, you can find t
     - 5.2.2: The Distance- Vector (DV) Routing Algorithm
     - 5.3: Intra-AS Routing in the Internet: OSPF
 
-## Optional Readings
+# Optional Readings
 
 Hot Potatoes Heat Up BGP Routing
 [https://www.cs.princeton.edu/~jrex/papers/hotpotato.pdfLinks to an external site.](https://www.cs.princeton.edu/~jrex/papers/hotpotato.pdf "Link")
@@ -51,7 +49,7 @@ Dynamics of Hot-Potato Routing in IP Networks
 OSPF Monitoring: Architecture, Design and Deployment Experience
 [https://www.cs.princeton.edu/~jrex/teaching/spring2005/reading/shaikh04.pdfLinks to an external site.](https://www.cs.princeton.edu/~jrex/teaching/spring2005/reading/shaikh04.pdf "Link")
 
-## Routing
+# Routing
 
 [Routing](../../general/routing.md)
 
@@ -59,7 +57,7 @@ OSPF Monitoring: Architecture, Design and Deployment Experience
 
 [Interdomain routing](../../general/interdomain_routing.md)
 
-## Intradomain routing
+# Intradomain routing
 
 Here are two main algorithms, these use two different approaches to how route [packets](../../general/packets.md).
 
@@ -88,7 +86,7 @@ This can be summarised by the following flow chart.
 
 [Hot potato routing](../../general/hot_potato_routing.md)
 
-## Traffic Engineering
+# Traffic Engineering
 
 The process of deciding the weights between [routers](../../general/router.md) can be complicated as small changes in weights can have a large impact to the traffic flow. There is a framework for this.
 

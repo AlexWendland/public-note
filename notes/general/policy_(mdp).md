@@ -5,9 +5,9 @@ checked: false
 created: 2025-05-14
 draft: false
 last_edited: 2025-05-14
-title: Policy (MDP)
 tags:
   - reinforcement-learning
+title: Policy (MDP)
 type: definition
 ---
 >[!tldr] Policy (MDP)

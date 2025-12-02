@@ -1,19 +1,17 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-19
-title: Week 10 - Graph problem complexity
 tags:
   - OMSCS
+title: Week 10 - Graph problem complexity
 type: lecture
 week: 10
 ---
-# Week 10 - Graph problem complexity
-
-## Independent set problem
+# Independent set problem
 
 [independent set](../../general/independent_set_(graph).md)
 
@@ -25,7 +23,7 @@ Though this problem is not known to be in [NP](../../general/nondeterministic_po
 
 [Statement](../../general/independent_set_of_a_given_size.md#statement)
 
-## Independent set of a given size is [NP-Complete](../../general/np-complete.md)
+# Independent set of a given size is [NP-Complete](../../general/np-complete.md)
 
 [Independent set of a given size is in NP](../../general/independent_set_of_a_given_size_is_in_np.md)
 
@@ -33,11 +31,11 @@ More over we have it is [NP-Complete](../../general/np-complete.md).
 
 [Independent set of a given size is NP-complete](../../general/independent_set_of_a_given_size_is_np-complete.md)
 
-## Max independent set is [NP-hard](../../general/np-hard.md)
+# Max independent set is [NP-hard](../../general/np-hard.md)
 
 [Max independent set problem is NP-hard](../../general/max_independent_set_problem_is_np-hard.md)
 
-## Clique problem
+# Clique problem
 
 [Clique (graph)](../../general/clique_(graph).md)
 
@@ -67,7 +65,7 @@ We get a similar result for the max problem.
 
 [Max clique problem is NP-hard](../../general/max_clique_problem_is_np-hard.md)
 
-## Vertex cover problem
+# Vertex cover problem
 
 First we define a new concept.
 
@@ -95,7 +93,7 @@ From this we get the [Minimum vertex cover problem](../../general/minimum_vertex
 
 [Minimum vertex cover problem is NP-hard](../../general/minimum_vertex_cover_problem_is_np-hard.md)
 
-## Practice problems
+# Practice problems
 
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 

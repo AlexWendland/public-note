@@ -5,9 +5,9 @@ checked: false
 created: 2024-01-22
 draft: true
 last_edited: 2024-01-22
-title: Metric
 tags:
   - maths
+title: Metric
 type: definition
 ---
 >[!tldr] Metric

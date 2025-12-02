@@ -1,29 +1,27 @@
 ---
 aliases:
 checked: false
-course: 'CS6200 Graduate introduction to Operating Systems'
+course: CS6200 Graduate introduction to Operating Systems
 created: 2025-02-10
 draft: false
 last_edited: 2025-02-10
-title: Week 6 - Thread Performance Considerations
 tags:
   - OMSCS
+title: Week 6 - Thread Performance Considerations
 type: lecture
 week: 6
 ---
-# Week 6 - Thread Performance Considerations
-
-## Additional reading
+# Additional reading
 
 - [Flash: an efficient portable web-server](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-pai-paper.pdf)
 
-## Choosing a threading model
+# Choosing a threading model
 
 ![Threading Comparison](../../../images/threading_comparison.png)
 
 When choosing a model for threading it is important to pick the metric you care about before deciding on implementation. In the example above the server would prefer the pipeline as it is cheaper in terms of CPU time whereas for clients they would prefer the boss-worker model as it reduced average order time completion.
 
-### Metric
+## Metric
 
 A metric is a measurement standard. I needs to be a measurable and quantifiable property of the system we are interested in that can be used to evaluate the system behavior.
 
@@ -47,7 +45,7 @@ To evaluate impacts of changes on our metrics we build a test bed to see the imp
 
 ![Are Threads Useful](../../../images/are_threads_useful.png)
 
-## Simple web server comparison
+# Simple web server comparison
 
 In the rest of this lecture we are comparing different implementations for a web-server to see the pros and cons of each.
 
@@ -55,7 +53,7 @@ In the rest of this lecture we are comparing different implementations for a web
 
 The steps within a file server have different needs - some may be CPU bound such as parsing headers, others may be i/O bound like reading a file.
 
-### Multi-processing
+## Multi-processing
 
 We implement this by simply take a working single process single threaded implementation for the webserver. Then spin up multiple processes for this. This has the following payoffs:
 - Simple in terms of coding.
@@ -63,14 +61,14 @@ We implement this by simply take a working single process single threaded implem
 - High memory usage for different [PCB](../../general/process_control_block_(pcb).md).
 - Complicated to make is share resources like a bound port, or file handlers.
 
-### Simple multi-threading approach
+## Simple multi-threading approach
 
 We implement this similarly to the multi-process approach. With one thread handling the whole request start to finish. This has the following payoffs:
 - Cheaper context switching due to shared state and address space.
 - Not as simple implementation as it requires synchronization.
 - Library will need to support threads (not an issue in modern platforms).
 
-### Event driven model
+## Event driven model
 
 In this model we will use an event-bus to determine what our machine needs to do. This will then switch to the appropriate action associated to that message. Operations will be non-blocking for I/O events. This will be running on a single process with a single thread.
 
@@ -84,7 +82,7 @@ This model has some payoffs also:
 - Smaller memory requirement as there is a single context.
 - No synchronization.
 
-#### Async I/O operations
+### Async I/O operations
 
 ![Async Io Operations](../../../images/async_io_operations.png)
 
@@ -100,19 +98,19 @@ This has the following payoffs:
 - Limited applicability in other services.
 - Event routing in multiple CPU systems can be complicated.
 
-### Flash web-server
+## Flash web-server
 
 The flash web-server uses the helpers as laid out above but makes some additional optimizations.
 
 ![Flash Web Server Optimisations](../../../images/flash_web_server_optimisations.png)
 
-### Apache web server
+## Apache web server
 
 The Apache webserver uses a mix of the boss worker pattern and a pipeline model with modules that can be plugged in.
 
 ![Apache Web Server](../../../images/apache_web_server.png)
 
-### Comparison
+## Comparison
 
 Whenever comparing two systems you need to define:
 - What are you comparing? (Only change this)
@@ -140,31 +138,31 @@ They evaluated these metrics on file size:
 - larger file size can be ammortized per connection, so can achieve higher bandwidth.
 - Larger file size means more work per connection so lower connection rate.
 
-#### Best case
+### Best case
 
 The best case analysis was lots of connections for the same page. They varied the page size and looked at the performance of different servers.
 
 ![Comparison Best Case](../../../images/comparison_best_case.png)
 
-#### Trace small files
+### Trace small files
 
 The small file trace (Owlnet) followed a similar pattern to the best case analysis.
 
 ![Comparison Small Files](../../../images/comparison_small_files.png)
 
-#### Trace large files
+### Trace large files
 
 For large files SPED was the worst for the need to do I/O operations which mean time spent polling for non-blocking I/O operations.
 
 ![Flash Large File Trace](../../../images/flash_large_file_trace.png)
 
-#### Optimisations
+### Optimisations
 
 To understand why Apache performed so poorly, it is useful to see the impact of the optimizations the paper suggests.
 
 ![Comparison Optimisations](../../../images/comparison_optimisations.png)
 
-#### Summary
+### Summary
 
 - When data is in cache:
 	- SPED performed better than Flash as there was an unneeded test for memory presence.

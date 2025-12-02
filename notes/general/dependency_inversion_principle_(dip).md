@@ -7,12 +7,11 @@ checked: false
 created: 2023-03-18
 draft: false
 last_edited: 2023-11-11
-title: Dependency Inversion Principle (DIP)
 tags:
   - programming
+title: Dependency Inversion Principle (DIP)
 type: theory
 ---
-# Dependency Inversion Principle (DIP)
 
 The Dependency Inversion Principle (DIP) is one of the five principles of the SOLID acronym in object-oriented programming and design. It states that:
 

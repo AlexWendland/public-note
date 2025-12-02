@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-09-18
 draft: false
 last_edited: 2023-11-11
-title: Week 4 - Fast Fourier Transforms
 tags:
   - OMSCS
+title: Week 4 - Fast Fourier Transforms
 type: lecture
 week: '4'
 ---
-# Week 4 - Fast Fourier Transforms
 
 > [!tldr] Polynomial multiplication problem
 > Given polynomials
@@ -27,28 +26,28 @@ This can be restated as the following problem.
 
 If you where to just do those computations, it would take you $O(n^2)$ time as you need to do $O(n)$ steps computing up to $O(n)$ terms for each step. However, this can be improved to $O(n\log(n))$.
 
-## Applications
+# Applications
 
 When you want to reduce noise or add a visual effect to some data $y = (y_1, \ldots, y_n)$ - normal approaches are to take an average of close by terms.
 
-### Mean filter
+## Mean filter
 
 You replace $y_i$ by the average of the closest $2m$ terms for some $m$. i.e.
 $$\hat{y_j} = \frac{1}{2m+1} \sum_{i=m}^{-m} y_{j + i}.$$
 This is the same as calculating
 $$\hat{y} = y \ast f \mbox{ where } f = \left ( \frac{1}{2m+1}, \ldots, \frac{1}{2m+1} \right ).$$
 
-### Gaussian filtering
+## Gaussian filtering
 
 Similarly you could take a Gaussian distribution instead of using a uniform one and switch out $f$ for
 $$ f = \frac{1}{z} \left ( e^{-m^2}, e^{-(m-1)^2}, \ldots, e^{-1}, 1, e^{-1}, \ldots e^{-m^2} \right )$$
 with $z$ being a normalisation constant.
 
-### Guassian blur
+## Guassian blur
 
 There are 2-dimensional analogies of this used to generate a blur effect in games.
 
-## Polynomial representations
+# Polynomial representations
 
 Any polynomial $A(x) = \sum_{i=0}^{n-1} a_i x^i$ has two natural representations:
 1. The coefficients $a = (a_0, a_1, \ldots, a_{n-1})$, or
@@ -59,13 +58,13 @@ Any polynomial $A(x) = \sum_{i=0}^{n-1} a_i x^i$ has two natural representations
 
 The fast Fourier transform is just a nice way of going between these two representations. Though it determines what $x_i$ it uses.
 
-## Why polynomials are quick to multiply when represented by values
+# Why polynomials are quick to multiply when represented by values
 
 Given $A(x_1), \ldots A(x_{2n})$ and $B(x_1), \ldots, B(x_{2n})$ then to uniquely determine $C(x)$ we just calculate $C(x_i) = A(x_i)B(x_i)$.
 
 Note here we used $2n$ points. The plan of attack will be to convert polynomials from coefficients into values using [fast Fourier transforms](../../general/fast_fourier_transform.md), multiply them, then transform back using the same technique.
 
-## Picking the points
+# Picking the points
 
 We get to pick the points $x_i$ we want to evaluate our polynomial around. So we will pick $2n$ points such that $x_i = - x_{i+n}$ for $1 \leq i \leq n$. That way we know
 - $a_{2j}x_i^{2j} = a_{2i}x_{i+n}^{2j}$ and
@@ -83,7 +82,7 @@ so given we $A_{even}(y_i)$ and $A_{odd}(y_i)$ for $y_i = x_i^2$ for $1 \leq i \
 
 This halves the number of points we need to consider.
 
-## Summary
+# Summary
 
 To get $A(x)$ of degree $\leq n-1$ at $2n$ points $x_1, \ldots, x_{2n}$ we
 1. Define $A_{even}$ and $A_{odd}$ as above of degree $\leq \frac{n}{2} - 1$.
@@ -96,7 +95,7 @@ which by masters theorem is $O(n\log(n))$.
 
 >[!note] We need $y_i$ to also have $y_i = - y_{i + n/2}$ which will start to get interesting!
 
-## Complex numbers
+# Complex numbers
 
 To achieve this we will need to look at the polynomials in the [complex numbers](../../general/complex_numbers.md), which we denote as $\mathbb{C}$.
 
@@ -106,7 +105,7 @@ These can be represented as $(a,b)$ or we can represent them using [Polar Coordi
 $$(a,b) = (r \cos(\theta), r \sin(\theta)).$$
 This can also be summaries using [Euler's formula](../../general/euler's_formula.md) by saying
 $$a + bi = r(\cos{\theta} + i \sin(\theta)) = r e^{i\theta}.$$
-## Roots of unity
+# Roots of unity
 
 The $k$'th [roots of unity](../../general/roots_of_unity.md) are those $z \in \mathbb{C}$  such that $z^k = 1$. For $k=2$ these are simply $1, -1$ however for $k=4$ they are $1, -1, i, -i$.
 
@@ -117,7 +116,7 @@ More generically these are $e^{\frac{j2\pi}{k} i}$ for $0 \leq j < k$. In the no
 
 This means that even powers of the [roots of unity](../../general/roots_of_unity.md) are perfect choices for our $x_i$ in the [fast Fourier transform](../../general/fast_fourier_transform.md) algorithm.
 
-## Pseudocode for FFT
+# Pseudocode for FFT
 
 ``` pseudocode
 FFT(a, w):
@@ -139,7 +138,7 @@ If $T(n)$ is the run time of our algorithm - lets analyse this. The steps to spl
 
 > [!question] How do we go backwards?
 
-## Linear algebra of FFT
+# Linear algebra of FFT
 
 The [linear algebra](../../general/linear_algebra.md) of what we are doing here is important to how we compute the inverse.
 
@@ -152,7 +151,7 @@ when $x_j = \omega_n^j$ we denote this as $A = M_n(\omega_n) a$. So computing th
 >[!important] Lemma
 >$$M_n(\omega_n)^{-1} = \frac{1}{n} M_n(\omega_n^{-1}) = \frac{1}{n} M_n(\omega_n^{n-1})$$
 
-### Proof
+## Proof
 Lets examine
 $$M_n(\omega_n^{-1}) M_n(\omega_n) := \{m_{i,j}\}.$$
 For these terms we have
@@ -168,7 +167,7 @@ $\square$
 
 Now the problem once again is of the form $n a = M_n(\omega_n^{n-1}) A$ we can use the [FFT](../../general/fast_fourier_transform.md) algorithm detailed before to solve the inverse of the [FFT](../../general/fast_fourier_transform.md).
 
-## Pseudocode for Polynomial Multiply
+# Pseudocode for Polynomial Multiply
 
 ``` pseudocode
 FFT(a, w):

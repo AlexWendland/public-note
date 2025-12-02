@@ -6,9 +6,9 @@ checked: false
 created: 2024-06-08
 draft: false
 last_edited: 2024-06-08
-title: Interior gateway protocol (IGP)
 tags:
   - networks
+title: Interior gateway protocol (IGP)
 type: definition
 ---
 >[!tldr] Interior gateway protocol (IGP)

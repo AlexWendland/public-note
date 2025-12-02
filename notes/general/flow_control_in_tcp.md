@@ -4,9 +4,9 @@ checked: false
 created: 2024-05-28
 draft: false
 last_edited: 2024-05-28
-title: Flow control in TCP
 tags:
   - networks
+title: Flow control in TCP
 type: explainer
 ---
 # Flow control in [TCP](transmission_control_protocol_(tcp).md)

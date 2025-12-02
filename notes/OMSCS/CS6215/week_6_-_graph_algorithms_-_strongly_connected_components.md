@@ -1,25 +1,23 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-09-26
 draft: false
 last_edited: 2023-11-11
-title: Week 6 - Graph algorithms - strongly connected components
 tags:
   - OMSCS
+title: Week 6 - Graph algorithms - strongly connected components
 type: lecture
 week: '6'
 ---
-# Week 6 - Graph algorithms - strongly connected components
-
-## DFS - not the sofa seller!
+# DFS - not the sofa seller!
 
 Recall the definition of [Depth-first search (DFS)](../../general/depth-first_search_(dfs).md) in the note. We used it there to find the [connected components](../../general/connected_components_(graph).md) of a graph.
 
 [DFS to find connected components in an undirected graph](../../general/dfs_to_find_connected_components_in_an_undirected_graph.md)
 
-## [Find paths in undirected graph](../../general/find_path_in_undirected_graph.md) via [DFS](../../general/depth-first_search_(dfs).md)
+# [Find paths in undirected graph](../../general/find_path_in_undirected_graph.md) via [DFS](../../general/depth-first_search_(dfs).md)
 
 First for [undirected graphs](../../general/graph.md) we just keep track of the previous vertex and find a [spanning](../../general/spanning_subgraph.md) [sub](../../general/subgraph.md)-[forest](../../general/forest_(graph).md) for the [graph](../../general/graph.md). We can use this to find [paths](../../general/path_(graph).md) between vertices by going back to the root vertices of the [trees](../../general/tree_(graph).md).
 
@@ -47,7 +45,7 @@ Explore(z)
         Explore(w)
 ```
 
-## [Find paths in undirected graph](../../general/find_path_in_undirected_graph.md) via [DFS](../../general/depth-first_search_(dfs).md)
+# [Find paths in undirected graph](../../general/find_path_in_undirected_graph.md) via [DFS](../../general/depth-first_search_(dfs).md)
 
 To do this we are going to use a [DFS](../../general/depth-first_search_(dfs).md) algorithm like above but we are going to track pre/postorder numbers.
 
@@ -74,7 +72,7 @@ Explore(z)
 	post(z) = clock, clock++
 ```
 
-### Example
+## Example
 
 Suppose we have the following graph and let $B$ be the root node. Suppose we explore edges alphabetically and lets run the algorithm above on it.
 
@@ -118,13 +116,13 @@ Note here there the only type of edges to have $post(z) < post(w)$ are back edge
 
 [Cycles in a graph via the DFS tree](../../general/cycles_in_a_graph_via_the_dfs_tree.md)
 
-## Topological sorting
+# Topological sorting
 
 [Topological sorting (DAG)](../../general/topological_sorting_(dag).md)
 
 Suppose we have a [DAG](../../general/directed_acyclic_graph_(dag).md) $D$ from [the lemma above](../../general/cycles_in_a_graph_via_the_dfs_tree.md) we can run a [DFS](../../general/depth-first_search_(dfs).md) algorithm starting at the root of $D$ and the post ordering will provide a [topological sorting](../../general/topological_sorting_(dag).md) of the vertices of $D$.
 
-## Vertices in a [DAG](dag.md)
+# Vertices in a [DAG](dag.md)
 
 We can classify special vertices in a [DAG](../../general/directed_acyclic_graph_(dag).md)
 
@@ -136,7 +134,7 @@ Given a linear ordering we know the minimal vertex is a source and the maximal v
 1. Find a sink vertex, label it and then delete it.
 2. Repeat (1) until the graph is empty
 
-## Strongly connected components
+# Strongly connected components
 
 Recall the definitions
 
@@ -152,7 +150,7 @@ Which we can show is a [DAG](dag.md).
 
 [The strongly connected component graph is a DAG](../../general/the_strongly_connected_component_graph_is_a_dag.md)
 
-## Strongly connected component algorithm
+# Strongly connected component algorithm
 
 The idea of the algorithm is the following:
 
@@ -164,7 +162,7 @@ We use sinks as if we start a [DFS](../../general/depth-first_search_(dfs).md) a
 
 This is not true for source [strongly connected components](../../general/strongly_connected_components_(directed_graphs).md), here we discover everything.
 
-## Finding a vertex in a sink SCC
+# Finding a vertex in a sink SCC
 
 We have the following two statements in a [DAG](../../general/directed_acyclic_graph_(dag).md):
 - The vertex with the lowest postorder number is a sink.
@@ -192,7 +190,7 @@ Moverover we have.
 
 Therefore if we can find a source vertex in $S_{G^R}$ then we have found a sink vertex in $S_G$. This is exactly what our algorithm will depend on.
 
-## Algorithm for finding the strongly connected components
+# Algorithm for finding the strongly connected components
 
 ```pseudocode
 SCC(G):
@@ -210,7 +208,7 @@ SCC(G):
 
 This takes $O(\vert V \vert + \vert E \vert)$ as we do two runs of a [DFS](../../general/depth-first_search_(dfs).md) algorithm.
 
-### Example
+## Example
 
 Suppose we want to find the strongly connected components of the graph $G$ below.
 

@@ -4,17 +4,16 @@ checked: false
 created: 2023-04-24
 draft: false
 last_edited: 2023-11-11
-title: Pre-commit hooks
 tags:
   - programming
   - git
+title: Pre-commit hooks
 type: tool
 ---
-# Pre-commit hooks
 
 [Pre-commit hooks](https://pre-commit.com/) are a great way to run checks against your code before it is committed to the repository. This saves time and money by not having to run checks in the CI/CD pipeline, and also puts control of your commits back in your hands.
 
-## Setting up pre-commit hooks
+# Setting up pre-commit hooks
 
 You can install the pre-commit package using pip.
 
@@ -30,7 +29,7 @@ pre-commit install
 
 This will run the checks every time you try to commit your changes. If the pre-commit hooks change, you will need to run this command again to update them.
 
-## Using pre-commit hooks
+# Using pre-commit hooks
 
 When you commit your changes using git commit, the pre-commit hooks will run. The output of the hooks will be displayed, and they will either pass or fail. If any of the hooks fail, the exact file that caused the failure will be reported.
 
@@ -42,11 +41,11 @@ If you need to push changes and cannot figure out why they have failed, you can 
 git commit --no-verify -m "Commit message"
 ```
 
-## Configuring pre-commit hooks
+# Configuring pre-commit hooks
 
 You can see which hooks are running in the `.pre-commit-config.yaml` file at the base of the repository. To add additional hooks, you can search for them online. If you decide to change the hooks, make sure to inform others and let them decide whether they want to apply the changes. Others will need to run `pre-commit install` again after any changes are made. For further guidance on configuring pre-commit hooks, see the [pre-commit hooks documentation](https://pre-commit.com/#plugins).
 
-## .pre-commit-config.yaml example
+# .pre-commit-config.yaml example
 
 ``` yaml
 repos:

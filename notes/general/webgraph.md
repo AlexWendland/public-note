@@ -4,9 +4,9 @@ checked: false
 created: 2023-12-03
 draft: false
 last_edited: 2023-12-03
-title: Webgraph
 tags:
   - programming
+title: Webgraph
 type: definition
 ---
 >[!tldr] Webgraph

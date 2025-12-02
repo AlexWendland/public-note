@@ -6,9 +6,9 @@ checked: false
 created: 2025-03-23
 draft: false
 last_edited: 2025-03-23
-title: Memory allocator
 tags:
   - OS
+title: Memory allocator
 type: definition
 ---
 >[!tldr] Memory allocator

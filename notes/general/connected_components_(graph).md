@@ -6,10 +6,10 @@ checked: false
 created: 2023-09-26
 draft: false
 last_edited: 2023-11-11
-title: Connected components (graph)
 tags:
   - maths
   - graph-theory
+title: Connected components (graph)
 type: definition
 ---
 > [!tldr] Connected components

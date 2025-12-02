@@ -5,9 +5,9 @@ checked: false
 created: 2024-07-19
 draft: false
 last_edited: 2024-07-19
-title: Middleboxes
 tags:
   - networks
+title: Middleboxes
 type: definition
 ---
 >[!tldr] Middleboxes

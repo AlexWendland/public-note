@@ -4,13 +4,12 @@ checked: false
 created: 2024-04-06
 draft: false
 last_edited: 2024-04-06
-title: Value iteration (MDP)
 tags:
   - programming
   - machine-learning
+title: Value iteration (MDP)
 type: algorithm
 ---
-# Value iteration (MDP)
 
 This is a method of solving [Markov decision processes](markov_decision_process.md). It uses [discounted rewards](discounted_rewards.md) to get a local as well as global optimum solution.
 
@@ -32,7 +31,7 @@ U^{\pi^{\ast}}(s) = R(s) + \gamma \max_{a \in A(s)} \sum_{s' \in S} T(s,a,s') U^
 $$
 What is above is a [Bellman equation](bellman_equation.md). They are simultaneous-like due to the max in it.
 
-## Pseudocode
+# Pseudocode
 
 We would like to solve it like a set of simultaneous equations but that doesn't work due to the max. However instead we can interactively calculate it by doing the following:
 

@@ -6,9 +6,9 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-title: Internet Service Provider (ISP)
 tags:
   - networks
+title: Internet Service Provider (ISP)
 type: definition
 ---
 >[!tldr] Internet Service Provider (ISP)

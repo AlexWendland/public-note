@@ -4,10 +4,10 @@ checked: false
 created: 2025-07-23
 draft: true
 last_edited: 2025-07-23
-title: What do I really want?
 tags:
   - thoughts
   - life
+title: What do I really want?
 type: thonk
 ---
 

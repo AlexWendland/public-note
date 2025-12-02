@@ -1,25 +1,24 @@
 ---
 aliases:
 checked: false
-course: 'CS6250 Computer Networks'
+course: CS6250 Computer Networks
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-title: Week 8 - Security
 tags:
   - OMSCS
+title: Week 8 - Security
 type: lecture
 week: 8
 ---
-# Week 8 - Security
 
 The Internet was not designed or built with security in mind. Security came as an afterthought after adversaries started misusing or abusing Internet services, resources and infrastructure.
 
 An attack on a system aims to compromise properties of a secure communication.
 
-## Additional reading
+# Additional reading
 
-### Important Readings
+## Important Readings
 
 Measuring and Detecting Fast-Flux Service Networks
 [https://www.sec.tu-bs.de/pubs/2008-ndss.pdfLinks to an external site.](https://www.sec.tu-bs.de/pubs/2008-ndss.pdf)
@@ -54,11 +53,11 @@ Inferring BGP Blackholing Activity in the Internet
 Next Gen Blackholing to Counter DDoS
 [https://ripe78.ripe.net/presentations/9-RIPE_Presentation_MW.pdfLinks to an external site.](https://ripe78.ripe.net/presentations/9-RIPE_Presentation_MW.pdf "Link")
 
-### Book References
+## Book References
 
 Kurose-Ross Edition 6th, Section 8.1
 
-## Secure communications
+# Secure communications
 
 There a 4 properties of secure communication:
 - **Confidentiality**: The message can only be read by the person who was the intended recipient of the message.
@@ -66,7 +65,7 @@ There a 4 properties of secure communication:
 - **Authentication**: The person who you are talking to is who you think they are.
 - **Availability**: You can communicate when you need to through this channel.
 
-## DNS abuse
+# DNS abuse
 
 Attackers have developed techniques abusing the DNS protocol to extend the uptime of domains that are used for malicious purposes (e.g., Command and Control hosting infrastructure, phishing, spamming domains, hosting illegal businesses, and illegal content). The ultimate goal of this abuse is to remain undetectable for longer.
 
@@ -78,7 +77,7 @@ These techniques have their roots in legitimate DNS-based techniques that legiti
 
 [Fast-Flux Service Networks (FFSN)](../../general/fast-flux_service_networks_(ffsn).md)
 
-## Rouge network detection
+# Rouge network detection
 
 There are different approaches to detecting rouge networks. The most intuitive method is to see if they are hosting bad actors.
 
@@ -112,7 +111,7 @@ This system predicts the likelihood of a security breach within an organisation 
     - **Hackmageddon**: Aggregates monthly security incidents.
     - **Web Hacking Incidents Database**: Repository of cyber security incidents.
 
-### Model and Evaluation:
+## Model and Evaluation:
 
 - **Random Forest Classifier**: Trained using 258 features, including the ones described above, along with statistical secondary features and organization size.
 - **Baseline Comparison**: Compared against a [Support vector machines (SVM)](../../general/support_vector_machines_(svm).md).
@@ -122,7 +121,7 @@ This system predicts the likelihood of a security breach within an organisation 
 
 This system effectively uses external indicators of mismanagement, malicious activity, and past incidents to predict the probability of future breaches in an organization's network.
 
-## [BGP](../../general/boarder_gateway_protocol_(bgp).md) hijacking
+# [BGP](../../general/boarder_gateway_protocol_(bgp).md) hijacking
 
 [BGP Hijacking](../../general/bgp_hijacking.md)
 
@@ -131,7 +130,7 @@ There are different reasons attempt these attacks:
 - **Targeted attack**: This is normally done by someone trying to intercept network traffic and carry out a [Man-in-the-middle attack (MM)](../../general/man-in-the-middle_attack_(mm).md), a [Type-N hijacking](../../general/type-n_hijacking.md) or a [Type-U hijacking](../../general/type-u_hijacking.md). E.g. Visa and Mastercard were hijacked by Russian networks in 2017 using this.
 - **High impact attack**: Here someone is obviously trying to cause wide spread outages. E.g. Pakistan Telecom in a [Type-0 hijacking](../../general/type-0_hijacking.md) with a [Sub-prefix hijacking](../../general/sub-prefix_hijacking.md), essentially [blackholing](../../general/blackholing_(bh).md) all of YouTube’s services worldwide for nearly 2 hours.
 
-## Defence against [BGP Hijacking](../../general/bgp_hijacking.md)
+# Defence against [BGP Hijacking](../../general/bgp_hijacking.md)
 
 [ARTEMIS](../../general/artemis.md)
 
@@ -139,7 +138,7 @@ Within the paper it highlighted.
 1. **Outsourcing BGP Announcements**: Having an external organisation manage BGP announcements is highly effective in combating BGP hijacking.
 2. **BGP Announcements vs. Prefix Filtering**: Outsourcing BGP announcements is more optimal compared to the current standard defence mechanism of prefix filtering.
 
-## [Distributed Denial-of-Service (DDoS)](../../general/distributed_denial-of-service_(ddos).md)
+# [Distributed Denial-of-Service (DDoS)](../../general/distributed_denial-of-service_(ddos).md)
 
 [DDoS](../../general/distributed_denial-of-service_(ddos).md)
 
@@ -151,7 +150,7 @@ In the context of [DDoS](../../general/distributed_denial-of-service_(ddos).md) 
 
 [DDoS reflection and amplification](../../general/ddos_reflection_and_amplification.md)
 
-## Defence against [DDoS](../../general/distributed_denial-of-service_(ddos).md)
+# Defence against [DDoS](../../general/distributed_denial-of-service_(ddos).md)
 
 [Traffic Scrubbing Service](../../general/traffic_scrubbing_service.md)
 

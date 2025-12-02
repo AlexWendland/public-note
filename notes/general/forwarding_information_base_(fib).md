@@ -5,8 +5,8 @@ checked: false
 created: 2024-06-08
 draft: true
 last_edited: 2024-06-08
-title: Forwarding information base (FIB)
 tags: []
+title: Forwarding information base (FIB)
 type: definition
 ---
 >[!tldr] Forwarding information base (FIB)

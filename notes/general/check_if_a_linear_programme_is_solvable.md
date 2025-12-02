@@ -4,18 +4,17 @@ checked: false
 created: 2023-11-10
 draft: false
 last_edited: 2023-11-11
-title: Check if a linear programme is solvable
 tags:
   - programming
+title: Check if a linear programme is solvable
 type: algorithm
 ---
-# Check if a linear programme is solvable
 
 We are going to use the [feasibility algorithm](checking_if_a_linear_programme_is_feasible.md) for a [linear programme](linear_programme.md) to do this - lets call this $feasibility\_checker$ that takes a [linear programme](linear_programme.md) and outputs a boolean based on if it is feasible or not.
 
 This uses a corollary of the [Weak duality theorem (linear programme)](weak_duality_theorem_(linear_programme).md) which tells us [unbounded linear programmes have infeasible duals](unbounded_linear_programmes_have_infeasible_duals.md). So we will check if the [dual linear programme](dual_linear_programme.md) is feasible. For this let $dual$ be an algorithm to calculate the dual.
 
-# Algorithm
+ Algorithm
 
 ```psuedocode
 bounded_checker(A, b, c):

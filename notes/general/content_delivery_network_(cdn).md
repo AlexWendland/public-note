@@ -6,9 +6,9 @@ checked: false
 created: 2024-06-08
 draft: false
 last_edited: 2024-06-08
-title: Content delivery network (CDN)
 tags:
   - networks
+title: Content delivery network (CDN)
 type: definition
 ---
 >[!tldr] Content delivery network (CDN)

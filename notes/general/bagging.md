@@ -8,12 +8,11 @@ checked: false
 created: 2024-01-24
 draft: false
 last_edited: 2024-01-24
-title: Bagging
 tags:
   - programming
+title: Bagging
 type: algorithm
 ---
-# Bagging
 
 This is one of the simplest [Ensemble learning](ensemble_learning.md) methods but out performs classic modelling methods in certain problems.
 
@@ -23,7 +22,7 @@ Suppose we are in the [modelling framework](modelling_framework.md). The bagging
 3. We then train $\hat{f}_i$ using algorithm $A_i$ with [training data](training_data.md) $T_i$ for $1 \leq i \leq k$.
 4. Then we have some method of averaging these models over our problem space to produce $\hat{f}$ our final model.
 
-## Example
+# Example
 
 Suppose we want to use [polynomial regression](polynomial_regression.md) on a simple function $f: \mathbb{R} \rightarrow \mathbb{R}$ with training data $T$.
 
@@ -31,6 +30,6 @@ We could instead of running it once randomly select some $T_i \subset T$ then tr
 
 Then we set our final $\hat{f} = \frac{1}{k} \sum_{i=1}^k \hat{f}_i$.
 
-## Correctness
+# Correctness
 
 Bagging tends to lead to less [overfitting](overfitting.md) so can help algorithms that are particularly prone to this like [polynomial regression](polynomial_regression.md).

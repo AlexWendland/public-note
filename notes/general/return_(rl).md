@@ -4,9 +4,9 @@ checked: false
 created: 2025-05-22
 draft: false
 last_edited: 2025-05-22
-title: Return (RL)
 tags:
   - reinforcement-learning
+title: Return (RL)
 type: definition
 ---
 >[!tldr] Return (RL)

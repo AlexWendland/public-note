@@ -4,9 +4,9 @@ checked: false
 created: 2023-11-02
 draft: false
 last_edited: 2023-11-13
-title: Minimum Spanning Tree problem is in NP
 tags:
   - maths
+title: Minimum Spanning Tree problem is in NP
 type: lemma
 ---
 # Statement

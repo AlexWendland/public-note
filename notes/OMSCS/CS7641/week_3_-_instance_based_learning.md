@@ -1,25 +1,24 @@
 ---
 aliases:
 checked: false
-course: 'CS7641 Machine Learning'
+course: CS7641 Machine Learning
 created: 2024-01-22
 draft: false
 last_edited: 2024-01-22
-title: Week 3 - Instance Based Learning
 tags:
   - OMSCS
+title: Week 3 - Instance Based Learning
 type: lecture
 week: 3
 ---
-# Week 3 - Instance Based Learning
 
 [Instance-based learning](../../general/instance-based_learning.md)
 
-## k-nearest neighbour
+# k-nearest neighbour
 
 [k-nearest neighbour](../../general/k-nearest_neighbour.md)
 
-## Run times
+# Run times
 
 Quite often [Instance-based learning](../../general/instance-based_learning.md) is called "lazy" learning as you are delaying computation until query time. As you can see in this table below which assumes $A = B = \mathbb{R}$. As well as the input training data is sorted.
 
@@ -34,11 +33,11 @@ Quite often [Instance-based learning](../../general/instance-based_learning.md) 
 
 > [!Question] Why is linear regression $n$ time to learn?
 
-## The curse of dimensionality
+# The curse of dimensionality
 
 [The curse of dimensionality](../../general/the_curse_of_dimensionality.md)
 
-## Locally weighted regression
+# Locally weighted regression
 
 You can use [k-nearest neighbour](../../general/k-nearest_neighbour.md) in [regression problems](../../general/regression_problems.md) along with an algorithm like [polynomial regression](../../general/polynomial_regression.md) to replace you voting function $V$. This means at each point $a \in A$ you will construct a local polynomial to map that which you can piece together to fit a larger curve.
 

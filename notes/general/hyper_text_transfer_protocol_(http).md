@@ -5,9 +5,9 @@ checked: false
 created: 2024-05-22
 draft: false
 last_edited: 2024-05-22
-title: Hyper Text Transfer Protocol (HTTP)
 tags:
   - networks
+title: Hyper Text Transfer Protocol (HTTP)
 type: definition
 ---
 >[!tldr] Hyper Text Transfer Protocol (HTTP)

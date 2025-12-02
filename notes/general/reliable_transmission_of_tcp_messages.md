@@ -4,9 +4,9 @@ checked: false
 created: 2024-05-27
 draft: false
 last_edited: 2024-05-27
-title: Reliable transmission of TCP messages
 tags:
   - networks
+title: Reliable transmission of TCP messages
 type: explainer
 ---
 # Reliable transmission of [TCP](transmission_control_protocol_(tcp).md) messages

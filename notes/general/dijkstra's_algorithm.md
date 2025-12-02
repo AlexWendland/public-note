@@ -4,12 +4,11 @@ checked: false
 created: 2023-09-05
 draft: false
 last_edited: 2023-11-11
-title: Dijkstra's algorithm
 tags:
   - programming
+title: Dijkstra's algorithm
 type: algorithm
 ---
-# Dijkstra's algorithm
 
 This is an algorithm to solve the [shortest path problem](find_path_in_undirected_graph.md) in [undirected graphs](graph.md) or [directed graphs](directed_graph.md) $G = (V,E)$. It is based on [Breath-first search](breath-first_search_(bfs).md) but uses a [priority queue](priority_queue.md) instead of just a [queue](queue.md). It requires positive edge lengths $w: E \rightarrow \mathbb{R}_{>0}$.
 
@@ -32,10 +31,10 @@ Dijkstra(G,w,s):
 5. output dist
 ```
 
-## Correctness
+# Correctness
 
 
-## Run time
+# Run time
 
 To initialise $dist$ and $prev$ takes $O(\vert V \vert)$ time.
 

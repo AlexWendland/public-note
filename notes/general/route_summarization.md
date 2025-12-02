@@ -5,9 +5,9 @@ checked: false
 created: 2024-05-22
 draft: false
 last_edited: 2024-05-22
-title: Route summarization
 tags:
   - networks
+title: Route summarization
 type: definition
 ---
 >[!tldr] Route summarization

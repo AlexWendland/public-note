@@ -4,12 +4,11 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-title: MIMIC (meta)
 tags:
   - programming
+title: MIMIC (meta)
 type: algorithm
 ---
-# MIMIC (meta)
 
 Suppose we have some [Optimisation problem](optimisation_problem.md) with input space $A$ and fitness function $f: A \rightarrow \mathbb{R}$. Then for any $\theta \in \mathbb{R}$ define
 $$
@@ -22,7 +21,7 @@ Functionally how we do that is similar to [genetic algorithm](genetic_algorithm_
 
 The method to estimate $P^{\theta_{t+1}}$ from $S'$ encodes some domain knowledge about the system - this can very from problem to problem.
 
-## Pseudocode
+# Pseudocode
 
 ```pseudocode
 mimic(optimise, number_of_samples, percentile, probability_constructor, stopping_condition):
@@ -42,11 +41,11 @@ mimic(optimise, number_of_samples, percentile, probability_constructor, stopping
 3. Draw a sample from P and return it.
 ```
 
-## Run time
+# Run time
 
 This strongly depends on how we construct our probability distribution. However, normally this takes longer than other randomised algorithms to run one iteration though it will take fewer iterations all together. This is useful when optimising on a function that is hard to compute.
 
-## Correctness
+# Correctness
 
 - MIMIC performs well when your feature space has structure within it that relates to the fitness function.
 - It can get stuck in local optima with the probability distribution but you can use different sampling methods from probability theory to help you in these situations.

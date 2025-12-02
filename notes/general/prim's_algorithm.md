@@ -4,16 +4,15 @@ checked: false
 created: 2023-10-02
 draft: false
 last_edited: 2023-11-11
-title: Prim's algorithm
 tags:
   - programming
+title: Prim's algorithm
 type: algorithm
 ---
-# Prim's algorithm
 
 This solves the [MST](minimum_spanning_tree_problem_(mst).md) problem using a method similar to [Dijkstra's algorithm](dijkstra's_algorithm.md). It will use a [Priority queue](priority_queue.md) to do this.
 
-# Algorithm
+ Algorithm
 
 ```pseudocode
 Prim's(G,w):
@@ -36,7 +35,7 @@ while H is not empty:
 output prev
 ```
 
-# Correctness
+ Correctness
 
 Note that functionally Prim's algorithm is slowly building a tree $X$ using the closes vertex to the currently constructed tree $X$ that is not already in it.
 
@@ -62,7 +61,7 @@ This proves the induction case and we have that $X$ is always a subset of some [
 
 As the algorithm runs until each vertex is added to the tree $X$. $X$ is a [spanning](spanning_subgraph.md) [tree](tree_(graph).md) which is a subset of a [MST](minimum_spanning_tree_problem_(mst).md). Therefore is an [MST](minimum_spanning_tree_problem_(mst).md) in its own right.
 
-# Run time
+ Run time
 
 Initialisation takes $O(V)$ steps.
 

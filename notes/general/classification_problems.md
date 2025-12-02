@@ -5,9 +5,9 @@ checked: false
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
-title: Classification problems
 tags:
   - machine-learning
+title: Classification problems
 type: definition
 ---
 >[!tldr] Classification problems

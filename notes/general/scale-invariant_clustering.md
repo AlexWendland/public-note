@@ -5,9 +5,9 @@ checked: false
 created: 2024-03-09
 draft: false
 last_edited: 2024-03-09
-title: Scale-invariant clustering
 tags:
   - machine-learning
+title: Scale-invariant clustering
 type: definition
 ---
 >[!tldr] Scale-inverient clustering

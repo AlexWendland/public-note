@@ -1,13 +1,13 @@
 ---
 aliases:
 checked: false
-course: 'CS6210 Advanced Operating Systems'
+course: CS6210 Advanced Operating Systems
 created: 2025-10-26
 draft: true
 last_edited: 2025-10-26
-title: Week 7 - Distributed subsystems
 tags:
   - OMSCS
+title: Week 7 - Distributed subsystems
 type: lecture
 week: 7
 ---

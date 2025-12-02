@@ -1,23 +1,21 @@
 ---
 aliases:
 checked: false
-course: 'CS6200 Graduate introduction to Operating Systems'
+course: CS6200 Graduate introduction to Operating Systems
 created: 2025-04-12
 draft: false
 last_edited: 2025-04-12
-title: Week 12 - Virtualization
 tags:
   - OMSCS
+title: Week 12 - Virtualization
 type: lecture
 week: 12
 ---
-# Week 12 - Virtualization
-
-## Additional reading
+# Additional reading
 
 - ["Formal Requirements for Virtualizable Third Generation Architectures"](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-popek-goldberg-paper.pdf)
 
-## Virtualization
+# Virtualization
 
 [Virtualization](../../general/virtualization.md)
 
@@ -35,7 +33,7 @@ There are two main methods of virtualization:
 - *Bare-metal*: This is where a [hypervisor](../../general/virtual_machine_monitor_(vmm).md) is installed on top of the hardware.
 - *Hosted*: This is where the [hypervisor](../../general/virtual_machine_monitor_(vmm).md) is installed on top of another [OS](../../general/operating_system_(os).md).
 
-## Bare-metal
+# Bare-metal
 
 In this model the [hypervisor](../../general/virtual_machine_monitor_(vmm).md) is in direct control of the hardware. The main difficulty of the model is integrating different devices - as device manufacturers would need to write a device driver for the hypervisor also. The way most [hypervisors](../../general/virtual_machine_monitor_(vmm).md) get around this is by hosting a privileged VM that integrates with devices. This also runs other management tasks.
 
@@ -49,7 +47,7 @@ There are two main hypervisor producers:
 	- Can force server device manufacturers to release drivers.
 	- Controlled using APIs
 
-## Hosted
+# Hosted
 
 In the hosted model the [VMM](../../general/virtual_machine_monitor_(vmm).md) runs as  module on a host [OS](../../general/operating_system_(os).md). This module provides hardware interfaces to VM's and deals with VM context switching. The advantage of this mode is you can utilize all the components of the host VM making the [VMM](../../general/virtual_machine_monitor_(vmm).md) smaller in size.
 
@@ -60,7 +58,7 @@ Examples:
 	- Uses an [OS](../../general/operating_system_(os).md) module on the host and a QEMU for hard ware virtualization in the VM.
 	- Leverages the linux open source community.
 
-## Hardware protection levels
+# Hardware protection levels
 
 [Hardware protection levels](../../general/hardware_protection_levels.md)
 
@@ -80,7 +78,7 @@ Most hypervisors operate using a trap and emulate model. This entails:
 	- If the operation is illegal then it terminates that virtual machine.
 	- If the operation is legal, the hypervisor carries out the operation for the guest [OS](../../general/operating_system_(os).md) then returns the [OS](../../general/operating_system_(os).md) into the same state as if it had carried out the operation.
 
-## Historic issues
+# Historic issues
 
 In the past there was not root/non-root modes so the strategy was to run:
 
@@ -101,7 +99,7 @@ Another approach to this issue is called "paravirtualisation" with this you modi
 	- trap to the hypervisor.
 - This approach was taken by the open source Xen project, this got bought by citrix.
 
-## Memory virtualization
+# Memory virtualization
 
 First lets talk about "Full-virtualization".
 - All guests [OS](../../general/operating_system_(os).md) expect contiguous physical memory, starting at 0.
@@ -126,11 +124,11 @@ In Paravirtualisation as the guest [OS](../../general/operating_system_(os).md) 
 
 In newer platforms these overheads have nearly been completely eliminated.
 
-## Device virtualisation
+# Device virtualisation
 
 For [CPU](../../general/central_processing_unit_(cpu).md) and [RAM](../../general/random_access_memory_(ram).md) there is low level of diversity in the interfaces. However for generic devices this diversity is massive so virtualising device access is a complicated problem. There are 3 models taken to do this.
 
-### Pass through model
+## Pass through model
 
 In this model the [hypervisor](../../general/virtual_machine_monitor_(vmm).md) directory passes operations from the guest [OS](../../general/operating_system_(os).md) to the device. This has the following considerations:
 - The VM is provided with exclusive access to the device.
@@ -140,7 +138,7 @@ In this model the [hypervisor](../../general/virtual_machine_monitor_(vmm).md) d
 
 ![Pass Through Model](../../../images/pass_through_model.png)
 
-### Hypervisor direct model
+## Hypervisor direct model
 
 In this model the [hypervisor](../../general/virtual_machine_monitor_(vmm).md) intercepts any device accesses and translates them into a generic operation. This operation is then processed using the hypervisor and carried out on the device. The response is then converted back to what the guest [OS](../../general/operating_system_(os).md) expects the response to be.
 
@@ -152,7 +150,7 @@ This has the following considerations:
 - This introduces latency into device operations.
 - Device driver ecosystem will need to implement hypervisor compatible versions.
 
-### Split-device driver model
+## Split-device driver model
 
 This model is limited to only paravirtualised [hypervisors](../../general/virtual_machine_monitor_(vmm).md) and requires them to be running a service VM. This uses two different device drivers:
 - Backend device driver: Running on the service VM, this will be whichever device driver is needed to work with the device that is plugged into the machine.
@@ -165,7 +163,7 @@ This model has the following considerations:
 - Allows for better management of shared devices.
 - Can only be used on paravirtulaised systems.
 
-## Modern developments
+# Modern developments
 
 Due to the benefits of virtualization the industry has been working to make [virtualization](../../general/virtualization.md) easier:
 - Updated the 17 operations that would not throw a trap, to throw a trap!

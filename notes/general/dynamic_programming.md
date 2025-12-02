@@ -6,12 +6,11 @@ checked: false
 created: 2023-08-26
 draft: false
 last_edited: 2023-11-11
-title: Dynamic Programming
 tags:
   - programming
+title: Dynamic Programming
 type: technique
 ---
-# Dynamic programming
 
 This is an algorithmic technique to solve some [recursion](recursion.md) type problems in an [iterative](iterative_algorithms.md) way. This can speed up these processes dramatically especially when [recursion](recursion.md) would compute a similar step multiple times.
 
@@ -40,15 +39,15 @@ This requires that the problem has the following properties.
 1. **Overlapping Subproblems**: The problem can be divided into smaller overlapping subproblems that are solved independently.
 2. **Optimal Substructure**: The solution to the problem can be constructed from the optimal solutions of its subproblems.
 
-## Advantages
+# Advantages
 
 1. **Efficiency**: Dynamic programming can dramatically reduce the time complexity of algorithms that solve problems with overlapping subproblems.
 2. **Simplicity**: The core idea is often straightforward to implement, making it easier to write correct and efficient code for complex problems.
 
-## Limitations
+# Limitations
 
 1. **Memory**: Storing the results of all subproblems can sometimes require a lot of memory.
 2. **Analytical Complexity**: It may be challenging to determine the structure of the subproblems and how to combine them to solve the original problem.
 
-# Links
+ Links
 - [Lecture notes and worked examples](../OMSCS/CS6215/week_1_-_dynamic_programming.md)

@@ -4,12 +4,11 @@ checked: false
 created: 2023-09-29
 draft: false
 last_edited: 2023-11-11
-title: DFS for finding strongly connected components
 tags:
   - programming
+title: DFS for finding strongly connected components
 type: algorithm
 ---
-# DFS for finding strongly connected components
 
 ```pseudocode
 SCC(G):
@@ -27,11 +26,11 @@ SCC(G):
 
 This takes $O(\vert V \vert + \vert E \vert)$ as we do two runs of a [DFS](depth-first_search_(dfs).md) algorithm.
 
-## Correctness Proof
+# Correctness Proof
 
 Find this in [Week 6 - Graph algorithms - strongly connected components](../OMSCS/CS6215/week_6_-_graph_algorithms_-_strongly_connected_components.md).
 
-### Example
+## Example
 
 Suppose we want to find the strongly connected components of the graph $G$ below.
 

@@ -4,13 +4,12 @@ checked: false
 created: 2024-03-09
 draft: false
 last_edited: 2024-03-09
-title: Single linkage clustering
 tags:
   - programming
   - machine-learning
+title: Single linkage clustering
 type: algorithm
 ---
-# Single linkage clustering
 
 Suppose we are in the [clustering problem](clustering_problem.md) set up. Here we are given the number of desired clusters $k$, and the sense of distance $d$.
 
@@ -20,7 +19,7 @@ d_C: 2^T \times 2^T \rightarrow \mathbb{R}, \ d_C(C_1, C_2) = \min_{a \in C_1, b
 $$
 where $2^T$ is the [power set](power_set.md) of $T$. We keep iterating this until we are left with $k$ clusters.
 
-## Pseudocode
+# Pseudocode
 
 ```pseudocode
 Name(k, d, T):
@@ -41,10 +40,10 @@ Name(k, d, T):
 3. Return f
 ```
 
-## Run time
+# Run time
 
 If you implement this in the worst case it is $O(n^3)$ but realistically you could get it to be $O(n^2)$.
 
-## Correctness
+# Correctness
 
 Whilst it solves the problem it can lead to counter intuitive answers as chains for very closely grouped points will cluster together even when by eye you might split them differently.

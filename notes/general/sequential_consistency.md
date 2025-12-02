@@ -4,9 +4,9 @@ checked: false
 created: 2025-04-13
 draft: false
 last_edited: 2025-04-13
-title: Sequential consistency
 tags:
   - OS
+title: Sequential consistency
 type: definition
 ---
 >[!tldr] Sequential consistency

@@ -8,9 +8,9 @@ checked: false
 created: 2023-09-26
 draft: false
 last_edited: 2023-11-11
-title: Directed acyclic graph (DAG)
 tags:
   - programming
+title: Directed acyclic graph (DAG)
 type: definition
 ---
 > [!tldr] Directed acyclic graph (DAG)

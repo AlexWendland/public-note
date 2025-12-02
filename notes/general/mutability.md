@@ -11,12 +11,11 @@ checked: false
 created: 2023-06-29
 draft: false
 last_edited: 2023-11-11
-title: Mutability
 tags:
   - programming
+title: Mutability
 type: concept
 ---
-# Mutability
 
 An [object](object.md) is considered *mutable* if if can be changed after it is created, whereas it is *immutable* if it can not be changed. If you change a mutable object all references to that object will also be changed.
 

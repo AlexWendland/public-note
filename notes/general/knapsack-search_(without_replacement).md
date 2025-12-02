@@ -5,9 +5,9 @@ checked: false
 created: 2023-11-02
 draft: false
 last_edited: 2023-11-13
-title: Knapsack-search (without replacement)
 tags:
   - programming
+title: Knapsack-search (without replacement)
 type: problem
 ---
 # Statement

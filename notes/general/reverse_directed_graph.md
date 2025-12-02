@@ -6,9 +6,9 @@ checked: false
 created: 2023-09-28
 draft: false
 last_edited: 2023-11-11
-title: Reverse directed graph
 tags:
   - maths
+title: Reverse directed graph
 type: definition
 ---
 > [!tldr] Reverse directed graph

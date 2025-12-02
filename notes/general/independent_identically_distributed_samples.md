@@ -5,9 +5,9 @@ checked: false
 created: 2024-02-16
 draft: false
 last_edited: 2024-02-16
-title: Independent identically distributed samples
 tags:
   - probability
+title: Independent identically distributed samples
 type: definition
 ---
 >[!tldr] Independent identically distributed samples

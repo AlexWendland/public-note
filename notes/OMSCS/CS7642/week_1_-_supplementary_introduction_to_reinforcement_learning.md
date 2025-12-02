@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS7642 Reinforcement Learning'
+course: CS7642 Reinforcement Learning
 created: 2025-05-13
 draft: false
 last_edited: 2025-05-13
-title: Week 1 - Supplementary Introduction to Reinforcement Learning
 tags:
   - OMSCS
+title: Week 1 - Supplementary Introduction to Reinforcement Learning
 type: lecture
 week: 1
 ---
-# Week 1 - Supplementary Introduction to Reinforcement Learning
 
 Going down in levels of specificity:
 - **Artificial intelligence**: The ability of machines to simulate human behavior.

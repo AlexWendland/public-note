@@ -4,9 +4,9 @@ checked: false
 created: 2025-05-22
 draft: false
 last_edited: 2025-05-22
-title: Action-advantage function (RL)
 tags:
   - reinforcement-learning
+title: Action-advantage function (RL)
 type: definition
 ---
 >[!tldr] Action-advantage function (RL)

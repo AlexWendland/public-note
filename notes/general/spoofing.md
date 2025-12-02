@@ -7,10 +7,10 @@ checked: false
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-title: Spoofing
 tags:
   - security
   - networks
+title: Spoofing
 type: definition
 ---
 >[!tldr] Spoofing

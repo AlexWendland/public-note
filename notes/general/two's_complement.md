@@ -4,12 +4,11 @@ checked: false
 created: 2023-04-20
 draft: false
 last_edited: 2023-11-11
-title: Two's complement
 tags:
   - programming
+title: Two's complement
 type: representations
 ---
-# Two's complement
 
 This is a way to represent [signed integers](signed_or_unsigned_integers.md). Assuming the left most digit is the most significant [bit](bit.md) then:
 
@@ -17,7 +16,7 @@ sign digit | numerical representation.
 
 So assume you store your signed integer as a [byte](byte.md) then left most [bit](bit.md) would be for the sign and the other 7 [bits](bit.md) would be for the number.
 
-## Positive numbers
+# Positive numbers
 
 For example when representing 10 in 7 bits you would use
 
@@ -31,7 +30,7 @@ therefore as 10 is positive it's full representation would be
 
 with the 0 representing positive numbers.
 
-## Negative numbers
+# Negative numbers
 
 This is where stuff gets freaky - lets first start with the formula and go backwards to explain why this works.
 
@@ -51,11 +50,11 @@ Lets just cover how to go decimalise a binary representation of a negative numbe
 
 That seems easy enough but there has to be simpler way to do this right?
 
-## Addition
+# Addition
 
 You add two numbers just as you would [unsigned integers](signed_or_unsigned_integers.md) by starting from the least significant [bit](bit.md) (right most in our example) and carry the overflows forward. This works even when adding two negatives or a negative with a positive!
 
-### Two positive
+## Two positive
 
 Lets add 10 = 0000 1010 with 12 = 0000 1100
 
@@ -68,7 +67,7 @@ $$
 & = 22.
 \end{align*}
 $$
-### Negative with a positive
+## Negative with a positive
 
 Lets add -5 = 1111 1011 with 10 = 0000 1010
 
@@ -81,7 +80,7 @@ $$
 & = 5.
 \end{align*}
 $$
-### Two negative
+## Two negative
 
 Lets add -5 = 1111 1011 with -16 = 1111 0000
 
@@ -99,12 +98,12 @@ $$
 > [!Note] Over flow detection
 > You can use the sign digit to detect overflow i.e. if you add two positive numbers the outcome should be positive!
 
-## Comparison
+# Comparison
 
 This essentially works the same as unsigned integers starting from the most significant [bit](bit.md) work your way to the least until you see a difference. Which ever is 1 in the different place is larger.
 
 The only exclusion to this is if the signed [bits](bit.md) of the two numbers are different. Then the positive number is larger!
 
-## Conclusion
+# Conclusion
 
 This does seem like a pretty good method to encode negative numbers ... you don't need to add in much additional logic on top of unsigned integers.

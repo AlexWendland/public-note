@@ -6,10 +6,10 @@ checked: false
 created: 2023-08-28
 draft: false
 last_edited: 2023-11-11
-title: Tree (graph)
 tags:
   - maths
   - graph-theory
+title: Tree (graph)
 type: definition
 ---
 

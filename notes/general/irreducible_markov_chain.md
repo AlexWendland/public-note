@@ -4,10 +4,10 @@ checked: false
 created: 2023-12-03
 draft: false
 last_edited: 2023-12-03
-title: Irreducible Markov chain
 tags:
   - maths
   - probability
+title: Irreducible Markov chain
 type: definition
 ---
 >[!tldr] Irreducible Markov chain

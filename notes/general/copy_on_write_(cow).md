@@ -5,9 +5,9 @@ checked: false
 created: 2025-03-23
 draft: false
 last_edited: 2025-03-23
-title: Copy on write (COW)
 tags:
   - OS
+title: Copy on write (COW)
 type: definition
 ---
 >[!tldr] Copy on write (COW)

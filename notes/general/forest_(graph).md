@@ -6,10 +6,10 @@ checked: false
 created: 2023-09-26
 draft: false
 last_edited: 2023-11-11
-title: Forest (graph)
 tags:
   - maths
   - graph-theory
+title: Forest (graph)
 type: definition
 ---
 > [!tldr] Forest

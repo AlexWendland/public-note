@@ -4,9 +4,9 @@ checked: false
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-title: Finding rouge networks (FIRE)
 tags:
   - networks
+title: Finding rouge networks (FIRE)
 type: definition
 ---
 >[!tldr] Finding rouge networks (FIRE)

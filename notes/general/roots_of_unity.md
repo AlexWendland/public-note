@@ -6,9 +6,8 @@ checked: false
 created: 2023-09-18
 draft: true
 last_edited: 2023-11-11
-title: Roots of unity
 tags:
   - maths
+title: Roots of unity
 type: str
 ---
-# Roots of unity

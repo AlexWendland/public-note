@@ -5,12 +5,11 @@ checked: false
 created: 2023-03-31
 draft: false
 last_edited: 2023-11-11
-title: Singleton
 tags:
   - programming
+title: Singleton
 type: pattern
 ---
-# Singleton
 
 The Singleton pattern is a creational design pattern that is used to ensure that only one instance of a class is created throughout the entire lifetime of an application. This pattern is particularly useful in situations where multiple objects of a class could cause issues with data consistency, resource allocation, or system performance.
 

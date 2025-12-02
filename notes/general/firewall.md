@@ -5,9 +5,9 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-title: Firewall
 tags:
   - networks
+title: Firewall
 type: definition
 ---
 >[!tldr] Firewall

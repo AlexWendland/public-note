@@ -4,12 +4,11 @@ checked: false
 created: 2024-04-06
 draft: false
 last_edited: 2024-04-06
-title: Q-learning
 tags:
   - programming
+title: Q-learning
 type: algorithm
 ---
-# Q-learning
 
 Q-learning is a [reinforcement learning](reinforcement_learning.md) **class** of algorithms which are value function based. It uses the approach of [Incremental learning](incremental_learning.md) of the [Q-function (RL)](q-function_(rl).md). We use the model of [transitions](transitions_(mdp).md) where the learning can provide the action each iteration.
 
@@ -27,6 +26,6 @@ $$
 $$
 Note as time changes we switch which state $s \in S$ we look at, and will choose different actions.
 
-## Correctness
+# Correctness
 
 There is a theorem that states for a [Markov decision process](markov_decision_process.md) if we apply $Q$ learning where a given a state $s,a$ is visited infinitely often, the states $s'$ are sampled using the transition probabilities and the rewards are distributed correctly. Then $\hat{Q}(s,a) \rightarrow Q(s,a)$ and Q-learning converges correctly.

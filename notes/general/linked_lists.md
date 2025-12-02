@@ -8,9 +8,9 @@ checked: false
 created: 2023-10-12
 draft: false
 last_edited: 2023-11-11
-title: Linked lists
 tags:
   - programming
+title: Linked lists
 type: data structure
 ---
 >[!tldr] Linked list

@@ -1,34 +1,33 @@
 ---
 aliases:
 checked: false
-course: 'CS6250 Computer Networks'
+course: CS6250 Computer Networks
 created: 2024-07-19
 draft: false
 last_edited: 2024-07-19
-title: Week 7 - Software defined networks
 tags:
   - OMSCS
+title: Week 7 - Software defined networks
 type: lecture
 week: 7
 ---
-# Week 7 - Software defined networks
 
 [Software defined networks (SDN)](../../general/software_defined_networks_(sdn).md)
 
-## Additional reading
+# Additional reading
 
-### Important Readings
+## Important Readings
 
 The Road to SDN: An Intellectual History of Programmable Networks
 [https://www.sigcomm.org/sites/default/files/ccr/papers/2014/April/0000000-0000012.pdfLinks to an external site.](https://www.sigcomm.org/sites/default/files/ccr/papers/2014/April/0000000-0000012.pdf "Link")
 
-### Book References
+## Book References
 
 Kurose-Ross, 7th Edition. Section 4.1.1
 
 Kurose-Ross, 7th Edition. Chapter 5
 
-### Optional Readings
+## Optional Readings
 
 SDN Controllers: Benchmarking & Performance Evaluation
 [https://arxiv.org/pdf/1902.04491.pdfLinks to an external site.](https://arxiv.org/pdf/1902.04491.pdf)
@@ -36,11 +35,11 @@ SDN Controllers: Benchmarking & Performance Evaluation
 SDN Architecture
 [https://www.opennetworking.org/wp-content/uploads/2013/02/TR_SDN_ARCH_1.0_06062014.pdfLinks to an external site.](https://www.opennetworking.org/wp-content/uploads/2013/02/TR_SDN_ARCH_1.0_06062014.pdf)
 
-### Optional Activity
+## Optional Activity
 
 OpenDaylight Application Developer’s Tutorial
 
-## History
+# History
 
 There was two main factors in the drive to switch to [SDNs](../../general/software_defined_networks_(sdn).md):
 - Diversity of device types: after [routers](../../general/router.md) and [switches](../../general/switch.md) the introduction of  [middleboxes](../../general/middleboxes.md) caused an explosion of devices network mangers had to look after.
@@ -49,7 +48,7 @@ Therefore we needed to separate tasks up and define a well defined and consisten
 
 There were 3 main steps in the journey to the definition of an [SDN](../../general/software_defined_networks_(sdn).md).
 
-### 1. Active Networks (Mid-1990s to Early 2000s)
+## 1. Active Networks (Mid-1990s to Early 2000s)
 
 **Goal:** Introduce a programmable network interface (network API) to customise packet handling and innovate network services despite the slow standardisation process by [IETF](ietf.md).
 
@@ -66,7 +65,7 @@ There were 3 main steps in the journey to the definition of an [SDN](../../gener
 
 **Challenges:** Too ambitious, requiring end-user programming and facing trust, performance, and security issues.
 
-### 2. Control and Data Plane Separation (2001 to 2007)
+## 2. Control and Data Plane Separation (2001 to 2007)
 
 **Goal:** Improve network reliability, predictability, and performance by separating the control and data planes in response to increasing traffic volumes.
 
@@ -83,7 +82,7 @@ There were 3 main steps in the journey to the definition of an [SDN](../../gener
 
 **Challenges:** Initial scepticism about separating control and data planes, leading to foundational concepts for [OpenFlow](../../general/openflow.md) API.
 
-### 3. OpenFlow API and Network Operating Systems (2007 to 2010)
+## 3. OpenFlow API and Network Operating Systems (2007 to 2010)
 
 **Goal:** Facilitate scalable network experimentation and practical deployment through programmable networks.
 
@@ -103,9 +102,9 @@ There were 3 main steps in the journey to the definition of an [SDN](../../gener
 - Introduced the vision of a network operating system.
 - Developed distributed state management techniques.
 
-## [SDN](../../general/software_defined_networks_(sdn).md) functionality
+# [SDN](../../general/software_defined_networks_(sdn).md) functionality
 
-### Separation of Data and Control Plane
+## Separation of Data and Control Plane
 
 There were two main pushes for this:
 1. Independent evolution and development.
@@ -119,7 +118,7 @@ A [SDN](../../general/software_defined_networks_(sdn).md) moves the control plan
 
 ![Snd Example](../../../images/snd_example.png)
 
-## Architecture
+# Architecture
 
 There are 3 separate layers to the architecture:
 
@@ -140,7 +139,7 @@ There are 4 important features of this architecture:
 3. **Network control functions:** The SDN control plane, (running on multiple servers for increased performance and availability) consists of two components: the controller and the network applications. The controller maintains up-to-date network state information about the network devices and elements (for example, hosts, switches, links) and provides it to the network-control applications. This information, in turn, is used by the applications to monitor and control the network devices.
 4. **A programmable network:** The network-control applications act as the “brain” of SDN control plane by managing the network. Example applications can include network management, traffic engineering, security, automation, analytics, etc. For example, we can have an application that determines the end-to-end path between sources and destinations in the network using Dijkstra’s algorithm.
 
-### Controller Architecture
+## Controller Architecture
 
 The controller itself is broken down into a further 3 layers. These handle each of its separate responsibilities.
 
@@ -152,9 +151,9 @@ The controller itself is broken down into a further 3 layers. These handle each 
 
 The SDN controller, although viewed as a monolithic service by external devices and applications, is implemented by distributed servers to achieve fault tolerance, high availability and efficiency. Despite the issues of synchronization across servers, many modern controllers such as OpenDayLight and ONOS have solved it and prefer distributed controllers to provide highly scalable services.
 
-## Readings for part 2
+# Readings for part 2
 
-### Important Readings
+## Important Readings
 
 Software-Defined Networking: A Comprehensive Survey
 [https://arxiv.org/pdf/1406.0440.pdfLinks to an external site.](https://arxiv.org/pdf/1406.0440.pdf "Link")
@@ -168,7 +167,7 @@ P4: Programming Protocol-Independent Packet Processors
 A Software-Defined Internet Exchange
 [https://dl.acm.org/doi/pdf/10.1145/2740070.2626300?download=trueLinks to an external site.](https://dl.acm.org/doi/pdf/10.1145/2740070.2626300?download=true)
 
-### Optional Readings
+## Optional Readings
 
 P4 Language tutorial
 [https://github.com/p4lang/tutorials/tree/master/exercises/basicLinks to an external site.](https://github.com/p4lang/tutorials/tree/master/exercises/basic)
@@ -178,7 +177,7 @@ An Industrial-Scale Software Defined Internet Exchange Point
 
  _As you go through this lesson, there will be links for optional tutorials on various SDN technologies._
 
-## Advantages of [SDN](../../general/software_defined_networks_(sdn).md)s
+# Advantages of [SDN](../../general/software_defined_networks_(sdn).md)s
 
 1. **Shared abstractions:** These middlebox services (or network functionalities) can be programmed easily now that the abstractions provided by the control platform and network programming languages can be shared.
 2. **Consistency of same network information**: All network applications have the same global network information view, leading to consistent policy decisions while reusing control plane modules
@@ -187,7 +186,7 @@ An Industrial-Scale Software Defined Internet Exchange Point
 
 ![Sdn Advantages](../../../images/sdn_advantages.png)
 
-### SND features
+## SND features
 
 The figure below presents three perspectives of the SDN landscape: (a) a plane-oriented view, (b) the SDN layers, and (c) a system design perspective.
 
@@ -230,7 +229,7 @@ Next we highlight the key features of an SDN.
     - Use cases: routing, load balancing, security, QoS, power reduction, virtualization, mobility management.
     - Examples: Hedera, Aster*x, OSP, OpenQoS, Pronto, Plug-N-Serve, SIMPLE, FAMS, FlowSense, OpenTCP, NetGraph, FortNOX, FlowNAC, VAVE.
 
-## SDN infrastructure layer
+# SDN infrastructure layer
 
 This is the network-controlled devices. These are built on top of open standard interfaces that ensure cross-compatibility between vendors.
 
@@ -246,7 +245,7 @@ Potential actions could be:
 5. Send the packet to next flow table
 Once a packet matches with one rule it is normally executed meaning order matters.
 
-## South-bound interface
+# South-bound interface
 
 [OpenFlow](../../general/openflow.md) is the most widely used API for the south-bound interface. As the release cycle for most new switches is around 2 years the predominance of [OpenFlow](../../general/openflow.md) is likely to stay.
 
@@ -258,9 +257,9 @@ These all communicate with the SDN controller.
 
 There are alternatives to [OpenFlow](../../general/openflow.md) such as ForCES which provides mo flexible approach to traditional networking without changing infrastructure.
 
-## Centralised vs decentralised controllers
+# Centralised vs decentralised controllers
 
-### Essential Functions
+## Essential Functions
 
 - **Topology Management:** Understanding and managing the network layout.
 - **Statistics Collection:** Gathering network data for analysis.
@@ -269,7 +268,7 @@ There are alternatives to [OpenFlow](../../general/openflow.md) such as ForCES w
 - **Shortest Path Forwarding:** Determining the most efficient routes for data.
 - **Security Mechanisms:** Ensuring isolation and enforcing security rules, prioritising high-priority services over lower-priority applications.
 
-### Controller Architectures
+## Controller Architectures
 
 1. **Centralized Controllers:**
 
@@ -291,7 +290,7 @@ There are alternatives to [OpenFlow](../../general/openflow.md) such as ForCES w
         - **Weak Consistency Semantics:** Less strict data consistency requirements.
         - **Fault Tolerance:** Better resilience to failures.
 
-## Example distributed controller
+# Example distributed controller
 
 Here we will review the ONOS distributed SDN control platform. This is based on Floodlight an open-source single instance SDN controller.
 
@@ -316,7 +315,7 @@ Here we will review the ONOS distributed SDN control platform. This is based on 
     - **Master Election:** New masters are elected for affected switches, ensuring each switch has one master.
     - **Zookeeper:** Manages mastership between switches and controllers.
 
-## Programming languages for the control plane [P4](../../general/programming_protocol-independent_packet_processors_(p4).md)
+# Programming languages for the control plane [P4](../../general/programming_protocol-independent_packet_processors_(p4).md)
 
 - **Purpose:** A high-level programming language designed to configure network switches, complementing SDN control protocols.
 - **Context:** Developed to address the limitations of the [OpenFlow](../../general/openflow.md) interface, which started with simple rule tables and has grown more complex to handle multiple stages and numerous header fields.
@@ -347,7 +346,7 @@ Below is an example dependency graph for the [P4](../../general/programming_prot
 
 ![P4 Example](../../../images/P4_example.png)
 
-## SDN Applications
+# SDN Applications
 
 - **Traffic Engineering:**
     - **Focus:** Optimize traffic flow to minimize power consumption, use network resources efficiently, and perform load balancing.
@@ -389,7 +388,7 @@ Below is an example dependency graph for the [P4](../../general/programming_prot
         - **LIME:** Provides live migration capabilities.
         - **FlowDiff:** Detects abnormalities in data center networks.
 
-## SDX
+# SDX
 
 Routing using [BGP](../../general/boarder_gateway_protocol_(bgp).md) has some serious limitations:
 1. Routing only uses destination IP: We want customisation based in the traffic application or source IP.
@@ -408,7 +407,7 @@ This is written in Pyretic and example can be found below.
 
 ![Sdx Example](../../../images/sdx_example.png)
 
-## Wide area traffic delivery
+# Wide area traffic delivery
 
 1. **Application-Specific Peering**
     - **Current Challenge:** ISPs need to handle high-bandwidth application traffic (e.g., YouTube, Netflix) with dedicated ASes and configure additional rules in edge routers.
@@ -423,7 +422,7 @@ This is written in Pyretic and example can be found below.
     - **Current Challenge:** Placing middleboxes at every necessary junction is costly for large ISPs, and routing protocols like iBGP to redirect traffic can be inefficient.
     - **SDX Solution:** SDX can dynamically identify and redirect traffic through a sequence of middleboxes, optimizing middlebox usage without unnecessary traffic redirection.
 
-### Key Advantages
+## Key Advantages
 
 - **Customization:** Each AS can tailor its traffic policies without affecting others.
 - **Efficiency:** SDX enables more precise traffic control and management, reducing overhead and inefficiencies.

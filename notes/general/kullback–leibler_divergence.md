@@ -5,9 +5,9 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-title: "Kullback\u2013Leibler divergence"
 tags:
   - probability
+title: "Kullback\u2013Leibler divergence"
 type: definition
 ---
 >[!tldr] Kullback–Leibler divergence

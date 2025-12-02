@@ -5,9 +5,9 @@ checked: false
 created: 2024-08-26
 draft: false
 last_edited: 2024-08-26
-title: Process Identification (PID)
 tags:
   - OS
+title: Process Identification (PID)
 type: definition
 ---
 >[!tldr] Process Identification (PID)

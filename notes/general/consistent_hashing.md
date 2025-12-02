@@ -4,9 +4,9 @@ checked: false
 created: 2024-07-27
 draft: false
 last_edited: 2024-07-27
-title: Consistent hashing
 tags:
   - computer-science
+title: Consistent hashing
 type: definition
 ---
 >[!tldr] Consistent hashing

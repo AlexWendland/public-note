@@ -9,9 +9,9 @@ checked: false
 created: 2023-12-03
 draft: false
 last_edited: 2023-12-03
-title: Eigenvector and Eigenvalue
 tags:
   - maths
+title: Eigenvector and Eigenvalue
 type: definition
 ---
 >[!tldr] Eigenvector and Eigenvalue

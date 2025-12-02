@@ -6,9 +6,9 @@ checked: false
 created: 2024-01-21
 draft: false
 last_edited: 2024-01-21
-title: Separation of concerns (SoC)
 tags:
   - best-practices
+title: Separation of concerns (SoC)
 type: theory
 ---
 >[!tldr] Separation of concerns (SoC)

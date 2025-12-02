@@ -6,9 +6,9 @@ checked: false
 created: 2024-05-21
 draft: false
 last_edited: 2024-05-21
-title: Node (IPv6)
 tags:
   - networks
+title: Node (IPv6)
 type: definition
 ---
 >[!tldr] Node

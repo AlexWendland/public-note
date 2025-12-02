@@ -6,9 +6,9 @@ checked: false
 created: 2024-01-13
 draft: false
 last_edited: 2024-01-13
-title: Mean squared error (MSE)
 tags:
   - machine-learning
+title: Mean squared error (MSE)
 type: definition
 ---
 >[!tldr] Mean Squared Error (MSE)

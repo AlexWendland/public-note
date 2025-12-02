@@ -4,9 +4,9 @@ checked: false
 created: 2024-02-19
 draft: false
 last_edited: 2024-02-19
-title: PAC learnable bound with VC-dimension
 tags:
   - machine-learning
+title: PAC learnable bound with VC-dimension
 type: lemma
 ---
 # Statement

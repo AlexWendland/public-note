@@ -4,9 +4,9 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-title: If two variables are independent conditional entropy excludes the dependent
 tags:
   - probability
+title: If two variables are independent conditional entropy excludes the dependent
 type: lemma
 ---
 # Statement

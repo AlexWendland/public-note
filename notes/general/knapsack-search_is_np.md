@@ -4,9 +4,9 @@ checked: false
 created: 2023-11-02
 draft: false
 last_edited: 2023-11-13
-title: Knapsack-search is NP
 tags:
   - maths
+title: Knapsack-search is NP
 type: lemma
 ---
 # Statement

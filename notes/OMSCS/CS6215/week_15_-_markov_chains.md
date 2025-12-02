@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-11-11
 draft: false
 last_edited: 2023-12-03
-title: Week 15 - Markov Chains
 tags:
   - OMSCS
+title: Week 15 - Markov Chains
 type: lecture
 week: 15
 ---
-# Week 15 - Markov Chains
 
 To talk about [Markov chain](../../general/markov_chain.md) it is good to recap what a [probability matrix](../../general/stochastic_matrix.md) is:
 
@@ -35,7 +34,7 @@ Now we can define a [Markov chain](../../general/markov_chain.md).
 >$$
 >where $p_{i,j}$ represents the edge weight going from $i$ to $j$ in the graph above.
 
-## Steps through the graph
+# Steps through the graph
 
 In a [Markov chain](../../general/markov_chain.md) $P$'s term $p_{i,j}$ represents the probability of going from $i$ to $j$ in one step. However $P^k$'s terms represent the probability of going from $i$ to $j$ in $k$ steps, so this is still a [probability matrix](../../general/stochastic_matrix.md). In the example above
 $$
@@ -48,7 +47,7 @@ P^2 = \left ( \begin{array}
 $$
 as you can notice there is no path from state $4$ to $3$ in 2 steps.
 
-## Stationary distribution
+# Stationary distribution
 
 In the example above as $k$ gets large $P^k$ converges in some sense to a single matrix. For very large $k$ we may have
 
@@ -70,7 +69,7 @@ Formalising what we mean her we have.
 
 The connection follows as to calculate $P \cdot P^k$ for each row we calculate something similar to $\pi P$.
 
-## Algebraic view
+# Algebraic view
 
 For some [Markov chain](../../general/markov_chain.md) given by $P \in M_{N, N}(\mathbb{R})$ if you start at state $i$ with $1 \leq i \leq N$ then the [probability distribution](../../general/probability_distribution.md) of where you are is given by the $i$'th row of $P$.
 
@@ -86,7 +85,7 @@ However, we can pick any [probability distribution](../../general/probability_di
 
 From the definition any [stationary distribution](../../general/stationary_distribution_(markov_chains).md) is simply an [eigenvector](../../general/eigenvector_and_eigenvalue.md) for $P$ with [eigenvalue](../../general/eigenvector_and_eigenvalue.md) 1.
 
-## When does a [Markov chain](../../general/markov_chain.md) not have a [stationary distribution](../../general/stationary_distribution_(markov_chains).md)?
+# When does a [Markov chain](../../general/markov_chain.md) not have a [stationary distribution](../../general/stationary_distribution_(markov_chains).md)?
 
 If the state [directed graph](../../general/directed_graph.md) is a [bipartite graph](../../general/bipartite_graph.md) then notice if we start on one side at every even step we are on that side - however for every odd step we are on the other side. This is a classic example of when no [stationary distribution](../../general/stationary_distribution_(markov_chains).md) will exist. This can be summarised by the following definitions.
 
@@ -96,14 +95,14 @@ If the state [directed graph](../../general/directed_graph.md) is a [bipartite g
 
 We can show [periodic Markov chains](../../general/periodic_markov_chain.md) have no [stationary distribution](../../general/stationary_distribution_(markov_chains).md).
 
-## When does a [Markov chain](../../general/markov_chain.md) not have a unique [stationary distribution](../../general/stationary_distribution_(markov_chains).md)?
+# When does a [Markov chain](../../general/markov_chain.md) not have a unique [stationary distribution](../../general/stationary_distribution_(markov_chains).md)?
 
 Suppose we have a [Markov chain](../../general/markov_chain.md) with multiple [strongly connected component](../../general/strongly_connected_components_(directed_graphs).md) sinks in the [strongly connected component graph](../../general/strongly_connected_component_graph_(directed_graph).md). Then for each of these we will get a [stationary distribution](../../general/stationary_distribution_(markov_chains).md) on the vertices involved. Then any weighted sum of these [stationary distribution](../../general/stationary_distribution_(markov_chains).md) such that they sum to a [probability distribution](../../general/probability_distribution.md) would be a [stationary distribution](../../general/stationary_distribution_(markov_chains).md) on the whole [Markov chain](../../general/markov_chain.md) and it wouldn't be unique.
 
 [Irreducible Markov chain](../../general/irreducible_markov_chain.md)
 
 
-## [Markov chain](../../general/markov_chain.md) with a unique [stationary distribution](../../general/stationary_distribution_(markov_chains).md)
+# [Markov chain](../../general/markov_chain.md) with a unique [stationary distribution](../../general/stationary_distribution_(markov_chains).md)
 
 Now we know what to avoid we define the following.
 
@@ -117,7 +116,7 @@ They also have the observed limiting form.
 
 [Statement](../../general/ergodic_markov_chain_limiting_distrubution.md#statement)
 
-## What is the [stationary distribution](../../general/stationary_distribution_(markov_chains).md)?
+# What is the [stationary distribution](../../general/stationary_distribution_(markov_chains).md)?
 
 There is one class of [Markov chain](../../general/markov_chain.md) that has an easy [stationary distribution](../../general/stationary_distribution_(markov_chains).md) to compute.
 
@@ -131,7 +130,7 @@ There is another form [Markov chain](../../general/markov_chain.md) that has an 
 
 Though in general it does not have anything explicit.
 
-## Page Rank algorithm
+# Page Rank algorithm
 
 There is an algorithm invented in 1998 that was used to rate the importance of webpages.
 
@@ -148,7 +147,7 @@ We think of this graph in an extended [Adjacency list](../../general/adjacency_l
 
 The problem is to define $\pi(x)$ to be the "rank" of a page - which will be a measure of importance.
 
-## How to construct the page rank
+# How to construct the page rank
 
 We want the page rank that obays some simple ideas.
 
@@ -162,7 +161,7 @@ This is recursive however, so we don't know if there will be a solution for $\pi
 
 Though the suggestive notation of $\pi$ and the idea of a limit should give you an idea that we will construct this via a [stationary distribution](../../general/stationary_distribution_(markov_chains).md) of a [Markov chain](../../general/markov_chain.md). In this world we already know when [stationary distributions](../../general/stationary_distribution_(markov_chains).md) exist.
 
-## Random walk
+# Random walk
 
 Suppose we play a game on the [Webgraph](../../general/webgraph.md) where we start at one page, then uniformly at random we hit one of the outbound hyperlinks on that webpage. This defines us a [Markov chain](../../general/markov_chain.md) on the [Webgraph](../../general/webgraph.md) where
 $$p_{y,x} = \begin{cases} \frac{1}{\vert Out(y) \vert} & \mbox{if } (y,x) \in E\\ 0 & \mbox{otherwise} \end{cases}.$$
@@ -172,7 +171,7 @@ then for a particular position $x$ on the righthand side we have
 $$\pi(x) = \sum_{y \in In(x)} \pi(y)p_{y,x} = \sum_{y \in In(x)} \frac{\pi(y)}{\vert Out(y) \vert}.$$
 Giving us the page rank we defined above.
 
-## Technical tweaks
+# Technical tweaks
 
 The web we might be on might have horrible irregularities within it so we get [periodic states](../../general/periodic_state_(markov_chain).md) or [strongly connected components](../../general/strongly_connected_components_(directed_graphs).md). Therefore we add the possibility to randomly jump from the page you are on to one picked uniformly at random from all the pages on the web. We will do this with probability $1 - \alpha$ for some $\alpha \in (0,1] \subset \mathbb{R}$.
 
@@ -188,7 +187,7 @@ This [Markov chain](../../general/markov_chain.md) is [strongly connected](../..
 
 This tweaked [Markov chain](../../general/markov_chain.md) is an [Ergodic Markov chain](../../general/ergodic_markov_chain.md) so has a unique [stationary distribution](../../general/stationary_distribution_(markov_chains).md). We use this to find the page rank.
 
-## How to compute $\pi$
+# How to compute $\pi$
 
 This is the [Page rank algorithm](../../general/page_rank_algorithm.md).
 
@@ -199,7 +198,7 @@ for some large $t$. There are some tricks that will help
 - if we use an old approximation of $\pi$ for $\mu_0$ it will mix faster, and
 - matrix multiplication doesn't need to take $O(N^2)$ instead we can get it on the order of $O(\vert E \vert)$.
 
-## What value to set $\alpha$
+# What value to set $\alpha$
 
 If $\alpha = 0$ then we have a [Symmetric Markov chain](../../general/symmetric_markov_chain.md) with just the uniform [stationary distribution](../../general/stationary_distribution_(markov_chains).md). So $\alpha$ in some sense is reflecting how much the tweaked [Markov chain](../../general/markov_chain.md) is reflecting the original idea of the page rank.
 

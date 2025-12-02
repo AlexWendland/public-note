@@ -5,9 +5,9 @@ checked: false
 created: 2025-05-14
 draft: false
 last_edited: 2025-05-14
-title: Value function (RL)
 tags:
   - reinforcement-learning
+title: Value function (RL)
 type: definition
 ---
 >[!tldr] Value function (RL)

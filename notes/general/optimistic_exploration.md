@@ -4,9 +4,9 @@ checked: false
 created: 2024-04-06
 draft: false
 last_edited: 2024-04-06
-title: Optimistic exploration
 tags:
   - machine-learning
+title: Optimistic exploration
 type: definition
 ---
 >[!tldr] Optimistic exploration

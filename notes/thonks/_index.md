@@ -1,10 +1,9 @@
 ---
-title: Thonks
 draft: false
 tags:
   - thoughts
+title: Thonks
 type: index
 ---
-# Thonks
 
 Random thoughts, ideas, and reflections.

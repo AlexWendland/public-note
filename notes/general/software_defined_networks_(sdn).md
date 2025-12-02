@@ -6,9 +6,9 @@ checked: false
 created: 2024-07-19
 draft: false
 last_edited: 2024-07-19
-title: Software defined networks (SDN)
 tags:
   - networks
+title: Software defined networks (SDN)
 type: definition
 ---
 >[!tldr] Software defined networks (SDN)

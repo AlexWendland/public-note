@@ -1,25 +1,23 @@
 ---
 aliases:
 checked: false
-course: 'CS7641 Machine Learning'
+course: CS7641 Machine Learning
 created: 2024-01-17
 draft: false
 last_edited: 2024-01-17
-title: Week 2 - Regression and classification
 tags:
   - OMSCS
+title: Week 2 - Regression and classification
 type: lecture
 week: 2
 ---
-# Week 2 - Regression and classification
-
-# Regression history
+ Regression history
 
 [Regression problems](../../general/regression_problems.md)
 
 The name comes from [regression to the mean](../../general/regression_to_the_mean.md), this was the technique they used to first talk about it - then the word regression for the technique stuck.
 
-# Polynomial Regression
+ Polynomial Regression
 
 [Polynomial regression](../../general/polynomial_regression.md)
 
@@ -29,13 +27,13 @@ Note that [linear regression](../../general/linear_regression.md) is [polynomial
 
 [linear regression](../../general/linear_regression.md)
 
-## Polynomial regression using [MSE](../../general/mean_squared_error_(mse).md)
+# Polynomial regression using [MSE](../../general/mean_squared_error_(mse).md)
 
 [MSE](../../general/mean_squared_error_(mse).md)
 
 [Calculate polynomial regression coefficients for MSE](../../general/calculate_polynomial_regression_coefficients_for_mse.md)
 
-## Picking a degree
+# Picking a degree
 
 Below is an example of [polynomial regression](../../general/polynomial_regression.md) done on different degree polynomials.
 
@@ -45,7 +43,7 @@ As we increase the degree the fitting polynomial, the fit to the points we are t
 
 This is easy to see by eye but how can we computationally infer this?
 
-## Cross validation
+# Cross validation
 
 [Cross validation](../../general/cross_validation.md)
 

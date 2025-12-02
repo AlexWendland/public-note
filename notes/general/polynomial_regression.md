@@ -5,10 +5,10 @@ checked: false
 created: 2024-01-17
 draft: false
 last_edited: 2024-01-17
-title: Polynomial regression
 tags:
   - maths
   - machine-learning
+title: Polynomial regression
 type: definition
 ---
 >[!tldr] Polynomial regression

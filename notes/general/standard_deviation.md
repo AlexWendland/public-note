@@ -5,9 +5,9 @@ checked: false
 created: 2024-02-21
 draft: false
 last_edited: 2024-02-21
-title: Standard deviation
 tags:
   - probability
+title: Standard deviation
 type: definition
 ---
 >[!tldr] Standard deviation

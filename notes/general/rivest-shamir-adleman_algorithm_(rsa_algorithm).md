@@ -5,12 +5,11 @@ checked: false
 created: 2023-10-09
 draft: false
 last_edited: 2023-11-11
-title: Rivest-Shamir-Adleman algorithm (RSA algorithm)
 tags:
   - programming
+title: Rivest-Shamir-Adleman algorithm (RSA algorithm)
 type: algorithm
 ---
-# Rivest-Shamir-Adleman algorithm (RSA algorithm)
 
 To set up the [RSA](rivest-shamir-adleman_algorithm_(rsa_algorithm).md) algorithm you do the following:
 
@@ -35,7 +34,7 @@ Note this works from [Euler's theorem (modular arithmetic)](euler's_theorem_(mod
 $$ y^d = m^{ed} = m \cdot (m^{(p-1)(q-1)})^k = m \cdot 1^k = m \ (mod \ pq)$$
 as $\phi(pq) = (p-1)(q-1)$.
 
-## Limitations
+# Limitations
 
 1. gcd(m,N) = 1
 	1. Otherwise the encrypted message $y^e$ and $N$ share a common factor $p$ or $q$ and they can work out $p$ and $q$ using the [extended Euclidean algorithm](extended_euclidean_algorithm.md) and work out $e$.

@@ -4,9 +4,9 @@ checked: false
 created: 2024-02-14
 draft: false
 last_edited: 2024-02-14
-title: Mistake bound
 tags:
   - machine-learning
+title: Mistake bound
 type: definition
 ---
 >[!tldr] Mistake bound

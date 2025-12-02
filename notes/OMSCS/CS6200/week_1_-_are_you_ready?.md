@@ -1,23 +1,21 @@
 ---
 aliases:
 checked: false
-course: 'CS6200 Graduate introduction to Operating Systems'
+course: CS6200 Graduate introduction to Operating Systems
 created: 2024-08-25
 draft: false
 last_edited: 2024-08-25
-title: Week 1 - Are you ready?
 tags:
   - OMSCS
+title: Week 1 - Are you ready?
 type: lecture
 week: 1
 ---
-# Week 1 - Are you ready?
-
-## C Programming
+# C Programming
 
 Because this course focuses on operating systems, primarily covering Linux, it assumes that students have a reasonable understanding of the C programming language.
 
-### Concepts to Know
+## Concepts to Know
 
 For this course, a "reasonable understanding" would be defined as having used or been exposed to the following C concepts:
 
@@ -28,7 +26,7 @@ For this course, a "reasonable understanding" would be defined as having used or
 - Dynamic memory allocation using malloc()
 - Use of C libraries
 
-### Other Helpful Skills Related to C
+## Other Helpful Skills Related to C
 
 Besides understanding the above C concepts, it is useful for students to have experience with the following:
 

@@ -1,25 +1,24 @@
 ---
 aliases:
 checked: false
-course: 'CS6210 Advanced Operating Systems'
+course: CS6210 Advanced Operating Systems
 created: 2025-09-04
 draft: true
 last_edited: 2025-09-04
-title: Week 3 - Virtualization
 tags:
   - OMSCS
+title: Week 3 - Virtualization
 type: lecture
 week: 3
 ---
-# Week 3 - Virtualization
 
 As a refresher please read:
 
 [Week 12 - Virtualization](../CS6200/week_12_-_virtualization.md)
 
-# Memory Virtualisation
+ Memory Virtualisation
 
-## Address Translation
+# Address Translation
 
 When hosting guest operating systems on top of a hyper visor we need to make memory appear as it would to a normal OS.
 For the CPU cache which is physically tagged, there is no special operations we need to perform.
@@ -38,12 +37,12 @@ However, having to do two mappings would dramatically slow this down - not only 
 Different approaches are taken when we are fully Virtualised vs Para Virtualised.
 In the Para Virtualised setting the guest OS is aware that it is running on a hypervisor.
 
-### Full Virtualisation
+## Full Virtualisation
 
 For full virtualisation we can't change how the guest OS works.
 Therefore, we need to hook into the system calls it will make - namely when it tries to write entries to its page tables/update the TLB.
 
-#### Shadow Page Tables Implementation
+### Shadow Page Tables Implementation
 
 The hypervisor maintains **shadow page tables** that store mapping PPN -> MPN directly. When the guest OS tries to update its page table (VPN -> PPN), the hypervisor:
 
@@ -54,7 +53,7 @@ The hypervisor maintains **shadow page tables** that store mapping PPN -> MPN di
 
 This allows hardware to operate with direct VPN -> MPN translations, avoiding two-level lookups on every memory access.
 
-#### Memory Overhead Challenges
+### Memory Overhead Challenges
 
 Shadow page tables create significant memory overhead:
 
@@ -62,7 +61,7 @@ Shadow page tables create significant memory overhead:
 - **Scales linearly with VMs**: Each additional VM requires its own complete set of shadow page tables
 - **Two mappings stored**: Both VPN -> PPN (guest PT) and PPN -> MPN (shadow PT) must be kept in memory
 
-#### Performance Trade-offs
+### Performance Trade-offs
 
 Shadow paging creates a complex **optimization problem**:
 
@@ -75,7 +74,7 @@ Shadow paging creates a complex **optimization problem**:
 
 The key insight is that **page table updates are infrequent compared to memory accesses**, so the approach trades slower PT updates for faster memory access performance.
 
-### Para Virtualisation
+## Para Virtualisation
 
 In the para virtualised setting, the guest OS is aware it is running on a hypervisor.
 This means the guest OS can also be aware of what MPN's it as an operating system has been allocated.
@@ -95,13 +94,13 @@ This way page faults are still handled by the guest OS.
 This is different to the full virtualisation setting as there is no double mappings that get applied.
 Instead, the guest OS is trusted to only use the MPN's it has been allocated - though this is checked by the hypervisor.
 
-## Reallocating memory
+# Reallocating memory
 
 When hosting multiple Guest OS's on one hypervisor, it needs to have a way to reallocate memory when there is contention for resources.
 The most obvious way when one OS needs more resources is to take it away from another Guest OS.
 However, the hypervisor has no idea what each of the memory is being used for - so it needs some way to signal to each Guest OS that it has more or less memory to use.
 
-### Ballooning
+## Ballooning
 
 The idea behind ballooning, is to install a device driver on each Guest OS.
 This device driver is controlled by the hypervisor and just takes up memory.
@@ -114,18 +113,18 @@ Also, the hypervisor needs to know what memory the balloon driver is using and b
 The hypervisor needs a private channel to each of the balloon drivers.
 This strategy can be used in both the full virtualisation and para virtualisation settings.
 
-## Memory Sharing
+# Memory Sharing
 
 When running multiple guest OS's on the same hypervisor you may have memory that is identicle in both guest OS's (for example the code of an application running on both OS's).
 In this setting, it would be optimal to reuse the same MPN for both VPN.
 If the memory is likely to be read only, then it would be safe to do this mapping and save the settings for that memory as COW (Copy On Write).
 
-### Cooperative Sharing
+## Cooperative Sharing
 
 If the guest OS's are aware they are running on a hypervisor, and are cooperative then they can make pages (such as code) that are likely to be duplicated as that.
 Then the hypervisor can make decisions about optimally cross mapping these pages.
 
-### Oblivious page sharing
+## Oblivious page sharing
 
 Even if the guest OS's are not cooperative, it is still possible to do page sharing.
 Whenever a guest OS allocates a new page, we can use a hash map on the content of the page for a quick lookup.
@@ -137,7 +136,7 @@ To make this work, the hypervisor needs to store a new data structure containing
 Whilst it might be non-optimal to do this at write time - this checking can be ran as a background operation of the hypervisor to optimise memory over time.
 This technique can be done on both fully virtualised and para virtualised systems.
 
-## Memory Policies
+# Memory Policies
 
 In a commercial setting there are two policies when it comes to memory allocation.
 
@@ -148,21 +147,21 @@ In a commercial setting there are two policies when it comes to memory allocatio
 Both these extremes have downsides and upsides, however a hybrid approach is often adopted.
 In this you claim an amount of memory but for the unused memory only a certain percentage is guaranteed to be reserved, the rest will be freed up for other machines.
 
-# CPU Virtualisation
+ CPU Virtualisation
 
 When virtualising a CPU you need to give the Guest OS the illusion they are in full control of the CPU's.
 This not only involves allocating CPU's to the guest OS's but handling discontinuities arising from interruptions.
 For simplicity, we assume there is only one CPU core.
 (Note: This is particularly important in commercial settings where you need to bill guest OS's for the time they are running on the CPU.)
 
-## Proportional Share Scheduling
+# Proportional Share Scheduling
 
 The idea behind proportional share scheduling is to give each guest OS a weight.
 Then when scheduling the CPU, you allocate time slices to each guest OS proportional to their weight.
 There are different implementations of this such as Lottery Scheduling, or Stride Scheduling.
 These take a random or deterministic approach to the same idea.
 
-## Delivering events
+# Delivering events
 
 When a process is running for a particular Guest OS, there are certain operations which will cause an interrupt:
 
@@ -178,7 +177,7 @@ The issue with all of these is the process is running on the hypervisor at hardw
 Therefore any event needs to be passed from the hypervisor into the guest OS.
 These will all need to be delivered as software interrupts to the guest OS.
 
-## Historic note: Geust OS -> Hypervisor
+# Historic note: Geust OS -> Hypervisor
 
 For fully virtualised systems, old version of the x86 architecture has some system calls that would fail silently.
 Whilst most of these would raise a trap to the hypervisor, these few set of operations would not.
@@ -186,11 +185,11 @@ The only way to fix this was to scan the OS binary for these operations and patc
 This has been fixed in the latest version of the x86 architecture.
 This was only an issue in fully virtualised systems as para virtualised systems would use special hypercalls to make these operations instead.
 
-# Device Virtualisation
+ Device Virtualisation
 
 When running a hypervisor you need for the guest OS's to think they have fully control of the devices on the system.
 
-## Full Virtualisation
+# Full Virtualisation
 
 In full virtualisation you have to use the 'trap and emulate' technique.
 This means each time a guest OS tries to access a device, it will raise a trap to the hypervisor.
@@ -201,7 +200,7 @@ For data transfer between the guest OS and hypervisor, this is explicit.
 As the guest OS thinks it is in full control, the hypervisor must first take ownership of the data before passing it to or from the guest OS.
 This has the overhead of copying the data between the guest OS and hypervisor.
 
-## Para Virtualisation
+# Para Virtualisation
 
 In para virtualisation, the set of devices that the Guest OS can access is exactly the set of devices that the hypervisor has.
 The hypervisor can pass events from the device to the guest OS's using software interrupts.
@@ -231,7 +230,7 @@ Some examples of this are:
 This enables requests to be reordered for competing domains (i.e. two guest OS's requesting pages at the same time).
 However, this can be limited by the use of a Reorder barrier if the OS requests need to happen in a fixed order.
 
-# Concluding remarks
+ Concluding remarks
 
 For commercialisation, with all these operations measuring resource usage is very important to give fair billing to customers.
 

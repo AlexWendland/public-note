@@ -7,9 +7,9 @@ checked: false
 created: 2024-02-21
 draft: false
 last_edited: 2024-02-21
-title: Normal distribution
 tags:
   - statistics
+title: Normal distribution
 type: definition
 ---
 >[!tldr] Normal distribution

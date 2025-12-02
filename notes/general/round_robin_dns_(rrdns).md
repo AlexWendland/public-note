@@ -6,9 +6,9 @@ checked: false
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-title: Round robin DNS (RRDNS)
 tags:
   - networks
+title: Round robin DNS (RRDNS)
 type: definition
 ---
 >[!tldr] Round robin DNS (RRDNS)

@@ -7,12 +7,11 @@ checked: false
 created: 2023-09-29
 draft: false
 last_edited: 2023-11-11
-title: Breadth-first search (BFS)
 tags:
   - programming
+title: Breadth-first search (BFS)
 type: algorithm
 ---
-# Breadth-first search (BFS)
 
 This is a method for exploring a tree. Lets say you have a vertex $v \in E$ and you either want to run some procedure on vertices or extract some information form them (here we return the parents). Here we use a [queue](queue.md) data structure.
 

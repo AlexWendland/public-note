@@ -10,10 +10,10 @@ checked: false
 created: 2023-08-28
 draft: false
 last_edited: 2023-11-11
-title: Graph
 tags:
   - maths
   - graph-theory
+title: Graph
 type: definition
 ---
 > [!tldr] Graph

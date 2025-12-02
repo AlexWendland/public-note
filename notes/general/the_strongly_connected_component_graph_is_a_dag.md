@@ -4,9 +4,9 @@ checked: false
 created: 2023-09-27
 draft: false
 last_edited: 2023-11-11
-title: The strongly connected component graph is a DAG
 tags:
   - maths
+title: The strongly connected component graph is a DAG
 type: definition
 ---
 > [!important] Lemma

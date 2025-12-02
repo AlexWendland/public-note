@@ -4,12 +4,11 @@ checked: false
 created: 2023-10-08
 draft: false
 last_edited: 2023-11-11
-title: Graph representations
 tags:
   - programming
+title: Graph representations
 type: data structure
 ---
-# Graph representations
 
 How we represent a [directed graph](directed_graph.md) or [undirected graph](graph.md) in an algorithm can effect the run time of an algorithm.
 

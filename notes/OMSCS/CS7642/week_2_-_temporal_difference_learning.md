@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS7642 Reinforcement Learning'
+course: CS7642 Reinforcement Learning
 created: 2025-05-20
 draft: false
 last_edited: 2025-05-20
-title: Week 2 - Temporal Difference learning
 tags:
   - OMSCS
+title: Week 2 - Temporal Difference learning
 type: lecture
 week: 2
 ---
-# Week 2 - Temporal Difference learning
 
 Within [reinforcement learning](../../general/reinforcement_learning.md) there are broadly 3 types of algorithms:
 
@@ -27,7 +26,7 @@ Within [reinforcement learning](../../general/reinforcement_learning.md) there a
 
 The different approaches have varying trade-offs. Generally, model-based approaches are often more computationally intensive for the planning step but can be more sample efficient (requiring fewer interactions with the environment) because they can "plan" internally without needing new real-world data for every decision. Conversely, model-free approaches (including value-function based and policy search) are typically less computationally intensive per update (as they don't involve a full planning step) but are often more sample intensive, requiring many interactions with the environment to learn effectively. Policy search methods, in particular, can be good for continuous action spaces and may sometimes converge faster than value-based methods in certain complex scenarios, but they can also be more prone to local optima.
 
-## Temporal difference learning
+# Temporal difference learning
 
 The setup for *Temporal Difference Learning* involves a sequential interaction with an environment, typically broken down into distinct 'runs' or **episodes**. Each episode consists of a sequence of states, actions, and rewards. The overarching goal is to enable a learning agent to improve its actions in future episodes by refining its understanding of the value of different states.
 
@@ -65,7 +64,7 @@ However, calculating the full return $G_t$​ requires waiting until the end of 
 >[!caution] What happened to the action?
 > It's important to recognize that this derivation focuses on the [value function](../../general/value_function_(rl).md) V(s). For directly learning which actions to take (i.e., for control), we typically extend these ideas to quality function $Q(s,a)$, which explicitly incorporate the chosen action. This leads to algorithms like [SARSA](sarsa.md) and [Q-learning](../../general/q-learning.md).
 
-## TD(1)
+# TD(1)
 
 In [temporal difference (TD)](temporal_difference_learning.md) methods, our aim is to update value function estimates incrementally as an episode unfolds, rather than waiting until the very end.
 
@@ -73,7 +72,7 @@ Previously we update a state's value estimate based on the full return $G_t$ obs
 
 TD(1) offers an "online" way to achieve the same result as the full return method. It does this by distributing the credit for the eventual return back to all states visited earlier in the episode. It uses a mechanism called **eligibility traces** $e(s)$ within episodes, which essentially keep a decaying record of how recently and frequently a state has been visited within the current episode.
 
-### Eligibility Trace Mechanism for TD(1)
+## Eligibility Trace Mechanism for TD(1)
 
 Within each episode, we maintain an eligibility trace $e(s)$ for every state $s$, initialized to zero. When an agent transitions from state $s_t$​ to $s_{t+1​}$ and receives reward $r_{t+1​}$ at step t:
 
@@ -82,7 +81,7 @@ Within each episode, we maintain an eligibility trace $e(s)$ for every state $s$
 
 This decay by $\gamma$ means that older visits to a state have their eligibility reduced, reflecting the diminishing importance of past events due to discounting.
 
-### TD(1) Update Rule
+## TD(1) Update Rule
 
 When an episode begins we have the value function from the previous episode $V_{old}$ and our job is to create a new value function $V_{new}$. At each step $t$ within this episode, after the transition $(s_t, a_t, r_{t+1}, s_{t+1})$, we calculate a **TD error** for the current transition:
 $$\delta_t = r_{t+1} + \gamma V_{old}(s_{t+1}) - V_{old}(s_t).$$This $\delta_t$​ is the fundamental prediction error: the difference between the current estimate $V_{new}(s_t​)$ and a one-step bootstrapped estimate of the true return.
@@ -138,7 +137,7 @@ $$
 
 This generalizes to work for states that are revisited and matches the every visit definition of $G_t(s)$.
 
-## Issues with TD(1)
+# Issues with TD(1)
 
 While TD(1) offers the appeal of total returns but also suffers similar drawbacks:
 
@@ -148,7 +147,7 @@ While TD(1) offers the appeal of total returns but also suffers similar drawback
 
 These issues motivate the need for methods that can leverage the benefits of bootstrapping more directly, leading us to consider other forms of temporal difference learning, such as TD(0).
 
-## TD(0)
+# TD(0)
 
 While TD(1) provides an elegant online method for computing total returns, it inherently suffers from practical issues, mainly high variance. The target for its effective update ($G_t$​) is a single, potentially very noisy, sample of the true expected return. This can lead to slow and unstable learning, especially in environments with long or stochastic episodes.
 
@@ -180,13 +179,13 @@ For each episode:
 Output: V
 ```
 
-### TD(0) and Maximum Likelihood Estimation
+## TD(0) and Maximum Likelihood Estimation
 
 From a theoretical standpoint, TD(0) can be seen as an approach to find the value function that is a **maximum likelihood estimate (MLE)** for the parameters of the [Bellman equation](../../general/bellman_equation.md), given the observed single-step transitions. More precisely, it often corresponds to minimizing the sum of squared one-step TD errors over the dataset of transitions.
 
 While TD(1) aims to average the _true total returns_ (making it an unbiased estimator but with high variance), TD(0) aims to achieve _local consistency_ with the [Bellman equations](../../general/bellman_equation.md) for each observed transition. This means that TD(0) is trying to make the value of $s_t$​ as consistent as possible with the observed $r_{t+1}​+\gamma V_{old}​(s_{t+1​})$. This bootstrapping approach, even if it introduces some bias (because $V_{old}​(s_{t+1​})$ is itself an estimate), significantly **reduces variance** compared to TD(1). This lower variance often leads to faster and more stable convergence in practice, making TD(0) a cornerstone of many reinforcement learning algorithms.
 
-## K-step estimators
+# K-step estimators
 
 
-## Empirical evidence
+# Empirical evidence

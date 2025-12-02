@@ -5,9 +5,9 @@ checked: false
 created: 2025-04-09
 draft: false
 last_edited: 2025-04-09
-title: Programmed IO (PIO)
 tags:
   - OS
+title: Programmed IO (PIO)
 type: definition
 ---
 >[!tldr] Programmed IO (PIO)

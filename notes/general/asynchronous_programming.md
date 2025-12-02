@@ -6,11 +6,11 @@ checked: false
 created: 2023-08-20
 draft: false
 last_edited: 2023-11-11
-title: Asynchronous programming
 tags:
   - programming
   - OS
   - computer-science
+title: Asynchronous programming
 type: definition
 ---
 >[!tldr] Asynchronous programming

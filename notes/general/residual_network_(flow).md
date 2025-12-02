@@ -5,9 +5,9 @@ checked: false
 created: 2023-10-02
 draft: false
 last_edited: 2023-11-11
-title: Residual Network (flow)
 tags:
   - maths
+title: Residual Network (flow)
 type: definition
 ---
 >[!tldr] Residual Network

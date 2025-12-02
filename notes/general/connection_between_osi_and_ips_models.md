@@ -4,9 +4,9 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-title: Connection between OSI and IPS models
 tags:
   - networks
+title: Connection between OSI and IPS models
 type: explainer
 ---
 # Connection between [OSI](open_systems_interconnection_(osi)_model.md) and [IPS](internet_protocol_stack_(ips)_5_layers.md) models

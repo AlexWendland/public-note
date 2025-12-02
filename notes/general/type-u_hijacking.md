@@ -4,10 +4,10 @@ checked: false
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-title: Type-U hijacking
 tags:
   - networks
   - security
+title: Type-U hijacking
 type: definition
 ---
 >[!tldr] Type-U hijacking

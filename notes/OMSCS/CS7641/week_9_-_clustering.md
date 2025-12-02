@@ -1,19 +1,17 @@
 ---
 aliases:
 checked: false
-course: 'CS7641 Machine Learning'
+course: CS7641 Machine Learning
 created: 2024-03-09
 draft: false
 last_edited: 2024-03-09
-title: Week 9 - Clustering
 tags:
   - OMSCS
+title: Week 9 - Clustering
 type: lecture
 week: 9
 ---
-# Week 9 - Clustering
-
-## Unsupervised learning
+# Unsupervised learning
 
 [Unsupervised learning](../../general/unsupervised_learning.md)
 
@@ -23,15 +21,15 @@ Two trivial solutions to clustering problems are:
 - Set $B = A$ the $f(a) = a$, for all $a \in A$ or
 - Set $B = \{1\}$ then $f(a) = 1$ for all $a \in A$.
 
-## Single Linkage Clustering
+# Single Linkage Clustering
 
 [Single linkage clustering](../../general/single_linkage_clustering.md)
 
-## k-means clustering
+# k-means clustering
 
 [k-means clustering](../../general/k-means_clustering.md)
 
-## Soft clustering
+# Soft clustering
 
 [Expectation Maximisation](../../general/expectation_maximisation.md)
 
@@ -53,7 +51,7 @@ $$
 $$
 This process is not guaranteed to stop.
 
-## Correctness
+# Correctness
 
 - We are monotonically decreasing [Maximum likelihood](../../general/maximum_likelihood_estimation_(mle).md) error of the groupings.
 - Though this is not guaranteed to converge.
@@ -62,7 +60,7 @@ This process is not guaranteed to stop.
 	- So it is best that we restart this algorithm and take the best outcome.
 
 [Soft clustering](../../general/soft_clustering.md)
-## Clustering properties
+# Clustering properties
 
 There are 3 properties we will want to have from a clustering algorithm.
 - [Richness](../../general/rich_clustering.md): For any assignment of objects to clusters, there is some distance $d$ such that $P_d$ returns that clustering.

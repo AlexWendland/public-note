@@ -5,9 +5,9 @@ checked: false
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
-title: Function domain
 tags:
   - maths
+title: Function domain
 type: definition
 ---
 >[!tldr] Function domain

@@ -4,9 +4,9 @@ checked: false
 created: 2024-04-07
 draft: false
 last_edited: 2024-04-07
-title: Minimax-Q
 tags:
   - game-theory
+title: Minimax-Q
 type: definition
 ---
 >[!tldr] Minimax-Q

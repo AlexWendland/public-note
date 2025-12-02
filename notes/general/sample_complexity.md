@@ -4,9 +4,9 @@ checked: false
 created: 2024-02-14
 draft: false
 last_edited: 2024-02-14
-title: Sample complexity
 tags:
   - machine-learning
+title: Sample complexity
 type: definition
 ---
 >[!tldr] Sample complexity

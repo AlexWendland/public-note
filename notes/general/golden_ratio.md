@@ -5,9 +5,8 @@ checked: false
 created: 2023-08-26
 draft: true
 last_edited: 2023-11-11
-title: Golden Ratio
 tags:
   - maths
+title: Golden Ratio
 type: str
 ---
-# Golden Ratio

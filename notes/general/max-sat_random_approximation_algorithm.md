@@ -4,16 +4,15 @@ checked: false
 created: 2023-11-12
 draft: false
 last_edited: 2023-11-12
-title: Max-SAT random approximation algorithm
 tags:
   - programming
+title: Max-SAT random approximation algorithm
 type: algorithm
 ---
-# Max-SAT random approximation algorithm
 
 This is a naïve approximate solution to the [Max-SAT](max-satisfiability_problem.md) problem. If the formula has $n$ variables and $m$ clauses this guarantees $m/2$ clauses will be satisfied by the assignment.
 
-## Pseudocode
+# Pseudocode
 
 ```pseudocode
 Name(f):
@@ -28,11 +27,11 @@ Name(f):
 3. Return assignment a.
 ```
 
-## Run time
+# Run time
 
 We loop $n$ times having to look through a list of size at most $m$. Therefore this takes $O(nm)$.
 
-## Correctness
+# Correctness
 
 We show this by induction on the number of variables.
 

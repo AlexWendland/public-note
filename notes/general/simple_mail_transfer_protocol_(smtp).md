@@ -5,9 +5,9 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-title: Simple Mail Transfer Protocol (SMTP)
 tags:
   - networks
+title: Simple Mail Transfer Protocol (SMTP)
 type: definition
 ---
 >[!tldr] Simple Mail Transfer Protocol (SMTP)

@@ -6,9 +6,9 @@ checked: false
 created: 2025-03-22
 draft: false
 last_edited: 2025-03-22
-title: Virtual page number (VPN)
 tags:
   - OS
+title: Virtual page number (VPN)
 type: definition
 ---
 >[!tldr] Virtual page number (VPN)

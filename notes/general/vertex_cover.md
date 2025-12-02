@@ -5,10 +5,10 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-title: Vertex cover
 tags:
   - maths
   - graph-theory
+title: Vertex cover
 type: definition
 ---
 >[!tldr] Vertex cover

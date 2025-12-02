@@ -4,9 +4,9 @@ checked: false
 created: 2025-03-23
 draft: false
 last_edited: 2025-03-23
-title: Checkpointing
 tags:
   - OS
+title: Checkpointing
 type: definition
 ---
 >[!tldr] Checkpointing

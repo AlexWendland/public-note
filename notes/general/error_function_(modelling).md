@@ -6,9 +6,9 @@ checked: false
 created: 2024-01-20
 draft: false
 last_edited: 2024-01-20
-title: Error function (modelling)
 tags:
   - machine-learning
+title: Error function (modelling)
 type: definition
 ---
 >[!tldr] Error function (modelling)

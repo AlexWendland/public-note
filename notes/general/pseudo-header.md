@@ -5,9 +5,9 @@ checked: false
 created: 2024-05-27
 draft: false
 last_edited: 2024-05-27
-title: Pseudo-header
 tags:
   - networks
+title: Pseudo-header
 type: definition
 ---
 >[!tldr] Pseudo-header

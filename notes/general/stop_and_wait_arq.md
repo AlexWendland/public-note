@@ -4,9 +4,9 @@ checked: false
 created: 2024-05-27
 draft: false
 last_edited: 2024-05-27
-title: Stop and wait ARQ
 tags:
   - networks
+title: Stop and wait ARQ
 type: definition
 ---
 >[!tldr] Stop and wait ARQ

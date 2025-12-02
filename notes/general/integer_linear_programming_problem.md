@@ -7,9 +7,9 @@ checked: false
 created: 2023-11-07
 draft: false
 last_edited: 2023-11-12
-title: Integer linear programming problem
 tags:
   - programming
+title: Integer linear programming problem
 type: problem
 ---
 # Statement

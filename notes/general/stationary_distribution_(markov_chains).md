@@ -6,10 +6,10 @@ checked: false
 created: 2023-12-03
 draft: false
 last_edited: 2023-12-03
-title: Stationary distribution (Markov Chains)
 tags:
   - maths
   - probability
+title: Stationary distribution (Markov Chains)
 type: definition
 ---
 >[!tldr] Stationary distribution

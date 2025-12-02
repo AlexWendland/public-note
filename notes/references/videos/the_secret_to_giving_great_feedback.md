@@ -4,16 +4,15 @@ checked: false
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
-title: The secret to giving great feedback
 tags:
   - management
+title: The secret to giving great feedback
 type: video
 ---
-# The secret to giving great feedback
 
 This [video](https://www.youtube.com/watch?v=wtl5UrrgU8c) is about how to give feed back. In particular it talks about the [SBRI model](../../general/sbri_model.md).
 
-# Notes
+ Notes
 - 00:22 [The key to management is to give and receive feedback](the_key_to_management_is_to_give_and_receive_feedback.md)
 - 00:50 Only 26% of employess say that feedback helps them
 - 01:10 Either feedback is too soft that they don't realise they are getting feedback or too hard and people get defensive

@@ -4,9 +4,9 @@ checked: false
 created: 2024-01-25
 draft: false
 last_edited: 2024-01-25
-title: Sign function
 tags:
   - maths
+title: Sign function
 type: definition
 ---
 >[!tldr] Sign function

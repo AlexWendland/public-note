@@ -5,9 +5,9 @@ checked: false
 created: 2023-10-12
 draft: false
 last_edited: 2023-11-11
-title: Array (data structure)
 tags:
   - programming
+title: Array (data structure)
 type: data structure
 ---
 > [!tldr] Array

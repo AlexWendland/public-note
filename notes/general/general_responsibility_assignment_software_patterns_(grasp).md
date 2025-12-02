@@ -6,9 +6,8 @@ checked: false
 created: 2023-08-05
 draft: true
 last_edited: 2023-11-11
-title: General Responsibility Assignment Software Patterns (GRASP)
 tags:
   - programming
+title: General Responsibility Assignment Software Patterns (GRASP)
 type: principles
 ---
-# General Responsibility Assignment Software Patterns (GRASP)

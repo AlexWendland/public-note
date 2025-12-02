@@ -1,13 +1,13 @@
 ---
 aliases:
 checked: false
-course: 'CS6215 Introduction to Graduate Algorithms'
+course: CS6215 Introduction to Graduate Algorithms
 created: 2023-10-18
 draft: false
 last_edited: 2023-11-19
-title: Week 13 - Known NP-complete problems
 tags:
   - OMSCS
+title: Week 13 - Known NP-complete problems
 type: exercise
 week: 9
 ---

@@ -6,10 +6,10 @@ checked: false
 created: 2023-09-03
 draft: false
 last_edited: 2023-11-11
-title: Palindrome
 tags:
   - maths
   - programming
+title: Palindrome
 type: definition
 ---
 > [!tldr] Palindrome

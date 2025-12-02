@@ -7,9 +7,9 @@ checked: false
 created: 2023-11-07
 draft: false
 last_edited: 2023-11-11
-title: Linear programme
 tags:
   - programming
+title: Linear programme
 type: definition
 ---
 >[!tldr] Linear programme

@@ -4,9 +4,9 @@ checked: false
 created: 2024-07-27
 draft: false
 last_edited: 2024-07-27
-title: HTTP redirection
 tags:
   - networks
+title: HTTP redirection
 type: definition
 ---
 >[!tldr] HTTP redirection

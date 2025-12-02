@@ -4,8 +4,7 @@ checked: false
 created: 2024-01-17
 draft: true
 last_edited: 2024-01-17
-title: Regression to the mean
 tags: []
+title: Regression to the mean
 type: str
 ---
-# Regression to the mean

@@ -7,13 +7,12 @@ checked: false
 created: 2023-08-20
 draft: false
 last_edited: 2023-11-11
-title: Exception
 tags:
   - programming
   - ''
+title: Exception
 type: definition
 ---
-# Exception
 
 An exception is a mechanism used in many programming languages to interrupt the normal flow of execution when an error occurs. In languages like Java and Python, an exception is represented as an [object](object.md). When an error condition is encountered, an exception is "thrown," interrupting the current process and propagating up through the program's call stack to find an appropriate "catch" block to handle the error.
 
@@ -25,7 +24,7 @@ Handling exceptions is typically done using "try-catch" blocks. The code inside 
 
 >[!Note] [Checked exceptions](checked_exceptions.md) are a way of declaring [exceptions](exception.md) however you can have [exceptions](exception.md) that are unchecked.
 
-## Exception good practices
+# Exception good practices
 
 - **Provide context to an exception**: The only time an exception is going to be read is when something has gone wrong in the program. Therefore write enough context in the exception for the person to quickly identify the cause of the issue.
 - **Define exception classes in terms of the callers needs**: When considering how to define exceptions, via type of error or cause think about what will help the caller the most. This will likely be grouping errors based on how they will handle it.

@@ -4,9 +4,9 @@ checked: false
 created: 2024-07-22
 draft: false
 last_edited: 2024-07-22
-title: DNS injection
 tags:
   - networks
+title: DNS injection
 type: definition
 ---
 >[!tldr] DNS injection

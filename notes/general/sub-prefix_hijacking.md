@@ -4,10 +4,10 @@ checked: false
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-title: Sub-prefix hijacking
 tags:
   - networks
   - security
+title: Sub-prefix hijacking
 type: definition
 ---
 >[!tldr] Sub-prefix hijacking

@@ -1,17 +1,16 @@
 ---
 aliases:
 checked: false
-course: 'CS6210 Advanced Operating Systems'
+course: CS6210 Advanced Operating Systems
 created: 2025-11-20
 draft: true
 last_edited: 2025-11-20
-title: Week 8 - Internet Computing
 tags:
   - OMSCS
+title: Week 8 - Internet Computing
 type: lecture
 week: 8
 ---
-# Week 8 - Internet Computing
 
 Normally web based issues are called 'embarrassingly parallel'.
 
@@ -19,7 +18,7 @@ Normally web based issues are called 'embarrassingly parallel'.
 > These problems can be broken down into easy to do parallel operations, such as accessing email, doing a web search, or downloading files.
 > No two clients rely on each other so all computation can be broken down on the per user level.
 
-## Issues in giant scale systems
+# Issues in giant scale systems
 
 The structure of giant scale internet services normally follows the below pattern:
 
@@ -35,7 +34,7 @@ The structure of giant scale internet services normally follows the below patter
 
 With running one of these services, you need to know how to handle server failures - as in this case it is when rather than if one happens.
 
-### Sense of scale
+## Sense of scale
 
 As of 2000:
 
@@ -51,7 +50,7 @@ There are distinct advantages of structuring a system like this:
 - Horizontal scaling: adding more nodes to the system scales it up.
 - Cost control:
 
-### Load manager
+## Load manager
 
 There are different strategies we can take for load balancing requests:
 
@@ -65,7 +64,7 @@ For example this allows us to act as a reverse proxy to send packets intended fo
 This can also hide down servers from the client using a Backplane with the servers it is serving.
 This Backplane can also be used for higher level semantics such as sending requests with particular body to different instances - this allows for different nodes to only replicated limited data for their preferred queries.
 
-### DQ Principle
+## DQ Principle
 
 This theory is about matching demand with supply and varying parameters around this.
 We start with some definitions:
@@ -105,7 +104,7 @@ There are some metrics people talk about for huge data centers:
 However, uptime has its limitations.
 For example if a failure happens in down time - then no one really cares.
 
-### Replication vs partitioning
+## Replication vs partitioning
 
 Replicating data means we have more servers with each bit of the data.
 This makes our systems robust to server failures.
@@ -121,7 +120,7 @@ NOTE: In both cases, DQ is defined by the number of servers - therefore if we ha
 Exception: If the queries involve 'significant' write traffic then replication is a slower option, due to the need to replicate those writes.
 (This is a rare exception.)
 
-### Graceful degradation
+## Graceful degradation
 
 When our system is at full saturation system administrators can decide how to degrade their service.
 The two options are as expected:
@@ -136,7 +135,7 @@ These options practical implementation depends on the service - for example if y
 
 - Lower F and keep Q fixed: Degrade the quality of results but keep up with demands.
 
-### Online evolution and growth
+## Online evolution and growth
 
 With new releasing getting cut, we need to decide how to release them.
 There is a spectrum of options here:
@@ -154,7 +153,7 @@ Any strategy will reduce total DQ in the service over time - however different s
 It will be very sector dependent what strategy is best and it may change over time.
 For example code freezes during busy times to not reduce the total DQ.
 
-## Map Reduce
+# Map Reduce
 
 Computations in internet services are commonly simple but over large data sets.
 Map reduce is a framework to handle such computations.
@@ -167,7 +166,7 @@ It breaks each computation down into two parts:
 These simplistic steps can be parallelised over multiple machines and only require coordination between steps.
 This enables the large scale services to work over these computations.
 
-### Example: Counting words
+## Example: Counting words
 
 Suppose we want to find the number of occurrences of each word over a large set of documents.
 The input is a key value pair being the file name (key) and file content (value).
@@ -186,7 +185,7 @@ This is all the user needs to provide - however the framework between the map an
 That means whilst multiple map jobs may emit the same word, a single reduce job gets all the emits from all the files for the same word.
 
 
-### Example: Page links
+## Example: Page links
 
 Part of the page rank algorithm requires we know how many other pages link to a given page.
 This has input key-value pairs where the key is the url and the value is the page content.
@@ -201,13 +200,13 @@ The reduce function then takes all the key-value pairs for each url and sums the
 The advantage of this system is the user just needs to know the business logic of how to find links.
 Whereas, as we will see the framework implementer handles all the coordination of the map and reduce steps.
 
-### Why map-reduce?
+## Why map-reduce?
 
 As we have seen above, map-reduce is sufficiently abstract that we can implement different problems within it.
 We also see that the user just needs to know the business logic of the system and the framework handles the rest.
 We will see later that this scales very well both in the sense of the query size increasing but also the number of machines available to use.
 
-### Framework
+## Framework
 
 Below is a high level overview of what the framework does for a given execution:
 
@@ -227,7 +226,7 @@ Once all the maps are completed it can use these key's to start up reduce tasks 
 
 ![Map Reduce Framework](../../../images/map_reduce_framework.png)
 
-### Issues to be handled by the run time.
+## Issues to be handled by the run time.
 
 There is a lot of admin to be handled by the master, this includes:
 
@@ -249,12 +248,12 @@ There is a lot of admin to be handled by the master, this includes:
 - Task granularity: It might be that we have more tasks than workers, so the master controls how to break up these tasks amongst workers and load balance them correctly.
   Users can also aggregate outputs from map if the so choose - to make similar keys get processed by the same reduce task.
 
-## Content distribution network (CDN)
+# Content distribution network (CDN)
 
 A content distribution network (CDN) is a network of servers that cache and deliver content to users.
 The goal is to reduce load on origin servers and improve latency by serving content from servers close to users.
 
-### The problem: Finding cached content
+## The problem: Finding cached content
 
 When a user requests a file (e.g., `http://example.com/image.jpg`), how do we know which CDN servers have cached it?
 We need a way to:
@@ -263,7 +262,7 @@ We need a way to:
 
 This is solved using a distributed hash table (DHT) as a directory service.
 
-### Abstraction layers in a CDN
+## Abstraction layers in a CDN
 
 A DHT-based CDN has several layers of abstraction:
 
@@ -275,7 +274,7 @@ A DHT-based CDN has several layers of abstraction:
 
 4. **Application layer**: HTTP caches and DNS servers that users actually interact with.
 
-### Key-value pairs in the CDN context
+## Key-value pairs in the CDN context
 
 The DHT stores key-value pairs to track where content is cached:
 
@@ -291,7 +290,7 @@ The DHT stores key-value pairs to track where content is cached:
 All keys and node IDs use the same 160-bit address space (values can be arbitrary data like IP addresses).
 
 
-### Distributed hash table (DHT)
+## Distributed hash table (DHT)
 
 A DHT is a distributed system that provides two operations:
 
@@ -301,7 +300,7 @@ A DHT is a distributed system that provides two operations:
 **Key insight**: DHT nodes store keys that are "close" to their node ID.
 The closeness is measured using XOR distance in the 160-bit address space.
 
-#### How it works
+### How it works
 
 **Scenario 1: Joining the DHT network as a new node**
 - Your server has IP address `192.168.1.1`
@@ -328,7 +327,7 @@ The closeness is measured using XOR distance in the 160-bit address space.
 - User's browser connects to `192.168.1.5:8080` to download the file
 
 **Key insight**: Your node ID determines which keys you're responsible for storing. Keys close to your node ID (in XOR distance) get stored on your node.
-### Overlay network
+## Overlay network
 
 In a DHT, we refer to nodes by their node ID (a 160-bit number).
 However, in reality, nodes are identified by IP addresses on the physical network.
@@ -346,11 +345,11 @@ This table allows nodes to route messages toward any node ID in the system, even
 - Decentralized - no central directory needed
 - Self-organizing - nodes can join/leave dynamically
 
-### Traditional DHT approach (Greedy routing)
+## Traditional DHT approach (Greedy routing)
 
 A traditional DHT implementation uses **greedy routing**: at each step, route to the node closest to the target key.
 
-#### How greedy routing works:
+### How greedy routing works:
 
 Using our earlier example where we want to find key `42`:
 
@@ -374,7 +373,7 @@ Using our earlier example where we want to find key `42`:
 - All `put(42, value)` operations store the data here
 - All `get(42)` operations retrieve the data from here
 
-#### Issue 1: DHT Hot Spots (Tree Saturation)
+### Issue 1: DHT Hot Spots (Tree Saturation)
 
 This greedy approach creates **hot spots** in the DHT when a key becomes very popular:
 
@@ -393,7 +392,7 @@ This greedy approach creates **hot spots** in the DHT when a key becomes very po
 - This is called **tree saturation** or **hot spot congestion**
 - Even just returning metadata ("the cache is at 192.168.1.5:8080") millions of times overloads the DHT nodes
 
-#### Issue 2: Origin Server Overload (The "Slashdot Effect")
+### Issue 2: Origin Server Overload (The "Slashdot Effect")
 
 Even with traditional web caching, origin servers can still get overwhelmed during flash crowds.
 
@@ -436,7 +435,7 @@ Imagine a news article just got posted and suddenly goes viral:
 - Origin server gets hammered by 1,000 requests (one from each proxy)
 - For under-provisioned servers (home broadband, small organizations), this causes complete overload
 
-### Coral DHT
+## Coral DHT
 
 There are two issues with the 'greedy' DHT approach:
 
@@ -456,7 +455,7 @@ We do this looking at two key states of the nodes we pass on the way to put/get 
 - **Loaded**: A node is loaded for a particular key if it has received more than beta=12 requests for that key within the past minute.
 (This is about 1 request every 5 seconds - enough to keep values fresh but prevent overload.)
 
-#### Put logic (Two-phase algorithm)
+### Put logic (Two-phase algorithm)
 
 **Forward phase:**
 1. Route toward the key using the slow incremental approach
@@ -479,7 +478,7 @@ Multiple values for the same key typically represent different cache servers wit
 Hash collisions are astronomically rare, and if they occur, the HTTP layer handles verification.
 (Here we are ignoring the Birthday problem and just assuming we don't get hash collisions on the keys.)
 
-#### Get logic
+### Get logic
 
 To get a key, we follow the same incremental routing approach:
 1. Route toward the key, **checking each intermediate node** for the key

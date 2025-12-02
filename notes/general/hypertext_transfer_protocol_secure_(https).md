@@ -6,9 +6,9 @@ checked: false
 created: 2024-07-23
 draft: false
 last_edited: 2024-07-23
-title: Hypertext Transfer Protocol Secure (HTTPS)
 tags:
   - networks
+title: Hypertext Transfer Protocol Secure (HTTPS)
 type: definition
 ---
 >[!tldr] Hypertext Transfer Protocol Secure (HTTPS)

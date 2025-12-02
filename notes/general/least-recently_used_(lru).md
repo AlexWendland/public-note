@@ -6,10 +6,10 @@ checked: false
 created: 2024-08-26
 draft: false
 last_edited: 2024-08-26
-title: 'Least-recently used (LRU)'
 tags:
   - computer-sciecne
   - OS
+title: Least-recently used (LRU)
 type: definition
 ---
 >[!tldr]  Least-recently used (LRU)

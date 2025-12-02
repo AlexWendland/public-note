@@ -4,9 +4,9 @@ checked: false
 created: 2023-10-03
 draft: false
 last_edited: 2023-11-11
-title: Max-flow min-cut Theorem
 tags:
   - programming
+title: Max-flow min-cut Theorem
 type: lemma
 ---
 # Statement

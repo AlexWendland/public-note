@@ -5,10 +5,10 @@ checked: false
 created: 2024-08-17
 draft: true
 last_edited: 2024-08-17
-title: Linearly independent
 tags:
   - maths
   - linear-algebra
+title: Linearly independent
 type: definition
 ---
 >[!tldr] Linearly independent

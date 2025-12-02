@@ -6,9 +6,9 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-title: Network Address Translation (NAT)
 tags:
   - networks
+title: Network Address Translation (NAT)
 type: definition
 ---
 >[!tldr] Network Address Translation (NAT)

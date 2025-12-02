@@ -4,9 +4,9 @@ checked: false
 created: 2023-11-13
 draft: false
 last_edited: 2023-11-13
-title: Halting problem
 tags:
   - programming
+title: Halting problem
 type: problem
 ---
 # Statement

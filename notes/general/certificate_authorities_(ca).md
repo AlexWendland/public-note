@@ -7,8 +7,8 @@ checked: false
 created: 2024-07-22
 draft: true
 last_edited: 2024-07-22
-title: Certificate authorities (CA)
 tags: []
+title: Certificate authorities (CA)
 type: definition
 ---
 >[!tldr] Certificate authorities (CA)

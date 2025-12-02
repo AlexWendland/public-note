@@ -1,21 +1,19 @@
 ---
 aliases:
 checked: false
-course: 'CS6250 Computer Networks'
+course: CS6250 Computer Networks
 created: 2024-07-27
 draft: false
 last_edited: 2024-07-27
-title: Week 11 - CDNs and overlay networks
 tags:
   - OMSCS
+title: Week 11 - CDNs and overlay networks
 type: lecture
 week: 11
 ---
-# Week 11 - CDNs and overlay networks
+# Reading
 
-## Reading
-
-### Important Readings
+## Important Readings
 
 The Akamai Network: A Platform for High-Performance Internet Applications
 [https://dl.acm.org/doi/10.1145/1842733.1842736Links to an external site.](https://dl.acm.org/doi/10.1145/1842733.1842736)
@@ -23,13 +21,13 @@ The Akamai Network: A Platform for High-Performance Internet Applications
 Open Connect Everywhere: A Glimpse at the Internet Ecosystem through the Lens of the Netflix CDN
 [https://arxiv.org/pdf/1606.05519.pdf Links to an external site.](https://arxiv.org/pdf/1606.05519.pdf)
 
-### Book References
+## Book References
 
 Kurose-Ross, 7e, Section 2.4, DNS—The Internet’s Directory Service
 
 Kurose-Ross, 7e, Section 2.6, Video Streaming and Content Distribution Networks
 
-### Optional Readings
+## Optional Readings
 
 **Server Selection**
 
@@ -80,7 +78,7 @@ Pushing CDN-ISP Collaboration to the Limit
 [http://ccr.sigcomm.org/online/files/p2p_gaming.pdf Links to an external site.](http://ccr.sigcomm.org/online/files/p2p_gaming.pdf)
 [https://www.cs.cmu.edu/~junchenj/c3.pdfLinks to an external site.](https://www.cs.cmu.edu/~junchenj/c3.pdf)
 
-## [CDN](../../general/content_delivery_network_(cdn).md) revisited
+# [CDN](../../general/content_delivery_network_(cdn).md) revisited
 
 The classic way to make a service available on the internet was to host it on a single machine and let users find that IP. This has a number of draw backs for larger service providers:
 - Your users might be dispersed over a large geographical area causing:
@@ -117,7 +115,7 @@ Owning a [CDN](../../general/content_delivery_network_(cdn).md) comes with many 
 - Staying well-connected to the internet.
 - Managing performance and upgrading your infrastructure.
 
-## [CDN](../../general/content_delivery_network_(cdn).md) server placement
+# [CDN](../../general/content_delivery_network_(cdn).md) server placement
 
 There is a spectrum with the philosophy on server placement. With the extremes represented below.
 
@@ -131,7 +129,7 @@ There is a spectrum with the philosophy on server placement. With the extremes r
 
 There are lots of hybrid approaches. Such as Google with 16 mega data-centers and 50 smaller clusters deeper into the network.
 
-## [DNS](../../general/domain_name_system_(dns).md) with a [CDN](../../general/content_delivery_network_(cdn).md)
+# [DNS](../../general/domain_name_system_(dns).md) with a [CDN](../../general/content_delivery_network_(cdn).md)
 
 In the traditional approach to hosting [DNS](../../general/domain_name_system_(dns).md) was fairly simple. You would look up the domain of the server and it would provide the [IP address](../../general/internet_protocol_(ip).md) of the cluster that provided the content. With a [CDN](../../general/content_delivery_network_(cdn).md) there are multiple clusters that client could be directed to.
 
@@ -152,7 +150,7 @@ This leaves the question - how does the authoritative [CDN](../../general/conten
 - Which server within that cluster to send the user to.
 ![Server Selection](../../../images/server_selection.png)
 
-## Cluster selection
+# Cluster selection
 
 The most intuitive answer to this question is choose the cluster geographically closest to the end user.
 ![Geography](../../../images/geography.png)
@@ -186,7 +184,7 @@ Researchers have proposed the design of a distributed system that uses a two-lay
 
 A second challenge in the above approach is that it needs to have data for different subnet-cluster pairs. Thus, some of the clients deliberately need to be routed to sub-optimal clusters.
 
-## Server selection
+# Server selection
 
 Once we have selected a cluster we need to choose a server inside that cluster. Lets go through the ideas we might have.
 - The simplest approach is to round robin requests to available server.
@@ -200,14 +198,14 @@ This idea is simple but slightly harder to implement as the nature of a data cen
 
 Consistent hashing was first used in peer-to-peer networks such as Napster and Bittorrent.
 
-## Network protocols used for cluster/server selection
+# Network protocols used for cluster/server selection
 
 This whole process uses 3 [protocols](../../general/protocol_(networks).md):
 - [DNS](../../general/domain_name_system_(dns).md),
 - [HTTP redirection](../../general/http_redirection.md), and
 - [IP Anycast](../../general/ip_anycast.md).
 
-### [DNS](../../general/domain_name_system_(dns).md)
+## [DNS](../../general/domain_name_system_(dns).md)
 
 [DNS](../../general/domain_name_system_(dns).md)
 
@@ -225,7 +223,7 @@ The key message types are:
 - [CNAME](../../general/dns_records.md): An alias for another domain name.
 - [MX record](../../general/dns_records.md): Mail server name.
 
-## [IP Anycast](../../general/ip_anycast.md)
+# [IP Anycast](../../general/ip_anycast.md)
 
 [IP Anycast](../../general/ip_anycast.md)
 
@@ -235,7 +233,7 @@ Below is an example where we start [IP Anycast](../../general/ip_anycast.md) fro
 
 [DNS](../../general/domain_name_system_(dns).md) servers use this to find the closest [DNS](../../general/domain_name_system_(dns).md) server to the client.
 
-## [HTTP redirection](../../general/http_redirection.md)
+# [HTTP redirection](../../general/http_redirection.md)
 
 [HTTP redirection](../../general/http_redirection.md)
 

@@ -6,9 +6,9 @@ checked: false
 created: 2023-11-02
 draft: false
 last_edited: 2023-11-11
-title: Many-one reduction (problem)
 tags:
   - programming
+title: Many-one reduction (problem)
 type: definition
 ---
 >[!tldr] Many-one reduction

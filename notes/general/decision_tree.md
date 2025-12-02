@@ -6,10 +6,10 @@ checked: false
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
-title: Decision tree
 tags:
   - maths
   - algorithms
+title: Decision tree
 type: definition
 ---
 >[!tldr] Decision tree

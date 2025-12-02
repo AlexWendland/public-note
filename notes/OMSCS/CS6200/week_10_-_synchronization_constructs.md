@@ -1,23 +1,21 @@
 ---
 aliases:
 checked: false
-course: 'CS6200 Graduate introduction to Operating Systems'
+course: CS6200 Graduate introduction to Operating Systems
 created: 2025-03-26
 draft: false
 last_edited: 2025-03-26
-title: Week 10 - Synchronization Constructs
 tags:
   - OMSCS
+title: Week 10 - Synchronization Constructs
 type: lecture
 week: 10
 ---
-# Week 10 - Synchronization Constructs
-
-## Additional reading
+# Additional reading
 
 - [The Performance of Spin Lock Alternatives for Shared-Memory Multiprocessors](https://sites.cc.gatech.edu/classes/AY2009/cs4210_fall/papers/anderson-spinlock.pdf)
 
-## [Synchronization](../../general/synchronization.md)
+# [Synchronization](../../general/synchronization.md)
 
 [Synchronization](../../general/synchronization.md)
 
@@ -42,7 +40,7 @@ However there are many more - though they all require support from the hardware 
 
 We will talk about different implementations of [spinlocks](../../general/spinlocks.md) in this section. Note that without hardware support you can not both check the status of the lock and change the status of the lock - therefore you can not have a safe implementation as you can not guarantee [threads](../../general/thread.md) will not be interwoven at inopportune times.
 
-## Atomic instructions
+# Atomic instructions
 
 The set of atomic instructions is different on different architectures. Some examples are:
 - test_and_set: Return the current value of a variable and set it to a given value.
@@ -50,7 +48,7 @@ The set of atomic instructions is different on different architectures. Some exa
 - compare_and_swap: Return true/false comparing two values and swap them.
 Though as these are [atomic instructions](../../general/atomic_instruction.md) the hardware guarantees the operation will be completed without being interrupted.
 
-## Test and set spinlock implementation
+# Test and set spinlock implementation
 
 We can use the test_and_set operation to implement a spinlock. Suppose the `lock` has values 0 or 1. With 0 being free and 1 being locked.
 
@@ -68,7 +66,7 @@ while(test_and_set(lock, busy) == busy);
 lock = free;
 ```
 
-## Shared memory multiprocessors and caches
+# Shared memory multiprocessors and caches
 
 It is common for [CPU](../../general/central_processing_unit_(cpu).md)'s to share memory and have a local cache. Depending on the architecture of the shared memory they can have a single or multiple read/write operations in flight at the same time. Also the cache may or may not be in sync with the lower level memory.
 
@@ -76,13 +74,13 @@ It is common for [CPU](../../general/central_processing_unit_(cpu).md)'s to shar
 
 [CPU](../../general/central_processing_unit_(cpu).md) architectures can either be [cache coherent](../../general/cache_coherence.md) or non-[cache coherent](../../general/cache_coherence.md). If they are non-cache-coherent then you will have to program this in software rather than rely on the hardware.
 
-## Atomic operations and cache coherence
+# Atomic operations and cache coherence
 
 For two [CPU](../../general/central_processing_unit_(cpu).md)'s to act independently whilst also supporting shared atomic instructions with one another they can not cache any value that support atomic instructions. The two CPUs could not guarantee two atomic instructions did not happen at the same time.
 
 To contend with this [CPU](../../general/central_processing_unit_(cpu).md)'s will not cache atomic values - however this means memory access in this case is very slow. Therefore shared memory [CPU](../../general/central_processing_unit_(cpu).md)'s have very slow [atomic instructions](../../general/atomic_instruction.md).
 
-## Spinlock evaluation criteria
+# Spinlock evaluation criteria
 
 There are 3 desirable traits for a spinlock:
 
@@ -92,11 +90,11 @@ There are 3 desirable traits for a spinlock:
 
 With these goals the first two are in direct conflict with the last one - to make lower the latency and delay we want to access the variable more thus increasing contention.
 
-## Test_and_set spinlock implementation
+# Test_and_set spinlock implementation
 
 This implementation just spins on an atomic operation. This will have minimal delay and latency as we will immediately get new values however for this we pay with massive contention by all waiting [threads](../../general/thread.md) updating an atomic value. This means that the releasing [thread](../../general/thread.md) will be delayed on giving up control.
 
-## Spin on read
+# Spin on read
 
 This uses a cached value of the lock and only when that changes tries the atomic operation.
 
@@ -119,7 +117,7 @@ For both latency and delay this is ok, both getting a free lock or a released lo
 - Cache-coherent with write update: Ok, as all the references are updated quickly.
 - Cache-coherent with write invalidate: Worst, as they all need to get the cached value again and then try the atomic operation which invalidates all the caches again.
 
-## Delay based spin lock
+# Delay based spin lock
 
 This implementation introduces delay on the lock operation. The first one adds a delay after a thread realizes the lock is free.
 
@@ -144,7 +142,7 @@ This spreads out the [threads](../../general/thread.md) attempts to perform the 
 
 We can remove the inner while loop so it does not spin constantly but this hurts delay a lot more as threads will constantly be delayed.
 
-### How long to delay
+## How long to delay
 
 There are two main strategies here,
 - Static delay: Fixed delay based on some properties of the [thread](../../general/thread.md) such as the [CPU](../../general/central_processing_unit_(cpu).md) id.
@@ -154,7 +152,7 @@ A static delay normally multiplies the length of the critical section by some co
 
 Dynamic delay normally operates more efficiently but requires to use a proxy to calculate the "perceived" contention. This is normally failed test_and_set operations which puts these systems vulnerable to variations in the critical section length causing extra delay.
 
-## Queue lock
+# Queue lock
 
 This implements a queue for each lock. This queue holds processes that are waiting on the lock.
 
@@ -175,7 +173,7 @@ flags[myplace+1 mod p] = has-lock
 
 When the lock is released the next process in the queue gets it. This has no contention as the variable we are waiting on is not the atomic. It has minimal delay as the unlocking thread directly signals the waiting thread. Though due to the more complex implementation the latency has gotten worse. However this needs $O(N)$ memory and needs a system the supports read_and_increment atomic operation - which is not widely supported.
 
-## Performance comparison
+# Performance comparison
 
 Within the referenced paper they compare the performance of different spinlock implementations using different numbers of processes all repeating a critical section 1 million times. Below surmises the results.
 

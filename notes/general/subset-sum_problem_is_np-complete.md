@@ -4,9 +4,9 @@ checked: false
 created: 2023-11-12
 draft: false
 last_edited: 2023-11-19
-title: Subset-sum problem is NP-complete
 tags:
   - programming
+title: Subset-sum problem is NP-complete
 type: lemma
 ---
 # Statement

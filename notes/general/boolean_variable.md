@@ -7,13 +7,12 @@ checked: false
 created: 2023-08-28
 draft: false
 last_edited: 2023-11-11
-title: Boolean variable
 tags:
   - programming
   - maths
+title: Boolean variable
 type: definition
 ---
-# Boolean variable
 
 A *Boolean variable* is one that takes the value `True` or `False` it is a basic type in most programming languages.
 

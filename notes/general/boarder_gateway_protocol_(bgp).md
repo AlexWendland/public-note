@@ -8,9 +8,9 @@ checked: false
 created: 2024-06-08
 draft: false
 last_edited: 2024-06-08
-title: Boarder gateway protocol (BGP)
 tags:
   - networks
+title: Boarder gateway protocol (BGP)
 type: definition
 ---
 >[!tldr] Boarder gateway protocol (BGP)
