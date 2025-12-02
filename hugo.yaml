@@ -2,18 +2,14 @@ baseURL: 'https://notes.awendland.co.uk/'
 languageCode: 'en-gb'
 title: "Alex's public notes"
 contentDir: "notes"
-theme: "PaperMod"
+theme:
+  - hugo-admonitions
+  - PaperMod
 
 module:
   mounts:
-    - source: notes
-      target: content
     - source: images
       target: static/images
-    - source: static
-      target: static
-    - source: themes/PaperMod/static
-      target: static
 
 markup:
   goldmark:
