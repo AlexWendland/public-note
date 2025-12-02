@@ -29,6 +29,9 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+          lfs: true
+      - name: Checkout LFS objects
+        run: git lfs checkout
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
@@ -66,6 +69,35 @@ jobs:
       - name: Install Node.js dependencies
         run: |
           [[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true
+      - name: Install native dependencies for excalidraw_export
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libcairo2-dev \
+            libpango1.0-dev \
+            libjpeg-dev \
+            libgif-dev \
+            librsvg2-dev \
+            pkg-config
+      - name: Compile Excalidraw diagrams
+        run: |
+          # Create output directory if it doesn't exist
+          mkdir -p static/images/excalidraw
+
+          # Check if there are any .excalidraw files to process
+          if ls excalidraw/*.excalidraw 1> /dev/null 2>&1; then
+            echo "Exporting Excalidraw diagrams to SVG..."
+
+            # Export all .excalidraw files to .svg using excalidraw_export
+            npx excalidraw_export excalidraw/*.excalidraw
+
+            # Move generated SVG files to static/images/excalidraw/
+            mv excalidraw/*.svg static/images/excalidraw/
+
+            echo "✓ Exported diagram(s) to static/images/excalidraw/"
+          else
+            echo "No Excalidraw diagrams found, skipping..."
+          fi
       - name: Configure Git
         run: |
           git config core.quotepath false

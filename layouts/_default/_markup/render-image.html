@@ -1,0 +1,22 @@
+{{- /* Custom image render hook to transform static/ paths */ -}}
+{{- $destination := .Destination -}}
+
+{{- /* Check if the destination contains "static/" and transform it */ -}}
+{{- if strings.Contains $destination "static/" -}}
+  {{- /* Find the position of "static/" and extract everything after it */ -}}
+  {{- $parts := split $destination "static/" -}}
+  {{- if gt (len $parts) 1 -}}
+    {{- /* Take everything after "static/" and make it root-relative */ -}}
+    {{- $destination = printf "/%s" (index $parts 1) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Parse the (potentially transformed) destination URL */ -}}
+{{- $url := urls.Parse $destination -}}
+
+{{- /* Render the image with appropriate attributes */ -}}
+{{- if .Title -}}
+  <img src="{{- $destination -}}" alt="{{- .Text -}}" title="{{- .Title -}}" />
+{{- else -}}
+  <img src="{{- $destination -}}" alt="{{- .Text -}}" />
+{{- end -}}
