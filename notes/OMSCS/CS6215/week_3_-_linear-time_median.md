@@ -115,7 +115,7 @@ Let me see if I can help explain this. I find the best way to solve recurrences 
 
 For the recurrence $T(n) = T\left(\frac{3n}{4}\right) + T\left(\frac{n}{5}\right) + O(n)$ what do we know? We know there is $O(n)$ work at each level, and that we generate two recursive calls, each with a shrinking portion of $n$. At the first level of recursion we have two sub-problems, one of size $\frac{3n}{4}$, and a second of size $\frac{n}{5}$​, so the total work at that level is ${n}{0.95}$. What about the second level down? Let's visualize it:
 
-![Recursion Tree Multiple Recursions](../../../images/recursion_tree_multiple_recursions.png)
+![Recursion Tree Multiple Recursions](../../../static/images/recursion_tree_multiple_recursions.png)
 
 And the work at this second level? Sum up the four leaves, and you get:
 $$0.75^2n + 2*0.2*0.75n + 0.2^2n = 0.9025n.$$
@@ -123,7 +123,7 @@ So the amount of work at each level is shrinking! This tells us that the work at
 
 Now, what happens with the recurrence $T(n) = T\left(\frac{3n}{4}\right) + T\left(\frac{n}{3}\right) + O(n)$? Draw the tree, do the math:
 
-![Recursion Tree Multiple Recursions Expanding](../../../images/recursion_tree_multiple_recursions_expanding.png)
+![Recursion Tree Multiple Recursions Expanding](../../../static/images/recursion_tree_multiple_recursions_expanding.png)
 
 Now we see that at each level the work increases, so we no longer have a linear overall run time. The work at the bottom of the recursive stack will dominate the overall runtime.
 

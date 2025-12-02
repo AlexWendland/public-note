@@ -15,5 +15,5 @@ type: definition
 >The *sigmoid* function $\sigma: \mathbb{R} \rightarrow (0,1)$ is an attempt to continuously approximate the [binary step](binary_step.md) activation function
 >$$\sigma(x) = \frac{1}{1+e^{-x}}.$$
 
-![Sigmoid Function](../../images/sigmoid_function.png)
+![Sigmoid Function](../../static/images/sigmoid_function.png)
 Sigmoid function. (2024, January 18). In _Wikipedia_. https://en.wikipedia.org/wiki/Sigmoid_function

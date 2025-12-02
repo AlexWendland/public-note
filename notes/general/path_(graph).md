@@ -17,7 +17,7 @@ Given a [graph](graph.md) $G = (V, E)$ a path is a [sequence](sequence.md) of ed
 
 > [!example] Visual representation
 > Lets use our simple [graph](graph.md) below
-> ![simple_path](../../images/excalidraw/simple_path.excalidraw.svg)
+> ![simple_path](../../static/images/excalidraw/simple_path.excalidraw.svg)
 > There is a path that goes $(1,3), (3,4)$ from vertex 1 to vertex 4. Note there is an implicit directionality when we say this.
 
 # The path graph

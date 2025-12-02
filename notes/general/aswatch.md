@@ -27,7 +27,7 @@ type: definition
 >    - **Reputation Scoring**: The trained model assigns a reputation score to the AS. An AS is flagged as malicious if it consistently receives a low reputation score over several days.
 >
 > There are some examples below of suspicious behaviour.
-> ![Aswatch 1](../../images/aswatch_1.png)
-> ![Aswatch 2](../../images/aswatch_2.png)
-> ![Aswatch 3](../../images/aswatch_3.png)
+> ![Aswatch 1](../../static/images/aswatch_1.png)
+> ![Aswatch 2](../../static/images/aswatch_2.png)
+> ![Aswatch 3](../../static/images/aswatch_3.png)
 

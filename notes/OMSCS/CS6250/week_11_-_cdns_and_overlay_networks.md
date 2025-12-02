@@ -106,7 +106,7 @@ There have been two massive shifts in the internet infrastructure recently:
 
 Both these changes mean that more traffic is exchanged locally instead of traversing the whole hierarchy of the internet. This has been driven by large players such as google, facebook, and netfilx. For example see below netflixs [CDN](../../general/content_delivery_network_(cdn).md) infrastructure across the globe.
 
-![Netflix Infra](../../../images/netflix_infra.png)
+![Netflix Infra](../../../static/images/netflix_infra.png)
 
 [CDNs](../../general/content_delivery_network_(cdn).md) can be privately owned like in Netflix's case or owned by a third party such as Akamai and Limelight.
 
@@ -123,7 +123,7 @@ There is a spectrum with the philosophy on server placement. With the extremes r
 - **Enter deep**: Using lots of [CDN](../../general/content_delivery_network_(cdn).md) access points close to end users.
 	- This has the advantage of always being close to end users reducing latency and bandwidth usage.
 	- This has the disadvantage of maintaining lots of different locations and distributing your content to them all quickly.
-![Enter Deep](../../../images/enter_deep.png)
+![Enter Deep](../../../static/images/enter_deep.png)
 - **Bring home**: Using a few larger server clusters at key points.
 	- Much easier to maintain and keep synchronised.
 	- Larger latency and bandwidth use to get to end consumers.
@@ -136,7 +136,7 @@ In the traditional approach to hosting [DNS](../../general/domain_name_system_(d
 
 Below is and example for the site www.NetCinema.com who use [DNS](../../general/domain_name_system_(dns).md) King[CDN](../../general/content_delivery_network_(cdn).md).
 
-![Cdn Dns Example](../../../images/cdn_dns_example.png)
+![Cdn Dns Example](../../../static/images/cdn_dns_example.png)
 
 1. The user is on the NetCinema website finding some content they want to watch.
 2. User clicks on a link that has a subdomain linked to the [CDN](../../general/content_delivery_network_(cdn).md) part of NetCinemas network i.e. video.netcinema.com. This sends a request to their local [DNS](../../general/domain_name_system_(dns).md) server.
@@ -147,14 +147,14 @@ Below is and example for the site www.NetCinema.com who use [DNS](../../general/
 
 This leaves the question - how does the authoritative [CDN](../../general/content_delivery_network_(cdn).md) server decide which [CDN](../../general/content_delivery_network_(cdn).md) content server to redirect the user to. Here there are really two major question.
 - Which cluster to send the user too.
-![Cluster Selection](../../../images/cluster_selection.png)
+![Cluster Selection](../../../static/images/cluster_selection.png)
 - Which server within that cluster to send the user to.
-![Server Selection](../../../images/server_selection.png)
+![Server Selection](../../../static/images/server_selection.png)
 
 # Cluster selection
 
 The most intuitive answer to this question is choose the cluster geographically closest to the end user.
-![Geography](../../../images/geography.png)
+![Geography](../../../static/images/geography.png)
 This can work well in a lot of cases but it is harder and maybe more sub-optimal than you might expect.
 - You do not know the IP of the end user only the IP of there local [DNS](../../general/domain_name_system_(dns).md) server.
 	- There is a proposition to propagate the IP of the requesting user through the [DNS](../../general/domain_name_system_(dns).md) protocol but this has not caught on yet.
@@ -181,7 +181,7 @@ Researchers have proposed the design of a distributed system that uses a two-lay
 - A coarse-grained global layer operates at larger time scales (timescale of a few tens of seconds (or minutes)). This layer has a global view of client quality measurements. It builds a data-driven prediction model of video quality.
 - A fine-grained per-client decision layer that operates at the millisecond timescale. It makes actual decisions upon a client request. This is based on the latest (but possibly stale) pre-computed global model and up-to-date per-client state.
 
-![Distrubuted Cdn Controller](../../../images/distrubuted_cdn_controller.png)
+![Distrubuted Cdn Controller](../../../static/images/distrubuted_cdn_controller.png)
 
 A second challenge in the above approach is that it needs to have data for different subnet-cluster pairs. Thus, some of the clients deliberately need to be routed to sub-optimal clusters.
 
@@ -212,7 +212,7 @@ This whole process uses 3 [protocols](../../general/protocol_(networks).md):
 
 An example of a recursive query can be found below.
 
-![Dns Recursive](../../../images/dns_recursive.png)
+![Dns Recursive](../../../static/images/dns_recursive.png)
 
 The [DNS](../../general/domain_name_system_(dns).md) system is speed up through caching with [DNS records](../../general/dns_records.md) having a [TTL](../../general/time_to_live_(ttl).md) field which determines the time they can be cached for.
 
@@ -230,7 +230,7 @@ The key message types are:
 
 Below is an example where we start [IP Anycast](../../general/ip_anycast.md) from our content servers C1 and C2. We are trying to find the shortest [AS](../../general/autonomous_system_(as).md)-path to client 1 and client 2.
 
-![Ip Anycast Example](../../../images/IP_anycast_example.png)
+![Ip Anycast Example](../../../static/images/IP_anycast_example.png)
 
 [DNS](../../general/domain_name_system_(dns).md) servers use this to find the closest [DNS](../../general/domain_name_system_(dns).md) server to the client.
 

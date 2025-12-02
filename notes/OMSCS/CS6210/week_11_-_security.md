@@ -102,7 +102,7 @@ The Andrew file system was built at a university and was for users to connect fr
 Core to the assumptions of the design is that the network is not to be trusted between the workstations and the servers (which worked only over LAN).
 However, we assume the servers themselves are in a trusted physical environment.
 
-![Andrew File System Architecture](../../../images/andrew_file_system_architecture.png)
+![Andrew File System Architecture](../../../static/images/andrew_file_system_architecture.png)
 
 These workstations will run unix and will have a special subsytem called Venus that will run the authentication for them.
 It will use RPC to communicate with the file servers.

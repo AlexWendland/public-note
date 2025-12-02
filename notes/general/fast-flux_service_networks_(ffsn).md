@@ -16,7 +16,7 @@ type: definition
 >
 >These compromised machines, known as flux agents, act as intermediaries between the user's request and the main control server (mothership), which hosts the actual content. When a user makes a request to a domain hosted on an FFSN, the DNS lookup provides several IP addresses of these flux agents. After the TTL expires, a new lookup returns a different set of IP addresses, complicating efforts to shut down malicious activities.
 >
->![Ffsn Explanation](../../images/ffsn_explanation.png)
+>![Ffsn Explanation](../../static/images/ffsn_explanation.png)
 >
 >In this setup, the flux agents receive the user's request and forward it to the control server. The control server sends the requested content back to the flux agents, which then deliver it to the user. This network structure makes it difficult to pinpoint and disable the source of malicious content, as shutting down one or even several IP addresses does not disrupt the overall operation of the network. These flux agents are often distributed across various countries and different Autonomous Systems, further enhancing the network's resilience against takedown efforts.
 

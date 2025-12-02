@@ -24,13 +24,13 @@ type: definition
 >    - The victim network announces a blackholing message to its upstream provider, specifying the attacked IP and the blackholing community.
 >    - The provider then recognises this message and sets the next-hop field to a blackholing IP, effectively discarding all traffic to the attacked IP.
 >
->![Bgp Bh Provider](../../images/bgp_bh_provider.png)
+>![Bgp Bh Provider](../../static/images/bgp_bh_provider.png)
 >
 >2. **Using an Internet Exchange Point (IXP)**:
 >    - If the victim network is part of an IXP, it sends a blackholing message to the IXP route server.
 >    - The route server then propagates this message to all connected IXP member networks, which drop the traffic to the blackholed IP.
 >
->![Bgp Bh Ixp](../../images/bgp_bh_ixp.png)
+>![Bgp Bh Ixp](../../static/images/bgp_bh_ixp.png)
 >
 >Key Benefits of BGP Blackholing:
 >- **Effective Mitigation**: Stops high-volume attacks close to their source, preventing them from reaching and overwhelming the target.

@@ -20,7 +20,7 @@ type: definition
 >- Type: The type of record being returned.
 >- Value: What is associated to the Domain name.
 >This is given in the following format
->![Dns Message Format](../../images/dns_message_format.png)
+>![Dns Message Format](../../static/images/dns_message_format.png)
 >The flags provide information such as the type of query iterative or recursive.
 >There are different types of responses you can get from a [DNS](domain_name_system_(dns).md) resolver.
 >1. **A (Address) Record**: Maps a domain name to an [IPv4](internet_protocol_(ipv4).md) address.

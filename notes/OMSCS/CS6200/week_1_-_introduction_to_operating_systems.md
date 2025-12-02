@@ -80,7 +80,7 @@ Policies:
 
 ## Example: Memory management
 
-![memory_management_example](../../../images/excalidraw/memory_management_example.excalidraw.svg)
+![memory_management_example](../../../static/images/excalidraw/memory_management_example.excalidraw.svg)
 
 # Design principles
 
@@ -134,15 +134,15 @@ Though they come with a lot of down sides:
 
 The linux [OS](../../general/operating_system_(os).md) is built in a layer architecture to make it simpler to use.
 
-![Linux Arcitecture](../../../images/linux_arcitecture.png)
+![Linux Arcitecture](../../../static/images/linux_arcitecture.png)
 
 The kernel itself has a couple of components that can all be switched out for specific users needs.
 
-![Linux Kernel](../../../images/linux_kernel.png)
+![Linux Kernel](../../../static/images/linux_kernel.png)
 
 ## Mac
 
 Mac uses a micro-kernel for all low level operations with a BSD component provides a unix interface for the rest of the OS.
 
-![Mac Architecture](../../../images/mac_architecture.png)
+![Mac Architecture](../../../static/images/mac_architecture.png)
 

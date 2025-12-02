@@ -15,4 +15,4 @@ type: definition
 >- $f$ is [NP](nondeterministic_polynomial_time_(np).md), and
 >- $f$ is [NP-hard](np-hard.md).
 
-![P Np Np Complete Np Hard](../../images/P_np_np-complete_np-hard.svg)
+![P Np Np Complete Np Hard](../../static/images/P_np_np-complete_np-hard.svg)

@@ -27,7 +27,7 @@ Here we detail 3 different approaches to shared memory architectures:
 In this architecture, CPUs and distributed memory sit on either side of an interconnection network.
 All memory is accessible to all CPUs.
 
-![Dance Hall](../../../images/dance_hall.png)
+![Dance Hall](../../../static/images/dance_hall.png)
 
 ### 2. Symmetric Multiprocessor (SMP)
 
@@ -35,14 +35,14 @@ In this architecture, CPUs share a common bus to access a single memory.
 Access time from each CPU to the memory is the same.
 This is the most common architecture in modern systems.
 
-![Smp](../../../images/smp.png)
+![Smp](../../../static/images/smp.png)
 
 ### 3. Distributed Shared Memory (DSM)
 
 In this architecture each CPU has its own local memory, but can also access memory on other CPUs.
 These accesses are done via an interconnection network and take longer than accessing local memory.
 
-![Dsm](../../../images/dsm.png)
+![Dsm](../../../static/images/dsm.png)
 
 ## Caches
 

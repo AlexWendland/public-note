@@ -18,5 +18,5 @@ type: definition
 > 5. The [page table entry](page_table_entry.md) is updated to reflect this change.
 > 6. Control is handed back to the [process](process.md).
 >
-> ![Demand Paging](../../images/demand_paging.png)
+> ![Demand Paging](../../static/images/demand_paging.png)
 

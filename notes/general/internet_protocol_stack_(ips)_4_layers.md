@@ -17,5 +17,5 @@ type: definition
 >4. Network access Layer
 >
 >It is based of the [OSI model](open_systems_interconnection_(osi)_model.md) and compares as follows.
->![Model Comparison](../../images/model-comparison.png)
+>![Model Comparison](../../static/images/model-comparison.png)
 

@@ -40,11 +40,11 @@ Explore(z)
 
 Suppose we have the following graph and let $B$ be the root node. Suppose we explore edges alphabetically and lets run the algorithm above on it.
 
-![Dfs Example](../../images/dfs_example.png)
+![Dfs Example](../../static/images/dfs_example.png)
 
 As we are using [DFS](depth-first_search_(dfs).md) we explore far first and then slowly come back. Which gives us the following [DFS tree](dfs_tree_(algorithm).md) with the pre/post numbers.
 
-![Pre Post Calculation Example](../../images/pre_post_calculation_example.png)
+![Pre Post Calculation Example](../../static/images/pre_post_calculation_example.png)
 
 | Letter | Pre | Post |
 | ------ | --- | ---- |

@@ -116,7 +116,7 @@ Lets picture a [Bayesian network](../../general/bayesian_network.md) with one ro
 
 First lets draw the Naive Bayes Classifier diagram.
 
-![Naice Bayes](../../../images/excalidraw/Naice_Bayes.excalidraw.svg)
+![Naice Bayes](../../../static/images/excalidraw/Naice_Bayes.excalidraw.svg)
 
 This is a model for if the email is spam or not. Lets assume the probability of spam is $\mathbb{P}[Spam] = 0.4$. Then we have the [conditional probabilities](../../general/conditional_probability.md) below.
 

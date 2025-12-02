@@ -34,15 +34,15 @@ Find this in [Week 6 - Graph algorithms - strongly connected components](../OMSC
 
 Suppose we want to find the strongly connected components of the graph $G$ below.
 
-![Strongly Connected Component Graph](../../images/strongly_connected_component_graph.png)
+![Strongly Connected Component Graph](../../static/images/strongly_connected_component_graph.png)
 
 First we look at $G^R$ and run the [DFS to find path in an undirected graph](dfs_to_find_path_in_an_undirected_graph.md) algorithm.
 
-![Reverse Strongly Connected Compoent Graph](../../images/reverse_strongly_connected_compoent_graph.png)
+![Reverse Strongly Connected Compoent Graph](../../static/images/reverse_strongly_connected_compoent_graph.png)
 
 This gives us $post : V \rightarrow \mathbb{N}$ - in this example we started at $C$ and did a fairly random vertex ordering.
 
-![Scc Tree Example](../../images/scc_tree_example.png)
+![Scc Tree Example](../../static/images/scc_tree_example.png)
 
 | Letter | Pre | Post |
 | ------ | --- | ---- |
@@ -74,6 +74,6 @@ Now run a connected components [DFS](dfs.md) using the vertex ordering above.
 
 Notice also that the [strongly connected component graph](strongly_connected_component_graph_(directed_graph).md) is the following.
 
-![Scc Graph Example Reverse Topological Sorting](../../images/SCC_graph_example_reverse_topological_sorting.png)
+![Scc Graph Example Reverse Topological Sorting](../../static/images/SCC_graph_example_reverse_topological_sorting.png)
 
 Giving that our ordering is exactly a reverse [topological sorting](topological_sorting_(dag).md).

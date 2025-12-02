@@ -21,7 +21,7 @@ week: 5
 
 We will be revisiting the thread level from [Thread level](week_3_-_threading_and_concurrency.md#thread-level).
 
-![Thread Level Summary](../../../images/thread_level_summary.png)
+![Thread Level Summary](../../../static/images/thread_level_summary.png)
 
 Key summary:
 - Kernel level threads get scheduled on the CPU.
@@ -30,7 +30,7 @@ Key summary:
 
 # Thread data structures
 
-![thread_data_structures](../../../images/excalidraw/thread_data_structures.excalidraw.svg)
+![thread_data_structures](../../../static/images/excalidraw/thread_data_structures.excalidraw.svg)
 
 In previous lecturers we spoke about a [Process control block (PCB)](../../general/process_control_block_(pcb).md) as a single entity. However, when adding threads into the equation it is more convent to break this down into the bit.
 - The hard state that is shared by all threads - like the memory mapping,
@@ -66,7 +66,7 @@ This OS implements Light Weight Process as laid out in [Week 5 - Beyond Multipro
 
 ## User level structures
 
-![User Level Thread Data](../../../images/user_level_thread_data.png)
+![User Level Thread Data](../../../static/images/user_level_thread_data.png)
 
 Two key points:
 - Threads point to their ID within a table of pointers - this enables that table to contain metadata about the thread and stops it pointing to corrupt memory.
@@ -74,20 +74,20 @@ Two key points:
 
 ## Kernel level structures
 
-![Kernel Level Data Structures](../../../images/kernel_level_data_structures.png)
+![Kernel Level Data Structures](../../../static/images/kernel_level_data_structures.png)
 
 Key notes:
 - Resource usage is tracked per LWP this means to get the resource usage for a kernel-level thread, we need to traverse the linked list of LWP.
 - The kernel-level thread always has to be loaded in memory for access however the LWP does not. This allows for larger LWP support with a lower memory foot print.
 -
 
-![Sunos Fig 2](../../../images/SunOs_fig_2.png)
+![Sunos Fig 2](../../../static/images/SunOs_fig_2.png)
 
 ## Thread management
 
 The kernel level does not understand what is happening at the user level and vice versa. Therefore we can get into situations where all kernel level threads are blocked on I/O whilst there are user level threads that could execute. Therefore SunOS introduce new system calls to allow the kernel level threads to communicate to the threading library.
 
-![Kernel Vs User Visability](../../../images/kernel_vs_user_visability.png)
+![Kernel Vs User Visability](../../../static/images/kernel_vs_user_visability.png)
 
 Notes:
 - It is possible for threading library to lock a user level thread onto a kernel level thread.
@@ -101,7 +101,7 @@ There are situations where actions on one CPU effect another, such as:
 	- This is enabled by $T_2$ signaling $T_1$.
 - In the case where 2 threads are running on two CPU's $T_1$ and $T_4$ (see picture) it may be the case where $T_4$ needs a mutex $T_1$ is holding. If the critical section of $T_1$ is short it may be faster for $T_4$ to stay loaded on the CPU than to context switch out. This case is called an adaptive mutex.
 
-![Sync Related Issues](../../../images/sync_related_issues.png)
+![Sync Related Issues](../../../static/images/sync_related_issues.png)
 
 Creation of threads takes a while so instead of destroying them it is efficient to reuse them. Therefore when a thread is marked for distruction:
 - It is put on 'death row'
@@ -110,9 +110,9 @@ Creation of threads takes a while so instead of destroying them it is efficient 
 
 ## Interrupts and signals
 
-![Difference Interrupts Signals](../../../images/difference_interrupts_signals.png)
+![Difference Interrupts Signals](../../../static/images/difference_interrupts_signals.png)
 
-![Similar Interrupts Vs Singals](../../../images/similar_interrupts_vs_singals.png)
+![Similar Interrupts Vs Singals](../../../static/images/similar_interrupts_vs_singals.png)
 
 ### Interrupts
 
@@ -135,7 +135,7 @@ Creation of threads takes a while so instead of destroying them it is efficient 
 
 ## Masking
 
-![Masking Interupts Signals](../../../images/masking_interupts_signals.png)
+![Masking Interupts Signals](../../../static/images/masking_interupts_signals.png)
 
 Switching immediately to handler code for either signals or interrupts can cause code to become incredibly complicated. For example if the code that is interrupted is holding a mutex, but the handler code needs another mutex it risks deadlocks within your system.
 
@@ -160,7 +160,7 @@ The main downside to this is dynamic thread creation is quite costly. Therefore 
 - If the handler does lock, then make it a separate thread.
 - Create and initialize threads for interrupt routines before they are called.
 
-![Top Vs Bottom Thread Handling](../../../images/top_vs_bottom_thread_handling.png)
+![Top Vs Bottom Thread Handling](../../../static/images/top_vs_bottom_thread_handling.png)
 
 There is a concept of top and bottom of the thread handler.
 - The top is the part that executes within the interupted thread.
@@ -178,7 +178,7 @@ If we use a new thread instead of blocking signals whilst in the critical sectio
 
 Both the kernel level thread and the user level thread have signal masks. For the user level thread to update the kernel level threads mask this takes a system call - which is slow. So these are kept in sync via lazy updates.
 
-![Signal Handling User Kernel](../../../images/signal_handling_user_kernel.png)
+![Signal Handling User Kernel](../../../static/images/signal_handling_user_kernel.png)
 
 The threading library loads its own code into the signal handler for a particular signal. Then there are multiple cases on what should happen.
 - Case 1: Both user and kernel threads have mask set to 1, threading library lets the user level thread handle the signal.

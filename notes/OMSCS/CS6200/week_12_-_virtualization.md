@@ -38,7 +38,7 @@ There are two main methods of virtualization:
 
 In this model the [hypervisor](../../general/virtual_machine_monitor_(vmm).md) is in direct control of the hardware. The main difficulty of the model is integrating different devices - as device manufacturers would need to write a device driver for the hypervisor also. The way most [hypervisors](../../general/virtual_machine_monitor_(vmm).md) get around this is by hosting a privileged VM that integrates with devices. This also runs other management tasks.
 
-![Bare Metal](../../../images/bare-metal.png)
+![Bare Metal](../../../static/images/bare-metal.png)
 
 There are two main hypervisor producers:
 - Xen (open source or Citrix):
@@ -52,7 +52,7 @@ There are two main hypervisor producers:
 
 In the hosted model the [VMM](../../general/virtual_machine_monitor_(vmm).md) runs as  module on a host [OS](../../general/operating_system_(os).md). This module provides hardware interfaces to VM's and deals with VM context switching. The advantage of this mode is you can utilize all the components of the host VM making the [VMM](../../general/virtual_machine_monitor_(vmm).md) smaller in size.
 
-![Hosted Virtualization](../../../images/hosted_virtualization.png)
+![Hosted Virtualization](../../../static/images/hosted_virtualization.png)
 
 Examples:
 - Kernel-based VM (KVM) which is linux based.
@@ -137,13 +137,13 @@ In this model the [hypervisor](../../general/virtual_machine_monitor_(vmm).md) d
 - If multiple VMs need that device, sharing can be very complicated.
 - The guest [OS](../../general/operating_system_(os).md) must have exactly the correct device driver for that device. This makes migration harder and couples applications to machines with exactly that device on it.
 
-![Pass Through Model](../../../images/pass_through_model.png)
+![Pass Through Model](../../../static/images/pass_through_model.png)
 
 ## Hypervisor direct model
 
 In this model the [hypervisor](../../general/virtual_machine_monitor_(vmm).md) intercepts any device accesses and translates them into a generic operation. This operation is then processed using the hypervisor and carried out on the device. The response is then converted back to what the guest [OS](../../general/operating_system_(os).md) expects the response to be.
 
-![Hypervisor Direct Model](../../../images/hypervisor_direct_model.png)
+![Hypervisor Direct Model](../../../static/images/hypervisor_direct_model.png)
 
 This has the following considerations:
 - The guest [OS](../../general/operating_system_(os).md) is completely decoupled from the physical device.
@@ -157,7 +157,7 @@ This model is limited to only paravirtualised [hypervisors](../../general/virtua
 - Backend device driver: Running on the service VM, this will be whichever device driver is needed to work with the device that is plugged into the machine.
 - Frontend device driver: Running in the guest VM, this sends requests to the service VM to carry out the request on the behalf of the guest VM.
 
-![Split Device Driver](../../../images/split_device_driver.png)
+![Split Device Driver](../../../static/images/split_device_driver.png)
 
 This model has the following considerations:
 - Eliminate emulation overhead of the direct model.
@@ -174,4 +174,4 @@ Due to the benefits of virtualization the industry has been working to make [vir
 - Multiqueue devices and interrupt routing.
 - Security and management support.
 
-![Intel Developments](../../../images/intel_developments.png)
+![Intel Developments](../../../static/images/intel_developments.png)

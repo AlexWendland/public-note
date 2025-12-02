@@ -29,5 +29,5 @@ type: definition
 > **Merging reduces fragmentation**: Helps prevent [external fragmentation](external_fragmentation.md).
 > **[Internal fragmentation](internal_fragmentation.md)** → Requests that don’t match a power-of-2 size may waste memory.
 >
->![Buddy Allocator](../../images/buddy_allocator.png)
+>![Buddy Allocator](../../static/images/buddy_allocator.png)
 

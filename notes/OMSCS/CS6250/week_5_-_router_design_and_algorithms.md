@@ -35,25 +35,25 @@ There are two parts of a router.
 - The forwarding plane, and
 - The Control plane.
 
-![Router Seperation Of Planes](../../../images/router_seperation_of_planes.png)
+![Router Seperation Of Planes](../../../static/images/router_seperation_of_planes.png)
 
 The forwarding plane is responsible for getting messages forwarded when they arrive at the router. Which has 3 main components:
 - **Input queue**: responsible for finishing the [layer 1](../../general/layer_1_physical.md) process and [de-encapsulation](../../general/encapsulation.md) the message to get the [IP address](../../general/internet_protocol_(ip).md). The it looks up where it has to go and moves it onto the switching fabric.
 - **Switching fabric**: Only responsible for getting messages from the input queue to the correct output queue.
 - **Output queue**: The same as the input but backwards.
 
-![Router Input Que](../../../images/router_input_que.png)
-![Router Output Que](../../../images/router_output_que.png)
+![Router Input Que](../../../static/images/router_input_que.png)
+![Router Output Que](../../../static/images/router_output_que.png)
 
 The control plane refers to the implementation of the [router](../../general/router.md) [protocols](../../general/protocol_(networks).md). This mainly involves keeping the forwarding table up to date.
 
-![Router Control Plane](../../../images/router_control_plane.png)
+![Router Control Plane](../../../static/images/router_control_plane.png)
 
 # Router architecture
 
 Here we depict what happens when a [packet](../../general/packets.md) arrives at the router.
 
-![Router Arcitecture](../../../images/router_arcitecture.png)
+![Router Arcitecture](../../../static/images/router_arcitecture.png)
 
 The most time sensitive operations are lookup, switching and scheduling.
 
@@ -72,19 +72,19 @@ This can be accomplished in one of 3 ways.
 
 Input/Output ports operate as I/O devices in an operating system, controlled by the routing processor. When an input port receives a packet, it sends an interrupt to the routing processor, and the packet is copied to the processor's memory. Then the processor extracts the destination address and looks into the forward table to find the output port, and finally, the packet is copied into that output's port buffer.
 
-![Switching Memory](../../../images/switching_memory.png)
+![Switching Memory](../../../static/images/switching_memory.png)
 
 ## Via bus
 
 In this case, the routing processor does not intervene as we saw the switching via memory. When an input port receives a new packet, it puts an internal header that designates the output port, and it sends the packet to the shared bus. Then all the output ports will receive the packet, but only the designated one will keep it. When the packet arrives at the designated output port, the internal header is removed from the packet. Only one packet can cross the bus at a given time, so the speed of the bus limits the speed of the router.
 
-![Switching Bus](../../../images/switching_bus.png)
+![Switching Bus](../../../static/images/switching_bus.png)
 
 ## Via interconnected network (crossbar)
 
 A crossbar switch is an interconnection network that connects $N$ input ports to $N$ output ports using $2N$ buses. Horizontal buses meet the vertical buses at crosspoints controlled by the switching fabric. For example, let's suppose that a packet arrives at port A that will need to be forwarded to output port Y, the switching fabric closes the crosspoint where the two buses intersect so that port A can send the packets onto the bus, and then the packet can only be picked up by output port Y. Crossbar network can carry multiple packets at the same time, as long as they are using different input and output ports. For example, packets can go from A-to-Y and B-to-X simultaneously.
 
-![Switching Crossbar](../../../images/switching_crossbar.png)
+![Switching Crossbar](../../../static/images/switching_crossbar.png)
 
 # Problems facing routers
 
@@ -96,7 +96,7 @@ Modern routing facing a lot of problems when handling the scale of the internet.
 	3. New devices that can operate at high speeds.
 2. **Services at high speeds**: New devices that need to operate at high speeds which can be effected by congestion or attacks on the network.
 
-![Router Problems](../../../images/router_problems.png)
+![Router Problems](../../../static/images/router_problems.png)
 
 **Longest prefix matching** Matching a packet to the [FIB](../../general/forwarding_information_base_(fib).md) can be complicated. New routers offer more complicated lookups as well.
 
@@ -131,7 +131,7 @@ There are many problems that just the lookup process faces.
 3. An unstable routing protocol may adversely impact the update time in the table: add, delete or replace a prefix. Inefficient routing protocols increase this value up to additional milliseconds.
 4. A vital trade-off is memory usage. We can use expensive fast memory (cache in software, SRAM in hardware) or cheaper but slower memory (e.g., DRAM, SDRAM).
 
-![Lookup Problems](../../../images/lookup_problems.png)
+![Lookup Problems](../../../static/images/lookup_problems.png)
 
 # Unibit Tries
 
@@ -141,9 +141,9 @@ We can use [subnet](../../general/subnets.md) to form a [trie](../../general/tri
 
 > [!example] Prefix-match lookup
 > Suppose we have the following table
-> ![Prefix Table](../../../images/prefix_table.png)
+> ![Prefix Table](../../../static/images/prefix_table.png)
 > then we use these strings to construct the following [trie](../../general/trie.md).
-> ![Prefix Trie](../../../images/prefix_trie.png)
+> ![Prefix Trie](../../../static/images/prefix_trie.png)
 > we do not include the left branch of this [trie](../../general/trie.md). We also compress one-way branches for example in P9.
 
 Then we use this [trie](../../general/trie.md) as the description entails.
@@ -162,11 +162,11 @@ Here we pick a length of stride $k$ and then cut our [subnets](../../general/sub
 
 > [!example] Prefix expansion
 > Suppose we set $k=3$ then using the table from the previous example lets do prefix expansion.
-> ![Prefix Expansion](../../../images/prefix_expansion.png)
+> ![Prefix Expansion](../../../static/images/prefix_expansion.png)
 
 Then we construct the multibit [trie](../../general/trie.md) the same way as the unibit [trie](../../general/trie.md) with the expanded addresses but with the alphabet set to bit strings of length $k$.
 
-![Fixed Length Multibit Trie](../../../images/fixed_length_multibit_trie.png)
+![Fixed Length Multibit Trie](../../../static/images/fixed_length_multibit_trie.png)
 
 Notice here we only needed to have at most 3 lookups whereas before it was 5.
 
@@ -174,7 +174,7 @@ Notice here we only needed to have at most 3 lookups whereas before it was 5.
 
 In the previous example we can see by choosing length 3 words the table to the left is much larger than we needed it to be. P3 was only length 2 and we had no other entries in that table. This wastes space - so we can let the length of that string be 2 instead.
 
-![Variable Length Trie](../../../images/variable_length_trie.png)
+![Variable Length Trie](../../../static/images/variable_length_trie.png)
 
 The optimal stride length can be chosen using [dynamic programming](../../general/dynamic_programming.md). Though they do not say how.
 
@@ -199,7 +199,7 @@ These further classifications can be based on source [IP address](../../general/
 - Resource reservation protocols, and
 - Routing based on traffic type.
 
-![Packet Classification](../../../images/packet_classification.png)
+![Packet Classification](../../../static/images/packet_classification.png)
 
 **Example for traffic type sensitive routing.** The above figure shows an example topology where networks are connected through router R. Destinations are shown as S1, S2, X, Y, and D. L1 and L2 denote specific connection points for router R. The table shows some examples of packet classification rules. The first rule is for routing video traffic from S1 to D via L1. The second rule drops all traffic from S2, for example, in the scenario that S2 was an experimental site. Finally, the third rule reserves 50 Mbps of traffic from prefix X to prefix Y, which is an example of a rule for resource reservation.
 
@@ -227,9 +227,9 @@ A simple way to do this would be to construct the destination [trie](../../gener
 
 >[!example] Set-Pruning [tries](../../general/trie.md)
 > Suppose we have the following rule table.
-> ![Set Pruning Trie Table](../../../images/set_pruning_trie_table.png)
+> ![Set Pruning Trie Table](../../../static/images/set_pruning_trie_table.png)
 > Then we attach the following [tries](../../general/trie.md) to the destination [trie](../../general/trie.md).
-> ![Set Pruning Trie Example](../../../images/set_pruning_trie_example.png)
+> ![Set Pruning Trie Example](../../../static/images/set_pruning_trie_example.png)
 > Note that for the 00\* source trie we need to include all rules that could match that prefix in particular even rules that only match the 0\*.
 >
 
@@ -242,7 +242,7 @@ The need to match all rules that could fit with the prefix means we have to repe
 
 We could get around the memory problem by letting each rule only appear in one source [trie](../../general/trie.md). Then if you don't match in current source [trie](../../general/trie.md) you backtrack on the destination [trie](../../general/trie.md) and go to the next source [trie](../../general/trie.md). In the example above we get the following [trie](../../general/trie.md).
 
-![Set Pruning Tries Backtrack](../../../images/set_pruning_tries_backtrack.png)
+![Set Pruning Tries Backtrack](../../../static/images/set_pruning_tries_backtrack.png)
 
 Whilst this reduces memory the downside to this approach is the time to compute the answer. If a [packet](../../general/packets.md) has lots of backtracking you have lots of memory lookups which is slow.
 
@@ -250,7 +250,7 @@ Whilst this reduces memory the downside to this approach is the time to compute 
 
 We can get the best of both worlds if we precompute where the misses land in the backtracked [trie](../../general/trie.md). This means we don't need to recalculate the source path we had already walked. In the example above we would get the following.
 
-![Grid Of Tries Example](../../../images/grid_of_tries_example.png)
+![Grid Of Tries Example](../../../static/images/grid_of_tries_example.png)
 
 # Scheduling and head of line blocking
 
@@ -265,7 +265,7 @@ This is analogise to input lines taking a ticket to wait to be served by a given
 2. The output queues grant tickets to the input queues.
 3. The holder of the latest ticket for each output queue connects and passes its transaction on.
 
-![Take A Ticket Example](../../../images/take_a_ticket_example.png)
+![Take A Ticket Example](../../../static/images/take_a_ticket_example.png)
 
 However this algorithm has a clear problem if all the inputs want to connect to the same output.
 
@@ -285,7 +285,7 @@ Here we let input lines request access for each output line they have a packet f
 3. If an input line has more than one offer it randomly selects a transaction to complete.
 4. Connection happens.
 
-![Parallel Iterative Matching](../../../images/parallel_iterative_matching.png)
+![Parallel Iterative Matching](../../../static/images/parallel_iterative_matching.png)
 
 # Custom Scheduling
 
@@ -328,13 +328,13 @@ This is a method that uses bit-by-bit round robin framework to make fair queues.
 
 It achieves this by sending the packet that has the smallest finish time $F(i)$. It iteratively does this and increments the current round number to the finish time of the last packet whilst doing it.
 
-![Rr 1](../../../images/rr_1.png)
+![Rr 1](../../../static/images/rr_1.png)
 
-![Rr 2](../../../images/rr_2.png)
+![Rr 2](../../../static/images/rr_2.png)
 
-![Rr 3](../../../images/rr_3.png)
+![Rr 3](../../../static/images/rr_3.png)
 
-![Rr 4](../../../images/rr_4.png)
+![Rr 4](../../../static/images/rr_4.png)
 
 Whilst this guarantees fairness keeping track of all the finishing time would require a propitiatory queue method which has time complexity of $\log(N)$. This makes it hard to operate at gigabit speeds.
 
@@ -353,7 +353,7 @@ Instead we can use round robin to given each flow some allocation to use for pac
 		2. Send p
 ```
 
-![Drr Example](../../../images/drr_example.png)
+![Drr Example](../../../static/images/drr_example.png)
 
 Deficit Round robin has one fail condition. If a flow has not had any packets for a while it allowance may build up which then could release a burst of packets. This might not be desirable if you want to guarantee a constant rate to other flows.
 
@@ -363,7 +363,7 @@ Token bucket shaping is similar to Deficit round robin but here we limit the num
 1. limiting the average rate, and
 2. limiting the maximum burst size.
 
-![Token Bucket Shaping](../../../images/token_bucket_shaping.png)
+![Token Bucket Shaping](../../../static/images/token_bucket_shaping.png)
 
 If a packet arrives and the bucket does not have enough tokens we have two options:
 1. Put it into a buffer and wait for that bucket to have enough tokens, this is traditional token bucket shaping, or
@@ -371,12 +371,12 @@ If a packet arrives and the bucket does not have enough tokens we have two optio
 
 This leads to very different traffic throughput on the router.
 
-![Token Bcuket Traffic](../../../images/token_bcuket_traffic.png)
+![Token Bcuket Traffic](../../../static/images/token_bcuket_traffic.png)
 
 # Leaky bucket
 
 There is a middle ground between policing and shaping that combines the benefits of both. Instead of having tokens added to the bucket instead think of it being the [packets](../../general/packets.md) we need to send. If there is room in the bucket we add the packet to the buffer and wait to send it. If the packet is too big to fit in the bucket we discard it. We then send packets at a constant rate in terms of size - thus the leak.
 
-![Leaky Bucket](../../../images/leaky_bucket.png)
+![Leaky Bucket](../../../static/images/leaky_bucket.png)
 
 This can take a irregular flow and regularise it. This has the benefit of having a controlled size of buffer which can offset overflow.

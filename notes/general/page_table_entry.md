@@ -18,5 +18,5 @@ type: definition
 >- Protection: If the [process](process.md) has read/write/execute permissions on the memory.
 >
 >Though these differ by architecture. See below for a particular example.
->![Page Table Entry](../../images/page_table_entry.png)
+>![Page Table Entry](../../static/images/page_table_entry.png)
 

@@ -24,6 +24,6 @@ type: definition
 >
 >The reverse process is called *de-encapsulation*.
 >
->![Osci Model Summary](../../images/osci-model-summary.png)
+>![Osci Model Summary](../../static/images/osci-model-summary.png)
 
 

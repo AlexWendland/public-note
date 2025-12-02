@@ -117,7 +117,7 @@ The main role of the data plane is the forwarding of packets based on some [FIB]
 
 A [SDN](../../general/software_defined_networks_(sdn).md) moves the control plane from being on the device to being located somewhere else on the network. It defines a clean API on how this networked control plane can interact and update the [FIB](../../general/forwarding_information_base_(fib).md) on the device.
 
-![Snd Example](../../../images/snd_example.png)
+![Snd Example](../../../static/images/snd_example.png)
 
 # Architecture
 
@@ -127,7 +127,7 @@ There are 3 separate layers to the architecture:
 - **SDN controller**: The **SDN controller** is a logically centralized entity that acts as an **interface between the network elements and the network-control applications.**
 - **Network-control applications**: The network-control applications are programs that manage the underlying network by collecting information about the network elements with the help of SDN controller.
 
-![Sdn Arciteture](../../../images/sdn_arciteture.png)
+![Sdn Arciteture](../../../static/images/sdn_arciteture.png)
 
 These components have two important interfaces.
 - Southbound API: Connecting the SDN controller to the SDN-Controlled switches.
@@ -148,7 +148,7 @@ The controller itself is broken down into a further 3 layers. These handle each 
 2. **Network-wide state-management layer**: This layer is about the network-state that is maintained by the controller. The network-state includes any information about the state of the hosts, links, switches and other controlled elements in the network. It also includes copies of the flow tables of the switches. Network-state information is needed by the SDN control plane to configure the flow tables.
 3. **The interface to the network-control application layer:** This layer is also known as the controller’s “northbound” interface using which the SDN controller interacts with network-control applications. Network-control applications can read/write network state and flow tables in controller’s state-management layer. The SDN controller can notify applications of changes in the network state, based on the event notifications sent by the SDN-controlled devices. The applications can then take appropriate actions based on the event. A REST interface is an example of a northbound API.
 
-![Sdn Controller Architecture](../../../images/sdn_controller_architecture.png)
+![Sdn Controller Architecture](../../../static/images/sdn_controller_architecture.png)
 
 The SDN controller, although viewed as a monolithic service by external devices and applications, is implemented by distributed servers to achieve fault tolerance, high availability and efficiency. Despite the issues of synchronization across servers, many modern controllers such as OpenDayLight and ONOS have solved it and prefer distributed controllers to provide highly scalable services.
 
@@ -185,17 +185,17 @@ An Industrial-Scale Software Defined Internet Exchange Point
 3. **Locality of functionality placement:** Previously, the location of middleboxes was a strategic decision and big constraint. However, in this model, the middlebox applications can take actions from anywhere in the network.
 4. **Simpler integration:** Integrations of networking applications are smoother. For example, load balancing and routing applications can be combined sequentially.
 
-![Sdn Advantages](../../../images/sdn_advantages.png)
+![Sdn Advantages](../../../static/images/sdn_advantages.png)
 
 ## SND features
 
 The figure below presents three perspectives of the SDN landscape: (a) a plane-oriented view, (b) the SDN layers, and (c) a system design perspective.
 
-![Sdn Planes Arcitecture](../../../images/sdn_planes_arcitecture.png)
+![Sdn Planes Arcitecture](../../../static/images/sdn_planes_arcitecture.png)
 
 Next we highlight the key features of an SDN.
 
-![Sdn Features Overview](../../../images/sdn_features_overview.png)
+![Sdn Features Overview](../../../static/images/sdn_features_overview.png)
 
 - **Infrastructure:**
     - Networking equipment (e.g., routers, switches) now act as simple forwarding elements controlled by a centralized system.
@@ -295,7 +295,7 @@ There are alternatives to [OpenFlow](../../general/openflow.md) such as ForCES w
 
 Here we will review the ONOS distributed SDN control platform. This is based on Floodlight an open-source single instance SDN controller.
 
-![Onos Controller](../../../images/onos_controller.png)
+![Onos Controller](../../../static/images/onos_controller.png)
 
 **Architecture:**
 
@@ -334,18 +334,18 @@ Here we will review the ONOS distributed SDN control platform. This is based on 
 
 [P4](../../general/programming_protocol-independent_packet_processors_(p4).md) enhances switch programmability, ensuring they can adapt to various protocols and hardware environments while providing a flexible and open interface for [SDN](../../general/software_defined_networks_(sdn).md) controllers.
 
-![P4 Compiler](../../../images/P4_compiler.png)
+![P4 Compiler](../../../static/images/P4_compiler.png)
 
 This operates within the switch in two steps:
 
 1. **Configure**: These sets of operations are used to program the parser. They specify the header fields to be processed in each match+action stage and also define the order of these stages.
 2. **Populate**: The entries in the match+action tables specified during configuration may be altered using the populate operations. It allows addition and deletion of the entries in the tables.
 
-![P4 Model](../../../images/P4_model.png)
+![P4 Model](../../../static/images/P4_model.png)
 
 Below is an example dependency graph for the [P4](../../general/programming_protocol-independent_packet_processors_(p4).md) language.
 
-![P4 Example](../../../images/P4_example.png)
+![P4 Example](../../../static/images/P4_example.png)
 
 # SDN Applications
 
@@ -406,7 +406,7 @@ At an [IXP](../../general/internet_exchange_points_(ixps).md) each participant c
 
 This is written in Pyretic and example can be found below.
 
-![Sdx Example](../../../images/sdx_example.png)
+![Sdx Example](../../../static/images/sdx_example.png)
 
 # Wide area traffic delivery
 

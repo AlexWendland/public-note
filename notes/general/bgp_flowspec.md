@@ -14,7 +14,7 @@ type: definition
 >[BGP](boarder_gateway_protocol_(bgp).md) Flowspec is an extension of [BGP](boarder_gateway_protocol_(bgp).md) designed to allow the creation and propagation of detailed traffic flow filtering rules. These rules can be applied across different [ASs](autonomous_system_(as).md).
 >
 >The following table shows the available components to select a flow:
->![Bcg Flowspec](../../images/bcg_flowspec.png)
+>![Bcg Flowspec](../../static/images/bcg_flowspec.png)
 >After you have specified a particular flow you can select an action associated to it such as traffic-rate, redirect or drop. This will be implemented at the boarder router.
 >
 >This has the following advantages:

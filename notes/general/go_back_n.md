@@ -11,5 +11,5 @@ type: definition
 ---
 >[!tldr] Go back N
 > This is a method of handling unacknowledged messages. When a sequence number is either skipped or timed out the send starts re-sending [segments](segment.md) from the missing number.
-> ![Go Back N](../../images/go_back_n.png)
+> ![Go Back N](../../static/images/go_back_n.png)
 

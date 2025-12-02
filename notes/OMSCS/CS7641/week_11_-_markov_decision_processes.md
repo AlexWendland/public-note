@@ -18,7 +18,7 @@ week: 11
 >[!example] Find home
 > Suppose we have a world with 12 states defined by a 2d grid $S = \{(x,y) \vert 1 \leq x \leq 4, 1 \leq y \leq 3\}$. Where state $(2,2)$ is can't be entered, $(4,3)$ is home, $(4,2)$ is a pit of death, and $(1,1)$ is where we start.
 >
-> ![gridworld_example](../../../images/excalidraw/gridworld_example.excalidraw.svg)
+> ![gridworld_example](../../../static/images/excalidraw/gridworld_example.excalidraw.svg)
 >
 > Here we define actions $A = \{$up, down, left, right$\}$ where we can't take an action that would lead us off the board or into $(2,2)$. This gives us our function for $A(s)$.
 > This world is probabilistic so for each action we have a $0.8$ chance of doing what you would expect the action to do, but a $0.1$ chance of taking an action perpendicular to it (if you can't take that action then you stay where you are). This defines our transition probabilities, $T$.

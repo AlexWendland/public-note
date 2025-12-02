@@ -72,7 +72,7 @@ We can now assume our formula has all clauses of size 2, it will have $n$ variab
 > [!example] Example
 > Suppose our formula was $f = (\overline{x_1} \lor \overline{x_2}) \land (x_2 \lor x_3) \land (\overline{x_3} \lor \overline{x_1})$ then we would construct the following graph.
 >
-> ![2 Sat Example Graph](../../../images/2_sat_example_graph.png)
+> ![2 Sat Example Graph](../../../static/images/2_sat_example_graph.png)
 
 The intuition behind this graph is that for a clause $(\alpha \lor \beta)$ if $\overline{\alpha}$ then we will need $\beta$ to be true for a correct allocation for $f$, similarly with $\overline{\beta}$ we would need $\alpha$.
 

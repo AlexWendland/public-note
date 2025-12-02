@@ -67,7 +67,7 @@ CLAUDE.md
 node_modules/
 
 # Excalidraw compiled files
-images/excalidraw/
+static/images/excalidraw/
 
 # hugo
 

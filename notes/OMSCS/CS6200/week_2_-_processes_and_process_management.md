@@ -80,7 +80,7 @@ During a processes time it goes through multiple different stages.
 - Running: It will have been [context switched](../../general/context_switch_(cpu).md) onto and the [PCB](../../general/process_control_block_(pcb).md) loaded into the [CPU register](../../general/cpu_register.md).
 - Terminated: Once a process has exited or error-ed it moves state to terminated to be cleaned up.
 
-![Process Life Cycle](../../../images/process_life_cycle.png)
+![Process Life Cycle](../../../static/images/process_life_cycle.png)
 
 ## Creation
 
@@ -104,7 +104,7 @@ There are two important decisions that you must take when deciding on the schedu
 
 When a process is stopped by an [IO](../../general/input_output_(io).md) operation this is then handled by the [device driver](../../general/device_driver.md) associated with that [IO](../../general/input_output_(io).md) task. The [process](../../general/process.md) will enter the waiting state until the [device driver](../../general/device_driver.md) interrupts the [CPU](../../general/central_processing_unit_(cpu).md) to let it know the operation has been completed and the [process](../../general/process.md) can move back to the ready state. Though there are other ways this waiting state can end - for example a time out.
 
-![Io Process](../../../images/IO_process.png)
+![Io Process](../../../static/images/IO_process.png)
 
 # Inter-process communication
 

@@ -25,10 +25,10 @@ type: definition
 >
 >The reflectors IP ID will only increase by 1 if the communication from the site to the reflector is not censored. Therefore we have the three circumstances below happening.
 >
->![Angur No Blocking](../../images/angur_no_blocking.png)
+>![Angur No Blocking](../../static/images/angur_no_blocking.png)
 >
->![Angur Inbound Blocking](../../images/angur_inbound_blocking.png)
+>![Angur Inbound Blocking](../../static/images/angur_inbound_blocking.png)
 >
->![Angur Outbound Blocking](../../images/angur_outbound_blocking.png)
+>![Angur Outbound Blocking](../../static/images/angur_outbound_blocking.png)
 >This last picture relies on the server trying to resend the SYN-ACK when it got no ACK back from the reflector. This will increment the IPID again by two on a third probe.
 

@@ -45,7 +45,7 @@ Kurose-Ross Edition 7, Chapter 9
 
 Sounds and video are interesting internet applications due to their interesting requirements. First they have far higher [bit](../../general/bit.md)-rates than other applications.
 
-![Media Bit Rates](../../../images/media_bit_rates.png)
+![Media Bit Rates](../../../static/images/media_bit_rates.png)
 
 Where facebook is someone flicking through 1 picture per second.
 
@@ -96,7 +96,7 @@ This includes:
 
 Delay is very important to the end user to stop people talking over one another. Below displays the acceptable levels.
 
-![E2E Delay](../../../images/e2e_delay.png)
+![E2E Delay](../../../static/images/e2e_delay.png)
 
 # Jitter
 
@@ -119,13 +119,13 @@ This transmits redundant data that can fill any gaps. This increases the bandwid
 - Transmitting a lower quality stream along side the high quality stream.
 The more redundant data you send the more bandwidth you use. Also some of these techniques require you to wait longer before playing out increasing end-to-end delay.
 
-![Fec Example](../../../images/fec_example.png)
+![Fec Example](../../../static/images/fec_example.png)
 
 ## Interleaving
 
 This technique does not require additional data to be transmitted instead it breaks up the chunks of data so that the data in one chunk does not contain consecutive bits. That way a lost packet generate many small gaps not noticeable by the human ear. The pay off is having to wait longer to receive consecutive chunks which increases end-to-end delay.
 
-![Interleaving](../../../images/interleaving.png)
+![Interleaving](../../../static/images/interleaving.png)
 
 ## Error concealment
 
@@ -141,19 +141,19 @@ Streaming media content over the Internet accounts for nearly 60-70% of the Inte
 Whilst there restrictions differ by focusing on 2 we learn a lot of the general principles that apply to 1.
 
 Generally on-demand video sharing follows the same common pattern.
-![Streaming Infra](../../../images/streaming_infra.png)
+![Streaming Infra](../../../static/images/streaming_infra.png)
 
 Most notably they will use [CDN](../../general/content_delivery_network_(cdn).md) to distribute content to be closer to their users.
 
 To render the stored content correctly we need to make sure we do not drop any packets. With streaming the content to the user flow control will be important too. [TCP](../../general/transmission_control_protocol_(tcp).md) provides these out of the box - therefore it is a better match that [UDP](../../general/user_datagram_protocol_(udp).md).
 
-![Internet Picture](../../../images/internet_picture.png)
+![Internet Picture](../../../static/images/internet_picture.png)
 
 # How we got to [HTTP](../../general/hyper_text_transfer_protocol_(http).md)
 
 When streaming platforms were originally envisioned they wanted all the intelligence to be kept in a stateful server - with the client doing minimal work.
 
-![Original Design](../../../images/original_design.png)
+![Original Design](../../../static/images/original_design.png)
 
 However, this would:
 - Require providers to by specialist hardware.
@@ -166,7 +166,7 @@ Instead the [HTTP](../../general/hyper_text_transfer_protocol_(http).md) protoco
 - [HTTP](../../general/hyper_text_transfer_protocol_(http).md) messages were already understood in firewalls and middleboxes.
 This meant that the original plan was abandoned and people moved to [HTTP](../../general/hyper_text_transfer_protocol_(http).md).
 
-![Video Application Logic](../../../images/video_application_logic.png)
+![Video Application Logic](../../../static/images/video_application_logic.png)
 
 # Streaming vs progressive downloading
 
@@ -180,7 +180,7 @@ Therefore a hybrid approach is taken. We maintain a playout-buffer (normally 5 s
 1. **Filling state**: When the playout buffer is empty we try to fill it quickly - for example when we start the video or skip ahead.
 2. **Steady state**: With a large buffer we wait for that to drop to a lower limit and start downloading more of the video until we fill the buffer again. This switches from being in an ON/OFF state.
 
-![Video Playout](../../../images/video_playout.png)
+![Video Playout](../../../static/images/video_playout.png)
 
 # Handling variation
 
@@ -214,7 +214,7 @@ Now we have our output metrics lets see the inputs to the calculation.
 
 One simple way to calculate the video quality is to look at your current bandwidth $C(t)$ and divide it by the available [bitrates](../../general/bitrate.md) $R(t)$ and find the largest one such that $C(t)/R(t) > 1$ that way we are filling our buffer when downloading.
 
-![Throughput Based Adaption](../../../images/throughput_based_adaption.png)
+![Throughput Based Adaption](../../../static/images/throughput_based_adaption.png)
 
 The issue is forecasting what $C(t)$ will be in the future.
 
@@ -230,7 +230,7 @@ When forecasting $C(t)$ we normally use a weighted average of the past [bitrate]
 
 Suppose we are in the following competitive networking position where we have two clients using [TCP](../../general/transmission_control_protocol_(tcp).md).
 
-![Dash Underestimation](../../../images/DASH_underestimation.png)
+![Dash Underestimation](../../../static/images/DASH_underestimation.png)
 
 Consider the scenario when a client is watching a video over a 5 Mbps link.
 
@@ -238,17 +238,17 @@ The available bitrates are {375kbps, 560 kbps, 750kbps, 1050kbps, 1400kbps, 1750
 
 Suppose the user initially starts with no competition then someone comes and downloads a larger file. They are both using [TCP](../../general/transmission_control_protocol_(tcp).md) that should converge to a fair share - though this takes some time.
 
-![Dash Under Graph](../../../images/DASH_under_graph.png)
+![Dash Under Graph](../../../static/images/DASH_under_graph.png)
 
 What happens in this case it we incrementally step down to the lowest quality video as the [bitrate adaption](../../general/bitrate_adaption.md) and [TCP](../../general/transmission_control_protocol_(tcp).md) congestion window work together to drive down the videos share of the network.
 
 First note [DASH](../../general/dynamic_adaptive_streaming_over_http_(dash).md) has an on off pattern as described above.
 
-![Dash Flow](../../../images/DASH_flow.png)
+![Dash Flow](../../../static/images/DASH_flow.png)
 
 Then if the congestion window is reset in the off period it can allow the competing flow take more network share and this causes [DASH](../../general/dynamic_adaptive_streaming_over_http_(dash).md) to pick a lower [bitrate](../../general/bitrate.md). Though this spiral continues as then the competition take a larger network share in the gaps throttling [DASH](../../general/dynamic_adaptive_streaming_over_http_(dash).md)'s [bitrate](../../general/bitrate.md) again.
 
-![Dash Tcp Fail](../../../images/DASH_TCP_fail.png)
+![Dash Tcp Fail](../../../static/images/DASH_TCP_fail.png)
 
 This is a problem for [DASH](../../general/dynamic_adaptive_streaming_over_http_(dash).md) so implementations have to try to handle this correctly.
 
@@ -256,7 +256,7 @@ This is a problem for [DASH](../../general/dynamic_adaptive_streaming_over_http_
 
 There is a competing strategy which varies the [bitrate](../../general/bitrate.md) based on the buffer size. The avoids the need to predict the network speed.
 
-![Buffer Size Bitrate Adaption](../../../images/buffer_size_bitrate_adaption.png)
+![Buffer Size Bitrate Adaption](../../../static/images/buffer_size_bitrate_adaption.png)
 
 Though comes with its own challenges.
 

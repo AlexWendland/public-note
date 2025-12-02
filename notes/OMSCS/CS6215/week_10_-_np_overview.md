@@ -72,7 +72,7 @@ Note that [NP](../../general/nondeterministic_polynomial_time_(np).md) isn't Not
 
 [Polynomial time is a subset of NP-complete](../../general/polynomial_time_is_a_subset_of_np-complete.md)
 
-![P Vs Np](../../../images/P_vs_NP.png)
+![P Vs Np](../../../static/images/P_vs_NP.png)
 
 The question is, are there problems that are in [NP](../../general/nondeterministic_polynomial_time_(np).md) but are not in [P](../../general/polynomial_time.md)?
 
@@ -80,7 +80,7 @@ The question is, are there problems that are in [NP](../../general/nondeterminis
 
 If [P not equal to NP](../../general/p_equals_np_or_p_not_equals_np.md) then we would have a problem in [NP](../../general/nondeterministic_polynomial_time_(np).md) that didn't lie in [P](../../general/polynomial_time.md). Therefore the green region above would be non-empty.
 
-![P Not Equal To Np](../../../images/P_not_equal_to_NP.png)
+![P Not Equal To Np](../../../static/images/P_not_equal_to_NP.png)
 
 Therefore lets look at the hardest problems in [NP](../../general/nondeterministic_polynomial_time_(np).md).
 
@@ -100,7 +100,7 @@ A classic [NP-Complete](../../general/np-complete.md) problem is the [SAT proble
 
 To show a [many-one reduction](../../general/many-one_reduction_(problem).md) from $A$ to $B$ you need to construct $f$ a way to transform an instance of problem $A$ into some input to the problem $B$. This needs to be done in polynomial time. Then the solution from solving $f(I)$ in problem $B$ should relate back to the solution of problem $A$. Either you should construct $h$ a way to transform the solution from problem $B$ into a solution to problem $A$ or forward on the fact that no solution can exist.
 
-![reduction](../../../images/excalidraw/reduction.excalidraw.svg)
+![reduction](../../../static/images/excalidraw/reduction.excalidraw.svg)
 
 Therefore to show $A$ reduces to $B$ we need:
 - **Define $f$:** Show how an instance of problem $A$ can be converted into an instance of problem $B$ in polynomial time.

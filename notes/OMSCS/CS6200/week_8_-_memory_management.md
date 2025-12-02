@@ -28,7 +28,7 @@ To support these memory mapping there are 3 bits of hardware that take a [virtua
 - [Translation Lookaside Buffer (TLB)](../../general/translation_lookaside_buffer_(tlb).md): A cache within the [MMU](../../general/memory_management_unit_(mmu).md) to speed up address mappings.
 - [Memory controller](../../general/memory_controller.md): A component that maps different sticks of [RAM](../../general/random_access_memory_(ram).md) into one contiguous physical address space to be used by the [MMU](../../general/memory_management_unit_(mmu).md).
 
-![memory_hardware](../../../images/excalidraw/memory_hardware.excalidraw.svg)
+![memory_hardware](../../../static/images/excalidraw/memory_hardware.excalidraw.svg)
 
 # Page tables
 
@@ -56,7 +56,7 @@ The register size is important as it limits the size of the [virtual address](..
 
 Page sizes are determined by the [operating system](../../general/operating_system_(os).md) but commonly are 4kB, 2MB (large), and 1GB (huge).
 
-![Page tables](../../../images/excalidraw/Page_tables.excalidraw.svg)
+![Page tables](../../../static/images/excalidraw/Page_tables.excalidraw.svg)
 
 >[!example] 32-bit architecture with 4kB page size
 >As a [byte](../../general/byte.md) is the smallest addressable size, lets use this as our unit for the below calculations.

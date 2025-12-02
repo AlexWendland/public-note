@@ -34,7 +34,7 @@ To achieve this [RPC](../../general/remote_procedure_calls_(prc).md) has some re
 
 Below is an example flow of an [RPC](../../general/remote_procedure_calls_(prc).md) call:
 
-![Rpc Example](../../../images/rpc_example.png)
+![Rpc Example](../../../static/images/rpc_example.png)
 
 # Steps to carry out an RPC operation
 
@@ -97,7 +97,7 @@ This is an [RPC](../../general/remote_procedure_calls_(prc).md) framework develo
 
 This is an [RPC](../../general/remote_procedure_calls_(prc).md) framework also developed by Sun but specifically for the Java language.
 
-![Java Rmi](../../../images/java_rmi.png)
+![Java Rmi](../../../static/images/java_rmi.png)
 
 As this is specific to Java, it uses that for its [IDL](../../general/interface_definition_language_(idl).md) the framework matches Java's [OOP](../../general/object_oriented_programming_(oop).md) semantics. The implementation is split into two layers:
 

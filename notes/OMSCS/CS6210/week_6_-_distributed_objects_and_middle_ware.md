@@ -59,7 +59,7 @@ The crucial difference emerges in **distributed systems**:
 Within Spring OS, they go for a Microkernel approach but the idea was to make a Networked OS.
 Therefore they wanted a clear separation between the kernel and other services - as these services could be running on a different machine.
 
-![Spring Os](../../../images/spring_os.png)
+![Spring Os](../../../static/images/spring_os.png)
 
 For this to work they needed to encapsulate state and have a strong interface between the services.
 They reduce the size of the kernel to something they call the 'nucleus' and a vm manager.
@@ -91,7 +91,7 @@ When an application first tries to create a door for an application, that applic
 The door given out is attached to that 'front object' within the applications domain.
 That way upon using the door the application already has applied permissions - so the front object can check the users is doing an allowed operation.
 
-![Auth In Spring Os](../../../images/spring_auth.png)
+![Auth In Spring Os](../../../static/images/spring_auth.png)
 
 As a door reference can be shared - this means a user who is permissioned on the ACL can give permission to a user who is not on the ACL to access this application.
 This is useful for operations like printing - or any time another application wants to give out temporary permissions to another application.
@@ -106,7 +106,7 @@ Each application/domain has an address space which in the VM Manager is represen
 This maintains a mapping between regions of this address space and Memory objects.
 Memory objects are interfaces for different places you may get memory from such as, RAM, network, or other I/O devices.
 
-![Spring Os Address Space](../../../images/spring_os_address_space.png)
+![Spring Os Address Space](../../../static/images/spring_os_address_space.png)
 
 Whilst the Memory object represents memory from that source it does not fetch it.
 This is delegated to the pager object - which conforms to a standard interface but is implemented by the external pager (e.g., file server) that controls the memory.
@@ -159,7 +159,7 @@ Step 2: Reading the file
 To make cross network domain calls, Spring OS uses network proxies.
 These are domains that sit on each machine and mirror the calls that can be made across the network.
 
-![Spring Os Network](../../../images/spring_os_network.png)
+![Spring Os Network](../../../static/images/spring_os_network.png)
 
 When a client on a different machine wants to make a call to a server elsewhere, it uses a door into its local Proxy.
 This door then starts the proxy to forward the request to the target machine's proxy - which in turn uses a door on its local nucleus to access the requested service.
@@ -266,11 +266,11 @@ RMI is implemented similarly to subcontracts in Spring OS.
 Below we have a diagram which looks very similar to the Spring OS one.
 Instead of the subcontracts we instead use the Remote Reference Layer (RRL) which will handle getting the requests to the correct server.
 
-![Java Rmi Rrl](../../../images/java_rmi_rrl.png)
+![Java Rmi Rrl](../../../static/images/java_rmi_rrl.png)
 
 The connection management between different servers is handled by the RMI transport layer.
 
-![Java Rmi Transport](../../../images/java_rmi_transport.png)
+![Java Rmi Transport](../../../static/images/java_rmi_transport.png)
 
 The transport layer uses the following abstractions:
 
@@ -352,7 +352,7 @@ Next we will discuss different design approaches for the Web container and EJB c
 In this design we split the logic between the presentation logic kept in the servelet, and the business logic kept in a session bean which the presenter talks to.
 The session bean then can make any calls to the database that it needs to persist state.
 
-![Ejb Design 1](../../../images/ejb_design_1.png)
+![Ejb Design 1](../../../static/images/ejb_design_1.png)
 
 The only interaction between two different sessions only needs to happen if they wish to access the same data in the database.
 
@@ -376,7 +376,7 @@ In this approach we extract the data access code from the servlets and move it i
 The business logic remains in the servlets, which now directly invoke methods on the entity beans to access and persist data.
 Each entity bean typically represents a row in a database table (e.g., a User bean, Item bean, Bid bean).
 
-![Ejb Design 2](../../../images/ejb_design_2.png)
+![Ejb Design 2](../../../static/images/ejb_design_2.png)
 
 Entity beans persist state, however where that persistence is handled is up to how the implementer wants to implement it:
 
@@ -410,7 +410,7 @@ This design applies the Session Facade pattern, which uses stateless session bea
 The presentation logic stays in the servlets, but now the business logic moves into session facade beans in the EJB container.
 These session facade beans then delegate data access operations to entity beans (also in the EJB container).
 
-![Ejb Design 3](../../../images/ejb_design_3.png)
+![Ejb Design 3](../../../static/images/ejb_design_3.png)
 
 This creates a three-tier architecture within the application server:
 1. Servlets (presentation) → Session facade beans (business logic) → Entity beans (data access)

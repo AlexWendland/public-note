@@ -12,7 +12,7 @@ type: definition
 ---
 >[!tldr] Iris
 >This is a system that detects [DNS censorship](dns_censorship.md). It does this by comparing the responses of open [DNS](domain_name_system_(dns).md) resolvers on the internet. This is done in a multi-step process as shown below.
->![Iris Methodology](../../images/iris_methodology.png)
+>![Iris Methodology](../../static/images/iris_methodology.png)
 >This first looks for open [DNS](domain_name_system_(dns).md) resolvers that are part of the internet infrastructure (i.e. not home routers that are sometimes open due to misconfiguration).
 >1. Scan [IPv4](internet_protocol_(ipv4).md) space for open resolvers.
 >2. Identify infrastructure [DNS](domain_name_system_(dns).md) resolvers.

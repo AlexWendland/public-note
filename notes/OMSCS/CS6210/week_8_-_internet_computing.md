@@ -31,7 +31,7 @@ The structure of giant scale internet services normally follows the below patter
 
 - Back end servers, often on the order of 100 to 1000 servers
 
-![Giant Scale System Structure](../../../images/giant_scale_systems_structure.png)
+![Giant Scale System Structure](../../../static/images/giant_scale_systems_structure.png)
 
 With running one of these services, you need to know how to handle server failures - as in this case it is when rather than if one happens.
 
@@ -225,7 +225,7 @@ Once all the maps are completed it can use these key's to start up reduce tasks 
 
 5. Each reduce task hands back its outputs to the master, which can provide these to the user.
 
-![Map Reduce Framework](../../../images/map_reduce_framework.png)
+![Map Reduce Framework](../../../static/images/map_reduce_framework.png)
 
 ## Issues to be handled by the run time.
 

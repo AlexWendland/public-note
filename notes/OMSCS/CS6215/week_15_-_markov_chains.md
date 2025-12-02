@@ -23,7 +23,7 @@ Now we can define a [Markov chain](../../general/markov_chain.md).
 
 >[!example] Simple [Markov chain](../../general/markov_chain.md)
 >Suppose we have 4 states with the following probabilities to go between them. This is commonly represented as a [edge weighted](../../general/edge_weights.md) [directed graph](../../general/directed_graph.md).
->![simple_markov_chain](../../../images/excalidraw/simple_markov_chain.excalidraw.svg)
+>![simple_markov_chain](../../../static/images/excalidraw/simple_markov_chain.excalidraw.svg)
 >In terms of a [probability matrix](../../general/stochastic_matrix.md) it would be represented as
 >$$
 >P = \left ( \begin{array}

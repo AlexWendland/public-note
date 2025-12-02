@@ -55,7 +55,7 @@ I don't, but you may have situations where you can only work 20 hours a week or 
 
 The graph is simple with two axes income against your weighted work hours. At each point in this 2D graph I am going to think how I would feel being here. More money for the same hours is better. Less hours for the same money is better. Though what is interesting is looking at how valuable an extra hour of work is at different amounts of work/income. To make this simpler I picked 5 mental states: unbearable, bearable, fine, good, and made it - and then drew the dividing lines between them.
 
-![Life graph contors](../../images/excalidraw/Life_graph_contors.excalidraw.svg)
+![Life graph contors](../../static/images/excalidraw/Life_graph_contors.excalidraw.svg)
 
 I should acknowledge this assumes I have choices - I'm privileged to have in-demand skills, good health, and low responsibilities. But even with limited options, the core question remains: what trade-off between money and hours makes sense for you?
 

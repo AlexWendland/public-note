@@ -80,7 +80,7 @@ However, this ability to have lazy persistence does leave a window of vulnerabil
 
 The redo logs are lists of the changes made to the persisted memory status.
 
-![Redo log](../../../images/redo_log.png)
+![Redo log](../../../static/images/redo_log.png)
 
 These redo logs are saved to disk before being applied to the persistent data structures representing the virtual memory.
 So if when we restart we find un-applied redo logs we apply these before we reload the memory addresses.
@@ -94,7 +94,7 @@ To run truncation we do as we laid out above.
 We move the old redo logs to memory, apply them to disk representations.
 After that we throw away the redo log.
 
-![Log truncation](../../../images/log_truncation_struct.png)
+![Log truncation](../../../static/images/log_truncation_struct.png)
 
 Though we want to do this in parallel to letting the application code running.
 Therefore, we break the redo logs into epoch's so we can clean up one epoch at a time whilst letting the application code to add new redo logs to the current epoch.
@@ -126,13 +126,13 @@ Without the persistent storage, any writes that happen in memory but are not ref
 The Persistent file cache means that synchronous writes to disk no longer need to happen (space allowing).
 Files that are written to are replicated back to disk after the program has stopped using it.
 
-![Rio file cache](../../../images/rio_file_cache.png)
+![Rio file cache](../../../static/images/rio_file_cache.png)
 
 ### Vista
 
 Visa is an RVM that is built on top of the Rio file cache.
 
-![Vista](../../../images/vista.png)
+![Vista](../../../static/images/vista.png)
 
 Vista follows the same interface as LRVM but uses the file cache instead of logs to persist the memory.
 When we initialise the persistence of some virtual memory locations, we just back them onto our persistent file cache.
@@ -159,7 +159,7 @@ Quicksilver is an OS that takes a recovery first approach to make sure all appli
 
 Quicksilver is built on what is now a typical micro kernel architecture.
 
-![Quicksilver architecture](../../../images/quicksilver_architecture.png)
+![Quicksilver architecture](../../../static/images/quicksilver_architecture.png)
 
 For IPC quicksilver uses a service queue structure.
 This allows clients to put requests on and get responses, as well as for servers to subscribe to the service queue to carry out requests.
@@ -177,12 +177,12 @@ It is the clients responsibility for managing transactions, that is recording wh
 As servers can be clients for other services, these naturally form a tree structure of requests that have been made.
 This way if the transaction is to fail in anyway the client has all the information to clean up after itself.
 
-![Quicksilver transactions](../../../images/transaction_graph.png)
+![Quicksilver transactions](../../../static/images/transaction_graph.png)
 
 Whilst the client owns the transaction, this may be a risk - due to clients sometimes being the least reliable link in a transaction.
 Therefore it is possible for the owner to delegate the responsibility of managing this transaction to another node in the system (this will be called a coordinator).
 
-![Transaction Manager](../../../images/transaction_manager.png)
+![Transaction Manager](../../../static/images/transaction_manager.png)
 
 The transaction manager on each node (server/client) saves the part of the transaction it is aware of into local logs into persistent memory.
 To reduce the amount of network traffic servers just report logs up to the node above it in the transaction tree.

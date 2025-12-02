@@ -6,11 +6,6 @@ theme:
   - hugo-admonitions
   - PaperMod
 
-module:
-  mounts:
-    - source: images
-      target: static/images
-
 markup:
   goldmark:
     extensions:

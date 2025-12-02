@@ -36,7 +36,7 @@ So we need to wait for this task to be the highest priority task on a queue.
 The difference between when the event should have been scheduled and the actual time the processes was switched into is called the `event to activation distance`.
 A time sensitive OS wants to reduce the event to activation distance as much as possible for tasks that are time sensitive.
 
-![Sources of latency](../../../images/sources_of_latency_ts.png)
+![Sources of latency](../../../static/images/sources_of_latency_ts.png)
 
 ### Choice of timer
 

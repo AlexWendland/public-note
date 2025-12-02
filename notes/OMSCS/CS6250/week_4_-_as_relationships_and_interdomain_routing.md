@@ -134,7 +134,7 @@ Messages passed between [AS](../../general/autonomous_system_(as).md) have some 
 
 We can model a [router](../../general/router.md) running [BGP](../../general/boarder_gateway_protocol_(bgp).md) as follows.
 
-![Router Diagram](../../../images/router_diagram.png)
+![Router Diagram](../../../static/images/router_diagram.png)
 
 This has 3 main steps.
 1. Receive and store neighbours routing tables.
@@ -188,7 +188,7 @@ Routers can be strategic about what addresses it does this too and how sensitive
 
 Below is an example of such and [IXP](../../general/internet_exchange_points_(ixps).md) is Frankfurt.
 
-![Ixp Example](../../../images/IXP_example.png)
+![Ixp Example](../../../static/images/IXP_example.png)
 
 This shows how an [IXP](../../general/internet_exchange_points_(ixps).md) is a massive set of switches creating a giant [network](../../general/network.md). It is normally distributed over a region or globally with different connection points such as DE-CIX1,2,3,4,7 all connecting in to a fault tolerant core Core 1 with backup Core2.
 
@@ -231,7 +231,7 @@ Normally the terms of accessing do not forbid reselling of access to the [IXP](.
 
 Two [ASs](../../general/autonomous_system_(as).md) in a [IXP](../../general/internet_exchange_points_(ixps).md) to transfer route information need to establish a bilateral [BGP](../../general/boarder_gateway_protocol_(bgp).md) connection. However with so many participants at an [IXP](../../general/internet_exchange_points_(ixps).md) the number of open connections would be massive - which would not scale.
 
-![Route Server Example](../../../images/route_server_example.png)
+![Route Server Example](../../../static/images/route_server_example.png)
 
 Instead if the [IXP](../../general/internet_exchange_points_(ixps).md) offers a route server [ASs](../../general/autonomous_system_(as).md) connect to this single entity instead. This offers the following services:
 - It collects and shares routing information from its peers.
@@ -247,5 +247,5 @@ For example suppose AS X and AS Y exchange routes through a multi-lateral peerin
 3. The route server checks AS X's export filters to see if AS Y is allowed to recieve p1. If so it adds it to AS Y's RIB.
 4. Lastly the route server advertises p1 to AS Y with AS X as the next hop.
 
-![Route Server Process](../../../images/route_server_process.png)
+![Route Server Process](../../../static/images/route_server_process.png)
 

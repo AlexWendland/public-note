@@ -18,4 +18,4 @@ For example [HTTP](hyper_text_transfer_protocol_(http).md) uses [cookies](cookie
 This mix of these layers is normally dependent on the protocol - so normally rolled up into one thing.
 
 
-![Model Comparison](../../images/model-comparison.png)
+![Model Comparison](../../static/images/model-comparison.png)

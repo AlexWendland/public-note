@@ -39,7 +39,7 @@ In comparison to a thread:
 
 Each [process](../../general/process.md) has its own [address space](../../general/address_space_(os).md) and [PCB](../../general/process_control_block_(pcb).md) whereas each [thread](../../general/thread.md) in a [process](../../general/process.md) shares the same [address space](../../general/address_space_(os).md), code and data but has its own [CPU registers](../../general/cpu_register.md), [program counter](../../general/program_counter_(pc).md), and [stack](../../general/stack_(os).md). A [thread](../../general/thread.md) does not have its own [PCB](../../general/process_control_block_(pcb).md) but its state is tracked in the [process](../../general/process.md) [PCB](../../general/process_control_block_(pcb).md).
 
-![Process Vs Thread](../../../images/process_vs_thread.png)
+![Process Vs Thread](../../../static/images/process_vs_thread.png)
 
 # Benefits of multithreading
 

@@ -32,7 +32,7 @@ This technology is become more relevant in data centers since the development of
 
 The basic concept in distributed shared memory is when memory access is not local it goes via the network.
 
-![Shared Memory](../../../images/shared_memory.png)
+![Shared Memory](../../../static/images/shared_memory.png)
 
 Whilst in data-centers they use hardware such as [Remote direct memory access (RDMA)](../../general/remote_direct_memory_access_(rdma).md) this is an expensive option. Other applications can achieve the same using software.
 
@@ -88,7 +88,7 @@ When these methods get triggered depends on the consistency model for the shared
 
 We will look at one design for a page based [OS](../../general/operating_system_(os).md)-supported [Distributed shared memory (DSM)](../../general/distributed_shared_memory_(dsm).md) system.
 
-![Dsm Architecture](../../../images/dsm_architecture.png)
+![Dsm Architecture](../../../static/images/dsm_architecture.png)
 
 - Each node will share part of its memory pages to the [Distributed shared memory (DSM)](../../general/distributed_shared_memory_(dsm).md).
 - It will implement local caches to reduce network latency.

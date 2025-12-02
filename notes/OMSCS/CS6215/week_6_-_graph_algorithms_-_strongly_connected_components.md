@@ -77,11 +77,11 @@ Explore(z)
 
 Suppose we have the following graph and let $B$ be the root node. Suppose we explore edges alphabetically and lets run the algorithm above on it.
 
-![Dfs Example](../../../images/dfs_example.png)
+![Dfs Example](../../../static/images/dfs_example.png)
 
 As we are using [DFS](../../general/depth-first_search_(dfs).md) we explore far first and then slowly come back. Which gives us the following [DFS tree](../../general/dfs_tree_(algorithm).md) with the pre/post numbers.
 
-![Pre Post Calculation Example](../../../images/pre_post_calculation_example.png)
+![Pre Post Calculation Example](../../../static/images/pre_post_calculation_example.png)
 
 | Letter | Pre | Post |
 | ------ | --- | ---- |
@@ -175,7 +175,7 @@ We would hope for the analogous statements in a general [directed graph](../../g
 
 The first statement is false consider the following counter example.
 
-![sink_counter_example](../../../images/excalidraw/sink_counter_example.excalidraw.svg)
+![sink_counter_example](../../../static/images/excalidraw/sink_counter_example.excalidraw.svg)
 
 If we run a [DFS](../../general/depth-first_search_(dfs).md) algorithm starting at $A$ using an alphabetical ordering on the vertices then $B$ has the lowest post order number but is in the source [strongly connected component](../../general/strongly_connected_components_(directed_graphs).md).
 
@@ -213,15 +213,15 @@ This takes $O(\vert V \vert + \vert E \vert)$ as we do two runs of a [DFS](../..
 
 Suppose we want to find the strongly connected components of the graph $G$ below.
 
-![Strongly Connected Component Graph](../../../images/strongly_connected_component_graph.png)
+![Strongly Connected Component Graph](../../../static/images/strongly_connected_component_graph.png)
 
 First we look at $G^R$ and run the [DFS to find path in an undirected graph](../../general/dfs_to_find_path_in_an_undirected_graph.md) algorithm.
 
-![Reverse Strongly Connected Compoent Graph](../../../images/reverse_strongly_connected_compoent_graph.png)
+![Reverse Strongly Connected Compoent Graph](../../../static/images/reverse_strongly_connected_compoent_graph.png)
 
 This gives us $post : V \rightarrow \mathbb{N}$ - in this example we started at $C$ and did a fairly random vertex ordering.
 
-![Scc Tree Example](../../../images/scc_tree_example.png)
+![Scc Tree Example](../../../static/images/scc_tree_example.png)
 
 | Letter | Pre | Post |
 | ------ | --- | ---- |
@@ -253,6 +253,6 @@ Now run a connected components [DFS](dfs.md) using the vertex ordering above.
 
 Notice also that the [strongly connected component graph](../../general/strongly_connected_component_graph_(directed_graph).md) is the following.
 
-![Scc Graph Example Reverse Topological Sorting](../../../images/SCC_graph_example_reverse_topological_sorting.png)
+![Scc Graph Example Reverse Topological Sorting](../../../static/images/SCC_graph_example_reverse_topological_sorting.png)
 
 Giving that our ordering is exactly a reverse [topological sorting](../../general/topological_sorting_(dag).md).

@@ -99,7 +99,7 @@ In the example as would choose the algorithm appropriate for the representation 
 
 A lot of learning systems follow the design below.
 
-![learning_system_diagram](../../../images/excalidraw/learning_system_diagram.excalidraw.svg)
+![learning_system_diagram](../../../static/images/excalidraw/learning_system_diagram.excalidraw.svg)
 
 - The performance system: Runs an instance of the task and returns a new solution.
 - The critic: Uses that instance to generate training data.

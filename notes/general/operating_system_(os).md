@@ -15,7 +15,7 @@ type: definition
 >[!tldr] Operating system (OS)
 >A operating system is a software that abstracts and arbitrates computer hardware away from the software running on it.
 >
->![Os Visual](../../images/os_visual.png)
+>![Os Visual](../../static/images/os_visual.png)
 >
 >This layer of software:
 >- has privileged access to the underlying hardware,

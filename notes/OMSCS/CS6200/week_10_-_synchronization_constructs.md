@@ -178,7 +178,7 @@ When the lock is released the next process in the queue gets it. This has no con
 
 Within the referenced paper they compare the performance of different spinlock implementations using different numbers of processes all repeating a critical section 1 million times. Below surmises the results.
 
-![Spin Lock Paper Fig 3](../../../images/spin_lock_paper_fig_3.png)
+![Spin Lock Paper Fig 3](../../../static/images/spin_lock_paper_fig_3.png)
 
 The value provided here is the real run time minus the theoretical best run time (i.e. one with no lock required). The machine they operate on is cache coherent with write invalidate.
 

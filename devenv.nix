@@ -47,7 +47,7 @@
     set -e
 
     # Create output directory if it doesn't exist
-    mkdir -p images/excalidraw
+    mkdir -p static/images/excalidraw
 
     # Count files to export
     excalidraw_files=(excalidraw/*.excalidraw)
@@ -61,19 +61,19 @@
     # Export all .excalidraw files to .svg using excalidraw_export
     npx excalidraw_export excalidraw/*.excalidraw
 
-    # Move generated SVG files to images/excalidraw/
+    # Move generated SVG files to static/images/excalidraw/
     count=0
     for svg in excalidraw/*.svg; do
       if [ -f "$svg" ]; then
         basename=$(basename "$svg")
-        mv "$svg" "images/excalidraw/$basename"
-        echo "  • ''${basename%.svg}.excalidraw → images/excalidraw/$basename"
+        mv "$svg" "static/images/excalidraw/$basename"
+        echo "  • ''${basename%.svg}.excalidraw → static/images/excalidraw/$basename"
         ((count++))
       fi
     done
 
     echo ""
-    echo "✓ Exported $count diagram(s) to images/excalidraw/"
+    echo "✓ Exported $count diagram(s) to static/images/excalidraw/"
   '';
 
   # Run admin tasks when entering the devenv shell
