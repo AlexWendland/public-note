@@ -5,7 +5,7 @@ checked: false
 created: 2023-08-26
 draft: false
 last_edited: 2023-12-03
-name: CS6210 Advanced Operating Systems
+title: CS6210 Advanced Operating Systems
 tags:
   - OMSCS
   - maths

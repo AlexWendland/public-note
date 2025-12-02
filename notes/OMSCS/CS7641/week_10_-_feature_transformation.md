@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS7641 Machine Learning](../cs7641_machine_learning.md)'
+course: 'CS7641 Machine Learning'
 created: 2024-03-09
 draft: false
 last_edited: 2024-03-09
-name: Week 10 - Feature transformation
+title: Week 10 - Feature transformation
 tags:
   - OMSCS
 type: lecture

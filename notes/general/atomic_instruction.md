@@ -5,7 +5,7 @@ checked: false
 created: 2025-04-08
 draft: false
 last_edited: 2025-04-08
-name: Atomic instruction
+title: Atomic instruction
 tags:
   - OS
 type: definition

@@ -6,7 +6,7 @@ checked: false
 created: 2024-05-21
 draft: false
 last_edited: 2024-05-21
-name: Frame (networks)
+title: Frame (networks)
 tags:
   - networks
 type: definition

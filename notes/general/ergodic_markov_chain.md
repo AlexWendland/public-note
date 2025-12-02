@@ -4,7 +4,7 @@ checked: false
 created: 2023-12-03
 draft: false
 last_edited: 2023-12-03
-name: Ergodic Markov chain
+title: Ergodic Markov chain
 tags:
   - maths
   - probability

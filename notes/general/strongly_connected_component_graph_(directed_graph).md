@@ -5,7 +5,7 @@ checked: false
 created: 2023-09-27
 draft: false
 last_edited: 2023-11-11
-name: Strongly connected component graph (directed graph)
+title: Strongly connected component graph (directed graph)
 tags:
   - maths
 type: definition

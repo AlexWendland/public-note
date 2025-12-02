@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-name: Max independent set problem is NP-hard
+title: Max independent set problem is NP-hard
 tags:
   - programming
 type: lemma

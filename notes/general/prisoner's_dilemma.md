@@ -4,7 +4,7 @@ checked: false
 created: 2024-04-06
 draft: false
 last_edited: 2024-04-06
-name: Prisoner's dilemma
+title: Prisoner's dilemma
 tags:
   - game-theory
 type: example

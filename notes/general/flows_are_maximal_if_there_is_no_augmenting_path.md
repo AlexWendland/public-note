@@ -4,7 +4,7 @@ checked: false
 created: 2023-10-03
 draft: false
 last_edited: 2023-11-11
-name: Flows are maximal if there is no augmenting path
+title: Flows are maximal if there is no augmenting path
 tags:
   - maths
 type: lemma

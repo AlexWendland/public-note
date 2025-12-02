@@ -4,7 +4,7 @@ checked: false
 created: 2024-05-29
 draft: false
 last_edited: 2024-05-29
-name: TCP Reno
+title: TCP Reno
 tags:
   - networks
 type: definition

@@ -4,7 +4,7 @@ checked: false
 created: 2023-10-09
 draft: false
 last_edited: 2023-11-11
-name: Euler's theorem (modular arithmetic)
+title: Euler's theorem (modular arithmetic)
 tags:
   - maths
 type: lemma

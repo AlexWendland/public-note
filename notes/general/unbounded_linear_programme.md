@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-08
 draft: false
 last_edited: 2023-11-11
-name: Unbounded linear programme
+title: Unbounded linear programme
 tags:
   - programming
 type: definition

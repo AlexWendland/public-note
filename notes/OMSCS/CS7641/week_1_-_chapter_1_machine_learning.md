@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS7641 Machine Learning](../cs7641_machine_learning.md)'
+course: 'CS7641 Machine Learning'
 created: 2024-01-13
 draft: false
 last_edited: 2024-01-13
-name: Week 1 - Chapter 1 Machine Learning
+title: Week 1 - Chapter 1 Machine Learning
 tags:
   - OMSCS
 type: lecture

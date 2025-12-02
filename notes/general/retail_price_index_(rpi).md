@@ -7,7 +7,7 @@ checked: false
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
-name: Retail Price Index (RPI)
+title: Retail Price Index (RPI)
 tags:
   - economics
   - finance

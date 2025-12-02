@@ -5,7 +5,7 @@ checked: false
 created: 2024-05-27
 draft: true
 last_edited: 2024-05-27
-name: We are running out of IPv4 addresses on the pubic internet
+title: We are running out of IPv4 addresses on the pubic internet
 tags:
   - networks
 type: explainer

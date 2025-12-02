@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-09
 draft: false
 last_edited: 2023-11-11
-name: Checking if a linear programme is feasible
+title: Checking if a linear programme is feasible
 tags:
   - programming
 type: algorithm

@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-16
 draft: false
 last_edited: 2023-11-18
-name: The k-colourings problem is NP-complete
+title: The k-colourings problem is NP-complete
 tags:
   - maths
 type: lemma

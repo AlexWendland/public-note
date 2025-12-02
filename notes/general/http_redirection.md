@@ -4,7 +4,7 @@ checked: false
 created: 2024-07-27
 draft: false
 last_edited: 2024-07-27
-name: HTTP redirection
+title: HTTP redirection
 tags:
   - networks
 type: definition

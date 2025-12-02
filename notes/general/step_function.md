@@ -5,7 +5,7 @@ checked: false
 created: 2024-06-09
 draft: false
 last_edited: 2024-06-09
-name: Step function
+title: Step function
 tags:
   - maths
 type: definition

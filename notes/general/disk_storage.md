@@ -5,7 +5,7 @@ checked: false
 created: 2024-08-26
 draft: true
 last_edited: 2024-08-26
-name: Disk storage
+title: Disk storage
 tags:
   - hardware
   - computer-science

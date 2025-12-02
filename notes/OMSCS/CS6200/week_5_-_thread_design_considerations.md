@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6200 Graduate introduction to Operating Systems](../cs6200_graduate_introduction_to_operating_systems.md)'
+course: 'CS6200 Graduate introduction to Operating Systems'
 created: 2025-02-09
 draft: false
 last_edited: 2025-02-09
-name: Week 5 - Thread design Considerations
+title: Week 5 - Thread design Considerations
 tags:
   - OMSCS
 type: lecture

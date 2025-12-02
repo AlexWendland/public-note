@@ -4,7 +4,7 @@ checked: false
 created: 2024-05-27
 draft: false
 last_edited: 2024-05-27
-name: Stop and wait ARQ
+title: Stop and wait ARQ
 tags:
   - networks
 type: definition

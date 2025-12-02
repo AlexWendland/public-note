@@ -7,7 +7,7 @@ checked: false
 created: 2023-03-18
 draft: false
 last_edited: 2023-11-11
-name: Dependency Inversion Principle (DIP)
+title: Dependency Inversion Principle (DIP)
 tags:
   - programming
 type: theory

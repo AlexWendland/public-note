@@ -5,7 +5,7 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-name: Optimisation problem
+title: Optimisation problem
 tags:
   - machine-learning
 type: definition

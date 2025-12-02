@@ -4,7 +4,7 @@ checked: false
 created: 2024-01-25
 draft: false
 last_edited: 2024-01-25
-name: Sign function
+title: Sign function
 tags:
   - maths
 type: definition

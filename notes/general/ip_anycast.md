@@ -4,7 +4,7 @@ checked: false
 created: 2024-07-27
 draft: false
 last_edited: 2024-07-27
-name: IP Anycast
+title: IP Anycast
 tags:
   - networks
 type: definition

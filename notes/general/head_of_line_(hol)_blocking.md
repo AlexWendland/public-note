@@ -5,7 +5,7 @@ checked: false
 created: 2024-06-15
 draft: false
 last_edited: 2024-06-15
-name: Head of line (HOL) blocking
+title: Head of line (HOL) blocking
 tags:
   - networks
 type: definition

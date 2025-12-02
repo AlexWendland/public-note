@@ -4,7 +4,7 @@ checked: false
 created: 2025-05-22
 draft: false
 last_edited: 2025-05-22
-name: Return (RL)
+title: Return (RL)
 tags:
   - reinforcement-learning
 type: definition

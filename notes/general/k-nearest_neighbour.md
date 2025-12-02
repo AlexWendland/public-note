@@ -5,7 +5,7 @@ checked: false
 created: 2024-01-22
 draft: false
 last_edited: 2024-01-22
-name: k-nearest neighbour
+title: k-nearest neighbour
 tags:
   - programming
 type: algorithm

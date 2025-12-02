@@ -5,7 +5,7 @@ checked: false
 created: 2024-05-22
 draft: false
 last_edited: 2024-05-22
-name: User Datagram Protocol (UDP)
+title: User Datagram Protocol (UDP)
 tags:
   - networks
 type: definition

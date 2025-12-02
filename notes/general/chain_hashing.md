@@ -4,7 +4,7 @@ checked: false
 created: 2023-10-12
 draft: false
 last_edited: 2023-11-11
-name: Chain Hashing
+title: Chain Hashing
 tags:
   - programming
 type: data structure

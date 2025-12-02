@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-15
 draft: false
 last_edited: 2023-11-15
-name: Rudrata path
+title: Rudrata path
 tags:
   - maths
   - graph-theory

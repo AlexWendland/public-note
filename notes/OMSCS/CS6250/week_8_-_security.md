@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6250 Computer Networks](../cs6250_computer_networks.md)'
+course: 'CS6250 Computer Networks'
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-name: Week 8 - Security
+title: Week 8 - Security
 tags:
   - OMSCS
 type: lecture

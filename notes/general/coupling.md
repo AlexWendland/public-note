@@ -6,7 +6,7 @@ checked: false
 created: 2023-08-05
 draft: false
 last_edited: 2023-11-11
-name: Coupling
+title: Coupling
 tags:
   - programming
 type: meta

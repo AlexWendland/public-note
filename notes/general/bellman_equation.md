@@ -4,7 +4,7 @@ checked: false
 created: 2024-04-03
 draft: false
 last_edited: 2024-04-03
-name: Bellman equation
+title: Bellman equation
 tags:
   - reinforcement-learning
 type: definition

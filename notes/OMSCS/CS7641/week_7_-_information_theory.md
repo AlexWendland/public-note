@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS7641 Machine Learning](../cs7641_machine_learning.md)'
+course: 'CS7641 Machine Learning'
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-name: Week 7 - Information Theory
+title: Week 7 - Information Theory
 tags:
   - OMSCS
 type: lecture

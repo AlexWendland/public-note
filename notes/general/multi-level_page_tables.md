@@ -4,7 +4,7 @@ checked: false
 created: 2025-03-22
 draft: false
 last_edited: 2025-03-22
-name: Multi-level page tables
+title: Multi-level page tables
 tags:
   - OS
 type: definition

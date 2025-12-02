@@ -4,7 +4,7 @@ checked: false
 created: 2023-09-29
 draft: false
 last_edited: 2023-11-11
-name: DFS for finding strongly connected components
+title: DFS for finding strongly connected components
 tags:
   - programming
 type: algorithm

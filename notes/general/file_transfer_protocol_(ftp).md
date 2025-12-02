@@ -5,7 +5,7 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-name: File Transfer Protocol (FTP)
+title: File Transfer Protocol (FTP)
 tags:
   - networks
 type: definition

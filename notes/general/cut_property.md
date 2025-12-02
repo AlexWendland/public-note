@@ -4,7 +4,7 @@ checked: false
 created: 2023-10-01
 draft: false
 last_edited: 2023-11-11
-name: Cut property
+title: Cut property
 tags:
   - programming
   - maths

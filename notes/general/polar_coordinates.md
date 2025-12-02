@@ -4,7 +4,7 @@ checked: false
 created: 2023-09-18
 draft: true
 last_edited: 2023-11-11
-name: Polar Coordinates
+title: Polar Coordinates
 tags:
   - maths
 type: str

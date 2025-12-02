@@ -3,7 +3,7 @@ checked: false
 created: 2023-02-25
 draft: false
 last_edited: 2023-11-11
-name: Functions in Python
+title: Functions in Python
 tags:
   - programming
   - python

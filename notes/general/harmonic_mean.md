@@ -5,7 +5,7 @@ checked: false
 created: 2024-02-02
 draft: true
 last_edited: 2024-02-02
-name: Harmonic mean
+title: Harmonic mean
 tags: []
 type: definition
 ---

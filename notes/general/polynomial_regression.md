@@ -5,7 +5,7 @@ checked: false
 created: 2024-01-17
 draft: false
 last_edited: 2024-01-17
-name: Polynomial regression
+title: Polynomial regression
 tags:
   - maths
   - machine-learning

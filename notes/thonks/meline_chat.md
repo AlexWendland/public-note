@@ -4,7 +4,7 @@ checked: false
 created: 2025-08-07
 draft: true
 last_edited: 2025-08-07
-name: Meline chat
+title: Meline chat
 tags:
   - work
 type: thonk

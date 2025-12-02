@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS7641 Machine Learning](../cs7641_machine_learning.md)'
+course: 'CS7641 Machine Learning'
 created: 2024-04-06
 draft: false
 last_edited: 2024-04-06
-name: Week 12 - Reinforcement learning
+title: Week 12 - Reinforcement learning
 tags:
   - OMSCS
 type: lecture

@@ -4,7 +4,7 @@ checked: false
 created: 2024-01-21
 draft: false
 last_edited: 2024-01-21
-name: Ten simple rules for structuring papers
+title: Ten simple rules for structuring papers
 tags: []
 type: article
 ---

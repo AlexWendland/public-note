@@ -6,7 +6,7 @@ checked: false
 created: 2023-08-26
 draft: false
 last_edited: 2023-12-03
-name: CS6215 Introduction to Graduate Algorithms
+title: CS6215 Introduction to Graduate Algorithms
 tags:
   - OMSCS
   - maths

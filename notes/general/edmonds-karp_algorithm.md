@@ -4,7 +4,7 @@ checked: false
 created: 2023-10-07
 draft: false
 last_edited: 2023-11-11
-name: Edmonds-Karp algorithm
+title: Edmonds-Karp algorithm
 tags:
   - programming
 type: algorithm

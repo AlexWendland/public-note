@@ -4,7 +4,7 @@ checked: false
 created: 2023-10-09
 draft: false
 last_edited: 2023-11-11
-name: Uniqueness of inverses
+title: Uniqueness of inverses
 tags:
   - maths
 type: lemma

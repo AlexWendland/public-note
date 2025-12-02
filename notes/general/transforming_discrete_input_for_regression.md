@@ -4,7 +4,7 @@ checked: false
 created: 2024-01-17
 draft: false
 last_edited: 2024-01-17
-name: Transforming discrete input for regression
+title: Transforming discrete input for regression
 tags:
   - machine-learning
 type: method

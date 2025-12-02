@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6200 Graduate introduction to Operating Systems](../cs6200_graduate_introduction_to_operating_systems.md)'
+course: 'CS6200 Graduate introduction to Operating Systems'
 created: 2024-08-25
 draft: false
 last_edited: 2024-08-25
-name: Week 1 - Are you ready?
+title: Week 1 - Are you ready?
 tags:
   - OMSCS
 type: lecture

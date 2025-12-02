@@ -4,7 +4,7 @@ checked: false
 created: 2023-08-20
 draft: false
 last_edited: 2023-11-11
-name: Balance between library providers and users
+title: Balance between library providers and users
 tags:
   - programming
 type: opinion

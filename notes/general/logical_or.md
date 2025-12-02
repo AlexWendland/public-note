@@ -4,7 +4,7 @@ checked: false
 created: 2024-01-11
 draft: false
 last_edited: 2024-01-11
-name: Logical or
+title: Logical or
 tags:
   - logic
   - maths

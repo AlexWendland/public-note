@@ -4,7 +4,7 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-name: Hill climbing
+title: Hill climbing
 tags:
   - programming
 type: algorithm

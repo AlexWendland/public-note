@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6210 Advanced Operating Systems](../cs6210_advanced_operating_systems.md)'
+course: 'CS6210 Advanced Operating Systems'
 created: '2025-11-30'
 draft: true
 last_edited: '2025-11-30'
-name: Week 10 - Failures and Recovery
+title: Week 10 - Failures and Recovery
 tags:
   - OMSCS
 type: lecture

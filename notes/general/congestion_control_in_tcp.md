@@ -4,7 +4,7 @@ checked: false
 created: 2024-05-28
 draft: false
 last_edited: 2024-05-28
-name: Congestion control in TCP
+title: Congestion control in TCP
 tags:
   - networks
 type: explainer

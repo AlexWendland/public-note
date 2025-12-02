@@ -6,7 +6,7 @@ checked: false
 created: 2023-03-18
 draft: false
 last_edited: 2023-11-11
-name: Single Responsibility Principle (SRP)
+title: Single Responsibility Principle (SRP)
 tags:
   - programming
 type: theory

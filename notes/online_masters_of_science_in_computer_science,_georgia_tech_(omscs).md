@@ -6,7 +6,7 @@ checked: false
 created: 2023-08-26
 draft: false
 last_edited: 2023-11-11
-name: Online Masters of Science in Computer Science, Georgia Tech (OMSCS)
+title: Online Masters of Science in Computer Science, Georgia Tech (OMSCS)
 tags:
   - programming
 type: index

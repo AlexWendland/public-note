@@ -5,7 +5,7 @@ checked: false
 created: 2024-05-22
 draft: false
 last_edited: 2024-05-22
-name: Transmission Control Protocol (TCP)
+title: Transmission Control Protocol (TCP)
 tags:
   - networks
 type: definition

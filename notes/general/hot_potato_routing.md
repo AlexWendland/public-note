@@ -4,7 +4,7 @@ checked: false
 created: 2024-06-08
 draft: false
 last_edited: 2024-06-08
-name: Hot potato routing
+title: Hot potato routing
 tags:
   - networks
 type: definition

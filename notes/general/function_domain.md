@@ -5,7 +5,7 @@ checked: false
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
-name: Function domain
+title: Function domain
 tags:
   - maths
 type: definition

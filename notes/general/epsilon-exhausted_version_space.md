@@ -4,7 +4,7 @@ checked: false
 created: 2024-02-16
 draft: false
 last_edited: 2024-02-16
-name: epsilon-exhausted version space
+title: epsilon-exhausted version space
 tags:
   - machine-learning
 type: definition

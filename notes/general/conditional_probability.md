@@ -6,7 +6,7 @@ checked: false
 created: 2024-02-20
 draft: false
 last_edited: 2024-02-20
-name: Conditional probability
+title: Conditional probability
 tags:
   - probability
 type: definition

@@ -4,7 +4,7 @@ checked: false
 created: 2024-03-08
 draft: false
 last_edited: 2024-03-08
-name: NeoVim Cheat Sheet
+title: NeoVim Cheat Sheet
 tags:
   - personal
 type:

@@ -6,7 +6,7 @@ checked: false
 created: 2023-09-26
 draft: false
 last_edited: 2023-11-11
-name: Spanning subgraph
+title: Spanning subgraph
 tags:
   - maths
 type: definition

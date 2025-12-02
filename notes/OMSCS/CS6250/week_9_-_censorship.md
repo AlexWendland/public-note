@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6250 Computer Networks](../cs6250_computer_networks.md)'
+course: 'CS6250 Computer Networks'
 created: 2024-07-22
 draft: false
 last_edited: 2024-07-22
-name: Week 9 - Censorship
+title: Week 9 - Censorship
 tags:
   - OMSCS
 type: lecture

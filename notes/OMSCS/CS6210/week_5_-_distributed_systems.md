@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6210 Advanced Operating Systems](../cs6210_advanced_operating_systems.md)'
+course: 'CS6210 Advanced Operating Systems'
 created: 2025-10-01
 draft: false
 last_edited: 2025-10-01
-name: Week 5 - Distributed Systems
+title: Week 5 - Distributed Systems
 tags:
   - OMSCS
 type: lecture

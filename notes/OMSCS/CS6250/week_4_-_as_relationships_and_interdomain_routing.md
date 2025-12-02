@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6250 Computer Networks](../cs6250_computer_networks.md)'
+course: 'CS6250 Computer Networks'
 created: 2024-06-08
 draft: false
 last_edited: 2024-06-08
-name: Week 4 - AS relationships and interdomain routing
+title: Week 4 - AS relationships and interdomain routing
 tags:
   - OMSCS
 type: lecture

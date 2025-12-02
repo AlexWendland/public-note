@@ -4,7 +4,7 @@ checked: false
 created: 2024-03-09
 draft: false
 last_edited: 2024-03-09
-name: Single linkage clustering
+title: Single linkage clustering
 tags:
   - programming
   - machine-learning

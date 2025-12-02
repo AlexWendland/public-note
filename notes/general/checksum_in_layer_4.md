@@ -4,7 +4,7 @@ checked: true
 created: 2024-05-27
 draft: false
 last_edited: 2024-05-27
-name: Checksum in layer 4
+title: Checksum in layer 4
 tags:
   - networks
 type: explainer

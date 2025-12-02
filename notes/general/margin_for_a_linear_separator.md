@@ -4,7 +4,7 @@ checked: false
 created: 2024-01-31
 draft: false
 last_edited: 2024-01-31
-name: Margin for a linear separator
+title: Margin for a linear separator
 tags:
   - machine-learning
 type: definition

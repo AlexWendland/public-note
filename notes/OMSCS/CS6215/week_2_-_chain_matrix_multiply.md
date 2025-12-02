@@ -1,11 +1,11 @@
 ---
 aliases: []
 checked: false
-course: '[CS6215 Introduction to Graduate Algorithms](../cs6215_introduction_to_graduate_algorithms.md)'
+course: 'CS6215 Introduction to Graduate Algorithms'
 created: 2023-08-31
 draft: false
 last_edited: 2023-12-03
-name: Week 2 - Chain Matrix Multiply
+title: Week 2 - Chain Matrix Multiply
 tags:
   - OMSCS
 type: lecture

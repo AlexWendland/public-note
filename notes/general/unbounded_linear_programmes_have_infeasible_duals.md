@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-09
 draft: false
 last_edited: 2023-11-11
-name: Unbounded linear programmes have infeasible duals
+title: Unbounded linear programmes have infeasible duals
 tags:
   - maths
 type: lemma

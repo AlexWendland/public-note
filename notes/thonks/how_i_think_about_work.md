@@ -4,7 +4,7 @@ checked: false
 created: 2025-06-29
 draft: false
 last_edited: 2025-06-29
-name: How I think about work
+title: How I think about work
 tags:
   - finance
   - work

@@ -4,7 +4,7 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-name: Restart hill climbing
+title: Restart hill climbing
 tags:
   - programming
   - machine-learning

@@ -5,7 +5,7 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-name: Request for Comments (RFC)
+title: Request for Comments (RFC)
 tags:
   - networks
 type: definition

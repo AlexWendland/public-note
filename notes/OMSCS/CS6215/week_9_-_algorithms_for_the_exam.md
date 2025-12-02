@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6215 Introduction to Graduate Algorithms](../cs6215_introduction_to_graduate_algorithms.md)'
+course: 'CS6215 Introduction to Graduate Algorithms'
 created: 2023-10-21
 draft: false
 last_edited: 2023-11-11
-name: Week 9 - Algorithms for the exam
+title: Week 9 - Algorithms for the exam
 tags:
   - OMSCS
 type: revision

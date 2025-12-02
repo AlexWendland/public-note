@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-name: k-SAT is in NP
+title: k-SAT is in NP
 tags:
   - programming
 type: lemma

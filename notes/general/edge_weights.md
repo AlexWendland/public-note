@@ -5,7 +5,7 @@ checked: false
 created: 2023-09-05
 draft: false
 last_edited: 2023-11-11
-name: Edge weights
+title: Edge weights
 tags:
   - maths
 type: definition

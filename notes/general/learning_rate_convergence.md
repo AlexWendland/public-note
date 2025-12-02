@@ -4,7 +4,7 @@ checked: false
 created: 2025-05-20
 draft: false
 last_edited: 2025-05-20
-name: Learning rate convergence
+title: Learning rate convergence
 tags:
   - maths
   - reinforcement-learning

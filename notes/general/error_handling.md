@@ -9,7 +9,7 @@ checked: false
 created: 2023-08-20
 draft: false
 last_edited: 2023-11-11
-name: Error Handling
+title: Error Handling
 tags:
   - programming
   - clean-code

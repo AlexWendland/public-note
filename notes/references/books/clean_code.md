@@ -4,7 +4,7 @@ checked: false
 created: 2023-03-12
 draft: false
 last_edited: 2023-11-11
-name: Clean Code
+title: Clean Code
 tags:
   - programming
   - philosophy

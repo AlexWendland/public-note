@@ -6,7 +6,7 @@ checked: false
 created: 2024-03-10
 draft: false
 last_edited: 2024-03-10
-name: Random component analysis
+title: Random component analysis
 tags:
   - programming
 type: algorithm

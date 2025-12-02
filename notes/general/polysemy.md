@@ -4,7 +4,7 @@ checked: false
 created: 2024-03-10
 draft: false
 last_edited: 2024-03-10
-name: Polysemy
+title: Polysemy
 tags:
   - machine-learning
 type: definition

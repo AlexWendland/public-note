@@ -4,7 +4,7 @@ checked: false
 created: 2023-08-05
 draft: false
 last_edited: 2023-11-11
-name: Cohesion
+title: Cohesion
 tags:
   - programming
 type: meta

@@ -4,7 +4,7 @@ checked: false
 created: 2023-10-03
 draft: false
 last_edited: 2023-11-11
-name: Ford-Fulkerson Algorithm
+title: Ford-Fulkerson Algorithm
 tags:
   - programming
 type: algorithm

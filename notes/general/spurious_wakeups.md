@@ -5,7 +5,7 @@ checked: false
 created: 2024-09-05
 draft: false
 last_edited: 2024-09-05
-name: Spurious wakeups
+title: Spurious wakeups
 tags:
   - OS
 type: definition

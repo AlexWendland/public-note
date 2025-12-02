@@ -5,7 +5,7 @@ checked: false
 created: 2023-10-03
 draft: false
 last_edited: 2023-11-11
-name: Knapsack problem (without repetition)
+title: Knapsack problem (without repetition)
 tags:
   - programming
 type: problem

@@ -5,7 +5,7 @@ checked: false
 created: 2024-05-27
 draft: false
 last_edited: 2024-05-27
-name: Automatic Repeat Request (ARQ)
+title: Automatic Repeat Request (ARQ)
 tags:
   - networks
 type: definition

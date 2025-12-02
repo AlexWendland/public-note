@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6250 Computer Networks](../cs6250_computer_networks.md)'
+course: 'CS6250 Computer Networks'
 created: 2024-05-29
 draft: false
 last_edited: 2024-05-29
-name: Week 3 - Intradomain routing
+title: Week 3 - Intradomain routing
 tags:
   - OMSCS
 type: lecture

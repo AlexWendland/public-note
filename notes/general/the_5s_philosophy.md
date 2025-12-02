@@ -5,7 +5,7 @@ checked: false
 created: 2023-03-12
 draft: false
 last_edited: 2023-11-11
-name: The 5S Philosophy
+title: The 5S Philosophy
 tags:
   - programming
   - philosophy

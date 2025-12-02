@@ -4,7 +4,7 @@ checked: false
 created: 2024-02-24
 draft: true
 last_edited: 2024-02-24
-name: Newton Raphson method
+title: Newton Raphson method
 tags: []
 type: definition
 ---

@@ -7,7 +7,7 @@ checked: false
 created: 2023-03-19
 draft: false
 last_edited: 2023-11-11
-name: Polymorphism
+title: Polymorphism
 tags:
   - programming
 type: theory

@@ -6,7 +6,7 @@ checked: false
 created: 2023-11-02
 draft: false
 last_edited: 2023-11-11
-name: Many-one reduction (problem)
+title: Many-one reduction (problem)
 tags:
   - programming
 type: definition

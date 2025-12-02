@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-name: Vertex cover of a given size
+title: Vertex cover of a given size
 tags:
   - programming
   - graph-theory

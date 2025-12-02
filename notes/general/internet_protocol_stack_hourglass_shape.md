@@ -4,7 +4,7 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-name: Internet protocol stack hourglass shape
+title: Internet protocol stack hourglass shape
 tags:
   - networks
 type: explainer

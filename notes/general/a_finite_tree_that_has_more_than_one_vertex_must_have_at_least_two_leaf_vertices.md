@@ -4,7 +4,7 @@ checked: false
 created: 2023-08-28
 draft: false
 last_edited: 2023-11-11
-name: A finite tree that has more than one vertex must have at least two leaf vertices
+title: A finite tree that has more than one vertex must have at least two leaf vertices
 tags:
   - maths
 type: lemma

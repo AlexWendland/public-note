@@ -4,7 +4,7 @@ checked: false
 created: 2023-10-20
 draft: false
 last_edited: 2023-11-13
-name: Every min-cut has no flow going backwards along it in a max-flow
+title: Every min-cut has no flow going backwards along it in a max-flow
 tags:
   - maths
 type: lemma

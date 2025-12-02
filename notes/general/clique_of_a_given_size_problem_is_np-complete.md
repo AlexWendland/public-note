@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-name: Clique of a given size problem is NP-complete
+title: Clique of a given size problem is NP-complete
 tags:
   - maths
 type: lemma

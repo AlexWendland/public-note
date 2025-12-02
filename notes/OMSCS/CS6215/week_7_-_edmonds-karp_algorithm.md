@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6215 Introduction to Graduate Algorithms](../cs6215_introduction_to_graduate_algorithms.md)'
+course: 'CS6215 Introduction to Graduate Algorithms'
 created: 2023-10-05
 draft: false
 last_edited: 2023-11-11
-name: Week 7 - Edmonds-Karp algorithm
+title: Week 7 - Edmonds-Karp algorithm
 tags:
   - OMSCS
 type: lecture

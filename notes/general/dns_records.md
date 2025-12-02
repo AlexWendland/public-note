@@ -8,7 +8,7 @@ checked: false
 created: 2024-07-22
 draft: false
 last_edited: 2024-07-22
-name: DNS records
+title: DNS records
 tags:
   - networks
 type: definition

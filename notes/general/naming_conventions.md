@@ -6,7 +6,7 @@ checked: false
 created: 2023-03-18
 draft: false
 last_edited: 2023-11-11
-name: Naming conventions
+title: Naming conventions
 tags:
   - programming
 type: convention

@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS7641 Machine Learning](../cs7641_machine_learning.md)'
+course: 'CS7641 Machine Learning'
 created: 2024-01-17
 draft: false
 last_edited: 2024-01-17
-name: Week 2 - Regression and classification
+title: Week 2 - Regression and classification
 tags:
   - OMSCS
 type: lecture

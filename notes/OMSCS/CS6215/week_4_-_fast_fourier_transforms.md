@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6215 Introduction to Graduate Algorithms](../cs6215_introduction_to_graduate_algorithms.md)'
+course: 'CS6215 Introduction to Graduate Algorithms'
 created: 2023-09-18
 draft: false
 last_edited: 2023-11-11
-name: Week 4 - Fast Fourier Transforms
+title: Week 4 - Fast Fourier Transforms
 tags:
   - OMSCS
 type: lecture

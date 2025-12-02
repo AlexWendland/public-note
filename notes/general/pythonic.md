@@ -5,7 +5,7 @@ checked: false
 created: 2023-03-03
 draft: false
 last_edited: 2023-11-11
-name: Pythonic
+title: Pythonic
 tags:
   - programming
   - python

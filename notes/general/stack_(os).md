@@ -6,7 +6,7 @@ checked: false
 created: 2023-08-26
 draft: false
 last_edited: 2023-11-11
-name: Stack (OS)
+title: Stack (OS)
 tags:
   - programming
   - computer-science

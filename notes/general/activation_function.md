@@ -5,7 +5,7 @@ checked: false
 created: 2024-01-20
 draft: false
 last_edited: 2024-01-20
-name: Activation function
+title: Activation function
 tags:
   - machine-learning
 type: definition

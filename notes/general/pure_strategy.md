@@ -4,7 +4,7 @@ checked: false
 created: 2024-04-06
 draft: false
 last_edited: 2024-04-06
-name: Pure strategy
+title: Pure strategy
 tags:
   - game-theory
 type: definition

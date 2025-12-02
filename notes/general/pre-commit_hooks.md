@@ -4,7 +4,7 @@ checked: false
 created: 2023-04-24
 draft: false
 last_edited: 2023-11-11
-name: Pre-commit hooks
+title: Pre-commit hooks
 tags:
   - programming
   - git

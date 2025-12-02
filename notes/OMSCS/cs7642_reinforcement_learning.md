@@ -5,7 +5,7 @@ checked: false
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
-name: CS7642 Reinforcement Learning
+title: CS7642 Reinforcement Learning
 tags:
   - OMSCS
   - maths

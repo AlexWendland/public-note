@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-10
 draft: false
 last_edited: 2023-11-11
-name: Check if a linear programme is solvable
+title: Check if a linear programme is solvable
 tags:
   - programming
 type: algorithm

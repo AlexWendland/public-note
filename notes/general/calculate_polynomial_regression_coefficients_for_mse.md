@@ -4,7 +4,7 @@ checked: false
 created: 2024-01-17
 draft: false
 last_edited: 2024-01-17
-name: Calculate polynomial regression coefficients for MSE
+title: Calculate polynomial regression coefficients for MSE
 tags:
   - machine-learning
 type: method

@@ -5,7 +5,7 @@ checked: false
 created: 2025-03-22
 draft: false
 last_edited: 2025-03-22
-name: Translation Lookaside Buffer (TLB)
+title: Translation Lookaside Buffer (TLB)
 tags:
   - hardware
   - OS

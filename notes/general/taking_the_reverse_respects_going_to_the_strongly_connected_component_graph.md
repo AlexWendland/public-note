@@ -4,7 +4,7 @@ checked: false
 created: 2023-09-28
 draft: false
 last_edited: 2023-11-11
-name: Taking the reverse respects going to the strongly connected component graph
+title: Taking the reverse respects going to the strongly connected component graph
 tags:
   - maths
 type: lemma

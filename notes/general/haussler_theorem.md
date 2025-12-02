@@ -4,7 +4,7 @@ checked: false
 created: 2024-02-16
 draft: false
 last_edited: 2024-02-16
-name: Haussler Theorem
+title: Haussler Theorem
 tags:
   - machine-learning
 type: lemma

@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-09
 draft: false
 last_edited: 2023-11-11
-name: Weak duality theorem (linear programme)
+title: Weak duality theorem (linear programme)
 tags:
   - maths
 type: lemma

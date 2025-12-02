@@ -4,7 +4,7 @@ checked: false
 created: 2024-02-22
 draft: false
 last_edited: 2024-02-22
-name: Local Markov property
+title: Local Markov property
 tags:
   - probability
 type: definition

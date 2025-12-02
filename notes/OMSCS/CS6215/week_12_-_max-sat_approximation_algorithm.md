@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6215 Introduction to Graduate Algorithms](../cs6215_introduction_to_graduate_algorithms.md)'
+course: 'CS6215 Introduction to Graduate Algorithms'
 created: 2023-11-10
 draft: false
 last_edited: 2023-11-19
-name: Week 12 - Max-SAT approximation algorithm
+title: Week 12 - Max-SAT approximation algorithm
 tags:
   - OMSCS
 type: lecture

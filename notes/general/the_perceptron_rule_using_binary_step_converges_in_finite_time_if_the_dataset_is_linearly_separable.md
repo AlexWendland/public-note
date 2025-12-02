@@ -4,7 +4,7 @@ checked: false
 created: 2024-01-20
 draft: false
 last_edited: 2024-01-20
-name: The perceptron rule using binary step converges in finite time if the dataset
+title: The perceptron rule using binary step converges in finite time if the dataset
   is linearly separable
 tags:
   - maths

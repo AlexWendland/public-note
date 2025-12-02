@@ -68,3 +68,8 @@ node_modules/
 
 # Excalidraw compiled files
 images/excalidraw/
+
+# hugo
+
+.hugo_build.lock
+public/

@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6215 Introduction to Graduate Algorithms](../cs6215_introduction_to_graduate_algorithms.md)'
+course: 'CS6215 Introduction to Graduate Algorithms'
 created: 2023-10-01
 draft: false
 last_edited: 2023-11-11
-name: Week 6 - Minimum Spanning Tree
+title: Week 6 - Minimum Spanning Tree
 tags:
   - OMSCS
 type: lecture

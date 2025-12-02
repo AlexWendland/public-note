@@ -6,7 +6,7 @@ checked: false
 created: 2024-02-21
 draft: false
 last_edited: 2024-02-21
-name: Expected value
+title: Expected value
 tags:
   - statistics
 type: definition

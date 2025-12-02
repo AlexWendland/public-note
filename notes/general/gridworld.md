@@ -4,7 +4,7 @@ checked: false
 created: 2024-04-03
 draft: false
 last_edited: 2024-04-03
-name: Gridworld
+title: Gridworld
 tags:
   - machine-learning
 type: definition

@@ -4,7 +4,7 @@ checked: false
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
-name: Machine Learning by Tom Mitchell
+title: Machine Learning by Tom Mitchell
 tags:
   - programming
   - machine-learning

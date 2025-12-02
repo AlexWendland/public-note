@@ -5,7 +5,7 @@ checked: false
 created: 2023-04-20
 draft: false
 last_edited: 2023-11-11
-name: Bitwise operations in python
+title: Bitwise operations in python
 tags:
   - programming
   - python

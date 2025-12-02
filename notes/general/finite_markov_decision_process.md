@@ -5,7 +5,7 @@ checked: false
 created: 2025-05-14
 draft: false
 last_edited: 2025-05-14
-name: Finite Markov Decision Process
+title: Finite Markov Decision Process
 tags:
   - probability
 type: definition

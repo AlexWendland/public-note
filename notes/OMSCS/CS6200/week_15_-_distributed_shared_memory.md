@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6200 Graduate introduction to Operating Systems](../cs6200_graduate_introduction_to_operating_systems.md)'
+course: 'CS6200 Graduate introduction to Operating Systems'
 created: 2025-04-13
 draft: false
 last_edited: 2025-04-13
-name: Week 15 - Distributed shared memory
+title: Week 15 - Distributed shared memory
 tags:
   - OMSCS
 type: lecture

@@ -4,7 +4,7 @@ checked: false
 created: 2023-10-12
 draft: true
 last_edited: 2023-11-11
-name: Bloom filters
+title: Bloom filters
 tags:
   - programming
 type: data structure

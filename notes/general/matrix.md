@@ -7,7 +7,7 @@ checked: false
 created: 2023-08-31
 draft: false
 last_edited: 2023-12-03
-name: Matrix
+title: Matrix
 tags:
   - maths
 type: definition

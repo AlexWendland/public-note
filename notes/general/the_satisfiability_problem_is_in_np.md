@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-02
 draft: false
 last_edited: 2023-11-11
-name: The Satisfiability problem is in NP
+title: The Satisfiability problem is in NP
 tags:
   - maths
 type: lemma

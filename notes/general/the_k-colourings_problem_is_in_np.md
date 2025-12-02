@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-02
 draft: false
 last_edited: 2023-11-13
-name: The k-colourings problem is in NP
+title: The k-colourings problem is in NP
 tags:
   - maths
 type: lemma

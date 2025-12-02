@@ -5,7 +5,7 @@ checked: false
 created: 2024-02-22
 draft: false
 last_edited: 2024-02-22
-name: Chain rule (probability)
+title: Chain rule (probability)
 tags:
   - probability
 type: definition

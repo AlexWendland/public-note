@@ -4,7 +4,7 @@ checked: false
 created: 2023-10-09
 draft: false
 last_edited: 2023-11-11
-name: Euclid's rule
+title: Euclid's rule
 tags:
   - maths
 type: lemma

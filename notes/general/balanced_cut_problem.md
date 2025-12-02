@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-16
 draft: false
 last_edited: 2023-11-16
-name: Balanced cut problem
+title: Balanced cut problem
 tags:
   - programming
 type: problem

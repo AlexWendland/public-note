@@ -4,7 +4,7 @@ checked: false
 created: 2024-02-02
 draft: false
 last_edited: 2024-02-02
-name: Pre-pruning decision trees
+title: Pre-pruning decision trees
 tags:
   - machine-learning
 type: definition

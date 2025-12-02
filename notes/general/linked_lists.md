@@ -8,7 +8,7 @@ checked: false
 created: 2023-10-12
 draft: false
 last_edited: 2023-11-11
-name: Linked lists
+title: Linked lists
 tags:
   - programming
 type: data structure

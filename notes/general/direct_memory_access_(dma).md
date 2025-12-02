@@ -6,7 +6,7 @@ checked: false
 created: 2024-08-26
 draft: false
 last_edited: 2024-08-26
-name: Direct memory access (DMA)
+title: Direct memory access (DMA)
 tags:
   - OS
   - computer-science

@@ -6,7 +6,7 @@ checked: false
 created: 2024-01-24
 draft: false
 last_edited: 2024-01-24
-name: Indicator function
+title: Indicator function
 tags:
   - maths
 type: definition

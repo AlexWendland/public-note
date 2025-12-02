@@ -5,7 +5,7 @@ checked: false
 created: 2024-06-08
 draft: false
 last_edited: 2024-06-08
-name: Autonomous system number (ASN)
+title: Autonomous system number (ASN)
 tags:
   - networks
 type: definition

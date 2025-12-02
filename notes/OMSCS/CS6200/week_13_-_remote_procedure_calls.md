@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6200 Graduate introduction to Operating Systems](../cs6200_graduate_introduction_to_operating_systems.md)'
+course: 'CS6200 Graduate introduction to Operating Systems'
 created: 2025-04-12
 draft: false
 last_edited: 2025-04-12
-name: Week 13 - Remote Procedure Calls
+title: Week 13 - Remote Procedure Calls
 tags:
   - OMSCS
 type: lecture

@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-name: Independent set of a given size is in NP
+title: Independent set of a given size is in NP
 tags:
   - programming
 type: lemma

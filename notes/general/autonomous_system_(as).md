@@ -7,7 +7,7 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-name: Autonomous system (AS)
+title: Autonomous system (AS)
 tags:
   - networks
 type: definition

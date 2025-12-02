@@ -4,7 +4,7 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-name: Simulated annealing ending probability
+title: Simulated annealing ending probability
 tags:
   - probability
   - machine-learning

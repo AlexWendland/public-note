@@ -4,7 +4,7 @@ checked: false
 created: 2023-09-22
 draft: false
 last_edited: 2023-11-11
-name: Product of roots of unity
+title: Product of roots of unity
 tags:
   - maths
 type: lemma

@@ -4,7 +4,7 @@ checked: false
 created: 2024-06-15
 draft: true
 last_edited: 2024-06-15
-name: DiffServ
+title: DiffServ
 tags:
   - networks
 type: definition

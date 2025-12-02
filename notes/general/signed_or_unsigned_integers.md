@@ -12,7 +12,7 @@ checked: false
 created: 2023-04-20
 draft: false
 last_edited: 2023-11-11
-name: Signed or unsigned integers
+title: Signed or unsigned integers
 tags:
   - programming
 type: data-type

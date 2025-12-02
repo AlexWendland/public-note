@@ -4,7 +4,7 @@ checked: false
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-name: Type-U hijacking
+title: Type-U hijacking
 tags:
   - networks
   - security

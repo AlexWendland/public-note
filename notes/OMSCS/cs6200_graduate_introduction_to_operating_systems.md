@@ -5,7 +5,7 @@ checked: false
 created: 2023-08-26
 draft: false
 last_edited: 2023-12-03
-name: CS6200 Graduate introduction to Operating Systems
+title: CS6200 Graduate introduction to Operating Systems
 tags:
   - OMSCS
   - maths

@@ -5,7 +5,7 @@ checked: false
 created: 2024-01-21
 draft: true
 last_edited: 2024-01-21
-name: Chain rule (differentiation)
+title: Chain rule (differentiation)
 tags: []
 type: definition
 ---

@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6210 Advanced Operating Systems](../cs6210_advanced_operating_systems.md)'
+course: 'CS6210 Advanced Operating Systems'
 created: 2025-08-29
 draft: false
 last_edited: 2025-08-29
-name: Week 2 - OS Structure Overview
+title: Week 2 - OS Structure Overview
 tags:
   - OMSCS
 type: lecture

@@ -6,7 +6,7 @@ checked: false
 created: 2024-02-20
 draft: false
 last_edited: 2024-02-20
-name: Independent events
+title: Independent events
 tags:
   - probability
 type: definition

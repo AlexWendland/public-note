@@ -5,7 +5,7 @@ checked: false
 created: 2024-02-13
 draft: true
 last_edited: 2024-02-13
-name: Computational learning theory
+title: Computational learning theory
 tags: []
 type: definition
 ---

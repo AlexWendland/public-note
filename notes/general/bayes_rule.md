@@ -4,7 +4,7 @@ checked: false
 created: 2024-02-20
 draft: false
 last_edited: 2024-02-20
-name: Bayes rule
+title: Bayes rule
 tags:
   - probability
 type: lemma

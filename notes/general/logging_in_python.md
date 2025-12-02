@@ -4,7 +4,7 @@ checked: false
 created: 2023-03-31
 draft: false
 last_edited: 2023-11-11
-name: Logging in python
+title: Logging in python
 tags:
   - programming
   - python

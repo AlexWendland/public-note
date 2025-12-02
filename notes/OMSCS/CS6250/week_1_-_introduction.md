@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6250 Computer Networks](../cs6250_computer_networks.md)'
+course: 'CS6250 Computer Networks'
 created: 2024-05-18
 draft: false
 last_edited: 2024-05-18
-name: Week 1 - Introduction
+title: Week 1 - Introduction
 tags:
   - OMSCS
 type: lecture

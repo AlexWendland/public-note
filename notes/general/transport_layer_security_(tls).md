@@ -6,7 +6,7 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-name: Transport Layer Security (TLS)
+title: Transport Layer Security (TLS)
 tags:
   - networks
 type: definition

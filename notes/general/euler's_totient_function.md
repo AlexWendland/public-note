@@ -4,7 +4,7 @@ checked: false
 created: 2023-10-09
 draft: false
 last_edited: 2023-11-11
-name: Euler's totient function
+title: Euler's totient function
 tags:
   - maths
 type: definition

@@ -5,7 +5,7 @@ checked: false
 created: 2024-08-26
 draft: false
 last_edited: 2024-08-26
-name: Address space (OS)
+title: Address space (OS)
 tags:
   - computer-science
   - OS

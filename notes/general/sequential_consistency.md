@@ -4,7 +4,7 @@ checked: false
 created: 2025-04-13
 draft: false
 last_edited: 2025-04-13
-name: Sequential consistency
+title: Sequential consistency
 tags:
   - OS
 type: definition

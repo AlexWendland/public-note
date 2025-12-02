@@ -4,7 +4,7 @@ checked: false
 created: 2023-08-05
 draft: false
 last_edited: 2023-11-11
-name: Coding Principles
+title: Coding Principles
 tags:
   - programming
 type: principles

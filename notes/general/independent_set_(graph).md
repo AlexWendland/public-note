@@ -6,7 +6,7 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-name: Independent set (graph)
+title: Independent set (graph)
 tags:
   - maths
   - graph-theory

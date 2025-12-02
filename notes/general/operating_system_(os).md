@@ -7,7 +7,7 @@ checked: false
 created: 2024-08-26
 draft: false
 last_edited: 2024-08-26
-name: Operating system (OS)
+title: Operating system (OS)
 tags:
   - computer-sciecne
 type: definition

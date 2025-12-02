@@ -6,7 +6,7 @@ checked: false
 created: 2023-10-24
 draft: false
 last_edited: 2023-11-11
-name: Search problems
+title: Search problems
 tags: []
 type: definition
 ---

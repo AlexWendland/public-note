@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6210 Advanced Operating Systems](../cs6210_advanced_operating_systems.md)'
+course: 'CS6210 Advanced Operating Systems'
 created: 2025-09-04
 draft: true
 last_edited: 2025-09-04
-name: Week 3 - Virtualization
+title: Week 3 - Virtualization
 tags:
   - OMSCS
 type: lecture

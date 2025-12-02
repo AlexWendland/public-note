@@ -6,7 +6,7 @@ checked: false
 created: 2023-10-01
 draft: false
 last_edited: 2023-11-11
-name: Minimum Spanning Tree problem (MST)
+title: Minimum Spanning Tree problem (MST)
 tags:
   - programming
 type: problem

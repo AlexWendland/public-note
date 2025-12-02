@@ -6,7 +6,7 @@ checked: false
 created: 2024-01-18
 draft: false
 last_edited: 2024-01-18
-name: Perceptron (neural network)
+title: Perceptron (neural network)
 tags:
   - machine-learning
 type: definition

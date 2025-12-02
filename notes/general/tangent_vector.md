@@ -5,7 +5,7 @@ checked: false
 created: 2024-01-31
 draft: true
 last_edited: 2024-01-31
-name: Tangent vector
+title: Tangent vector
 tags:
   - maths
 type: definition

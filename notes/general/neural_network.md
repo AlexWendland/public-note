@@ -10,7 +10,7 @@ checked: false
 created: 2024-01-20
 draft: false
 last_edited: 2024-01-20
-name: Neural network
+title: Neural network
 tags: []
 type: definition
 ---

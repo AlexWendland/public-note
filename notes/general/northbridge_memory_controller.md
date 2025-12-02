@@ -4,7 +4,7 @@ checked: false
 created: 2025-03-22
 draft: false
 last_edited: 2025-03-22
-name: Northbridge Memory Controller
+title: Northbridge Memory Controller
 tags:
   - hardware
 type: definition

@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-13
 draft: false
 last_edited: 2023-11-13
-name: The Halting problem is undecidable
+title: The Halting problem is undecidable
 tags:
   - maths
 type: lemma

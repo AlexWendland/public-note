@@ -6,7 +6,7 @@ checked: false
 created: 2024-01-20
 draft: false
 last_edited: 2024-01-20
-name: Error function (modelling)
+title: Error function (modelling)
 tags:
   - machine-learning
 type: definition

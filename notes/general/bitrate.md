@@ -5,7 +5,7 @@ checked: false
 created: 2024-07-27
 draft: false
 last_edited: 2024-07-27
-name: Bitrate
+title: Bitrate
 tags:
   - networks
 type: definition

@@ -4,7 +4,7 @@ checked: false
 created: 2023-08-20
 draft: false
 last_edited: 2023-11-11
-name: Design Patterns
+title: Design Patterns
 tags:
   - programming
 type: design pattern

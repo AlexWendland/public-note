@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS7642 Reinforcement Learning](../cs7642_reinforcement_learning.md)'
+course: 'CS7642 Reinforcement Learning'
 created: 2025-05-22
 draft: true
 last_edited: 2025-05-22
-name: Week 3 - Supplementary Planning methods
+title: Week 3 - Supplementary Planning methods
 tags:
   - OMSCS
 type: lecture

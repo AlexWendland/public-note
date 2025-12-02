@@ -6,7 +6,7 @@ checked: false
 created: 2024-06-09
 draft: true
 last_edited: 2024-06-09
-name: Service Level Agreements (SLAs)
+title: Service Level Agreements (SLAs)
 tags: []
 type: definition
 ---

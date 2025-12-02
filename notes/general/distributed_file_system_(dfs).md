@@ -5,7 +5,7 @@ checked: false
 created: 2025-04-12
 draft: false
 last_edited: 2025-04-12
-name: Distributed file system (DFS)
+title: Distributed file system (DFS)
 tags:
   - OS
 type: definition

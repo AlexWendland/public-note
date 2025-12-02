@@ -6,7 +6,7 @@ checked: false
 created: 2024-03-10
 draft: false
 last_edited: 2024-03-10
-name: Linear dimensionality reduction
+title: Linear dimensionality reduction
 tags:
   - machine-learning
 type: definition

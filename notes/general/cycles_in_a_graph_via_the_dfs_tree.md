@@ -4,7 +4,7 @@ checked: false
 created: 2023-09-27
 draft: false
 last_edited: 2023-11-11
-name: Cycles in a graph via the DFS tree
+title: Cycles in a graph via the DFS tree
 tags:
   - maths
 type: lemma

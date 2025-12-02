@@ -6,7 +6,7 @@ checked: false
 created: 2024-03-10
 draft: false
 last_edited: 2024-03-10
-name: Principle component analysis
+title: Principle component analysis
 tags:
   - machine-learning
   - programming

@@ -5,7 +5,7 @@ checked: false
 created: 2023-11-12
 draft: false
 last_edited: 2023-11-13
-name: Subset-sum problem
+title: Subset-sum problem
 tags:
   - programming
 type: problem

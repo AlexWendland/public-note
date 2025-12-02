@@ -4,7 +4,7 @@ checked: false
 created: 2025-03-23
 draft: false
 last_edited: 2025-03-23
-name: Checkpointing
+title: Checkpointing
 tags:
   - OS
 type: definition

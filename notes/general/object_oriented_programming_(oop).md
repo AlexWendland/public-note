@@ -7,7 +7,7 @@ checked: false
 created: 2023-06-29
 draft: true
 last_edited: 2023-11-11
-name: Object Oriented Programming (OOP)
+title: Object Oriented Programming (OOP)
 tags:
   - programming
 type: theory

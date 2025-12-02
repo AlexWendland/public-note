@@ -4,7 +4,7 @@ checked: false
 created: 2024-05-27
 draft: false
 last_edited: 2024-05-27
-name: TCP connection teardown
+title: TCP connection teardown
 tags:
   - networks
 type: definition

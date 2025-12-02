@@ -6,7 +6,7 @@ checked: false
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
-name: CS6250 Computer Networks
+title: CS6250 Computer Networks
 tags:
   - OMSCS
   - maths

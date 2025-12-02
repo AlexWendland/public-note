@@ -6,7 +6,7 @@ checked: false
 created: 2024-07-19
 draft: true
 last_edited: 2024-07-19
-name: Intrusion detection systems (IDS)
+title: Intrusion detection systems (IDS)
 tags: []
 type: definition
 ---

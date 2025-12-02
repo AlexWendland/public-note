@@ -3,7 +3,7 @@ checked: false
 created: 2023-03-03
 draft: false
 last_edited: 2023-11-11
-name: Classes in Python
+title: Classes in Python
 tags:
   - programming
   - python

@@ -6,7 +6,7 @@ checked: false
 created: 2025-04-08
 draft: false
 last_edited: 2025-04-08
-name: Cache coherence
+title: Cache coherence
 tags:
   - OS
 type: definition

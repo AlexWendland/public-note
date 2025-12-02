@@ -4,7 +4,7 @@ checked: false
 created: 2023-09-26
 draft: false
 last_edited: 2023-11-11
-name: Vertex degree sum in a graph
+title: Vertex degree sum in a graph
 tags:
   - maths
 type: lemma

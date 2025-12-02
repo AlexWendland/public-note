@@ -7,7 +7,7 @@ checked: false
 created: 2023-10-01
 draft: false
 last_edited: 2023-11-11
-name: Partition (set)
+title: Partition (set)
 tags:
   - maths
 type: definition

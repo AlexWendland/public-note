@@ -8,7 +8,7 @@ checked: false
 created: 2023-08-30
 draft: false
 last_edited: 2023-11-11
-name: Nondeterministic Polynomial time (NP)
+title: Nondeterministic Polynomial time (NP)
 tags:
   - programming
 type: definition

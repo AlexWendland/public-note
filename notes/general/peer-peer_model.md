@@ -4,7 +4,7 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-name: Peer-peer model
+title: Peer-peer model
 tags:
   - networks
 type: definition

@@ -9,7 +9,7 @@ checked: false
 created: 2024-02-20
 draft: false
 last_edited: 2024-02-20
-name: Maximum likelihood estimation (MLE)
+title: Maximum likelihood estimation (MLE)
 tags:
   - statistics
   - machine-learning

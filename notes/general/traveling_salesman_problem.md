@@ -5,7 +5,7 @@ checked: false
 created: 2023-11-15
 draft: false
 last_edited: 2023-11-15
-name: Traveling salesman problem
+title: Traveling salesman problem
 tags:
   - programming
 type: problem

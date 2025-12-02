@@ -5,7 +5,7 @@ checked: false
 created: 2024-02-16
 draft: false
 last_edited: 2024-02-16
-name: Concept class
+title: Concept class
 tags:
   - machine-learning
 type: definition

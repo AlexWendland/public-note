@@ -4,7 +4,7 @@ checked: false
 created: 2023-10-05
 draft: false
 last_edited: 2023-11-11
-name: Image segmentation by max flow
+title: Image segmentation by max flow
 tags:
   - programming
 type: algorithm

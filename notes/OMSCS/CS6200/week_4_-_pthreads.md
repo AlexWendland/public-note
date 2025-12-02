@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6200 Graduate introduction to Operating Systems](../cs6200_graduate_introduction_to_operating_systems.md)'
+course: 'CS6200 Graduate introduction to Operating Systems'
 created: 2024-09-04
 draft: false
 last_edited: 2024-09-04
-name: Week 4 - PThreads
+title: Week 4 - PThreads
 tags:
   - OMSCS
 type: lecture

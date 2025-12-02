@@ -5,7 +5,7 @@ checked: false
 created: 2023-10-12
 draft: false
 last_edited: 2023-11-11
-name: Array (data structure)
+title: Array (data structure)
 tags:
   - programming
 type: data structure

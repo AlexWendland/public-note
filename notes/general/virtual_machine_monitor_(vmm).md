@@ -8,7 +8,7 @@ checked: false
 created: 2025-04-12
 draft: false
 last_edited: 2025-04-12
-name: Virtual machine monitor (VMM)
+title: Virtual machine monitor (VMM)
 tags:
   - OS
 type: definition

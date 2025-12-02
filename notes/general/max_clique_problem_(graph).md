@@ -5,7 +5,7 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-name: Max clique problem (graph)
+title: Max clique problem (graph)
 tags:
   - programming
   - graph-theory

@@ -4,7 +4,7 @@ checked: false
 created: 2024-02-19
 draft: false
 last_edited: 2024-02-19
-name: PAC-learnable if and only if finite VC dimension
+title: PAC-learnable if and only if finite VC dimension
 tags:
   - machine-learning
 type: lemma

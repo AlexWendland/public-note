@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-15
 draft: false
 last_edited: 2023-11-15
-name: Rudrata cycle problem
+title: Rudrata cycle problem
 tags:
   - programming
   - graph-theory

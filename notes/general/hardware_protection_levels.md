@@ -4,7 +4,7 @@ checked: false
 created: 2025-04-12
 draft: false
 last_edited: 2025-04-12
-name: Hardware protection levels
+title: Hardware protection levels
 tags:
   - OS
 type: definition

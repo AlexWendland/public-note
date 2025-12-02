@@ -8,7 +8,7 @@ checked: false
 created: 2023-10-24
 draft: false
 last_edited: 2023-11-11
-name: P equals NP or P not equals NP
+title: P equals NP or P not equals NP
 tags:
   - programming
 type: theory

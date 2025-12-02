@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-name: Cliques in G are independent sets in the complement
+title: Cliques in G are independent sets in the complement
 tags:
   - maths
   - graph-theory

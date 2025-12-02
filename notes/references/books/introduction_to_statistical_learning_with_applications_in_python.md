@@ -5,7 +5,7 @@ checked: false
 created: 2024-01-11
 draft: false
 last_edited: 2024-01-11
-name: Introduction to statistical learning with Applications in Python
+title: Introduction to statistical learning with Applications in Python
 tags:
   - machine-learning
   - statistics

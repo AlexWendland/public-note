@@ -4,7 +4,7 @@ checked: false
 created: 2025-07-05
 draft: false
 last_edited: 2025-07-05
-name: My thoughts about a start up
+title: My thoughts about a start up
 tags:
   - finance
   - work

@@ -7,7 +7,7 @@ checked: false
 created: 2023-09-29
 draft: false
 last_edited: 2023-11-11
-name: Breadth-first search (BFS)
+title: Breadth-first search (BFS)
 tags:
   - programming
 type: algorithm

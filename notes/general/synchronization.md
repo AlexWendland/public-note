@@ -6,7 +6,7 @@ checked: false
 created: 2025-03-24
 draft: false
 last_edited: 2025-03-24
-name: Synchronization
+title: Synchronization
 tags:
   - OS
 type: definition

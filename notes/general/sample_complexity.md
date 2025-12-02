@@ -4,7 +4,7 @@ checked: false
 created: 2024-02-14
 draft: false
 last_edited: 2024-02-14
-name: Sample complexity
+title: Sample complexity
 tags:
   - machine-learning
 type: definition

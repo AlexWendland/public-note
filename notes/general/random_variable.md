@@ -7,7 +7,7 @@ checked: false
 created: 2024-01-11
 draft: true
 last_edited: 2024-01-11
-name: Random variable
+title: Random variable
 tags: []
 type: definition
 ---

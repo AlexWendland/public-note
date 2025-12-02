@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS7641 Machine Learning](../cs7641_machine_learning.md)'
+course: 'CS7641 Machine Learning'
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
-name: Week 1 - Decision Trees
+title: Week 1 - Decision Trees
 tags:
   - OMSCS
 type: lecture

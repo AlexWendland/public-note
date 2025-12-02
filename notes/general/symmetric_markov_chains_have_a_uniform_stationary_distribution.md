@@ -4,7 +4,7 @@ checked: false
 created: 2023-12-03
 draft: false
 last_edited: 2023-12-03
-name: Symmetric Markov chains have a uniform stationary distribution
+title: Symmetric Markov chains have a uniform stationary distribution
 tags:
   - maths
   - probability

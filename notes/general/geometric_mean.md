@@ -5,7 +5,7 @@ checked: false
 created: 2023-11-12
 draft: false
 last_edited: 2023-11-12
-name: Geometric mean
+title: Geometric mean
 tags:
   - maths
 type: definition

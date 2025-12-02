@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS7641 Machine Learning](../cs7641_machine_learning.md)'
+course: 'CS7641 Machine Learning'
 created: 2024-01-29
 draft: false
 last_edited: 2024-01-29
-name: Week 4 - Support Vector Machines
+title: Week 4 - Support Vector Machines
 tags:
   - OMSCS
 type: lecture

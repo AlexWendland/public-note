@@ -4,7 +4,7 @@ checked: false
 created: 2024-02-25
 draft: false
 last_edited: 2024-02-25
-name: MIMIC by dependency trees
+title: MIMIC by dependency trees
 tags:
   - programming
 type: algorithm

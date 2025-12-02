@@ -4,7 +4,7 @@ checked: false
 created: 2023-07-13
 draft: true
 last_edited: 2023-11-11
-name: Logical Programming
+title: Logical Programming
 tags:
   - programming
   - ''

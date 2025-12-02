@@ -4,7 +4,7 @@ checked: false
 created: 2023-10-10
 draft: false
 last_edited: 2023-11-11
-name: Existence of a Fermat witness if and only if composite
+title: Existence of a Fermat witness if and only if composite
 tags:
   - maths
 type: lemma

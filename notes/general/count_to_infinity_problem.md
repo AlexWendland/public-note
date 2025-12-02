@@ -6,7 +6,7 @@ checked: false
 created: 2024-06-04
 draft: false
 last_edited: 2024-06-04
-name: Count to infinity problem
+title: Count to infinity problem
 tags:
   - networks
 type: explainer

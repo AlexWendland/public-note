@@ -4,7 +4,7 @@ checked: false
 created: 2024-07-22
 draft: false
 last_edited: 2024-07-22
-name: DNS censorship
+title: DNS censorship
 tags:
   - networks
 type: definition

@@ -4,7 +4,7 @@ checked: false
 created: 2024-03-09
 draft: false
 last_edited: 2024-03-09
-name: Consistent clustering
+title: Consistent clustering
 tags:
   - machine-learning
 type: definition

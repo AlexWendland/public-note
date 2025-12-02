@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6200 Graduate introduction to Operating Systems](../cs6200_graduate_introduction_to_operating_systems.md)'
+course: 'CS6200 Graduate introduction to Operating Systems'
 created: 2025-04-23
 draft: true
 last_edited: 2025-04-23
-name: Week 17 - Exam prep
+title: Week 17 - Exam prep
 tags:
   - OMSCS
 type: lecture

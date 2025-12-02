@@ -8,7 +8,7 @@ checked: false
 created: 2023-07-17
 draft: false
 last_edited: 2023-11-11
-name: Random Access Memory (RAM)
+title: Random Access Memory (RAM)
 tags:
   - programming
   - OS

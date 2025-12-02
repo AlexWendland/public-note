@@ -6,7 +6,7 @@ checked: false
 created: 2023-11-07
 draft: true
 last_edited: 2023-11-11
-name: Linear function
+title: Linear function
 tags:
   - maths
 type: definition

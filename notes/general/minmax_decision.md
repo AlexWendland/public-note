@@ -6,7 +6,7 @@ checked: false
 created: 2024-04-06
 draft: false
 last_edited: 2024-04-06
-name: Minmax decision
+title: Minmax decision
 tags:
   - game-theory
 type: definition

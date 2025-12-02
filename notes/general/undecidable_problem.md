@@ -5,7 +5,7 @@ checked: false
 created: 2023-11-13
 draft: false
 last_edited: 2023-11-13
-name: Undecidable problem
+title: Undecidable problem
 tags: []
 type: definition
 ---

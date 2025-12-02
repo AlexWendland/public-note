@@ -5,7 +5,7 @@ checked: false
 created: 2025-03-22
 draft: false
 last_edited: 2025-03-22
-name: Page table entry
+title: Page table entry
 tags:
   - OS
 type: definition

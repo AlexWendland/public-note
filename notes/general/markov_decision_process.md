@@ -6,7 +6,7 @@ checked: false
 created: 2024-04-03
 draft: false
 last_edited: 2024-04-03
-name: Markov decision process
+title: Markov decision process
 tags:
   - probability
   - machine-learning

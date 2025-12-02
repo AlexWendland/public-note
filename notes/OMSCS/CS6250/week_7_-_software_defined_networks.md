@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6250 Computer Networks](../cs6250_computer_networks.md)'
+course: 'CS6250 Computer Networks'
 created: 2024-07-19
 draft: false
 last_edited: 2024-07-19
-name: Week 7 - Software defined networks
+title: Week 7 - Software defined networks
 tags:
   - OMSCS
 type: lecture

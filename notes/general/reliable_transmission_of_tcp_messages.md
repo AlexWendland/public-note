@@ -4,7 +4,7 @@ checked: false
 created: 2024-05-27
 draft: false
 last_edited: 2024-05-27
-name: Reliable transmission of TCP messages
+title: Reliable transmission of TCP messages
 tags:
   - networks
 type: explainer

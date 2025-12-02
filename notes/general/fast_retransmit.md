@@ -5,7 +5,7 @@ checked: false
 created: 2024-05-27
 draft: false
 last_edited: 2024-05-27
-name: Fast retransmit
+title: Fast retransmit
 tags:
   - networks
 type: definition

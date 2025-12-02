@@ -6,7 +6,7 @@ checked: false
 created: 2024-09-04
 draft: false
 last_edited: 2024-09-04
-name: Conditional variables (Mutex)
+title: Conditional variables (Mutex)
 tags:
   - OS
 type: definition

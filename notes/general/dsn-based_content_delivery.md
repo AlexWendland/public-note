@@ -4,7 +4,7 @@ checked: false
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-name: DSN-based content delivery
+title: DSN-based content delivery
 tags:
   - networks
 type: definition

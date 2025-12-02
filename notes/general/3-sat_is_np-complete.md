@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-12
-name: 3-SAT is NP-complete
+title: 3-SAT is NP-complete
 tags:
   - programming
 type: lemma

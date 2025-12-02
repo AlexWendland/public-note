@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6200 Graduate introduction to Operating Systems](../cs6200_graduate_introduction_to_operating_systems.md)'
+course: 'CS6200 Graduate introduction to Operating Systems'
 created: 2025-03-24
 draft: false
 last_edited: 2025-03-24
-name: Week 9 - Inter-process communication
+title: Week 9 - Inter-process communication
 tags:
   - OMSCS
 type: lecture

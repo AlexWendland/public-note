@@ -6,7 +6,7 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-name: Layer 5 Session
+title: Layer 5 Session
 tags:
   - networks
 type: definition

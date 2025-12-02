@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-name: Max clique problem is NP-hard
+title: Max clique problem is NP-hard
 tags:
   - maths
 type: lemma

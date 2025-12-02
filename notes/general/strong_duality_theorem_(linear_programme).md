@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-10
 draft: false
 last_edited: 2023-11-11
-name: Strong duality theorem (linear programme)
+title: Strong duality theorem (linear programme)
 tags:
   - maths
 type: lemma

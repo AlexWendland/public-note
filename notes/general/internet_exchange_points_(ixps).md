@@ -6,7 +6,7 @@ checked: false
 created: 2024-06-08
 draft: false
 last_edited: 2024-06-08
-name: Internet Exchange Points (IXPs)
+title: Internet Exchange Points (IXPs)
 tags:
   - networks
 type: definition

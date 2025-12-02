@@ -3,7 +3,7 @@ checked: false
 created: 2023-03-03
 draft: false
 last_edited: 2023-11-11
-name: Python Built-in Functions
+title: Python Built-in Functions
 tags:
   - programming
   - python

@@ -8,7 +8,7 @@ checked: false
 created: 2024-02-20
 draft: false
 last_edited: 2024-02-20
-name: Maximum a posteriori probability estimate (MAP)
+title: Maximum a posteriori probability estimate (MAP)
 tags:
   - statistics
   - machine-learning

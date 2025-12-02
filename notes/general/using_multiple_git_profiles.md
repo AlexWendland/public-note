@@ -4,7 +4,7 @@ checked: false
 created: 2023-03-19
 draft: false
 last_edited: 2023-11-11
-name: Using multiple git profiles
+title: Using multiple git profiles
 tags:
   - programming
   - git

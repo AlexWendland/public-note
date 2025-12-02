@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6250 Computer Networks](../cs6250_computer_networks.md)'
+course: 'CS6250 Computer Networks'
 created: 2024-06-15
 draft: false
 last_edited: 2024-06-15
-name: Week 6 - Exam prep
+title: Week 6 - Exam prep
 tags:
   - OMSCS
 type: lecture

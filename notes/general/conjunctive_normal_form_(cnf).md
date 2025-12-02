@@ -4,7 +4,7 @@ checked: false
 created: 2023-08-28
 draft: false
 last_edited: 2023-11-11
-name: Conjunctive normal form (CNF)
+title: Conjunctive normal form (CNF)
 tags:
   - maths
   - computer-sciecne

@@ -5,7 +5,7 @@ checked: false
 created: 2024-02-02
 draft: false
 last_edited: 2024-02-02
-name: Cost complexity pruning for decision trees (CPP)
+title: Cost complexity pruning for decision trees (CPP)
 tags:
   - programming
 type: algorithm

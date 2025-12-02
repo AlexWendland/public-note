@@ -5,7 +5,7 @@ checked: false
 created: 2023-08-20
 draft: false
 last_edited: 2023-11-11
-name: Special case pattern
+title: Special case pattern
 tags:
   - programming
 type: design pattern

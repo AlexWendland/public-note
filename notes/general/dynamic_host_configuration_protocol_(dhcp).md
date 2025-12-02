@@ -5,7 +5,7 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-name: Dynamic Host Configuration Protocol (DHCP)
+title: Dynamic Host Configuration Protocol (DHCP)
 tags:
   - networks
 type: definition

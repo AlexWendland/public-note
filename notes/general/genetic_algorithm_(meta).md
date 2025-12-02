@@ -6,7 +6,7 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-name: Genetic algorithm (meta)
+title: Genetic algorithm (meta)
 tags:
   - programming
   - machine-learning

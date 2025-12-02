@@ -10,7 +10,7 @@ checked: false
 created: 2023-07-17
 draft: false
 last_edited: 2023-11-11
-name: Passing variables to a function
+title: Passing variables to a function
 tags:
   - programming
   - fundamentals

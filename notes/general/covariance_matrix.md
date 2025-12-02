@@ -4,7 +4,7 @@ checked: false
 created: 2024-03-10
 draft: true
 last_edited: 2024-03-10
-name: Covariance matrix
+title: Covariance matrix
 tags: []
 type: definition
 ---

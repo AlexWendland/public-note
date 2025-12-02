@@ -5,7 +5,7 @@ checked: false
 created: 2025-04-12
 draft: false
 last_edited: 2025-04-12
-name: Virtualization
+title: Virtualization
 tags:
   - OS
 type: definition

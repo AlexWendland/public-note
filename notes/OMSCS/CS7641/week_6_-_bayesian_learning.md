@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS7641 Machine Learning](../cs7641_machine_learning.md)'
+course: 'CS7641 Machine Learning'
 created: 2024-02-19
 draft: false
 last_edited: 2024-02-19
-name: Week 6 - Bayesian learning
+title: Week 6 - Bayesian learning
 tags:
   - OMSCS
 type: lecture

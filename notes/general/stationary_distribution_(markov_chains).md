@@ -6,7 +6,7 @@ checked: false
 created: 2023-12-03
 draft: false
 last_edited: 2023-12-03
-name: Stationary distribution (Markov Chains)
+title: Stationary distribution (Markov Chains)
 tags:
   - maths
   - probability

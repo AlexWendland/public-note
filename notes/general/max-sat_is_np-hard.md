@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-12
 draft: false
 last_edited: 2023-11-12
-name: Max-SAT is NP-hard
+title: Max-SAT is NP-hard
 tags:
   - maths
 type: lemma

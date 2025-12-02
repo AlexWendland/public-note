@@ -5,7 +5,7 @@ checked: false
 created: 2023-08-31
 draft: false
 last_edited: 2023-11-11
-name: Binary operation
+title: Binary operation
 tags:
   - maths
 type: definition

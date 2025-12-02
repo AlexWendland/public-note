@@ -4,7 +4,7 @@ checked: false
 created: 2024-01-21
 draft: false
 last_edited: 2024-01-21
-name: Context content conclusion (CCC)
+title: Context content conclusion (CCC)
 tags:
   - best-practices
 type: method

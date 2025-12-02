@@ -5,7 +5,7 @@ checked: false
 created: 2024-05-24
 draft: false
 last_edited: 2024-05-24
-name: Multiplexing
+title: Multiplexing
 tags:
   - networks
 type: definition

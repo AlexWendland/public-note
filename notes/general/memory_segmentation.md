@@ -5,7 +5,7 @@ checked: false
 created: 2025-03-22
 draft: false
 last_edited: 2025-03-22
-name: Memory segmentation
+title: Memory segmentation
 tags:
   - OS
 type: definition

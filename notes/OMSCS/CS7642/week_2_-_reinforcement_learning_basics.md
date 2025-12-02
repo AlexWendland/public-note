@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS7642 Reinforcement Learning](../cs7642_reinforcement_learning.md)'
+course: 'CS7642 Reinforcement Learning'
 created: 2025-05-14
 draft: false
 last_edited: 2025-05-14
-name: Week 2 - Reinforcement learning basics
+title: Week 2 - Reinforcement learning basics
 tags:
   - OMSCS
 type: lecture

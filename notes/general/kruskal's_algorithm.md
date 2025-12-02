@@ -4,7 +4,7 @@ checked: false
 created: 2023-10-01
 draft: false
 last_edited: 2023-11-11
-name: Kruskal's algorithm
+title: Kruskal's algorithm
 tags:
   - programming
 type: algorithm

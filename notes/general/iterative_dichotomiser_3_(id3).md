@@ -6,7 +6,7 @@ checked: false
 created: 2024-01-11
 draft: false
 last_edited: 2024-01-11
-name: Iterative Dichotomiser 3 (ID3)
+title: Iterative Dichotomiser 3 (ID3)
 tags:
   - programming
 type: algorithm

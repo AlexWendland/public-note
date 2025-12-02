@@ -4,7 +4,7 @@ checked: false
 created: 2023-09-28
 draft: false
 last_edited: 2023-11-11
-name: Find path in undirected graph
+title: Find path in undirected graph
 tags:
   - programming
 type: problem

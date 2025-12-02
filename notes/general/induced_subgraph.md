@@ -5,7 +5,7 @@ checked: false
 created: 2023-10-27
 draft: false
 last_edited: 2023-11-11
-name: Induced subgraph
+title: Induced subgraph
 tags:
   - maths
   - graph-theory

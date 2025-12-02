@@ -5,7 +5,7 @@ checked: false
 created: 2025-04-12
 draft: true
 last_edited: 2025-04-12
-name: Formal language
+title: Formal language
 tags: []
 type: definition
 ---

@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-12
 draft: false
 last_edited: 2023-11-12
-name: Integer linear programming is NP-hard
+title: Integer linear programming is NP-hard
 tags:
   - maths
 type: lemma

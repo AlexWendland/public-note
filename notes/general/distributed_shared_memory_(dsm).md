@@ -4,7 +4,7 @@ checked: false
 created: 2025-04-13
 draft: false
 last_edited: 2025-04-13
-name: Distributed shared memory (DSM)
+title: Distributed shared memory (DSM)
 tags:
   - OS
 type: definition

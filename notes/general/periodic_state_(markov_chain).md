@@ -6,7 +6,7 @@ checked: false
 created: 2023-12-03
 draft: false
 last_edited: 2023-12-03
-name: Periodic state (markov chain)
+title: Periodic state (markov chain)
 tags:
   - maths
   - probability

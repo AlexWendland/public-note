@@ -4,7 +4,7 @@ checked: false
 created: 2024-02-02
 draft: false
 last_edited: 2024-02-02
-name: Precision
+title: Precision
 tags:
   - machine-learning
 type: definition

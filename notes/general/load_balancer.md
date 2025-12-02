@@ -6,7 +6,7 @@ checked: false
 created: 2024-07-19
 draft: true
 last_edited: 2024-07-19
-name: Load balancer
+title: Load balancer
 tags: []
 type: definition
 ---

@@ -4,7 +4,7 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-name: Connection between OSI and IPS models
+title: Connection between OSI and IPS models
 tags:
   - networks
 type: explainer

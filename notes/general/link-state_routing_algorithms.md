@@ -5,7 +5,7 @@ checked: false
 created: 2024-06-02
 draft: false
 last_edited: 2024-06-02
-name: Link-state routing algorithms
+title: Link-state routing algorithms
 tags:
   - networks
 type: definition

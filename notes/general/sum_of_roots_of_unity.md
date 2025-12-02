@@ -5,7 +5,7 @@ checked: false
 created: 2023-09-19
 draft: false
 last_edited: 2023-11-11
-name: Sum of roots of unity
+title: Sum of roots of unity
 tags:
   - maths
 type: lemma

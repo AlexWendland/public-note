@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-13
-name: Independent set of a given size
+title: Independent set of a given size
 tags:
   - programming
 type: problem

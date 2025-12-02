@@ -7,7 +7,7 @@ checked: false
 created: 2023-09-30
 draft: false
 last_edited: 2023-11-12
-name: Satisfiability problem (SAT problem)
+title: Satisfiability problem (SAT problem)
 tags:
   - programming
 type: problem

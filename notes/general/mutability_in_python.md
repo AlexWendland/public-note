@@ -5,7 +5,7 @@ checked: false
 created: 2023-07-17
 draft: false
 last_edited: 2023-11-11
-name: Mutability in Python
+title: Mutability in Python
 tags:
   - programming
   - python

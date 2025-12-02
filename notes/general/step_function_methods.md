@@ -5,7 +5,7 @@ checked: false
 created: 2024-06-09
 draft: false
 last_edited: 2024-06-09
-name: Step function methods
+title: Step function methods
 tags:
   - machine-learning
 type: definition

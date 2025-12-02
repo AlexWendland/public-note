@@ -6,7 +6,7 @@ checked: false
 created: 2024-05-23
 draft: false
 last_edited: 2024-05-23
-name: Network Address Translation (NAT)
+title: Network Address Translation (NAT)
 tags:
   - networks
 type: definition

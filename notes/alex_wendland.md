@@ -3,7 +3,7 @@ checked: true
 created: 2023-02-24
 draft: false
 last_edited: 2023-11-11
-name: Alex Wendland
+title: Alex Wendland
 tags: []
 type: personal
 ---

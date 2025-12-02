@@ -4,7 +4,7 @@ checked: false
 created: 2023-10-04
 draft: false
 last_edited: 2023-11-11
-name: Image Segmentation
+title: Image Segmentation
 tags:
   - programming
 type: problem

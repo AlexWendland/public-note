@@ -5,7 +5,7 @@ checked: false
 created: 2024-01-13
 draft: false
 last_edited: 2024-01-13
-name: Objective function
+title: Objective function
 tags:
   - machine-learning
 type: definition

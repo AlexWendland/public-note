@@ -5,7 +5,7 @@ checked: false
 created: 2024-02-23
 draft: false
 last_edited: 2024-02-23
-name: Marginalisation (probability)
+title: Marginalisation (probability)
 tags:
   - probability
 type: definition

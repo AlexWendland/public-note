@@ -4,7 +4,7 @@ checked: false
 created: 2023-09-29
 draft: false
 last_edited: 2023-11-11
-name: DFS to find path in a directed graph
+title: DFS to find path in a directed graph
 tags:
   - programming
 type: algorithm

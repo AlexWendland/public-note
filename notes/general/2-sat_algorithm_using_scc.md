@@ -4,7 +4,7 @@ checked: false
 created: 2023-10-01
 draft: false
 last_edited: 2023-11-12
-name: 2-SAT algorithm using SCC
+title: 2-SAT algorithm using SCC
 tags:
   - programming
 type: algorithm

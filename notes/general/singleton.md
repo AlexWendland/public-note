@@ -5,7 +5,7 @@ checked: false
 created: 2023-03-31
 draft: false
 last_edited: 2023-11-11
-name: Singleton
+title: Singleton
 tags:
   - programming
 type: pattern

@@ -7,7 +7,7 @@ checked: false
 created: 2023-04-20
 draft: false
 last_edited: 2023-11-11
-name: Bit
+title: Bit
 tags:
   - programming
 type: data-type

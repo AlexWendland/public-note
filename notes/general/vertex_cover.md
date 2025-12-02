@@ -5,7 +5,7 @@ checked: false
 created: 2023-11-03
 draft: false
 last_edited: 2023-11-11
-name: Vertex cover
+title: Vertex cover
 tags:
   - maths
   - graph-theory

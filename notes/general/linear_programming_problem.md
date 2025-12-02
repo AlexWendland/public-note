@@ -5,7 +5,7 @@ checked: false
 created: 2023-11-07
 draft: false
 last_edited: 2023-11-12
-name: Linear programming problem
+title: Linear programming problem
 tags:
   - programming
 type: problem

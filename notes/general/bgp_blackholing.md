@@ -4,7 +4,7 @@ checked: false
 created: 2024-07-21
 draft: false
 last_edited: 2024-07-21
-name: BGP Blackholing
+title: BGP Blackholing
 tags:
   - networks
   - security

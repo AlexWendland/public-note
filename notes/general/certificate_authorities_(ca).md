@@ -7,7 +7,7 @@ checked: false
 created: 2024-07-22
 draft: true
 last_edited: 2024-07-22
-name: Certificate authorities (CA)
+title: Certificate authorities (CA)
 tags: []
 type: definition
 ---

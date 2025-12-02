@@ -6,7 +6,7 @@ checked: false
 created: 2023-09-05
 draft: false
 last_edited: 2023-11-11
-name: Bellman-Ford algorithm
+title: Bellman-Ford algorithm
 tags:
   - programming
 type: algorithm

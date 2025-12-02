@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-12
 draft: false
 last_edited: 2023-11-12
-name: Subset-sum problem is in NP
+title: Subset-sum problem is in NP
 tags:
   - programming
 type: lemma

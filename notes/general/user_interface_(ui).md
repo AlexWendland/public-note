@@ -9,7 +9,7 @@ checked: false
 created: 2023-03-10
 draft: true
 last_edited: 2023-11-11
-name: User Interface (UI)
+title: User Interface (UI)
 tags:
   - programming
 type: definition

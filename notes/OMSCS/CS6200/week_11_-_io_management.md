@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6200 Graduate introduction to Operating Systems](../cs6200_graduate_introduction_to_operating_systems.md)'
+course: 'CS6200 Graduate introduction to Operating Systems'
 created: 2025-04-09
 draft: false
 last_edited: 2025-04-09
-name: Week 11 - IO management
+title: Week 11 - IO management
 tags:
   - OMSCS
 type: lecture

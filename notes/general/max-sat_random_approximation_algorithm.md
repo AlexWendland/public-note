@@ -4,7 +4,7 @@ checked: false
 created: 2023-11-12
 draft: false
 last_edited: 2023-11-12
-name: Max-SAT random approximation algorithm
+title: Max-SAT random approximation algorithm
 tags:
   - programming
 type: algorithm

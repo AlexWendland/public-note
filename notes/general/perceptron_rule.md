@@ -5,7 +5,7 @@ checked: false
 created: 2024-01-18
 draft: false
 last_edited: 2024-01-18
-name: Perceptron rule
+title: Perceptron rule
 tags:
   - programming
 type: algorithm

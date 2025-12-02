@@ -4,7 +4,7 @@ checked: false
 created: 2025-04-09
 draft: false
 last_edited: 2025-04-09
-name: Pseudo devices
+title: Pseudo devices
 tags:
   - OS
 type: definition

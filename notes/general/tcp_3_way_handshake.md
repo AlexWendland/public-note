@@ -4,7 +4,7 @@ checked: false
 created: 2024-05-27
 draft: false
 last_edited: 2024-05-27
-name: TCP 3 way handshake
+title: TCP 3 way handshake
 tags:
   - networks
 type: definition

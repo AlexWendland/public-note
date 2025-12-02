@@ -6,7 +6,7 @@ checked: false
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
-name: Decision tree
+title: Decision tree
 tags:
   - maths
   - algorithms

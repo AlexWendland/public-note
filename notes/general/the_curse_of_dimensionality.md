@@ -4,7 +4,7 @@ checked: false
 created: 2024-01-22
 draft: false
 last_edited: 2024-01-22
-name: The curse of dimensionality
+title: The curse of dimensionality
 tags:
   - machine-learning
 type: theory

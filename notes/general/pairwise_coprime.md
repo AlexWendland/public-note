@@ -5,7 +5,7 @@ checked: false
 created: 2023-10-10
 draft: false
 last_edited: 2023-11-11
-name: Pairwise coprime
+title: Pairwise coprime
 tags:
   - maths
 type: definition

@@ -5,7 +5,7 @@ checked: false
 created: 2024-05-21
 draft: false
 last_edited: 2024-05-21
-name: MAC address
+title: MAC address
 tags:
   - networks
 type: definition

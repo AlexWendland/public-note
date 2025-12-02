@@ -5,7 +5,7 @@ checked: false
 created: 2024-07-25
 draft: false
 last_edited: 2024-07-25
-name: Session Initiation Protocol (SIP)
+title: Session Initiation Protocol (SIP)
 tags:
   - networks
 type: definition

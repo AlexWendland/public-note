@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS6210 Advanced Operating Systems.md](cs6210_advanced_operating_systems.md.md)'
+course: 'CS6210 Advanced Operating Systems.md'
 created: '2025-12-01'
 draft: true
 last_edited: '2025-12-01'
-name: Week 11 - Security
+title: Week 11 - Security
 tags:
   - OMSCS
 type: lecture

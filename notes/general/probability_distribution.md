@@ -5,7 +5,7 @@ checked: false
 created: 2023-12-03
 draft: false
 last_edited: 2023-12-03
-name: Probability distribution
+title: Probability distribution
 tags:
   - maths
   - probability

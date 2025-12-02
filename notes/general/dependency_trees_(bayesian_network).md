@@ -5,7 +5,7 @@ checked: false
 created: 2024-02-24
 draft: false
 last_edited: 2024-02-24
-name: Dependency Trees (Bayesian Network)
+title: Dependency Trees (Bayesian Network)
 tags:
   - machine-learning
 type: definition

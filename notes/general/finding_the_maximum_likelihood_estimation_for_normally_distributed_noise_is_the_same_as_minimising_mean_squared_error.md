@@ -4,7 +4,7 @@ checked: false
 created: 2024-02-21
 draft: false
 last_edited: 2024-02-21
-name: Finding the maximum likelihood estimation for normally distributed noise is
+title: Finding the maximum likelihood estimation for normally distributed noise is
   the same as minimising mean squared error
 tags:
   - maths

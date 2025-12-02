@@ -5,7 +5,7 @@ checked: false
 created: 2024-01-11
 draft: false
 last_edited: 2024-01-11
-name: Information entropy
+title: Information entropy
 tags:
   - machine-learning
   - maths

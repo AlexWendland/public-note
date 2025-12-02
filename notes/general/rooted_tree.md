@@ -5,7 +5,7 @@ checked: false
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
-name: Rooted tree
+title: Rooted tree
 tags:
   - graph-theory
   - maths

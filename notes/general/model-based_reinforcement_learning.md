@@ -4,7 +4,7 @@ checked: false
 created: 2024-04-06
 draft: false
 last_edited: 2024-04-06
-name: Model-based reinforcement learning
+title: Model-based reinforcement learning
 tags:
   - machine-learning
 type: definition

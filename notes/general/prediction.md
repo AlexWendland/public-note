@@ -5,7 +5,7 @@ checked: false
 created: 2023-09-09
 draft: false
 last_edited: 2023-11-11
-name: Prediction
+title: Prediction
 tags:
   - maths
 type: definition

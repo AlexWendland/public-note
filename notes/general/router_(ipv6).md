@@ -4,7 +4,7 @@ checked: false
 created: 2024-05-21
 draft: false
 last_edited: 2024-05-21
-name: Router (IPv6)
+title: Router (IPv6)
 tags: []
 type: definition
 ---

@@ -6,7 +6,7 @@ checked: false
 created: 2024-08-26
 draft: true
 last_edited: 2024-08-26
-name: Input output (IO)
+title: Input output (IO)
 tags:
   - OS
   - computer-science

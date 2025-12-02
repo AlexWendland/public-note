@@ -4,7 +4,7 @@ checked: false
 created: 2024-05-27
 draft: false
 last_edited: 2024-05-27
-name: Transmission control in TCP
+title: Transmission control in TCP
 tags:
   - networks
 type: explainer

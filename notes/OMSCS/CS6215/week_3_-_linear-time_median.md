@@ -1,11 +1,11 @@
 ---
 aliases: []
 checked: false
-course: '[CS6215 Introduction to Graduate Algorithms](../cs6215_introduction_to_graduate_algorithms.md)'
+course: 'CS6215 Introduction to Graduate Algorithms'
 created: 2023-09-07
 draft: false
 last_edited: 2023-11-11
-name: Week 3 - Linear-Time Median
+title: Week 3 - Linear-Time Median
 tags:
   - OMSCS
 type: lecture

@@ -7,7 +7,7 @@ checked: false
 created: 2024-06-13
 draft: false
 last_edited: 2024-06-13
-name: Trie
+title: Trie
 tags:
   - programming
 type: data structure

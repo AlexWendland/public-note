@@ -5,7 +5,7 @@ checked: false
 created: 2023-11-09
 draft: false
 last_edited: 2023-11-11
-name: Dual linear programme
+title: Dual linear programme
 tags:
   - programming
 type: definition

@@ -4,7 +4,7 @@ checked: false
 created: 2023-09-28
 draft: false
 last_edited: 2023-11-11
-name: The strongly connected components are the same in a directed graph and its reverse
+title: The strongly connected components are the same in a directed graph and its reverse
 tags:
   - maths
 type: lemma

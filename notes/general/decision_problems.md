@@ -6,7 +6,7 @@ checked: false
 created: 2023-10-24
 draft: true
 last_edited: 2023-11-11
-name: Decision problems
+title: Decision problems
 tags:
   - programming
 type: definition

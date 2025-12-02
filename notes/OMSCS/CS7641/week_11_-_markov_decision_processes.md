@@ -1,11 +1,11 @@
 ---
 aliases:
 checked: false
-course: '[CS7641 Machine Learning](../cs7641_machine_learning.md)'
+course: 'CS7641 Machine Learning'
 created: 2024-04-03
 draft: false
 last_edited: 2024-04-03
-name: Week 11 - Markov Decision Processes
+title: Week 11 - Markov Decision Processes
 tags:
   - OMSCS
 type: lecture

@@ -6,7 +6,7 @@ checked: false
 created: 2023-09-03
 draft: false
 last_edited: 2023-11-11
-name: Palindrome
+title: Palindrome
 tags:
   - maths
   - programming

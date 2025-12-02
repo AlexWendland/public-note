@@ -4,7 +4,7 @@ checked: false
 created: 2024-02-02
 draft: false
 last_edited: 2024-02-02
-name: Polynomial kernel (SVMs)
+title: Polynomial kernel (SVMs)
 tags:
   - machine-learning
 type: definition

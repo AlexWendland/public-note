@@ -6,7 +6,7 @@ checked: false
 created: 2023-11-12
 draft: false
 last_edited: 2023-11-12
-name: Arithmetic mean is greater than or equal to the geometric mean
+title: Arithmetic mean is greater than or equal to the geometric mean
 tags:
   - maths
 type: lemma

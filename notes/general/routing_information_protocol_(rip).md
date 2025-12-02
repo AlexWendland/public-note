@@ -5,7 +5,7 @@ checked: false
 created: 2024-06-04
 draft: false
 last_edited: 2024-06-04
-name: Routing Information Protocol (RIP)
+title: Routing Information Protocol (RIP)
 tags:
   - networks
 type: definition
