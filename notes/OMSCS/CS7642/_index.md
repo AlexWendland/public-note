@@ -2,6 +2,8 @@
 aliases:
   - CS7642
 checked: false
+course_code: CS7642
+course_name: Reinforcement Learning
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
@@ -11,8 +13,6 @@ tags:
   - programming
 term: summer
 title: CS7642 Reinforcement Learning
-course_code: CS7642
-course_name: Reinforcement Learning
 type: course
 year: '2025'
 ---

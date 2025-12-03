@@ -2,6 +2,8 @@
 aliases:
   - CS6200
 checked: false
+course_code: CS6210
+course_name: Advanced Operating Systems
 created: 2023-08-26
 draft: false
 last_edited: 2025-12-02
@@ -10,8 +12,6 @@ tags:
   - programming
 term: fall
 title: CS6210 Advanced Operating Systems
-course_code: CS6210
-course_name: Advanced Operating Systems
 type: course
 year: '2023'
 ---

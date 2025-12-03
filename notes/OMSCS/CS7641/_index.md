@@ -3,6 +3,8 @@ aliases:
   - CS7641
   - OMSCS Machine learning
 checked: false
+course_code: CS7641
+course_name: Machine Learning
 created: 2024-01-10
 draft: false
 last_edited: 2024-01-10
@@ -12,8 +14,6 @@ tags:
   - programming
 term: spring
 title: CS7641 Machine Learning
-course_code: CS7641
-course_name: Machine Learning
 type: course
 year: '2024'
 ---
