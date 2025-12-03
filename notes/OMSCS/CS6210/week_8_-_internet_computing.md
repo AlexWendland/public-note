@@ -15,7 +15,7 @@ week: 8
 
 Normally web based issues are called 'embarrassingly parallel'.
 
-> [!definition] Embarrassingly parallel
+> [!tldr] Embarrassingly parallel
 > These problems can be broken down into easy to do parallel operations, such as accessing email, doing a web search, or downloading files.
 > No two clients rely on each other so all computation can be broken down on the per user level.
 
@@ -126,7 +126,7 @@ Exception: If the queries involve 'significant' write traffic then replication i
 When our system is at full saturation system administrators can decide how to degrade their service.
 The two options are as expected:
 
-- Keep D fixed and lower Q: Keep the quality of the results the same but lower the number we server.
+- Keep D fixed and lower Q: Keep the quality of the results the same but lower the number we serve.
 
 - Lower F and keep Q fixed: Degrade the quality of results but keep up with demands.
 
@@ -258,7 +258,9 @@ The goal is to reduce load on origin servers and improve latency by serving cont
 
 When a user requests a file (e.g., `http://example.com/image.jpg`), how do we know which CDN servers have cached it?
 We need a way to:
+
 1. **Store** information about which servers have cached which content
+
 2. **Retrieve** this information quickly when a user makes a request
 
 This is solved using a distributed hash table (DHT) as a directory service.

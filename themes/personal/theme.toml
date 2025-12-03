@@ -1,0 +1,12 @@
+name = "Personal"
+license = "MIT"
+licenselink = ""
+description = "Custom personal theme with Tailwind CSS"
+homepage = ""
+tags = ["tailwind", "minimal", "personal"]
+features = []
+min_version = "0.146.0"
+
+[author]
+  name = "Alex Wendland"
+  homepage = "https://awendland.co.uk"

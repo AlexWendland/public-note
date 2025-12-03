@@ -41,6 +41,13 @@
   scripts.admin.exec = "uv run scripts/admin.py";
   scripts.undraft.exec = "uv run scripts/undraft.py";
 
+  scripts.hugo-dev.exec = ''
+    echo "Starting Hugo dev server with personal theme..."
+    echo "Site will be available at http://localhost:1313"
+    echo "Press Ctrl+C to stop"
+    hugo server --theme hugo-admonitions,personal -D
+  '';
+
   scripts.excalidraw.exec = ''
     echo "Starting Excalidraw on http://localhost:5173"
     echo "Save your .excalidraw files to the excalidraw/ directory"

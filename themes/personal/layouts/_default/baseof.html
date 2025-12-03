@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+
+    {{- /* Process Tailwind CSS with PostCSS */ -}}
+    {{- $styles := resources.Get "css/main.css" | postCSS -}}
+    {{- if hugo.IsProduction -}}
+        {{- $styles = $styles | minify | fingerprint -}}
+    {{- end -}}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+
+    {{- /* Math support if enabled */ -}}
+    {{- if .Site.Params.math -}}
+        {{- partial "math.html" . -}}
+    {{- end -}}
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+    {{- partial "header.html" . -}}
+
+    <main class="container mx-auto px-4 py-8">
+        {{- block "main" . }}{{- end }}
+    </main>
+
+    {{- partial "footer.html" . -}}
+</body>
+</html>

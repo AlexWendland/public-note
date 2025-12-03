@@ -1,0 +1,33 @@
+{{ define "main" }}
+<article class="max-w-4xl mx-auto">
+    <header class="mb-8">
+        <h1 class="text-4xl font-bold mb-2">{{ .Title }}</h1>
+
+        {{- if .Date -}}
+        <div class="text-sm text-gray-600 dark:text-gray-400">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date.Format "January 2, 2006" }}
+            </time>
+            {{- with .Params.last_edited -}}
+            <span class="mx-2">•</span>
+            Updated: {{ . }}
+            {{- end -}}
+        </div>
+        {{- end -}}
+
+        {{- with .Params.tags -}}
+        <div class="flex flex-wrap gap-2 mt-4">
+            {{- range . -}}
+            <span class="px-2 py-1 text-xs bg-gray-200 dark:bg-gray-700 rounded">
+                {{ . }}
+            </span>
+            {{- end -}}
+        </div>
+        {{- end -}}
+    </header>
+
+    <div class="prose dark:prose-invert max-w-none">
+        {{ .Content }}
+    </div>
+</article>
+{{ end }}
