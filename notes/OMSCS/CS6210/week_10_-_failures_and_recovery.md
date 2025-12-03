@@ -4,7 +4,7 @@ checked: false
 course_code: CS6210
 course_name: Advanced Operating Systems
 created: '2025-11-30'
-draft: true
+draft: false
 last_edited: '2025-11-30'
 tags:
   - OMSCS

@@ -11,7 +11,6 @@ from rich.table import Table
 
 from note_helper.models import MarkdownSection, NoteFile
 from note_helper.read_note import read_note_file
-from note_helper.write_note import write_note_file
 
 console = Console()
 
@@ -137,7 +136,7 @@ def create_lecture_file(name: str, week: str, course: CourseInfo) -> Path:
     note_file = NoteFile(file_path=str(file_path), metadata=metadata, sections=sections)
 
     # Write the file
-    write_note_file(note_file)
+    note_file.write()
     console.print(f"[green]✓ Created lecture file: {file_path}[/green]")
 
     return file_path

@@ -1,4 +1,4 @@
-from collections.abc import Generator
+from collections.abc import Iterator
 from pathlib import Path
 from typing import Any, TextIO
 
@@ -137,14 +137,10 @@ def is_title(line: str) -> bool:
     return line[1] in ["#", " "]
 
 
-EXCLUDED_DIRECTORIES = [
-    "Excalidraw",
-    "scripts",
-    ".obsidian",
-]
+EXCLUDED_DIRECTORIES: list[str] = []
 
 
-def get_note_files(templates: bool = True) -> Generator[str]:
+def get_note_files(templates: bool = True) -> Iterator[str]:
     """
     Gets all note files in the repository. It skips over some common files you will want to ignore.
 

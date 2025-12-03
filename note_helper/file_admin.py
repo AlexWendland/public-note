@@ -4,12 +4,12 @@ from pathlib import Path
 
 from git import Repo
 
-from note_helper import constants, file_admin, models, read_note, write_note
+from note_helper import constants, file_admin, models, read_note
 
 logger = logging.getLogger(__name__)
 
 # Migration date to skip (when files were moved/frontmatter was reformatted)
-MIGRATION_DATE = datetime.date(2025, 12, 2)
+MIGRATION_DATE = datetime.date(2025, 12, 3)
 
 
 def update_last_edited(note_file: models.NoteFile):
@@ -113,4 +113,4 @@ def run_last_updated_check():
     for file in read_note.get_note_files(templates=False):
         note_file = read_note.read_note_file(str(file))
         file_admin.update_last_edited(note_file)
-        write_note.write_note_file(note_file)
+        note_file.write()

@@ -8,7 +8,6 @@ from unittest.mock import patch
 from note_helper.file_admin import update_last_edited
 from note_helper.models import MarkdownSection, NoteFile
 from note_helper.read_note import read_note_file
-from note_helper.write_note import write_note_file
 
 
 def test_migration_date_skipped_in_last_edited():
@@ -28,7 +27,7 @@ def test_migration_date_skipped_in_last_edited():
             metadata=metadata,
             sections=[MarkdownSection(title="Test", depth=1, lines=[])],
         )
-        write_note_file(note)
+        note.write()
 
         # Mock get_last_edited to return the migration date
         migration_date = datetime.date(2025, 12, 1)
@@ -66,10 +65,10 @@ def test_non_migration_date_updates_last_edited():
             metadata=metadata,
             sections=[MarkdownSection(title="Test", depth=1, lines=[])],
         )
-        write_note_file(note)
+        note.write()
 
         # Mock get_last_edited to return a different date (not migration date)
-        new_date = datetime.date(2025, 12, 3)
+        new_date = datetime.date(2025, 12, 4)
         with patch("note_helper.file_admin.get_last_edited") as mock_get_last_edited:
             mock_get_last_edited.return_value = new_date
 
@@ -102,7 +101,7 @@ def test_last_edited_handles_string_dates():
             metadata=metadata,
             sections=[MarkdownSection(title="Test", depth=1, lines=[])],
         )
-        write_note_file(note)
+        note.write()
 
         # Mock get_last_edited to return a newer date (after migration date to avoid skip)
         new_date = datetime.date(2025, 12, 15)
@@ -117,7 +116,7 @@ def test_last_edited_handles_string_dates():
             update_last_edited(note)
 
             # Write back to file to persist the change
-            write_note_file(note)
+            note.write()
 
             # Re-read and verify it was updated
             note = read_note_file(tmp_path)
@@ -149,7 +148,7 @@ def test_last_edited_not_downgraded():
             metadata=metadata,
             sections=[MarkdownSection(title="Test", depth=1, lines=[])],
         )
-        write_note_file(note)
+        note.write()
 
         # Mock get_last_edited to return an older date
         old_date = datetime.date(2025, 9, 1)

@@ -4,7 +4,6 @@ import tempfile
 from pathlib import Path
 
 from note_helper.models import MarkdownSection, NoteFile
-from note_helper.write_note import write_note_file
 
 
 def test_frontmatter_is_alphabetically_sorted():
@@ -32,7 +31,7 @@ def test_frontmatter_is_alphabetically_sorted():
             sections=[MarkdownSection(title="Test", depth=1, lines=[])],
         )
 
-        write_note_file(note)
+        note.write()
 
         # Read the file and check frontmatter order
         with Path(tmp_path).open() as f:
@@ -78,7 +77,7 @@ def test_none_values_write_as_blank():
             sections=[MarkdownSection(title="Test", depth=1, lines=[])],
         )
 
-        write_note_file(note)
+        note.write()
 
         # Read and verify
         with Path(tmp_path).open() as f:
@@ -114,7 +113,7 @@ def test_multiline_metadata_values_preserved():
             sections=[MarkdownSection(title="Test", depth=1, lines=["Line 1", "Line 2"])],
         )
 
-        write_note_file(note)
+        note.write()
 
         # Read back and verify structure
         with Path(tmp_path).open() as f:

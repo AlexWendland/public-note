@@ -4,7 +4,7 @@ checked: false
 course_code: CS7642
 course_name: Reinforcement Learning
 created: 2025-05-22
-draft: true
+draft: false
 last_edited: 2025-05-22
 tags:
   - OMSCS

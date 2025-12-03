@@ -13,6 +13,7 @@ dependencies = [
     "gitpython>=3.1.40",
     "rich>=14.2.0",
     "questionary>=2.1.1",
+    "textual>=6.7.1",
 ]
 
 [project.optional-dependencies]
