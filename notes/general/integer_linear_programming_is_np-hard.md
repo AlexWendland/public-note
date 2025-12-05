@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-11-12
 draft: false
-last_edited: 2023-11-12
+last_edited: 2025-12-05
 tags:
   - maths
 title: Integer linear programming is NP-hard
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > [integer linear programming](integer_linear_programming_problem.md) is [NP-hard](np-hard.md).
 
 # Proof

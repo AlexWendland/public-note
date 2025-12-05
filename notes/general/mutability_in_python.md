@@ -4,7 +4,7 @@ aliases:
 checked: false
 created: 2023-07-17
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - programming
   - python
@@ -70,7 +70,7 @@ print("After function: ", greeting)  # After function: ['Hello', 'world']
 
 ```
 
-> [!Warning] Beware [side effects](side_effect.md)!
+> [!warning] Beware [side effects](side_effect.md)!
 > When passing a [mutable](mutability.md) argument to a function. This function can alter the argument causing an intended [side effect](side_effect.md) of that function. It is [good practice](function_conventions.md#have-no-side-effects) to not have [side effects](side_effect.md) of your function and to not use [input parameters as the functions output](function_conventions.md#dont-use-input-arguments-to-output-the-result).
 
 # Mutable and Immutable types in python

@@ -3,7 +3,7 @@ aliases: []
 checked: false
 created: 2023-04-20
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - programming
 title: Two's complement
@@ -95,7 +95,7 @@ $$
 \end{align*}
 $$
 
-> [!Note] Over flow detection
+> [!note] Over flow detection
 > You can use the sign digit to detect overflow i.e. if you add two positive numbers the outcome should be positive!
 
 # Comparison

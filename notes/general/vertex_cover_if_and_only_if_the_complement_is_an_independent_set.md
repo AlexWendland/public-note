@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-11-03
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
   - graph-theory
@@ -12,7 +12,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > Suppose we have an [undirected graph](graph.md) $G = (V,E)$ with $C \subset V$. Then $C$ is a [vertex cover](vertex_cover.md) if and only if $\overline{C} := V \backslash C$ is an [independent set](independent_set_(graph).md).
 
 # Proof

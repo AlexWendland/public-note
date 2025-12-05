@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-11-03
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
 title: Minimum vertex cover problem is NP-hard
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > [Minimum vertex cover problem](minimum_vertex_cover_problem.md) is [NP-hard](np-hard.md).
 
 # Proof

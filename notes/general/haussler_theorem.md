@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2024-02-16
 draft: false
-last_edited: 2024-02-16
+last_edited: 2025-12-05
 tags:
   - machine-learning
 title: Haussler Theorem
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Haussler Theorem
+> [!lemma] Haussler Theorem
 > Suppose we are in the [modelling framework](modelling_framework.md) with finite [hypothesis space](modelling_paradigm.md) $H$ and [probability distribution](probability_distribution.md) $\mathbb{D}$ on $A$. Set $0 \leq \epsilon \leq 1$. Let our [training data](training_data.md) $T$ be $m$ [i.i.d.](independent_identically_distributed_samples.md) samples from $\mathbb{D}$ with associated correct answers. For any hypothesis $h \in H$ which is [consistent](consistent_learner.md) with $T$ we have a bound on the [true error](true_error.md)
 > $$\mathbb{P}[Error_{\mathbb{D}}(h) > \epsilon] \leq \vert H \vert e^{-m\epsilon}.$$
 

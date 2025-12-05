@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-11-03
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - graph-theory
   - programming
@@ -12,7 +12,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > [Vertex cover of a given size](vertex_cover_of_a_given_size.md) is [NP-complete](np-complete.md).
 
 # Proof

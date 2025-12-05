@@ -6,7 +6,7 @@ aliases:
 checked: false
 created: 2023-08-28
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
 title: Logarithms
@@ -15,7 +15,7 @@ type: function
 
 A logarithm is the inverse operation to exponentiation. Given a base $b > 0$ and $b \not = 1$, the logarithm $\log_b(a)$ is the exponent $x$ you would raise $b$ to in order to get $a$.
 
-> [!tldr] Logarithm
+> [!definition] Logarithm
 > This is defined as:
 > $$ b^x = a \iff \log_b(a) = x.$$
 # Interchange of bases
@@ -55,6 +55,6 @@ The inverse also holds
 $$ \log(A) - \log(B) = \log(\frac{A}{B}) \ \mbox{ which is similar to } \ \frac{e^A}{e^B} = e^{A-B}.$$
 # Taylor expansion
 
-> [!important] Proposition
+> [!lemma] Proposition
 > The [Taylor series](taylor_expansion.md) for $\ln(x)$ is as follows
 > $$\ln(x) = \sum_{n=1}^{\infty} (-1)^{n-1} \frac{(x-1)^n}{n}.$$

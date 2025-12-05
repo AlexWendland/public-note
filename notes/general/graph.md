@@ -9,14 +9,14 @@ aliases:
 checked: false
 created: 2023-08-28
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
   - graph-theory
 title: Graph
 type: definition
 ---
-> [!tldr] Graph
+> [!definition] Graph
 > A simple undirected graph is tuple $V$ the *vertex set* and $E \subset V \times V$  an *edge set*. This is normally referred to as $G = (V, E)$. As this is undirected an edge $e = (x,y)$ is the same as the edge $e = (y,x)$, so if we define an [equivalence relation](equivalence_relation.md) $(x,y) \sim (y,x)$ for all $x,y \in V$ then it is fairer to say $E \subset V \times V / \sim$.
 
 ## Representations

@@ -4,7 +4,7 @@ aliases:
 checked: false
 created: 2023-10-02
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - programming
 title: Max flow problem
@@ -12,7 +12,7 @@ type: problem
 ---
 # Statement
 
-> [!tldr] Max-flow problem
+> [!definition] Max-flow problem
 > Given a [flow network](flow_network.md) $(G, c, s, t)$ what is the max value a [flow](flow.md) on this network can have?
 
 # Solutions

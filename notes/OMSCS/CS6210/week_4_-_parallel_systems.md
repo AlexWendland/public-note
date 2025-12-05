@@ -5,7 +5,7 @@ course_code: CS6210
 course_name: Advanced Operating Systems
 created: 2025-09-17
 draft: false
-last_edited: 2025-09-17
+last_edited: 2025-12-05
 tags:
   - OMSCS
 title: Week 4 - Parallel Systems
@@ -112,7 +112,7 @@ This is a synchronization primitive where threads wait until all threads have re
 
 ## Lock implementations
 
-> [!reminder] Atomic Operations
+> [!note] Atomic Operations
 > These are operations which are guaranteed to not be interrupted when running on the CPU.
 
 When we want to implement a exclusive lock, read and write atomic operations are not enough and we need a RMW (read modify write) atomic operation.

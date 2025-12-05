@@ -5,7 +5,7 @@ course_code: CS6215
 course_name: Introduction to Graduate Algorithms
 created: 2023-09-05
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - OMSCS
 title: Week 3 - Fast Integer multiplication
@@ -13,7 +13,7 @@ type: lecture
 week: '3'
 ---
 
-> [!tldr] Multiplying $n$-bit integers problem
+> [!definition] Multiplying $n$-bit integers problem
 > Given $n$-bit integers $x$ and $y$ what is $z = xy$?
 
 Naïve approaches will do this in $O(n^2)$ time but you can do it faster with [divide and conquer](../../general/divide_and_conquer_algorithms.md).

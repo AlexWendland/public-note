@@ -4,7 +4,7 @@ aliases:
 checked: false
 created: 2023-11-02
 draft: false
-last_edited: 2023-11-13
+last_edited: 2025-12-05
 tags:
   - programming
 title: Knapsack-search (without replacement)
@@ -12,7 +12,7 @@ type: problem
 ---
 # Statement
 
-> [!tldr] Knapsack-search (without replacement)
+> [!definition] Knapsack-search (without replacement)
 > Given $n$ objects $o_i$ with weight $w_i$ and value $v_i$, and a goal $g$ is there a bag that has weight less than $B$ but value at least $g$. The solution to this is a subset of objects $S \subset \{1, 2, \ldots, n\}$ such that:
 >
 > - $\sum_{i \in S} w_i \leq B$, and

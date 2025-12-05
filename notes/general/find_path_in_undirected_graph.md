@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-09-28
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - programming
 title: Find path in undirected graph
@@ -11,7 +11,7 @@ type: problem
 ---
 # Statement
 
-> [!tldr] Find [path](path_(graph).md) between vertices in an [undirected graph](graph.md)
+> [!definition] Find [path](path_(graph).md) between vertices in an [undirected graph](graph.md)
 > Given an [undirected graph](graph.md) $G = (V,E)$ and two vertices $a,b \in V$. How can we find a [path](path_(graph).md) in $G$ between them. Sometime we will also have a weighting $W: E \rightarrow D$ and we want to minimise the path length.
 
 ## Solutions

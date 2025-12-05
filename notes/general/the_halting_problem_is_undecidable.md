@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-11-13
 draft: false
-last_edited: 2023-11-13
+last_edited: 2025-12-05
 tags:
   - maths
 title: The Halting problem is undecidable
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > The [Halting problem](halting_problem.md) is [undecidable](undecidable_problem.md).
 
 # Proof

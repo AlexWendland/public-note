@@ -7,13 +7,13 @@ aliases:
 checked: false
 created: 2023-10-10
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - programming
 title: Hash function
 type: definition
 ---
-> [!tldr] Hash function
+> [!definition] Hash function
 > A *hash function* $h$ is a function that takes an input in a given domain and returns a fixed-size string of [bytes](byte.md) $h: K \rightarrow B$, this output is normally called the hash value. It should ideally be:
 >
 > - Uniformly distributed over its output,

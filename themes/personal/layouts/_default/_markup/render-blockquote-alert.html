@@ -1,0 +1,65 @@
+{{- /* layouts/_default/_markup/render-blockquote-alert.html */}}
+{{- /* Adapted from hugo-admonitions by oreo-dtx-lab (MIT License) */}}
+{{- /* https://github.com/oreo-dtx-lab/hugo-admonitions */}}
+
+{{- if eq .Type "alert" -}}
+  {{- /* This is an Admonition */}}
+
+  {{- /* Map alert type to icon */}}
+  {{- $icons := dict
+    "note"       "file-pen-solid.svg"
+    "example"    "person-chalkboard-solid.svg"
+    "important"  "circle-exclamation-solid.svg"
+    "warning"    "triangle-exclamation-solid.svg"
+    "lemma"      "lightbulb-solid.svg"
+    "definition" "file-lines-solid.svg"
+    "quote"      "quote-right-solid.svg"
+    "question"   "circle-question-solid.svg"
+  }}
+
+  {{- /* Determine type and title */}}
+  {{- $type := cond (index $icons .AlertType) .AlertType "note" }}
+  {{- $title := or .AlertTitle (title $type) }}
+  {{- $iconFile := index $icons $type }}
+  {{- $partial := printf "admonitions/icons/%s" $iconFile }}
+
+  {{- /* Check if icon exists */}}
+  {{- if not (templates.Exists (printf "partials/%s" $partial)) }}
+    {{- errorf "The blockquote render hook was unable to find the icon partial at layouts/partials/%s for admonition type '%s'." $partial $type }}
+  {{- end }}
+
+  {{- /* Check if .AlertSign exists to determine if it's foldable */}}
+  {{- if .AlertSign }}
+    {{- /* Foldable Admonition */}}
+    <details class="admonition admonition-{{ $type }}">
+      <summary class="admonition-header">
+        {{- partialCached $partial . }}
+        <span>{{ $title }}</span>
+      </summary>
+      {{- with .Text }}
+      <div class="admonition-content">
+        {{ . }}
+      </div>
+      {{- end }}
+    </details>
+  {{- else }}
+    {{- /* Non-Foldable Admonition */}}
+    <div class="admonition admonition-{{ $type }}">
+      <div class="admonition-header">
+        {{- partialCached $partial . }}
+        <span>{{ $title }}</span>
+      </div>
+      {{- with .Text }}
+      <div class="admonition-content">
+        {{ . }}
+      </div>
+      {{- end }}
+    </div>
+  {{- end }}
+
+{{- else -}}
+  {{- /* This is a standard blockquote - use default styling from main.css */}}
+  <blockquote>
+    {{ .Text }}
+  </blockquote>
+{{- end -}}

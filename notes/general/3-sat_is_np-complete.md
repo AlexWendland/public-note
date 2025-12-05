@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-11-03
 draft: false
-last_edited: 2023-11-12
+last_edited: 2025-12-05
 tags:
   - programming
 title: 3-SAT is NP-complete
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > [3-SAT](k-satisfiability_problem_(k-sat_problem).md) is [NP-complete](np-complete.md).
 
 # Proof
@@ -53,7 +53,7 @@ This proves that [3-SAT](k-satisfiability_problem_(k-sat_problem).md) is [NP-com
 
 ## Claim 1
 
-> [!important] Claim 1
+> [!lemma] Claim 1
 > A clause $C$ is satisfiable if and only if it's [clause reduction](3-sat_is_np-complete.md#clause-reduction) $C'$ is satisfiable.
 
 ## Proof of claim 1

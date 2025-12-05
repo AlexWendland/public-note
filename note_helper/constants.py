@@ -8,3 +8,15 @@ CHECKED_FIELD = "checked"
 LAST_EDITED_FIELD = "last_edited"
 INDEX_FILES = ["Git Index", "Maths Index", "Programming Index", "Python Index"]
 ALIAS_FIELD = "aliases"
+
+# Allowed admonition types for the personal theme
+ALLOWED_ADMONITIONS = {
+    "note",
+    "example",
+    "important",
+    "warning",
+    "lemma",
+    "definition",
+    "quote",
+    "question",
+}

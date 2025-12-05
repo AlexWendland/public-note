@@ -3,13 +3,13 @@ aliases:
 checked: false
 created: 2023-09-27
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
 title: Cycles in a graph via the DFS tree
 type: lemma
 ---
-> [!important] Lemma
+> [!lemma] Lemma
 > A [directed graph](directed_graph.md) $G$ has a cycle if and only if its [DFS tree](dfs_tree_(algorithm).md) has a back edge.
 
 ## Proof

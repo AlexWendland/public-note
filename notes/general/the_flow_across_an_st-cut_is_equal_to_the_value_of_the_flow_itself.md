@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-10-20
 draft: false
-last_edited: 2023-11-13
+last_edited: 2025-12-05
 tags:
   - programming
 title: The flow across an st-cut is equal to the value of the flow itself
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > Let $(G, c, s, t)$ be a [flow network](flow_network.md) with a [flow](flow.md) $f$ and an [st-cut](st-cut.md) $(S,T)$. Then the flow across $(S,T)$
 > $$flow^f(S,T) := \left ( \sum_{\substack{(s',t') \in E\\ s' \in S, t' \in T}} f(s',t') \right ) - \left ( \sum_{\substack{(t',s') \in E\\ s' \in S, t' \in T}} f(t',s') \right )$$
 > is equal to the $size(f)$

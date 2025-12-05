@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2024-02-20
 draft: false
-last_edited: 2024-02-20
+last_edited: 2025-12-05
 tags:
   - probability
 title: Bayes rule
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Bayes Rule
+> [!lemma] Bayes Rule
 > For two events $A$ and $B$ we have following equality on their [conditional probabilities](conditional_probability.md)
 > $$\mathbb{P}[A \vert B] = \frac{\mathbb{P}[B \vert A] \ \mathbb{P}[A]}{\mathbb{P}[B]}$$
 

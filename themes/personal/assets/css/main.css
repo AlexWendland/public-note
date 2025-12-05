@@ -1,3 +1,319 @@
 @import "tailwindcss";
 
-@config '../../tailwind.config.js';
+@layer base {
+  /* Headings */
+  h1 {
+    @apply text-4xl font-bold text-mauve mb-6 mt-8;
+  }
+
+  h2 {
+    @apply text-3xl font-bold text-blue mb-4 mt-6;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold text-sapphire mb-3 mt-5;
+  }
+
+  h4 {
+    @apply text-xl font-semibold text-sky mb-3 mt-4;
+  }
+
+  h5 {
+    @apply text-lg font-semibold text-teal mb-2 mt-3;
+  }
+
+  h6 {
+    @apply text-base font-semibold text-green mb-2 mt-3;
+  }
+
+  /* Paragraphs and text */
+  p {
+    @apply text-text mb-4 leading-relaxed;
+  }
+
+  /* Links */
+  a {
+    @apply text-sapphire hover:text-sky transition-colors underline decoration-sapphire/30 hover:decoration-sky/50;
+  }
+
+  /* Lists */
+  ul {
+    @apply list-disc list-inside mb-4 space-y-2 text-text;
+  }
+
+  ol {
+    @apply list-decimal list-inside mb-4 space-y-2 text-text;
+  }
+
+  li {
+    @apply ml-4;
+  }
+
+  /* Nested lists */
+  ul ul, ol ul {
+    @apply mt-2 mb-2;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    @apply border-l-4 border-mauve bg-surface-0 pl-4 py-2 mb-4 italic text-subtext-1;
+  }
+
+  /* Code */
+  code {
+    @apply bg-surface-0 text-pink px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+
+  /* Code blocks */
+  pre {
+    @apply bg-mantle border border-surface-0 rounded-lg p-4 mb-4 overflow-x-auto;
+  }
+
+  pre code {
+    @apply bg-transparent text-text p-0;
+  }
+
+  /* Horizontal rules */
+  hr {
+    @apply border-surface-1 my-8;
+  }
+
+  /* Tables */
+  table {
+    @apply w-full mb-4 border-collapse;
+  }
+
+  th {
+    @apply bg-surface-0 text-mauve font-semibold p-3 text-left border border-surface-1;
+  }
+
+  td {
+    @apply p-3 border border-surface-1 text-text;
+  }
+
+  tr:nth-child(even) {
+    @apply bg-surface-0/50;
+  }
+
+  /* Strong and emphasis */
+  strong {
+    @apply font-bold text-lavender;
+  }
+
+  em {
+    @apply italic text-subtext-1;
+  }
+}
+
+@layer components {
+  /* Admonition Base Styles */
+  .admonition {
+    @apply my-4 rounded-lg overflow-hidden border-l-4;
+  }
+
+  .admonition-header {
+    @apply px-4 py-2 flex items-center font-semibold text-lg;
+  }
+
+  .admonition-header svg {
+    @apply w-5 h-5 mr-2 flex-shrink-0;
+  }
+
+  .admonition-header span {
+    @apply flex-grow;
+  }
+
+  .admonition-content {
+    @apply px-4 py-3 bg-surface-0 text-text;
+  }
+
+  /* Nested elements in admonition content */
+  .admonition-content p {
+    @apply mb-2 last:mb-0;
+  }
+
+  .admonition-content ul,
+  .admonition-content ol {
+    @apply mb-2 last:mb-0;
+  }
+
+  .admonition-content code {
+    @apply bg-mantle;
+  }
+
+  .admonition-content pre {
+    @apply bg-mantle mb-2 last:mb-0;
+  }
+
+  .admonition-content blockquote {
+    @apply border-l-2 mb-2 last:mb-0;
+  }
+
+  /* Foldable admonitions */
+  details.admonition summary {
+    @apply cursor-pointer list-none;
+  }
+
+  details.admonition summary::-webkit-details-marker {
+    @apply hidden;
+  }
+
+  details.admonition summary.admonition-header::after {
+    content: "›";
+    @apply inline-block ml-2 font-bold transition-transform;
+  }
+
+  details.admonition[open] summary.admonition-header::after {
+    @apply rotate-90;
+  }
+
+  /* Admonition Type Colors - Catppuccin Mocha */
+
+  /* Note - Blue (information) */
+  .admonition-note {
+    @apply border-blue bg-blue/10;
+  }
+
+  .admonition-note .admonition-header {
+    @apply text-blue;
+  }
+
+  .admonition-note .admonition-header svg {
+    @apply fill-blue;
+  }
+
+  /* Example - Peach (examples and demonstrations) */
+  .admonition-example {
+    @apply border-peach bg-peach/10;
+  }
+
+  .admonition-example .admonition-header {
+    @apply text-peach;
+  }
+
+  .admonition-example .admonition-header svg {
+    @apply fill-peach;
+  }
+
+  /* Important - Mauve (emphasis) */
+  .admonition-important {
+    @apply border-mauve bg-mauve/10;
+  }
+
+  .admonition-important .admonition-header {
+    @apply text-mauve;
+  }
+
+  .admonition-important .admonition-header svg {
+    @apply fill-mauve;
+  }
+
+  /* Warning - Yellow (caution) */
+  .admonition-warning {
+    @apply border-yellow bg-yellow/10;
+  }
+
+  .admonition-warning .admonition-header {
+    @apply text-yellow;
+  }
+
+  .admonition-warning .admonition-header svg {
+    @apply fill-yellow;
+  }
+
+  /* Lemma - Lavender (mathematical statements) */
+  .admonition-lemma {
+    @apply border-lavender bg-lavender/10;
+  }
+
+  .admonition-lemma .admonition-header {
+    @apply text-lavender;
+  }
+
+  .admonition-lemma .admonition-header svg {
+    @apply fill-lavender;
+  }
+
+  /* Definition - Teal (definitional/foundational) */
+  .admonition-definition {
+    @apply border-teal bg-teal/10;
+  }
+
+  .admonition-definition .admonition-header {
+    @apply text-teal;
+  }
+
+  .admonition-definition .admonition-header svg {
+    @apply fill-teal;
+  }
+
+  /* Quote - Sapphire (quotations) */
+  .admonition-quote {
+    @apply border-sapphire bg-sapphire/10;
+  }
+
+  .admonition-quote .admonition-header {
+    @apply text-sapphire;
+  }
+
+  .admonition-quote .admonition-header svg {
+    @apply fill-sapphire;
+  }
+
+  /* Question - Sky (questions and inquiries) */
+  .admonition-question {
+    @apply border-sky bg-sky/10;
+  }
+
+  .admonition-question .admonition-header {
+    @apply text-sky;
+  }
+
+  .admonition-question .admonition-header svg {
+    @apply fill-sky;
+  }
+}
+
+@theme {
+  --font-sans: "Comic Neue", sans-serif;
+
+  /* Catppuccin Mocha Color Palette */
+  /* https://catppuccin.com/ */
+  /* Copyright (c) 2021 Catppuccin - MIT License */
+
+  /* Catppuccin Mocha - Base colors */
+  --color-base: #1e1e2e;
+  --color-mantle: #181825;
+  --color-crust: #11111b;
+
+  /* Catppuccin Mocha - Surface colors */
+  --color-surface-0: #313244;
+  --color-surface-1: #45475a;
+  --color-surface-2: #585b70;
+
+  /* Catppuccin Mocha - Overlay colors */
+  --color-overlay-0: #6c7086;
+  --color-overlay-1: #7f849c;
+  --color-overlay-2: #9399b2;
+
+  /* Catppuccin Mocha - Text colors */
+  --color-subtext-0: #a6adc8;
+  --color-subtext-1: #bac2de;
+  --color-text: #cdd6f4;
+
+  /* Catppuccin Mocha - Accent colors */
+  --color-rosewater: #f5e0dc;
+  --color-flamingo: #f2cdcd;
+  --color-pink: #f5c2e7;
+  --color-mauve: #cba6f7;
+  --color-red: #f38ba8;
+  --color-maroon: #eba0ac;
+  --color-peach: #fab387;
+  --color-yellow: #f9e2af;
+  --color-green: #a6e3a1;
+  --color-teal: #94e2d5;
+  --color-sky: #89dceb;
+  --color-sapphire: #74c7ec;
+  --color-blue: #89b4fa;
+  --color-lavender: #b4befe;
+}

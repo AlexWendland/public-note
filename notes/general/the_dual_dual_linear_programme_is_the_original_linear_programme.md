@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-11-09
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
 title: The dual dual linear programme is the original linear programme
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > For a [linear programme](linear_programme.md) given by $A, b,$ and $c$ if we take the [dual linear programme](dual_linear_programme.md) and then the [dual linear programme](dual_linear_programme.md) of that we get back to the original [linear programme](linear_programme.md).
 
 # Proof

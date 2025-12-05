@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-11-10
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
 title: Strong duality theorem (linear programme)
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > A [linear programme](linear_programme.md) is feasible and bounded if and only if the [dual linear programme](dual_linear_programme.md) is feasible and bounded.
 
 # Proof

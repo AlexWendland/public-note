@@ -7,11 +7,11 @@ aliases:
 checked: false
 created: 2023-09-26
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - programming
 title: Directed acyclic graph (DAG)
 type: definition
 ---
-> [!tldr] Directed acyclic graph (DAG)
+> [!definition] Directed acyclic graph (DAG)
 > A [directed](directed_graph.md) [acyclic](acyclic_graph.md) graph.

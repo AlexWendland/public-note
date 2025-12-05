@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2025-05-20
 draft: false
-last_edited: 2025-05-20
+last_edited: 2025-12-05
 tags:
   - maths
   - reinforcement-learning
@@ -12,7 +12,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > Given a [Markov decision process](markov_decision_process.md) $M$, let $V_t(s)$ be the value estimate for a state $s$ for the $t$'th state. If we update this using the following update rule:
 > $$
 > V_t(s) = V_{t-1} + \alpha_t (G_t(s) - V_{t-1}(s))

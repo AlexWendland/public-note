@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-11-09
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
 title: Unbounded linear programmes have infeasible duals
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > If a [linear programme](linear_programme.md) is [unbounded](unbounded_linear_programme.md) then its [dual linear programme](dual_linear_programme.md) is [infeasible](infeasible_linear_programme.md).
 
 # Proof

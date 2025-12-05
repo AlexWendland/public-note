@@ -3,13 +3,13 @@ aliases:
 checked: false
 created: 2023-10-09
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
 title: Euler's totient function
 type: definition
 ---
-> [!tldr] Euler's totient function
+> [!definition] Euler's totient function
 > For a natural number $n \in \mathbb{N}$ define *Eulers totient function* as
 > $$\phi(n) = \big \vert \left \{x \in \mathbb{N} \ \vert \ 0 < x \leq n, \ gcd(x,n) = 1 \right \} \   \big \vert.$$
 

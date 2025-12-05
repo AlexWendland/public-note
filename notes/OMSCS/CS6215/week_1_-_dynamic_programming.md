@@ -5,7 +5,7 @@ course_code: CS6215
 course_name: Introduction to Graduate Algorithms
 created: 2023-08-26
 draft: false
-last_edited: 2023-12-03
+last_edited: 2025-12-05
 tags:
   - OMSCS
 title: Week 1 - Dynamic Programming
@@ -38,7 +38,7 @@ week: 1
 
 Lets try to do this [iteratively](../../general/iterative_algorithms.md) instead of [recursively](../../general/recursion.md).
 
-> [!Example] [Fibonacci sequence](../../general/fibonacci_sequence.md) by [dynamic programming](dynamic_programming.md)
+> [!example] [Fibonacci sequence](../../general/fibonacci_sequence.md) by [dynamic programming](dynamic_programming.md)
 >
 >Instead of starting at the end of the [Fibonacci numbers](../../general/fibonacci_sequence.md) this time we will start at the beginning and save past results in an array.
 > ```python
@@ -154,7 +154,7 @@ Therefore we work out that the LIS for this sequence is 6 as that is the maximum
 
 Given two [sequences](../../general/sequence.md) $X =\{x_i\}_{i=1}^n$ and $Y = \{y_i\}_{i=1}^n$ the goals is to find the length of the longest [sequence](../../general/sequence.md) which is a [subsequence](../../general/subsequence.md) of both $X$ and $Y$.
 
-> [!Example] Largest common subsequence
+> [!example] Largest common subsequence
 >
 >Let
 >$$X = BCDBCDA, \mbox{ and } Y=ABECBAB.$$

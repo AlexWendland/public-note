@@ -3,8 +3,7 @@ languageCode: 'en-gb'
 title: "Alex's public notes"
 contentDir: "notes"
 theme:
-  - hugo-admonitions
-  - PaperMod
+  - personal
 
 markup:
   goldmark:

@@ -1,5 +1,6 @@
 import datetime
 import logging
+import re
 from pathlib import Path
 
 from git import Repo
@@ -101,6 +102,50 @@ def log_difference_in_tags(note_file: models.NoteFile, new_tags: list[str], old_
     removed_tags = [tag for tag in old_tags if tag not in new_tags]
     if removed_tags:
         logger.info(f"{note_file.file_path} INFO: Tags removed from file: {removed_tags}")
+
+
+def normalize_admonitions(note_file: models.NoteFile) -> bool:
+    """
+    Normalizes admonition types in note file content.
+    - Converts to lowercase
+    - Checks against ALLOWED_ADMONITIONS
+    - Logs warnings for unknown types
+
+    Returns:
+        True if any changes were made, False otherwise
+    """
+    # Pattern to match admonition callouts: > [!type] or > [!type]+ or > [!type]-
+    admonition_pattern = re.compile(r"> \[!([a-zA-Z]+)\]([+-]?)")
+
+    changes_made = False
+
+    # Iterate through each section and update lines in place
+    for section in note_file.sections:
+        if section.lines is None:
+            continue
+        for i, line in enumerate(section.lines):
+            match = admonition_pattern.search(line)
+            if match:
+                admon_type = match.group(1)
+                fold_marker = match.group(2)  # Can be '+', '-', or ''
+
+                # Normalize to lowercase
+                normalized_type = admon_type.lower()
+
+                # Check if it's in allowed set
+                if normalized_type not in constants.ALLOWED_ADMONITIONS:
+                    logger.warning(f"{note_file.file_path} WARNING: Unknown admonition type '{admon_type}'. ")
+
+                # If case changed, update the line
+                if admon_type != normalized_type:
+                    logger.info(
+                        f"{note_file.file_path} CHANGE: Normalizing admonition type '{admon_type}' to '{normalized_type}'"
+                    )
+                    # Replace in the line
+                    section.lines[i] = admonition_pattern.sub(f"> [!{normalized_type}]{fold_marker}", line)
+                    changes_made = True
+
+    return changes_made
 
 
 def run_last_updated_check():

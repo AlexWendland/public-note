@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2024-02-24
 draft: false
-last_edited: 2024-02-24
+last_edited: 2025-12-05
 tags:
   - probability
 title: If two variables are independent conditional entropy excludes the dependent
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > Suppose we have two [independent](independent_events.md) [random variables](random_variable.md) $X$ and $Y$ over different [domains](function_domain.md) $A$ and $B$. Then the [Conditional entropy](conditional_entropy.md) is excludes the dependent
 > $$H(Y \vert X) = H(Y).$$
 

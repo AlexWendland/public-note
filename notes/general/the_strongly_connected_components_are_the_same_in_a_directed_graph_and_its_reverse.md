@@ -3,14 +3,14 @@ aliases:
 checked: false
 created: 2023-09-28
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
 title: The strongly connected components are the same in a directed graph and its
   reverse
 type: lemma
 ---
-> [!important] Lemma
+> [!lemma] Lemma
 > Let $G = (V,E)$ be a [directed graph](directed_graph.md) and $G^R = (V,E^R)$ be its [reverse](reverse_directed_graph.md). Both $G$ and $G^R$ have the same strongly connected components.
 
 ## Proof

@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-09-28
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - programming
 title: Find connected components in a undirected graph
@@ -11,7 +11,7 @@ type: problem
 ---
 ## Statement
 
-> [!tldr] Find [connected components](connected_components_(graph).md) in an [undirected graph](graph.md)
+> [!definition] Find [connected components](connected_components_(graph).md) in an [undirected graph](graph.md)
 > Given a graph $G = (V,E)$ how can we find a mapping from it's vertices $V$ to the connected components of $G$.
 
 ## Solutions

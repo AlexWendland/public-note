@@ -3,7 +3,7 @@ aliases: []
 checked: false
 created: 2023-07-11
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - programming
   - clean-code
@@ -11,7 +11,7 @@ title: Data - Object Anti-Symmetry
 type: convention
 ---
 
-> [!Quote] Clean Code
+> [!quote] Clean Code
 > [Objects](object.md) hide their data behind abstractions and expose functions that operate on that data. [Data structures](data_structure.md) expose their data and have no meaningful functions.
 
 When we make objects we should have in mind whether this is simply a grouping of data or variables are going to be managed internally and we do not want the outside user to change them.

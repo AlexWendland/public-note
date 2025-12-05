@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-11-09
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
 title: Weak duality theorem (linear programme)
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > Let $x$ be a feasible point for a [linear programme](linear_programme.md) given by $A$, $b$, and $c$. Let $y$ be a feasible point for the [dual linear programme](dual_linear_programme.md) then we have the following inequality
 > $$c^Tx = \sum_j c_j x_j \leq \sum_i b_i y_i = y^Tb.$$
 

@@ -5,7 +5,7 @@ course_code: CS6215
 course_name: Introduction to Graduate Algorithms
 created: 2023-09-05
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - OMSCS
 title: Week 2 - Shortest Paths
@@ -13,7 +13,7 @@ type: lecture
 week: '2'
 ---
 
-> [!tldr] Shortest path problem
+> [!definition] Shortest path problem
 > Given a [directed graph](../../general/directed_graph.md) $(V, E)$ with [edge weights](../../general/edge_weights.md) $w: E \rightarrow \mathbb{R}$ and a start vertex $s \in V$ - the shortest path problem is to find the shortest distance between $s \in V$ and $z \in V$ for every $x$. This is called $\mbox{dist}(z)$ with the formal definition
 > $$\mbox{dist}_s(z) = \min_{\substack{p \mbox{ path}\\ s \mbox{ to } z}} \sum_{e \in p} w(e)$$
 > where $p$ is a [path](../../general/path_(graph).md) that starts at $s$ and ends at $z$.
@@ -69,7 +69,7 @@ If we run to the $\vert V \vert$ case (note before we stopped at $\vert V \vert 
 
 # All-pairs shortest path
 
-> [!tldr] Shortest path problem (all pairs)
+> [!definition] Shortest path problem (all pairs)
 > Given a [directed graph](../../general/directed_graph.md) $(V, E)$ with [edge weights](../../general/edge_weights.md) $w: E \rightarrow \mathbb{R}$  - the shortest path problem is to find the shortest distance between $y,z \in V$ for every $y,z$. This is called $\mbox{dist}(y,z)$ with the formal definition
 > $$\mbox{dist}(y,z) = \min_{\substack{p \mbox{ path}\\ y \mbox{ to } z}} \sum_{e \in p} w(e)$$
 > where $p$ is a [path](../../general/path_(graph).md) that starts at $y$ and ends at $z$.

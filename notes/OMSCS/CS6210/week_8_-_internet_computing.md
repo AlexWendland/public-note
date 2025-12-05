@@ -5,7 +5,7 @@ course_code: CS6210
 course_name: Advanced Operating Systems
 created: 2025-11-20
 draft: false
-last_edited: 2025-11-20
+last_edited: 2025-12-05
 tags:
   - OMSCS
 title: Week 8 - Internet Computing
@@ -15,7 +15,7 @@ week: 8
 
 Normally web based issues are called 'embarrassingly parallel'.
 
-> [!tldr] Embarrassingly parallel
+> [!definition] Embarrassingly parallel
 > These problems can be broken down into easy to do parallel operations, such as accessing email, doing a web search, or downloading files.
 > No two clients rely on each other so all computation can be broken down on the per user level.
 

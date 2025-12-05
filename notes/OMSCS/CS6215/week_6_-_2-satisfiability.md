@@ -5,7 +5,7 @@ course_code: CS6215
 course_name: Introduction to Graduate Algorithms
 created: 2023-09-30
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - OMSCS
 title: Week 6 - 2-Satisfiability
@@ -101,7 +101,7 @@ $\square$
 
 This gives us an easy check for if $f$ is not satisfiable.
 
-> [!important] Lemma
+> [!lemma] Lemma
 > If for some $i$, $x_i$ and $\overline{x_i}$ are in the same [strongly connected component](../../general/strongly_connected_components_(directed_graphs).md) then $f$ is not satisfiable.
 
 ### Proof

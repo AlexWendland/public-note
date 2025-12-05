@@ -4,7 +4,7 @@ aliases:
 checked: false
 created: 2023-04-20
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - programming
   - python
@@ -16,7 +16,7 @@ type: operations
 
 Bitwise operations can apply to the [binary](binary.md) data type but also [integers](integer.md).
 
- > [!Note] Representation of integers in [Python Index](python_index.md)
+ > [!note] Representation of integers in [Python Index](python_index.md)
  > In [python](python_index.md) integers are [unsigned](signed_or_unsigned_integers.md) and stored using [Two's complement](two's_complement.md).
 
 The operations in python are as follows (applied to x = 11 or `0000 1011` and y = 6 or `0000 0110`)

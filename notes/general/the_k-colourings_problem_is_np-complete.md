@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-11-16
 draft: false
-last_edited: 2023-11-18
+last_edited: 2025-12-05
 tags:
   - maths
 title: The k-colourings problem is NP-complete
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > The [k-vertex-colouring problem](k-colourings_problem_(graphs).md) is [NP-complete](np-complete.md).
 
 # Proof

@@ -4,12 +4,12 @@ aliases:
 checked: false
 created: 2023-09-27
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
 title: Strongly connected (directed graphs)
 type: definition
 ---
-> [!tldr] Strongly connected
+> [!definition] Strongly connected
 > Let $G = (V, E)$ be a [directed graph](directed_graph.md). We say two vertices $x,y \in V$ are strongly connected if there exists [paths](path_(graph).md) $x$ to $y$ and $y$ to $x$.
 

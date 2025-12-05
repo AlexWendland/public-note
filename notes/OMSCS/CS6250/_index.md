@@ -1,13 +1,12 @@
 ---
 aliases:
-  - CS7641
-  - OMSCS Machine learning
+  - CS6250
 checked: false
 course_code: CS6250
 course_name: Computer Networks
 created: 2024-01-10
 draft: false
-last_edited: 2024-01-10
+last_edited: 2025-12-05
 tags:
   - OMSCS
   - programming
@@ -16,8 +15,6 @@ title: CS6250 Computer Networks
 type: course
 year: '2024'
 ---
-# CS7641 Machine Learning
-
 This course provides a quick refresh of introductory material, and offers a broad coverage of protocols and algorithms that span across all layers of the Internet protocol stack.
 
 The course begins with an overview of the evolution of the Internet architecture and a short refresh of the transport layer algorithms and protocols such as TCP and congestion control. Next, the course will dive into intradomain/interdomain routing, peering and networks relationships with a follow-up into router design and functionalities. After discussing routing and router technologies, the course will continue with Software Defined Networking technologies and discuss topics that intersect Network Security and Computer Networks, for example, attacks on Internet routing such as BGP hijacking. Finally, the course wraps up with a discussion on multimedia applications and Content Delivery Networks.

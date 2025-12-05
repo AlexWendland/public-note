@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-11-13
 draft: false
-last_edited: 2023-11-13
+last_edited: 2025-12-05
 tags:
   - programming
 title: Knapsack-search is NP-complete
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > [Knapsack-search](knapsack-search_(without_replacement).md) is [NP-complete](np-complete.md).
 
 # Proof

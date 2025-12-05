@@ -8,13 +8,13 @@ aliases:
 checked: false
 created: 2023-09-27
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
 title: DFS tree (algorithm)
 type: definition
 ---
-> [!tldr] DFS tree
+> [!definition] DFS tree
 > Given the run a [DFS](depth-first_search_(dfs).md) algorithm $A$ on a [directed graph](directed_graph.md) $G = (V,E)$, the *DFS tree* is a [sub](subgraph.md)-[forest](forest_(graph).md) $F = (V,E')$ where $E'$ are the edges used by $A$ to first explore a vertex.
 
 Edges in $G$ can be described in relation to the edges in $T$.

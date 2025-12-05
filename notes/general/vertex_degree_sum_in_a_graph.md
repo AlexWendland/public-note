@@ -3,13 +3,13 @@ aliases:
 checked: false
 created: 2023-09-26
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
 title: Vertex degree sum in a graph
 type: lemma
 ---
-> [!important] Lemma
+> [!lemma] Lemma
 > Let $G = (V, E)$ represents a [undirected simple graph](graph.md). Let $\mbox{deg}(v)$ be the [degree](degree_(graph).md) of vertex $v \in V$. Then
 > $$ \sum_{v \in V} \mbox{deg}(v) = 2 \vert E \vert.$$
 

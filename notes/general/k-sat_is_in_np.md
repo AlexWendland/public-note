@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-11-03
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - programming
 title: k-SAT is in NP
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > [k-SAT](k-satisfiability_problem_(k-sat_problem).md) is in [NP](nondeterministic_polynomial_time_(np).md)
 
 # Proof

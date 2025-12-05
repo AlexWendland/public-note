@@ -5,7 +5,7 @@ course_code: CS6215
 course_name: Introduction to Graduate Algorithms
 created: 2023-09-18
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - OMSCS
 title: Week 4 - Fast Fourier Transforms
@@ -13,7 +13,7 @@ type: lecture
 week: '4'
 ---
 
-> [!tldr] Polynomial multiplication problem
+> [!definition] Polynomial multiplication problem
 > Given polynomials
 > $$A(x) = \sum_{i=0}^{n-1} a_i x^i, \mbox{ and } B(x) = \sum_{i=0}^{n-1} b_i x^i.$$
 > We want to compute the product
@@ -21,7 +21,7 @@ week: '4'
 
 This can be restated as the following problem.
 
-> [!tldr] Convolution problem
+> [!definition] Convolution problem
 > Given a vector $a = (a_0, a_1, \ldots, a_{n-1})$ and $b = (b_0, b_1, \ldots b_{n-1})$ we want to compute the convolution $c = a \ast b = (c_0, \ldots, c_{2n-2})$. Where
 > $$ c_k = \sum_{i=\max\{0,k-n+1\}}^{\min\{n-1,k\}} a_i b_{k-i}.$$
 
@@ -54,7 +54,7 @@ Any polynomial $A(x) = \sum_{i=0}^{n-1} a_i x^i$ has two natural representations
 1. The coefficients $a = (a_0, a_1, \ldots, a_{n-1})$, or
 2. the values $A(x_1), A(x_2), \ldots A(x_n)$ for some distinct $x_i$.
 
-> [!important] Lemma
+> [!lemma] Lemma
 > Polynomials of degree $n-1$ is uniquely determined by its values at any $n$ distinct points.
 
 The fast Fourier transform is just a nice way of going between these two representations. Though it determines what $x_i$ it uses.

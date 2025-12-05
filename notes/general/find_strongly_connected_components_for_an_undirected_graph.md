@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-09-29
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - programming
 title: Find strongly connected components for an undirected graph
@@ -11,7 +11,7 @@ type: problem
 ---
 ## Statement
 
-> [!tldr] Find [strongly connected components](strongly_connected_components_(directed_graphs).md) in an [directed graph](directed_graph.md)
+> [!definition] Find [strongly connected components](strongly_connected_components_(directed_graphs).md) in an [directed graph](directed_graph.md)
 > Given a [directed graph](directed_graph.md) $G = (V,E)$ how can we find a mapping from it's vertices $V$ to the [strongly connected components](strongly_connected_components_(directed_graphs).md) of $G$.
 
 ## Solutions

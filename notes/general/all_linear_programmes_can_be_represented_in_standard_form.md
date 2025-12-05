@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-11-07
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
 title: All linear programmes can be represented in standard form
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > All [linear programmes](linear_programme.md) can be represented in [standard form](linear_programme_standard_form.md).
 
 # Proof

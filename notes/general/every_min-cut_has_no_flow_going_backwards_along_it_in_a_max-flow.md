@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-10-20
 draft: false
-last_edited: 2023-11-13
+last_edited: 2025-12-05
 tags:
   - maths
 title: Every min-cut has no flow going backwards along it in a max-flow
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > Given a [Flow network](flow_network.md) $(G, c, s, t)$ with a [max flow](max_flow_problem.md) $f$. Then for every [min st-cut](min_st-cut_problem.md) ($S$, $T$) we have $f(t',s') = 0$ all edges in $(t',s') \in E$ for $t' \in T$ and $s' \in S$.
 
 # Proof

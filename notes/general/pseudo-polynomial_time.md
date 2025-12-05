@@ -5,13 +5,13 @@ aliases:
 checked: false
 created: 2023-10-03
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - programming
 title: Pseudo-polynomial time
 type: definition
 ---
-> [!tldr] Pseudo-polynomial time
+> [!definition] Pseudo-polynomial time
 > An algorithm runs in *pseudo-polynomial time* if its running time is polynomial in the numeric value of the input but not necessarily in the length of the input.
 
 # Intuition

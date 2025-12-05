@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-11-10
 draft: false
-last_edited: 2023-11-19
+last_edited: 2025-12-05
 tags:
   - maths
   - todo
@@ -12,7 +12,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > A [linear programme](linear_programme.md) (given by $A$, $b$ and $c$) has an optimal point $x^{\ast}$ if and only if its [dual linear programme](dual_linear_programme.md) has an optimal point $y^{\ast}$. These relate by
 > $$c^Tx^{\ast} = b^Ty^{\ast}.$$
 

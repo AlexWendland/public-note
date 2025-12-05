@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2024-02-21
 draft: false
-last_edited: 2024-02-21
+last_edited: 2025-12-05
 tags:
   - maths
 title: Finding the maximum likelihood estimation for normally distributed noise is
@@ -12,7 +12,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > Suppose we have some target $c : A \rightarrow \mathbb{R}$ where the [training data](training_data.md) $T$ has [i.i.d.](independent_identically_distributed_samples.md) [normally distributed](normal_distribution.md) noise values $\epsilon \sim N(0,\sigma^2)$ such that $(a_i,b_i) \in T$ we have $b_i = c(a_i) + \epsilon_i$. Then finding the [maximum likelihood estimation](maximum_likelihood_estimation_(mle).md) is the same as minimising the [Mean squared error (MSE)](mean_squared_error_(mse).md), i.e.
 > $$h_{MLE} = \mbox{arg}\min_{h \in H} mse(h, T).$$
 

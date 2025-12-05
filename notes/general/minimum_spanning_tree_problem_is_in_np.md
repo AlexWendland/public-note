@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-11-02
 draft: false
-last_edited: 2023-11-13
+last_edited: 2025-12-05
 tags:
   - maths
 title: Minimum Spanning Tree problem is in NP
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > [Minimum Spanning Tree problem (MST)](minimum_spanning_tree_problem_(mst).md) is in [NP](nondeterministic_polynomial_time_(np).md)
 
 # Proof

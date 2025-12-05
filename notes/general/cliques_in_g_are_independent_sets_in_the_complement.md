@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-11-03
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
   - graph-theory
@@ -12,7 +12,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > For a [undirected graph](graph.md) $G = (V,E)$ and $S \subset V$ we have the following equivalence:
 > $S$ is a [clique](clique_(graph).md) in $G$ if and only if $S$ is an [independent set](independent_set_(graph).md) in $G^C$ the [complement graph](complement_graph.md).
 

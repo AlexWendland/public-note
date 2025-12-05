@@ -4,14 +4,14 @@ aliases:
 checked: false
 created: 2023-08-31
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
 title: Binary operation
 type: definition
 ---
 
-> [!tldr] Binary operation
+> [!definition] Binary operation
 > A *binary operation* is a function that takes two inputs and outputs another one - all in the same domain.
 >
 > I.e. the function $b$ is binary operation if $b: S \times S \rightarrow S$ for some domain $S$.

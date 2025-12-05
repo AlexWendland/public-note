@@ -5,7 +5,7 @@ course_code: CS6210
 course_name: Advanced Operating Systems
 created: '2025-12-01'
 draft: false
-last_edited: '2025-12-01'
+last_edited: 2025-12-05
 tags:
   - OMSCS
 title: Week 11 - Security
@@ -26,12 +26,12 @@ The notes in this section are based on the following paper:
 
 First we make a clear distinction between privacy and security:
 
-> [!define] Privacy
+> [!definition] Privacy
 > Privacy is about controlling who is allowed to access, observe, or use information about you.
 > It concerns people, preferences, context, and expectations.
 > Example: Deciding who may see your photos or email address.
 
-> [!define] Security
+> [!definition] Security
 > Security is about the technical and organizational measures used to enforce desired privacy (and other protections such as integrity and availability).
 > It covers authentication, encryption, access control, safe storage, etc.
 > Example: The system verifying your password before allowing access to your data.

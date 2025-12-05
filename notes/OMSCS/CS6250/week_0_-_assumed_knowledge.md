@@ -5,7 +5,7 @@ course_code: CS6250
 course_name: Computer Networks
 created: 2024-05-19
 draft: false
-last_edited: 2024-05-19
+last_edited: 2025-12-05
 tags:
   - OMSCS
 title: Week 0 - Assumed knowledge
@@ -26,7 +26,7 @@ Some terminology first:
 
 [Server](../../general/server.md)
 
-> [!Note]
+> [!note]
 > These terms are relative to a single request a host can be a client in another request.
 
 [Internet Protocol (IPv4)](../../general/internet_protocol_(ipv4).md)

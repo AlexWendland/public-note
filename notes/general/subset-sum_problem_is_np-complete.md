@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-11-12
 draft: false
-last_edited: 2023-11-19
+last_edited: 2025-12-05
 tags:
   - programming
 title: Subset-sum problem is NP-complete
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > [Subset-sum problem](subset-sum_problem.md) is [NP-Complete](np-complete.md).
 
 # Proof

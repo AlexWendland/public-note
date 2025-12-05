@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2023-12-03
 draft: false
-last_edited: 2023-12-03
+last_edited: 2025-12-05
 tags:
   - maths
   - probability
@@ -12,7 +12,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > [Symmetric Markov chains](symmetric_markov_chain.md) have a [uniform](uniform_distribution.md) [stationary distribution](stationary_distribution_(markov_chains).md) on its $N$ states.
 
 # Proof

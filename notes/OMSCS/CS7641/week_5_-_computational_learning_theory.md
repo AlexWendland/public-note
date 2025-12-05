@@ -5,7 +5,7 @@ course_code: CS7641
 course_name: Machine Learning
 created: 2024-02-13
 draft: false
-last_edited: 2024-02-13
+last_edited: 2025-12-05
 tags:
   - OMSCS
 title: Week 5 - Computational Learning Theory
@@ -40,7 +40,7 @@ When considering problems it is useful to think about:
 
 20 Questions is a game where there is a set of possible answers $A$ and a correct answer $c \in A$. There is a player (questioner) who wants to find $c \in A$ and a questionee who knows $c \in A$. The player then asks questions [boolean](../../general/boolean_variable.md) questions to questionee who answers True or false about item $c \in A$.
 
-> [!Note] 20 Questions
+> [!note] 20 Questions
 > In the traditional version of the game you have until 20 questions to guess the answer, thus the name!
 
 There are different set ups for this game - but the point is to demonstrate the power of how [Training data](../../general/training_data.md) is collected.

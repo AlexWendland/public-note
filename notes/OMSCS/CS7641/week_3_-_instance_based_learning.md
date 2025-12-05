@@ -5,7 +5,7 @@ course_code: CS7641
 course_name: Machine Learning
 created: 2024-01-22
 draft: false
-last_edited: 2024-01-22
+last_edited: 2025-12-05
 tags:
   - OMSCS
 title: Week 3 - Instance Based Learning
@@ -32,7 +32,7 @@ Quite often [Instance-based learning](../../general/instance-based_learning.md) 
 | Linear regression learning | $n$            | 1     |
 | Linear regression learning | 1              | 1     |
 
-> [!Question] Why is linear regression $n$ time to learn?
+> [!question] Why is linear regression $n$ time to learn?
 
 # The curse of dimensionality
 

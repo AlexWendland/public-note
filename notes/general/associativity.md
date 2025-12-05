@@ -4,14 +4,14 @@ aliases:
 checked: false
 created: 2023-08-31
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
 title: Associativity
 type: definition
 ---
 
-> [!tldr] Associativity
+> [!definition] Associativity
 > A [binary operation](binary_operation.md) $\ast$ is associative if $(a \ast b) \ast c = a \ast (b \ast c)$.
 >
 

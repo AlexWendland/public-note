@@ -4,13 +4,13 @@ aliases:
 checked: false
 created: 2023-09-26
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
 title: Equivalent tree definitions
 type: lemma
 ---
-> [!important] Lemma
+> [!lemma] Lemma
 > The following conditions are equivalent for a [graph](graph.md) $G = (V,E)$.
 > 1. $G$ is a [tree](tree_(graph).md).
 > 2. $G$ is [path connected](connected_(graph).md) and $\vert E \vert = \vert V \vert − 1$.

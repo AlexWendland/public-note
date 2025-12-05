@@ -5,25 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
 
-    {{- /* Process Tailwind CSS with PostCSS */ -}}
-    {{- $styles := resources.Get "css/main.css" | postCSS -}}
-    {{- if hugo.IsProduction -}}
-        {{- $styles = $styles | minify | fingerprint -}}
-    {{- end -}}
+    {{- /* Load Comic Neue font from Google Fonts */ -}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+
+    {{- $styles := resources.Get "css/main.css" | postCSS (dict "config" "themes/personal") -}}
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
 
-    {{- /* Math support if enabled */ -}}
-    {{- if .Site.Params.math -}}
-        {{- partial "math.html" . -}}
-    {{- end -}}
+    {{- /* Load MathJax for math rendering */ -}}
+    {{- partial "math.html" . -}}
 </head>
-<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
-    {{- partial "header.html" . -}}
-
+<body class="font-sans bg-base text-text">
     <main class="container mx-auto px-4 py-8">
         {{- block "main" . }}{{- end }}
     </main>
-
-    {{- partial "footer.html" . -}}
 </body>
 </html>

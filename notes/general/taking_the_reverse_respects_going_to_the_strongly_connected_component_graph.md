@@ -3,13 +3,13 @@ aliases:
 checked: false
 created: 2023-09-28
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - maths
 title: Taking the reverse respects going to the strongly connected component graph
 type: lemma
 ---
-> [!important] Lemma
+> [!lemma] Lemma
 > Let $G = (V,E)$ be a [directed graph](directed_graph.md) and $G^R= (V,E^R)$ be its [reverse](reverse_directed_graph.md). Then if $S_G$ is [strongly connected component graph](strongly_connected_component_graph_(directed_graph).md) of $G$ then the [reverse](reverse_directed_graph.md) of $S_G$ is equal the [strongly connected component graph](strongly_connected_component_graph_(directed_graph).md) of $G^R$ called $S_{G^R}$. I.e. $S_G^R = S_{G^R}$.
 
 ## Proof

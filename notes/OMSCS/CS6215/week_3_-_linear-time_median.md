@@ -5,7 +5,7 @@ course_code: CS6215
 course_name: Introduction to Graduate Algorithms
 created: 2023-09-07
 draft: false
-last_edited: 2023-11-11
+last_edited: 2025-12-05
 tags:
   - OMSCS
 title: Week 3 - Linear-Time Median
@@ -13,15 +13,15 @@ type: lecture
 week: '3'
 ---
 
-> [!tldr] Median list problem
+> [!definition] Median list problem
 > Given an unsorted list $A = [a_1, \ldots, a_n]$ of $n$ numbers - you want to find the [median](../../general/median.md) ($\lceil \frac{n}{2} \rceil$) element.
 
-> [!Note] Not usual [Median](../../general/median.md) definition
+> [!note] Not usual [Median](../../general/median.md) definition
 > This isn't the usual definition of median, which in the case of odd $n$ would return the mean of the $\lceil \frac{n}{2} \rceil$ and $\lfloor \frac{n}{2} \rfloor$ elements.
 
 Though we can solve a more generic problem.
 
-> [!tldr] $k$th smallest element
+> [!definition] $k$th smallest element
 > Given an unsorted list $A = [a_1, \ldots, a_n]$ of $n$ numbers - you want to find the $k$'th smallest element.
 
 # Using [Merge sort](../../general/merge_sort.md)
@@ -66,7 +66,7 @@ Therefore this algorithm has expected runtime of $2n$ - though this is not [wors
 
 Instead of finding a median of $A$ we could instead aim for a median of a "representative sample".
 
-> [!info] Trick
+> [!note] Trick
 > Divide $A$ into sets of 5 and find the median of each of these sets. Call this set $S$. Then find the median of the set $S$.
 
 Let $G_i$ be the sets of size $5$ and $1 \leq i \leq \frac{n}{5}$ (assume $n$ is a multiple of $5$). Then the median $m_i$ of $G_i$ each have 2 elements less than $m_i$ and 2 elements greater than $m_i$. Therefore the median of $S = \left \{m_i \vert 1 \leq i \leq \frac{n}{5} \right \}$  $p$ has $\frac{3n}{10}$ less than or equal to it and $\frac{3n}{10}$ elements greater or equal to it.
@@ -106,7 +106,7 @@ Combining this all together we have
 $$T(n) = T\left (\frac{3n}{4}\right ) + T\left ( \frac{n}{5}\right ) + O(n) + O(n) + O(1) = T\left (\frac{3n}{4}\right ) + T\left ( \frac{n}{5}\right ) + O(n).$$
 As $\frac{3}{4} + \frac{1}{5} < 1$ we have that $T(n) = O(n)$.
 
-> [!Note] Why is this true?
+> [!note] Why is this true?
 > I don't know, but this looks like it could be solved using [Akra–Bazzi method](akra–bazzi_method.md) or [Recursion tree method](../../general/recursion_tree_method.md).
 
 ## Useful discussion about this

@@ -3,7 +3,7 @@ aliases:
 checked: false
 created: 2024-02-24
 draft: false
-last_edited: 2024-02-24
+last_edited: 2025-12-05
 tags:
   - probability
 title: Mutual information is symmetric
@@ -11,7 +11,7 @@ type: lemma
 ---
 # Statement
 
-> [!important] Lemma
+> [!lemma] Lemma
 > Suppose we have two [random variables](random_variable.md) $X$ and $Y$ over different [domains](function_domain.md) $A$ and $B$. We have that [Mutual information](mutual_information.md) is symmetric
 > $$ I(X, Y) = I(Y, X).$$
 
