@@ -8,15 +8,15 @@
 
   /* Lists */
   ul {
-    @apply list-disc list-inside mb-4 space-y-2 text-text;
+    @apply list-disc list-outside mb-4 space-y-2 text-text ml-6;
   }
 
   ol {
-    @apply list-decimal list-inside mb-4 space-y-2 text-text;
+    @apply list-decimal list-outside mb-4 space-y-2 text-text ml-6;
   }
 
   li {
-    @apply ml-4;
+    @apply pl-2;
   }
 
   /* Nested lists */
