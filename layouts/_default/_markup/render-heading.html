@@ -1,0 +1,10 @@
+{{- /* layouts/_default/_markup/render-heading.html */}}
+{{- /* Custom heading renderer with anchor links */}}
+
+{{- $id := .Anchor | default (.PlainText | urlize) -}}
+<h{{ .Level }} id="{{ $id }}" class="group">
+  <a href="#{{ $id }}" class="heading-anchor opacity-0 group-hover:opacity-100 transition-opacity text-overlay-1 hover:text-sapphire no-underline mr-1">
+    #
+  </a>
+  {{- .Text -}}
+</h{{ .Level }}>

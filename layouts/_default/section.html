@@ -1,9 +1,6 @@
 {{ define "main" }}
 <article class="post-single">
-  <header class="post-header">
-    <h1 class="post-title">{{ .Title }}</h1>
-  </header>
-
+  {{- partial "title.html" . -}}
   {{- if .Content }}
   <div class="post-content">
     {{ .Content }}
@@ -12,7 +9,12 @@
 
   {{- if .Pages }}
   <div class="post-content">
-    <h2>Pages in this section</h2>
+    <h2 id="pages-in-this-section" class="group">
+      <a href="#pages-in-this-section" class="heading-anchor opacity-0 group-hover:opacity-100 transition-opacity text-overlay-1 hover:text-sapphire no-underline mr-2">
+        #
+      </a>
+      Pages in this section
+    </h2>
     <ul>
       {{- range .Pages }}
       <li>
