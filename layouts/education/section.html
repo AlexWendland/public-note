@@ -1,0 +1,39 @@
+{{ define "main" }}
+<article class="post-single max-w-5xl mx-auto">
+  {{- partial "title.html" . -}}
+
+  <div class="post-content">
+    <h2 id="degrees" class="group text-3xl font-bold text-blue mb-4 mt-6">
+      <a href="#degrees" class="heading-anchor opacity-0 group-hover:opacity-100 transition-opacity text-overlay-1 hover:text-sapphire no-underline mr-1">
+        #
+      </a>
+      Degrees
+    </h2>
+    <ul class="space-y-2">
+      {{- $pages := where .Pages "Title" "!=" "Publications" }}
+      {{- range ($pages.ByParam "start_date").Reverse }}
+      <li>
+        {{- $startDate := .Params.start_date | time.Format "2006-01" -}}
+        {{- $endDate := "Present" -}}
+        {{- if .Params.end_date -}}
+          {{- $endDate = .Params.end_date | time.Format "2006-01" -}}
+        {{- end -}}
+        {{ $startDate }} - {{ $endDate }}, {{ .Params.degree }}, <a href="{{ .RelPermalink }}" class="text-sapphire hover:text-sky transition-colors underline decoration-sapphire/30 hover:decoration-sky/50">{{ .Params.institution }}</a>
+      </li>
+      {{- end }}
+    </ul>
+
+    {{- with .GetPage "papers.md" }}
+    <h2 id="publications" class="group text-3xl font-bold text-blue mb-4 mt-8">
+      <a href="#publications" class="heading-anchor opacity-0 group-hover:opacity-100 transition-opacity text-overlay-1 hover:text-sapphire no-underline mr-1">
+        #
+      </a>
+      Publications
+    </h2>
+    <p class="text-text">
+      See my <a href="{{ .RelPermalink }}" class="text-sapphire hover:text-sky transition-colors underline decoration-sapphire/30 hover:decoration-sky/50">academic publications</a>.
+    </p>
+    {{- end }}
+  </div>
+</article>
+{{ end }}

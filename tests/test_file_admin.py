@@ -68,7 +68,7 @@ def test_non_migration_date_updates_last_edited():
         note.write()
 
         # Mock get_last_edited to return a different date (not migration date)
-        new_date = datetime.date(2025, 12, 4)
+        new_date = datetime.date(2025, 12, 10)
         with patch("note_helper.file_admin.get_last_edited") as mock_get_last_edited:
             mock_get_last_edited.return_value = new_date
 

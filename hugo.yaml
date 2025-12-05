@@ -1,7 +1,6 @@
 baseURL: 'https://notes.awendland.co.uk/'
 languageCode: 'en-gb'
 title: "Alex's notes"
-contentDir: "notes"
 
 markup:
   goldmark:

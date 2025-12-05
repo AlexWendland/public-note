@@ -1,11 +1,41 @@
 {{ define "main" }}
-<article class="post-single">
+<article class="post-single max-w-5xl mx-auto">
   {{- partial "title.html" . -}}
-  {{- if .Content }}
-  <div class="post-content">
-    {{ .Content }}
+
+  {{- /* Hero section with intro and photo */ -}}
+  <div class="flex flex-row gap-4 sm:gap-8 items-start mb-12">
+    {{- /* Left: Intro text */ -}}
+    <div class="flex-1">
+      <p class="text-2xl sm:text-3xl font-bold text-mauve mb-6">Hi! I am a ...</p>
+
+      <div class="space-y-3 ml-6 sm:ml-8">
+        <p class="text-lg text-text">python engineer who likes to tinker with things.</p>
+        <p class="text-lg text-text">board gamer who is a sore loser.</p>
+        <p class="text-lg text-text">effective altruist who is vegan, or as I call it a party favorite.</p>
+        <p class="text-lg text-text">forgetful academic who likes to learn things.</p>
+        <p class="text-lg text-text">fairly bad prioritizer.</p>
+      </div>
+    </div>
+
+    {{- /* Right: Photo */ -}}
+    <div class="flex-shrink-0">
+      <img src="/website/me.jpg" alt="Alex Wendland" class="rounded-lg w-32 sm:w-48 md:w-64 h-auto shadow-lg">
+    </div>
   </div>
-  {{- end }}
+
+  {{- /* About this site */ -}}
+  <div class="bg-surface-0 rounded-lg p-6 mb-12 border-l-4 border-sapphire">
+    <h2 class="text-xl font-semibold text-blue mb-3">About this site</h2>
+    <p class="text-text leading-relaxed mb-2">
+      This is my personal website but also a bit of a dumping ground for my notes.
+    </p>
+    <p class="text-text leading-relaxed mb-2">
+      It is most probably a fairly good way to get to know me if you want to give me money for my time.
+    </p>
+    <p class="text-text leading-relaxed">
+      It is also helpful if you are doing or have done similar courses to me and want to get my notes.
+    </p>
+  </div>
 
   {{- partial "page-list.html" (dict "title" "Sections" "pages" .Pages "showDate" false) }}
 </article>
