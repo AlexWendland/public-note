@@ -1,8 +1,9 @@
 <header class="border-b border-surface-1 bg-mantle">
     <nav class="container mx-auto px-4 py-4">
-        <div class="text-center">
-            <a href="{{ "/" | relURL }}" class="text-2xl font-bold text-red hover:text-pink transition-colors">
-                {{ .Site.Title }}
+        <div class="flex items-center justify-center gap-3">
+            <a href="{{ "/" | relURL }}" class="flex items-center gap-3 text-2xl font-bold text-red hover:text-pink transition-colors group">
+                <img src="/website/logo.svg" alt="Logo" class="h-6 w-6 transition-transform group-hover:scale-110">
+                <span>{{ .Site.Title }}</span>
             </a>
         </div>
     </nav>

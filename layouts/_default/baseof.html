@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
 
+    {{- /* Favicon */ -}}
+    <link rel="icon" type="image/svg+xml" href="/website/logo.svg">
+
     {{- /* Load Comic Neue font from Google Fonts */ -}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
