@@ -66,19 +66,26 @@ jobs:
           echo "Go: $(go version)"
           echo "Hugo: $(hugo version)"
           echo "Node.js: $(node --version)"
-      - name: Install Node.js dependencies
-        run: |
-          [[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true
-      - name: Install native dependencies for excalidraw_export
+      - name: Install native dependencies for excalidraw_export (needed to build canvas)
         run: |
           sudo apt-get update
           sudo apt-get install -y \
+            build-essential \
+            python3 \
+            pkg-config \
             libcairo2-dev \
             libpango1.0-dev \
             libjpeg-dev \
             libgif-dev \
             librsvg2-dev \
-            pkg-config
+            libpixman-1-dev
+
+      - name: Install Node.js dependencies (fail loudly)
+        run: |
+          # ensure we are in repo root (change if package.json is in subdir)
+          echo "Working dir: $(pwd)"
+          ls -la
+          npm ci --prefer-offline --no-audit --progress=false
       - name: Compile Excalidraw diagrams
         run: |
           # Create output directory if it doesn't exist
