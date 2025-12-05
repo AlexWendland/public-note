@@ -1,0 +1,8 @@
+{{- /* layouts/_default/_markup/render-link.html */}}
+{{- /* Custom link renderer with styling */}}
+<a href="{{ .Destination | safeURL }}"
+   {{- with .Title }} title="{{ . }}"{{ end -}}
+   {{- if strings.HasPrefix .Destination "http" }} target="_blank" rel="noopener noreferrer"{{ end -}}
+   class="text-sapphire hover:text-sky transition-colors underline decoration-sapphire/30 hover:decoration-sky/50">
+  {{- .Text -}}
+</a>

@@ -31,11 +31,6 @@
     @apply text-text mb-4 leading-relaxed;
   }
 
-  /* Links */
-  a {
-    @apply text-sapphire hover:text-sky transition-colors underline decoration-sapphire/30 hover:decoration-sky/50;
-  }
-
   /* Lists */
   ul {
     @apply list-disc list-inside mb-4 space-y-2 text-text;
@@ -50,7 +45,8 @@
   }
 
   /* Nested lists */
-  ul ul, ol ul {
+  ul ul,
+  ol ul {
     @apply mt-2 mb-2;
   }
 

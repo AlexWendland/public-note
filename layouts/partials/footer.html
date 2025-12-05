@@ -1,5 +1,12 @@
-<footer class="border-t border-gray-200 dark:border-gray-700 mt-12">
-    <div class="container mx-auto px-4 py-6 text-center text-sm text-gray-600 dark:text-gray-400">
-        <p>&copy; {{ now.Year }} {{ .Site.Title }}</p>
+<footer class="border-t border-surface-1 mt-12 py-8">
+    <div class="flex items-baseline justify-center gap-3">
+        <span class="text-xl">Made by</span>
+        <span class="text-2xl font-bold tracking-wide group">
+            <span class="text-subtext-0 group-hover:text-pink transition-colors">A</span><span class="text-subtext-0 group-hover:text-sapphire transition-colors">l</span><span class="text-subtext-0 group-hover:text-yellow transition-colors">e</span><span class="text-subtext-0 group-hover:text-green transition-colors">x</span>
+        </span>
+        <span class="text-xl">powered by</span>
+        <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" class="inline-block transition-transform hover:scale-105">
+            <img src="/website/hugo-logo.svg" alt="Hugo" class="h-5">
+        </a>
     </div>
 </footer>
