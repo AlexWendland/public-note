@@ -61,7 +61,7 @@
             <div class="flex items-center justify-center gap-3">
                 <a href="{{ "/" | relURL }}" class="flex items-center gap-3 text-2xl font-bold text-red hover:text-pink transition-colors group">
                     <img src="/website/logo.svg" alt="Logo" class="h-6 w-6 transition-transform group-hover:scale-110">
-                    <span>{{ .Site.Title }}</span>
+                    <span class="hidden sm:block">{{ .Site.Title }}</span>
                 </a>
             </div>
 
