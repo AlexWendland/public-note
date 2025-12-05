@@ -4,9 +4,7 @@
   "description": "Development dependencies for public notes repository",
   "private": true,
   "dependencies": {
-    "excalidraw_export": "^1.1.0"
-  },
-  "devDependencies": {
+    "excalidraw_export": "^1.1.0",
     "@tailwindcss/cli": "^4.1.17",
     "@tailwindcss/postcss": "^4.1.17",
     "@tailwindcss/typography": "^0.5.19",
