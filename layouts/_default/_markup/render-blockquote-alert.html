@@ -17,11 +17,67 @@
     "question"   "circle-question-solid.svg"
   }}
 
+  {{- /* Map alert type to colors */}}
+  {{- $borderColors := dict
+    "note"       "border-blue"
+    "example"    "border-peach"
+    "important"  "border-mauve"
+    "warning"    "border-yellow"
+    "lemma"      "border-lavender"
+    "definition" "border-teal"
+    "quote"      "border-sapphire"
+    "question"   "border-sky"
+  }}
+
+  {{- $bgColors := dict
+    "note"       "bg-blue/10"
+    "example"    "bg-peach/10"
+    "important"  "bg-mauve/10"
+    "warning"    "bg-yellow/10"
+    "lemma"      "bg-lavender/10"
+    "definition" "bg-teal/10"
+    "quote"      "bg-sapphire/10"
+    "question"   "bg-sky/10"
+  }}
+
+  {{- $textColors := dict
+    "note"       "text-blue"
+    "example"    "text-peach"
+    "important"  "text-mauve"
+    "warning"    "text-yellow"
+    "lemma"      "text-lavender"
+    "definition" "text-teal"
+    "quote"      "text-sapphire"
+    "question"   "text-sky"
+  }}
+
+  {{- $fillColors := dict
+    "note"       "fill-blue"
+    "example"    "fill-peach"
+    "important"  "fill-mauve"
+    "warning"    "fill-yellow"
+    "lemma"      "fill-lavender"
+    "definition" "fill-teal"
+    "quote"      "fill-sapphire"
+    "question"   "fill-sky"
+  }}
+
   {{- /* Determine type and title */}}
   {{- $type := cond (index $icons .AlertType) .AlertType "note" }}
   {{- $title := or .AlertTitle (title $type) }}
   {{- $iconFile := index $icons $type }}
   {{- $partial := printf "admonitions/icons/%s" $iconFile }}
+
+  {{- /* Get colors for this type */}}
+  {{- $borderColor := index $borderColors $type }}
+  {{- $bgColor := index $bgColors $type }}
+  {{- $textColor := index $textColors $type }}
+  {{- $fillColor := index $fillColors $type }}
+
+  {{- /* Build class strings */}}
+  {{- $containerClasses := printf "my-4 rounded-lg overflow-hidden border-l-4 %s %s" $borderColor $bgColor }}
+  {{- $headerClasses := printf "px-4 py-2 flex items-center font-semibold text-lg %s" $textColor }}
+  {{- $svgClasses := printf "w-5 h-5 mr-2 flex-shrink-0 %s" $fillColor }}
 
   {{- /* Check if icon exists */}}
   {{- if not (templates.Exists (printf "partials/%s" $partial)) }}
@@ -31,26 +87,31 @@
   {{- /* Check if .AlertSign exists to determine if it's foldable */}}
   {{- if .AlertSign }}
     {{- /* Foldable Admonition */}}
-    <details class="admonition admonition-{{ $type }}">
-      <summary class="admonition-header">
-        {{- partialCached $partial . }}
-        <span>{{ $title }}</span>
+    <details class="{{ $containerClasses }}">
+      <summary class="{{ $headerClasses }} cursor-pointer list-none">
+        <div class="{{ $svgClasses }}">
+          {{- partialCached $partial . }}
+        </div>
+        <span class="flex-grow">{{ $title }}</span>
+        <span class="inline-block ml-2 font-bold transition-transform group-[[open]]:rotate-90">›</span>
       </summary>
       {{- with .Text }}
-      <div class="admonition-content">
+      <div class="px-4 py-3 bg-surface-0 text-text">
         {{ . }}
       </div>
       {{- end }}
     </details>
   {{- else }}
     {{- /* Non-Foldable Admonition */}}
-    <div class="admonition admonition-{{ $type }}">
-      <div class="admonition-header">
-        {{- partialCached $partial . }}
-        <span>{{ $title }}</span>
+    <div class="{{ $containerClasses }}">
+      <div class="{{ $headerClasses }}">
+        <div class="{{ $svgClasses }}">
+          {{- partialCached $partial . }}
+        </div>
+        <span class="flex-grow">{{ $title }}</span>
       </div>
       {{- with .Text }}
-      <div class="admonition-content">
+      <div class="px-4 py-3 bg-surface-0 text-text">
         {{ . }}
       </div>
       {{- end }}
@@ -58,8 +119,8 @@
   {{- end }}
 
 {{- else -}}
-  {{- /* This is a standard blockquote - use default styling from main.css */}}
-  <blockquote>
+  {{- /* This is a standard blockquote */}}
+  <blockquote class="border-l-4 border-mauve bg-surface-0 pl-4 py-2 mb-4 italic text-subtext-1">
     {{ .Text }}
   </blockquote>
 {{- end -}}
