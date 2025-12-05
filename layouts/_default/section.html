@@ -7,28 +7,6 @@
   </div>
   {{- end }}
 
-  {{- if .Pages }}
-  <div class="post-content">
-    <h2 id="pages-in-this-section" class="group">
-      <a href="#pages-in-this-section" class="heading-anchor opacity-0 group-hover:opacity-100 transition-opacity text-overlay-1 hover:text-sapphire no-underline mr-2">
-        #
-      </a>
-      Pages in this section
-    </h2>
-    <ul>
-      {{- range .Pages }}
-      <li>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        {{- with .Description }}
-        <span> - {{ . }}</span>
-        {{- end }}
-        {{- with .Date }}
-        <span class="post-meta"> ({{ .Format "2006-01-02" }})</span>
-        {{- end }}
-      </li>
-      {{- end }}
-    </ul>
-  </div>
-  {{- end }}
+  {{- partial "page-list.html" (dict "title" "Section" "pages" .Pages "showDate" true) }}
 </article>
 {{ end }}

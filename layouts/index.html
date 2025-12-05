@@ -7,25 +7,6 @@
   </div>
   {{- end }}
 
-  {{- if .Pages }}
-  <div class="post-content">
-    <h2 id="sections" class="group">
-      <a href="#sections" class="heading-anchor opacity-0 group-hover:opacity-100 transition-opacity text-overlay-1 hover:text-sapphire no-underline mr-1">
-        #
-      </a>
-      Sections
-    </h2>
-    <ul>
-      {{- range .Pages }}
-      <li>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        {{- with .Description }}
-        <span> - {{ . }}</span>
-        {{- end }}
-      </li>
-      {{- end }}
-    </ul>
-  </div>
-  {{- end }}
+  {{- partial "page-list.html" (dict "title" "Sections" "pages" .Pages "showDate" false) }}
 </article>
 {{ end }}

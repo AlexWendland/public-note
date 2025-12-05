@@ -1,8 +1,23 @@
 {{- /* layouts/_default/_markup/render-heading.html */}}
-{{- /* Custom heading renderer with anchor links */}}
+{{- /* Custom heading renderer with anchor links and styling */}}
 
 {{- $id := .Anchor | default (.PlainText | urlize) -}}
-<h{{ .Level }} id="{{ $id }}" class="group">
+{{- $classes := "" -}}
+{{- if eq .Level 1 -}}
+  {{- $classes = "text-4xl font-bold text-mauve mb-6 mt-8" -}}
+{{- else if eq .Level 2 -}}
+  {{- $classes = "text-3xl font-bold text-blue mb-4 mt-6" -}}
+{{- else if eq .Level 3 -}}
+  {{- $classes = "text-2xl font-semibold text-sapphire mb-3 mt-5" -}}
+{{- else if eq .Level 4 -}}
+  {{- $classes = "text-xl font-semibold text-sky mb-3 mt-4" -}}
+{{- else if eq .Level 5 -}}
+  {{- $classes = "text-lg font-semibold text-teal mb-2 mt-3" -}}
+{{- else if eq .Level 6 -}}
+  {{- $classes = "text-base font-semibold text-green mb-2 mt-3" -}}
+{{- end -}}
+
+<h{{ .Level }} id="{{ $id }}" class="group {{ $classes }}">
   <a href="#{{ $id }}" class="heading-anchor opacity-0 group-hover:opacity-100 transition-opacity text-overlay-1 hover:text-sapphire no-underline mr-1">
     #
   </a>

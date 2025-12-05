@@ -1,0 +1,33 @@
+{{- /* layouts/partials/page-list.html */}}
+{{- /* Reusable page list component */}}
+{{- /* Params: title (string), pages (collection), showDate (bool) */}}
+
+{{- $title := .title | default "Pages" -}}
+{{- $pages := .pages -}}
+{{- $showDate := .showDate | default false -}}
+
+{{- if $pages }}
+<div class="post-content">
+  <h2 id="{{ $title | urlize }}" class="group text-3xl font-bold text-blue mb-4 mt-6">
+    <a href="#{{ $title | urlize }}" class="heading-anchor opacity-0 group-hover:opacity-100 transition-opacity text-overlay-1 hover:text-sapphire no-underline mr-1">
+      #
+    </a>
+    {{ $title }}
+  </h2>
+  <ul>
+    {{- range $pages }}
+    <li>
+      <a href="{{ .RelPermalink }}" class="text-sapphire hover:text-sky transition-colors underline decoration-sapphire/30 hover:decoration-sky/50">{{ .Title }}</a>
+      {{- with .Description }}
+      <span> - {{ . }}</span>
+      {{- end }}
+      {{- if $showDate }}
+        {{- with .Date }}
+        <span class="post-meta"> ({{ .Format "2006-01-02" }})</span>
+        {{- end }}
+      {{- end }}
+    </li>
+    {{- end }}
+  </ul>
+</div>
+{{- end }}
