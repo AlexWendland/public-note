@@ -1,10 +1,72 @@
 <header class="border-b border-surface-1 bg-mantle">
     <nav class="container mx-auto px-4 py-4">
-        <div class="flex items-center justify-center gap-3">
-            <a href="{{ "/" | relURL }}" class="flex items-center gap-3 text-2xl font-bold text-red hover:text-pink transition-colors group">
-                <img src="/website/logo.svg" alt="Logo" class="h-6 w-6 transition-transform group-hover:scale-110">
-                <span>{{ .Site.Title }}</span>
-            </a>
+        <div class="grid grid-cols-3 items-center gap-4">
+            {{- /* Left: Dropdown Menu */ -}}
+            {{- $menuItems := slice
+                (dict "name" "Games Site" "url" "https://games.awendland.co.uk" "external" true)
+                (dict "name" "GitHub" "url" "https://github.com/alexwendland" "external" true)
+                (dict "name" "LinkedIn" "url" "https://www.linkedin.com/in/alex-wendland-phd-666618173/" "external" true)
+                (dict "name" "CV" "url" "https://github.com/AlexWendland/CV/blob/main/Wendland_Alex.pdf" "external" true)
+                (dict "name" "Old Academic Website" "url" "https://warwick.ac.uk/fac/sci/maths/people/staff/wendland/" "external" true)
+            }}
+            <div class="relative">
+                <button id="menu-button" class="w-10 h-10 flex items-center justify-center bg-surface-0 text-text rounded-full hover:bg-surface-1 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                {{- /* Dropdown content */ -}}
+                <div id="menu-dropdown" class="absolute left-0 mt-2 w-56 bg-surface-0 border border-surface-1 rounded-lg shadow-lg opacity-0 max-h-0 overflow-hidden transition-all duration-1000 ease-in-out z-50">
+                    <div class="p-1">
+                        {{- range $menuItems }}
+                        <a href="{{ .url }}"
+                           {{- if .external }} target="_blank" rel="noopener noreferrer"{{ end }}
+                           class="block px-4 py-2 text-text hover:bg-surface-1 hover:text-sapphire transition-colors rounded-md">
+                            {{ .name }}
+                        </a>
+                        {{- end }}
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const button = document.getElementById('menu-button');
+                    const dropdown = document.getElementById('menu-dropdown');
+
+                    button.addEventListener('click', function(e) {
+                        e.stopPropagation();
+
+                        // Toggle open/closed state
+                        if (dropdown.classList.contains('max-h-0')) {
+                            dropdown.classList.remove('max-h-0', 'opacity-0');
+                            dropdown.classList.add('max-h-96', 'opacity-100');
+                        } else {
+                            dropdown.classList.remove('max-h-96', 'opacity-100');
+                            dropdown.classList.add('max-h-0', 'opacity-0');
+                        }
+                    });
+
+                    // Close dropdown when clicking outside
+                    document.addEventListener('click', function(e) {
+                        if (dropdown.classList.contains('max-h-96') && !dropdown.contains(e.target)) {
+                            dropdown.classList.remove('max-h-96', 'opacity-100');
+                            dropdown.classList.add('max-h-0', 'opacity-0');
+                        }
+                    });
+                });
+            </script>
+
+            {{- /* Center: Logo + Site Title */ -}}
+            <div class="flex items-center justify-center gap-3">
+                <a href="{{ "/" | relURL }}" class="flex items-center gap-3 text-2xl font-bold text-red hover:text-pink transition-colors group">
+                    <img src="/website/logo.svg" alt="Logo" class="h-6 w-6 transition-transform group-hover:scale-110">
+                    <span>{{ .Site.Title }}</span>
+                </a>
+            </div>
+
+            {{- /* Right: Empty (placeholder for search later) */ -}}
+            <div></div>
         </div>
     </nav>
 </header>
