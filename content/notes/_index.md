@@ -2,7 +2,7 @@
 draft: false
 tags:
   - index
-title: General
+title: Notes
 type: index
 ---
 

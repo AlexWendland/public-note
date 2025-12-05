@@ -1,8 +1,18 @@
 {{- /* layouts/_default/_markup/render-link.html */}}
 {{- /* Custom link renderer with styling */}}
-<a href="{{ .Destination | safeURL }}"
+{{- $destination := .Destination -}}
+{{- $isExternal := strings.HasPrefix .Destination "http" -}}
+{{- if and (not $isExternal) (strings.HasSuffix .Destination ".md") -}}
+  {{- /* Try to resolve with relref, fall back to stripping .md if not found */ -}}
+  {{- with .Page.GetPage .Destination -}}
+    {{- $destination = .RelPermalink -}}
+  {{- else -}}
+    {{- $destination = strings.TrimSuffix ".md" $.Destination -}}
+  {{- end -}}
+{{- end -}}
+<a href="{{ $destination | safeURL }}"
    {{- with .Title }} title="{{ . }}"{{ end -}}
-   {{- if strings.HasPrefix .Destination "http" }} target="_blank" rel="noopener noreferrer"{{ end -}}
+   {{- if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end -}}
    class="text-sapphire hover:text-sky transition-colors underline decoration-sapphire/30 hover:decoration-sky/50">
   {{- .Text -}}
 </a>
