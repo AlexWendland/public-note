@@ -162,9 +162,9 @@ To get around this issue, the login and password is only used to login to the sy
 After the initial login the rest of the communication uses ephemeral id's and keys.
 This means we will get 3 types of communication between the user and the server:
 
-1. Login: The user sends a login request to the server.
+1. Login: The user sends a login request to the server. Where as HKC is provided to the user for future use to stop over exposure of the users password.
 
-2. RPC session establishment: The server sets up the session for subsequent requests with the ephemeral id and key.
+2. RPC session establishment: The server sets up the session using the HKC for subsequent requests with the ephemeral id and key.
 
 3. File system access: The usual file system calls, all using the session that was established before.
 
@@ -173,24 +173,31 @@ However, periods of inactivity close the session down.
 
 ## Login
 
-For the login to work the server keeps a key that it and only it knows, lets call this SERVER_KEY.
-Then the user logs in as follows:
+The server keeps the users passwords within a database.
+This password is encrypted using a key only the server knows - however it is still recoverable by a bad actor with access to the server.
 
-1. Users sends the login and encrypts the password using password.
-(I would imagine it also encrypts some random number - to verify the server is real, but this was not mentioned.)
+The user logs in as follows using a 3-way handshake:
 
-2. The server verifies who you are.
+1. The user generates a random number and encrypts that using the password. This is sent over to the server with the user name in clear text.
 
-3. Server generates a handshake key client (HKC).
-It then puts this into a data structure called the clear_token.
-It uses the SERVER_KEY to encrypt the clear token to make the secret_token.
+2. This allows the authentication server to decrypt the random number, increment it by one and then add another random number it generates to the users number. It then encrypts both random numbers using the password and sends that over to the user.
 
-4. The server then encrypts the clear_token and secret_token using the password then sends it to the user.
+3. To finish the handshake the user decrypts the messages - verifies its number has been incremented by 1. Then sends back the authentication servers number incremented by 1 encrypted using the password.
+
+4. The server verifies the number was correctly incremented by 1. Then the server generates a handshake key client (HKC). It then puts this into a data structure called the clear_token. It uses the SERVER_KEY to encrypt the clear token to make the secret_token.
+
+5. The server then encrypts the clear_token and secret_token using the password then sends it to the user.
+
+6. The user decrypts the message and extracts the HKC from the clear token.
 
 For the RPC session establishment it, we will use the secret_token the public identity and the handshake key as the private key.
 This is secure as only the server can decode the secret token with SERVER_KEY to recover the handshake key and decode the message.
+Also this means the server does not need to keep track of the tokens it has generated as it can always use the SERVER_KEY to recover the HKC for this session.
 
 ## RPC session establishment (bind operation)
+
+(Note: The below is exactly the same as the login but you replace the password with the HKC.
+This is by design, this means the password is used the least as the encryption key, the HKC is used the second least and ephemeral session tokens are used the most.)
 
 Once we have logged in, we still need to establish both the client and the server are genuine.
 In the server case this is proving they have the SERVER_KEY and the in the client case proving they have the HKC.
