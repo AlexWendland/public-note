@@ -75,14 +75,16 @@ This is a hardware timer that gets decremented each clock cycle and throws an in
 Reprogramming these timers takes only a couple of cycles so they offer a efficient one-shot implementation.
 Using a 100hz processor, this effectively drops the timer latency to 10 nanoseconds - but functionally the time taken to field the interupt takes longer than this and is a bigger source of the timer latency.
 
-**Note**: The soft timer part of the implementation means that a lot of these one-shot timers are reprogrammed and never raise an interrupt.
+> [!note]
+> The soft timer part of the implementation means that a lot of these one-shot timers are reprogrammed and never raise an interrupt.
 
 #### Preempting one-shot timers with periodic timers
 
 If we have one-shot timers with large distance between them and a periodic timer running then we can use the periodic timers to trigger the one-shot timers early.
 This way we stop the overhead from happening from the one-shot timers.
 
-**Question**: Won't the periodic timer going off trigger the soft timer mechanism anyway? Why is this a special case?
+> [!question]
+> Won't the periodic timer going off trigger the soft timer mechanism anyway? Why is this a special case?
 
 The firm timer mechanic reduces the timer latency - next we look at other forms of latency.
 

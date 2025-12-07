@@ -444,7 +444,7 @@ There are two issues with the 'greedy' DHT approach:
 
 1. Metadata server overload.
 
-2. Non-cooperative caching does not save us from the shlashdot effect.
+2. Non-cooperative caching does not save us from the slashdot effect.
 
 Therefore, the Coral uses a Distributed Sloppy Hash Table where instead of going directly towards the destination key we instead make incremental progress towards it.
 We do this by looking for a key half way between our last check and the destination, starting at our node ID.
