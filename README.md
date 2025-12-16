@@ -1,6 +1,6 @@
 # public-note
 
-These are my notes that are available on my [website](https://notes.awendland.co.uk/Welcome).
+These are my notes that are available on my [website](https://notes.awendland.co.uk/).
 
 ## To do list
 
