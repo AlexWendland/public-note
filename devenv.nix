@@ -73,6 +73,11 @@
     echo "✓ Exported diagram(s) to static/images/excalidraw/"
   '';
 
+  scripts.check.exec = ''
+    echo "Running all git hook checks..."
+    pre-commit run --all-files
+  '';
+
   # Run admin tasks when entering the devenv shell
   enterShell = ''
     # Only run admin if we're in an interactive shell (not in a script/CI)
