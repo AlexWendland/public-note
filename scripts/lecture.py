@@ -40,8 +40,8 @@ class CourseInfo:
 
 
 def discover_courses(repo_root: Path) -> list[CourseInfo]:
-    """Discover all OMSCS courses in the notes directory."""
-    omscs_dir = repo_root / "notes" / "OMSCS"
+    """Discover all OMSCS courses in the content directory."""
+    omscs_dir = repo_root / "content" / "OMSCS"
     if not omscs_dir.exists():
         console.print("[red]Error: OMSCS directory not found![/red]")
         sys.exit(1)
@@ -93,9 +93,9 @@ def get_next_week_number(course: CourseInfo) -> int:
     """Auto-detect the next week number based on existing files in the course directory."""
     week_numbers = []
 
-    # Find all lecture files matching "Week X - *.md"
-    for file in course.directory.glob("Week *.md"):
-        match = re.match(r"Week (\d+)", file.name)
+    # Find all lecture files matching "week_X_-_*.md"
+    for file in course.directory.glob("week_*.md"):
+        match = re.match(r"week_(\d+)", file.name)
         if match:
             week_numbers.append(int(match.group(1)))
 
@@ -105,8 +105,10 @@ def get_next_week_number(course: CourseInfo) -> int:
 
 def create_lecture_file(name: str, week: str, course: CourseInfo) -> Path:
     """Create a new lecture file from the template."""
-    # Create file path
-    file_name = f"Week {week} - {name}.md"
+    # Create file path with lowercase and underscores (no spaces)
+    # Convert name to slug: lowercase, replace spaces with underscores
+    name_slug = name.lower().replace(" ", "_")
+    file_name = f"week_{week}_-_{name_slug}.md"
     file_path = course.directory / file_name
 
     # Check if file already exists
@@ -115,23 +117,24 @@ def create_lecture_file(name: str, week: str, course: CourseInfo) -> Path:
         sys.exit(1)
 
     # Create metadata from template
-    today = datetime.now().strftime("%Y-%m-%d")
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    title = f"Week {week} - {name}"
     metadata = {
         "aliases": None,
         "checked": False,
         "course_code": course.code,
         "course_name": course.name,
-        "created": today,
-        "last_edited": today,
+        "created": today_str,
+        "last_edited": today_str,
         "draft": True,
         "tags": ["OMSCS"],
+        "title": title,  # Add title to frontmatter
         "type": "lecture",
         "week": int(week),
     }
 
-    # Create the file content (title includes week number)
-    title = f"Week {week} - {name}"
-    sections = [MarkdownSection(title=title, depth=1, lines=[])]
+    # Create empty sections (no H1 heading in content)
+    sections: list[MarkdownSection] = []
 
     note_file = NoteFile(file_path=str(file_path), metadata=metadata, sections=sections)
 
