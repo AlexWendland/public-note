@@ -1,8 +1,8 @@
 ---
 aliases:
-  - CS6220
+  - CSE6220
 checked: false
-course_code: CS6220
+course_code: CSE6220
 course_name: Introduction to High Performance Computing
 created: 2026-01-12
 draft: false
@@ -12,7 +12,7 @@ tags:
   - maths
   - programming
 term: spring
-title: CS6220 Introduction to High Performance Computing
+title: CSE6220 Introduction to High Performance Computing
 type: course
 year: '2026'
 ---
@@ -23,3 +23,4 @@ This course is a graduate-level introduction to scalable parallel algorithms. "S
 
 - [Central](https://www.omscentral.com/courses/high-performance-computing/reviews)
 - [OMSCS page](https://omscs.gatech.edu/cse-6220-intro-high-performance-computing)
+- [Course textbook](https://github.com/vineethshankar/pagerank/blob/master/Introduction%20to%20Parallel%20Computing%2C%20Second%20Edition-Ananth%20Grama%2C%20Anshul%20Gupta%2C%20George%20Karypis%2C%20Vipin%20Kumar.pdf)
