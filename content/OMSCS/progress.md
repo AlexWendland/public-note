@@ -20,7 +20,7 @@ type: plan
 
 - [x] CS8803 P1L2
 
-- [ ] CSE6220 Algorithmic Time
+- [x] CSE6220 Algorithmic Time
 - [ ] CSE6220 I/O avoiding
 - [ ] CSE6220 Cache-oblivious algorithms
 
@@ -28,14 +28,14 @@ type: plan
 
 # Jan 26-Feb 1 [ ]
 
-- [ ] CS8803 P1L3
+- [x] CS8803 P1L3
 
 - [ ] CSE6220 Intro to work-span
 
 # Feb 2-8 [ ]
 
 - [ ] CS8803 P1L4
-- [ ] CS8803 HW1 (Feb 3)
+- [x] CS8803 HW1 (Feb 3)
 
 - [ ] CSE6220 Intro to OpenMP
 - [ ] CSE6220 Comparison-based Sorting
