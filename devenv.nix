@@ -38,6 +38,7 @@
   ];
 
   scripts.lecture.exec = "uv run scripts/lecture.py";
+  scripts.definition.exec = "uv run scripts/definition.py";
   scripts.admin.exec = "uv run scripts/admin.py";
   scripts.undraft.exec = "uv run scripts/undraft.py";
 

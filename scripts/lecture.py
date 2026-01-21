@@ -1,5 +1,3 @@
-"""CLI tool to create a new OMSCS lecture note."""
-
 import re
 import sys
 from datetime import date, datetime
@@ -107,7 +105,7 @@ def create_lecture_file(name: str, week: str, course: CourseInfo) -> Path:
     """Create a new lecture file from the template."""
     # Create file path with lowercase and underscores (no spaces)
     # Convert name to slug: lowercase, replace spaces with underscores
-    name_slug = name.lower().replace(" ", "_")
+    name_slug = name.lower().replace(" ", "_").replace("/", "_")
     file_name = f"week_{week}_-_{name_slug}.md"
     file_path = course.directory / file_name
 
