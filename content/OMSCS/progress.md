@@ -24,7 +24,7 @@ type: plan
 - [ ] CSE6220 I/O avoiding
 - [ ] CSE6220 Cache-oblivious algorithms
 
-- [ ] CS6035 Man in the Middle (Jan 25)
+- [-] CS6035 Man in the Middle (Jan 25)
 
 # Jan 26-Feb 1 [ ]
 
