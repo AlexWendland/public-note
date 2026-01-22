@@ -21,8 +21,8 @@ type: plan
 - [x] CS8803 P1L2
 
 - [x] CSE6220 Algorithmic Time
-- [ ] CSE6220 I/O avoiding
-- [ ] CSE6220 Cache-oblivious algorithms
+- [x] CSE6220 I/O avoiding
+- [x] CSE6220 Cache-oblivious algorithms
 
 - [-] CS6035 Man in the Middle (Jan 25)
 
