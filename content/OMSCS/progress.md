@@ -26,11 +26,11 @@ type: plan
 
 - [-] CS6035 Man in the Middle (Jan 25)
 
-# Jan 26-Feb 1 [ ]
+# Jan 26-Feb 1 [x]
 
 - [x] CS8803 P1L3
 
-- [ ] CSE6220 Intro to work-span
+- [x] CSE6220 Intro to work-span
 
 # Feb 2-8 [ ]
 

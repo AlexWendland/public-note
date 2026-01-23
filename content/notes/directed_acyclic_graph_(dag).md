@@ -13,5 +13,6 @@ tags:
 title: Directed acyclic graph (DAG)
 type: definition
 ---
+
 > [!definition] Directed acyclic graph (DAG)
 > A [directed](directed_graph.md) [acyclic](acyclic_graph.md) graph.
