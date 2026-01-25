@@ -16,7 +16,7 @@ type: plan
 
 - [x] CSE6220 Basic model of Locality
 
-# Jan 19-25 [ ]
+# Jan 19-25 [x]
 
 - [x] CS8803 P1L2
 
@@ -24,9 +24,9 @@ type: plan
 - [x] CSE6220 I/O avoiding
 - [x] CSE6220 Cache-oblivious algorithms
 
-- [-] CS6035 Man in the Middle (Jan 25)
+- [x] CS6035 Man in the Middle (Jan 25)
 
-# Jan 26-Feb 1 [x]
+# Jan 26-Feb 1 (Board games) [x]
 
 - [x] CS8803 P1L3
 
@@ -38,7 +38,7 @@ type: plan
 - [x] CS8803 HW1 (Feb 3)
 
 - [ ] CSE6220 Intro to OpenMP
-- [ ] CSE6220 Comparison-based Sorting
+- [x] CSE6220 Comparison-based Sorting
 
 - [ ] CS6035 Machine Learning (Feb 8)
 
