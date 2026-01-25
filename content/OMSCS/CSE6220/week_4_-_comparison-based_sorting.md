@@ -102,9 +102,9 @@ This gives us that $B$ is bitonic by definition.
 > [!warning] Lazy
 > I should really prove these two definitions are equivalent - but it can be a bit fiddly at the boundary.
 
-> [!lemma] Rotations of Bitonic sequences are Bitonic
+> [!lemma] Rotations of Bitonic sequences are bitonic
 > Let $A = \{a_i\}_{i=0}^{n-1}$ be a bitonic sequence, and $t \in [0,n-1]$.
-> The sequence $B = \{a_{i+t \pmod{n}}\}_{i=0}^{n-1}$ is Bitonic.
+> The sequence $B = \{a_{i+t \pmod{n}}\}_{i=0}^{n-1}$ is bitonic.
 
 As $A$ is bitonic, there exists $k, j \in [0,n-1]$ such that:
 
@@ -112,26 +112,26 @@ As $A$ is bitonic, there exists $k, j \in [0,n-1]$ such that:
 
 - $a_{k+i \pmod{n}} \geq a_{k+i+1 \pmod{n}}$ for all $j \leq i < n$.
 
-Let $k' = k - t \pmod{n}$ and $j' = j$, and we will show $B$ is Bitonic.
+Let $k' = k - t \pmod{n}$ and $j' = j$, and we will show $B$ is bitonic.
 
 - $b_{k'+i \pmod{n}} = a_{(k - t) + i + k \pmod{n}} \leq a_{(k-t) + i + 1 + k \pmod{n}} = b_{k'+i \pmod{n}}$ for all $0 \leq i < j' = j$.
 
 - $b_{k'+i \pmod{n}} = a_{(k - t) + i + k \pmod{n}} \geq a_{(k-t) + i + 1 + k \pmod{n}} = b_{k'+i \pmod{n}}$ for all $j = j' \leq i < n$.
 
-Thus giving us $B$ is Bitonic.
+Thus giving us $B$ is bitonic.
 
 Combining the two lemmas above you can get the below result.
 
-> [!lemma] Rotated sub-sequences of Bitonic sequences are Bitonic
+> [!lemma] Rotated sub-sequences of Bitonic sequences are bitonic
 > Let $A = \{a_i\}_{i=0}^{n-1}$ be a bitonic sequence.
 > Suppose we have $\phi: [0, \ldots m-1] \rightarrow [0,n-1]$ which is a rotated increasing sequence.
-> Then $B = \{a_{\phi(i)}\}_{i=0}^{m-1}$ is Bitonic.
+> Then $B = \{a_{\phi(i)}\}_{i=0}^{m-1}$ is bitonic.
 
 Let $t = \phi(0)$, then we can rotate $A$ by $-t$ to get $A' = \{a_{i-t \pmod{n}}\}_{i=0}^{n-1}$.
 Define $\phi': [0, m-1] \rightarrow [0,n-1]$ by $\phi'(x) = \phi(x) - t \pmod{n}$.
 Then $\phi'$ is an increasing sequence - as we have $\phi'(0) = 0$ and $\phi$ was a rotation of an increasing sequence.
 As $B$ can be realised as a subsequence of $A'$ using $\phi'$.
-Then as $A'$ is Bitonic (rotation of a bitonic sequence is bitonic) and $B$ is a subsequence of $A'$ (subsequence of bitonic sequences are bitonic) this gives $B$ is Bitonic as desired.
+Then as $A'$ is bitonic (rotation of a bitonic sequence is bitonic) and $B$ is a subsequence of $A'$ (subsequence of bitonic sequences are bitonic) this gives $B$ is bitonic as desired.
 
 # Bitonic split
 
@@ -140,13 +140,14 @@ From now on, we will assume $n = 2^p$ - for sequences that do not satisfy this w
 > [!definition] Bitonic split
 > Suppose we have a bitonic sequence $A = \{a_i\}_{i=0}^{2^p-1}$ of length $2^p > 1$.
 > We can then pair elements $a_{i}$ and $a_{i+2^{p-1}}$ up and sort them (in place) to make $B$ with $b_i = \min\{a_i, a_{i + 2^{p-1}}\}$ and $b_{i+2^{p-1}} = \max\{a_i, a_{i+2^{p-1}}\}$ for $0 \leq i < 2^{p-1}$.
-> We claim that $B$ is two Bitonic sequences $L := \{b_i\}_{i=0}^{2^{p-1} - 1}$ and $U := \{b_{2^{p-1}+i}\}_{i=0}^{2^{p-1}-1}$, such that $l_i \leq u_j$ for all valid $i,j$.
-> This is what we call a Bitonic split.
+> We claim that $B$ is two bitonic sequences $L := \{b_i\}_{i=0}^{2^{p-1} - 1}$ and $U := \{b_{2^{p-1}+i}\}_{i=0}^{2^{p-1}-1}$, such that $l_i \leq u_j$ for all valid $i,j$.
+> This is what we call a bitonic split.
 
 > [!example] Bitonic split
-> We apply the Bitonic split on the length 8 sequence below.
+> We apply the bitonic split on the length 8 sequence below.
+>
 > | index | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
-> | ----- | --- | --- | --- | --- | --- | --- | --- |
+> | ----- | - | - | - | - | - | - | - | - |
 > | a_i | 0 | 1 | 2 | 3 | 4 | 4 | 2 | 1 |
 > | b_i | 0 | 1 | 2 | 1 | 4 | 4 | 2 | 3 |
 
@@ -161,19 +162,19 @@ We need to prove the two facts about the split:
 2. The sequences $L$ and $U$ are bitonic.
 
 > [!lemma] Bitonic splits sort
-> Let $A$ be a sequence that has a Bitonic split into $B$ (with $L$ and $U$ as defined above).
+> Let $A$ be a sequence that has a bitonic split into $B$ (with $L$ and $U$ as defined above).
 > Then $l_i \leq u_j$ for all valid $i,j$.
 
 Suppose this is not the case, and we have $l_x = \min\{a_{x}, a_{x+2^n}\}$ and $u_y = \max\{a_{y}, a_{y+2^n}\}$ where $u_y < l_x$.
 Therefore $a_x, a_{x+2^n} < a_y, a_{y + 2^n}$.
 Without loss of generality let $x < y$ and let $B$ be the sub-sequence of $A$ defined by $a_x, a_y, a_{x+2^n}, a_{y+2^n}$.
-This sequence is not Bitonic as $a_x < a_y$ and $a_y > a_{x+2^n}$.
+This sequence is not bitonic as $a_x < a_y$ and $a_y > a_{x+2^n}$.
 For $B$ to be bitonic with its peak at $a_y$, we would need the sequence to be decreasing after $a_y$, which would force $a_y > a_{x+2^n} > a_{y+2^n}$ (since $x < y$ means $a_{x+2^n}$ comes after $a_y$ in the sequence but before $a_{y+2^n}$).
 However, we know $a_{y+2^n} > a_{x+2^n}$ by our contradiction assumption, so $B$ cannot be bitonic.
 Therefore, no such $x$ and $y$ exist and we have the statement holding.
 
 > [!lemma] Bitonic splits sub-sequences are bitonic
-> Let $A$ be a sequence that has a Bitonic split into $B$ (with $L$ and $U$ as defined above).
+> Let $A$ be a sequence that has a bitonic split into $B$ (with $L$ and $U$ as defined above).
 > Then $L$ and $U$ are both bitonic.
 
 The proof structure will show that $L$ and $U$ are just rotated sub-sequences of $A$.
@@ -306,7 +307,7 @@ BitonicSort(A[0,2^n - 1], direction = 1)
 5. BitonicMerge(A, direction)
 ```
 
-When considering the DAG generated from the circuit, Bitonic sort has interesting properties:
+When considering the DAG generated from the circuit, bitonic sort has interesting properties:
 
 - Work: $W(n) = O(n \log^2(n))$.
 
