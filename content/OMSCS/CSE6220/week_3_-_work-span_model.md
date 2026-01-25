@@ -3,7 +3,7 @@ aliases:
 course_code: CSE6220
 course_name: Introduction to High Performance Computing
 created: '2026-01-22'
-date_checked:
+date_checked: '2026-01-25'
 draft: false
 last_edited: 2026-01-25
 tags:
@@ -60,7 +60,7 @@ Given some DAG $D_n$ that represents a computation of size $n$ we want to define
 
 > [!definition] Span
 > The span of a DAG is the number of vertices on the longest path between the start and end vertex.
-> This uses the notation $D(n)$ as it used to be called depth.
+> This uses the notation $D(n)$ because it used to be called depth.
 
 > [!definition] Run time
 > We define the run time of DAG $D_n$ on $p$ processors $T_p(n)$.
@@ -95,7 +95,7 @@ This is a lower bound, however it would be good to also achieve an upper bound a
 > $$
 
 As the vertices are in a DAG we can label them $l: V(D_n) \rightarrow [1, D(n)]$ by mapping a vertex to the number of vertices on the path of longest distance between the start vertex and itself.
-Lets make some observations about this mapping:
+Let's make some observations about this mapping:
 
 - We have $l(start) = 1$ and $l(end) = D(n)$ (moreover these are the only vertices with these values).
 
@@ -206,7 +206,7 @@ $$
 Which gives us $W(n) = O(n)$.
 
 For span on the other hand we have to consider the `spawn`s length and take the max.
-i.e. $D(n) = \max\{D(n/2), D(n/2), 1\} + O(1)$.
+That is, $D(n) = \max\{D(n/2), D(n/2), 1\} + O(1)$.
 In our case this is fairly simple as both spawns are of the same size so we get:
 
 $$
@@ -229,7 +229,7 @@ I.e. we want algorithms that grow like $O(D(n)) = \log^k(n)$.
 
 # Parfor
 
-Suppose we have an independent operations $foo(i)$ but we need to run it $n$ times.
+Suppose we have independent operations $foo(i)$ but we need to run it $n$ times.
 In parallel notation we would use:
 ```
 1. par-for i \in [1,n]:
@@ -272,7 +272,7 @@ Multiply(A, x) -> Ax:
 ```
 
 Currently this is fully synchronous so we have $W(n) = O(n^2) = D(n)$.
-The first parallelisation we can do it changing the outside loop to a par-for.
+The first parallelisation we can do is changing the outside loop to a par-for.
 However, we can not turn the inner for-loop into a par-for as it relies on the same data, namely $y[i]$.
 
 ```
@@ -308,7 +308,10 @@ To make this kind of operations easier to parse we introduce short notation for 
 Vector multiplication
 1. par-for j \in [0,n-1]:
 2.   t[j] = A[i,j] * x[j]
+```
 
+Shorthand notation:
+```
 Vector multiplication
 1. t[:] = A[i,:] * x[:] // Implicit par-for loop here
 ```
@@ -321,8 +324,10 @@ Vector multiplication
 2. par-for j \in [0,n-1]:
 3.   t[j] = A[i,j] * x[j]
 4. y[i] = y[i] + reduce(t)
+```
 
-
+Shorthand notation:
+```
 Vector multiplication
 1. y[i] = y[i] + reduce(A[i,:] * x[:]) // Implicit par-for loop and temporary variable
 ```
