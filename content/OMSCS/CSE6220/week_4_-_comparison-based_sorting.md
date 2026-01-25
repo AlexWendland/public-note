@@ -183,7 +183,7 @@ Intuitively, you can see this $L \leq U$ therefore we are just taking a pyramid 
 Without loss of generality I will show $L$ is a rotated sub-sequence of $A$ (the same proof holds for $U$).
 Let $\phi: [0, \ldots, 2^{n-1} - 1] \rightarrow [0, \ldots, 2^n - 1]$ be defined by
 $$
-\phi(i) = \begin{cases} \argmin_{x \in \{i, i+2^{n-1}\}} a_{x} & \mbox{if } a_x \not = a_{x+2^{n-1}}\\
+\phi(i) = \begin{cases} \text{argmin}_{x \in \{i, i+2^{n-1}\}} a_{x} & \mbox{if } a_x \not = a_{x+2^{n-1}}\\
 i & \mbox{if } a_x = a_{x+2^{n-1}} \mbox{ and } \phi(j) = j \forall 0 \leq j < i\\
 i + 2^{n-1} & \mbox{otherwise}
 \end{cases}
