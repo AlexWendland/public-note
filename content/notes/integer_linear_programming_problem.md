@@ -3,8 +3,8 @@ aliases:
   - ILP
   - integer linear programming problem
   - integer linear programming
-checked: false
 created: 2023-11-07
+date_checked:
 draft: false
 last_edited: 2023-11-12
 tags:

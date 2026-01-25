@@ -1,11 +1,11 @@
 ---
 aliases:
-checked: false
 course_code: CS6210
 course_name: Advanced Operating Systems
 created: '2025-12-01'
+date_checked:
 draft: false
-last_edited: 2025-12-05
+last_edited: 2025-12-07
 tags:
   - OMSCS
 title: Week 11 - Security

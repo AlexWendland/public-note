@@ -10,7 +10,7 @@ from note_helper import constants, file_admin, models, read_note
 logger = logging.getLogger(__name__)
 
 # Migration date to skip (when files were moved/frontmatter was reformatted)
-MIGRATION_DATE = datetime.date(2025, 12, 5)
+MIGRATION_DATE = datetime.date(2026, 1, 25)
 
 
 def update_last_edited(note_file: models.NoteFile):
@@ -102,6 +102,32 @@ def log_difference_in_tags(note_file: models.NoteFile, new_tags: list[str], old_
     removed_tags = [tag for tag in old_tags if tag not in new_tags]
     if removed_tags:
         logger.info(f"{note_file.file_path} INFO: Tags removed from file: {removed_tags}")
+
+
+def ensure_frontmatter(note_file: models.NoteFile) -> bool:
+    """
+    Ensures required frontmatter fields exist and removes banned fields.
+
+    Returns:
+        True if any changes were made, False otherwise
+    """
+    changes_made = False
+
+    # Add required fields if missing
+    for field, default_value in constants.REQUIRED_FIELDS.items():
+        if field not in note_file.metadata:
+            note_file.metadata[field] = default_value
+            logger.info(f"{note_file.file_path} CHANGE: Adding required field '{field}' with default value")
+            changes_made = True
+
+    # Remove banned fields
+    for field in constants.BANNED_FIELDS:
+        if field in note_file.metadata:
+            del note_file.metadata[field]
+            logger.info(f"{note_file.file_path} CHANGE: Removing banned field '{field}'")
+            changes_made = True
+
+    return changes_made
 
 
 def normalize_admonitions(note_file: models.NoteFile) -> bool:

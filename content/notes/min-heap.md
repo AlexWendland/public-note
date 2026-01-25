@@ -1,8 +1,8 @@
 ---
 aliases:
   - max-heap
-checked: false
 created: 2023-09-29
+date_checked:
 draft: false
 last_edited: 2026-01-21
 tags:

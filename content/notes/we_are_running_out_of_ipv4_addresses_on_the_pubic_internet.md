@@ -1,8 +1,8 @@
 ---
 aliases:
   - we are running out of IPv4 addresses on the pubic internet
-checked: false
 created: 2024-05-27
+date_checked:
 draft: true
 last_edited: 2024-05-27
 tags:

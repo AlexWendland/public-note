@@ -3,8 +3,8 @@ aliases:
   - recursion
   - recursive
   - recursively
-checked: false
 created: 2023-08-26
+date_checked:
 draft: false
 last_edited: 2023-11-13
 tags:

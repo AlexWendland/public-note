@@ -1,13 +1,17 @@
 ---
-checked: false
 created: 2025-12-05
+date_checked:
 draft: false
+end_date:
 last_edited: 2025-12-05
-tags: [work, software-engineering, data, finance]
-title: Man Group
 role: Software Engineer
 start_date: 2023-07-01
-end_date: null
+tags:
+  - work
+  - software-engineering
+  - data
+  - finance
+title: Man Group
 type: work
 ---
 

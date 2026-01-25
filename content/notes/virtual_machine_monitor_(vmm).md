@@ -4,8 +4,8 @@ aliases:
   - VMM
   - hypervisor
   - Hypervisor
-checked: false
 created: 2025-04-12
+date_checked:
 draft: false
 last_edited: 2025-04-12
 tags:

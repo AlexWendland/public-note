@@ -1,13 +1,17 @@
 ---
-checked: false
 created: 2025-12-05
+date_checked:
 draft: false
+end_date: 2021-08-01
 last_edited: 2025-12-05
-tags: [work, government, policy, leadership]
-title: Civil Service
 role: Science and Engineering Faststreamer
 start_date: 2020-10-01
-end_date: 2021-08-01
+tags:
+  - work
+  - government
+  - policy
+  - leadership
+title: Civil Service
 type: work
 ---
 

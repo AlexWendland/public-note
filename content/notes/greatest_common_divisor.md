@@ -2,8 +2,8 @@
 aliases:
   - GCD
   - greatest common divisor
-checked: false
 created: 2023-10-09
+date_checked:
 draft: false
 last_edited: 2025-12-05
 tags:

@@ -1,11 +1,11 @@
 ---
 aliases:
-checked: false
 course_code: CSE6220
 course_name: Introduction to High Performance Computing
 created: '2026-01-21'
+date_checked:
 draft: false
-last_edited: '2026-01-21'
+last_edited: 2026-01-22
 tags:
   - OMSCS
 title: Week 2 - I/O Avoiding Algorithms

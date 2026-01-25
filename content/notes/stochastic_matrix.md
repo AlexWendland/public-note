@@ -2,8 +2,8 @@
 aliases:
   - stochastic matrix
   - probability matrix
-checked: false
 created: 2023-12-03
+date_checked:
 draft: false
 last_edited: 2023-12-03
 tags: []

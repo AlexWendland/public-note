@@ -3,8 +3,8 @@ aliases:
   - Satisfiability problem
   - satisfiability problem
   - SAT problem
-checked: false
 created: 2023-09-30
+date_checked:
 draft: false
 last_edited: 2023-11-12
 tags:

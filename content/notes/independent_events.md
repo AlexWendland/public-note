@@ -2,8 +2,8 @@
 aliases:
   - independent events
   - independent event
-checked: false
 created: 2024-02-20
+date_checked:
 draft: false
 last_edited: 2024-02-20
 tags:

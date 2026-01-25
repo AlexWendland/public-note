@@ -2,8 +2,8 @@
 aliases:
   - principle component analysis
   - PCA
-checked: false
 created: 2024-03-10
+date_checked:
 draft: false
 last_edited: 2024-03-10
 tags:

@@ -1,10 +1,10 @@
 ---
 aliases:
   - CS6250
-checked: false
 course_code: CS6250
 course_name: Computer Networks
 created: 2024-01-10
+date_checked:
 draft: false
 last_edited: 2025-12-05
 tags:

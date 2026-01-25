@@ -11,6 +11,7 @@ from textual.binding import Binding
 from textual.containers import Horizontal, Vertical, VerticalScroll
 from textual.widgets import DataTable, Footer, Header, Static
 
+from note_helper import constants
 from note_helper.read_note import read_note_file
 
 
@@ -135,7 +136,7 @@ class UndraftApp(App):
     def load_draft_notes(self) -> None:
         """Find all notes marked as draft: true."""
         repo_root = Path(__file__).parent.parent
-        notes_dir = repo_root / "notes"
+        notes_dir = Path(constants.NOTES_DIR)
         draft_notes = []
 
         for md_file in notes_dir.rglob("*.md"):

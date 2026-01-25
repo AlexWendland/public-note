@@ -2,8 +2,8 @@
 aliases:
   - Adjacency list
   - adjacency list
-checked: false
 created: 2023-10-08
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags:

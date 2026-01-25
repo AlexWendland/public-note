@@ -1,8 +1,8 @@
 ---
 aliases:
   - standard deviation
-checked: false
 created: 2024-02-21
+date_checked:
 draft: false
 last_edited: 2024-02-21
 tags:

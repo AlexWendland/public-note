@@ -1,10 +1,10 @@
 ---
 aliases:
   - CS6035
-checked: false
 course_code: CS6035 O01
 course_name: Introduction to Information Security
 created: 2026-01-12
+date_checked:
 draft: false
 last_edited: 2026-01-12
 tags:
@@ -21,29 +21,29 @@ Introduction to Information Security is a graduate-level introductory course in 
 
 Main topics include:
 
-- Security basics 
+- Security basics
 
-- Security management and risk assessment 
+- Security management and risk assessment
 
-- Software security 
+- Software security
 
-- Operating systems security 
+- Operating systems security
 
-- Database security 
+- Database security
 
-- Cryptography algorithms and protocols 
+- Cryptography algorithms and protocols
 
-- Network authentication and secure network applications 
+- Network authentication and secure network applications
 
-- Malware 
+- Malware
 
-- Network threats and defenses 
+- Network threats and defenses
 
-- Web security 
+- Web security
 
-- Mobile security 
+- Mobile security
 
-- Legal and ethical issues 
+- Legal and ethical issues
 
 - Privacy
 

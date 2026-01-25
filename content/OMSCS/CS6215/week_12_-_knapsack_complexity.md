@@ -1,9 +1,9 @@
 ---
 aliases:
-checked: false
 course_code: CS6215
 course_name: Introduction to Graduate Algorithms
 created: 2023-11-12
+date_checked:
 draft: false
 last_edited: 2023-11-13
 tags:

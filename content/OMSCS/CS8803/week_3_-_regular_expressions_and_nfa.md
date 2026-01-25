@@ -1,11 +1,11 @@
 ---
 aliases:
-checked: false
 course_code: CS8803 O08
 course_name: Compilers - Theory and Practice
 created: '2026-01-16'
+date_checked:
 draft: true
-last_edited: '2026-01-16'
+last_edited: 2026-01-19
 tags:
   - OMSCS
 title: Week 3 - Regular expressions and NFA
@@ -92,9 +92,9 @@ To construct an NFA from a regular expression we need to show how the regular ex
 
 > [!lemma] Suppose we have two NFAs representing $A$ and $B$ (RegEx) (on the same alphabet $\Sigma$) then there is an NFA that represents $A \vert B$.
 > Let $X$ be represented by $(Q_X, \Sigma, \delta_X, q_X, A_X)$ then we will need to construct $C$ similarly.
-> 
+>
 > Let $Q_C = Q_A \cup Q_B \cup \{start\}$, where $q_C = start$ and $A_C = A_A \cup A_B$.
-> 
+>
 > Then let $\delta_C(q,s) = \delta_X(q,s)$ for all $q \in X$.
 > So all that remains to be defined is on $start$.
 > $$
@@ -102,19 +102,19 @@ To construct an NFA from a regular expression we need to show how the regular ex
 > \delta_C(start, \epsilon) &= \{q_A, q_B\}\\
 > \delta_C(start, s) &= \{\} & \mbox{ for all} s \in \Sigma\\
 > $$
-> 
-> To show $C$ generates the same language as $A \vert B$ we need to show both $L_{C} \subset L_{A \vert B}$ but also $L_{A\vert B} \subset L_{C}$. 
-> 
+>
+> To show $C$ generates the same language as $A \vert B$ we need to show both $L_{C} \subset L_{A \vert B}$ but also $L_{A\vert B} \subset L_{C}$.
+>
 > Take a word $w \in L_{C}$ and pick a single path $p$ that realises $w$.
 > This path must start with $(start, q_X, \epsilon)$ as they are the only paths from $start$.
 > Though as $Q_A$ and $Q_B$ are disconnected in $Q_C$ this means $p$ must only traverse nodes in $Q_X$.
 > Therefore $p$ without the first edge is a path that realises $w$ in $X$.
 > So $w \in L_{A \vert B}$.
-> 
+>
 > Suppose we have $w \in L_{A \vert B}$ then let $p$ be a path that realises $w$ in $X$.
 > Append $(start, q_X, \epsilon)$ to $p$ and we have a path that realises $w$ in $C$.
 > So $w \in L_{C}$.
-> 
+>
 > Therefore we have $L_{C} = L_{A \vert B}$.
 
 
@@ -122,9 +122,9 @@ To construct an NFA from a regular expression we need to show how the regular ex
 
 > [!lemma] Suppose we have two NFAs representing $A$ and $B$ (RegEx) (on the same alphabet $\Sigma$) then there is an NFA that represents $AB$.
 > Let $X$ be represented by $(Q_X, \Sigma, \delta_X, q_X, A_X)$ then we will need to construct $C$ similarly.
-> 
+>
 > Let $Q_C = Q_A \cup Q_B$ with start state $q_A$ and accepting states $A_C=A_B$.
-> 
+>
 > Let $\delta_C(q,-) = \delta_X(q,-)$ for all $q \in Q_C \backslash A_A$.
 > Then define $\delta_C$ on $A_A$ as:
 > $$
@@ -143,9 +143,9 @@ To construct an NFA from a regular expression we need to show how the regular ex
 > [!lemma] Suppose we have an NFA representing $A$ (RegEx) then there is an NFA that represents $A*$.
 > Let $A$ be represented by $(Q_A, \Sigma, \delta_A, q_A, A_A)$ then we will need to construct $B$ to represent $A*$.
 > (For simplicity, I am going to assume $q_A \not \in A_A$ - this construction works if it is but you have to be more careful with $\delta_B$ to check what you are building is valid.)
-> 
+>
 > Let $Q_B = Q_A$ with start state $q_B = q_A$ and accepting states $A_B = A_A$.
-> 
+>
 > Now define $\delta_B(q,-) = \delta_A(q,-)$ for all $q \in Q_B \backslash (A_A \cup \{q_A\})$ then define:
 > $$
 > \begin{align*}
@@ -157,17 +157,17 @@ To construct an NFA from a regular expression we need to show how the regular ex
 > $$
 >
 > Suppose we have a word in $A*$ then we can realise all sub words in $A$ as paths in $Q_A$.
-> Then we can glue these together using edges $(q, q_A, \epsilon)$ for $q \in A_A$. 
+> Then we can glue these together using edges $(q, q_A, \epsilon)$ for $q \in A_A$.
 > (For the empty word we can just use the path with one edge $(q_A, q, \epsilon)$ for $q \in A_A$.)
 > Thus showing $L_{A*} \subset L_B$.
-> 
+>
 > Instead suppose we have a word in $B$ let it be realised by a minimal path $p$ in the number of edges.
 > If the word this path represents is not empty then we can show it does not use any of the $(q_A, q, \epsilon)$ edges - otherwise we could contract the path further to get a smaller path.
 > Therefore we can cut this path up by the $(q, q_A, \epsilon)$ edges to get subwords in $A$.
 > Thus showing $L_B \subset L_{A*}$ and giving us equality.
 
 We can use a similar construction to get $L_{A+}$ but not including the edges $(q_A, q, \epsilon)$ for $q \in A_A$.
-Similarly we can do the same construction but without the $(q, q_A, \epsilon)$ for $q \in A_A$ edges to get $A?$. 
+Similarly we can do the same construction but without the $(q, q_A, \epsilon)$ for $q \in A_A$ edges to get $A?$.
 
 # Equivalence of DFA and NFA
 
@@ -175,9 +175,9 @@ We say that two finite automata are equivalent if they recognise the same set of
 
 > [!lemma] DFA and NFA are equivalent
 > As DFA are a subset of NFA, we just need to show that for every NFA we can construct a DFA that recognises the same set of words.
-> 
+>
 > Let $A$ a NFA be represented by $(Q_A, \Sigma, \delta_A, q_A, A_A)$ then we will need to construct $B$ a DFA to represent $A$.
-> To define $B$ we need to define a map called the $\epsilon$-closure: 
+> To define $B$ we need to define a map called the $\epsilon$-closure:
 > $$
 > \epsilon: \mathcal{P}(Q_A) \rightarrow \mathcal{P}(Q_A)
 > $$
@@ -187,13 +187,13 @@ We say that two finite automata are equivalent if they recognise the same set of
 > Note that $X \subset \epsilon(X)$ by the empty path.
 > Let $Q_B = \mathcal{P}(Q_A)$ with $q_B = \epsilon(\{q_A\})$, and $A_B = \{X \in \mathcal{P}(Q_A) \vert X \cap A_A \not = \emptyset\}$.
 > Then define $\delta_B(X,s) = \epsilon(\bigcup_{x \in X} \delta_A(x,s))$.
-> 
+>
 > Intuitively, this graph is exactly how we traverse an NFA as described earlier.
 > Note it may not be connected - but that does not matter.
 >
 > As this graph is exactly how you traverse an NFA, paths in $Q_A$ can be projected into $Q_B$ where $\epsilon$ edges are removed.
 > Therefore $L_{A} \subset L_{B}$.
-> 
+>
 > Similarly, for a word $w \in L_{B}$ we can expand a path $p$ that realises $w$ in $Q_B$ to a path in $Q_A$ by adding $\epsilon$ edges at each node.
 > Therefore $L_{B} \subset L_{A}$.
 > Giving us $L_{A} = L_{B}$.
@@ -203,7 +203,7 @@ So instead within algorithms we build $B$ by traversing $A$ using breadth-first 
 
 ```
 1. q_B <- \epsilon({q_A})
-2. Q_B <- {q_B} 
+2. Q_B <- {q_B}
 3. W <- {q_B}
 4. while W is not empty:
 5.   q <- pop(W)

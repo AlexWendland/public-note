@@ -1,8 +1,8 @@
 ---
 aliases:
   - complement graph
-checked: false
 created: 2023-11-03
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags:

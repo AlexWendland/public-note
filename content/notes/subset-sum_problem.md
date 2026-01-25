@@ -1,8 +1,8 @@
 ---
 aliases:
   - subset-sum problem
-checked: false
 created: 2023-11-12
+date_checked:
 draft: false
 last_edited: 2023-11-13
 tags:

@@ -5,7 +5,7 @@ import tempfile
 from pathlib import Path
 from unittest.mock import patch
 
-from note_helper.file_admin import update_last_edited
+from note_helper.file_admin import MIGRATION_DATE, update_last_edited
 from note_helper.models import MarkdownSection, NoteFile
 from note_helper.read_note import read_note_file
 
@@ -16,7 +16,7 @@ def test_migration_date_skipped_in_last_edited():
 
     try:
         # Create a file with an old last_edited date
-        old_date = "2023-11-11"
+        old_date = str(MIGRATION_DATE - datetime.timedelta(days=30))
         metadata = {
             "title": "Test",
             "last_edited": old_date,
@@ -29,10 +29,10 @@ def test_migration_date_skipped_in_last_edited():
         )
         note.write()
 
-        # Mock get_last_edited to return the migration date
-        migration_date = datetime.date(2025, 12, 1)
+        # Mock get_last_edited to return a date on or before migration date (should be skipped)
+        git_date = MIGRATION_DATE - datetime.timedelta(days=2)
         with patch("note_helper.file_admin.get_last_edited") as mock_get_last_edited:
-            mock_get_last_edited.return_value = migration_date
+            mock_get_last_edited.return_value = git_date
 
             # Read the file and try to update last_edited
             note = read_note_file(tmp_path)
@@ -54,7 +54,7 @@ def test_non_migration_date_updates_last_edited():
 
     try:
         # Create a file with an old last_edited date
-        old_date = "2023-11-11"
+        old_date = str(MIGRATION_DATE - datetime.timedelta(days=30))
         metadata = {
             "title": "Test",
             "last_edited": old_date,
@@ -67,8 +67,8 @@ def test_non_migration_date_updates_last_edited():
         )
         note.write()
 
-        # Mock get_last_edited to return a different date (not migration date)
-        new_date = datetime.date(2025, 12, 10)
+        # Mock get_last_edited to return a date after migration date (should update)
+        new_date = MIGRATION_DATE + datetime.timedelta(days=2)
         with patch("note_helper.file_admin.get_last_edited") as mock_get_last_edited:
             mock_get_last_edited.return_value = new_date
 
@@ -90,7 +90,7 @@ def test_last_edited_handles_string_dates():
 
     try:
         # Create a file with string date (as stored in YAML)
-        old_date_str = "2023-11-11"
+        old_date_str = str(MIGRATION_DATE - datetime.timedelta(days=30))
         metadata = {
             "title": "Test",
             "last_edited": old_date_str,
@@ -104,7 +104,7 @@ def test_last_edited_handles_string_dates():
         note.write()
 
         # Mock get_last_edited to return a newer date (after migration date to avoid skip)
-        new_date = datetime.date(2025, 12, 15)
+        new_date = MIGRATION_DATE + datetime.timedelta(days=5)
         with patch("note_helper.file_admin.get_last_edited") as mock_get_last_edited:
             mock_get_last_edited.return_value = new_date
 
@@ -136,8 +136,8 @@ def test_last_edited_not_downgraded():
         tmp_path = tmp.name
 
     try:
-        # Create a file with a recent date
-        recent_date = "2025-10-15"
+        # Create a file with a recent date (after migration date)
+        recent_date = str(MIGRATION_DATE + datetime.timedelta(days=10))
         metadata = {
             "title": "Test",
             "last_edited": recent_date,
@@ -150,8 +150,8 @@ def test_last_edited_not_downgraded():
         )
         note.write()
 
-        # Mock get_last_edited to return an older date
-        old_date = datetime.date(2025, 9, 1)
+        # Mock get_last_edited to return an older date (but still after migration)
+        old_date = MIGRATION_DATE + datetime.timedelta(days=3)
         with patch("note_helper.file_admin.get_last_edited") as mock_get_last_edited:
             mock_get_last_edited.return_value = old_date
 

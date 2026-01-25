@@ -20,6 +20,7 @@ def main():
     files = list(read_note.get_note_files(templates=False))
     for file_path in track(files, description="[cyan]Updating note metadata..."):
         note_file = read_note.read_note_file(str(file_path))
+        file_admin.ensure_frontmatter(note_file)
         file_admin.update_tags(note_file)
         file_admin.normalize_admonitions(note_file)
         note_file.write()

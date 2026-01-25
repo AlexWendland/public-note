@@ -2,8 +2,8 @@
 aliases:
   - Hypertext Transfer Protocol Secure
   - HTTPS
-checked: false
 created: 2024-07-23
+date_checked:
 draft: false
 last_edited: 2024-07-23
 tags:

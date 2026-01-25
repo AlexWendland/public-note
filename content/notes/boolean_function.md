@@ -1,8 +1,8 @@
 ---
 aliases:
   - boolean function
-checked: false
 created: 2023-08-28
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags:

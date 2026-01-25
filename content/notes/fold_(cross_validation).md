@@ -2,8 +2,8 @@
 aliases:
   - fold
   - folds
-checked: false
 created: 2024-01-17
+date_checked:
 draft: false
 last_edited: 2024-01-17
 tags:

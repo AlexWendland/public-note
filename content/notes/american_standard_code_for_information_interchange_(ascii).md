@@ -1,8 +1,8 @@
 ---
 aliases:
   - ASCII
-checked: false
 created: 2024-05-23
+date_checked:
 draft: true
 last_edited: 2024-05-23
 tags: []

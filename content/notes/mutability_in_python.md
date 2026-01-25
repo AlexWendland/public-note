@@ -1,8 +1,8 @@
 ---
 aliases:
   - mutability in Python
-checked: false
 created: 2023-07-17
+date_checked:
 draft: false
 last_edited: 2025-12-05
 tags:

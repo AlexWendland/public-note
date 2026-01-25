@@ -1,8 +1,8 @@
 ---
 aliases:
   - policy
-checked: false
 created: 2025-05-14
+date_checked:
 draft: false
 last_edited: 2025-05-14
 tags:

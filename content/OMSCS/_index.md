@@ -2,6 +2,7 @@
 aliases:
   - OMSCS
 created: 2023-08-26
+date_checked:
 draft: false
 tags:
   - OMSCS

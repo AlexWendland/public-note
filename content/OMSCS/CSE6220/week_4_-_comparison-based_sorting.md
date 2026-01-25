@@ -1,11 +1,11 @@
 ---
 aliases:
-checked: false
 course_code: CSE6220
 course_name: Introduction to High Performance Computing
 created: '2026-01-23'
+date_checked:
 draft: false
-last_edited: '2026-01-23'
+last_edited: 2026-01-25
 tags:
   - OMSCS
 title: Week 4 - Comparison-based Sorting

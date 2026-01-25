@@ -1,8 +1,8 @@
 ---
 aliases:
   - bitwise operation in python
-checked: false
 created: 2023-04-20
+date_checked:
 draft: false
 last_edited: 2025-12-05
 tags:

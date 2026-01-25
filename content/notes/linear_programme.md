@@ -3,8 +3,8 @@ aliases:
   - linear programme
   - linear programming
   - linear programmes
-checked: false
 created: 2023-11-07
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags:

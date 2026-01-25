@@ -1,11 +1,11 @@
 ---
 aliases:
-checked: false
 course_code: CS6035 O01
 course_name: Introduction to Information Security
 created: '2026-01-12'
+date_checked:
 draft: true
-last_edited: '2026-01-12'
+last_edited: 2026-01-15
 tags:
   - OMSCS
 title: Week 1 - Security Mindset
@@ -15,7 +15,7 @@ week: 1
 
 We need security when two things are met:
 
-- We have something of value, and 
+- We have something of value, and
 
 - We have a threat to that thing.
 

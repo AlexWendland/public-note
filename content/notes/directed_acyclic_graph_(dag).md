@@ -4,10 +4,10 @@ aliases:
   - DAG
   - directed acyclic graph
   - Directed acyclic graph
-checked: false
 created: 2023-09-26
+date_checked:
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-23
 tags:
   - programming
 title: Directed acyclic graph (DAG)

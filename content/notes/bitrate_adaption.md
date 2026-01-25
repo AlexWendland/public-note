@@ -1,8 +1,8 @@
 ---
 aliases:
   - bitrate adaption
-checked: false
 created: 2024-07-27
+date_checked:
 draft: false
 last_edited: 2024-07-27
 tags:

@@ -1,8 +1,8 @@
 ---
 aliases:
   - dot product
-checked: false
 created: 2024-01-31
+date_checked:
 draft: false
 last_edited: 2024-01-31
 tags:

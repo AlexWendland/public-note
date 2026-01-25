@@ -1,10 +1,10 @@
 ---
 aliases:
   - CS8803
-checked: false
 course_code: CS8803 O08
 course_name: Compilers - Theory and Practice
 created: 2026-01-12
+date_checked:
 draft: false
 last_edited: 2026-01-12
 tags:

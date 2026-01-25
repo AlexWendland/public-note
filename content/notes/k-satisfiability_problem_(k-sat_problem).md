@@ -6,8 +6,8 @@ aliases:
   - k-SAT problem
   - 2-SAT problem
   - 3-SAT
-checked: false
 created: 2023-09-30
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags:

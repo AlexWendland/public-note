@@ -1,8 +1,8 @@
 ---
 aliases:
   - k-vertex-colouring problem
-checked: false
 created: 2023-11-02
+date_checked:
 draft: false
 last_edited: 2023-11-16
 tags:

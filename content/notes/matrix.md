@@ -3,8 +3,8 @@ aliases:
   - matrix
   - matrice
   - matrices
-checked: false
 created: 2023-08-31
+date_checked:
 draft: false
 last_edited: 2023-12-03
 tags:

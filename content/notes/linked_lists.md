@@ -4,8 +4,8 @@ aliases:
   - linked lists
   - double linked list
   - double linked lists
-checked: false
 created: 2023-10-12
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags:

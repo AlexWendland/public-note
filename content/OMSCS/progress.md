@@ -2,7 +2,9 @@
 aliases:
   - OMSCS
 created: 2026-01-19
+date_checked:
 draft: true
+last_edited: 2026-01-25
 tags:
   - OMSCS
   - education

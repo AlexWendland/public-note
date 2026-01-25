@@ -1,8 +1,8 @@
 ---
 aliases:
   - AIMD
-checked: false
 created: 2024-05-29
+date_checked:
 draft: false
 last_edited: 2024-05-29
 tags:

@@ -2,8 +2,8 @@
 aliases:
   - Physical layer
   - layer 1
-checked: false
 created: 2024-05-22
+date_checked:
 draft: false
 last_edited: 2024-05-22
 tags:

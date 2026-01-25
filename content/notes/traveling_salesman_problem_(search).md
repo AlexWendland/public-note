@@ -1,8 +1,8 @@
 ---
 aliases:
   - TSP search
-checked: false
 created: 2023-11-15
+date_checked:
 draft: false
 last_edited: 2023-11-15
 tags:

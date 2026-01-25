@@ -1,14 +1,18 @@
 ---
-checked: false
 created: 2025-12-05
-draft: false
-last_edited: 2025-12-05
-tags: [education, computer-science, machine-learning, distributed-systems]
-title: Georgia Tech
+date_checked:
 degree: Masters of Computer Science
+draft: false
+end_date:
 institution: Georgia Institute of Technology
+last_edited: 2025-12-05
 start_date: 2023-08-01
-end_date: null
+tags:
+  - education
+  - computer-science
+  - machine-learning
+  - distributed-systems
+title: Georgia Tech
 type: education
 ---
 

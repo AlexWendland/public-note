@@ -1,8 +1,8 @@
 ---
 aliases:
   - formal language
-checked: false
 created: 2025-04-12
+date_checked:
 draft: true
 last_edited: 2025-04-12
 tags: []

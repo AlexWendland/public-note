@@ -5,8 +5,8 @@ aliases:
   - Exception handling
   - exception handler
   - Exception handler
-checked: false
 created: 2023-08-20
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags:

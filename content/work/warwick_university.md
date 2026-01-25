@@ -1,13 +1,17 @@
 ---
-checked: false
 created: 2025-12-05
+date_checked:
 draft: false
+end_date: 2020-04-01
 last_edited: 2025-12-05
-tags: [work, education, teaching, mathematics]
-title: University of Warwick
 role: Teacher and Lecturer
 start_date: 2014-09-01
-end_date: 2020-04-01
+tags:
+  - work
+  - education
+  - teaching
+  - mathematics
+title: University of Warwick
 type: work
 ---
 

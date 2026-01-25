@@ -1,8 +1,8 @@
 ---
 aliases:
   - quadratic programming problem
-checked: false
 created: 2024-01-31
+date_checked:
 draft: true
 last_edited: 2024-01-31
 tags: []

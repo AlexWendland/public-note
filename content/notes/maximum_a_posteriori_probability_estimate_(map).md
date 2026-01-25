@@ -4,8 +4,8 @@ aliases:
   - Maximum a posteriori probability
   - MAP
   - maximum a posteriori probability
-checked: false
 created: 2024-02-20
+date_checked:
 draft: false
 last_edited: 2024-02-20
 tags:

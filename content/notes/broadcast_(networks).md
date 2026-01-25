@@ -3,8 +3,8 @@ aliases:
   - all f's address
   - broadcast
   - broadcasts
-checked: false
 created: 2024-05-21
+date_checked:
 draft: false
 last_edited: 2024-05-21
 tags:

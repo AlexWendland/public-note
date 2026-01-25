@@ -2,8 +2,8 @@
 aliases:
   - IETF
   - Internet engineering task force
-checked: false
 created: 2024-07-19
+date_checked:
 draft: false
 last_edited: 2024-07-19
 tags:

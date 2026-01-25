@@ -3,8 +3,8 @@ aliases:
   - BFS
   - Breadth-first search
   - breadth-first search
-checked: false
 created: 2023-09-29
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags:

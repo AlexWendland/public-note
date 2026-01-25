@@ -1,8 +1,8 @@
 ---
 aliases:
   - extended Euclidean algorithm
-checked: false
 created: 2023-10-09
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags:

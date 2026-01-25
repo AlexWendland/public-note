@@ -2,8 +2,8 @@
 aliases:
   - linear programme in standard form
   - linear programmes in standard form
-checked: false
 created: 2023-11-07
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags:

@@ -2,8 +2,8 @@
 aliases:
   - search problems
   - search problem
-checked: false
 created: 2023-10-24
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags: []

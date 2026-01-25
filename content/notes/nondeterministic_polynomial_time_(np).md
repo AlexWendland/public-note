@@ -4,8 +4,8 @@ aliases:
   - NP complexity
   - Nondeterministic Polynomial time
   - nondeterministic polynomial time
-checked: false
 created: 2023-08-30
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags:

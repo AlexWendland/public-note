@@ -1,8 +1,8 @@
 ---
 aliases:
   - strongly connected
-checked: false
 created: 2023-09-27
+date_checked:
 draft: false
 last_edited: 2025-12-05
 tags:

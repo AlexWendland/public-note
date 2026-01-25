@@ -4,8 +4,8 @@ aliases:
   - API
   - application programming interface
   - API's
-checked: false
 created: 2023-03-10
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags:

@@ -1,14 +1,19 @@
 ---
-checked: false
 created: 2025-12-05
-draft: false
-last_edited: 2025-12-05
-tags: [education, mathematics, graph-theory, group-theory, research]
-title: University of Warwick - PhD
+date_checked:
 degree: PhD in Mathematics
-institution: University of Warwick
-start_date: 2015-09-01
+draft: false
 end_date: 2020-04-01
+institution: University of Warwick
+last_edited: 2025-12-05
+start_date: 2015-09-01
+tags:
+  - education
+  - mathematics
+  - graph-theory
+  - group-theory
+  - research
+title: University of Warwick - PhD
 type: education
 ---
 

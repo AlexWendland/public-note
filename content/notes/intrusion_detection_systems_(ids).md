@@ -2,8 +2,8 @@
 aliases:
   - IDS
   - Intrusion detection systems
-checked: false
 created: 2024-07-19
+date_checked:
 draft: true
 last_edited: 2024-07-19
 tags: []

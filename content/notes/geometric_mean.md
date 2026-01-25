@@ -1,8 +1,8 @@
 ---
 aliases:
   - geometric mean
-checked: false
 created: 2023-11-12
+date_checked:
 draft: false
 last_edited: 2023-11-12
 tags:

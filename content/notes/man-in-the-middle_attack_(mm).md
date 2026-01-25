@@ -2,8 +2,8 @@
 aliases:
   - MM
   - man-in-the-middle
-checked: false
 created: 2024-07-21
+date_checked:
 draft: false
 last_edited: 2024-07-21
 tags:

@@ -1,13 +1,17 @@
 ---
-checked: false
 created: 2025-12-05
+date_checked:
 draft: false
+end_date: 2023-07-01
 last_edited: 2025-12-05
-tags: [work, data, cryptocurrency, leadership]
-title: CC Data
 role: Head of Data
 start_date: 2021-09-01
-end_date: 2023-07-01
+tags:
+  - work
+  - data
+  - cryptocurrency
+  - leadership
+title: CC Data
 type: work
 ---
 

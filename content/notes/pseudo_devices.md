@@ -1,7 +1,7 @@
 ---
 aliases:
-checked: false
 created: 2025-04-09
+date_checked:
 draft: false
 last_edited: 2025-04-09
 tags:

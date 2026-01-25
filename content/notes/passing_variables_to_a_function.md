@@ -6,8 +6,8 @@ aliases:
   - passing variables to a function
   - passed by reference
   - passed by value
-checked: false
 created: 2023-07-17
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags:

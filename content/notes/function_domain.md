@@ -1,8 +1,8 @@
 ---
 aliases:
   - domain
-checked: false
 created: 2024-01-10
+date_checked:
 draft: false
 last_edited: 2024-01-10
 tags:

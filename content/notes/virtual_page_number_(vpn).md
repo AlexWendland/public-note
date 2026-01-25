@@ -2,8 +2,8 @@
 aliases:
   - virtual page number
   - VPN
-checked: false
 created: 2025-03-22
+date_checked:
 draft: false
 last_edited: 2025-03-22
 tags:

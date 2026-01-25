@@ -1,14 +1,18 @@
 ---
-checked: false
 created: 2025-12-05
-draft: false
-last_edited: 2025-12-05
-tags: [education, mathematics, teaching, research]
-title: University of Warwick - MMath
+date_checked:
 degree: Masters in Mathematics
-institution: University of Warwick
-start_date: 2011-09-01
+draft: false
 end_date: 2015-07-01
+institution: University of Warwick
+last_edited: 2025-12-05
+start_date: 2011-09-01
+tags:
+  - education
+  - mathematics
+  - teaching
+  - research
+title: University of Warwick - MMath
 type: education
 ---
 

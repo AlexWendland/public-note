@@ -1,8 +1,8 @@
 ---
 aliases:
   - activation function
-checked: false
 created: 2024-01-20
+date_checked:
 draft: false
 last_edited: 2024-01-20
 tags:

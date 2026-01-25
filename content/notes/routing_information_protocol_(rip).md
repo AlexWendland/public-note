@@ -1,8 +1,8 @@
 ---
 aliases:
   - RIP
-checked: false
 created: 2024-06-04
+date_checked:
 draft: false
 last_edited: 2024-06-04
 tags:

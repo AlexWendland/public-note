@@ -1,8 +1,8 @@
 ---
 aliases:
   - variables
-checked: false
 created: 2023-07-17
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags:

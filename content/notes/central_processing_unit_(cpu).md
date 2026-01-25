@@ -1,8 +1,8 @@
 ---
 aliases:
   - CPU
-checked: false
 created: 2024-08-26
+date_checked:
 draft: true
 last_edited: 2024-08-26
 tags:

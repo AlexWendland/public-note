@@ -1,8 +1,8 @@
 ---
 aliases:
   - worst case run time
-checked: false
 created: 2023-08-27
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags:

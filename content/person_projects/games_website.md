@@ -1,9 +1,13 @@
 ---
-checked: false
 created: 2025-12-05
+date_checked:
 draft: false
 last_edited: 2025-12-05
-tags: [projects, react, nextjs, games]
+tags:
+  - projects
+  - react
+  - nextjs
+  - games
 title: Games Website
 type: personal_project
 ---

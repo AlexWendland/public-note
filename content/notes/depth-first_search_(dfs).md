@@ -3,8 +3,8 @@ aliases:
   - DFS
   - depth-first search
   - Depth-first search
-checked: false
 created: 2023-09-26
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags:

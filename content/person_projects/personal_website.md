@@ -1,9 +1,12 @@
 ---
-checked: false
 created: 2025-12-05
+date_checked:
 draft: false
 last_edited: 2025-12-05
-tags: [projects, hugo, website]
+tags:
+  - projects
+  - hugo
+  - website
 title: Personal Website
 type: personal_project
 ---

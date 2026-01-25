@@ -1,11 +1,11 @@
 ---
 aliases:
-checked: false
 course_code: CSE6220
 course_name: Introduction to High Performance Computing
 created: '2026-01-22'
+date_checked:
 draft: false
-last_edited: '2026-01-22'
+last_edited: 2026-01-25
 tags:
   - OMSCS
 title: Week 3 - Work-Span model
@@ -321,7 +321,7 @@ Vector multiplication
 2. par-for j \in [0,n-1]:
 3.   t[j] = A[i,j] * x[j]
 4. y[i] = y[i] + reduce(t)
- 
+
 
 Vector multiplication
 1. y[i] = y[i] + reduce(A[i,:] * x[:]) // Implicit par-for loop and temporary variable

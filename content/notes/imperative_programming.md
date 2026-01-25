@@ -3,8 +3,8 @@ aliases:
   - imperative programming
   - Imperative language
   - imperative language
-checked: false
 created: 2023-02-24
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags:

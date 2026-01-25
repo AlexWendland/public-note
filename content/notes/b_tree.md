@@ -1,8 +1,8 @@
 ---
 aliases:
   - B-tree
-checked: false
 created: 2026-01-21
+date_checked:
 draft: false
 last_edited: 2026-01-21
 tags:

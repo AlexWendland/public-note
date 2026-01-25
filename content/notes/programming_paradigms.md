@@ -3,8 +3,8 @@ aliases:
   - programming paradigm
   - programming paradigms
   - Programming paradigm
-checked: false
 created: 2023-07-13
+date_checked:
 draft: false
 last_edited: 2023-11-11
 tags:
