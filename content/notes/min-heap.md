@@ -2,7 +2,7 @@
 aliases:
   - max-heap
 created: 2023-09-29
-date_checked:
+date_checked: 2026-01-25
 draft: false
 last_edited: 2026-01-21
 tags:
@@ -11,8 +11,8 @@ title: Min-heap
 type: data structure
 ---
 
-A min-heap is a complete binary tree T (i.e. all layers other than the bottom are full).
-Each node $x \in T$ in this tree is associated with a value of your heap $v_x$.
+A min-heap is a complete binary tree T (i.e., all layers are full except possibly the bottom).
+Each node $x \in T$ in this tree is associated with a value in the heap $v_x$.
 This tree obeys the min-heap property:
 
 - For all nodes $x \in T$ in the tree if they have a parent $p \in T$ then $v_x \geq v_p$.
@@ -25,9 +25,8 @@ This means the root node is the smallest value in the heap.
 
 # Implementation
 
-Heaps are normally implemented as arrays.
-Where the tree structure is implied by a value's position within the array.
-e.g. [1, 2, 3, 4, 5, 6] would give the following tree.
+Heaps are normally implemented as arrays, where the tree structure is implied by a value's position within the array.
+For example, [1, 2, 3, 4, 5, 6] would give the following tree:
 ```
 layer 0:      1
              / \
@@ -49,11 +48,11 @@ Alternatively, using 0-indexed positions:
 Cost: $O(n)$
 
 This takes an array and returns a heap with the given property.
-Here we take any array as is and starting from the lowest node with children, work our way up the tree ensuring the heap is sorted correctly.
+Starting from the lowest node with children, we work up the tree, ensuring the heap property is satisfied at each step.
 
 The key insight for linear time complexity: we process fewer nodes at higher levels (which require more swaps), but many more nodes at lower levels (which need fewer swaps). This balance yields $O(n)$ rather than $O(n \log n)$.
 
-In a tree of depth $d := \lfloor \log_2(n) \rfloor$ each node we consider at layer $l$ we only need to consider $d-l$ swaps - as the new root node gets swapped down to the correct depth.
+In a tree of depth $d := \lfloor \log_2(n) \rfloor$, each node at layer $l$ requires at most $d-l$ swaps, since the element gets swapped down to its correct position.
 This takes the following number of operations:
 $$
 \begin{align*}

@@ -3,7 +3,7 @@ aliases:
 course_code: CSE6220
 course_name: Introduction to High Performance Computing
 created: '2026-01-22'
-date_checked:
+date_checked: '2026-01-25'
 draft: false
 last_edited: 2026-01-23
 tags:
@@ -23,7 +23,7 @@ This is what is covered in this lecture.
 
 # Managed caches
 
-There is a lot of 'managed' memory systems such as the caches in your CPU.
+There are many 'managed' memory systems such as the caches in your CPU.
 Therefore, to build a cache-oblivious algorithm we need to have a model for how these work.
 
 ## Ideal caches
@@ -32,12 +32,12 @@ An ideal cache has two assumptions:
 
 - It is fully associative: This means it can utilise the whole address space.
 
-- It has Optimal replacement: When full, it gets to look ahead in the code and throw out the currently stored address that is used last in the future.
+- It has Optimal replacement: When full, it can look ahead in the code and throw out the currently stored address that is used last in the future.
 
 When working with this model we have:
 
 $$
-Q_{OPT}(n, Z, L) = \mbox{# misses} + \mbox{store-evictions}.
+Q_{OPT}(n, Z, L) = \text{number of misses} + \text{store-evictions}.
 $$
 
 This model might seem unrealistic given its look into the future - but this helps us with proving bounds.
@@ -53,7 +53,7 @@ How far away is the optimal replacement from LRU?
 > $Q_{LRU}(n, Z, L) \leq 2 \cdot Q_{OPT}\left (n, \frac{Z}{2}, L \right )$
 
 This is saying that the number of replacements for an LRU cache is at most twice the number of replacements of the optimal policy with half the size of the cache.
-This is really saying that asymptotically (all Maths people really care about) the optimal and LRU designs are similar.
+This is really saying that asymptotically (what mathematicians really care about) the optimal and LRU designs are similar.
 
 > [!lemma] Corollary "Regularity condition"
 > If $Q_{OPT}(n, Z, L) = O(Q_{OPT}(n, 2Z, L))$ then $Q_{LRU}(n,Z,L) = O(Q_{OPT}(n,Z,L))$.
@@ -66,6 +66,7 @@ Q_{LRU}(n,Z,L) &\leq 2 Q_{OPT} \left ( n, \frac{Z}{2}, L \right ) & \mbox{from t
 & \leq O(Q_{OPT}(n,Z,L)) & \mbox{from the assumption}
 \end{align*}
 $$
+
 As $Q$ is always positive this gives us the required $Q_{LRU}(n,Z,L) = O(Q_{OPT}(n,Z, L))$.
 
 > [!example] Matrix multiply
@@ -93,9 +94,9 @@ However, in this case what we really need is at least $3B$ cache lines in $Z$ th
 As discussed previously, the 'block' matrix multiply algorithm relies on picking the parameter $B$ to fit in the fast memory.
 Can we rewrite this algorithm to be cache-oblivious?
 
-Lets assume we have $A, B$ $n \times n$ matrices and we want to find $C = A \cdot B$ with $n = 2^k$ (this makes the maths easier but doesn't really matter as we can always embed other matrices into one of this size).
-Then lets tackle the problem using divide and conquer by breaking matrices into 4 quarters.
-Let for $M$ a $2^j \times 2^j$ matrix let $M_{1,1}$ be the top left, $M_{1,2}$ be the top right, $M_{2,1}$ bottom left and $M_{2,2}$ bottom right $2^{j-1} \times 2^{j-1}$ matrix.
+Let's assume we have $A, B$ $n \times n$ matrices and we want to find $C = A \cdot B$ with $n = 2^k$ (this makes the maths easier but doesn't really matter as we can always embed other matrices into one of this size).
+Then let's tackle the problem using divide and conquer by breaking matrices into 4 quarters.
+For a matrix $M$ of size $2^j \times 2^j$, let $M_{1,1}$ be the top left, $M_{1,2}$ be the top right, $M_{2,1}$ be the bottom left, and $M_{2,2}$ be the bottom right $2^{j-1} \times 2^{j-1}$ submatrix.
 Then our recursive algorithm is as follows:
 
 ```
@@ -161,7 +162,7 @@ This is where using 0-indexed positions:
 
 - Right child of node at index $i$: $2i+2$
 
-Though this does not help us as children and parents are far away from one another.
+However, this layout does not help us because children and parents are far away from one another.
 
 > [!definition] Van Emde Boas (tree) layout
 > Let $T$ be a complete binary tree of depth $d$.
@@ -176,7 +177,5 @@ Therefore applying binary search to a binary search tree in Van Emde Boas layout
 
 Operations: $O(\log_2(n))$ (same as binary search).
 
-Cache-misses: $O(\log_2(n) - \log_2(L)) = O \left ( \log \left ( \frac{n}{L}\right ) \right )$
-
-The optimum for this problem.
+Cache-misses: $O(\log_2(n) - \log_2(L)) = O \left ( \log \left ( \frac{n}{L}\right ) \right )$ - the optimum for this problem.
 

@@ -127,7 +127,7 @@ Combining the two lemmas above you can get the below result.
 > Suppose we have $\phi: [0, \ldots m-1] \rightarrow [0,n-1]$ which is a rotated increasing sequence.
 > Then $B = \{a_{\phi(i)}\}_{i=0}^{m-1}$ is Bitonic.
 
-Let $t = \phi(0)$, then we can rotate $A$ by $-t$ to get $A' = \{a_{i-t \pmod{n}}_{i=0}^{n-1}$.
+Let $t = \phi(0)$, then we can rotate $A$ by $-t$ to get $A' = \{a_{i-t \pmod{n}}\}_{i=0}^{n-1}$.
 Define $\phi': [0, m-1] \rightarrow [0,n-1]$ by $\phi'(x) = \phi(x) - t \pmod{n}$.
 Then $\phi'$ is an increasing sequence - as we have $\phi'(0) = 0$ and $\phi$ was a rotation of an increasing sequence.
 As $B$ can be realised as a subsequence of $A'$ using $\phi'$.

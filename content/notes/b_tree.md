@@ -2,7 +2,7 @@
 aliases:
   - B-tree
 created: 2026-01-21
-date_checked:
+date_checked: 2026-01-25
 draft: false
 last_edited: 2026-01-21
 tags:
@@ -23,7 +23,7 @@ A B-tree of order $m$ is a tree that satisfies the following properties:
 
 - All leaves appear on the same level.
 
-- A non-leaf node with $k$-children contains $k-1$ keys.
+- A non-leaf node with $k$ children contains $k-1$ keys.
 
 Each leaf node contains one or more keys (the actual data being stored).
 Internal nodes contain separator keys that guide the search: they partition the key space among their child subtrees.
@@ -35,8 +35,7 @@ For example, if an internal node has separator key $k$, its left subtree contain
 
 Cost: $O(\log_m(n))$ where the tree height is $O(\log_m(n))$.
 
-Use this like any search tree.
-Starting from the root, compare your search value with the separator keys in each internal node to determine which child subtree to descend into, until you reach a leaf.
+Search works like any search tree: starting from the root, compare your search value with the separator keys in each internal node to determine which child subtree to descend into, until you reach a leaf.
 
 ## Insert
 
@@ -45,7 +44,7 @@ Cost: $O(\log_m(n))$
 To insert an element into the B-tree, first find the appropriate leaf node by searching from the root (just like search).
 Then what happens depends on the state of that leaf node:
 
-1. If the leaf node contains fewer than the maximum number of keys (m-1), insert the new key into this leaf.
+1. If the leaf node contains fewer than the maximum number of keys (m-1): insert the new key into this leaf.
 
 2. Otherwise, the node is full and we need to split it into two nodes:
 

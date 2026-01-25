@@ -3,7 +3,7 @@ aliases:
 course_code: CSE6220
 course_name: Introduction to High Performance Computing
 created: '2026-01-21'
-date_checked:
+date_checked: '2026-01-25'
 draft: false
 last_edited: 2026-01-22
 tags:
@@ -13,7 +13,7 @@ type: lecture
 week: 2
 ---
 
-In this lecture, we will examine different classical algorithms and try to calcalculate their number of transfers in the Von Neumann model introduced in the previous lecture.
+In this lecture, we will examine different classical algorithms and try to calculate their number of transfers in the Von Neumann model introduced in the previous lecture.
 
 # Merge sort
 
@@ -29,9 +29,9 @@ So there are two steps to this:
 Now think about our model which has $L$ sized cache lines, with a $Z$ fast byte cache.
 When something is in fast memory we assume accesses take $O(1)$ time so here we can sort effectively.
 
-Lets assume we have a array of length $n$.
-As we want to use the fast cache to sort this - lets cut $n$ into $f \cdot Z$ sized chunks with $0 < f < 1$.
-I.e. so we can fit a whole chunk into fast memory.
+Let's assume we have an array of length $n$.
+As we want to use the fast cache to sort this - let's cut $n$ into $f \cdot Z$ sized chunks with $0 < f < 1$.
+i.e., so we can fit a whole chunk into fast memory.
 
 ## Step 1: Sorting chunks
 
@@ -56,12 +56,12 @@ In summary, step 1 of merge sort takes:
 
 We now have $n/f \cdot Z$ sorted chunks.
 In classical merge sort we take these chunks in sets of two and now do a sorted array merge.
-That is we take the two sorted array and use pointers pointing to the top element compare them and place the larger one on the output array.
+That is we take the two sorted arrays and use pointers pointing to the top element, compare them, and place the larger one on the output array.
 We keep iterating this on the sets of chunks until we are left with one sorted chunk.
 This happens in $\log(n/fZ)$ rounds where the size of the chunks double each time.
-(Obviously we are glossing over if $n/fZ$ isn't a power of 2 but this just makes the Maths slightly harder for no intuitive gain.)
+(Obviously we are glossing over if $n/fZ$ isn't a power of 2 but this just makes the mathematics slightly harder for no intuitive gain.)
 
-Lets think about how we would do this in our model.
+Let's think about how we would do this in our model.
 We are going to keep 3 $L$ sized arrays in fast memory.
 The first two will consist of the two sorted chunks.
 The third will be the output array.
@@ -95,16 +95,16 @@ Right now in step 2 we are only using $3 \cdot L$ amount of fast memory.
 This presents an opportunity - if we can merge more chunks in one go we reduce the number of rounds.
 Right now the number of rounds directly contributes to the number of transfers so this should improve the transfer efficiency.
 
-Lets instead merge $k := \rfloor Z/L - 1 \rfloor$ chunks at a time.
+Let's instead merge $k := \lfloor Z/L - 1 \rfloor$ chunks at a time.
 This will give us space for all the chunks in fast memory and space for the output chunk.
 This means we will have $O(\log_{Z/L}(n/Z))$ rounds (as there are n/Z root nodes of a Z/L-arry tree).
 
-Then essentially the maths for transfers is all the same as before - each round we will transfer all $n$ of the arrays values into fast memory and back again.
-So we do $O(n/L \log_{Z/L}(n/Z)$ transfers.
+Then essentially the mathematics for transfers is all the same as before - each round we will transfer all $n$ of the array's values into fast memory and back again.
+So we do $O(n/L \log_{Z/L}(n/Z))$ transfers.
 
 However, the k-way comparison in fast memory is now slightly more complex.
 We could do a linear scan of the current minimum elements on all the $k$ lists - however this is inefficient.
-Instead lets use a [Min-heap](../../notes/min-heap.md) this takes $O(k)$ to form and $O(\log_2(k))$ to do each comparison operation.
+Instead let's use a [Min-heap](../../notes/min-heap.md) - this takes $O(k)$ to form and $O(\log_2(k))$ to do each comparison operation.
 As dominating term is the $n$ comparison operations this takes us $O(n\log_2(Z/L))$ operations each round.
 So we do $O(n \log_{Z/L}(n/Z) \log(Z/L)) = O(n \log(n/Z))$ operations in total.
 
@@ -116,7 +116,7 @@ In summary, step 2 of merge sort takes:
 
 Combining this with step 1 this merge sort takes:
 
-- Transfers: $O(n/L + n/L \log_{Z/L}(n/Z)) = O(n/L \left ( \log_{Z/L}(n/Z) + \log_{Z/L}(Z/L) \right ) ) = O(n/L \log_{Z/L} (n/L))$.
+- Transfers: $O(n/L + n/L \log_{Z/L}(n/Z)) = O(n/L (\log_{Z/L}(n/Z) + \log_{Z/L}(Z/L))) = O(n/L \log_{Z/L} (n/L))$.
 
 - Operations: $O(n \log(n/Z) + n \log (Z)) = O(n \log (n))$.
 

@@ -3,8 +3,8 @@ aliases:
 course_code: CS8803 O08
 course_name: Compilers - Theory and Practice
 created: '2026-01-16'
-date_checked:
-draft: true
+date_checked: 2026-01-25
+draft: false
 last_edited: 2026-01-19
 tags:
   - OMSCS
@@ -24,7 +24,7 @@ To do this we will:
 
 4. We will try to minimise this representation.
 
-This will give us the algorithm to then go from RegEx to a minimal DFA.
+This will give us the algorithm to go from RegEx to a minimal DFA.
 
 # Non-deterministic Finite Automata (NFA)
 
@@ -41,7 +41,7 @@ The two largest differences between a DFA and NFA are:
 - An input symbol can send you to multiple states or NO states.
 In the no states case, the computation path terminates.
 
-- There are empty word transitions ($\epsilon$-transitions), which means when at a state with an $\epsilon$-transition you can also move to any state connected by an $\epsilon$-transition.
+- There are epsilon-transitions ($\epsilon$-transitions), which means when at a state with an $\epsilon$-transition you can move to any state connected by an $\epsilon$-transition without consuming input.
 
 This non-determinism means we need to change perspective about how we traverse these automata.
 Whenever presented with multiple options or an $\epsilon$-edge, think of the computation 'forking' to explore all possible paths simultaneously.
@@ -75,14 +75,14 @@ A word is accepted by an NFA if any of these forked computation paths end in an 
 > \end{align*}
 > $$
 > - The start state is $A$.
-> - The accepting states are $D$.
-> In this example, when considering the word 1011, we can track the 'states' it currently could be in.
+> - The accepting states are $\{D\}$.
+> In this example, when considering the word 1011, we can track the states it could currently be in.
 > - 1 -> {A, B, C}
 > - 10 -> {A, C}
 > - 101 -> {A, B, C, D}
 > - 1011 -> {A, B, C, D}
-> Therefore, as this word contains an accepting state in its final states - we accept.
-> Generally you can see the accepted words are $.*(11|101)$.
+> Therefore, since this word contains an accepting state in its final states, we accept it.
+> Generally, the accepted words are $(0|1)^*(11|101)$.
 
 # Going from a RegEx to an NFA
 
@@ -95,12 +95,13 @@ To construct an NFA from a regular expression we need to show how the regular ex
 >
 > Let $Q_C = Q_A \cup Q_B \cup \{start\}$, where $q_C = start$ and $A_C = A_A \cup A_B$.
 >
-> Then let $\delta_C(q,s) = \delta_X(q,s)$ for all $q \in X$.
+> Then let $\delta_C(q,s) = \delta_X(q,s)$ for all $q \in Q_X$.
 > So all that remains to be defined is on $start$.
 > $$
 > \begin{align*}
 > \delta_C(start, \epsilon) &= \{q_A, q_B\}\\
-> \delta_C(start, s) &= \{\} & \mbox{ for all} s \in \Sigma\\
+> \delta_C(start, s) &= \{\} & \mbox{for all } s \in \Sigma
+> \end{align*}
 > $$
 >
 > To show $C$ generates the same language as $A \vert B$ we need to show both $L_{C} \subset L_{A \vert B}$ but also $L_{A\vert B} \subset L_{C}$.
@@ -156,9 +157,9 @@ To construct an NFA from a regular expression we need to show how the regular ex
 > \end{align*}
 > $$
 >
-> Suppose we have a word in $A*$ then we can realise all sub words in $A$ as paths in $Q_A$.
-> Then we can glue these together using edges $(q, q_A, \epsilon)$ for $q \in A_A$.
-> (For the empty word we can just use the path with one edge $(q_A, q, \epsilon)$ for $q \in A_A$.)
+> Suppose we have a word in $A*$; then we can realize all subwords in $A$ as paths in $Q_A$.
+> We can glue these together using edges $(q, q_A, \epsilon)$ for $q \in A_A$.
+> (For the empty word, we can use a path with one edge $(q_A, q, \epsilon)$ for $q \in A_A$.)
 > Thus showing $L_{A*} \subset L_B$.
 >
 > Instead suppose we have a word in $B$ let it be realised by a minimal path $p$ in the number of edges.
@@ -166,8 +167,8 @@ To construct an NFA from a regular expression we need to show how the regular ex
 > Therefore we can cut this path up by the $(q, q_A, \epsilon)$ edges to get subwords in $A$.
 > Thus showing $L_B \subset L_{A*}$ and giving us equality.
 
-We can use a similar construction to get $L_{A+}$ but not including the edges $(q_A, q, \epsilon)$ for $q \in A_A$.
-Similarly we can do the same construction but without the $(q, q_A, \epsilon)$ for $q \in A_A$ edges to get $A?$.
+We can use a similar construction to get $A^+$ by not including the edges $(q_A, q, \epsilon)$ for $q \in A_A$.
+Similarly, we can construct $A?$ by removing the $(q, q_A, \epsilon)$ edges for $q \in A_A$.
 
 # Equivalence of DFA and NFA
 
@@ -182,10 +183,10 @@ We say that two finite automata are equivalent if they recognise the same set of
 > \epsilon: \mathcal{P}(Q_A) \rightarrow \mathcal{P}(Q_A)
 > $$
 > $$
-> \epsilon: X \mapsto \{q \in Q \vert \mbox{ there exists path } p_{x,q} \in Q_A \mbox{ for some } x \in X \mbox{ using only } \epsilon \mbox{ edges}\}.
+> \epsilon: X \mapsto \{q \in Q_A \mid \text{there exists a path } p_{x,q} \text{ for some } x \in X \text{ using only } \epsilon \text{ edges}\}.
 > $$
 > Note that $X \subset \epsilon(X)$ by the empty path.
-> Let $Q_B = \mathcal{P}(Q_A)$ with $q_B = \epsilon(\{q_A\})$, and $A_B = \{X \in \mathcal{P}(Q_A) \vert X \cap A_A \not = \emptyset\}$.
+> Let $Q_B = \mathcal{P}(Q_A)$ with $q_B = \epsilon(\{q_A\})$, and $A_B = \{X \in \mathcal{P}(Q_A) \mid X \cap A_A \neq \emptyset\}$.
 > Then define $\delta_B(X,s) = \epsilon(\bigcup_{x \in X} \delta_A(x,s))$.
 >
 > Intuitively, this graph is exactly how we traverse an NFA as described earlier.
@@ -198,8 +199,8 @@ We say that two finite automata are equivalent if they recognise the same set of
 > Therefore $L_{B} \subset L_{A}$.
 > Giving us $L_{A} = L_{B}$.
 
-Whilst the construction above works it is not very small!
-So instead within algorithms we build $B$ by traversing $A$ using breadth-first search.
+While the construction above works, it is not very efficient in practice.
+So instead, in algorithms we build $B$ by traversing $A$ using breadth-first search.
 
 ```
 1. q_B <- \epsilon({q_A})

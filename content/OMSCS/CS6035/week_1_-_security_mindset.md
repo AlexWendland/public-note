@@ -4,7 +4,7 @@ course_code: CS6035 O01
 course_name: Introduction to Information Security
 created: '2026-01-12'
 date_checked:
-draft: true
+draft: false
 last_edited: 2026-01-15
 tags:
   - OMSCS
