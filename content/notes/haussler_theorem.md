@@ -1,9 +1,9 @@
 ---
 aliases:
 created: 2024-02-16
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - machine-learning
 title: Haussler Theorem
@@ -21,11 +21,11 @@ Let $f$ be the target function.
 
 Let $h \in H$ such that $\mathbb{P}_{\mathbb{D}}(h(a) = f(a)) \leq 1 - \epsilon$ (i.e. we have [true error](true_error.md) $Error_{\mathbb{D}}(h) > \epsilon$).
 
-Then let $T$ be $m$ [i.i.d.](independent_identically_distributed_samples.md) samples from $A$ using $\mathbb{D}$. The probability $h$ is [consistent](consistent_learner.md) on $T$ is
+Then let $T$ be $m$ [i.i.d.](independent_identically_distributed_samples.md) samples from $A$ using $\mathbb{D}$. The probability that $h$ is [consistent](consistent_learner.md) on $T$ is
 $$\mathbb{P}_{\mathbb{D}}[h \mbox{ is consistent on } T] \leq (1 - \epsilon)^m$$
-As the samples are [i.i.d.](independent_identically_distributed_samples.md). Moreover as $\ln(1-\epsilon) \leq - \epsilon$ for $0 \leq \epsilon < 1$ this gives us
+Since the samples are [i.i.d.](independent_identically_distributed_samples.md), and as $\ln(1-\epsilon) \leq - \epsilon$ for $0 \leq \epsilon < 1$, this gives us
 $$\mathbb{P}_{\mathbb{D}}[h \mbox{ is consistent on } T] \leq (1 - \epsilon)^m \leq e^{-m \epsilon}$$
-If all $h \in H$ had $Error_{\mathbb{D}}(h) > \epsilon$ then we have
+If any $h \in H$ has $Error_{\mathbb{D}}(h) > \epsilon$, then we have
 $$
 \mathbb{P}[\mbox{Any } h \in H \mbox{ consistent with }T] \leq \vert H \vert e^{-m\epsilon}
 $$

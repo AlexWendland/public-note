@@ -1,9 +1,9 @@
 ---
 aliases:
 created: 2024-02-21
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - maths
 title: Finding the maximum likelihood estimation for normally distributed noise is
@@ -23,7 +23,7 @@ This comes from direct calculation.
 $$
 \begin{align*}
 h_{MLE} & = \mbox{arg}\max_{h \in H} \mathbb{P}[T \vert h]\\
-& = \mbox{arg}\max_{h \in H} \prod_{t \in T} \mathbb{P}[t \vert h] & \mbox{as each } \epsilon \mbox{ is i.i.id}\\
+& = \mbox{arg}\max_{h \in H} \prod_{t \in T} \mathbb{P}[t \vert h] & \mbox{as each } \epsilon \mbox{ is i.i.d.}\\
 & = \mbox{arg}\max_{h \in H} \prod_{t \in T} \frac{1}{\sigma \sqrt{2\pi}} \exp \left [ - \frac{1}{2} \left ( \frac{b_i - h(a_i)}{\sigma} \right )^2 \right ] & \mbox{normal distribution}\\
 & = \mbox{arg}\max_{h \in H} \prod_{t \in T} \exp \left [ - \frac{1}{2} \left ( \frac{b_i - h(a_i)}{\sigma} \right )^2 \right ] & \mbox{no change in argmax}\\
 & = \mbox{arg}\max_{h \in H} \sum_{t \in T} - \frac{1}{2} \left ( \frac{b_i - h(a_i)}{\sigma} \right )^2 & \mbox{log is concave}\\

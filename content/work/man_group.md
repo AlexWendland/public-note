@@ -1,9 +1,9 @@
 ---
 created: 2025-12-05
-date_checked:
+date_checked: 2026-01-28
 draft: false
 end_date:
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 role: Software Engineer
 start_date: 2023-07-01
 tags:
@@ -17,7 +17,7 @@ type: work
 
 ## Overview
 
-As a Software Engineer at [Man Group](https://www.man.com/), I work within the Codex team, which operates the primary Alternative Data onboarding platform for the company. Our platform manages hundreds of ETL pipelines running daily that support critical trading strategies.
+As a Software Engineer at [Man Group](https://www.man.com/), I work within the Codex team, which operates the primary alternative data onboarding platform for the company. Our platform manages hundreds of ETL pipelines running daily that support critical trading strategies.
 
 ## Technical Environment
 

@@ -1,9 +1,9 @@
 ---
 created: 2025-12-05
-date_checked:
+date_checked: 2026-01-28
 draft: false
 end_date: 2020-04-01
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 role: Teacher and Lecturer
 start_date: 2014-09-01
 tags:
@@ -30,7 +30,7 @@ I was employed by the [Warwick Maths department](https://warwick.ac.uk/fac/sci/m
 - Modules included: Analysis 1, Discrete Maths and its Applications 2, Experimental Maths, Geometric Group Theory, Group Theory, Groups and Representations, Lie Algebras, and Set Theory
 
 **Teaching Range**
-- Delivered teaching across all formats, from 1-1 sessions with struggling students to running 400-person lectures
+- Delivered teaching across all formats, from one-to-one sessions with struggling students to running 400-person lectures
 
 ## Recognition
 
@@ -42,4 +42,3 @@ I was employed by the [Warwick Maths department](https://warwick.ac.uk/fac/sci/m
 
 > [!quote] Anonymous Student Feedback (2017 Teaching Award)
 > Just an all round nice guy who marks work quickly and gives good feedback with amazing subject knowledge
-

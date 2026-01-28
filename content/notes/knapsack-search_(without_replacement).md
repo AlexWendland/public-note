@@ -2,9 +2,9 @@
 aliases:
   - Knapsack-search
 created: 2023-11-02
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - programming
 title: Knapsack-search (without replacement)
@@ -18,7 +18,7 @@ type: problem
 > - $\sum_{i \in S} w_i \leq B$, and
 > - $\sum_{i \in S} v_i \geq g$.
 >
-> If there is such a bag what is it otherwise say there is no such solution.
+> If such a bag exists, return it; otherwise, report that no solution exists.
 
 # Solutions
 
@@ -26,7 +26,8 @@ type: problem
 	- run time
 
 # Theory
- - [Knapsack-search is NP](knapsack-search_is_np.md)
+
+- [Knapsack-search is NP](knapsack-search_is_np.md)
 
 # Related problems
 

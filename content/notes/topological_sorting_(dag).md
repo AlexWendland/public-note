@@ -4,13 +4,13 @@ aliases:
   - topologically sort
   - topological ordering
 created: 2023-09-27
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - maths
 title: Topological sorting (DAG)
 type: definition
 ---
 > [!definition] Topological sorting
-> Suppose we have a [DAG](directed_acyclic_graph_(dag).md) $D = (V,E)$ a topological sorting on $D$ is a linear ordering $<$ of $V$ such that for all edges $(x,y) \in E$ we have $x < y$.
+> Suppose we have a [DAG](directed_acyclic_graph_(dag).md) $D = (V, E)$ a topological sorting on $D$ is a linear ordering $<$ of $V$ such that for all edges $(x, y) \in E$ we have $x < y$.

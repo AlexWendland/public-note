@@ -3,9 +3,9 @@ aliases:
 course_code: CS6210
 course_name: Advanced Operating Systems
 created: 2025-11-20
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-07
+last_edited: 2026-01-28
 tags:
   - OMSCS
 title: Week 8 - Internet Computing
@@ -13,7 +13,7 @@ type: lecture
 week: 8
 ---
 
-Normally web based issues are called 'embarrassingly parallel'.
+Normally web-based issues are called 'embarrassingly parallel'.
 
 > [!definition] Embarrassingly parallel
 > These problems can be broken down into easy to do parallel operations, such as accessing email, doing a web search, or downloading files.
@@ -33,7 +33,7 @@ The structure of giant scale internet services normally follows the below patter
 
 ![Giant Scale System Structure](../../../static/images/giant_scale_systems_structure.png)
 
-With running one of these services, you need to know how to handle server failures - as in this case it is when rather than if one happens.
+With running one of these services, you need to know how to handle server failures - as in this case it is when, not if, one happens.
 
 ## Sense of scale
 
@@ -49,43 +49,43 @@ As of 2000:
 There are distinct advantages of structuring a system like this:
 
 - Horizontal scaling: adding more nodes to the system scales it up.
-- Cost control:
+- Cost control: commodity hardware can be used instead of expensive specialised systems.
 
 ## Load manager
 
 There are different strategies we can take for load balancing requests:
 
-- Round robin: Each requests gets sent to a different server to be handled.
+- Round robin: Each request gets sent to a different server to be handled.
 This is done at the server level which makes it very efficient.
 However, we struggle with handling servers that are down.
-This also assume all machines on the network are equal and for the same thing.
+This also assumes all machines on the network are equal and serve the same purpose.
 
-- Layer 4 switches (Transport layer): This can inspect who the packet is intended to be for and make decisions on where to send that packet based on that.
+- Layer 4 switches (Transport layer): This can inspect who the packet is intended for and make decisions on where to send that packet based on that.
 For example this allows us to act as a reverse proxy to send packets intended for one application to a specific subset of servers.
-This can also hide down servers from the client using a Backplane with the servers it is serving.
-This Backplane can also be used for higher level semantics such as sending requests with particular body to different instances - this allows for different nodes to only replicated limited data for their preferred queries.
+This can also hide down servers from the client using a backplane with the servers it is serving.
+This backplane can also be used for higher level semantics such as sending requests with particular body to different instances - this allows for different nodes to only store limited data for their preferred queries.
 
 ## DQ Principle
 
 This theory is about matching demand with supply and varying parameters around this.
 We start with some definitions:
 
-- Q_0: The total number of queries we need to server in this time step.
+- Q_0: The total number of queries we need to serve in this time step.
 
 - Q_c: The number of queries we handled in this time step.
 
-- Yield: Q = Q_c/ Q_0 \in [0,1] the proportion of the queries we handled in this time step.
+- Yield: $Q = Q_c/Q_0 \in [0,1]$ the proportion of the queries we handled in this time step.
 
 - D_f: The full amount of data the system holds to handle this query.
 
-- D_v: The amount of data we use to server requests in this time step.
+- D_v: The amount of data we use to serve requests in this time step.
 
-- Harvest: D = D_v/ D_f \in [0,1] the proportion of the data we used to server requests in this time step.
+- Harvest: $D = D_v/D_f \in [0,1]$ the proportion of the data we used to serve requests in this time step.
 This is a proxy for how 'well' we handled the request - did we use all possible websites to check against your query or just a limited set of them.
 
 It is assumed for a given set up the product DQ is a constant.
-This means that there is a payoff to have if the constant DQ is not 1.
-We can either server a limited set of requests at the full quality or we can offer all the queries at a degraded quality.
+This means that there is a trade-off to manage if the constant DQ is not 1.
+We can either serve a limited set of requests at the full quality or we can offer all the queries at a degraded quality.
 
 When thinking about D, what it is in reality depends on how the system is limited.
 For example you could be I/O bound, as you simply need to process a lot of data to handle a request.
@@ -103,7 +103,7 @@ There are some metrics people talk about for huge data centers:
 - Uptime: This is defined by MTTR and MTBF as (MTBF - MTTR)/MTBF and expressed as number of 9's so 5 9's is 0.99999 as this ratio.
 
 However, uptime has its limitations.
-For example if a failure happens in down time - then no one really cares.
+For example if a failure happens during downtime - then no one really cares.
 
 ## Replication vs partitioning
 
@@ -113,10 +113,10 @@ Therefore, when failures occur in a replicated system D remains unchanged but Q 
 
 Partitioning data means we have more servers but they only have access to a subset of the data.
 This can be useful if the data itself is too large to be processed on a single machine or we want to keep the cache hot on a particular subset of the data.
-Therefore, when a failures occurs in a partitioned system D goes down but Q remains the same.
-(In this case, we assume a query still gets served but it does not get the data from the severs that are down.)
+Therefore, when a failure occurs in a partitioned system D goes down but Q remains the same.
+(In this case, we assume a query still gets served but it does not get the data from the servers that are down.)
 
-NOTE: In both cases, DQ is defined by the number of servers - therefore if we have failures DQ goes down but we get too choose what constant in DQ to reduce.
+NOTE: In both cases, DQ is defined by the number of servers - therefore if we have failures DQ goes down but we get to choose what constant in DQ to reduce.
 
 Exception: If the queries involve 'significant' write traffic then replication is a slower option, due to the need to replicate those writes.
 (This is a rare exception.)
@@ -128,17 +128,17 @@ The two options are as expected:
 
 - Keep D fixed and lower Q: Keep the quality of the results the same but lower the number we serve.
 
-- Lower F and keep Q fixed: Degrade the quality of results but keep up with demands.
+- Lower D and keep Q fixed: Degrade the quality of results but keep up with demands.
 
-These options practical implementation depends on the service - for example if you are video streaming platform you could either:
+These options' practical implementation depends on the service - for example if you are a video streaming platform you could either:
 
-- Keep D fixed and lower Q: Keep users in a hold queue until they are able to get their video.
+- Keep D fixed and lower Q: Keep users in a queue until they are able to get their video.
 
-- Lower F and keep Q fixed: Degrade the quality of results but keep up with demands.
+- Lower D and keep Q fixed: Degrade the quality of video to keep up with demands.
 
 ## Online evolution and growth
 
-With new releasing getting cut, we need to decide how to release them.
+When new releases are cut, we need to decide how to deploy them.
 There is a spectrum of options here:
 
 - Fast: Bring down all servers, update them and bring them back up.
@@ -156,15 +156,15 @@ For example code freezes during busy times to not reduce the total DQ.
 
 # Map Reduce
 
-Computations in internet services are commonly simple but over large data sets.
+Computations in internet services are commonly simple but performed over large data sets.
 Map reduce is a framework to handle such computations.
 It breaks each computation down into two parts:
 
-- Map: Take some input and produce some key value paired set of outputs.
+- Map: Take some input and produce some key-value paired set of outputs.
 
-- Reduce: Take all values associated to the same key and reduce it to a single output value for that key.
+- Reduce: Take all values associated with the same key and reduce it to a single output value for that key.
 
-These simplistic steps can be parallelised over multiple machines and only require coordination between steps.
+These simple steps can be parallelised over multiple machines and only require coordination between steps.
 This enables the large scale services to work over these computations.
 
 ## Example: Counting words
@@ -175,7 +175,7 @@ The output of our application is a key value pair with the key being the word an
 For the end user to define this - they just need to provide the map and reduce function.
 The framework will handle everything else.
 
-The map function, when ran on a file then goes through the content breaking up the words.
+The map function, when run on a file, goes through the content breaking up the words.
 Each time it sees a word it emits a key-value pair, the key will be the word and the value will be 1.
 (We could instead implement this counting the number of times the word appears in the file - but this would either take more memory or to parse the content multiple times.)
 
@@ -194,7 +194,7 @@ This expects an key-value pair output of a url and the number of pages that link
 
 The map function takes a url and page content.
 It then looks through the page content finding each link within it.
-For each link it emits a key-values pair with the url being the key and the value being 1.
+For each link it emits a key-value pair with the url being the key and the value being 1.
 
 The reduce function then takes all the key-value pairs for each url and sums the values.
 
@@ -213,7 +213,7 @@ Below is a high level overview of what the framework does for a given execution:
 
 1. Users program spawns a master process to coordinate the work.
 
-2. The master takes the user input and further slits it (optional) this can either be specified by the user or could be automatic like chunking files.
+2. The master takes the user input and further splits it (optional) - this can either be specified by the user or could be automatic, like chunking files.
 
 3. The master then allocates these splits to workers.
 Likely the number of jobs will exceed the number of workers but then it just iteratively hands out work to the workers.

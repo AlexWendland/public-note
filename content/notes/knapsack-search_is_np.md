@@ -1,9 +1,9 @@
 ---
 aliases:
 created: 2023-11-02
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - maths
 title: Knapsack-search is NP
@@ -24,4 +24,4 @@ $$
 $$
 This takes $O(n)$ time, so is polynomial.
 
-This makes [Knapsack-search](knapsack-search_(without_replacement).md) run in polynomial time.
+Since the verification of a proposed solution can be done in polynomial time, [Knapsack-search](knapsack-search_(without_replacement).md) is in NP.

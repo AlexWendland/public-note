@@ -2,9 +2,9 @@
 aliases:
   - Knapsack problem
 created: 2023-10-03
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - programming
 title: Knapsack problem (without repetition)
@@ -20,7 +20,7 @@ type: problem
 # Solutions
 
 - First solution
-	- run time
+	- Runtime
 
 # Theory
 
@@ -28,5 +28,4 @@ type: problem
 
 # Related problems
 
-- [Knapsack-search](knapsack-search_(without_replacement).md)
--
+- [Knapsack search](knapsack_search_(without_repetition).md)

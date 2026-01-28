@@ -1,9 +1,9 @@
 ---
 aliases:
 created: 2024-02-22
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - probability
 title: Bayesian network if and only if it satisfies the local Markov Property

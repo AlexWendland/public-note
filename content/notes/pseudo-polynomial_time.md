@@ -3,9 +3,9 @@ aliases:
   - Pseudo-polynomial
   - pseudo-polynomial time
 created: 2023-10-03
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - programming
 title: Pseudo-polynomial time
@@ -16,7 +16,7 @@ type: definition
 
 # Intuition
 
-If you are given an integer input $n \in \mathbb{Z}$. If you can solve a problem in $O(n)$ time we think it is [polynomial time](polynomial_time.md) algorithm. However the number $n$ will be represented in [binary](binary.md) so will have length $l := \log_2(n)$. Therefore the problem running time in the *length* of the input is $O(2^l)$.
+If you are given an integer input $n \in \mathbb{Z}$ and can solve a problem in $O(n)$ time, we might think it is a [polynomial time](polynomial_time.md) algorithm. However, the number $n$ will be represented in [binary](binary.md), so it will have length $l := \log_2(n)$. Therefore, the problem's running time in the *length* of the input is $O(2^l)$.
 
 # Examples
 

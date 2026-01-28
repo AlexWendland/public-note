@@ -4,7 +4,7 @@ aliases:
 created: 2026-01-19
 date_checked: 2026-01-25
 draft: true
-last_edited: 2026-01-25
+last_edited: 2026-01-28
 tags:
   - OMSCS
   - education
@@ -36,13 +36,13 @@ type: plan
 
 # Feb 2-8 [ ]
 
-- [ ] CS8803 P1L4
+- [x] CS8803 P1L4
 - [x] CS8803 HW1 (Feb 3)
 
 - [ ] CSE6220 Intro to OpenMP
 - [x] CSE6220 Comparison-based Sorting
 
-- [ ] CS6035 Machine Learning (Feb 8)
+- [x] CS6035 Machine Learning (Feb 8)
 
 # Feb 9-15 (F&B) [ ]
 

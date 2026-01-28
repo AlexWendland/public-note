@@ -2,18 +2,18 @@
 aliases:
   - array
 created: 2023-10-12
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - programming
 title: Array (data structure)
 type: data structure
 ---
 > [!definition] Array
-> This data structure consists of a collection of elements of the same memory size, where each one is identified by an index. This comes with a function to map index's to memory location of each element. (This is normally integer index with a contiguous memory block.) These can *static* where you fix the size of the array before hand or *dynamic* where you allow the array size to change.
+> This data structure consists of a collection of elements of the same memory size, where each one is identified by an index. This comes with a function to map indices to memory location of each element. (This is normally integer index with a contiguous memory block.) These can be *static* where you fix the size of the array beforehand or *dynamic* where you allow the array size to change.
 >
->This has [spacial complexity](spacial_complexity.md) of $O(n)$ to store $n$ elements and $O(1)$ overhead if the indexing function is sufficiently simple.
+> This has [spatial complexity](spatial_complexity.md) of $O(n)$ to store $n$ elements and $O(1)$ overhead if the indexing function is sufficiently simple.
 >
 > This has the following operations:
 > - Access: $O(1)$

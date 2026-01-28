@@ -3,9 +3,9 @@ aliases:
 course_code: CS8803 O08
 course_name: Compilers - Theory and Practice
 created: 2026-01-12
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2026-01-12
+last_edited: 2026-01-28
 tags:
   - OMSCS
 title: Week 1 - Introduction to Compilers
@@ -25,7 +25,7 @@ A similar but different concept to a Compiler is an interpreter.
 Programming languages such as Python, and JavaScript are interpreted languages.
 Whereas languages such as C, Java, Rust and Go are compiled languages.
 
-Interpreted languages tend to be slower as they have to do the 'interpreting' whilst running the programme.
+Interpreted languages tend to be slower as they have to do the 'interpreting' whilst running the program.
 In comparison, compiled languages are faster as they can be compiled into machine code and then executed.
 
 # Why compile?
@@ -105,7 +105,7 @@ For example with the main operator above:
 MAIN OPENPAR <PARAMS> CLOSEPAR <MAIN-BODY>
 ```
 
-When passing we can choose how to expand the `<PARAMS>` either using the null expansion (no parameters) or the recursive `VARLIST` definition.
+When parsing we can choose how to expand the `<PARAMS>` either using the null expansion (no parameters) or the recursive `VARLIST` definition.
 
 ### Parser ambiguity
 
@@ -136,7 +136,7 @@ if a then (if b then print("1") ) else print("2")
 ```
 
 This means if a is true and b is false then we print nothing.
-Otherwise we can ground using the second if.
+Otherwise we can group using the second if.
 
 ```
 if a then (if b then print("1") else print("2"))
@@ -144,7 +144,7 @@ if a then (if b then print("1") else print("2"))
 
 In this case if a is true and b is false then we print 2.
 
-We will go on to see it is possible to take a ambiguous grammar and make it unambiguous if not slightly more verbose!
+We will go on to see it's possible to take an ambiguous grammar and make it unambiguous if not slightly more verbose!
 
 ## Semantic analysis
 
@@ -169,7 +169,7 @@ This is done using the following flow:
 
 - Keep the semantic context of processing.
 
-For the last step, what we mean is when breaking down operations like `a + b + c` we no only need to carry out the operation `a + b` first we will need to store a temporary record `t1` of its type in the symbol table.
+For the last step, what we mean is when breaking down operations like `a + b + c` we not only need to carry out the operation `a + b` first we will need to store a temporary record `t1` of its type in the symbol table.
 This enables us to use the same logic on `(a + b) + c` as if it was an operation between two symbols `t1` and `c`.
 
 Generally semantic analysis is embedded in the grammar.
@@ -184,6 +184,6 @@ In the example above we have a declaration stack that we can keep adding variabl
 
 There are many types of semantic actions, such as:
 
-- *Checking*: Binding, Type compatibility, Scoping, ect.
+- *Checking*: Binding, Type compatibility, Scoping, etc.
 
 - *Translation*: Generate temporary values, propagate them to keep semantics.

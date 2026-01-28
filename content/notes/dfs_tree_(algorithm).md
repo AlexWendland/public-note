@@ -6,20 +6,20 @@ aliases:
   - Forward edge
   - Tree edge
 created: 2023-09-27
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - maths
 title: DFS tree (algorithm)
 type: definition
 ---
 > [!definition] DFS tree
-> Given the run a [DFS](depth-first_search_(dfs).md) algorithm $A$ on a [directed graph](directed_graph.md) $G = (V,E)$, the *DFS tree* is a [sub](subgraph.md)-[forest](forest_(graph).md) $F = (V,E')$ where $E'$ are the edges used by $A$ to first explore a vertex.
+> Given a run of a [DFS](depth-first_search_(dfs).md) algorithm $A$ on a [directed graph](directed_graph.md) $G = (V,E)$, the *DFS tree* is a [subgraph](subgraph.md)-[forest](forest_(graph).md) $F = (V,E')$ where $E'$ are the edges used by $A$ to first explore a vertex.
 
-Edges in $G$ can be described in relation to the edges in $T$.
+Edges in $G$ can be described in relation to the edges in $F$.
 
->[!tldr] Edges
+>[!note] Edges
 >An edge $e \in E$ can be described as one of the following in relation to $F$:
 >- Tree edges: edges $e \in E'$
 >- Back edges: edges that connect two nodes in the same branch where the origin node is further away from the root node than the terminus.

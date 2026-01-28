@@ -1,9 +1,9 @@
 ---
 created: 2025-12-05
-date_checked:
+date_checked: 2026-01-28
 draft: false
 end_date: 2023-07-01
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 role: Head of Data
 start_date: 2021-09-01
 tags:
@@ -40,5 +40,3 @@ In my roles as Data Scientist and later as Head of Data at [CC Data](https://ccd
 
 > [!quote] [Jimena León, Head of Index Operations, CC Data](https://www.linkedin.com/in/jimena-leon-testa/)
 > Alex's attention to detail, commitment to maintaining high standards, effective communication skills, enthusiastic attitude, and exceptional teamwork greatly impacted our projects.
-
-

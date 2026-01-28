@@ -3,9 +3,9 @@ aliases:
 course_code: CS6035 O01
 course_name: Introduction to Information Security
 created: '2026-01-12'
-date_checked:
+date_checked: '2026-01-28'
 draft: false
-last_edited: 2026-01-15
+last_edited: 2026-01-28
 tags:
   - OMSCS
 title: Week 1 - Security Mindset
@@ -69,7 +69,7 @@ However, it is a fact of life that any sufficiently large and complex system wil
 
   - Availability: Data should be available to be viewed.
 
-All these functionally break down into the following categories.
+All of these can be categorised into the following approaches:
 
 - Prevention: Stop the threat actors from doing what they are doing.
 
@@ -79,8 +79,8 @@ All these functionally break down into the following categories.
 
 - Recovery and remediation: Bring systems back up and fix any vulnerabilities.
 
-There are normally two parts to both of these.
-The *policy* of what should happen and the *mechanism* of how that does happen.
+There are normally two parts to each of these approaches:
+the *policy* of what should happen and the *mechanism* of how that happens.
 This practically can come from following some standard design principles for secure systems:
 
 - *Reduce complexity*: Complex systems have more bugs, which means more vulnerabilities.
@@ -90,8 +90,8 @@ Therefore, keeping your code simple reduces the chances of something getting mis
 
 - *Complete mediation*: Someone should never be able to bypass the monitor, so all actions are observed.
 
-- *Open design*: More people being able to review the design of your system means that it is more likely people spot issues and if they are using it fix them.
-A lot of people believe in 'security through obscurity' but closed source solutions can be reverse engineered without the benefit of the users checking the source.
+- *Open design*: More people being able to review the design of your system means that it is more likely people spot issues and if they are using it they can fix them.
+A lot of people believe in 'security through obscurity' but closed source solutions can be reverse engineered without the benefit of users being able to check the source.
 
 - *Least privilege*: Only give people the minimum access they need to do their job.
 

@@ -1,9 +1,9 @@
 ---
 aliases:
 created: 2023-11-09
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - maths
 title: Weak duality theorem (linear programme)
@@ -18,7 +18,7 @@ type: lemma
 # Proof
 
 Recall that the [dual linear programme](dual_linear_programme.md) was specified by $-A^T$, $-c$ and $-b$. So we have
-$$-A^Ty \leq -c, \mbox{ therefore } A^Ty \geq c$$
+$$-A^Ty \leq -c, \text{ therefore } A^Ty \geq c$$
 and so we have
 $$c^Tx \leq (A^Ty)^Tx = y^TAx \leq y^Tb.$$
 

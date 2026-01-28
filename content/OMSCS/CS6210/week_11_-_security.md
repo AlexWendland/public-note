@@ -3,9 +3,9 @@ aliases:
 course_code: CS6210
 course_name: Advanced Operating Systems
 created: '2025-12-01'
-date_checked:
+date_checked: '2026-01-28'
 draft: false
-last_edited: 2025-12-07
+last_edited: 2026-01-28
 tags:
   - OMSCS
 title: Week 11 - Security
@@ -63,8 +63,8 @@ We can broadly group protection into levels.
 - User programmed sharing controls: You can differentiate users into different groups and those groups have different access levels for files.
 For example unix styled creator, group, and other permissions.
 
-- Strings on into: You can put particular requirements on each file.
-For example, in the civil service documents will have a string relaying the security clearance you need to view different information.
+- Classified compartments: You can put particular requirements on each file based on classification levels.
+For example, in the civil service, documents will have a classification level indicating the security clearance required to view different information.
 
 These are very general and you should specialise these to fit your use case.
 We also need to be able to dynamically change these.
@@ -75,7 +75,7 @@ There are some guiding principles for protection:
 
 - Economy of mechanisms: It should be easy to verify that mechanisms of security are working correctly.
 
-- Fail-safe defaults: Explicitly allow access to everything by default.
+- Fail-safe defaults: Deny access by default (explicitly allow access).
 
 - Complete mediation: When it comes to security we need to not take short cuts for efficiency such as caching passwords - as this compromises on the security.
 
@@ -87,8 +87,8 @@ There are some guiding principles for protection:
 
 - Least common mechanism: The mechanism used to implement the control should have the least privileges possible, so if it fails it limits the damage attackers can do.
 
-- Physiological acceptability: Users should know clearly what they are doing when they do it.
-This means a good UI is critical and warnings clearly stating what changes will mean.
+- Psychological acceptability: Users should know clearly what they are doing when they do it.
+This means a good UI is critical, with warnings clearly stating what changes will mean.
 
 There are two very high level takeaways from all these principles:
 
@@ -104,7 +104,7 @@ However, we assume the servers themselves are in a trusted physical environment.
 
 ![Andrew File System Architecture](../../../static/images/andrew_file_system_architecture.png)
 
-These workstations will run unix and will have a special subsytem called Venus that will run the authentication for them.
+These workstations will run Unix and will have a special subsystem called Venus that will run the authentication for them.
 It will use RPC to communicate with the file servers.
 The RPC messages are encrypted as we can not trust the connection between the user and the server.
 
@@ -121,8 +121,8 @@ If we assume both parties have a shared private key (symmetric key system) then 
 
 4. Receiver decrypts data: Dec(cypher_text, key) = data
 
-However, this requirement to both have the same private key is a big problem.
-There is a second problem which is to decrypt the message you also need to know 'who' is sending you the message - so you can use the correct private key to decypher there messages (if you have more than one).
+However, this requirement for both parties to have the same private key is a significant problem.
+There is a second problem: to decrypt the message, you also need to know who is sending it, so you can use the correct private key to decipher their messages (if you have more than one).
 
 So the next step is to use a public key system, where the receiver has a private key they keep to themselves and a public key they share to everyone (asymmetric key system).
 
@@ -143,7 +143,7 @@ The setup of the Andrew file system presents some challenges its design will hav
 
 1. Authenticate the users: The server will need to be sure who they are talking to is the users they claim to be.
 
-2. Authenticate the server: The user has the symmetric problem to sever, it doesn't want to get spoofed.
+2. Authenticate the server: The user has the symmetric problem with the server; it does not want to get spoofed.
 
 3. Prevent replay attacks: Both the server and the user need to stop a man-in-the-middle from replaying their messages to one another to gain access or trust.
 
@@ -162,7 +162,7 @@ To get around this issue, the login and password is only used to login to the sy
 After the initial login the rest of the communication uses ephemeral id's and keys.
 This means we will get 3 types of communication between the user and the server:
 
-1. Login: The user sends a login request to the server. Where as HKC is provided to the user for future use to stop over exposure of the users password.
+1. Login: The user sends a login request to the server. In response, an HKC (handshake key client) is provided to the user for future use to limit exposure of the user's password.
 
 2. RPC session establishment: The server sets up the session using the HKC for subsequent requests with the ephemeral id and key.
 
@@ -178,21 +178,21 @@ This password is encrypted using a key only the server knows - however it is sti
 
 The user logs in as follows using a 3-way handshake:
 
-1. The user generates a random number and encrypts that using the password. This is sent over to the server with the user name in clear text.
+1. The user generates a random number and encrypts it using the password. This is sent to the server with the username in clear text.
 
-2. This allows the authentication server to decrypt the random number, increment it by one and then add another random number it generates to the users number. It then encrypts both random numbers using the password and sends that over to the user.
+2. The authentication server decrypts the random number, increments it by one, and adds another random number it generates to the user's number. It then encrypts both random numbers using the password and sends that to the user.
 
-3. To finish the handshake the user decrypts the messages - verifies its number has been incremented by 1. Then sends back the authentication servers number incremented by 1 encrypted using the password.
+3. To finish the handshake, the user decrypts the message, verifies its number has been incremented by one, and sends back the authentication server's number incremented by one, encrypted using the password.
 
-4. The server verifies the number was correctly incremented by 1. Then the server generates a handshake key client (HKC). It then puts this into a data structure called the clear_token. It uses the SERVER_KEY to encrypt the clear token to make the secret_token.
+4. The server verifies the number was correctly incremented by one. The server then generates a handshake key client (HKC) and puts this into a data structure called the clear_token. It uses the SERVER_KEY to encrypt the clear token, making the secret_token.
 
-5. The server then encrypts the clear_token and secret_token using the password then sends it to the user.
+5. The server encrypts the clear_token and secret_token using the password and sends it to the user.
 
 6. The user decrypts the message and extracts the HKC from the clear token.
 
-For the RPC session establishment it, we will use the secret_token the public identity and the handshake key as the private key.
-This is secure as only the server can decode the secret token with SERVER_KEY to recover the handshake key and decode the message.
-Also this means the server does not need to keep track of the tokens it has generated as it can always use the SERVER_KEY to recover the HKC for this session.
+For the RPC session establishment, we will use the secret_token, the public identity, and the handshake key as the private key.
+This is secure because only the server can decode the secret token with SERVER_KEY to recover the handshake key and decode the message.
+Additionally, this means the server does not need to keep track of the tokens it has generated, as it can always use the SERVER_KEY to recover the HKC for this session.
 
 ## RPC session establishment (bind operation)
 
@@ -210,7 +210,7 @@ This goes as follows:
 
 2. Client uses HKC to encrypt X_r E[$X_r$, HKC] and sends message (secret_token, E[$X_r$, HKC]) to the server.
 
-3. Server gets HKC using SERVER_KEY from the secrete_token.
+3. Server gets HKC using SERVER_KEY from the secret_token.
 
 4. Server generates $Y_r$.
 
@@ -235,7 +235,7 @@ We use the session number num to stop replay attacks as each request will need a
 
 ## File system access
 
-Then all calls to use the file system we use the session key to encrypt the message and the client appends the sequence number to the message.
+For all file system calls, the session key is used to encrypt the message, and the client appends the sequence number to the message.
 
 ## Security
 
@@ -249,12 +249,12 @@ In this setup different keys get used proportional to their life span.
 
 ## Strengths and weaknesses of the Andrew file system
 
-- [y] Mutual suspicion: Neither the server nor the client trust each other and so the back and forth verification means no man in the middle can spoof eachother.
+- [y] Mutual suspicion: Neither the server nor the client trusts the other, so the back-and-forth verification means no man-in-the-middle can spoof each other.
 
-- [n] Protection from the user: Once the users is logged in the server has no protection from the user, they can do what they want.
+- [n] Protection from the user: Once the user is logged in, the server has no protection from the user; they can do what they want.
 
-- [n] Confinement of resource usage: A valid user has unlimited access to the servers resources, therefore there is no limit on their resource usage.
+- [n] Confinement of resource usage: A valid user has unlimited access to the server's resources, so there is no limit on their resource usage.
 
-- [y] Authentication: Assuming the user keeps their password secret then the system authenticates users.
+- [y] Authentication: Assuming the user keeps their password secret, the system authenticates users.
 
-- [-] Sever integrity: Assuming the servers are physically isolated from hostile attackers then this is met but this is a fairly unreasonable assumption the paper makes.
+- [-] Server integrity: Assuming the servers are physically isolated from hostile attackers, this is met, but this is a fairly unreasonable assumption that the paper makes.

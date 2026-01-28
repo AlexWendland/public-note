@@ -1,9 +1,9 @@
 ---
 aliases:
 created: 2023-11-03
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - maths
 title: Independent set of a given size is NP-complete
@@ -25,18 +25,18 @@ To show this we are going to find a [many-one reduction](many-one_reduction_(pro
 - Showing that a solution exists to the [3-SAT](k-satisfiability_problem_(k-sat_problem).md) problem if and only if a solution exists to the [Independent set of a given size](independent_set_of_a_given_size.md) problem.
 
 Suppose we are given a [3-SAT](k-satisfiability_problem_(k-sat_problem).md) problem $f$ with variables $x_1, \ldots, x_n$ and clauses $c_1, \ldots, c_m$.
-We know each clause $c_i$ has at most 3 literals $l_i^1$, $l_i^2$, and $l_i^3$ (maybe less). Set
-$$L = \{l_i^j \vert 1 \leq i \leq m, \ 1 \leq j \leq 3\}$$ be the set of literals in the clauses $c_i$. We are going to construct a graph where each clauses is a [clique](clique_(graph).md) and we connect any literals to their inverses. So we will two sets of edges, clause edges
+We know each clause $c_i$ has at most 3 literals $l_i^1$, $l_i^2$, and $l_i^3$ (maybe less). Let
+$$L = \{l_i^j \vert 1 \leq i \leq m, \ 1 \leq j \leq 3\}$$ be the set of literals in the clauses $c_i$. We are going to construct a graph where each clause is a [clique](clique_(graph).md) and we connect any literals to their inverses. So we will have two sets of edges, clause edges
 $$C_E = \{(l_i^j, l_i^{j'}) \ \vert \ l_i^j, l_i^{j'} \in L, \ j \not = j'\}$$
 and negation edges
 $$N_E = \{(l_i^j, l_a^b) \ \vert \ l_i^j, l_a^b \in L, \ \overline{l_i^j} = l_a^b \}.$$
 Then an independent set of size $m$ will indicate a set of literals to set to true to get a correct assignment. Define the [undirected graph](graph.md)
 $$G = (L, C_E \cup N_E).$$
-We now apply the solution of [Independent set of a given size](independent_set_of_a_given_size.md) to $G$ and $g = m$.
+We now apply the [Independent set of a given size](independent_set_of_a_given_size.md) algorithm to $G$ with $k = m$.
 
-To make $G$ we need to scan through each clause and make at most 3 vertices, this is $O(m)$. Then to connect the edges we need to first add the $C_E$ which takes $O(m)$ again. To find all the negation edges for each variable we need to find all the literals using that, this takes $O(nm)$. Therefore this process takes $O(nm)$ and is [polynomial time](polynomial_time.md) in the size of the input.
+To make $G$ we need to scan through each clause and make at most 3 vertices, this is $O(m)$. Then to connect the edges we need to first add the $C_E$ which takes $O(m)$ again. To find all the negation edges for each variable we need to find all the literals using that, this takes $O(nm)$. Therefore, this process takes $O(nm)$ and is [polynomial time](polynomial_time.md) in the size of the input.
 
-When we have a solution to the [Independent set of a given size](independent_set_of_a_given_size.md) problem we all the literals in the independent set to true. (This is valid as we know no 2 literals in this independent set can be the negation of one another from the negation edges.) Then for any left over variables we just set them to be true.
+When we have a solution to the [Independent set of a given size](independent_set_of_a_given_size.md) problem we set all the literals in the independent set to true. (This is valid as we know no 2 literals in this independent set can be the negation of one another from the negation edges.) Then for any left over variables we just set them to be true.
 
 This process takes $O(n)$ time as we have to check if a variable is in the set of returned literals.
 

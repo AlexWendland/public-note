@@ -2,9 +2,9 @@
 aliases:
   - binary operation
 created: 2023-08-31
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - maths
 title: Binary operation

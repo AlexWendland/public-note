@@ -1,9 +1,9 @@
 ---
 aliases:
 created: 2023-11-03
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - maths
 title: Clique of a given size problem is NP-complete
@@ -18,7 +18,7 @@ type: lemma
 
 We have already shown that [Clique of a given size problem is in NP](clique_of_a_given_size_problem_is_in_np.md).
 
-We will show that [Independent set of a given size](independent_set_of_a_given_size.md) has a [many-one reduction](../notes/many-one_reduction_(problem).md) to [Clique of a given size problem](clique_of_a_given_size_problem.md).
+We will show that [Independent set of a given size](independent_set_of_a_given_size.md) has a [many-one reduction](many-one_reduction_(problem).md) to [Clique of a given size problem](clique_of_a_given_size_problem.md).
 
 Suppose we have an [undirected graph](graph.md) $G = (V,E)$ and $g > 0$ a positive integer. If we are looking for an [independent set](independent_set_(graph).md) of size $g$, we will pass $G^C$ the [complement graph](complement_graph.md) and $g$ to the [Clique of a given size problem](clique_of_a_given_size_problem.md).
 

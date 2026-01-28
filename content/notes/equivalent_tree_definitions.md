@@ -2,9 +2,9 @@
 aliases:
   - equivalent tree definitions
 created: 2023-09-26
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - maths
 title: Equivalent tree definitions
@@ -34,7 +34,7 @@ Thus proving our statement by induction.
 
 ### Proof of $(2) \Rightarrow (3)$.
 
-Suppose we have a graph $G$ that is connected and $\vert E \vert = \vert V \vert - 1$. Though $G$ has a [cycle](cycle_(graph).md) in it.
+Suppose we have a graph $G$ that is connected and $\vert E \vert = \vert V \vert - 1$. Suppose $G$ has a [cycle](cycle_(graph).md) in it.
 
 Take a minimal, in terms of $\vert V \vert$, counter example.
 
@@ -50,10 +50,10 @@ This proves the claim.
 
 Note all we need to show is that $G$ is connected.
 
-Lets use proof be contradiction. Suppose $G$ satisfies $(3)$ but is not a tree, let $G$ be a minimal such example.
+Let's use proof by contradiction. Suppose $G$ satisfies $(3)$ but is not a tree, let $G$ be a minimal such example.
 
 If $G$ has a vertex of [degree](degree_(graph).md) 1, we can remove it and find a smaller counter example. Therefore $G$ must not have any vertices of degree 1.
 
-Take a connected component of $G$, as it has no vertices of degree 1 they must have vertices of degree $2$ or more. Repeat the argument in [a finite tree that has more than one vertex must have at least two leaf vertices](a_finite_tree_that_has_more_than_one_vertex_must_have_at_least_two_leaf_vertices.md), this shows that this connected component has a cycle it in. This contradicts $(3)$ so no such graph exists.
+Take a connected component of $G$, as it has no vertices of degree 1 they must have vertices of degree $2$ or more. Repeat the argument in [a finite tree that has more than one vertex must have at least two leaf vertices](a_finite_tree_that_has_more_than_one_vertex_must_have_at_least_two_leaf_vertices.md), this shows that this connected component has a cycle in it. This contradicts $(3)$ so no such graph exists.
 
 This proves this claim and the equivalence.

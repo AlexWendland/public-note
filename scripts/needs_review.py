@@ -88,7 +88,6 @@ def main(
     else:
         console.print()
 
-    # Get repo root for relative paths
     repo_root = Path(constants.REPO_ROOT)
 
     if verbose:
@@ -103,7 +102,6 @@ def main(
 
         console.print(table)
     else:
-        # Simple list
         for file_path, _ in notes:
             rel_path = str(Path(file_path).relative_to(repo_root))
             console.print(f"  [cyan]{rel_path}[/cyan]")

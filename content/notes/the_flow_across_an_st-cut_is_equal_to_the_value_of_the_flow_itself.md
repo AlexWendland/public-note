@@ -1,9 +1,9 @@
 ---
 aliases:
 created: 2023-10-20
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - programming
 title: The flow across an st-cut is equal to the value of the flow itself
@@ -14,13 +14,13 @@ type: lemma
 > [!lemma] Lemma
 > Let $(G, c, s, t)$ be a [flow network](flow_network.md) with a [flow](flow.md) $f$ and an [st-cut](st-cut.md) $(S,T)$. Then the flow across $(S,T)$
 > $$flow^f(S,T) := \left ( \sum_{\substack{(s',t') \in E\\ s' \in S, t' \in T}} f(s',t') \right ) - \left ( \sum_{\substack{(t',s') \in E\\ s' \in S, t' \in T}} f(t',s') \right )$$
-> is equal to the $size(f)$
-> $$flow^f(S,T) = size(f).$$
+> is equal to $|f|$ (the value of the flow)
+> $$flow^f(S,T) = |f|.$$
 # Proof
 
-We prove by induction on the size of $\vert S \vert$.
+We prove by induction on the cardinality of $S$.
 
-If $\vert S \vert = 1$ then $S = \{s\}$ then $flow^f(S,T)$ is easy to calculate.
+If $\vert S \vert = 1$, then $S = \{s\}$ and $flow^f(S,T)$ is easy to calculate.
 $$
 \begin{align*}
 flow^f(S,T) & = \left ( \sum_{\substack{(s',t') \in E\\ s' \in S, t' \in T}} f(s',t') \right ) - \left ( \sum_{\substack{(t',s') \in E\\ s' \in S, t' \in T}} f(t',s') \right )\\
@@ -54,7 +54,7 @@ size(f) & = \left ( \sum_{\substack{(s',t') \in E\\ s' \in S', t' \in T'}} f(s',
 & = \left ( \sum_{\substack{(s',\overline{t}) \in E\\ s' \in S', \overline{t} \in T}} f(s',\overline{t}) - \sum_{\substack{(\overline{t},s') \in E\\ s' \in S', \overline{t} \in T}} f(\overline{t},s') \right ) + \left ( \sum_{\substack{(s',s^{\ast}) \in E\\ s' \in S'}} f(s',s^{\ast}) - \sum_{\substack{(s^{\ast}, s') \in E\\ s' \in S'}} f(s^{\ast}, s') \right)\\
 & = \left ( \sum_{\substack{(s',\overline{t}) \in E\\ s' \in S', \overline{t} \in T}} f(s',\overline{t}) - \sum_{\substack{(\overline{t},s') \in E\\ s' \in S', \overline{t} \in T}} f(\overline{t},s') \right ) + \left ( \sum_{\substack{(s^{\ast}, \overline{t}) \in E\\ \overline{t} \in T}} f(s^{\ast}, \overline{t}) - \sum_{\substack{(\overline{t},s^{\ast}) \in E\\ \overline{t} \in T}} f(\overline{t},s^{\ast}) \right)\\
 & = \left ( \sum_{\substack{(s',t') \in E\\ s' \in S, t' \in T}} f(s',t') \right ) - \left ( \sum_{\substack{(t',s') \in E\\ s' \in S, t' \in T}} f(t',s') \right )\\
-& = flow(S,T)
+& = flow^f(S,T)
 \end{align*}
 $$
 giving the desired result for $(S, T)$.

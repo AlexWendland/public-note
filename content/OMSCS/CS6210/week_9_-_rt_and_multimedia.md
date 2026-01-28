@@ -3,9 +3,9 @@ aliases:
 course_code: CS6210
 course_name: Advanced Operating Systems
 created: 2025-11-20
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-07
+last_edited: 2026-01-28
 tags:
   - OMSCS
 title: Week 9 - RT and Multimedia
@@ -18,7 +18,7 @@ week: 9
 ## Time sensitive Linux (TS-Linux)
 
 Historically, OS systems have been optimised to handle 'throughput orientated' tasks such as databases and scientific applications.
-Though in modern OS's we have to prioritise 'latency orientated' tasks such as playing games and synchronous AB players.
+Though in modern OSs we have to prioritise 'latency orientated' tasks such as playing games and synchronous audio players.
 These tasks need guarantees that events can happen at a given time.
 
 ### Sources of latency
@@ -44,7 +44,7 @@ There are different types of timers we can choose from.
 These each come with pros and cons.
 
 - Periodic timers: These timers fire on a particular periodicity.
-  - Pro: Periodic timers.
+  - Pro: Predictable and simple to implement.
   - Con: Event recognition latency caused by the granularity of this timer.
 - One shot timers: These timers fire once and then are disabled.
   - Pro: No event recognition latency.
@@ -60,7 +60,7 @@ This is what the 'firm timer' achieves.
 
 Firm timers take a middle stance between one-shot timers and soft timers.
 They are configured to happen at a particular time, but they have an *overshoot* window in which it is allowed to be late.
-Within the window between when it was supposed to go off and the overshoot value, if we kernel is switched to then we handle the timer.
+Within the window between when it was supposed to go off and the overshoot value, if the kernel is switched to then we handle the timer.
 However, if we reach the end of the overshoot window we handle the timer like a one-shot timer.
 
 This has the advantage of the soft-timers low overhead in most cases but the advantage that we know it will happen at a given time.
@@ -73,7 +73,7 @@ These have a key for the time they are meant to trigger at and a value as the en
 The one-shot timers are supported by the APIC timer hardware.
 This is a hardware timer that gets decremented each clock cycle and throws an interrupt when it reaches zero.
 Reprogramming these timers takes only a couple of cycles so they offer a efficient one-shot implementation.
-Using a 100hz processor, this effectively drops the timer latency to 10 nanoseconds - but functionally the time taken to field the interupt takes longer than this and is a bigger source of the timer latency.
+Using a 100 Hz processor, this effectively drops the timer latency to 10 nanoseconds - but functionally the time taken to field the interrupt takes longer than this and is a bigger source of the timer latency.
 
 > [!note]
 > The soft timer part of the implementation means that a lot of these one-shot timers are reprogrammed and never raise an interrupt.
@@ -96,7 +96,7 @@ There are different approaches to reducing this latency:
 
 - Allow preemption anytime the kernel is not manipulating shared data structures.
 
-These two approaches can be combined to define lock-breaking preemptible kernel.
+These two approaches can be combined to define a lock-breaking preemptible kernel.
 This idea is to break all kernel critical sections into smaller blocks:
 
 - Manipulating shared data structures.
@@ -117,7 +117,7 @@ In addition to this we let tasks define the 'proportion' of a time quantum they 
 With this knowledge the OS can schedule tasks together that fit into one time quantum.
 
 This allows TS-Linux to reserve a proportion of each time quantum for latency sensitive tasks.
-This reduces the scheduling latency by timer based tasks get a boost in their priority relative to time insensitive tasks.
+This reduces the scheduling latency as timer-based tasks get a boost in their priority relative to time insensitive tasks.
 
 #### Priority scheduling
 
@@ -182,10 +182,10 @@ Therefore, ease of use and the right level abstractions is important - simplicit
 - Seamless integration of resources on the edge of the system (the sensors) and the core of the system (the cloud).
 
 - Correct temporal ordering of events happening at different sensors.
-This includes temporal reasoning, the image may be captured at one time step but processed later - it may even integrate into the core much later.
+This includes temporal reasoning; the image may be captured at one time step but processed later - it may even integrate into the core much later.
 Though this information still needs to be integrated with information that might be working on a different time scale.
 
- - Integration of live data and historical data.
+- Integration of live data and historical data.
  For example, you may have a speeding car today and you will want to know if it has been involved in any incidents over the past couple of days.
 
 - Scale: The system has to scale from writing a tracking algorithm on 1 camera to using the same system on 1000 cameras.

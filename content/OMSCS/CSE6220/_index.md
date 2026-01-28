@@ -4,12 +4,12 @@ aliases:
 course_code: CSE6220
 course_name: Introduction to High Performance Computing
 created: 2026-01-12
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2026-01-15
+last_edited: 2026-01-28
 tags:
   - OMSCS
-  - maths
+  - math
   - programming
 term: spring
 title: CSE6220 Introduction to High Performance Computing

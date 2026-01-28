@@ -3,9 +3,9 @@ aliases:
 course_code: CSE6220
 course_name: Introduction to High Performance Computing
 created: '2026-01-15'
-date_checked:
+date_checked: '2026-01-28'
 draft: false
-last_edited: '2026-01-15'
+last_edited: 2026-01-28
 tags:
   - OMSCS
 title: Week 1 - Basic Model of Locality
@@ -23,9 +23,9 @@ This lecture is based on the paper:
 
 # Memory models
 
-When talking about high performance computing - it is not only about optimising the run time of the algorithm but also about how long it takes to move the memory around to complete the algorithm.
+When talking about high performance computing, it is not only about optimising the runtime of the algorithm but also about how long it takes to transfer memory to complete the algorithm.
 Most algorithm classes work in a simple 'fast memory' model, where you have instant access to an infinitely large memory.
-This is a fairly unreasonable model - whilst some OS try to automatically handle memory for you, this is still inefficient in comparison to adapting your algorithm for the computer it is running on.
+This is a fairly unreasonable model—whilst some operating systems try to automatically handle memory for you, it is still inefficient compared to adapting your algorithm for the specific computer you are using.
 
 The most basic memory model which is not the above is called the 'von Neumann model'.
 This has a processor with a limited fast memory cache next to it (of size $Z$ words), and an infinite slow main memory slightly further away.
@@ -37,8 +37,8 @@ This model follows some rules:
 2. Block transfer rule: Slow-fast transfers in blocks of size $L$ words.
 
 > [!definition] Words
-> We use a generic unit 'word' this will vary based on what computation or computer you are on.
-> For example, it could be a 32/64 bits depending on the architecture.
+> We use a generic unit 'word' which will vary based on what computation or computer you are using.
+> For example, it could be 32-bit or 64-bit depending on the architecture.
 
 As we load in blocks of $L$ words, you may have to consider 'data alignment'.
 This means if you are loading an array of $n$ elements, if $n$ is not divisible by $L$ then you may have to do extra transfers.
@@ -69,7 +69,7 @@ Our goals then become two fold:
 2. *High computational intensity*: We want to maximise intensity:
 
 $$
-I(n,Z,L) = \frac{W(n)}{L \cdot Q(n,Z,L)} \mbox{ ops / word }
+I(n,Z,L) = \frac{W(n)}{L \cdot Q(n,Z,L)} \text{ ops / word }
 $$
 
 To know how to balance these we need to know more about the system we are working on.
@@ -88,7 +88,7 @@ $$
 
 In this we defined a new term $B := \alpha / \tau$ ops/word, what we will call the 'machine balance'.
 It is measured in the number of operations the CPU can do per word transferred from the slow to fast memory.
-This balance then effects how much we want to prioritise the intensity, as we will see later.
+This balance then affects how much we want to prioritise the intensity, as we will see later.
 
 There is a second measure of performance called the 'normalised performance' of the algorithm.
 Let $W_{\ast}$ be the best possible work time in the 'pure model' where we don't have any memory considerations.
@@ -128,7 +128,7 @@ For example, if $I(n,Z,L) > B$ there is no point increasing it at the expense of
 Though this is a bit sad, as we are having to transfer $O(n^3)$ words when there is only really $O(n^2)$ data.
 Can we do better?
 
-Let's say we have some $b \vert n$ then we can rewrite
+Let's say we have some $b$ dividing $n$ (i.e., $b \mid n$) then we can rewrite
 $$
 c_{i,j} = \sum_{k=0}^{n-1} a_{i,k} b_{k,j} = \sum_{l=0}^{n/b - 1} \sum_{k=0}^{b-1} a_{i, lb + k} b_{lb + k, j}.
 $$
@@ -140,7 +140,7 @@ C_{i,j} = \sum_{l=0}^{n/b - 1} A_{i,lb} B_{lb,j}
 $$
 
 > [!example] Block matrix multiplication
-> Suppose we have $b \vert n$ like above with $L=1$, $n \vert Z$ with $Z = 3b^2 + O(1)$.
+> Suppose we have $b \mid n$ like above with $L=1$, and $b^2 \mid Z$ with $Z = 3b^2 + O(1)$.
 > Let's use the following pseudocode for matrix multiplication:
 > ```
 > for i = 0 to n-1 by b:
@@ -174,4 +174,4 @@ Therefore we can optimize our algorithms for the architecture we are running on.
 
 # Summary
 
-Whilst this memory model is over-simplified in comparison to real hardware, it sets out the concepts that will be used elsewhere.
+Whilst this memory model is over-simplified compared to real hardware, it sets out the concepts that will be used in subsequent lectures.

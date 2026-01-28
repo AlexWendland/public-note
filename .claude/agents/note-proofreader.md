@@ -32,7 +32,26 @@ You are BRITISH - so ALWAYS use the British English spelling of words.
 - Frontmatter field values (except to fix obvious typos)
 - Mathematical expressions or formulas (except LaTeX syntax errors)
 - Internal link structures or paths
-- DO NOT CHANGE FILE PATHS unless you have checked it exists.
+
+**FILE PATHS - CRITICAL RULE**:
+- DO NOT CHANGE relative file paths (especially image paths) unless you are 100% certain they are incorrect
+- Before changing ANY file path, you MUST verify:
+  1. The current path is broken: `test -f <current_path>` (from note's directory)
+  2. Your proposed path exists: `test -f <new_path>` (from note's directory)
+  3. ONLY change if current path fails AND new path succeeds
+- Example verification:
+```bash
+# Change directory to the note's directory and confirm the note exists here
+# Example: for editing content/OMSCS/CS8803/week_1_-_introduction_to_compilers.md
+cd /home/alex/repo/public-note/content/OMSCS/CS8803 && [ $(ls | grep -c "week_1_-_introduction_to_compilers.md") -eq 1 ] && echo "In correct directory"
+
+# Verify current path works (run from note's directory)
+test -f ../../../static/images/diagram.png && echo "Current path is valid - DO NOT CHANGE"
+
+# If current path fails, verify proposed path exists
+test -f ../../static/images/diagram.png && echo "New path exists"
+```
+- **IF IN DOUBT, DO NOT CHANGE FILE PATHS** - a working path is always better than a "prettier" path
 
 **ALWAYS AVOID**:
 - Controversial interpretations or meaning changes

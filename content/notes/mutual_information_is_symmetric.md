@@ -1,9 +1,9 @@
 ---
 aliases:
 created: 2024-02-24
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - probability
 title: Mutual information is symmetric
@@ -29,6 +29,6 @@ I(X, Y) & = H(Y) - H(Y \vert X)\\
 & \hspace{0.5 in} + \sum_{b \in B} \mathbb{P}[Y=b]\log(\mathbb{P}[Y=b]) - \sum_{a \in A} \mathbb{P}[X=a]\log(\mathbb{P}[X=a])\\
 & = - \sum_{a \in A} \mathbb{P}[X=a]\log(\mathbb{P}[X=a]) - \sum_{a \in A}\sum_{b \in B} \mathbb{P}[X=a, Y=b]\log(\mathbb{P}[X=a \vert Y=b])\\
 & = H(X) - H(X \vert Y)\\
-& = I(Y,X)
+& = I(Y, X)
 \end{align*}
 $$

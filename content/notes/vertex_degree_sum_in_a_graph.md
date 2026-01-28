@@ -1,21 +1,21 @@
 ---
 aliases:
 created: 2023-09-26
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - maths
 title: Vertex degree sum in a graph
 type: lemma
 ---
 > [!lemma] Lemma
-> Let $G = (V, E)$ represents a [undirected simple graph](graph.md). Let $\mbox{deg}(v)$ be the [degree](degree_(graph).md) of vertex $v \in V$. Then
+> Let $G = (V, E)$ represent an [undirected simple graph](graph.md). Let $\mbox{deg}(v)$ be the [degree](degree_(graph).md) of vertex $v \in V$. Then
 > $$ \sum_{v \in V} \mbox{deg}(v) = 2 \vert E \vert.$$
 
 ## Proof
 
-Lets prove this by induction on the number $\vert E \vert$ within a graph.
+Let's prove this by induction on the number $\vert E \vert$ within a graph.
 
 Suppose a graph has no edges. Therefore $\deg(v) = 0$ for all $v \in V$ as there are no edges to be incident to $v$. Thus
 $$\sum_{v \in V} \mbox{deg}(v) = 0 = 2 \vert E \vert.$$

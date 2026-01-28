@@ -3,9 +3,9 @@ aliases:
 course_code: CS8803 O08
 course_name: Compilers - Theory and Practice
 created: '2026-01-16'
-date_checked:
+date_checked: '2026-01-28'
 draft: false
-last_edited: '2026-01-16'
+last_edited: 2026-01-28
 tags:
   - OMSCS
 title: Week 2 - Regular expressions and DFA
@@ -14,11 +14,11 @@ week: 2
 ---
 
 In the lexical analysis phase of the compiler we need to convert a sequence of characters into tokens.
-First, lets define formally what a token is.
+First, let's define formally what a token is.
 
 > [!definition] Token
 > A token is a tuple consisting of:
-> - A type, such as `VAR`, `FloatConst`, ect this is defined by the language.
+> - A type, such as `VAR`, `FloatConst`, etc. This is defined by the language.
 >
 > - A value associated to that type, e.g. the name of the variable, or the value of a constant.
 
@@ -30,14 +30,14 @@ Some examples of tokens are:
 
 - An operator: (Operator, +)
 
-This lesson though will focus on the conversion between string to a token.
+This lesson will focus on the conversion from strings to tokens.
 
 # Regular expressions
 
 A regular expression describes a string pattern to match against.
 A regular expression matches (or accepts) a set of strings that satisfy the pattern.
 To do this, first we start with an alphabet $\Sigma$.
-This can be any set of characters, for example lower case English letters.
+This can be any set of characters, for example lowercase English letters.
 
 - *Alphabet* - A set of valid symbols $\Sigma$.
 
@@ -57,8 +57,8 @@ For example if $\vert \in \Sigma$ to represent `|` as a symbol we will use `\|`.
 - *Empty string* - There is a special character $\epsilon$ that matches the empty string.
 
 > [!warning] Non-standard definition
-> In this course we use unix regEx but there are many varieties that all have slightly different syntax.
-> Whilst the core of RegEx is the same some meta-symbols may vary between implementations.
+> In this course we use Unix regex but there are many varieties that all have slightly different syntax.
+> Whilst the core of regex is the same, some meta-symbols may vary between implementations.
 
 ## Regular operators
 
@@ -66,7 +66,7 @@ The key operators to understand in regular expressions are the following:
 
 ### Concatenation
 
-In regular expression, symbols following one another is concatenation.
+In regular expressions, symbols following one another is concatenation.
 Therefore `abc` is `a` followed by `b` followed by `c`.
 
 ### Alternation
@@ -154,7 +154,7 @@ A DFA defines what a regular language is.
 > [!definition] Regular language
 > A language $L$ is regular if DFA recognises it.
 
-This DFA will have symbols $\Sigma$, with a map from $p: W_{\Sigma} \rightarrow Q$ from the words in $\Sigma$ to the states of the automat, which defines $\delta$.
+This DFA will have symbols $\Sigma$, with a map from $p: W_{\Sigma} \rightarrow Q$ from the words in $\Sigma$ to the states of the automaton, which defines $\delta$.
 The start state $q_0 = p(\epsilon)$ and the accepting states will be the allowed words in this language.
 
 > [!example] Words ending in `1`
@@ -177,5 +177,5 @@ The start state $q_0 = p(\epsilon)$ and the accepting states will be the allowed
 > - The start state is $q_0$.
 > - The accepting states are $\{q_1\}$.
 
-Due to the finite limitation of the DFA it can not recognise all possible strings.
-For example, it you wanted to accept words that have an equal number of `0` and `1` you would need to track all possible values of `0` and `1` which would lead to infinite number of states.
+Due to the finite limitation of the DFA it cannot recognise all possible strings.
+For example, if you wanted to accept words that have an equal number of `0` and `1` you would need to track all possible values of `0` and `1` which would lead to an infinite number of states.

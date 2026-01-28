@@ -1,11 +1,11 @@
 ---
 created: 2025-12-05
-date_checked:
+date_checked: 2026-01-28
 degree: PhD in Mathematics
 draft: false
 end_date: 2020-04-01
 institution: University of Warwick
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 start_date: 2015-09-01
 tags:
   - education
@@ -19,26 +19,26 @@ type: education
 
 ## Overview
 
-During my PhD at the University of Warwick, I delved into the realms of graph theory and group theory under the guidance of Agelos Georgakopoulos. My research was an engaging journey through complex mathematical principles and theory, which was both intellectually challenging and rewarding.
+During my PhD at the University of Warwick, I explored graph theory and group theory under the supervision of Agelos Georgakopoulos. My research was an intellectually challenging and rewarding journey through complex mathematical principles.
 
 ## Academic Experience
 
-The community at Warwick was a source of inspiration and support, composed of an array of brilliant and kind individuals who continually fostered an environment conducive to growth and learning.
+The community at Warwick was a source of inspiration and support, filled with brilliant and kind individuals who fostered an environment conducive to growth and learning.
 
 ## Personal Development
 
-In addition to my academic development, this period of my life was crucial for my personal evolution. I matured significantly, both in my academic approach and my personal values and personality.
+Beyond academic development, this period was crucial for my personal growth. I matured significantly in my academic approach and personal values.
 
 ## Extracurricular Activities
 
 **Staff-Student Liaison Committee (SSLC)**
-- Participated actively in the committee
-- Gained enriching perspective on policy shaping
+- Actively participated in the committee
+- Gained valuable perspective on policy development
 
 **Teaching Experience**
-- Teaching experience further augmented my skills and perspective
+- Developed and refined my teaching skills and perspective
 - Contributed to a well-rounded university experience
 
 ## Summary
 
-Ultimately, my time at Warwick was a balanced blend of rigorous academic work, enriching extra-curricular activities, and personal growth.
+My time at Warwick was a balanced blend of rigorous academic work, enriching extracurricular activities, and personal growth.

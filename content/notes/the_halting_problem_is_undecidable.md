@@ -1,9 +1,9 @@
 ---
 aliases:
 created: 2023-11-13
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - maths
 title: The Halting problem is undecidable
@@ -18,7 +18,7 @@ type: lemma
 
 Suppose we have an algorithm that solves the [Halting problem](halting_problem.md) on every input. Call this $terminator(P,I)$ which returns true or false based on if $P(I)$ terminates.
 
-Define the following programme $Harmful$.
+Define the following program $Harmful$.
 
 ```pseudocode
 Harmful(J):
@@ -26,7 +26,7 @@ Harmful(J):
 	Output: Null
 1. If Terminator(J,J)
 	1.1. Then goto 1
-	1.2. else reutrn
+	1.2. else return
 ```
 
 What is $terminator(Harmful, Harmful)$?
@@ -35,5 +35,5 @@ If $terminator(Harmful, Harmful) = true$ then $Harmful(Harmful)$ by definition i
 
 If $terminator(Harmful, Harmful) = false$ then $Harmful(Harmful)$ by definition terminates after 1 step - contradicting $terminator(Harmful, Harmful) = false$.
 
-Therefore no such programme $terminator$ can exist and we have the [Halting problem](halting_problem.md) is [undecidable](undecidable_problem.md).
+Therefore no such program $terminator$ can exist, and we have established that the [Halting problem](halting_problem.md) is [undecidable](undecidable_problem.md).
 

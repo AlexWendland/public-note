@@ -119,24 +119,22 @@ def create_lecture_file(name: str, week: str, course: CourseInfo) -> Path:
     title = f"Week {week} - {name}"
     metadata = {
         "aliases": None,
-        "checked": False,
+        "date_checked": None,
         "course_code": course.code,
         "course_name": course.name,
         "created": today_str,
         "last_edited": today_str,
         "draft": True,
         "tags": ["OMSCS"],
-        "title": title,  # Add title to frontmatter
+        "title": title,
         "type": "lecture",
         "week": int(week),
     }
 
-    # Create empty sections (no H1 heading in content)
     sections: list[MarkdownSection] = []
 
     note_file = NoteFile(file_path=str(file_path), metadata=metadata, sections=sections)
 
-    # Write the file
     note_file.write()
     console.print(f"[green]✓ Created lecture file: {file_path}[/green]")
 

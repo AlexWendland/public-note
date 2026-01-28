@@ -1,11 +1,11 @@
 ---
 created: 2025-12-05
-date_checked:
+date_checked: 2026-01-28
 degree: Masters in Mathematics
 draft: false
 end_date: 2015-07-01
 institution: University of Warwick
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 start_date: 2011-09-01
 tags:
   - education
@@ -18,7 +18,7 @@ type: education
 
 ## Overview
 
-I pursued an integrated Master's in Mathematics at the University of Warwick. It was an academically enriching period of intense study and rewarding experiences. This rigorous pursuit cultivated a deep love for mathematics, providing a solid platform for solving intricate problems and unveiling the beauty of mathematical logic.
+I pursued an integrated Master's in Mathematics at the University of Warwick. It was an academically enriching period of intense study and rewarding experiences that cultivated a deep love for mathematics, providing a solid platform for solving intricate problems and unveiling the beauty of mathematical logic.
 
 ## Academic Recognition
 
@@ -36,7 +36,7 @@ I pursued an integrated Master's in Mathematics at the University of Warwick. It
 
 **Teaching**
 - Academic Support at the Warwick Maths Society (2013-2014)
-- Transitioned into first paid teaching role
+- Transitioned into my first paid teaching role following these experiences
 
 **Student Representation**
 - Served on the Staff-Student Liaison Committee (SSLC)
@@ -44,4 +44,4 @@ I pursued an integrated Master's in Mathematics at the University of Warwick. It
 
 ## Summary
 
-My undergraduate and masters years at Warwick were a transformative period, marked by academic rigor, a deepened love for mathematics and teaching, and meaningful contributions to the department and wider university community.
+My undergraduate and master's years at Warwick were a transformative period, marked by academic rigour, a deepened passion for mathematics and teaching, and meaningful contributions to the department and wider university community.

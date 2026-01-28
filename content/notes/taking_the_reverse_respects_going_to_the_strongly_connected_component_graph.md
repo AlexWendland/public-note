@@ -1,9 +1,9 @@
 ---
 aliases:
 created: 2023-09-28
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - maths
 title: Taking the reverse respects going to the strongly connected component graph
@@ -18,8 +18,9 @@ As [the strongly connected components are the same in a directed graph and its r
 
 The edge set for $S_G$ is
 $$\{(S_i, S_j) \vert \ s_i \in S_i, s_j \in S_j\ \mbox{ with } (s_i, s_j) \in E\}.$$
-therefore the edge set for $S_G^R$ is
+
+Therefore, the edge set for $S_G^R$ is
 $$\{(S_j, S_i) \vert \ s_i \in S_i, s_j \in S_j\ \mbox{ with } (s_i, s_j) \in E\}.$$
-Which by the definition of [reverse](reverse_directed_graph.md) could be rephrased as
+Which by the definition of [reverse](reverse_directed_graph.md) can be rewritten as
 $$\{(S_j, S_i) \vert \ s_i \in S_i, s_j \in S_j\ \mbox{ with } (s_j, s_i) \in E^R\}.$$
 This is exactly the definition of the edge set for $S_{G^R}$ giving the required statement.

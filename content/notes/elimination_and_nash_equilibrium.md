@@ -1,9 +1,9 @@
 ---
 aliases:
 created: 2024-04-06
-date_checked:
+date_checked: 2026-01-28
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-01-28
 tags:
   - game-theory
 title: Elimination and Nash Equilibrium
