@@ -3,7 +3,7 @@ aliases:
 course_code: CS6200
 course_name: Graduate introduction to Operating Systems
 created: 2025-04-12
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-04-12
 tags:
@@ -22,7 +22,7 @@ week: 12
 
 [Virtual machine monitor (VMM)](../../notes/virtual_machine_monitor_(vmm).md)
 
-Benefits for vitualisation:
+Benefits for virtualization:
 - *Consolidation*: Allows you to split one machine into many, allowing you to consolidate different applications that need different environments to run.
 - *Migration*: Makes it easy to move applications from one machine to another.
 - *Security*: Isolates applications from one another.
@@ -42,7 +42,7 @@ In this model the [hypervisor](../../notes/virtual_machine_monitor_(vmm).md) is 
 
 There are two main hypervisor producers:
 - Xen (open source or Citrix):
-	- This uses a privilaged VM.
+	- This uses a privileged VM.
 - ESX (VMware):
 	- Largest market share.
 	- Can force server device manufacturers to release drivers.
@@ -50,14 +50,14 @@ There are two main hypervisor producers:
 
 # Hosted
 
-In the hosted model the [VMM](../../notes/virtual_machine_monitor_(vmm).md) runs as  module on a host [OS](../../notes/operating_system_(os).md). This module provides hardware interfaces to VM's and deals with VM context switching. The advantage of this mode is you can utilize all the components of the host VM making the [VMM](../../notes/virtual_machine_monitor_(vmm).md) smaller in size.
+In the hosted model the [VMM](../../notes/virtual_machine_monitor_(vmm).md) runs as a module on a host [OS](../../notes/operating_system_(os).md). This module provides hardware interfaces to VMs and deals with virtual machine context switching. The advantage of this mode is you can utilise all the components of the host OS, making the [VMM](../../notes/virtual_machine_monitor_(vmm).md) smaller in size.
 
 ![Hosted Virtualization](../../../static/images/hosted_virtualization.png)
 
 Examples:
-- Kernel-based VM (KVM) which is linux based.
-	- Uses an [OS](../../notes/operating_system_(os).md) module on the host and a QEMU for hard ware virtualization in the VM.
-	- Leverages the linux open source community.
+- Kernel-based VM (KVM) which is Linux-based.
+	- Uses an [OS](../../notes/operating_system_(os).md) module on the host and QEMU for hardware virtualisation in the VM.
+	- Leverages the Linux open source community.
 
 # Hardware protection levels
 
@@ -67,7 +67,7 @@ When running a normal [OS](../../notes/operating_system_(os).md) then only 2 rin
 - Ring 0: Used by the operating system.
 - Ring 3: User applications running at this level.
 
-However for bare-metal hypervisors they will run:
+However, for bare-metal hypervisors they will run:
 - Ring 0 (root): Hypervisor.
 - Ring 0 (non-root): VM [OS](../../notes/operating_system_(os).md).
 - Ring 3 (non-root): VM user applications.
@@ -81,24 +81,24 @@ Most hypervisors operate using a trap and emulate model. This entails:
 
 # Historic issues
 
-In the past there was not root/non-root modes so the strategy was to run:
+In the past there were no root/non-root modes, so the strategy was to run:
 
 - Ring 0: Hypervisor
 - Ring 1: Guest OS
 - Ring 3: Applications
 
-However, at the time 17 instructions required ring 0 level but would not throw a trap if sent from ring 1 - instead they would fail silently. This caused issues as no transfer of control was carried out but also the Guest OS would not know it did not know its operations were not carried out.
+However, at the time, 17 instructions required ring 0 level access but would not throw a trap if sent from ring 1 - instead they would fail silently. This caused issues as no transfer of control was carried out, but also the guest OS would not know that its operations were not carried out.
 
 To achieve "full-virtualisation" a [hypervisor](../../notes/virtual_machine_monitor_(vmm).md) wants to run guest [OS](../../notes/operating_system_(os).md) unaltered. VMWare took to this approach and to solve the above issue invented a technique called binary translation. This took the binary instructions from the guest [OS](../../notes/operating_system_(os).md) and scanned them for any of these 17 instructions. If the [hypervisor](../../notes/virtual_machine_monitor_(vmm).md) found the [OS](../../notes/operating_system_(os).md) was going to carry out any of the restricted operations it switched the binary instruction set for one that did not use it but still returned the [OS](../../notes/operating_system_(os).md) to a state in which it would have arrived if it did. If not - the block executes at hardware speed.
 
 This level of analysis introduced overhead which had to be mitigated by using tricks like caching and selective analysis (i.e. only on kernel code).
 
-Another approach to this issue is called "paravirtualisation" with this you modify the guest [OS](../../notes/operating_system_(os).md) so that it knows it is running on a hypervisor:
+Another approach to this issue is called "paravirtualisation". With this approach, you modify the guest [OS](../../notes/operating_system_(os).md) so that it knows it is running on a hypervisor:
 - It makes explicit calls to the hypervisor (hypercalls)
 	- These package context info,
 	- specify the desired call to the hypervisor, and
 	- trap to the hypervisor.
-- This approach was taken by the open source Xen project, this got bought by citrix.
+- This approach was taken by the open source Xen project, which was bought by Citrix.
 
 # Memory virtualization
 
@@ -160,9 +160,9 @@ This model is limited to only paravirtualised [hypervisors](../../notes/virtual_
 ![Split Device Driver](../../../static/images/split_device_driver.png)
 
 This model has the following considerations:
-- Eliminate emulation overhead of the direct model.
+- Eliminates emulation overhead of the direct model.
 - Allows for better management of shared devices.
-- Can only be used on paravirtulaised systems.
+- Can only be used on paravirtualised systems.
 
 # Modern developments
 

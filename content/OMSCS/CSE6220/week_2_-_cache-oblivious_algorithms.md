@@ -104,8 +104,8 @@ mm(n, A, B, C)
 1. if n = 1:
 2.   C = A \cdot B
 3. else:
-4. for i, j, k \in {1,2}:
-5.   mm(n/2, A_{i,k}, B_{k,j}, C_{i,j})
+4.   for i, j, k \in {1,2}:
+5.     mm(n/2, A_{i,k}, B_{k,j}, C_{i,j})
 ```
 
 We can find out the run time $R(n)$ by using the recursive relationship:

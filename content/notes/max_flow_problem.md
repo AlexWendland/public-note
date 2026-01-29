@@ -2,7 +2,7 @@
 aliases:
   - max flow
 created: 2023-10-02
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-12-05
 tags:
@@ -12,8 +12,8 @@ type: problem
 ---
 # Statement
 
-> [!definition] Max-flow problem
-> Given a [flow network](flow_network.md) $(G, c, s, t)$ what is the max value a [flow](flow.md) on this network can have?
+> [!definition] Max flow problem
+> Given a [flow network](flow_network.md) $(G, c, s, t)$, what is the maximum value a [flow](flow.md) on this network can have?
 
 # Solutions
 - [Ford-Fulkerson Algorithm](ford-fulkerson_algorithm.md)

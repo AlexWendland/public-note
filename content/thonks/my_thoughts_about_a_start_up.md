@@ -1,13 +1,13 @@
 ---
 aliases:
 created: 2025-07-05
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-07-05
 tags:
   - finance
   - work
-title: My thoughts about a start up
+title: My thoughts about a startup
 type: thonk
 ---
 I'm at a crossroads and thinking about what comes next in my career.
@@ -34,7 +34,7 @@ To compare these approaches, I'll evaluate each on four dimensions: maximum reve
 **Personal interest:** Required
 **Risk:** Medium
 
-Think of a board games cafe or a charity. This business is a passion project - it is taking your hobby and trying to make that a source of money. You are expecting to not make a huge profit but just enough to keep afloat. The main benefit of this option is working on it should feel fun!
+Think of a board games café or a charity. This business is a passion project - it is taking your hobby and trying to make that a source of money. You are expecting to not make a huge profit but just enough to keep afloat. The main benefit of this option is working on it should feel fun!
 
 **Revenue considerations:** Really depends on the hobby and the problem you are solving. However, as you are more interested in the community than making money, it is quite likely you will have lower revenue than a for-profit business. [Most small businesses take at least 2 to 3 years to be profitable and become truly successful](https://www.freshbooks.com/hub/startup/how-long-does-it-take-business-to-be-successful?srsltid=AfmBOopRvRNhQ3QDavnVeu_7PiduK8pNj-gh-b6C_rne7MW_pOP_t5kK)
 
@@ -68,14 +68,15 @@ Here we take a problem that is faced by a large group of people and think up a n
 
 **Investment requirements:** Quite likely to scale you will need high investment - which requires Venture Capitalists, which further adds to the pressure as you need to deliver for them.
 
->[!note] You could love the idea
->In some ways this and the passion-driven business aren't mutually exclusive. The difference here is the intensity.
+> [!note] You could love the idea
+> In some ways this and the passion-driven business aren't mutually exclusive. The difference here is the intensity.
 
 # What I want from work
 
 Read [How I think about work](how_i_think_about_work.md) for more on this.
 
 > [!note] Cost framework application
+>
 > Whilst I may not be personally interested in the specific ideas in a 4-hour work week business, they are still my ideas rather than someone else's. If working on someone else's ideas has a weighted cost of 0.8 and working on my own ideas has a cost of 0.3, then more hours on my own projects could still result in lower total "cost" than fewer hours on someone else's work.
 
 **Personal circumstances shaping my next move:**

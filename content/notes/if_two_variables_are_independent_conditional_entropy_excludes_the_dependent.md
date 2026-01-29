@@ -1,7 +1,7 @@
 ---
 aliases:
 created: 2024-02-24
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-12-05
 tags:
@@ -12,7 +12,7 @@ type: lemma
 # Statement
 
 > [!lemma] Lemma
-> Suppose we have two [independent](independent_events.md) [random variables](random_variable.md) $X$ and $Y$ over different [domains](function_domain.md) $A$ and $B$. Then the [Conditional entropy](conditional_entropy.md) is excludes the dependent
+> Suppose we have two [independent](independent_events.md) [random variables](random_variable.md) $X$ and $Y$ over different [domains](function_domain.md) $A$ and $B$. Then the [conditional entropy](conditional_entropy.md) does not depend on the independent variable:
 > $$H(Y \vert X) = H(Y).$$
 
 # Proof

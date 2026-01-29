@@ -4,7 +4,7 @@ aliases:
 course_code: CS6210
 course_name: Advanced Operating Systems
 created: 2023-08-26
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-12-03
 tags:
@@ -18,7 +18,7 @@ year: '2023'
 
 Advanced Operating Systems is a graduate-level course that addresses a broad range of topics in operating system design and implementation, including:
 - Operating system structuring
-- Synchronization, communication and scheduling in parallel systems
+- Synchronization, communication, and scheduling in parallel systems
 - Distributed systems, their communication mechanisms, distributed objects and middleware
 - Failures and recovery management
 - System support for Internet-scale computing

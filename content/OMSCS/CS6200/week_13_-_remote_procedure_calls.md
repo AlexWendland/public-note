@@ -3,7 +3,7 @@ aliases:
 course_code: CS6200
 course_name: Graduate introduction to Operating Systems
 created: 2025-04-12
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-04-12
 tags:
@@ -18,12 +18,12 @@ week: 13
 
 # Remote procedure calls (RPC)
 
-[Remote procedure calls (PRC)](../../notes/remote_procedure_calls_(prc).md)
+[Remote procedure calls (RPC)](../../notes/remote_procedure_calls_(prc).md)
 
 To achieve this [RPC](../../notes/remote_procedure_calls_(prc).md) has some requirements:
 - Offers a client and server interface.
 - Implements a procedure call Interface.
-	- When RPC was invented procedural languages where big, this is synchronous and when it is called remote procedure call.
+	- When RPC was invented procedural languages were big, this is synchronous and when it is called remote procedure call.
 - Type checking.
 	- This offers error handling, and
 	- packet bytes interpretation.
@@ -34,7 +34,7 @@ To achieve this [RPC](../../notes/remote_procedure_calls_(prc).md) has some requ
 
 Below is an example flow of an [RPC](../../notes/remote_procedure_calls_(prc).md) call:
 
-![Rpc Example](../../../static/images/rpc_example.png)
+![RPC example](../../../static/images/rpc_example.png)
 
 # Steps to carry out an RPC operation
 
@@ -97,7 +97,7 @@ This is an [RPC](../../notes/remote_procedure_calls_(prc).md) framework develope
 
 This is an [RPC](../../notes/remote_procedure_calls_(prc).md) framework also developed by Sun but specifically for the Java language.
 
-![Java Rmi](../../../static/images/java_rmi.png)
+![Java RMI](../../../static/images/java_rmi.png)
 
 As this is specific to Java, it uses that for its [IDL](../../notes/interface_definition_language_(idl).md) the framework matches Java's [OOP](../../notes/object_oriented_programming_(oop).md) semantics. The implementation is split into two layers:
 

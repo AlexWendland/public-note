@@ -1,7 +1,7 @@
 ---
 aliases:
 created: 2023-11-12
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-12-05
 tags:
@@ -46,8 +46,8 @@ Let $v$ be the max value of the constructed [ILP](integer_linear_programming_pro
 
 ## Claim 1
 
->[!important] Claim 1
->An assignment to the variables of $f$ is reversed transformed into a feasible point in the contracted [ILP](integer_linear_programming_problem.md) and the value of its objective function is the number of satisfied clauses.
+> [!important] Claim 1
+> An assignment to the variables of $f$ is transformed into a feasible point in the contracted [ILP](integer_linear_programming_problem.md) and the value of its objective function is the number of satisfied clauses.
 
 ## Proof of Claim 1
 
@@ -63,13 +63,12 @@ is the number of satisfied clauses by definition.
 
 ## Claim 2
 
->[!important] Claim 2
->A feasible point in the constructed [ILP](integer_linear_programming_problem.md) is transformed into a valid assignment of the variables and the value of the objective function is less than or equal to the number of satisfied clauses.
->
+> [!important] Claim 2
+> A feasible point in the constructed [ILP](integer_linear_programming_problem.md) is transformed into a valid assignment of the variables and the value of the objective function is less than or equal to the number of satisfied clauses.
 
 ## Proof of Claim 2
 
-We set $a(x_i) = y_1$ with $1$ being True and $0$ being False. The clause constraint
+We set $a(x_i) = y_i$ with $1$ being True and $0$ being False. The clause constraint
 $$
 \sum_{i \in c_j^+} y_i + \sum_{i \in c_j^-} (1 - y_i) \geq z_j
 $$

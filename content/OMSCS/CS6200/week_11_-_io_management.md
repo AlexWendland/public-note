@@ -3,7 +3,7 @@ aliases:
 course_code: CS6200
 course_name: Graduate introduction to Operating Systems
 created: 2025-04-09
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-04-09
 tags:
@@ -23,7 +23,7 @@ These have 3 registers:
 - Command: Used by the [CPU](../../notes/central_processing_unit_(cpu).md) to control the device.
 - Data: Used to transfer data in and out of the device.
 
- Then what happens internally is controlled by the micro controller on the device.
+Then what happens internally is controlled by the micro controller on the device.
 
 # Connections to the [CPU](../../notes/central_processing_unit_(cpu).md)
 
@@ -39,7 +39,7 @@ Devices are mainly connected to the [CPU](../../notes/central_processing_unit_(c
 
 Devices fall into one of 3 types:
 - *Block device*: Read/writes blocks of data and offers an API to access a block at a particular index. E.g. Hard drive
-- *Character device*: Offers an API that gets or puts a single character. e.g. keyboard.
+- *Character device*: Offers an API that gets or puts a single character. E.g. keyboard.
 - *Network device*: These offer ability to put or get data but no direct access to blocks of indexed data. E.g. [NIC](../../notes/network_interface_card_(nic).md)
 
 All these devices are represented as a special type of file. In linux these can be accessed in the `/dev` directory and are stored in a different file system `tempfs` or `devfs`.
@@ -94,14 +94,14 @@ The [OS](../../notes/operating_system_(os).md) abstracts the concepts of block d
 
 ![Virtual File System](../../../static/images/virtual_file_system.png)
 
-As well as making this easy for human to use - it also offers an API the block device device drivers must conform to.
+As well as making this easy for humans to use - it also offers an API that block device drivers must conform to.
 
 This virtual file system supports a number of abstractions:
 
 - *File*: The basic elements on which the virtual file system operates.
-- *File descriptor*: An [OS](../../notes/operating_system_(os).md) representation of a file the supports standard operations like, read, write, lock, close ....
-- *inode*: A persistent on block device representation of a file (Index node). This lists all the data blocks that make up this file as well as metadata such as device, permissions, size ....
-	- Note: Directories are just special kind of files. They have the same metadata but instead of pointing to the blocks of memory that make the file up they point to blocks of memory that store the director entries (pairs of name and inode number for a file).
+- *File descriptor*: An [OS](../../notes/operating_system_(os).md) representation of a file that supports standard operations like read, write, lock, close, etc.
+- *inode*: A persistent on-block device representation of a file (Index node). This lists all the data blocks that make up this file as well as metadata such as device, permissions, size, etc.
+	- Note: Directories are just a special kind of file. They have the same metadata but instead of pointing to the blocks of memory that make the file up, they point to blocks of memory that store the directory entries (pairs of name and inode number for a file).
 - *dentry*: This is an in-memory data structure the [OS](../../notes/operating_system_(os).md) uses to represent a directory. There is one for every directory component.
 - *superblock*: This contains file-system-specific information regarding the file-system layout. For example the inode blocks, data blocks, and free blocks.
 

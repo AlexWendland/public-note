@@ -5,7 +5,7 @@ aliases:
   - hash functions
   - Hash functions
 created: 2023-10-10
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-12-05
 tags:
@@ -18,10 +18,9 @@ type: definition
 >
 > - Uniformly distributed over its output,
 > - Fast to compute, and
-> - Minimize collisions - $h(k) = h(k')$ with $k \not = k'$.
+> - Minimize collisions - $h(k) = h(k')$ with $k \neq k'$.
 >
->In security  settings it may also be useful to have them be:
+>In security settings it may also be useful to have them be:
 >
 > - Non-reversible - it is very hard to compute the inverse, and
 > - Randomly distributed - so keys close in the input space are not close in the output space.
-

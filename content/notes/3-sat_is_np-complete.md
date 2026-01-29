@@ -1,7 +1,7 @@
 ---
 aliases:
 created: 2023-11-03
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-12-05
 tags:
@@ -44,7 +44,7 @@ This proves that [3-SAT](k-satisfiability_problem_(k-sat_problem).md) is [NP-com
 
 ## Clause reduction
 
->[!tldr] Clause reduction
+> [!tldr] Clause reduction
 > Given a clause
 > $$ C = \bigvee_{i = 1}^k l_i$$
 > with literals $l_i$ in our $n$ variables. We define the reduction
@@ -60,7 +60,7 @@ This proves that [3-SAT](k-satisfiability_problem_(k-sat_problem).md) is [NP-com
 
 ### $\Rightarrow$
 
-Suppose we have some assignment to the variables $n$ variables such that $C$ is satisfied. Then we know at least one literal $l_a$ is true.
+Suppose we have an assignment to the $n$ variables such that $C$ is satisfied. Then we know at least one literal $l_a$ is true.
 
 To make a satisfying assignment for $C'$ first keep the assignment the same for the original $n$ variables and
 - set $y_i$ to be true for all $i \leq a - 2$, and
@@ -81,9 +81,9 @@ Suppose instead $C'$ is satisfiable. Therefore we have some assignment to the or
 There are 3 cases for $y_i$:
 - $y_1$ is false,
 - $y_{k-3}$ is true, or
-- There exists and $1 \leq i \leq k-2$ such that $y_i$ is true and $y_{i+1}$ is false.
+- There exists $1 \leq i \leq k-2$ such that $y_i$ is true and $y_{i+1}$ is false.
 
-(Note if $y_1$ is true and $y_{k-3}$ is false then there must be $i$ which $y_i$ goes from being true to $y_{i+1}$ being false.)
+(Note: if $y_1$ is true and $y_{k-3}$ is false then there must be some $i$ such that $y_i$ is true and $y_{i+1}$ is false.)
 
 Note in all these cases as $C'$ is satisfied there is an $l_i$ that is true.
 - If $y_1$ is false either $l_1$ or $l_2$ is true.

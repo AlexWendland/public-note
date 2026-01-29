@@ -3,7 +3,7 @@ aliases: []
 course_code: CS6215
 course_name: Introduction to Graduate Algorithms
 created: 2023-09-07
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-12-05
 tags:
@@ -30,17 +30,17 @@ A basic algorithm would be to use [Merge sort](../../notes/merge_sort.md) on $A$
 
 # Using [divide and conquer](../../notes/divide_and_conquer_algorithms.md) better
 
->[!Note] [Quick sort](../../notes/quick_sort.md)
+>[!note] [Quick sort](../../notes/quick_sort.md)
 >We are going to use ideas from [quick sort](../../notes/quick_sort.md) algorithm.
 
 The basic idea is summed up in following [pseudocode](../../notes/pseudocode.md)
 
 ```pseudo
 Select(A, k):
-1. Choose a piviot p.
+1. Choose a pivot p.
 2. Partition A into A_{<p}, A_{=p}, and A_{>p}.
 3. If k <= |A_{<p}| then return Select(A_{<p}, k)
-4. If |A_{<p}| < k <= |A_{<p}| + |A_{=p}| then retrun p.
+4. If |A_{<p}| < k <= |A_{<p}| + |A_{=p}| then return p.
 5. Otherwise return Select(A_{>p}, k - (|A_{<p}| + |A_{=p}|))
 ```
 
@@ -59,7 +59,7 @@ which by [Masters theorem](../../notes/masters_theorem.md) gives $T(n) = \Theta(
 If I choose any random element $p \in A$ then it has
 $$\mathbb{P}(p \mbox{ is good}) = \frac{3n/4 - n/4}{n} = \frac{1}{2}$$
 It takes $O(n)$ time to check if $p$ is good and if we kept randomly drawing elements we have
-$$\mathbb{E}(\mbox{draws untill } p \mbox{ is good}) = 2.$$
+$$\mathbb{E}(\mbox{draws until } p \mbox{ is good}) = 2.$$
 Therefore this algorithm has expected runtime of $2n$ - though this is not [worst case run time](../../notes/big-o_notation.md).
 
 ## Recursive pivot
@@ -75,7 +75,7 @@ Which gives $\vert A_{>p} \vert \leq \frac{7n}{10}$ and $\vert A_{<p} \vert \leq
 
 ```pseudocode
 FastSelect(A,k):
-1. Break A into ceiling of n/5 groups, G_i with atmost 5 elements in.
+1. Break A into ceiling of n/5 groups, G_i with at most 5 elements in.
 2. For i = 1 -> n/5 sort G_i and let m_i = median(G_i)
 3. Let S = {m_1, ..., m_{n/5}}
 4. Let p = FastSelect(S,n/10)
@@ -83,13 +83,13 @@ FastSelect(A,k):
 6. Return based on the following conditions.
 	1. If k <= |A_{<p}| then return FastSelect(A_{<p}, k)
 	2. If k > |A_{<p}| + |A_{=p}| then return
-	   FastSelect(A_{>p}, k - |A_{<p}| + |A_{=p}|)
+	   FastSelect(A_{>p}, k - (|A_{<p}| + |A_{=p}|))
 	3. Else return p.
 ```
 
 Breaking $A$ into groups requires one sweep through $A$ so that takes us $O(n)$ time.
 
-Sorting a single $G_i$ takes $s$ where $s$ is the constant runtime of your favourite sorting algorithm on 5 elements.
+Sorting a single $G_i$ takes $O(c)$ time where $c$ is a constant representing the runtime of your favourite sorting algorithm on 5 elements.
 
 We run this sort on $n/5$ elements giving step 2 takes $O(n)$ time.
 
@@ -107,7 +107,7 @@ $$T(n) = T\left (\frac{3n}{4}\right ) + T\left ( \frac{n}{5}\right ) + O(n) + O(
 As $\frac{3}{4} + \frac{1}{5} < 1$ we have that $T(n) = O(n)$.
 
 > [!note] Why is this true?
-> I don't know, but this looks like it could be solved using [Akra–Bazzi method](akra–bazzi_method.md) or [Recursion tree method](../../notes/recursion_tree_method.md).
+> I don't know, but this looks like it could be solved using [Akra–Bazzi method](../../notes/akra-bazzi_method.md) or [Recursion tree method](../../notes/recursion_tree_method.md).
 
 ## Useful discussion about this
 

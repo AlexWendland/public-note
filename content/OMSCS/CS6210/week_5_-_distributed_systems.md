@@ -3,7 +3,7 @@ aliases:
 course_code: CS6210
 course_name: Advanced Operating Systems
 created: 2025-10-01
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-10-01
 tags:
@@ -32,7 +32,7 @@ To this extent we define a relationship on events in a system, namely a -> b mea
 - Process: If a and b are on the same process and a comes before b, then a -> b.
 - Message: If a is a send event and b is the corresponding receive event, then a -> b.
 - Transitivity: If a -> b and b -> c, then a -> c.
-- Concurrency: If neither a -> b or b -> c, than a and b are concurrent (a || b).
+- Concurrency: If neither a -> b or b -> a, then a and b are concurrent (a || b).
 
 # Lamports clock
 
@@ -45,15 +45,15 @@ We then define a clock, $c: {e^i_j}_{1 \leq i \leq n, j \in \mathbb{N}} \rightar
 
 ## Total order
 
-We can derive a total order $\Rightarrow$ from a clock $c: {e^i_j}_{1 \leq i \leq n, j \in \mathbb{N}} \rightarrow \mathbb{N}$ by ordering the processes $P_i$ (lets assume we do this by saying $P_i < P_j \Rightleftarrow i < j$.
-The we define $\Rightarrow$ by the following:
+We can derive a total order $\Rightarrow$ from a clock $c: {e^i_j}_{1 \leq i \leq n, j \in \mathbb{N}} \rightarrow \mathbb{N}$ by ordering the processes $P_i$ (let's assume we do this by saying $P_i < P_j \Leftrightarrow i < j$).
+Then we define $\Rightarrow$ by the following:
 - If $c(e^a_b) < c(e^x_y)$ then $e^a_b \Rightarrow e^x_y$.
 - If $c(e^a_b) = c(e^x_y)$ and $P_a < P_x$ then $e^a_b \Rightarrow e^x_y$.
 
 ## Distributed M.E. Lock
 
 Suppose you have a set of processes $P_i$ that want to establish a distributed mutual exclusion lock.
-We can use the total ordering before to do this, each process messages all other processes with the clock time of when they want the clock with the PID.
+We can use the total ordering from before to do this: each process messages all other processes with the clock time of when they want the lock along with the PID.
 Upon receiving a message from another process, each process acks the message.
 As each process builds a queue of requests for the lock with a time associated to it, it can work out if it can hold the lock. Which can happen in the following situation:
 
@@ -67,7 +67,7 @@ This is correct with the following assumptions:
 - No message is lost.
 - The Queue is totally ordered using the clock time with the PID.
 
-As described this lock takes $3(n-1)$ messages to obtain the lock, however there are efficiencies that can be made to make this alot better.
+As described, this lock takes $3(n-1)$ messages to obtain the lock; however, there are efficiencies that can be made to make this a lot better.
 
 # Real world time
 
@@ -92,7 +92,7 @@ $$
 c_i(t) - c_j(t) < \epsilon, \forall i,j.
 $$
 
-These rules in essence say that no clock is too far off real time and that no two clocks are that far away from eachother.
+These rules in essence say that no clock is too far off real time and that no two clocks are that far away from each other.
 This means they are all fairly consistent.
 
 Then for these process clock times to be useful we need to bound their drift in relation to interprocess communication time.
@@ -121,7 +121,7 @@ Here it is important to differentiate between two terms:
 
 ## RPC latency
 
-RCP has many repeated steps that cause latency such as:
+RPC has many repeated steps that cause latency, such as:
 
 - Copying data
 
@@ -162,8 +162,8 @@ There are four control transfers:
 
 - Client switch: This switches back to the client thread to handle the response.
 
-In reality, only the switch waits are on the critical path.
-With the wait switches being able to be delayed until the network transfer is complete.
+In reality, only the switch operations are on the critical path.
+The wait switches can be delayed until the network transfer is complete.
 However, in super critical RPC calls we can reduce this to one control transfer by spinning on the client thread meaning we do not need the client switch back at the end.
 Though this does waste CPU cycles on the client machine.
 
@@ -173,7 +173,7 @@ When choosing the protocol to use RPC over - normally you have a reliability vs 
 However, if you are only using reliable LAN networks - you don't need to prioritise reliability as much.
 Therefore you can drop a lot of reliability measures that cause delays such as:
 
-- No low level acks: We expect all packages to get through reducing the number of messages sent.
+- No low-level acks: We expect all packets to get through, reducing the number of messages sent.
 
 - Remove hardware checksums: We assume no corruption on the LAN.
 
@@ -198,9 +198,9 @@ However, we can seek to use active nodes on the edge of the network as we are us
 
 ## Active Node Transfer System (ANTS)
 
-The ANTS tool kit is an application level process for building smarter routing.
-This comes with a small well defined API of what routers can do.
-The along with your IP-header and payload there is an additional ANTS header.
+The ANTS toolkit is an application-level process for building smarter routing.
+This comes with a small, well-defined API for what routers can do.
+Along with your IP-header and payload, there is an additional ANTS header.
 
 ```
 ANTS Packet
@@ -209,19 +209,19 @@ ANTS Packet
 +---------+-------+----+----+---+-------+
 |IP-header|Version|Type|Prev|hdr|Payload|
 +---------+-------+----+----+---+-------+
-           <------ ANTS Capsual ------->
+           <------ ANTS Capsule ------->
 ```
 
 This allows for normal routing of the packet using the IP-header.
-However, the ANTS header allows for more functionality, which there are two key fields:
+However, the ANTS header allows for more functionality, with two key fields:
 
-- Type: This is the hash of the code to be ran on the active node.
+- Type: This is the hash of the code to be run on the active node.
 
 - Prev: This is the previous node that ran this code.
 
-Instead of the packet containing the code, ANTS packets rely on the routers speaking to other nodes in the network to download the code.
-It will reach out to the node defined in the Prev (previous) field who ran the code last.
-Then it will download the code from them, and check it is valid using the type field.
+Instead of the packet containing the code, ANTS packets rely on the routers communicating with other nodes in the network to download the code.
+The router reaches out to the node defined in the Prev (previous) field that last ran the code.
+Then it downloads the code from them and checks that it is valid using the type field.
 This requires more network activity per packet - however we really would only use this for 'network flows' i.e. lots of packets all following the same path.
 Then once the router has the code for the first packet it can simply run the same code for all subsequent packets.
 
@@ -233,15 +233,15 @@ ANTS defines a basic API to use on each router:
 
 - getAddress, getChannel, time: Get information about the router.
 
-- routeForNode, deliverToApp: Send a capsual somewhere else.
+- routeForNode, deliverToApp: Send a capsule somewhere else.
 
 - put, get, remove: Manage local storage on the router.
 
-Most importantly, ANTS programmes can manipulate data on what is called the 'soft store' - data the router allows the packet to use.
-This is where the code for the application is stored itself.
+Most importantly, ANTS programmes can manipulate data on what is called the 'soft store' – data the router allows the packet to use.
+This is where the application code itself is stored.
 
 The important thing for all these applications is that they are lightweight and quick to execute.
-The minimal API supports that whilst still allowing for useful applications to be built.
+The minimal API supports this whilst still allowing useful applications to be built.
 
 ## Applications
 
@@ -257,128 +257,128 @@ Below is a list of applications for ANTS:
 
 - Anycast routing: We can have nodes route messages to the 'best' node in a set of nodes - for example the least loaded web server.
 
-Though these are all network applications, which is why ANTS brought about in the 1990's didn't take off - as it didn't have a real problem to solve.
-However, in modern computing with data centers and cloud computing - active networks could have a real use case.
+Though these are all network applications, which is why ANTS, brought about in the 1990s, did not take off – it did not have a real problem to solve.
+However, in modern computing with data centres and cloud computing, active networks could have a real use case.
 This has evolved into the idea of programmable networks and software defined networking (SDN).
 
 ## Payoffs
 
-Pro:
+Pros:
 
-- flexibility from App perspective
+- Flexibility from application perspective
 
 Cons:
 
-- Protection threat: You are running anyones code on your router - this is a big security risk!
+- Protection threat: You are running anyone's code on your router – this is a big security risk!
 You also need to ensure isolation for different network flows.
 
-  - ANTS runtime safety (this uses Java sandboxing to isolate code)
+  - ANTS runtime safety (uses Java sandboxing to isolate code)
 
   - Code spoofing (uses the type to ensure no tampering)
 
-  - Soft state integrity (very limited API means soft state can't be too complex)
+  - Soft state integrity (the very limited API means soft state cannot be too complex)
 
-- Resource management threats: You need to ensure that no one application can hog all the resources on the router.
+- Resource management threats: You need to ensure that no single application can hog all the resources on the router.
 
   - At each node (restricted API ensures no complex resource usage)
 
-  - Flooding the network (the internet is already susceptible to this)
+  - Flooding the network (the Internet is already susceptible to this)
 
 ## Feasibility
 
 There are some major blockers to making ANTS and active networks more generally feasible.
 
-1. Router makers loath to opening up the network.
+1. Router makers are loath to opening up the network.
 
-  a. The internet is ruled by mass adoption, so router makers don't want to rock the boat and lose market share.
+  a. The Internet is ruled by mass adoption, so router makers do not want to rock the boat and lose market share.
 
   b. Only feasible on the edge, not core routers.
 
 2. Software routing cannot match hardware routing speeds.
 
-  a. Hardware is VERY fast anything that needs to use software is going to run slower.
+  a. Hardware is very fast; anything that needs to use software is going to run slower.
 
-  b. Only feasible on the edges, the core needs to be fast to manage with the vast amounts of data.
+  b. Only feasible on the edges; the core needs to be fast to handle the vast amounts of data.
 
-3. Social + Psychological reasons.
+3. Social and psychological reasons.
 
-  a. People don't like the idea of letting anyone run code on their router - it is a big risk.
+  a. People do not like the idea of letting anyone run code on their router – it is a big risk.
 
-# Component based OS services
+# Component-based OS services
 
-In this subsection we explore the approach to build OS services as described in:
+In this subsection we explore the approach to building OS services as described in:
 
 Building reliable, high-performance communication systems from components
 
-The core idea is to take the approach of Micro-kernels and apply it to building your OS services as well.
-This is define small building blocks and compose these to make our services.
-However, as with micro-kernels component driven software may have overheads, such as copying memory, conforming to interfaces, and loss of locality.
+The core idea is to take the micro-kernel approach and apply it to building OS services as well.
+This involves defining small building blocks and composing them to make our services.
+However, as with micro-kernels, component-driven software may have overheads, such as copying memory, conforming to interfaces, and loss of locality.
 This paper explores this and methods to get around it.
 
 ## Development process
 
-In the paper they suggestion a 3 phase process to developing these components and services:
+In the paper, they suggest a 3-phase process for developing these components and services:
 
 1. Specification: Define the requirements of the service.
 
-  a. This is done using IOA (Input/Output Automata) which using c-like syntax and composition operators.
+  a. This is done using IOA (Input/Output Automata), which uses C-like syntax and composition operators.
 
 2. Code: Turn the requirements and specification into code that a computer can run.
 
-  a. This is done in OCAML - a functional programming language.
-It is object oriented but still as efficient as C.
+  a. This is done in OCaML – a functional programming language.
+It is object-oriented but still as efficient as C.
 It also has good integration with the IOA specifications.
 
-3. Optimization: To remove the inefficiency layering our stack into different components has - we try to remove as much unneeded overhead as possible.
+3. Optimisation: To remove the inefficiency that layering our stack into different components has, we try to remove as much unnecessary overhead as possible.
 
-  a. This is done using a tool suit called Nuprl - which optimizes OCAML code using formal methods which are proven to be correct.
+  a. This is done using a tool suite called Nuprl – which optimises OCaML code using formal methods that are proven to be correct.
 This guarantees the input and output code are equivalent.
 
 ## Getting an implementation
 
 The first two steps can be iteratively built up over time.
-You first start by writing a Abstract Behavioral Specification (ABS) - which is a high level specification of the service.
+You first start by writing an Abstract Behavioural Specification (ABS) – which is a high-level specification of the service.
 This will be written in IOA which you can use to prove properties about this service.
 
-Then you can refine the ABS into a more Concrete Behavioural specification (CBS) - which is closer to the code you will write.
-From this you can then convert the CBS into a implementation written in OCAML.
-This issue with the implementation is it can be derived from the ABS but you can not prove it is equivalent.
-Therefore, you don't know for sure it does have the properties you desire.
+Then you can refine the ABS into a more concrete behavioural specification (CBS) – which is closer to the code you will write.
+From this, you can then convert the CBS into an implementation written in OCaML.
+The issue with the implementation is that it can be derived from the ABS, but you cannot prove it is equivalent.
+Therefore, you do not know for sure that it has the properties you desire.
 
-When building this implementation we want to focus on build an ensemble of components that can be composed together to make our service.
-These components should have a well defined interface above and below so they fit together nicely.
+When building this implementation, we want to focus on building an ensemble of components that can be composed together to make our service.
+These components should have a well-defined interface above and below so they fit together nicely.
 
-## Optimization
+## Optimisation
 
-The choice of using the layering ensemble method above can lead to inefficiencies mentioned above.
+The choice of using the layering ensemble method can lead to inefficiencies.
 However, this allows for more flexibility whilst developing the application.
-Though as a OS designer we need the system to be performant as it will be some of the most run code on a machine.
+As an OS designer, we need the system to be performant, as it will be some of the most-run code on a machine.
 
 There are several sources of inefficiency here:
 
-- Ocaml has implicit garbage collection, however this is costly and explicit garbage collection is much faster.
+- OCaML has implicit garbage collection; however, this is costly and explicit garbage collection is much faster.
 
-- As we move between interfaces we will marshal/unmarshal arguments to move between interfaces.
+- As we move between interfaces, we must marshal/unmarshal arguments to move between interfaces.
 
-- When doing optimisations we want to focus on the common case and this can be 'fast tracked' at the expense of the other paths through the system.
+- When doing optimisations, we want to focus on the common case, which can be fast-tracked at the expense of the other paths through the system.
 
-Nuprl is a tool box which takes in unoptimized code and returned optimized code which is provably equivalent to the input.
-There are tools which allow the conversion between Ocaml and the Nuprl coding language.
-The optimization is part automated and part manual.
-This is a 2 step process:
+Nuprl is a toolbox that takes unoptimised code and returns optimised code that is provably equivalent to the input.
+There are tools that allow the conversion between OCaML and the Nuprl coding language.
+The optimisation is part automated and part manual.
+This is a 2-step process:
 
-1. Static Optimization.
+1. Static optimisation.
 
-  a. This is where a Ocaml and Nuprl expert look at the code together and agree manual optimisations that can be done together.
-This is done layer by layer and requires checking that these optimizations are correct and useful for the code.
-For example, inlining functions in functional languages can make sizable performance improvements but need to be agreed that it is useful.
+  a. This is where an OCaML and Nuprl expert look at the code together and agree on manual optimisations that can be done together.
+This is done layer by layer and requires checking that these optimisations are correct and useful for the code.
+For example, inlining functions in functional languages can provide sizable performance improvements but needs to be agreed as useful.
 
-  b. These optimizations are normally done within each component - not between the components.
+  b. These optimisations are normally done within each component – not between the components.
 
-2. Dynamic Optimization.
+2. Dynamic optimisation.
 
   a. This is driven by the Nuprl framework.
-This optimizes between layers, that collapses layers.
+This optimises across layers, collapsing them.
 This is driven by Common Case Predicates (CCP).
-This are checks that can be done against the input which if pass define the common case and can bypass layers to speed up their handling.
+These are checks that can be done against the input, which if they pass define the common case and can bypass layers to speed up their handling.
 

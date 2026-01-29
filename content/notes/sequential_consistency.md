@@ -1,7 +1,7 @@
 ---
 aliases:
 created: 2025-04-13
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-04-13
 tags:
@@ -9,9 +9,8 @@ tags:
 title: Sequential consistency
 type: definition
 ---
->[!tldr] Sequential consistency
+>[!note] Sequential consistency
 >This is a [consistency model](consistency_model.md) that has the following rules:
 >- Memory updates from different processors may be arbitrarily interleaved.
 >- All processes will see the same interleaving.
 >- Operations from the same process always appear in the order they were executed.
-

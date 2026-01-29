@@ -3,7 +3,7 @@ aliases:
 course_code: CS7641
 course_name: Machine Learning
 created: 2024-02-13
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-12-05
 tags:
@@ -49,7 +49,7 @@ For simplicity we will call the questionee the teacher and the questioner the le
 
 ### Simple: Teacher provides questions
 
-If the goal of the game is too arrive at the answer as quickly as possible but the teacher can provide the questions. This should be solvable in 1 question.
+If the goal of the game is to arrive at the answer as quickly as possible but the teacher can provide the questions. This should be solvable in 1 question.
 
 The teacher can provide the question
 - "Is the answer $c \in A$?"
@@ -62,11 +62,11 @@ This method assumes that any question is valid.
 
 ### Restricted questions for the teacher
 
-Lets further formalise this problem. Suppose further you can only ask questions in set $X$ about the answers in $A$.
+Let's further formalise this problem. Suppose further you can only ask questions in set $X$ about the answers in $A$.
 
 For an example let $X$ be $k$-bit literals that relate to [boolean](../../notes/boolean_variable.md) assignments for $X_i$ with $1 \leq i \leq k$. Then assume $A$ are boolean functions on $k$ variables that can be expressed as a logical formula involving $X_i$ or their negations $\overline{X_i}$ joint with $\land$. Then the answer to question $x \in X$ is $c(x)$.
 
->[!example]
+> [!example]
 >Suppose $k = 5$ and let $c = \overline{X_2} \land X_4 \land \overline{X_5}$. Then we might have the following series of questions
 
 | $X_1$ | $X_2$ | $X_3$ | $X_4$ | $X_5$ | $c$ |
@@ -83,9 +83,9 @@ You can see this in the above example. The first two questions show that $X_1$ a
 
 So if the teacher presents the questions here it only takes at most $k + 2$ questions to work out the answer.
 
-### Restricted question for the learner
+### Restricted questions for the learner
 
-In the current set up, if the learner were to guess it would take them $2^k$ guesses. As the formula potentially uses all literal and there is only one correct answer.
+In the current set up, if the learner were to guess it would take them $2^k$ guesses. As the formula potentially uses all literals and there is only one correct answer.
 
 ## Learning with mistake bounds
 
@@ -156,14 +156,14 @@ Using this we can define what we call "probably approximately correct" (PAC) lea
 
 Though showing something is PAC-learner is hard.
 
->[!example] $k$-bit example
+> [!example] $k$-bit example
 >Suppose our underlying set $X = \{0,1\}^k$ and $H = C = \{h_i : h_i(x) = x_i\}$. Is there an algorithm that is $\epsilon$, $\delta$ [PAC learner](../../notes/probably_approximately_correct_learnable_(pac).md)?
 
 ## $\epsilon$-exhausted version space
 
 [epsilon-exhausted version space](../../notes/epsilon-exhausted_version_space.md)
 
->[!example] Xor example
+> [!example] Xor example
 >Suppose $A = \{0,1\}^2$ and our real function is [xor](../../notes/exclusive_or.md) $\oplus$ on two variables $x_1$ and $x_2$. Let $H = \{x_1, \overline{x_1}, x_2, \overline{x_2}, T, F, \land, \lor, \oplus, =\}$ and set probability distribution $\mathbb{D}(0,0) = 0.1$, $\mathbb{D}(0,1) = 0.5$, $\mathbb{D}(1,0) = 0.4$, and $\mathbb{D}(1,1) = 0$.
 >Then with $T = \{((0,0), 0), ((1,0), 1)\}$ we have our [version space](../../notes/version_space.md) to be $VS_H(T) = \{x_1, \lor, \oplus\} \subset H$.
 >This [version space](../../notes/version_space.md) is $0.5$-exhausted as $x_1$ doesn't correctly map $(0,1)$ and $\lor$ doesn't correctly map $(1,1)$. However as $\mathbb{D}(0,1) = 0.5$ and $\mathbb{D}(1,1) = 0$ a hypothesis in the [version space](../../notes/version_space.md) has error at worst $0.5$.
@@ -172,7 +172,7 @@ This is useful concept for finding the number of samples we need to take to us t
 
 [Haussler Theorem](../../notes/haussler_theorem.md)
 
-Note in the definition of [PAC learner](../../notes/probably_approximately_correct_learnable_(pac).md) $\mathbb{P}[Error_{\mathbb{D}}(h) > \epsilon]$ is exactly the quantity we need to bound with $\delta$ (as we need the probability of finding a good learner to be $1 - \delta$). Therefore if we have the ability to draw [i.i.d.](../../notes/independent_identically_distributed_samples.md) examples we need $m$ to obey
+Note that in the definition of [PAC learner](../../notes/probably_approximately_correct_learnable_(pac).md) $\mathbb{P}[Error_{\mathbb{D}}(h) > \epsilon]$ is exactly the quantity we need to bound with $\delta$ (as we need the probability of finding a good learner to be $1 - \delta$). Therefore if we have the ability to draw [i.i.d.](../../notes/independent_identically_distributed_samples.md) examples we need $m$ to obey
 $$
 \vert H \vert e^{-m\epsilon} \leq \delta.
 $$
@@ -180,9 +180,9 @@ Which rearranging for $m$ gives us
 $$
 m \geq \frac{1}{\epsilon}\left ( \ln(\vert H \vert) + \ln\left(\frac{1}{\delta}\right) \right).
 $$
-(Note this is polynomial in $\frac{1}{\epsilon}$, $\vert H \vert$ and $\frac{1}{\delta}$ as required by a [PAC learner](../../notes/probably_approximately_correct_learnable_(pac).md).) So given that good learner does exist in our [hypothesis space](../../notes/modelling_paradigm.md) we have use drawing [i.i.d.](../../notes/independent_identically_distributed_samples.md) representatives to give us a [PAC learner](../../notes/probably_approximately_correct_learnable_(pac).md) by checking if the hypothesis are consistent with the observations.
+(Note this is polynomial in $\frac{1}{\epsilon}$, $\vert H \vert$ and $\frac{1}{\delta}$ as required by a [PAC learner](../../notes/probably_approximately_correct_learnable_(pac).md).) So given that a good learner does exist in our [hypothesis space](../../notes/modelling_paradigm.md) we can use drawing [i.i.d.](../../notes/independent_identically_distributed_samples.md) representatives to give us a [PAC learner](../../notes/probably_approximately_correct_learnable_(pac).md) by checking if the hypotheses are consistent with the observations.
 
->[!example] 10-bit example
+> [!example] 10-bit example
 >Suppose our underlying set $X = \{0,1\}^{10}$ and $H = C = \{h_i : h_i(x) = x_i\}$. How many [i.i.d.](../../notes/independent_identically_distributed_samples.md) samples do we need to draw to find a $\epsilon = 0.1$, $\delta = 0.2$ with $\mathbb{D}$ being uniform [PAC learner](../../notes/probably_approximately_correct_learnable_(pac).md)?
 >Using the above formula we need
 >$$m \geq 10 \cdot ( 2.3 + 1.6 ) = 39.$$

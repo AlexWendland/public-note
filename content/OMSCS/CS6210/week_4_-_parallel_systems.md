@@ -3,7 +3,7 @@ aliases:
 course_code: CS6210
 course_name: Advanced Operating Systems
 created: 2025-09-17
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-12-05
 tags:
@@ -67,9 +67,9 @@ It mandates what you can expect when programming on multi-threaded systems.
 The other side of this is cache coherence - the hardware engineers view of memory.
 This is how the hardware ensures the memory model is upheld.
 
->[!note] Cache coherent processors
+> [!note] Cache coherent processors
 > One solution to this problem is for the hardware to make no promises of consistency.
-> This, would be a cache incoherent processor - it is up to the software to implement consistency.
+> This would be a cache incoherent processor - it is up to the software to implement consistency.
 > However, below we detail methods for processors to be cache coherent.
 
 Here are a couple methods to guarantee cache coherence:
@@ -77,7 +77,7 @@ Here are a couple methods to guarantee cache coherence:
 - *Write-invalidate*: When a CPU writes to a memory location, it invalidates all other cached copies of that memory location.
 - *Write-update*: When a CPU writes to a memory location, it updates all other cached copies of that memory location.
 
->[!warning] What happens for multiple writes?
+> [!warning] What happens for multiple writes?
 > This will cause a race condition between writes.
 > Not discussed in the lectures.
 
@@ -89,8 +89,8 @@ However, if messages need to be passed between CPUs for cache coherence (either 
 
 Given the scalability challenges of cache coherence protocols, one radical solution emerges: simply avoid sharing memory between threads altogether. This approach eliminates the need for complex coherence protocols and their associated overhead.
 
->[!quote] Shared memory machines scale well when they don't share memory.
-> This paradoxical statement highlights that the hardware capability for shared memory doesn't mean software must use it extensively.
+> [!quote] Shared memory machines scale well when they don't share memory.
+> This paradoxical statement highlights that the hardware capability for shared memory does not mean software must use it extensively.
 
 ## Synchronization Primitives
 
@@ -113,9 +113,9 @@ This is a synchronization primitive where threads wait until all threads have re
 ## Lock implementations
 
 > [!note] Atomic Operations
-> These are operations which are guaranteed to not be interrupted when running on the CPU.
+> These are operations that are guaranteed not to be interrupted when running on the CPU.
 
-When we want to implement a exclusive lock, read and write atomic operations are not enough and we need a RMW (read modify write) atomic operation.
+When we want to implement an exclusive lock, read and write atomic operations are not enough and we need an RMW (read modify write) atomic operation.
 Below are some of the usual suspects:
 
 - Test-and-set: This operation gets the current value of a memory location and sets it to 1.
@@ -134,7 +134,7 @@ Whilst waiting time is application specific, the other two can be used to compar
 ### Spin lock (test-and-set)
 
 This is the simplest lock implementation.
-Here you have a shared memory address that represents if the lock is busy or not - lets call `locked`.
+Here you have a shared memory address that represents whether the lock is busy or not—let us call it `locked`.
 
 ```c
 LOCKED = 1;
@@ -149,10 +149,10 @@ void unlock(){
 }
 ```
 
-This is a pretty bad lock for 3 reasons:
+This is a poor lock for three reasons:
 - Blocks useful work from being done whilst spinning.
-- Massive contention as multiple threads carry out test-and-set on the same memory location.
-- Does not utilise caching in anyway.
+- Massive contention as multiple threads perform test-and-set on the same memory location.
+- Does not utilise caching in any way.
 
 ### Cached spin lock
 
@@ -174,7 +174,7 @@ void unlock(){
 }
 ```
 
-Whilst this dramatically reduces the number of test_and_set operations, if the hardware uses write-invalidate this is on the order of O(n^2) memory accesses as for each test_and_set every processor needs to get the new value of locked from memory.
+Whilst this dramatically reduces the number of test_and_set operations, if the hardware uses write-invalidate this is on the order of $O(n^2)$ memory accesses as for each test_and_set every processor needs to get the new value of locked from memory.
 
 ### Spin locks with delay
 
@@ -265,9 +265,9 @@ void unlock(queue_lock L){
 This dramatically reduces contention as each thread is spinning on a different memory location.
 However, this lock requires a large amount of memory - O(n) for the number of threads, which could be very large.
 
-### Link list lock
+### Linked list lock
 
-For array-based queueing locks it used a lot of space even if only 2 threads are going to use it.
+For array-based queueing locks, they use a lot of space even if only two threads are going to use it.
 So instead it would be good to use a linked list to dynamically allocate memory.
 
 ```c
@@ -285,13 +285,13 @@ void lock(lock L, queue_node * my_node){
   if(prev == NULL){ // no one has the lock
     my_node->got_lock = 1; // set the flag
   } else {
-    previous->next = my_node; // add myself to the end of the queue
+    prev->next = my_node; // add myself to the end of the queue
     while(my_node->got_lock == 0); // spin
   }
 }
 
 void unlock(lock L, queue_node * my_node){
-  bool someone_in_queue = compare_and_swap(L->tail, my_node, NULL); // If I am the tail node - swap it to null and return true, otherwise return false.
+  bool someone_in_queue = !compare_and_swap(L->tail, my_node, NULL); // If I am the tail node - swap it to null and return true, otherwise return false.
   if (someone_in_queue){
     while(my_node->next == NULL); // spin
     my_node->next->got_lock = 1; // signal the next node
@@ -307,10 +307,10 @@ void unlock(lock L, queue_node * my_node){
 |Contention | High  | Medium       | Low           | Low    | Low     | Low    |
 |Fairness | No      | No           | No            | Yes    | Yes     | Yes    |
 |Spin on pvt variable | No | No    | No            | No     | Yes     | Yes    |
-| RMW ops per lock | High | Medium | Low           | Low    | 1    | 1 (max 2) |
-| Space  | Low      | Low          | Low           | Low    | High    | Medium |
-| Signal one | No   | No           | No            | No     | Yes     | Yes    |
-| Complex instructions | No | No   | No            | No     | Yes     | Yes    |
+| RMW ops per lock | High | Medium | Low | Low | 1 | 1 (max 2) |
+| Space | Low | Low | Low | Low | High | Medium |
+| Signal one | No | No | No | No | Yes | Yes |
+| Complex instructions | No | No | No | No | Yes | Yes |
 
 
 
@@ -320,7 +320,6 @@ With barrier implementations we are looking for:
 
 - *Minimal contention*: We would like to reduce the amount of contention on the memory bus.
 - *Latency*: We would like to minimise the amount of time the barrier mechanism takes.
-... fill more in here.
 
 ### Centralised barrier
 
@@ -376,7 +375,7 @@ Ideally, we would like to reduce contention by having multiple shared variables.
 
 ### Tree barrier
 
-To reduce contention we will use a k-ary tree, and divide the threads up into groups of size less than or equal to some k.
+To reduce contention, we will use a k-ary tree and divide the threads up into groups of size less than or equal to some k.
 These groups will be attached to a leaf node of a tree, and the last to arrive at each node will signal its parent node.
 Once the root node has been released, this message will propagate down the tree to release all threads.
 
@@ -394,9 +393,9 @@ void bar_recursive(barrier_node * B){
   decrement(B->count); // Atomic
   if(B->count == 0){
     if(B->parent != NULL){
-      B->sense = !B->sense; // flip the sense
-    } else {
       bar_recursive(B->parent); // signal parent
+    } else {
+      B->sense = !B->sense; // flip the sense
     }
   } else {
     bool my_sense = B->sense;
@@ -473,7 +472,7 @@ void bar(int thread_id) {
 
 The numbers 4 and 2 were picked specifically as they have good theoretical properties.
 The 4-ary trees mean that the flags for all threads can sit in one memory address.
-The 2-ary tree means the signaling only takes $log_2(n)$ steps to wake up all threads.
+The 2-ary tree means the signalling only takes $\log_2(n)$ steps to wake up all threads.
 Notice here that we do not need a complex atomic operation - just read and writes.
 
 ### Tournament barrier
@@ -513,20 +512,20 @@ void bar(int thread_id) {
 }
 ```
 
-A major advantage of the tournament barrier is there is no need for a atomic operation (other than read/write), as no two threads are ever writing to the same memory location.
-Also notice that the memory needed for each thread is known before hand - so this can be placed close to the required CPU.
+A major advantage of the tournament barrier is there is no need for an atomic operation (other than read/write), as no two threads are ever writing to the same memory location.
+Also note that the memory needed for each thread is known beforehand—so this can be placed close to the required CPU.
 The only interactions between threads is sending a signal that either they have arrived or the tournament is over, we do not actually need shared memory to run this system.
 This means it can be implemented on a cluster which only has message passing between nodes.
 A downside for the tournament barrier against MCS is that only 2 nodes can share the same cache line - whereas MCS can have 4.
 
 ### Dissemination barrier
 
-Within the tree based barriers there are normally  a single thread which is responsible for kicking off the rest of the processes to wake up.
+Within tree-based barriers, there is normally a single thread responsible for kicking off the rest of the processes to wake up.
 This also means that the level of parallelism is limited by the height of the tree.
 In the dissemination barrier, instead all processes 'gossip' amongst one another to signal they have arrived at the barrier.
 This is done in a number of rounds where each thread $i$ messages node $i + 2^k$ saying it has arrived and waits for a message from node $i - 2^k$ on round $k$ (starting from $k=0$).
-This has the nice effect that to progress past round $k$, atleast $2^{k+1}$ nodes must have made it to the barrier.
-Therefore after round $ceil(log_2(n))$ all nodes must have arrived at the barrier - and we can safely proceed.
+This has the nice effect that to progress past round $k$, at least $2^{k+1}$ nodes must have made it to the barrier.
+Therefore, after round $\lceil \log_2(n) \rceil$, all nodes must have arrived at the barrier—and we can safely proceed.
 
 ```c
 int THREAD_COUNT;
@@ -549,8 +548,8 @@ void bar(barrier B) {
 }
 ```
 
-This barrier takes $O(n log(n))$ messages to complete, but each thread only needs $O(log(n))$ space.
-As these are just messages the thread do not need to share memory - so this can be implemented on a cluster.
+This barrier takes $O(n \log(n))$ messages to complete, but each thread only needs $O(\log(n))$ space.
+As these are just messages, the threads do not need to share memory—so this can be implemented on a cluster.
 There is no hierarchy, so there is no single point of contention.
 
 ### Aside: Architectures for the system
@@ -590,7 +589,7 @@ The main concern here is performance.
 ## RPC performance concerns
 
 The main issue with RPC between processes is the involvement of the kernel and the copying of data.
-Lets break down the steps involved in an RPC call using message passing through the kernel:
+Let us break down the steps involved in an RPC call using message passing through the kernel:
 
 1. The client traps to the kernel to call the RPC method.
 The arguments get copied from the clients address space to the kernel's address space.
@@ -611,7 +610,7 @@ This is 4 copies of data and 4 context switches for a single RPC call.
 This is all happening at run time and is very slow.
 
 This is in fact slightly worse for RPC calls when you consider the different components of the RPC stack.
-For this we consider one direction client -> server.
+For this, we consider one direction: client → server.
 
 1. The client prepares the arguments for the RPC call in the clients stack.
 
@@ -625,7 +624,7 @@ For this we consider one direction client -> server.
 
 ## Reducing RPC overhead (Bindings)
 
-To make this faster, we will used shared memory and optimise for the common case - which should be calling the RPC method.
+To make this faster, we will use shared memory and optimise for the common case—which should be calling the RPC method.
 However, for this we make setting up the RPC connection more expensive (what we will call a binding).
 We follow this process below:
 
@@ -641,11 +640,11 @@ The PD stores which entrypoint within the server to use for this RPC, the size o
 
 5. The kernel also creates a shared memory region between the client and server (called the A-stack) for them to communicate without the intervention of the kernel.
 
-6. The kernel returns a Binding Object (BO) to the client - within the kernel this is lined to the PD but for the client acts as permission to call the RPC method.
+6. The kernel returns a Binding Object (BO) to the client—within the kernel, this is linked to the PD but for the client acts as permission to call the RPC method.
 
-The for the client to call the method the following happens:
+For the client to call the method, the following happens:
 
-1. The client stubs copies the arguments from the client stack into the A-stack (which have to be passed by value - not reference).
+1. The client stub copies the arguments from the client stack into the A-stack (which have to be passed by value—not reference).
 
 2. The client then traps into the kernel presenting BO to call the method.
 
@@ -667,7 +666,7 @@ This has the following advantages:
 
 - Simplified permissions, by presenting the BO the kernel does not need to validate the client has access to the server.
 
-However, we still suffer from the context switches to the kernel and the implicit costs of these switches from the loss of locality within the caches.
+However, we still suffer from the context switches to the kernel and the implicit costs of these switches due to the loss of locality within the caches.
 
 ## RPC using SMP
 
@@ -686,13 +685,13 @@ Within scheduling in multi-core systems the main goal is to try and keep the cac
 
 ## Cache affinity scheduling
 
-The difference between reading from the L1 cache to reading from memory is on the order of 100x slower.
+The difference between reading from the L1 cache and reading from memory is on the order of 100 times slower.
 Therefore, when scheduling a thread we want to keep in mind where it has been scheduled previously.
 So we define 'cache affinity' as the property of a thread to run on the same CPU it has previously run on.
-However, this is a weaker association if lots of other threads have ran on it since it was last ran.
+However, this is a weaker association if lots of other threads have run on it since it last ran.
 
 > [!note] Cache importance
-> Threads with a large memory footprint are much more effected by cache affinity.
+> Threads with a large memory footprint are much more affected by cache affinity.
 > For small memory threads, the cache reload time is much more marginal compared to the total execution time.
 > Whereas for large memory threads, the cache reload time is a significant portion of the total execution time.
 
@@ -703,7 +702,7 @@ This leads to the following scheduling algorithms:
   - Prioritises fairness.
 
 - Fixed processor: Pin each thread to exactly one processor and always run it there.
-  - Focuses on catch affinity.
+  - Focuses on cache affinity.
   - Harder to load balance correctly.
 
 - Last processor: Choose the last processor the thread ran on.
@@ -729,75 +728,75 @@ We call policies like fixed and last processor 'thread centric' as we focus on p
 When trying to implement these policies you may choose to go for a 'global' queue of threads that get chosen from by the processors.
 However, this queue is a very large data structure that will need to be shared among all processors which is inefficient memory wise.
 
-Instead, we can use processor based local queues.
-Where each processor has a local queue of tasks, usually order using the thread priority.
+Instead, we can use processor-based local queues.
+Each processor has a local queue of tasks, usually ordered using the thread priority.
 
 $$
-ThreadPriority_i = BasePriority_i + Age_i + Affinity_i
+\text{ThreadPriority}_i = \text{BasePriority}_i + \text{Age}_i + \text{Affinity}_i
 $$
 
 The base priority is some dynamic or static priority given to each thread.
-Age is how long it has been unscheduled - to ensure fairness.
-Lastly Affinity will how we define affinity as above.
+Age is how long it has been unscheduled—to ensure fairness.
+Lastly, affinity is how we define affinity as above.
 
 In the local queue setting, it may be that processors finish their queue and have no other tasks to run.
-In this case, we can 'steal' tasks from other processors queues - and within the literature is called 'task stealing'.
+In this case, we can steal tasks from other processors' queues—this is called 'task stealing' in the literature.
 
 ## Metrics
 
-For scheduling there are 3 key metrics:
+For scheduling, there are three key metrics:
 
-- *Throughput*: How many threads get executed or computed pre unit time. (System centric.)
+- *Throughput*: How many threads get executed or computed per unit time. (System centric.)
 
 - *Response time*: How long on average does it take for a thread to complete. (User centric.)
 
 - *Variance*: Does the time it takes for a thread to complete vary based on when it was scheduled. (User centric.)
 
-Notice that these metrics may very for different strategies under different load.
-If the tasks all have very small memory foot print then the throughput may be highest with FCFS as affinity plays a smaller role.
-If there is a memory dense but light load throughput may be optimised by a cache affinity strategy.
-Whereas if the load is incredibly heavy then fixing the processor for each thread may yield the best throughput.
-There is not one optimal strategy, the best strategy will depend on the load and types of tasks.
+Notice that these metrics may vary for different strategies under different loads.
+If the tasks all have a very small memory footprint, then the throughput may be highest with FCFS as affinity plays a smaller role.
+If there is a memory-dense but light load, throughput may be optimised by a cache affinity strategy.
+Whereas if the load is incredibly heavy, then fixing the processor for each thread may yield the best throughput.
+There is no single optimal strategy; the best strategy depends on the load and types of tasks.
 
 > [!warning] Procrastination
-> It may be the case that highest throughput is achieved by CPU's actively idling rather than scheduling ready tasks if these tasks require a large memory footprint.
+> It may be the case that the highest throughput is achieved by CPUs actively idling rather than scheduling ready tasks if these tasks require a large memory footprint.
 
 ## Multi-core multi-threaded processors
 
-In modern systems, each core may have multiple thread contexts loaded on each core (hardware multi-threading) - they will still only have one CPU but this enables fast switching between threads when a thread is blocked on I/O.
-These CPU's are normally grouped together on a chip where they all have different L1 caches but share an L2/3 cache.
+In modern systems, each core may have multiple thread contexts loaded on each core (hardware multi-threading)—they will still only have one CPU but this enables fast switching between threads when a thread is blocked on I/O.
+These CPUs are normally grouped together on a chip where they all have different L1 caches but share an L2/L3 cache.
 This then increases the complexity of scheduling.
-We not only have to map multiple threads to a single CPU, we will want to group these threads to maximise cache L1 hits.
-Then we will want to select threads on the same chip that are likely to share the same context for the L2/3 cache.
+We not only have to map multiple threads to a single CPU, we will want to group these threads to maximise L1 cache hits.
+Then we will want to select threads on the same chip that are likely to share the same context for the L2/L3 cache.
 
 ### Cache aware scheduling
 
 Now we have multiple threads on the same CPU sharing an L1 cache.
-Multiple CPU's on the same chip sharing a L2/3 cache.
-We know these caches have limited size - so we should try to schedule threads so the total size of the cache they require is less than the size of the cache available.
-To this extent the OS can track the amount of cache size each thread uses, and charracterise them as either:
+Multiple CPUs on the same chip share an L2/L3 cache.
+We know these caches have limited size—so we should try to schedule threads so the total size of the cache they require is less than the size of the cache available.
+To this extent, the OS can track the amount of cache size each thread uses and characterise them as either:
 
-- *Cache frugal*: Doesn't use a lot of cache space.
+- *Cache frugal*: Does not use a lot of cache space.
 - *Cache hungry*: Uses a lot of cache space.
 
 This will enable better scheduling of threads to lower the amount of cache misses and therefore improve performance.
 
 > [!note] OS's overhead
-> If the OS spends too much time recording the memory usage of threads, any benefit maybe wiped out by that overhead.
+> If the OS spends too much time recording the memory usage of threads, any benefit may be wiped out by that overhead.
 
 # Parallel OS case studies
 
-There are key challenges for OS's that run on large parallel systems.
+There are key challenges for OSs that run on large parallel systems.
 
-- Size bloat: More features requires a larger OS.
+- Size bloat: More features require a larger OS.
 
 - Memory latency: As the system increases in size the latency difference between the cache and going to RAM increases.
 This is compounded in the NUMA setting, where some memory may be a lot slower to access than others.
 
-- Deep memory hierarchy: As the CPU cache gets split up, between a single multi-threaded CPU and the chip with NUMA memory disjointed - managing where memory is stored becomes more complicated.
+- Deep memory hierarchy: As the CPU cache gets split up between a single multi-threaded CPU and the chip with NUMA memory disjointed—managing where memory is stored becomes more complicated.
 
 - False sharing: This is where two threads are using different memory locations, but these memory locations are on the same cache line.
-This is made worse as modern processors tend to have larger cache blocks, to reduce the amount of times they go out to memory.
+This is made worse as modern processors tend to have larger cache blocks to reduce the number of times they access memory.
 
 ## Principles of good parallel OS design
 
@@ -923,13 +922,13 @@ For a virtual memory system we have the following levels of backing:
 
 The virtual memories data structures are, PCB, TLB, PT, and virtual pages on disk.
 
-The tornado system 'objectizes' this process with the hope to break apart shared objects into smaller pieces.
-Lets walk through each of these objects.
+The Tornado system 'objectises' this process with the aim of breaking apart shared objects into smaller pieces.
+Let us walk through each of these objects.
 
-- PCB: The PCB is replicated per CPU as it is mostly read only - this allows for fast access to the PCB without contention.
+- PCB: The PCB is replicated per CPU as it is mostly read-only—this allows for fast access to the PCB without contention.
 
-- Region: The address space is broken down into regions, the idea being that each thread may only use on region of the address space each.
-These can be partially replicated if two threads on different CPU's are uses the same part of the address space.
+- Region: The address space is broken down into regions, the idea being that each thread may only use one region of the address space.
+These can be partially replicated if two threads on different CPUs are using the same part of the address space.
 This being separated out means that the OS at run time can see the access patterns to each region and choose to break it apart if too much contention is on one region or join together if two regions are only used by threads on the same CPU.
 
 - File Cache Manager: This knows the locations of the physical pages on the backing store for the references in the regions.
@@ -941,18 +940,18 @@ This has several representations - per CPU, per chip, and globally.
 - Cached Object Representation: This goes to the backing store on the disk to carry out the I/O whenever there is a page fault.
 This is a true singleton which uses the hardware cache coherence.
 
-This separation into different objects allows for memory access by different threads to not block one another when they are all running within the same process.
-Also the page faulting system can run concurrently instead of serially.
+This separation into different objects allows memory access by different threads without blocking one another when they are all running within the same process.
+Also, the page faulting system can run concurrently instead of serially.
 
-Seperating out the responsibilities means these objects can have different levels or replication or partitioning as it is required.
+Separating out the responsibilities means these objects can have different levels of replication or partitioning as required.
 
 ## IPC in tornado
 
-The Tornado OS is structured as a micro kernel, with the clustered objects enabling higher level OS services.
+The Tornado OS is structured as a microkernel, with the clustered objects enabling higher-level OS services.
 One of the critical services a microkernel needs to implement well is IPC.
-This is implemented as a protected procedure call (PPC) - which is similar to RPC (particularly LRPC).
+This is implemented as a protected procedure call (PPC)—which is similar to RPC (particularly LRPC).
 
-- Local PPC: Are just procedure calls with no context switching.
+- Local PPC: These are just procedure calls with no context switching.
 
 - Remote PPC: Requires a full context switch to the kernel.
 
@@ -973,20 +972,20 @@ This is implemented as a protected procedure call (PPC) - which is similar to RP
 The Corey system focuses on allowing the application telling the OS how it should treat the shared data structures.
 
 The Corey system also uses address ranges within the address space.
-However, this relies on the application to say where different threads will be operating, so the OS can choose to place these on the same node to share memory.
+However, this relies on the application to specify where different threads will be operating, so the OS can choose to place them on the same node to share memory.
 
-The Corey system allows for threads to tell the OS that some data is private too it through the shares mechanism.
+The Corey system allows threads to tell the OS that some data is private to them through the shares mechanism.
 This allows the OS to know this data will not be shared and so the OS does not need to maintain consistency between this object and the other threads within the same process.
 
-Corey dedicates cores for kernel activities - this way it does not need to share core kernel data structures between multiple cores.
+Corey dedicates cores for kernel activities—this way it does not need to share core kernel data structures between multiple cores.
 
-## Cellular disco: Virtualisation on a multi-core system
+## Cellular Disco: Virtualisation on a multi-core system
 
-The design of the OS is a complicated task that is specialised to the architecture of the machine.
-Though does this mean that for each architecture we need to redesign the OS?
-Most of the OS code is device driver (3rd party) code - this is for managing the I/O subsystem.
+The design of an OS is a complicated task that is specialised to the architecture of the machine.
+But does this mean that for each architecture we need to redesign the OS?
+Most of the OS code is device driver (third-party) code—this is for managing the I/O subsystem.
 Do these also need to be redesigned for each new architecture?
 
-Cellular Disco shows that virtualisation via the trap+emulate strategy can be used with only 10% overhead to abstract away architecture and allow for the same device drivers to be used for different architectures.
-It does this by handling the I/O calls for the guest OS's as if it was making them itself.
-This means when the kernel traps to return the output of an I/O call it uses the handler installed in the Host OS to jump straight into Cellular disco without needing another context switch from the host OS.
+Cellular Disco shows that virtualisation via the trap-and-emulate strategy can be used with only 10% overhead to abstract away architecture and allow the same device drivers to be used for different architectures.
+It does this by handling the I/O calls for the guest OSs as if it was making them itself.
+This means when the kernel traps to return the output of an I/O call, it uses the handler installed in the host OS to jump straight into Cellular Disco without needing another context switch from the host OS.

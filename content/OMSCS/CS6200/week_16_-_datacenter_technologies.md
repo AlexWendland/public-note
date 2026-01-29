@@ -3,7 +3,7 @@ aliases:
 course_code: CS6200
 course_name: Graduate introduction to Operating Systems
 created: 2025-04-13
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-04-13
 tags:
@@ -16,7 +16,7 @@ week: 16
 
 ## Internet services
 
-A internet service is simply one offered over a web interface. These normally consist of 3 layers:
+An internet service is simply one offered over a web interface. These normally consist of 3 layers:
 
 - Presentation: Static content.
 - Business logic: Dynamic content.
@@ -24,7 +24,7 @@ A internet service is simply one offered over a web interface. These normally co
 
 Whilst these layers are separated here they may be implemented on the same machine. Middleware can be offered to integrate the different layers together.
 
-These different layers contact one another using [IPC](../../notes/inter-process_communication_(ipc).md) methods such as [RPC](../../notes/remote_procedure_calls_(prc).md) or shared memory (if they are located on the same machine).
+These different layers contact one another using [IPC](../../notes/inter-process_communication_(ipc).md) methods such as [RPC](../../notes/remote_procedure_calls_(rpc).md) or shared memory (if they are located on the same machine).
 
 To handle scale internet services are normally distributed across multi-process or multi-node "scale-out" architecture. This normally consists of a load-balancer that distributes load within the cluster. This follows the Boss-worker pattern where the workers could be:
 
@@ -39,7 +39,7 @@ These are ones where the workers are all equal. This enables a very simple load-
 
 ## Heterogeneous architecture
 
-These are ones where the workers are specialized to some kind of logic. This means each worker can optimism its cache or use devices that are specialized for that task.
+These are ones where the workers are specialised to some kind of logic. This means each worker can optimise its cache or use devices that are specialised for that task.
 
 However, this adds considerable complexity to the front-end. As workers now are different the load balancer needs to keep track of which workers can do what. When increased demand comes to the system scaling up is not as simple as adding more workers you need to work out what workers are needed.
 
@@ -89,7 +89,7 @@ This is an economically viable model for cloud providers due to two main factors
 - [Law of large numbers](../../notes/law_of_large_numbers.md): With sufficiently many independent users the peaks in usage should average out to a fairly constant load.
 - Economy of scale: Unit cost of providing resources or service drops at bulk.
 
-The system as it is today was first though up by John McCarthy in 1961
+The system as it is today was first thought up by John McCarthy in 1961.
 
 >[!quote] John McCarthy, MIT Centennial, 1961
 >If computers of the kind I have advocated become the computers of the future, then computing may some day be organised as a public utility ... The compute utility could become the basis of a new and important industry.
@@ -102,7 +102,7 @@ Cloud deployments can be for different purposes. This starts with who can use it
 
 - *Public*: Anyone with a credit card can use the cloud.
 - *Private*: Access is limited to a company or organisation.
-- *Hybrid*: This is a private cloud that utilities some functions of a public cloud for failover, handling spikes, or testing.
+- *Hybrid*: This is a private cloud that utilises some functions of a public cloud for failover, handling spikes, or testing.
 - *Community*: A public cloud where it is restricted to a particular type of user.
 
 As well as the users they serve the level of autonomy they offer is a large differential.

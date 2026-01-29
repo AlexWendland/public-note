@@ -3,7 +3,7 @@ aliases:
 course_code: CS6250
 course_name: Computer Networks
 created: 2024-05-19
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-12-05
 tags:
@@ -41,7 +41,7 @@ Signal strength decays over long distances.
 
 [Repeater](../../notes/repeater.md)
 
-When joining lots of computers together there is a scaling problem if they all need to connect to one another. So instead we us a single entity to act as an intermediary.
+When joining lots of computers together there is a scaling problem if they all need to connect to one another. So instead we use a single entity to act as an intermediary.
 
 [Hub](../../notes/hub.md)
 
@@ -62,7 +62,7 @@ Whilst these devices are called [routers](../../notes/router.md) and [switches](
 
 Many other devices can perform switching and routing other than a switch and a router.
 
-## Lesson 2: [Open Systems interconnection (OSI) model](../../notes/open_systems_interconnection_(osi)_model.md)
+## Lecture 2: [Open Systems interconnection (OSI) model](../../notes/open_systems_interconnection_(osi)_model.md)
 
 [Open Systems interconnection (OSI) model](../../notes/open_systems_interconnection_(osi)_model.md)
 
@@ -76,7 +76,7 @@ Many other devices can perform switching and routing other than a switch and a r
 
 [Difference between an IP and MAC address](../../notes/difference_between_an_ip_and_mac_address.md)
 
-[layer 4](../../notes/layer_4_transport.md)
+[Layer 4 Transport](../../notes/layer_4_transport.md)
 
 [Layer 5 Session](../../notes/layer_5_session.md)
 
@@ -110,7 +110,7 @@ Suppose we need host A to send data to host B.
 
 As host A is already part of the [network](../../notes/network.md) it has the [network mask](../../notes/network_mask.md) already.
 
-We will assume host A already has host B's [Internet Protocol (IPv4)](../../notes/internet_protocol_(ipv4).md) through a [DN](dn.md) entry or an act of god.
+We will assume host A already has host B's [Internet Protocol (IPv4)](../../notes/internet_protocol_(ipv4).md) through a [DNS](../../notes/domain_name_system_(dns).md) entry or an act of god.
 
 The only further information about host B host A needs is its [MAC address](../../notes/mac_address.md). To do this it will need to use the [Address Resolution Protocol (ARP)](../../notes/address_resolution_protocol_(arp).md) as discussed before.
 
@@ -122,21 +122,21 @@ Once host B gets this ARP request it can populate its ARP cache entry for host A
 
 Now with host B's MAC address host A can now safely send the data directly to host B.
 
-This is how computers on the same network communicate with each they use ARP to populate their ARP cache so they can directly communicate with one another.
+This is how computers on the same network communicate with each other—they use ARP to populate their ARP cache so they can directly communicate with one another.
 
 ### Talking to computers on different networks
 
 In this set up host A needs to send data to host C but there is a router in-between them. We assume host A already has host C's IP address.
 
-It will know this IP is on a foreign network using host C's IP address and its own sub-net mask.
+It will know this IP is on a foreign network using host C's IP address and its own subnet mask.
 
 The first step for host A to send data to host C is to get it to its local router. It will know the address of that router as it will be set to the default gateway for host A. If this is the first time host A has connected to the router it can use ARP to find the routers IP address.
 
-Host A now constructs the frame to send to the router it sets the layer 3 header using its IP address and host C's IP address. The it sets the layer 2 header using its MAC address and the routers MAC address and sends it off unicast to the network.
+Host A now constructs the frame to send to the router it sets the layer 3 header using its IP address and host C's IP address. Then it sets the layer 2 header using its MAC address and the routers MAC address and sends it off unicast to the network.
 
 At this point the router takes the frame it receives strips out the layer 2 header to get a packet then it uses it's own ARP table to attach a new layer 2 header to send it further on. This could be directly to host C or to another router.
 
-## Lesson 4: Everything switches do to communicate within a network
+## Lecture 4: Everything switches do to communicate within a network
 
 ### Rules of a switch
 
@@ -152,7 +152,7 @@ In a switch each device connects to a different port. The switch will maintain a
 
 When a switch gets a frame from a new host it can *learn* that hosts MAC address as it will be the source MAC address of that frame. So it can add this to its MAC address table.
 
-If the switch gets a message for a MAC address it doesn't know it will *flood* the network with that frame to make sure it gets to the intended host. This involves duplicating the frame and sending it on all ports that wasn't the port the package came from.
+If the switch gets a message for a MAC address it doesn't know it will *flood* the network with that frame to make sure it gets to the intended host. This involves duplicating the frame and sending it on all ports that wasn't the port the packet came from.
 
 The idea is that hosts that do not match that MAC address throw away the frame as it is not for them.
 
@@ -160,10 +160,10 @@ If the switch already knows the hosts port in its MAC address table it *forwards
 
 As this all works on layer 2 and doesn't involve IP addresses the router on the network is just another host from the switches perspective.
 
->[!note] Switches MAC address
->Traffic going through a switch does not use a switches MAC address or IP address. However switches are hosts on that network so have an IP address and MAC address. These only get used if you are looking to connect directly to the switch to configure it.
+> [!note] Switches MAC address
+> Traffic going through a switch does not use a switches MAC address or IP address. However switches are hosts on that network so have an IP address and MAC address. These only get used if you are looking to connect directly to the switch to configure it.
 
-### Unicast flooding vs Brodcasts
+### Unicast flooding vs broadcasts
 
 Flooding is an action the switch takes when it does not know the port for a provided MAC address. This replicates the frame and sends it on all available ports.
 
@@ -175,7 +175,7 @@ Broadcast is a type of frame that has the destination MAC address set as all f's
 
 To handle loops in the network we have to use the [Spanning Tree Protocol (STP)](../../notes/spanning_tree_protocol_(stp).md) to turn off certain connections.
 
-## Lesson 5: Everything a router does to communicate between networks
+## Lecture 5: Everything a router does to communicate between networks
 
 In [RFC2460 Internet Protocol, Version 6 (IPv6) Specification](../../notes/rfc2460_internet_protocol,_version_6_(ipv6)_specification.md) it defines what a node, host, and router is.
 
@@ -194,7 +194,7 @@ A router keeps a table of all networks it knows about in its *routing table*. Di
 
 [Routing](../../notes/routing.md)
 
-There are many different Dynamic routing protocols RIP, OSPF, BGP, EIGRP, IS-IS, ect They differ in how they discover new routers, what addresses they share, and how they share thous addresses.
+There are many different dynamic routing protocols: RIP, OSPF, BGP, EIGRP, IS-IS, etc. They differ in how they discover new routers, what addresses they share, and how they share those addresses.
 
 ### Difference between an ARP table and a Router table
 
@@ -204,7 +204,7 @@ The main difference between ARP tables and router tables is that ARP tables alwa
 
 ### Hierarchy helps with scaling
 
-If you use a tree like network to connect routers the longest path grows like $\log(n)$ instead of linear designs that will grown as $n$. However there are more reasons to use a Hierarchy a base on the IP address.
+If you use a tree-like network to connect routers the longest path grows like $\log(n)$ instead of linear designs that will grow as $n$. However there are more reasons to use a hierarchy based on the IP address.
 
 With the entries in the routing table the subnet mask indicates what part of the IP address you need to match on. For example the routing table may look something like
 
@@ -217,10 +217,10 @@ the first entry would say any IP address matching the first 24 bits or the first
 
 You can set a default route - this is one that matches on 0 bits. Then instead of dropping any unknown address you instead send it to the default route.
 
->[!note] Matching criteria
->If you have a default gateway then it will match with all addresses which might cause a conflict. By default the more specific a routing entry the higher priority that rule. Though rules can get more complicated than this.
+> [!note] Matching criteria
+> If you have a default gateway then it will match with all addresses which might cause a conflict. By default the more specific a routing entry the higher priority that rule. Though rules can get more complicated than this.
 
-## Lesson 6: Protocols
+## Lecture 6: Protocols
 
 Protocol: Set of rules and messages that form an Internet standard.
 
@@ -289,7 +289,7 @@ A port number is how Layer 4 distinguishes different applications. It is used to
 
 - If you were developing a brand new application layer protocol, what aspects of TCP would make it more appealing to use? What aspects of UDP would make it more appealing to use?
 
-I would use TCP if I wanted to gaurentee integrity of the data and didn't care about latency whereas I would use UDP if I wanted a fast connection where packet replay was not important.
+I would use TCP if I wanted to guarantee integrity of the data and didn't care about latency whereas I would use UDP if I wanted a fast connection where packet loss was not important.
 
 - What is a socket? How is it used?
 
@@ -301,7 +301,7 @@ Yes I think so but that is a lot of writing.
 
 - What is an IP address? How is it different than a MAC Address?
 
-An IP address is the unique identifier for a host. This works for hosts that are not not the same network. This will be added to the message at Layer 3 and is responsible for checking the message is going to the correct host. MAC addresses are encapsulated at layer 2 and are only responsible for getting the frame to the correct host within a network.
+An IP address is the unique identifier for a host. This works for hosts that are not on the same network. This will be added to the message at Layer 3 and is responsible for checking the message is going to the correct host. MAC addresses are encapsulated at layer 2 and are only responsible for getting the frame to the correct host within a network.
 
 - What is a switch? What is a router? What are the major differences between the roles that they play in a network, classically?
 
@@ -309,13 +309,13 @@ Switches are responsible for getting data between hosts on the same network. The
 
 Routing on the other hand is responsible for getting packets to hosts that are not on their network. The maintain a route table that informs them about the IP addresses it knows where to route packets to. This operates on the Layer 3 information of the packet.
 
-- What is a default gateway
+- What is a default gateway?
 
 The default gateway is the address of the main router in that network it is IP address that hosts add the MAC address of if the IP address is not in this network.
 
 - What happens to a message as it gets sent across a network, as far as encapsulation and protocol headers?
 
-Suppose we have a message we need to send to an application first we encode that information using the specification of layer 6 of the target application. We add headers to identify this user session in layer 5. Then we add the randomly assigned source port of the application sending the data and the destination port of the application we need to send the information to. Now we add the IP address of the machine sending the data and the IP address of the machine we want to send the data to. Then we use that IP address and the subnet mask to determine if the machine is on our network or a foriegn network. Then we either uses its address or the default gateway's address to look a MAC address of the next hop in the network in our ARP table - if we don't have it we use ARP to determine that MAC address in the network.
+Suppose we have a message we need to send to an application first we encode that information using the specification of layer 6 of the target application. We add headers to identify this user session in layer 5. Then we add the randomly assigned source port of the application sending the data and the destination port of the application we need to send the information to. Now we add the IP address of the machine sending the data and the IP address of the machine we want to send the data to. Then we use that IP address and the subnet mask to determine if the machine is on our network or a foreign network. Then we either use its address or the default gateway's address to look up a MAC address of the next hop in the network in our ARP table—if we don't have it we use ARP to determine that MAC address in the network.
 
 - What is DNS? At a high level, how does it work?
 

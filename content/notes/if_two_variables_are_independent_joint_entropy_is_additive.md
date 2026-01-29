@@ -1,7 +1,7 @@
 ---
 aliases:
 created: 2024-02-24
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-12-05
 tags:
@@ -25,7 +25,7 @@ H(X, Y) = & - \sum_{a \in A} \sum_{b \in B} \mathbb{P}[X = a, Y = b] \log(\mathb
 = & - \sum_{a \in A} \sum_{b \in B} \mathbb{P}[X = a]\mathbb{P}[Y = b] \log(\mathbb{P}[X = a])\\
 & \hspace{0.5 in}- \sum_{a \in A} \sum_{b \in B} \mathbb{P}[X = a]\mathbb{P}[Y = b] \log(\mathbb{P}[Y = b])\\
 = & \sum_{b \in B} \mathbb{P}[Y = b] \left ( - \sum_{a \in A} \mathbb{P}[X = a] \log(\mathbb{P}[X = a]) \right )\\
-& \hspace{0.5 in}- \sum_{a \in A} \mathbb{P}[X = a] \left ( - \sum_{b \in B} \mathbb{P}[Y = b] \log(\mathbb{P}[Y = b]) \right )\\
-= & \ H(X) + H(Y)
+& \hspace{0.5 in}+ \sum_{a \in A} \mathbb{P}[X = a] \left ( - \sum_{b \in B} \mathbb{P}[Y = b] \log(\mathbb{P}[Y = b]) \right )\\
+= & H(X) + H(Y)
 \end{align*}
 $$

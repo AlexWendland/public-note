@@ -3,7 +3,7 @@ aliases:
 course_code: CS6210
 course_name: Advanced Operating Systems
 created: '2025-11-30'
-date_checked:
+date_checked: '2026-01-29'
 draft: false
 last_edited: '2025-11-30'
 tags:
@@ -25,7 +25,7 @@ Whilst the operating system and its subsystems are changing objects in memory if
 To combat this LRVM creates an interface to make some objects in virtual memory persistent on the disk.
 The key to this working is to make this fast and have a clean, easy to use interface for subsystem designers.
 
-If the writes to disk where random, this would be slow as disks need to seek to different positions.
+If the writes to disk were random, this would be slow as disks need to seek to different positions.
 So instead we use log based writes similar to the distributed file system.
 
 ### Interface
@@ -48,7 +48,7 @@ So instead we use log based writes similar to the distributed file system.
 
 - `abort_xact(tid)`: Abort the transaction and discard it.
 
-Transactions are not immediately reflected in the persistent storage - instead the new value of the memory are stored in a redo log which is saved to the disk for later compaction.
+Transactions are not immediately reflected in the persistent storage - instead the new values of the memory are stored in a redo log which is saved to the disk for later compaction.
 The above operations are all developers need to know - however there are a couple more operations if they would like to manually manage when these logs are applied.
 
 **Management**
@@ -65,7 +65,7 @@ The above operations are all developers need to know - however there are a coupl
 
 #### Managing aborts
 
-When the developer calls `set_range` the LRVM will make a 'undo record' of that range.
+When the developer calls `set_range` the LRVM will make an 'undo record' of that range.
 Then if the transaction is aborted, this copy will be applied to the region to clear any changes made to it.
 (This can be toggled off using no_restore mode in the `begin_xact` call.
 This will make LRVM more performant.)
@@ -96,8 +96,8 @@ After that we throw away the redo log.
 
 ![Log truncation](../../../static/images/log_truncation_struct.png)
 
-Though we want to do this in parallel to letting the application code running.
-Therefore, we break the redo logs into epoch's so we can clean up one epoch at a time whilst letting the application code to add new redo logs to the current epoch.
+Though we want to do this in parallel to letting the application code run.
+Therefore, we break the redo logs into epochs so we can clean up one epoch at a time whilst letting the application code add new redo logs to the current epoch.
 The truncation process is one of the most complex and time consuming parts of LRVM.
 
 ## Riovista
@@ -114,12 +114,12 @@ This is the premise of the Riovista system: We have a portion of main memory whi
 
 ### Rio file cache
 
-A file cache is a in memory representation of a file.
+A file cache is an in-memory representation of a file.
 This allows for:
 
 - Fast writes to a file without needing to go to disk.
 
-- Mmapped files to be read and written to in memory - to be reflected on disk later.
+- Memory-mapped files to be read and written to in memory - to be reflected on disk later.
 
 If we make the region of this memory that we put the file cache into persistent, we can guarantee these writes will be reflected in the disk eventually.
 Without the persistent storage, any writes that happen in memory but are not reflected on disk risk failure causing them to be eliminated leaving the disk in a broken state.
@@ -130,7 +130,7 @@ Files that are written to are replicated back to disk after the program has stop
 
 ### Vista
 
-Visa is an RVM that is built on top of the Rio file cache.
+Vista is an RVM that is built on top of the Rio file cache.
 
 ![Vista](../../../static/images/vista.png)
 
@@ -147,9 +147,9 @@ This implementation is incredibly simple, a lot of heavy lifting is coming from 
 This means that it has 3 orders of magnitude better performance than LRVM.
 Though it does require having a battery backed persistent memory.
 
-## Quick silver
+## Quicksilver
 
-Both Riovist and LRVM took a narrow view of what crash recovery is.
+Both Riovista and LRVM took a narrow view of what crash recovery is.
 They looked only at the state that needs to be saved during a crash but not what state needs to be cleaned up after a crash.
 For example, if you use a NFS and they crash your local computer may still have open connections and state reserved for that NFS.
 This consumes resources and can cause problems.
@@ -161,7 +161,7 @@ Quicksilver is built on what is now a typical micro kernel architecture.
 
 ![Quicksilver architecture](../../../static/images/quicksilver_architecture.png)
 
-For IPC quicksilver uses a service queue structure.
+For IPC, Quicksilver uses a service queue structure.
 This allows clients to put requests on and get responses, as well as for servers to subscribe to the service queue to carry out requests.
 The OS ensures exactly once semantics, this means no request is dropped and isn't handled twice.
 This can be carried out either synchronously or asynchronously - where clients can choose to wait at some point later for the response.
@@ -203,7 +203,7 @@ Responses to the requests flow up from servers to clients.
 However, transaction managers on the client can make 3 requests from the server:
 
 - Vote request: If the coordinator wants to commit the transaction, it asks all the nodes to vote on if this request should commit or abort.
-Notes then respond with vote-commit or vote-abort.
+Nodes then respond with vote-commit or vote-abort.
 
 - Abort request: Similarly if the coordinator wants to inform nodes that it is aborting the request, it sends an abort request.
 Then servers say when they are ready to abort the request.
@@ -219,5 +219,5 @@ There is also no extra communication for recovery as it comes built into the IPC
 An important note is that the OS implements the mechanism but not the policy itself.
 It is up to the subsystems to implement the recovery policies it needs for the state it is managing.
 This allows them to fine tune how impactful this recovery mechanism is on the service.
-Nodes uses a similar mechanism to LRVM for logs - and it is also up to the node how regularly it needs to write a redo logs to disk.
+Nodes use a similar mechanism to LRVM for logs - and it is also up to the node how regularly it needs to write redo logs to disk.
 In the Quicksilver case it is possible for clients to do a 'log force' to make the servers write logs to disk however, this impacts performance for ALL clients of this server.

@@ -3,12 +3,12 @@ aliases: []
 course_code: CS6215
 course_name: Introduction to Graduate Algorithms
 created: 2023-09-05
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-12-05
 tags:
   - OMSCS
-title: Week 3 - Fast Integer multiplication
+title: Week 3 - Fast Integer Multiplication
 type: lecture
 week: '3'
 ---
@@ -20,7 +20,7 @@ Naïve approaches will do this in $O(n^2)$ time but you can do it faster with [d
 
 # Gauss's trick (aside)
 
-Suppose have two [complex numbers](../../notes/complex_numbers.md) $a + bi$ and $c + di$ where you want to compute the product $(a + bi)(c + di)$ in the fastest way possible.
+Suppose we have two [complex numbers](../../notes/complex_numbers.md) $a + bi$ and $c + di$ where you want to compute the product $(a + bi)(c + di)$ in the fastest way possible.
 
 Multiplication of real numbers uses $O(n^2)$ whereas addition/subtraction takes $O(n)$. So if you want to do it faster - it would be best to avoid multiplication.
 
@@ -34,8 +34,8 @@ $$(a + bi)(c + di) = ac - bd + ((a + b)(c+d) - bd - ac)i.$$
 # Naïve divide and conquer approach
 
 Suppose we have $x$ and $y$ which are $2^k=n$-bit numbers. We cut $x$ and $y$ in half so
-$$x = X_L2^{2^{k-1}} + X_R \mbox{ and } Y = Y_L2^{2^{k-1}} + Y_R.$$
-then there multiple is
+$$x = X_L2^{2^{k-1}} + X_R \mbox{ and } y = Y_L2^{2^{k-1}} + Y_R.$$
+then their multiple is
 $$xy = X_LY_L2^{2^k} + (X_LY_R + X_RY_L)2^{2^{k-1}} + X_RY_R.$$
 At which point we have broken the problem into sub-problems. We can then turn this into a [recursive](../../notes/recursion.md) algorithm.
 
@@ -53,7 +53,7 @@ else:
 	return 2^nA + 2^(2^k-1)(B + C) + D
 ```
 
-To analyse the run time of this algorithm not the split and shift operations take $O(n)$ time, just the same as addition. So dividing $x$ and $y$ and computing the addition of the multiplied components are both $O(n)$ operations. However, if you let the run time of the algorithm be $T(n)$ then the sub multiplications take $4T(n/2)$. This gives
+To analyse the run time of this algorithm, note the split and shift operations take $O(n)$ time, just the same as addition. So dividing $x$ and $y$ and computing the addition of the multiplied components are both $O(n)$ operations. However, if you let the run time of the algorithm be $T(n)$ then the sub multiplications take $4T(n/2)$. This gives
 $$T(n) = 4 T(n/2) + O(n) = O(n^2).$$
 
 # Better approach
@@ -61,8 +61,8 @@ $$T(n) = 4 T(n/2) + O(n) = O(n^2).$$
 This time we combine Gauss's trick with the [divide and conquer](../../notes/divide_and_conquer_algorithms.md) approach to speed up this algorithm.
 
 Suppose we have $x$ and $y$ which are $2^k=n$-bit numbers. We cut $x$ and $y$ in half so
-$$x = X_L2^{2^{k-1}} + X_R \mbox{ and } Y = Y_L2^{2^{k-1}} + Y_R.$$
-then there multiple is
+$$x = X_L2^{2^{k-1}} + X_R \mbox{ and } y = Y_L2^{2^{k-1}} + Y_R.$$
+then their multiple is
 $$xy = X_LY_L2^{2^k} + (X_LY_R + X_RY_L)2^{2^{k-1}} + X_RY_R.$$
 Which we now compute using
 $$X_LY_L, \  X_RY_R, \mbox{ and } (X_L + X_R)(Y_L + Y_R).$$

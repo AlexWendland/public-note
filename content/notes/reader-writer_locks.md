@@ -1,7 +1,7 @@
 ---
 aliases:
 created: 2025-04-08
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-04-08
 tags:
@@ -9,7 +9,7 @@ tags:
 title: Reader-writer locks
 type: definition
 ---
->[!tldr] Reader-writer locks
+>[!note] Reader-writer locks
 A reader-writer lock is a [synchronization](synchronization.md) construct that allows multiple threads to read shared data concurrently, while ensuring exclusive access for a thread that needs to write. It supports two types of locking:
 >
 >- **Read lock**: Multiple threads can acquire the read lock simultaneously, as long as no thread holds the write lock.

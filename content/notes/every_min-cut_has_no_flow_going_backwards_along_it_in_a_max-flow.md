@@ -1,7 +1,7 @@
 ---
 aliases:
 created: 2023-10-20
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-12-05
 tags:
@@ -12,7 +12,7 @@ type: lemma
 # Statement
 
 > [!lemma] Lemma
-> Given a [Flow network](flow_network.md) $(G, c, s, t)$ with a [max flow](max_flow_problem.md) $f$. Then for every [min st-cut](min_st-cut_problem.md) ($S$, $T$) we have $f(t',s') = 0$ all edges in $(t',s') \in E$ for $t' \in T$ and $s' \in S$.
+> Given a [Flow network](flow_network.md) $(G, c, s, t)$ with a [max flow](max_flow_problem.md) $f$. Then for every [min st-cut](min_st-cut_problem.md) $(S, T)$ we have $f(t',s') = 0$ for all edges $(t',s') \in E$ with $t' \in T$ and $s' \in S$.
 
 # Proof
 
@@ -27,7 +27,7 @@ capacity(S,T) & = flow^f(S,T)\\
 \sum_{\substack{(s',t') \in E\\ s' \in S, t' \in T}} c(s',t') & =  \left ( \sum_{\substack{(s',t') \in E\\ s' \in S, t' \in T}} f(s',t') \right ) - \left ( \sum_{\substack{(t',s') \in E\\ s' \in S, t' \in T}} f(t',s') \right ).\\
 \end{align*}
 $$
-Given $0 \leq f(v,w) \leq c(v,w)$ for $(v,w) \in E$. This gives that $f(s', t') = c(s',t')$ for any $(s',t') \in E$ and $f(t', s') = 0$ $(t',s') \in E$ with $s' \in S$ and $T' \in T$.
+Given $0 \leq f(v,w) \leq c(v,w)$ for $(v,w) \in E$. This gives that $f(s', t') = c(s',t')$ for any $(s',t') \in E$ and $f(t', s') = 0$ for $(t',s') \in E$ with $s' \in S$ and $t' \in T$.
 
 Which is the required result.
 

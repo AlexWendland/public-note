@@ -1,7 +1,7 @@
 ---
 aliases:
 created: 2025-04-08
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-04-08
 tags:
@@ -9,7 +9,7 @@ tags:
 title: Monitors
 type: definition
 ---
->[!tldr] Monitors
+>[!note] Monitors
 >*Monitors* are a high-level [synchronization](synchronization.md) construct that encapsulate:
 >- A shared resource,
 >- A set of [mutexes](mutex.md) (or equivalent) to enforce mutual exclusion, and

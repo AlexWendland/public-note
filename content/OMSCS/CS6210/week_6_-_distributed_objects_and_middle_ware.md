@@ -3,17 +3,17 @@ aliases:
 course_code: CS6210
 course_name: Advanced Operating Systems
 created: 2025-10-23
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-10-23
 tags:
   - OMSCS
-title: Week 6 - Distributed objects and middle ware
+title: Week 6 - Distributed objects and middleware
 type: lecture
 week: 6
 ---
 
-# Week 6 - Distributed objects and middle ware
+# Week 6 - Distributed objects and middleware
 
 ## Spring OS
 
@@ -24,8 +24,8 @@ When innovating as a company in the OS space you have two options:
 2. Build a better implementation of an existing OS.
 
 This decision is normally constrained by your customer base.
-In the company Sun Microsystem, they choose to keep the unix interface but try for better 'under the hood' implementations.
-This is similar to CPU's which are said to be 'Intel inside' but have different implementations.
+At Sun Microsystems, they chose to keep the Unix interface but aimed for better 'under the hood' implementations.
+This is similar to CPUs, which are said to be 'Intel inside' but have different implementations.
 In this case it was 'Unix inside' but they changed the implementation.
 
 ### Procedural vs Object design
@@ -81,9 +81,9 @@ Each domain holds a door table that contains the door handles it can use.
 ### Authorisation in Spring OS
 
 As previously mentioned, doors are capabilities that allow access to a domains interface.
-Permissioning of these doors are supported by two mechanisms:
+Permissions for these doors are supported by two mechanisms:
 
-1. Access control lists (ACL's): These are lists of users or domains to permissions they have on operations within this object.
+1. Access control lists (ACLs): These are lists of users or domains with permissions they have on operations within this object.
 
 2. 'Front objects': These are objects within a domain that encapsulate permissions within the domain.
 
@@ -93,9 +93,9 @@ That way upon using the door the application already has applied permissions - s
 
 ![Auth In Spring Os](../../../static/images/spring_auth.png)
 
-As a door reference can be shared - this means a user who is permissioned on the ACL can give permission to a user who is not on the ACL to access this application.
+As a door reference can be shared, this means a user who is authorised on the ACL can give permission to a user who is not on the ACL to access this application.
 This is useful for operations like printing - or any time another application wants to give out temporary permissions to another application.
-These temporary permissions can be limited to one time use or to have limited access like to read on particular file.
+These temporary permissions can be limited to one-time use or have limited access such as read-only on a particular file.
 
 ### VM Manager (Virtual Memory Manager)
 
@@ -122,17 +122,17 @@ So in summary:
 
 - The Pager Object: Is constructed by the application to retrieve the memory from the source and provide it to the VMM to map into the DRAM.
 
-- The Cache Object: A callback interface that the external pager uses to maintain coherency (invalidate pages, etc.).
+- The Cache Object: A callback interface that the external pager uses to maintain coherence (invalidate pages, etc.).
 
 - The Cache_Rights Object: Tracks the pager-cache connection and any cached pages for a memory object at a specific VMM.
 
-**NOTE**: Cache coherence is delegated to the pager object - so if it needs to maintain coherence between one Memory Object that have multiple pagers it is the responsibility of the memory manager for that type to do it.
+**Note**: Cache coherence is delegated to the pager object. If a Memory Object has multiple pagers and needs to maintain coherence, it is the responsibility of the memory manager for that type to do so.
 
 #### Example: User maps file into address space
 
 Step 1: Creating the connection.
 
-- Users wants to map file into address space.
+- User wants to map file into address space.
 
 - VMM calls: Uses the memory object and finds a region in the address space for it to bind to.
 
@@ -142,7 +142,7 @@ Step 1: Creating the connection.
 
 Step 2: Reading the file
 
-- User tries to read address -> page fault.
+- User tries to read address—page fault.
 
 - VMM handles the page fault.
 
@@ -152,11 +152,11 @@ Step 2: Reading the file
 
 - VMM puts the returned data into DRAM and maps it into the user's address space.
 
-- Users operation completes.
+- User's operation completes.
 
-### Object invocation Across the network
+### Object invocation across the network
 
-To make cross network domain calls, Spring OS uses network proxies.
+To make cross-network domain calls, Spring OS uses network proxies.
 These are domains that sit on each machine and mirror the calls that can be made across the network.
 
 ![Spring Os Network](../../../static/images/spring_os_network.png)
@@ -226,16 +226,16 @@ Below we define the terms that will be used within the RMI system:
 
 Remote objects are similar to local ones, in the sense that you can pass references to them as parameters.
 However, for remote objects these parameters are sent over as a copy of the object - instead of a pointer to the object in memory.
-This is handled the RMI system automatically.
+This is handled by the RMI system automatically.
 
 ### Why remote?
 
-There are two options you have when making an local object public.
+There are two options when making a local object public.
 You can either start with the local or start with the remote.
 
 #### Starting with the local object
 
-Lets say you write a local object that handles all your methods correctly.
+Let's say you write a local object that handles all your methods correctly.
 What are the next steps to offer this as a service over your network?
 
 1. The server engineer needs to write an API to run on the server that gives outside users access to your inside object.
@@ -252,19 +252,19 @@ These also need to stay in sync otherwise there will be compatibility issues.
 Suppose you write the remote object first (i.e. the object others can use to represent it in their code).
 What are the next steps you need to take?
 
-1. The server engineer need to extend this remote object in Java to a class that can handle these methods on the server side.
+1. The server engineer needs to extend this remote object in Java to create a class that can handle these methods on the server side.
 
 2. The server engineer needs to extend the 'remote server' class to offer these actions up through the network.
 
-In the remote case it is all on the server engineer job to implement everything.
-This centralises the responsibility of the server engineer to the server.
+In the remote case it is all the server engineer's job to implement everything.
+This centralises the responsibility to the server engineer.
 This also allows us to use a lot of 'Java magic' which can auto-generate code for offering this as a server and making connections from the client.
 
 ### RMI implementation
 
 RMI is implemented similarly to subcontracts in Spring OS.
-Below we have a diagram which looks very similar to the Spring OS one.
-Instead of the subcontracts we instead use the Remote Reference Layer (RRL) which will handle getting the requests to the correct server.
+Below is a diagram that looks very similar to the Spring OS one.
+Instead of subcontracts, we use the Remote Reference Layer (RRL) to handle routing requests to the correct server.
 
 ![Java Rmi Rrl](../../../static/images/java_rmi_rrl.png)
 
@@ -278,10 +278,10 @@ The transport layer uses the following abstractions:
 
 **Note**: The endpoint could be on the same server as the client.
 
-- Connection manager: This is responsible for all stages of the connection, setting the up, checking that they are still alive, tearing them down, and listening for connections.
-This also sets up the connect to the server (e.g. TCP, UDP, message passing). The RRL chooses which method is best for the connection.
+- Connection manager: This is responsible for all stages of the connection—setting them up, checking that they are still alive, tearing them down, and listening for connections.
+It also sets up the connection to the server (e.g. TCP, UDP, message passing). The RRL chooses which method is best for the connection.
 
-- Channel: This is the construct that can have I/O carried out on it. This makes the interaction with this connection easier as it takes away the details of the connection.
+- Channel: This is the construct that I/O can be performed on. This makes interaction with the connection easier by abstracting away the connection details.
 
 ### Other issues
 
@@ -297,15 +297,15 @@ There are more techniques in RMI that are not covered here:
 
 **Note:** The paper used in this section is [Enterprise JavaBeans: Architecture and Design](https://www.researchgate.net/publication/221200920_Enterprise_JavaBeans_Architecture_and_Design).
 
-Running services at a large scale is difficult - this is the issue enterprise level services face all the time.
-We need to structure code so it is scalable but maintainable.
+Running services at large scale is difficult—this is the issue enterprise-level services face all the time.
+We need to structure code to be both scalable and maintainable.
 This is the problem EJB tried to solve.
 It does this by enabling the reuse of components between different parts of the application.
 
 ### N-tier applications
 
 This is the structure of web-based commercial applications.
-They are called N-tier applications as they are structured into different layers.
+They are called N-tier applications because they are structured into different layers.
 For example, a classic web application would have 3 distinct tiers:
 
 - Presentation tier: This is the front end of the application that the user interacts with.
@@ -314,7 +314,7 @@ For example, a classic web application would have 3 distinct tiers:
 
 - Database tier: This is where the data is stored and retrieved from.
 
-This means this application stack needs to handle a lot of things that may appear in different parts of the stack, such as: session persistence, transactions between states, caching, clustering of requests, security for requests, and increasing parallelism.
+This means the application stack needs to handle many things that may appear in different parts of the stack, such as: session persistence, state transactions, caching, request clustering, request security, and increased parallelism.
 
 ### Java Enterprise Edition (JEE)
 
@@ -329,7 +329,7 @@ It is broken down into 4 different containers:
 
 - EJB container: This is where the enterprise beans run.
 
-Within this framework we structure the means into 3 categories:
+Within this framework, we structure the beans into 3 categories:
 
 - Entity beans: These represent persistent data that is stored in a database.
 
@@ -337,19 +337,19 @@ Within this framework we structure the means into 3 categories:
 
 - Message-driven beans: These represent asynchronous messages that are sent between different parts of the application.
 
-The goal with all the beans is to make them fine-grained to increase their reusability throughout the stack.
-Though some beans can be bigger if they encapsulate business logic.
+The goal is to make all beans fine-grained to increase their reusability throughout the stack.
+However, some beans can be coarser-grained if they encapsulate significant business logic.
 You can choose to either:
 
-- Keep you business logic simple and put the work into some beans.
+- Keep your business logic simple and put the work into beans.
 
-- Keep your beans simple and increase the size of the business logic outside the bean.
+- Keep your beans simple and increase the complexity of the business logic outside the beans.
 
-Next we will discuss different design approaches for the Web container and EJB container.
+Next, we discuss different design approaches for the Web container and EJB container.
 
 ### Design approach 1: Coarse grained session beans
 
-In this design we split the logic between the presentation logic kept in the servelet, and the business logic kept in a session bean which the presenter talks to.
+In this design, the presentation logic is kept in the servlet, and the business logic is kept in a session bean that the servlet invokes.
 The session bean then can make any calls to the database that it needs to persist state.
 
 ![Ejb Design 1](../../../static/images/ejb_design_1.png)
@@ -364,9 +364,9 @@ Pros:
 
 - Simple to implement.
 
-Cons
+Cons:
 
-- App structure is monolithic, and
+- Application structure is monolithic, and
 
 - Hard to use concurrency.
 
@@ -406,18 +406,18 @@ Cons:
 
 ### Design approach 3: Session Façade pattern
 
-This design applies the Session Facade pattern, which uses stateless session beans as a façade to access entity beans.
-The presentation logic stays in the servlets, but now the business logic moves into session facade beans in the EJB container.
-These session facade beans then delegate data access operations to entity beans (also in the EJB container).
+This design applies the Session Façade pattern, which uses stateless session beans as a façade to access entity beans.
+The presentation logic stays in the servlets, but the business logic now moves into session façade beans in the EJB container.
+These session façade beans then delegate data access operations to entity beans (also in the EJB container).
 
 ![Ejb Design 3](../../../static/images/ejb_design_3.png)
 
 This creates a three-tier architecture within the application server:
-1. Servlets (presentation) → Session facade beans (business logic) → Entity beans (data access)
+1. Servlets (presentation) → Session façade beans (business logic) → Entity beans (data access)
 
 All communication uses RMI:
 - Servlets call session façade beans via RMI
-- Session facade beans call entity beans via RMI (unless using EJB 2.0 local interfaces)
+- Session façade beans call entity beans via RMI (unless using EJB 2.0 local interfaces)
 
 **Architectural characteristics:**
 
@@ -435,15 +435,15 @@ Pros:
 
 Cons:
 
-- Increased complexity: more beans to develop and maintain (the paper shows 107 classes vs 73 for session beans)
+- Increased complexity: more beans to develop and maintain (the paper shows 107 classes versus 73 for session beans)
 
 - Adds an additional layer of indirection
 
-- Communication between session facade and entity beans can become a bottleneck
+- Communication between session façade and entity beans can become a bottleneck
 
-- Requires careful design to determine proper granularity of facade methods
+- Requires careful design to determine proper granularity of façade methods
 
-**Note:** The paper also evaluates a variant using **EJB 2.0 local interfaces**, where entity beans have only local interfaces (not remote). This allows calls between session facade beans and entity beans to bypass the RMI communication layers when both are in the same JVM, reducing overhead.
+**Note:** The paper also evaluates a variant using **EJB 2.0 local interfaces**, where entity beans have only local interfaces (not remote). This allows calls between session façade beans and entity beans to bypass the RMI communication layers when both are in the same JVM, reducing overhead.
 
 ### Comparison of design approaches
 
@@ -463,12 +463,12 @@ The paper evaluated all five EJB implementations using an auction site benchmark
 **Key Result:** Performance correlates directly with **number of network round-trips**.
 Session beans make one RMI call per operation (servlet → session bean → database).
 Entity beans require two (servlet → entity bean, entity bean → database).
-Session facade without optimization requires three (servlet → façade → entity bean → database), making it the worst performer.
+Session façade without optimisation requires three (servlet → façade → entity bean → database), making it the worst performer.
 The poor performance of entity beans is NOT due to container-managed persistence (CMP and BMP performed identically) but rather the fine-grained network access pattern that exposes row-level database access over RMI.
 
-**Optimization Impact:** EJB 2.0 local interfaces bypass RMI for intra-JVM calls (façade <-> entity beans), improving session façade performance 6.7× over unoptimized.
+**Optimisation Impact:** EJB 2.0 local interfaces bypass RMI for intra-JVM calls (façade <-> entity beans), improving session façade performance 6.7× over unoptimised.
 Container design matters for entity beans (pre-compiled containers 3× faster than reflection-based) but has minimal impact on session beans where communication dominates 40-60% of execution time.
 The programmer's bean code represents <2% of total execution time—most time is spent in middleware (RMI, container, database).
 
 **Recommendation:** Use session beans for best performance.
-If using entity beans or session facade, you must use EJB 2.0 local interfaces or accept significant performance penalties.
+If using entity beans or session façade, you must use EJB 2.0 local interfaces or accept significant performance penalties.

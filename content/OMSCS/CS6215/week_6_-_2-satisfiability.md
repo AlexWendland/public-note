@@ -3,14 +3,14 @@ aliases:
 course_code: CS6215
 course_name: Introduction to Graduate Algorithms
 created: 2023-09-30
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-12-05
 tags:
   - OMSCS
 title: Week 6 - 2-Satisfiability
 type: lecture
-week: int
+week: 6
 ---
 
 This week we will look at
@@ -37,7 +37,7 @@ This problem is generally quite hard so we look at the limited problem.
 
 # Solving [2-SAT](../../notes/k-satisfiability_problem_(k-sat_problem).md) problem
 
->[!example] [2-SAT](../../notes/k-satisfiability_problem_(k-sat_problem).md) example
+> [!example] [2-SAT](../../notes/k-satisfiability_problem_(k-sat_problem).md) example
 >Consider
 >$$(x_3 \lor \overline{x_2}) \land (\overline{x_1}) \land (x_1 \lor x_4) \land (\overline{x_4} \lor x_2) \land (\overline{x_3} \lor x_4).$$
 
@@ -48,8 +48,8 @@ First we simplify the input by getting rid of forced decisions. We do this by re
 1. Take a unit clause, say literal $a_i$,
 2. If the unit clause $\overline{a_i}$ exists output then no solution exists,
 3. Satisfy it, set $a_i = T$,
-	1. If a_i = x, then x = T, or
-	2. If a_i = \overline{x} then x = F.
+	1. If $a_i = x$, then $x = T$, or
+	2. If $a_i = \overline{x}$ then $x = F$.
 4. Remove clauses containing $a_i$ and drop $\overline{a_i}$ from clauses.
 5. Let $f'$ be the resulting formula.
 
@@ -108,7 +108,7 @@ This gives us an easy check for if $f$ is not satisfiable.
 
 This means there is a path from $x_i$ to $\overline{x_i}$ and $\overline{x_i}$ to $x_i$.
 
-From the lemma above if $x_i$ is true we would require $\overline{x_i}$ to be true also for an assignment to satisfy $f$. Similarly if $x_i$ then we need $\overline{x_i}$ to be true.
+From the lemma above if $x_i$ is true we would require $\overline{x_i}$ to be true also for an assignment to satisfy $f$. Similarly if $x_i$ is false then we need $\overline{x_i}$ to be false.
 
 This is contradictory and so no such assignment exists.
 
@@ -158,7 +158,7 @@ Therefore $\overline{S}$ is a [strongly connected component](../../notes/strongl
 
 $\square$
 
-This this actually extends further.
+This actually extends further.
 
 >[!important] Lemma
 >$S$ is a sink [strongly connected component](../../notes/strongly_connected_components_(directed_graphs).md) if and only if $\overline{S}$ is a source [strongly connected component](../../notes/strongly_connected_components_(directed_graphs).md)
@@ -239,12 +239,12 @@ Without the simplification step we have the following algorithm
 3. If any variable and its complement are in the same SCC return no assignment possible.
 4. While still SCC left.
 	1. Take sink SCC S,
-	2. Set the clauses in S to true (and thier complements to false)
+	2. Set the clauses in S to true (and their complements to false)
 	3. Remove S & \overline{S}
 7. Return assignment.
 ```
 
-Constructing the graph takes $O(m)$ steps. Then running the [SCC algorithm](../../notes/2-sat_algorithm_using_scc.md) takes $O(n + m)$. Lastly filtering the [strongly connected components](../../notes/strongly_connected_components_(directed_graphs).md) takes at most $O(n)$ steps as we have to run through the list of variables and their complements. (Note the ordering [SCC algorithm](../../notes/2-sat_algorithm_using_scc.md) algorithm returns in is a [topologically sort](../../notes/topological_sorting_(dag).md) so it isn't hard to identify sink components.)
+Constructing the graph takes $O(m)$ steps. Then running the [SCC algorithm](../../notes/2-sat_algorithm_using_scc.md) takes $O(n + m)$. Lastly filtering the [strongly connected components](../../notes/strongly_connected_components_(directed_graphs).md) takes at most $O(n)$ steps as we have to run through the list of variables and their complements. (Note the ordering [SCC algorithm](../../notes/2-sat_algorithm_using_scc.md) algorithm returns in is a [topological sort](../../notes/topological_sorting_(dag).md) so it is not hard to identify sink components.)
 
 All together this runs in $O(n + m)$ time. However the algorithm with the above simplification
 
@@ -253,28 +253,28 @@ All together this runs in $O(n + m)$ time. However the algorithm with the above 
 	Input: 2-SAT problem on n variables with m clauses.
 	Output: Assignment from n variables satisfying f or saying no assignment is possible.
 1. Set f' = f
-2. While f' has a unit clauses:
+2. While f' has unit clauses:
 	1. Find a unit clause c.
 	2. Assign c to True.
-	3. If \overline{c} is a unity clause return no assignment possible.
-	4. Remove clauses with c in and remove occurances of \overline{c}.
+	3. If $\overline{c}$ is a unit clause return no assignment possible.
+	4. Remove clauses with c in and remove occurrences of $\overline{c}$.
 	5. Set this new statement to f'.
 3. Construct graph G for f'.
 4. Run SCC algorithm on S.
 5. If any variable and its complement are in the same SCC return no assignment possible.
 6. While still SCC left.
 	1. Take sink SCC S,
-	2. Set the clauses in S to true (and thier complements to false)
+	2. Set the clauses in S to true (and their complements to false)
 	3. Remove S & \overline{S}
 7. Return assignment.
 ```
 
 This looks like it takes $O(nm)$ time to simplify the algorithm. However, clever use of data structures can help us here.
 
-```psuedocode
+```pseudocode
 simplify(f)
-	Input: 2-sat potenially with unit litterals.
-	Output: Either there is not solution to the input, or a 2-sat that has 2 variables in every clause and a partial solution to f.
+	Input: 2-sat potentially with unit literals.
+	Output: Either there is no solution to the input, or a 2-sat that has 2 variables in every clause and a partial solution to f.
 1. Define U and C_v to be list where v in variables
 2. for clause c in f (let c be some positional variable not the expression of the clause)
 	2.1. if c unit so f(c) = x, not x

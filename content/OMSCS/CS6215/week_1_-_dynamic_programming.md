@@ -3,7 +3,7 @@ aliases: []
 course_code: CS6215
 course_name: Introduction to Graduate Algorithms
 created: 2023-08-26
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-12-05
 tags:
@@ -17,7 +17,7 @@ week: 1
 
 > [!example] [Fibonacci sequence](../../notes/fibonacci_sequence.md) by [recursion](../../notes/recursion.md)
 >
->Let's calculate the [Fibonacci sequence](../../notes/fibonacci_sequence.md), for the $n^{th}$ step of the [Fibonacci sequence](../../notes/fibonacci_sequence.md) called $Fib(n)$ it is calculated as
+>Let's calculate the [Fibonacci sequence](../../notes/fibonacci_sequence.md). For the $n^{th}$ term of the [Fibonacci sequence](../../notes/fibonacci_sequence.md) called $Fib(n)$, it is calculated as
 >$$Fib(n) = \begin{cases} 0 & \mbox{ if n = 0}\\ 1 & \mbox{ if n = 1}\\ Fib(n-1) + Fib(n-2) & \mbox{ if n > 1}\end{cases} \ .$$
 >This can be done recursively as follows:
 >
@@ -27,18 +27,18 @@ week: 1
 >		return 0
 >	if n == 1:
 >		return 1
->	return fibonacci(n-1) + fibonacci(n-2)
+>	return fibonacci_1(n-1) + fibonacci_1(n-2)
 >```
 >
 >If we say $T(n)$ is the [run time](../../notes/run_time_complexity.md) of this algorithm on input $n$, then $T(0) = T(1) = 1$ for the base cases. From this we can [inductively](../../notes/induction.md) prove that
 >$$Fib(n) \leq T(n) \leq Fib(n) + 1$$
->giving that $T(n) = O(Fib(n)) \approx \frac{\phi^n}{\sqrt{5}}$, where $\phi = \frac{1 + \sqrt{5}}{2} \approx 1.618$ the [golden ratio](golden_ratio.md). In other other words, this algorithm is exponential in $n$.
+>giving that $T(n) = O(Fib(n)) \approx \frac{\phi^n}{\sqrt{5}}$, where $\phi = \frac{1 + \sqrt{5}}{2} \approx 1.618$ the [golden ratio](../../notes/golden_ratio.md). In other words, this algorithm is exponential in $n$.
 >
 >This inefficiency is due to computing the same [Fibonacci number](../../notes/fibonacci_sequence.md) multiple times.
 
-Lets try to do this [iteratively](../../notes/iterative_algorithms.md) instead of [recursively](../../notes/recursion.md).
+Let's try to do this [iteratively](../../notes/iterative_algorithms.md) instead of [recursively](../../notes/recursion.md).
 
-> [!example] [Fibonacci sequence](../../notes/fibonacci_sequence.md) by [dynamic programming](dynamic_programming.md)
+> [!example] [Fibonacci sequence](../../notes/fibonacci_sequence.md) by [dynamic programming](../../notes/dynamic_programming.md)
 >
 >Instead of starting at the end of the [Fibonacci numbers](../../notes/fibonacci_sequence.md) this time we will start at the beginning and save past results in an array.
 > ```python
@@ -55,7 +55,7 @@ Lets try to do this [iteratively](../../notes/iterative_algorithms.md) instead o
 
 # Dynamic programming
 
-The key features of [Dynamic programming](../../notes/dynamic_programming.md) is that there is no [recursion](../../notes/recursion.md) in the algorithm it is fully [iterative](../../notes/iterative_algorithms.md).
+The key features of [Dynamic programming](../../notes/dynamic_programming.md) are that there is no [recursion](../../notes/recursion.md) in the algorithm and it is fully [iterative](../../notes/iterative_algorithms.md).
 
 There is another method to get around the inefficiencies of [recursion](../../notes/recursion.md) called [Memoization](../../notes/memoization.md). This is where you still use [recursion](../../notes/recursion.md) but you use a hash table to store previously computed values.
 
@@ -63,14 +63,15 @@ The benefits to [Dynamic programming](../../notes/dynamic_programming.md) over [
 
 - Some people would say the algorithms are more beautiful,
 - They are faster as there is less overhead associated to [recursion](../../notes/recursion.md), and
-- It is much simpler to analyse the [run time](../../notes/run_time_complexity.md) of [dynamic programs](dynamic_programming.md) as they are [iterative](../../notes/iterative_algorithms.md).
+- It is much simpler to analyse the [run time](../../notes/run_time_complexity.md) of [dynamic programs](../../notes/dynamic_programming.md) as they are [iterative](../../notes/iterative_algorithms.md).
 
 # Longest increasing subsequence
 
-We are provided with a [sequence](sequence.md) of $n$ numbers $a_1, a_2, \ldots, a_n$ and the goal is to find the length of the longest [increasing](../../notes/increasing_sequence.md) [subsequence](../../notes/subsequence.md) in $\{a_i\}_{i=1}^n$.
+We are provided with a [sequence](../../notes/sequence.md) of $n$ numbers $a_1, a_2, \ldots, a_n$ and the goal is to find the length of the longest [increasing](../../notes/increasing_sequence.md) [subsequence](../../notes/subsequence.md) in $\{a_i\}_{i=1}^n$.
 
 > [!example] Longest increasing subsequence
->Consider the [sequence](sequence.md)
+>
+>Consider the [sequence](../../notes/sequence.md)
 > $$5, 7, 4, -3, 9, 1, 10, 4, 5, 8, 9, 3$$
 >here the longest [increasing](../../notes/increasing_sequence.md) [subsequence](../../notes/subsequence.md) is
 >$$-3, 1, 4, 5, 8, 9$$
@@ -86,7 +87,8 @@ For [Fibonacci numbers](../../notes/fibonacci_sequence.md) this was simply to ca
 
 For the longest increasing subsequence (LIS) problem, let $L(i)$ = the LIS on $a_1, \ldots, a_i$ that ends with $a_i$.
 
->[!warning] It must end with $a_i$
+> [!warning] It must end with $a_i$
+>
 >This definition of $L(i)$ was chosen carefully, so that we can frame the solution of $L(i)$ in terms of previous $L(j)$. If you drop this condition you can't do that.
 
 ## Step 2: define recursive relation
@@ -108,7 +110,7 @@ i.e. find the longest increasing subsequence that started with a number before y
 >
 Therefore we work out that the LIS for this sequence is 6 as that is the maximum value of $L(i)$ and the LIS must end with some number!
 >
->So lets write this as an algorithm.
+>So let's write this as an algorithm.
 >
 >```python
 >def get_last_best_solution_less_than_current_value(
@@ -160,7 +162,7 @@ Given two [sequences](../../notes/sequence.md) $X =\{x_i\}_{i=1}^n$ and $Y = \{y
 >$$X = BCDBCDA, \mbox{ and } Y=ABECBAB.$$
 >then the largest common subsequence is $BCBA$ of length 4.
 
->[!Note] This is what the [Unix](unix.md) command diff does to two files.
+> [!note] This is what the [Unix](../../notes/unix.md) command diff does to two files.
 
 ## Design attempt for this problem (my solution)
 
@@ -174,7 +176,7 @@ $X\_pos(k)$= the last position of the longest common substring with $\{x_i\}_{i=
 $$X\_len(k) = \begin{cases} 0 & \mbox{if } x_k \not \in Y\\ 1 + \max\{0, X\_len(j) \ \vert \ 1 \leq j \leq k \mbox{ and } x_k \in Y[X\_pos(j)+1:] \ \} & \mbox{otherwise} \end{cases}$$
 $$ X\_pos(k) = \begin{cases} 0 & \mbox{if } x_k \not \in Y\\ \min\{j \ \vert \ y_j = x_k\} & \mbox{if } X\_len(k) = 1\\ \min \left \{ j \ \vert \substack{ \ y_j = x_k \mbox{ and } \exists \ r \mbox{ where }  \\ X\_len(k) = X\_len(r) + 1 \mbox{ and } j > X\_pos(r)} \right \} & \mbox{otherwise} \end{cases}$$
 
->[!warning] I think this would work but the lecturers solution is way better!
+> [!warning] I think this would work but the lecturer's solution is way better!
 
 ## Design attempt for this problem (lecturers)
 
@@ -188,12 +190,12 @@ Set $L(i,0) = L(0,i) = 0$ for all $1 \leq i \leq n$.
 
 Then set
 $$L(i,j) = \begin{cases} 1 + L(i-1, j-1) & \mbox{if } x_i = y_j\\ \max\{L(i,j-1), L(i-1, j)\} & \mbox{otherwise} \end{cases}$$
->[!Note] Why does this work?
-> If $x_i = y_j$ you can always just add the $x_i$/$y_j$ string to the longest common subproblem found in $L(i-1, j-1)$. Note that if a larger one existed for $L(i,j)$ not using both $x_i$ and $y_j$ it must at least use one of them. However if this was the case we could switch to using both $x_i$ and $y_j$ and we have found a larger common substring for $L(i-1,j-1)$.
+> [!note] Why does this work?
 >
+>If $x_i = y_j$ you can always just add the $x_i$/$y_j$ string to the longest common subproblem found in $L(i-1, j-1)$. Note that if a larger one existed for $L(i,j)$ not using both $x_i$ and $y_j$ it must at least use one of them. However if this was the case we could switch to using both $x_i$ and $y_j$ and we have found a larger common substring for $L(i-1,j-1)$.
 > If $x_i \not = y_j$ then the largest common substring must use at most one of $x_i$ or $y_j$. Therefore the solution can be found in $L(i-1,j)$ or $L(i,j-1)$.
 
-Then lets turn this into code.
+Then let's turn this into code.
 
 ```python
 from typing import List, Any
@@ -216,8 +218,8 @@ def common_longest_subsequence(
 	first_sequence: List[Any],
 	second_sequence: List[Any]
 ) -> int:
-	# Set the (n+1, m+1) matrix to all 0's first. (Some strang)
-	[
+	# Set the (n+1, m+1) matrix to all 0's first.
+	solutions = [
 		[0 for _ in range(len(second_sequence)+1)]
 		for _ in range(len(first_sequence)+1)
 	]
@@ -254,7 +256,7 @@ The [runtime](../../notes/run_time_complexity.md) of my algorithm can be broken 
 
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 
->[!question] 6.1 Contiguous Subsequence
+> [!question] 6.1 Contiguous Subsequence
 >A contiguous subsequence of a list $S$ is a subsequence made up of consecutive elements of $S$.
 >
 >For instance, if $S$ is
@@ -269,7 +271,7 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 >
 >(Hint: For each $j \in \{1, 2, \ldots , n\}$, consider contiguous subsequence's ending exactly at position $j$.)
 
->[!question] 6.2 hotel stops
+> [!question] 6.2 Hotel stops
 >You are going on a long trip. You start on the road at mile post 0. Along the way there are $n$ hotels, at mile posts $a_1 < a_2 < \ldots < a_n$, where each $a_i$ is measured from the starting point. The only places you are allowed to stop are at these hotels, but you can choose which of the hotels you stop at. You must stop at the final hotel (at distance $a_n$), which is your destination.
 >
 >You’d ideally like to travel 200 miles a day, but this may not be possible (depending on the spacing of the hotels). If you travel $x$ miles during a day, the penalty for that day is $(200 − x)^2$. You want to plan your trip so as to minimize the total penalty —that is, the sum, over all travel days, of the daily penalties.
@@ -290,7 +292,7 @@ From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Va
 > 1. Give a dynamic programming algorithm that determines whether the string $s[\cdot]$ can be reconstituted as a sequence of valid words. The running time should be at most $O(n^2)$, assuming calls to $dict$ take unit time.
 > 2. In the event that the string is valid, make your algorithm output the corresponding sequence of words.
 
->[!question] 6.11 Longest common **substring**) - altered
+> [!question] 6.11 Longest common **substring** - altered
 >Given two strings $x = x_1x_2 \ldots x_n$ and $y = y_1y_2 \ldots y_m$, we wish to find the length of their longest common **substring**, that is, the largest $k$ for which there are integers $i$ and $j$ with $x_{i+1} x_{i+2} \ldots x_{i+k} = y_{j+1} y_{j+2} \ldots y_{j+k}$. Show how to do this, what is the time complexity of this?
 
 # Summary

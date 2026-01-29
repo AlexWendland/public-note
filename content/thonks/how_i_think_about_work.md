@@ -1,7 +1,7 @@
 ---
 aliases:
 created: 2025-06-29
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-06-29
 tags:
@@ -16,7 +16,7 @@ Several things in life have prompted me to think more deliberately about work: d
 
 So I think it's time to do some thinking on paper and see what comes out!
 
->[!warning] Health warning
+> [!warning] Health warning
 > I am in a position where I have a solid foundation (have done a PhD), have enough of a job history to feel safe about finding the next one - so what comes next is pretty entitled but that is the way the world is structured right now.
 
 # Work is just solving a money problem
@@ -25,7 +25,7 @@ My main takeaway from *The 4-Hour Work Week* was this: work is the solution to a
 
 So let's frame the problem correctly. I need about £2,500/month after tax to live like I do now in London (expensive city, I'm lazy about cooking). If I want this lifestyle for my whole life but only work until 65, I need to earn roughly £4,050/month after tax.
 
->[!note] For the nerds
+> [!note] For the nerds
 >See the appendix for the detailed math on how I got to £4,050/month - it's just basic arithmetic but I found working through the numbers really helpful for thinking about this stuff.
 
 More money is always good - but only if the cost is right.
@@ -53,9 +53,9 @@ I don't, but you may have situations where you can only work 20 hours a week or 
 
 # Graph this
 
-The graph is simple with two axes income against your weighted work hours. At each point in this 2D graph I am going to think how I would feel being here. More money for the same hours is better. Less hours for the same money is better. Though what is interesting is looking at how valuable an extra hour of work is at different amounts of work/income. To make this simpler I picked 5 mental states: unbearable, bearable, fine, good, and made it - and then drew the dividing lines between them.
+The graph is simple with two axes: income against your weighted work hours. At each point in this 2D graph I am going to think how I would feel being here. More money for the same hours is better. Less hours for the same money is better. Though what is interesting is looking at how valuable an extra hour of work is at different amounts of work/income. To make this simpler I picked 5 mental states: unbearable, bearable, fine, good, and made it - and then drew the dividing lines between them.
 
-![Life graph contors](../../static/images/excalidraw/Life_graph_contors.excalidraw.svg)
+![Life graph contours](../../static/images/excalidraw/Life_graph_contors.excalidraw.svg)
 
 I should acknowledge this assumes I have choices - I'm privileged to have in-demand skills, good health, and low responsibilities. But even with limited options, the core question remains: what trade-off between money and hours makes sense for you?
 
@@ -73,7 +73,7 @@ I can sink lots of time into things. I did this during my undergrad because I th
 
 Same with my PhD. It was transformational - I lost weight, had my first partner, made great friends, started to build an actual personality and first listened to philosophy. But I was always focused on getting the PhD itself, which again felt cheap when it happened (thanks, COVID). What I loved was the journey, not the destination.
 
->[!quote] My PhD examiner
+> [!quote] My PhD examiner
 >If this was a real viva (PhD exam) I would make you ...
 
 I have been reading Stoic and Taoist philosophy recently. Stoics teach you can only control your actions, not outcomes. Taoists talk about wu wei - going with the natural flow rather than forcing outcomes. Both suggest obsessing over destinations you can't control is a recipe for suffering.

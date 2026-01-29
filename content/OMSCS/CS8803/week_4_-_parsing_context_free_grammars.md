@@ -55,7 +55,7 @@ Whilst there are other strategies to pick which node to expand next, these are n
 > 1. The root is labeled $S$.
 > 2. Each leaf is from $\Sigma \cup \{\epsilon\}$.
 > 3. Each interior node is in $V$.
-> 4. If a node has a label $A \in V$ and it has children $a_1, \ldots, a_n$ (from left to right), then $G$ must have a rule $A \rightarrow a_1 \ldots a_n$ (with $a_j \in V \cup \Sigma \cup \{\epsilon\}$). A leaf labelled $\epsilon$ is a single child (has no siblings). 
+> 4. If a node has a label $A \in V$ and it has children $a_1, \ldots, a_n$ (from left to right), then $G$ must have a rule $A \rightarrow a_1 \ldots a_n$ (with $a_j \in V \cup \Sigma \cup \{\epsilon\}$). A leaf labelled $\epsilon$ is a single child (has no siblings).
 
 > [!definition] Language
 > Let $G$ be a context free grammar.

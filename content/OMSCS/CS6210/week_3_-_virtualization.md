@@ -3,7 +3,7 @@ aliases:
 course_code: CS6210
 course_name: Advanced Operating Systems
 created: 2025-09-04
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-09-04
 tags:
@@ -17,15 +17,15 @@ As a refresher please read:
 
 [Week 12 - Virtualization](../CS6200/week_12_-_virtualization.md)
 
- Memory Virtualisation
+## Memory Virtualisation
 
 # Address Translation
 
-When hosting guest operating systems on top of a hyper visor we need to make memory appear as it would to a normal OS.
+When hosting guest operating systems on top of a hypervisor we need to make memory appear as it would to a normal OS.
 For the CPU cache which is physically tagged, there is no special operations we need to perform.
 However, for virtual memory we need to be able to map it to 'machine memory' correctly.
 
-Within Virtualisation there are two mappings involved with any virtual to machine memory mapping.
+Within virtualisation there are two mappings involved with any virtual to machine memory mapping.
 
 1. The Guest OS maps from a Virtual Page Number (VPN) to what it thinks is a Physical Page Number (PPN).
 
@@ -78,10 +78,10 @@ The key insight is that **page table updates are infrequent compared to memory a
 ## Para Virtualisation
 
 In the para virtualised setting, the guest OS is aware it is running on a hypervisor.
-This means the guest OS can also be aware of what MPN's it as an operating system has been allocated.
-This will uses these addresses to assign to VPN's when dealing with applications it controls.
+This means the guest OS can also be aware of what MPNs it as an operating system has been allocated.
+It uses these addresses to assign to VPNs when dealing with applications it controls.
 Therefore, it can make special hypercalls to the hypervisor when it wants to update its page tables.
-In Zen, this is done using 3 special hypercalls:
+In Xen, this is done using 3 special hypercalls:
 
 1. **Create PT**: When it needs to create a new page table
 
@@ -116,13 +116,13 @@ This strategy can be used in both the full virtualisation and para virtualisatio
 
 # Memory Sharing
 
-When running multiple guest OS's on the same hypervisor you may have memory that is identicle in both guest OS's (for example the code of an application running on both OS's).
+When running multiple guest OSs on the same hypervisor you may have memory that is identical in both guest OSs (for example the code of an application running on both OSs).
 In this setting, it would be optimal to reuse the same MPN for both VPN.
 If the memory is likely to be read only, then it would be safe to do this mapping and save the settings for that memory as COW (Copy On Write).
 
 ## Cooperative Sharing
 
-If the guest OS's are aware they are running on a hypervisor, and are cooperative then they can make pages (such as code) that are likely to be duplicated as that.
+If the guest OSs are aware they are running on a hypervisor and are cooperative, then they can make pages (such as code) that are likely to be duplicated as such.
 Then the hypervisor can make decisions about optimally cross mapping these pages.
 
 ## Oblivious page sharing
@@ -141,14 +141,14 @@ This technique can be done on both fully virtualised and para virtualised system
 
 In a commercial setting there are two policies when it comes to memory allocation.
 
-- Pure share based: You may for exactly the memory you get, and you get allocated exactly that.
+- Pure share based: You pay exactly for the memory you get, and you get allocated exactly that.
 
 - Working-set based: You pay for the working set of your applications.
 
 Both these extremes have downsides and upsides, however a hybrid approach is often adopted.
 In this you claim an amount of memory but for the unused memory only a certain percentage is guaranteed to be reserved, the rest will be freed up for other machines.
 
- CPU Virtualisation
+## CPU Virtualisation
 
 When virtualising a CPU you need to give the Guest OS the illusion they are in full control of the CPU's.
 This not only involves allocating CPU's to the guest OS's but handling discontinuities arising from interruptions.
@@ -178,7 +178,7 @@ The issue with all of these is the process is running on the hypervisor at hardw
 Therefore any event needs to be passed from the hypervisor into the guest OS.
 These will all need to be delivered as software interrupts to the guest OS.
 
-# Historic note: Geust OS -> Hypervisor
+# Historic note: Guest OS -> Hypervisor
 
 For fully virtualised systems, old version of the x86 architecture has some system calls that would fail silently.
 Whilst most of these would raise a trap to the hypervisor, these few set of operations would not.
@@ -186,9 +186,9 @@ The only way to fix this was to scan the OS binary for these operations and patc
 This has been fixed in the latest version of the x86 architecture.
 This was only an issue in fully virtualised systems as para virtualised systems would use special hypercalls to make these operations instead.
 
- Device Virtualisation
+## Device Virtualisation
 
-When running a hypervisor you need for the guest OS's to think they have fully control of the devices on the system.
+When running a hypervisor you need for guest OSs to think they have full control of the devices on the system.
 
 # Full Virtualisation
 
@@ -225,13 +225,13 @@ To ensure smooth operation, the hypervisor pins the pages of machine memory to m
 
 Some examples of this are:
 
-- Network transfer: For communication with a NIC, the hypervisor reserves two rings: one for packets out, and the others for packets in.
+- Network transfer: For communication with a NIC, the hypervisor reserves two rings: one for packets out, and one for packets in.
 
 - Disk I/O: Disk operations, it reserves one ring for each guest OS.
-This enables requests to be reordered for competing domains (i.e. two guest OS's requesting pages at the same time).
+This enables requests to be reordered for competing domains (i.e. two guest OSs requesting pages at the same time).
 However, this can be limited by the use of a Reorder barrier if the OS requests need to happen in a fixed order.
 
- Concluding remarks
+# Concluding remarks
 
 For commercialisation, with all these operations measuring resource usage is very important to give fair billing to customers.
 

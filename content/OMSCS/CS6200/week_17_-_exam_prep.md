@@ -3,7 +3,7 @@ aliases:
 course_code: CS6200
 course_name: Graduate introduction to Operating Systems
 created: 2025-04-23
-date_checked:
+date_checked: 2026-01-29
 draft: true
 last_edited: 2025-04-23
 tags:
@@ -14,7 +14,7 @@ week:
 ---
 # Scheduling
 
-1.      How does scheduling work? What are the basic steps and datastructures involved in scheduling a thread on the CPU?
+1.      How does scheduling work? What are the basic steps and data structures involved in scheduling a thread on the CPU?
 
 2.      What are the overheads associated with scheduling? Do you understand the tradeoffs associated with the frequency of preemption and scheduling/what types of workloads benefit from frequent vs. infrequent intervention of the scheduler (short vs. long timeslices)?
 
@@ -42,7 +42,7 @@ week:
 
 2.   For processes to communicate using a shared memory-based communication channel, do they still have to copy data from one location to another? What are the costs associated with copying vs. (re-/m)mapping? What are the tradeoffs between message-based vs. shared-memory-based communication?
 
-3.   What are different ways you can implement synchronization between different processes (think what kids of options you had in Project 3).
+3.   What are different ways you can implement synchronization between different processes (think what kinds of options you had in Project 3).
 
 # Synchronization
 
@@ -67,12 +67,12 @@ week:
 
 4.   What’s the motivation for RPC? What are the various design points that have to be sorted out in implementing an RPC runtime (e.g., binding process, failure semantics, interface specification… )? What are some of the options and associated tradeoffs?
 5.   What’s specifically done in Sun RPC for these design points – you should easily understand this from your project?
-6.   What’s marshalling/unmarschaling? How does an RPC runtime serialize and deserialize complex variable size data structures? What’s specifically done in Sun RPC/XDR?
+6.   What’s marshalling/unmarshalling? How does an RPC runtime serialize and deserialize complex variable size data structures? What’s specifically done in Sun RPC/XDR?
 
 # Distributed file system
 
 7.   What are some of the design options in implementing a distributed service? What are the tradeoffs associated with a stateless vs. stateful design? What are the tradeoffs (benefits and costs) associated with using techniques such as caching, replication, partitioning, in the implementation of a distributed service (think distributed file service).
-8.   The Sprite caching paper motivates its design based on empirical data about how users access and share files. Do you understand how the empirical data translated in specific design decisions? Do you understand what type of data structures were needed at the servers’ and at the clients’ side to support the operation of the Sprite system (i.e., what kind of information did they need to keep track of, what kids of fields did they need to include for their per-file/per-client/per-server data structures).
+8.   The Sprite caching paper motivates its design based on empirical data about how users access and share files. Do you understand how the empirical data translated in specific design decisions? Do you understand what type of data structures were needed at the servers’ and at the clients’ side to support the operation of the Sprite system (i.e., what kind of information did they need to keep track of, what kinds of fields did they need to include for their per-file/per-client/per-server data structures).
 
 # Distributed shared memory
 

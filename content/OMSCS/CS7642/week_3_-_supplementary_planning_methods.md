@@ -3,12 +3,12 @@ aliases:
 course_code: CS7642
 course_name: Reinforcement Learning
 created: 2025-05-22
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-05-22
 tags:
   - OMSCS
-title: Week 3 - Supplementary Planning methods
+title: Week 3 - Supplementary planning methods
 type: lecture
 week:
 ---
@@ -37,9 +37,8 @@ The first term $\pi(a \vert s)$ accounts for a probabilistic policy $\pi$ otherw
 [Quality function (RL)](../../notes/quality_function_(rl).md)
 
 Again using the recursive definition of return we get a recursive definition of the return we can derive the quality function in terms of the value function.
-probabilitistic
 $$
-q_{\pi}(s, a) = \mathbb{E}_{\pi}[R-t + \gamma G_{t+1} \vert S_t = s, A_t = a]
+q_{\pi}(s, a) = \mathbb{E}_{\pi}[R_{t+1} + \gamma G_{t+1} \vert S_t = s, A_t = a]
 $$
 Which in simple terms is as follows.
 $$
@@ -64,14 +63,14 @@ v_{\pi}(s) & = \mathbb{E}_{\pi}[G_t \vert S_t = s]\\
 q_{\pi}(s, a) & = \mathbb{E}_{\pi}[G_t \vert S_t = s, A_t = a]\\
 \end{align*}
 $$
-Which in practical terms just means averaging the experienced return of being in the state $s$ (and taking action $a$ for $q$). However note, this is always conditional on following policy $\pi$. When leaning a policy however we want to change $\pi$ and this can be done by looking for the best one!
+Which in practical terms just means averaging the experienced return of being in the state $s$ (and taking action $a$ for $q$). However note, this is always conditional on following policy $\pi$. When learning a policy however we want to change $\pi$ and this can be done by looking for the best one!
 $$
 \begin{align*}
-v_{\ast}(s) & = max_{\pi} v_{\pi}(s)
+v_{\ast}(s) & = \max_{\pi} v_{\pi}(s)
 q_{\pi}(s, a) & = \max_{\pi} q_{\pi}(s,a)
 \end{align*}
 $$
-To solve this beings us back to [Bellman equation](../../notes/bellman_equation.md)'s above.
+To solve this brings us back to [Bellman equation](../../notes/bellman_equation.md)'s above.
 $$
 \begin{align*}
 v_{\ast}(s) & = \max_a \sum_{s' \in S, r \in R} p(s',r \vert s, a) [r + \gamma v_{\ast}(s')]\\

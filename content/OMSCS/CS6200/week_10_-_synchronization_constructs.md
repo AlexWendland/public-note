@@ -3,7 +3,7 @@ aliases:
 course_code: CS6200
 course_name: Graduate introduction to Operating Systems
 created: 2025-03-26
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-03-26
 tags:
@@ -20,7 +20,7 @@ week: 10
 
 [Synchronization](../../notes/synchronization.md)
 
-Previously we discussed [mutexes](../../notes/mutex.md) and [conditional variables](../../notes/conditional_variables_(mutex).md). However these had a couple of downsides:
+Previously we discussed [mutexes](../../notes/mutex.md) and [condition variables](../../notes/conditional_variables_(mutex).md). However these had a couple of downsides:
 - Error prone usage.
 - Lack of expressive power.
 These also needed low level support via [atomic instructions](../../notes/atomic_instruction.md).
@@ -91,7 +91,7 @@ There are 3 desirable traits for a spinlock:
 
 With these goals the first two are in direct conflict with the last one - to make lower the latency and delay we want to access the variable more thus increasing contention.
 
-# Test_and_set spinlock implementation
+# Test and set spinlock implementation
 
 This implementation just spins on an atomic operation. This will have minimal delay and latency as we will immediately get new values however for this we pay with massive contention by all waiting [threads](../../notes/thread.md) updating an atomic value. This means that the releasing [thread](../../notes/thread.md) will be delayed on giving up control.
 
@@ -166,10 +166,10 @@ queuelast = 0; // global
 // lock
 myplace = read_and_increment(queuelast);
 while(flags[myplace mod p] == must-wait);
-flags[myplace mod p] == must-wait;
+flags[myplace mod p] = must-wait;
 
 // unlock
-flags[myplace+1 mod p] = has-lock
+flags[(myplace+1) mod p] = has-lock
 ```
 
 When the lock is released the next process in the queue gets it. This has no contention as the variable we are waiting on is not the atomic. It has minimal delay as the unlocking thread directly signals the waiting thread. Though due to the more complex implementation the latency has gotten worse. However this needs $O(N)$ memory and needs a system the supports read_and_increment atomic operation - which is not widely supported.

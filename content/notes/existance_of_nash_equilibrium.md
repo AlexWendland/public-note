@@ -1,12 +1,12 @@
 ---
 aliases:
 created: 2024-04-06
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-12-05
 tags:
   - game-theory
-title: Existance of Nash equilibrium
+title: Existence of Nash equilibrium
 type: lemma
 ---
 # Statement

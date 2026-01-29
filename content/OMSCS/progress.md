@@ -2,7 +2,7 @@
 aliases:
   - OMSCS
 created: 2026-01-19
-date_checked: 2026-01-25
+date_checked: 2026-01-29
 draft: true
 last_edited: 2026-01-28
 tags:
@@ -34,12 +34,12 @@ type: plan
 
 - [x] CSE6220 Intro to work-span
 
-# Feb 2-8 [ ]
+# Feb 2-8 [x]
 
 - [x] CS8803 P1L4
 - [x] CS8803 HW1 (Feb 3)
 
-- [ ] CSE6220 Intro to OpenMP
+- [x] CSE6220 Intro to OpenMP
 - [x] CSE6220 Comparison-based Sorting
 
 - [x] CS6035 Machine Learning (Feb 8)
@@ -50,7 +50,7 @@ type: plan
 - [ ] CS8803 P1L6
 - [ ] CS8803 Prj1 (Feb 9)
 
-- [ ] CSE6220 Lab 0 (Feb 9)
+- [x] CSE6220 Lab 0 (Feb 9)
 - [ ] CSE6220 Scans and list Ranking
 - [ ] CSE6220 Scaling on GPUs
 
@@ -123,7 +123,7 @@ type: plan
 
 - [ ] CS8803 P4L2
 
-- [ ] CSE6220 Distrubited BFS
+- [ ] CSE6220 Distributed BFS
 
 - [ ] CS6035 Database security (Apr 19)
 

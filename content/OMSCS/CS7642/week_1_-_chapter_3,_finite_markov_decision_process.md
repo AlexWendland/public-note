@@ -19,11 +19,11 @@ Compulsory reading from [Reinforcement learning: An introduction](http://www.inc
 
 [Finite Markov Decision Process](../../notes/finite_markov_decision_process.md)
 
-Using the function $p$ we can calculate some other probabilities.
+Using the function $p$ (defined in the finite Markov decision process), we can calculate some other probabilities.
 
 **State transition probability**: When in state $s_t$ and you take the action $a_t$ the probability of ending up in $s_{t+1}$:
 $$
-t(s_t,a_t,s_{t+1}) = \sum_{r \in R} p(s_{t+1}, r \vert s_t, a_t)
+T(s_t,a_t,s_{t+1}) = \sum_{r \in R} p(s_{t+1}, r \vert s_t, a_t)
 $$
 **Expected state-action reward**: Given you are in state $s_t$ and take action $a_t$ what is your expected reward:
 $$
@@ -31,7 +31,7 @@ r(s_t,a_t) = \mathbb{E}[R_t \vert s_t, a_t] = \sum_{r \in R} r \sum_{s_{t+1}}p(s
 $$
 # Discounted returns
 
-If we run a game with infinite steps which has positive expected reward for each step, then the value of the game is infinite. Which can make it hard to distinguish better options - as they both are over the long term worth infinite value. Therefore we instead consider [discounted rewards](../../notes/discounted_rewards.md).
+If we run a game with infinite steps with positive expected reward for each step, then the value of the game is infinite. Which can make it hard to distinguish better options - as they both are over the long term worth infinite value. Therefore we instead consider [discounted rewards](../../notes/discounted_rewards.md).
 
 [Discounted rewards](../../notes/discounted_rewards.md)
 

@@ -3,7 +3,7 @@ aliases:
 course_code: CS6210
 course_name: Advanced Operating Systems
 created: 2025-08-29
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-08-29
 tags:
@@ -17,17 +17,17 @@ The OS structure is the way OS is organised with respect to the applications it 
 
 Some desirable traits for this to have are:
 
-- **Protection**: Defending the user from the OS's activities but also the OS from anything ran by the user. Similarly each user from one another.
+- **Protection**: Defending the user from the OS's activities but also the OS from anything run by the user. Similarly each user from one another.
 - **Performance**: The time taken to run the services the OS offers.
 - **Flexibility**: The ability to adapt the services the OS offers for different use cases.
 - **Scalability**: The performance of the OS increases as the resources provided increases.
-- **Agility**: adapting to changes in application needs or resource availability.
+- **Agility**: Adapting to changes in application needs or resource availability.
 - **Responsiveness**: The ability to respond to events in a timely manner.
 
 # Different OS Structures
 
 ## Monolithic OS
-In a monolithic OS, all OS services run in a separate address space from user applications.
+In a monolithic OS, all OS services run in a separate address space than user applications.
 This means all access to the underlying hardware requires a context switch to kernel space.
 
 **Protection**: Excellent - strong isolation between user and kernel space provides robust security.
@@ -44,7 +44,7 @@ In DOS, OS services share the same address space as user applications, eliminati
 DOS was designed for single-user personal computers where the security trade-off was acceptable, but this makes it unsuitable for general-purpose or multi-user systems.
 
 ## Microkernel
-A microkernel provides only core services like [inter-process-communication-ipc](inter-process-communication-ipc.md) and address space management. Other services (file systems, memory management, network drivers) run as user-level applications.
+A microkernel provides only core services like [inter-process communication (IPC)](inter-process-communication-ipc.md) and address space management. Other services (file systems, memory management, network drivers) run as user-level applications.
 
 **Protection**: Moderate - while the minimal kernel reduces the trusted computing base, the distributed architecture creates a larger attack surface and complex inter-service communication that can introduce vulnerabilities.
 **Performance**: Poor - frequent context switches and IPC between services create significant overhead. Each basic operation may require multiple context switches and data copying.
@@ -64,13 +64,13 @@ The performance cost comes not just from context switches but also from data cop
 DOS prioritizes performance at the cost of security.
 Microkernels prioritize flexibility but suffer performance penalties and have complex security considerations.
 
-# Another way
+# Hybrid approaches
 
-There are two other structures that attempt to get the best of all worlds:
+There are three other structures that attempt to get the best of all worlds:
 
-- A thin OS (like a Micro-Kernel), which implements mechanisms not policies.
+- A thin OS (like a microkernel), which implements mechanisms not policies.
 - Access to resources without context switching like DOS.
-- Flexibility for resource management (like a Micro-Kernel) without sacrificing protection (like DOS) or performance (like a Monolith).
+- Flexibility for resource management (like a microkernel) without sacrificing protection (like DOS) or performance (like a monolith).
 
 We look at three different approaches to this
 
@@ -85,10 +85,10 @@ They all try to do the above but in different ways.
 Capabilities are unforgeable tokens that combine both identity and permission into one object.
 Unlike traditional access control where the system checks "Who are you and what are you allowed to do?", capability-based systems ask "Do you have the right token?"
 
-For example, in a c program once you have opened a file descriptor with certain privileges.
+For example, in a C program once you have opened a file descriptor with certain privileges.
 Having this file descriptor in your file descriptor table is sufficient to say you have access to that file - you do not need to check permissions again.
 
- SPIN approach
+## SPIN approach
 
 These notes are based on the paper: Extensibility, Safety and Performance in the SPIN Operating System
 
@@ -153,7 +153,7 @@ This makes the OS flexible to user preferences whilst also using Modula-3's stro
 
 # Examples
 
-Due to the flexibility of SPIN you can turn a lot of OS heavy operations into extensions of the OS to benefit similarly to the Monolith's consolidation.
+Due to the flexibility of SPIN, you can turn many resource-intensive OS operations into extensions of the OS to benefit similarly to the monolith's consolidation.
 
 - **Unix server**: You can extend SPIN to the full capabilities of any other OS, such as Linux, BSD, or even Windows.
 
@@ -163,7 +163,7 @@ This will dramatically speed up network operations as you can avoid context swit
 # Events
 
 Extensions execute in response to system events.
-An event can describe any potential action in the system, such as a virtual memory page fault, the scheduling of a thread, or an IP packet has arrived.
+An event can describe any potential action in the system, such as a virtual memory page fault, the scheduling of a thread, or an IP packet arriving.
 Events are declared within interfaces, and can be dispatched with the overhead of a procedure call.
 Events contain metadata allowing them to be filtered and dispatched to the appropriate handlers.
 
@@ -218,9 +218,9 @@ These are all ran on time-slices which it can do anything with but the global sc
 - Event handlers: Block, unblock, checkpoint, resume.
 - SPIN global scheduler: Interacts with application thread packages.
 
- Exokernel approach
+## Exokernel approach
 
-These notes are based on: Exokernel: An Operating System Architecture for Application-Level Resource Management On Micro-Kernel Construction.
+These notes are based on: Exokernel: An Operating System Architecture for Application-Level Resource Management on Micro-Kernel Construction.
 
 An Exokernel is a minimal kernel that only protects access to hardware resources, handles traps, and shares resources between applications.
 The Exokernel has its own address space which has higher level access to hardware but hosts 'Library OS's that are in separate address spaces which can communicate with the exokernel.
@@ -258,7 +258,7 @@ This will save the amount of work the Library OS has to do when memory is revoke
 # Downloading code (secure binding)
 
 Similarly to SPIN, you can download code into the Exokernel to run on events such as IP packet arrival.
-This can filter an only call the Library OS if it is of the correct type.
+This can filter and only call the Library OS if it is of the correct type.
 However, this is not in a strongly typed language so this code can be more destructive to the OS than in the SPIN example.
 
 > [!example] Page fault
@@ -306,11 +306,11 @@ The other main data structure is the PE table,
 which is a table of handler entry points within the library OS to run on different events.
 Such traps would be exceptions, external interrupts, system calls and addressing context.
 
- L3 Microkernel approach
+## L3 Microkernel approach
 
-Within the SPIN and Exokernel papers they compared their approaches to the Mach Microkernel.
+In the SPIN and Exokernel papers, they compared their approaches to the Mach Microkernel.
 However, the Mach Microkernel was built for portability between many architectures rather than performance.
-Within the L3 Microkernel we will see how when optimising for a particular processor we can get fast performance.
+With the L3 Microkernel, we will see how optimising for a particular processor allows us to achieve much better performance.
 
 Typically, a Microkernel would run a small kernel in a privileged mode that covers the basics a kernel needs to offer: IPC, address spaces, threads, and UID (Unique Identifiers).
 Then all other services run as user level processes such as CPU scheduling, file system, and memory manager.
@@ -396,16 +396,16 @@ In the L3 paper it shows this can be competitive in comparison to SPIN or the Ex
 
 # Memory effects
 
-Alongside the TLB, we have the CPU cache which is arranged in a hierarchical manner as below:
+Alongside the TLB, we have the CPU cache which is arranged in a hierarchical manner as follows:
 
-- CPU registers: What is directly on the CPU,
-- L1 cache: Smallest and fastest cache,
-- L2 cache: Second fastest cache,
-- L3 cache: Largest and slowest cache,
-- Main memory: Slowest access.
-- Disk: Can be used when the virtual memory is larger than the physical memory to save pages.
+- CPU registers: Direct access on the CPU
+- L1 cache: Smallest and fastest cache
+- L2 cache: Second fastest cache
+- L3 cache: Largest and slowest cache
+- Main memory: Slowest access
+- Disk: Used when virtual memory exceeds physical memory to save pages
 
-Quite often the Ln caches are typically physically tagged.
+Quite often the L_n caches are physically tagged.
 This means they group memory as they are arranged within the physical memory.
 
 The suggestion within the L3 paper is to have your protection domains to be small and all within the same hardware address space.

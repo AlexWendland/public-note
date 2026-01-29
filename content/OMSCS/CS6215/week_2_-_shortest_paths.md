@@ -3,7 +3,7 @@ aliases: []
 course_code: CS6215
 course_name: Introduction to Graduate Algorithms
 created: 2023-09-05
-date_checked:
+date_checked: 2026-01-29
 draft: false
 last_edited: 2025-12-05
 tags:
@@ -14,7 +14,7 @@ week: '2'
 ---
 
 > [!definition] Shortest path problem
-> Given a [directed graph](../../notes/directed_graph.md) $(V, E)$ with [edge weights](../../notes/edge_weights.md) $w: E \rightarrow \mathbb{R}$ and a start vertex $s \in V$ - the shortest path problem is to find the shortest distance between $s \in V$ and $z \in V$ for every $x$. This is called $\mbox{dist}(z)$ with the formal definition
+> Given a [directed graph](../../notes/directed_graph.md) $(V, E)$ with [edge weights](../../notes/edge_weights.md) $w: E \rightarrow \mathbb{R}$ and a start vertex $s \in V$ - the shortest path problem is to find the shortest distance between $s \in V$ and $z \in V$ for every $z$. This is called $\mbox{dist}(z)$ with the formal definition
 > $$\mbox{dist}_s(z) = \min_{\substack{p \mbox{ path}\\ s \mbox{ to } z}} \sum_{e \in p} w(e)$$
 > where $p$ is a [path](../../notes/path_(graph).md) that starts at $s$ and ends at $z$.
 
@@ -22,13 +22,13 @@ The classic solution to this is [Dijkstra's algorithm](../../notes/dijkstra's_al
 
 # Negative weight cycles
 
-If there is a [cycle](../../notes/cycle_(graph).md) that has negative total weight then the problem is not well defined as you can always extend you path with another loop of the cycle to reduce your weight.
+If there is a [cycle](../../notes/cycle_(graph).md) that has negative total weight then the problem is not well defined as you can always extend your path with another loop of the cycle to reduce your weight.
 
-The first step of our algorithm will be looking up if there is such a cycle.
+The first step of our algorithm is to determine if there is such a cycle.
 
 # Case 1: No negative weight cycles
 
-In this case you can guarantee that paths will only visit each vertex at most once. So they will use at most $\vert V \vert - 1$ edges. So it is enough to solve the subproblem.
+In this case you can guarantee that paths will only visit each vertex at most once. Therefore, they use at most $\vert V \vert - 1$ edges. So it is enough to solve the subproblem.
 
 Let $D(i,z)$ be the length of the shortest path between $s$ and $z$ that use at most $0 \leq i \leq n-1$ edges.
 
@@ -51,7 +51,7 @@ for i=1 -> n-1
 return D(n-1, . )
 ```
 
-This takes $O(\vert V \vert \vert E \vert)$ as you could rewrite this psudo-code like this:
+This takes $O(\vert V \vert \vert E \vert)$ as you could rewrite this pseudo-code like this:
 
 ```pseudo
 D(0,s) = 0
@@ -76,12 +76,12 @@ If we run to the $\vert V \vert$ case (note before we stopped at $\vert V \vert 
 
 If you used the [Bellman-Ford algorithm](../../notes/bellman-ford_algorithm.md) for each vertex this would take $O(\vert V \vert^2 \vert E \vert)$. Instead we will define the [Floyd-Warshall algorithm](../../notes/floyd-warshall_algorithm.md) which takes $O(\vert V \vert^3)$ run time - which at worst the same as the [Bellman-Ford algorithm](../../notes/bellman-ford_algorithm.md) as $\vert V \vert - 1 \leq \vert E \vert \leq \vert V \vert^2$ if it is connected without any double edges.
 
-Let $V = \{x_1, \ldots, x_n\}$ in the set up of a new subproblem.
+Let $V = \{x_1, \ldots, x_n\}$ in the setting up of a new subproblem.
 
 Let $D(i,s,t)$ be the length of the shortest path $s$ to $t$ only using $\{x_1, \ldots, x_i\}$ as intermediate vertices.
 
-Base case,
-$$D(0,s,t) = \begin{cases} w(s,t) & \mbox{if } (s,y) \in E\\ \infty & \mbox{otherwise}\end{cases}.$$
+Base case:
+$$D(0,s,t) = \begin{cases} w(s,t) & \mbox{if } (s,t) \in E\\ \infty & \mbox{otherwise}\end{cases}.$$
 The recursion set then is:
 $$D(i,s,t) = \min\{D(i-1,s,t), D(i-1,s,i) + D(i-1,i,t)\}.$$
 > [!question] Why do you only visit $i$ once?
@@ -114,7 +114,7 @@ Within the [Floyd-Warshall algorithm](../../notes/floyd-warshall_algorithm.md) y
 
 From [Algorithms](http://algorithmics.lsi.upc.edu/docs/Dasgupta-Papadimitriou-Vazirani.pdf) by S. Dasgupta, C. Papadimitriou, and U. Vazirani.
 
->[!question] 4.21 Currency exchange
+> [!question] 4.21 Currency exchange
 >Shortest path algorithms can be applied in currency trading. Let $c_1, c_2, \ldots , c_n$ be various currencies; for instance, $c_1$ might be dollars, $c_2$ pounds, and $c_3$ lire. For any two currencies $c_i$ and $c_j$ , there is an exchange rate $r_{i,j}$ ; this means that you can purchase $r_{i,j}$ units of currency $c_j$ in exchange for one unit of $c_i$. These exchange rates satisfy the condition that $r_{i,j} \cdot r_{j,i} < 1$, so that if you start with a unit of currency $c_i$, change it into currency $c_j$ and then convert back to currency $c_i$, you end up with less than one unit of currency $c_i$ (the difference is the cost of the transaction).
 >
 >(a) Give an efficient algorithm for the following problem: Given a set of exchange rates $r_{i,j}$, and two currencies $s$ and $t$, find the most advantageous sequence of currency exchanges for converting currency $s$ into currency $t$. Toward this goal, you should represent the currencies and rates by a graph whose edge lengths are real numbers.
