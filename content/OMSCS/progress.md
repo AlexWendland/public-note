@@ -48,7 +48,7 @@ type: plan
 
 - [ ] CS8803 P1L5
 - [ ] CS8803 P1L6
-- [ ] CS8803 Prj1 (Feb 9)
+- [x] CS8803 Prj1 (Feb 9)
 
 - [x] CSE6220 Lab 0 (Feb 9)
 - [ ] CSE6220 Scans and list Ranking
