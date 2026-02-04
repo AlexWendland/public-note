@@ -133,7 +133,7 @@ To turn this into something we can use from above we apply [Bayes rule](../../no
 $$\mathbb{P}[S \vert V, \lnot P, \lnot U] = \frac{\mathbb{P}[V, \lnot P, \lnot U \vert S] \mathbb{P}[S]}{\mathbb{P}[V, \lnot P, \lnot U]}.$$
 (Shortening the words to their first letters.) Next we apply the [chain rule](../../notes/chain_rule_(probability).md) but knowing that $V$ $P$ and $U$ are [conditionally independent](conditional_independence.md).
 $$
-\begin{align*}
+\begin{aligned}
 \mathbb{P}[S \vert V, \lnot P, \lnot U] & = \frac{\mathbb{P}[V, \lnot P, \lnot U \vert S] \mathbb{P}[S]}{\mathbb{P}[V, \lnot P, \lnot U]}\\
 & = \frac{\left ( \mathbb{P}[V \vert \lnot P, \lnot U, S] \mathbb{P}[\lnot P \vert \lnot U, S] \mathbb{P}[\lnot U \vert S] \right ) \mathbb{P}[S]}{\mathbb{P}[V, \lnot P, \lnot U]} & \mbox{chain rule}\\
 & = \frac{\left ( \mathbb{P}[V \vert S] \mathbb{P}[\lnot P \vert S] \mathbb{P}[\lnot U \vert S] \right ) \mathbb{P}[S]}{\mathbb{P}[V, \lnot P, \lnot U]} & \mbox{conditional independence}\\
@@ -141,7 +141,7 @@ $$
 & = \frac{\left ( \mathbb{P}[V \vert S] \mathbb{P}[\lnot P \vert S] \mathbb{P}[\lnot U \vert S] \right ) \mathbb{P}[S]}{\sum_{X \in \{S, \lnot S\}} \mathbb{P}[V \vert X] \mathbb{P}[\lnot P \vert X] \mathbb{P}[\lnot U \vert X] \mathbb{P}[X]} & \mbox{chain and c.i.}\\
 & = \frac{0.3*0.8*0.9999*0.4}{0.3*0.8*0.9999*0.4 + 0.001*0.9*0.9*0.6} & \mbox{substution}\\
 & \approx 0.9949
-\end{align*}
+\end{aligned}
 $$
 
 We want to do this but not have to crack out the pen and paper every time.

@@ -58,24 +58,24 @@ $$
 $$
 after seeing these samples we can calculate the [Return (RL)](../../notes/return_(rl).md) for each step within the trajectory and use it estimate the [value function](../../notes/value_function_(rl).md) and [quality function](../../notes/quality_function_(rl).md) above.
 $$
-\begin{align*}
+\begin{aligned}
 v_{\pi}(s) & = \mathbb{E}_{\pi}[G_t \vert S_t = s]\\
 q_{\pi}(s, a) & = \mathbb{E}_{\pi}[G_t \vert S_t = s, A_t = a]\\
-\end{align*}
+\end{aligned}
 $$
 Which in practical terms just means averaging the experienced return of being in the state $s$ (and taking action $a$ for $q$). However note, this is always conditional on following policy $\pi$. When learning a policy however we want to change $\pi$ and this can be done by looking for the best one!
 $$
-\begin{align*}
+\begin{aligned}
 v_{\ast}(s) & = \max_{\pi} v_{\pi}(s)
 q_{\pi}(s, a) & = \max_{\pi} q_{\pi}(s,a)
-\end{align*}
+\end{aligned}
 $$
 To solve this brings us back to [Bellman equation](../../notes/bellman_equation.md)'s above.
 $$
-\begin{align*}
+\begin{aligned}
 v_{\ast}(s) & = \max_a \sum_{s' \in S, r \in R} p(s',r \vert s, a) [r + \gamma v_{\ast}(s')]\\
 q_{\ast}(s, a) & = \sum_{s' \in S, r \in R} p(s',r \vert s, a)[r + \gamma \max_{a' \in A} q_{\ast}(s',a')]
-\end{align*}
+\end{aligned}
 $$
 # Policy iteration
 

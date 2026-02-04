@@ -104,7 +104,7 @@ Let's make some observations about this mapping:
 Now let $w_k := \vert l^{-1}(k) \vert$ be the number of vertices assigned label $k$.
 With this we can get a bound on the execution time of this DAG:
 $$
-\begin{align*}
+\begin{aligned}
 T_p(n) & \leq \sum_{k=1}^{D(n)} \left \lceil \frac{w_k}{p} \right \rceil\\
 & \leq \sum_{k=1}^{D(n)} \left \lfloor \frac{w_k - 1}{p} \right \rfloor + 1\\
 & \leq \sum_{k=1}^{D(n)} \frac{w_k - 1}{p} + 1\\
@@ -141,12 +141,12 @@ The best case speedup is $T_p(n) = \frac{T_1(n)}{p}$ giving us a linear speedup 
 Using Brent's theorem we can get a lower bound on speedup.
 
 $$
-\begin{align*}
+\begin{aligned}
 S_p(n) & = \frac{W_1(n)}{T_p(n)}\\
 & \geq \frac{W_1(n)}{\frac{W_p(n) - D_p(n)}{p} + D_p(n)}\\
 & \geq \frac{p W_1(n)}{W_p(n) + (p-1) D_p(n)}\\
 & \geq \frac{p}{\frac{W_p(n)}{W_1(n)} + \frac{p-1}{W_1(n)/D_p(n)}}\\
-\end{align*}
+\end{aligned}
 $$
 
 So to attain linear speed up ideally we want:

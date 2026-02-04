@@ -19,8 +19,8 @@ type: lemma
 
 This follows from the definition of [conditional probability](conditional_probability.md)
 $$
-\begin{align*}
+\begin{aligned}
 \mathbb{P}[A \vert B] = & \frac{\mathbb{P}[A \cap B]}{\mathbb{P}[B]} & \mbox{from the definition of } \mathbb{P}[A \vert B]\\
 = & \frac{\mathbb{P}[B \vert A] \cdot \mathbb{P}[A]}{\mathbb{P}[B]} & \mbox{as } \mathbb{P}[B \vert A] = \frac{\mathbb{P}[A \cap B]}{\mathbb{P}[A]}.
-\end{align*}
+\end{aligned}
 $$

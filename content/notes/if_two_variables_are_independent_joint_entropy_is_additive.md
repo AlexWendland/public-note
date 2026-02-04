@@ -19,7 +19,7 @@ type: lemma
 
 This follows from the definitions
 $$
-\begin{align*}
+\begin{aligned}
 H(X, Y) = & - \sum_{a \in A} \sum_{b \in B} \mathbb{P}[X = a, Y = b] \log(\mathbb{P}[X = a, Y = b])\\
 = & - \sum_{a \in A} \sum_{b \in B} \mathbb{P}[X = a]\mathbb{P}[Y = b] \log(\mathbb{P}[X = a]\mathbb{P}[Y = b])\\
 = & - \sum_{a \in A} \sum_{b \in B} \mathbb{P}[X = a]\mathbb{P}[Y = b] \log(\mathbb{P}[X = a])\\
@@ -27,5 +27,5 @@ H(X, Y) = & - \sum_{a \in A} \sum_{b \in B} \mathbb{P}[X = a, Y = b] \log(\mathb
 = & \sum_{b \in B} \mathbb{P}[Y = b] \left ( - \sum_{a \in A} \mathbb{P}[X = a] \log(\mathbb{P}[X = a]) \right )\\
 & \hspace{0.5 in}+ \sum_{a \in A} \mathbb{P}[X = a] \left ( - \sum_{b \in B} \mathbb{P}[Y = b] \log(\mathbb{P}[Y = b]) \right )\\
 = & H(X) + H(Y)
-\end{align*}
+\end{aligned}
 $$

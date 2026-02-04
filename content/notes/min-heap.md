@@ -55,11 +55,11 @@ The key insight for linear time complexity: we process fewer nodes at higher lev
 In a tree of depth $d := \lfloor \log_2(n) \rfloor$, each node at layer $l$ requires at most $d-l$ swaps, since the element gets swapped down to its correct position.
 This takes the following number of operations:
 $$
-\begin{align*}
+\begin{aligned}
 \sum_{l=0}^{d-1} 2^l (d-l) & \leq \sum_{l=0}^{d-1} \frac{2^d (d-l)}{2^{d-l}}\\
 & \leq \sum_{h=0}^{d-1} n \frac{h}{2^h} & \mbox{where } h = d-l\\
 & \leq 2n & \mbox{as } \sum_{h=0}^{\infty} \frac{h}{2^h} = 2
-\end{align*}
+\end{aligned}
 $$
 
 ## Insert

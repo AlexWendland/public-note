@@ -33,11 +33,11 @@ y_n
 $$
 in a completely not mathematically sound way we can do the following rearrangement
 $$
-\begin{align*}
+\begin{aligned}
 XC & \approx Y\\
 X^TX C & \approx X^TY & \mbox{this makes } X^TX \mbox{ square}\\
 (X^TX)^{-1}(X^TX) C & \approx (X^TX)^{-1} X^TY & \mbox{assuming } (X^TX)^{-1} \mbox{ is invertable}\\
 C & \approx (X^TX)^{-1} X^TY
-\end{align*}
+\end{aligned}
 $$
 completing our fuzzy maths. We use this as our definition of $C$ and moreover this has some nice properties that actually minimises $C$ with respect to [MSE](mean_squared_error_(mse).md). This can expand out to be multi-variate by increasing the size of $X$ and $C$ respectively.

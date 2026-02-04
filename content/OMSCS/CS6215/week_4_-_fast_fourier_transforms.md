@@ -157,10 +157,10 @@ When $x_j = \omega_n^j$, we denote this as $A = M_n(\omega_n) a$. Computing the 
 Let us examine
 $$M_n(\omega_n^{-1}) M_n(\omega_n) := \{m_{i,j}\}.$$
 For these terms, we have
-$$ \begin{align*} m_{j,k} & = \left( 1, \omega_n^{-j}, \omega_n^{-2j}, \ldots, \omega_n^{-(n-1)j} \right ) \cdot \left( 1, \omega_n^{k}, \omega_n^{2k}, \ldots, \omega_n^{(n-1)k} \right )\\
+$$ \begin{aligned} m_{j,k} & = \left( 1, \omega_n^{-j}, \omega_n^{-2j}, \ldots, \omega_n^{-(n-1)j} \right ) \cdot \left( 1, \omega_n^{k}, \omega_n^{2k}, \ldots, \omega_n^{(n-1)k} \right )\\
 & = \sum_{i=0}^{n-1} \omega_n^{i(k-j)}\\
 & = \sum_{i=0}^{n-1} \left ( \omega_n^{k-j} \right )^i
-\end{align*}$$
+\end{aligned}$$
 This splits into cases: if $j = k$, then $\omega_n^{k-j} = 1$ and the sum equals $n$. If $j \neq k$, then from the [sum of roots of unity](../../notes/sum_of_roots_of_unity.md), the sum equals $0$. Therefore,
 $$ M_n(\omega_n^{-1}) M_n(\omega_n) = n I_n$$
 giving us the desired result.

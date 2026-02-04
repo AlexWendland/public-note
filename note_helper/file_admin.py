@@ -9,8 +9,8 @@ from note_helper import constants, file_admin, models, read_note
 
 logger = logging.getLogger(__name__)
 
-# Migration date to skip (when files were moved/frontmatter was reformatted)
-MIGRATION_DATE = datetime.date(2026, 1, 25)
+# Update this to the last big update date.
+MIGRATION_DATE = datetime.date(2026, 2, 4)
 
 
 def update_last_edited(note_file: models.NoteFile):

@@ -60,40 +60,40 @@ You add two numbers just as you would [unsigned integers](signed_or_unsigned_int
 Let's add 10 = 0000 1010 with 12 = 0000 1100
 
 $$
-\begin{align*}
+\begin{aligned}
 10 + 12 & = 0000\ 1010\\
 & + 0000\ 1100\\
 & = 0001\ 0110\\
 & = 16 + 4 + 2\\
 & = 22.
-\end{align*}
+\end{aligned}
 $$
 ## Negative with a positive
 
 Let's add -5 = 1111 1011 with 10 = 0000 1010
 
 $$
-\begin{align*}
+\begin{aligned}
 -5 + 10 & = 1111\ 1011 \\
 & + 0000\ 1010\\
 & = 0000\ 0101\\
 & = 4 + 1\\
 & = 5.
-\end{align*}
+\end{aligned}
 $$
 ## Two negative
 
 Let's add -5 = 1111 1011 with -16 = 1111 0000
 
 $$
-\begin{align*}
+\begin{aligned}
 -5 + (-16) & = 1111\ 1011 \\
 & + 1111\ 0000\\
 & = 1110\ 1011\\
 & = (-)\ 0001\ 0101\\
 & = (-)\ (16 + 4 + 1)\\
 & = -21.
-\end{align*}
+\end{aligned}
 $$
 
 > [!note] Overflow detection

@@ -41,14 +41,14 @@ Therefore these two inequalities provide the required result.
 # Proof of Claim 1
 
 This follows from playing around with formulas
-$$\begin{align*}
+$$\begin{aligned}
 f^{out}(L) - f^{in}(L) = & \sum_{\substack{(l,r) \in E\\ l \in L, r \in R}} f(l,r) - \sum_{\substack{(r,l) \in E\\ l \in L, r \in R}} f(r,l)\\
 = & \left ( \sum_{\substack{(l,r) \in E\\ l \in L, r \in R}} f(l,r) + \sum_{\substack{(l,l^{\ast}) \in E\\ l, l^{\ast} \in L}} f(l,l^{\ast}) \right ) - \left ( \sum_{\substack{(r,l) \in E\\ l \in L, r \in R}} f(r,l) + \sum_{\substack{(l^{\ast},l) \in E\\ l, l^{\ast} \in L}} f(l^{\ast},l)\right )\\
 = & \sum_{l \in L} f^{out}(l) + \sum_{l \in L} f^{in}(l)\\
 = & f^{out}(s) + \sum_{l \in L \backslash \{s\}} \left(f^{out}(l) - f^{in}(v)\right)\\
 = & f^{out}(s)\\
 = & size(f)
-\end{align*}$$
+\end{aligned}$$
 With the 4th line following from the fact that we can assume $s$ has no in flow. The 5th line follows from the preservation of flow.
 
 # Claim 2
@@ -70,9 +70,9 @@ Now consider edge $(l,r) \in E$ with $l \in L^{\ast}$ and $r \in R^{\ast}$ as th
 Similarly for edges $(r,l) \in E$ with $l \in L^{\ast}$ and $r \in R^{\ast}$ as there is no edge $(l,r) \in E^{f^{\ast}}$ we have $f^{\ast}(r,l) = 0$.
 
 From [Claim 1](max-flow_min-cut_theorem.md#claim-1) we have
-$$\begin{align*}size(f^{\ast}) & = (f^{\ast})^{out}(L) + (f^{\ast})^{in}(L)\\
+$$\begin{aligned}size(f^{\ast}) & = (f^{\ast})^{out}(L) + (f^{\ast})^{in}(L)\\
 & =  \sum_{\substack{(l,r) \in E\\ l \in L, r \in R}} f^{\ast}(l,r) + \sum_{\substack{(r,l) \in E\\ l \in L, r \in R}} f^{\ast}(r,l)\\
 & = \sum_{\substack{(l,r) \in E\\ l \in L, r \in R}} c(l,r)\\
-& = capacity(L^{\ast}, R^{\ast}).\end{align*}$$
+& = capacity(L^{\ast}, R^{\ast}).\end{aligned}$$
 
 

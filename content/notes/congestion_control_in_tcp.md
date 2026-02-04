@@ -62,12 +62,12 @@ $$
 $$
 Therefore we can compute the bandwidth of this connection.
 $$
-\begin{align*}
+\begin{aligned}
 BW & = \frac{\mbox{data per cycle}}{\mbox{time per cycle}}\\
 & = \frac{MSS \cdot \frac{1}{p}}{RTT \cdot \frac{W}{2}}\\
 & = \frac{MSS}{RTT} \cdot \frac{\sqrt{\frac{3}{2}}}{\sqrt{p}}\\
 & = \frac{MSS}{RTT} \cdot \frac{C}{\sqrt{p}}
-\end{align*}
+\end{aligned}
 $$
 We set $C$ to be a constant as we can study this in practice rather than just in theory. In practice we see that $C$ is regularly less than 1, so we say
 $$

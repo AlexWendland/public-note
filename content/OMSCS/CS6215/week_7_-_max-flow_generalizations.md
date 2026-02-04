@@ -44,12 +44,12 @@ $$ \sum_{(u,v) \in E} f(u,v) = \sum_{(v,w) \in E} f(v,w).$$
 We have that $f'$ is valid, so for any $v \in V$
 $$\sum_{(u,v) \in E'} f'(u,v) = \sum_{(v,w) \in E'} f'(v,w).$$
 Lets break this edge set down for $v \in V \backslash \{s, t \}$
-$$\begin{align*}
+$$\begin{aligned}
 \sum_{(u,v) \in E'} f'(u,v) & = \left ( \sum_{(u,v) \in E} f'(u,v) \right ) + \left ( \sum_{(s',v) \in E} f'(s',v) \right )\\
 & = \left ( \sum_{(u,v) \in E} f'(u,v) \right ) + \left ( \sum_{(u,v) \in E} d(u,v) \right )\\
 & =  \sum_{(u,v) \in E} f'(u,v) + d(u,v)\\
 & = \sum_{(u,v) \in E} f(u,v)
-\end{align*}$$
+\end{aligned}$$
 which similarly we get
 $$\sum_{(v,w) \in E'} f'(v,w) = \sum_{(v,w) \in E} f(v,w).$$
 This gives us validity of $f$ from the validity of $f'$.
@@ -70,19 +70,19 @@ As $f$ is a feasible flow we have $f'(e) \geq 0$ for all $e \in E'$.
 The main thing to show is that $f'$ is a valid flow.
 
 For $v \in V \backslash \{s, t\}$ calculate
-$$\begin{align*} \sum_{(u,v) \in E'} f'(u,v) & = \left ( \sum_{(u,v) \in E} f(u,v) - d(u,v) \right ) + \sum_{(u,v) \in E} d(u,v)\\
+$$\begin{aligned} \sum_{(u,v) \in E'} f'(u,v) & = \left ( \sum_{(u,v) \in E} f(u,v) - d(u,v) \right ) + \sum_{(u,v) \in E} d(u,v)\\
 & = \sum_{(u,v) \in E} f(u,v)\\
 & = \sum_{(v,w) \in E} f(v,w)\\
 & = \left ( \sum_{(v,w) \in E} f(v,w) - d(v,w) \right ) + \sum_{(v,w) \in E} d(v,w) \\
-& = \sum_{(v,w) \in E'} f'(v,w)\end{align*}$$
+& = \sum_{(v,w) \in E'} f'(v,w)\end{aligned}$$
 giving it is valid here. Whereas for $s$ we have
-$$\begin{align*} \sum_{(u,s) \in E'} f'(u,s) & = \sum_{(s,w) \in E} f(s,w) & \mbox{from } f'(t',s')\\
+$$\begin{aligned} \sum_{(u,s) \in E'} f'(u,s) & = \sum_{(s,w) \in E} f(s,w) & \mbox{from } f'(t',s')\\
 & = \left ( \sum_{(s,w) \in E} f(s,w) - d(s,w) \right ) + \sum_{(s,w) \in E} d(s,w) \\
-& = \sum_{(s,w) \in E'} f'(s,w)\end{align*}$$
+& = \sum_{(s,w) \in E'} f'(s,w)\end{aligned}$$
 similarly for $t$
-$$\begin{align*} \sum_{(t,w) \in E'} f'(t,w) & = \sum_{(u,t) \in E} f(u,t) & \mbox{from } f'(s',t')\\
+$$\begin{aligned} \sum_{(t,w) \in E'} f'(t,w) & = \sum_{(u,t) \in E} f(u,t) & \mbox{from } f'(s',t')\\
 & = \left ( \sum_{(u,t) \in E} f(u,t) - d(u,t) \right ) + \sum_{(u,t) \in E} d(u,t) \\
-& = \sum_{(u,t) \in E'} f'(u,t)\end{align*}$$
+& = \sum_{(u,t) \in E'} f'(u,t)\end{aligned}$$
 giving us validity.
 
 $\square$

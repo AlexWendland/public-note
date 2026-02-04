@@ -90,10 +90,10 @@ $$dist_i(z) \leq dist_{j-1}(z), \mbox{ and } dist_i(y) \leq dist_{j-1}(y).$$
 As we add $(y,z)$ to $G^{f_{j+1}}$ from [Claim 5](edmonds-karp_algorithm.md#claim-5) $(z,y) \in p_{j}$ therefore
 $$dist_j(y) = dist_j(z) + 1.$$
 Combining this all together we have
-$$\begin{align*} dist_j(y) & = dist_j(z) + 1 & \mbox{from the last statment}\\
+$$\begin{aligned} dist_j(y) & = dist_j(z) + 1 & \mbox{from the last statment}\\
 & \geq dist_i(z) + 1 & \mbox{from the second statement}\\
 & \geq (dist_i(y) + 1) + 1 & \mbox{ from the first statement}\\
-& \geq dist_i(y) + 2\end{align*}$$
+& \geq dist_i(y) + 2\end{aligned}$$
 as claimed.
 
 # Claim 4

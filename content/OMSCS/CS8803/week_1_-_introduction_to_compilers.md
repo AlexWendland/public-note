@@ -114,12 +114,12 @@ A Grammar is ambiguous where rules could be applied in multiple ways to give val
 For example:
 
 $$
-\begin{align*}
+\begin{aligned}
 2 * 2 + 3 & = (2 * 2) + 3\\
 & = 7\\
 2 * 2 + 3 & = 2 * (2 + 3)\\
 & = 10\\
-\end{align*}
+\end{aligned}
 $$
 
 Another example closer to code might be:

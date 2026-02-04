@@ -22,11 +22,11 @@ We prove by induction on the cardinality of $S$.
 
 If $\vert S \vert = 1$, then $S = \{s\}$ and $flow^f(S,T)$ is easy to calculate.
 $$
-\begin{align*}
+\begin{aligned}
 flow^f(S,T) & = \left ( \sum_{\substack{(s',t') \in E\\ s' \in S, t' \in T}} f(s',t') \right ) - \left ( \sum_{\substack{(t',s') \in E\\ s' \in S, t' \in T}} f(t',s') \right )\\
 & = \sum_{\substack{(s,v) \in E\\ v \in V}} f(s,v)\\
 & = size(f)
-\end{align*}
+\end{aligned}
 $$
 This gives the desired result.
 
@@ -36,11 +36,11 @@ As $\vert S \vert > 1$ there is an element $s^{\ast} \in S$ with $s^{\ast} \not 
 
 By the conservation of flow we have
 $$
-\begin{align*}
+\begin{aligned}
 0 & = \left ( \sum_{(v,s^{\ast}) \in E} f(v,s^{\ast}) \right ) - \left ( \sum_{(s^{\ast},v) \in E} f(s^{\ast},v) \right )\\
 & = \left ( \sum_{\substack{(s',s^{\ast}) \in E\\ s' \in S'}} f(s',s^{\ast}) + \sum_{\substack{(t',s^{\ast}) \in E\\ t' \in T}} f(t',s^{\ast}) \right ) - \left ( \sum_{\substack{(s^{\ast}, s') \in E\\ s' \in S'}} f(s^{\ast}, s') + \sum_{\substack{(s^{\ast}, t') \in E\\ t' \in T}} f(s^{\ast}, t') \right )\\
 & = \left ( \sum_{\substack{(s',s^{\ast}) \in E\\ s' \in S'}} f(s',s^{\ast}) - \sum_{\substack{(s^{\ast}, s') \in E\\ s' \in S'}} f(s^{\ast}, s')  \right ) - \left ( \sum_{\substack{(s^{\ast}, t') \in E\\ t' \in T}} f(s^{\ast}, t') - \sum_{\substack{(t',s^{\ast}) \in E\\ t' \in T}} f(t',s^{\ast}) \right )
-\end{align*}
+\end{aligned}
 $$
 giving
 $$
@@ -48,14 +48,14 @@ $$
 $$
 As $\vert S' \vert = \vert S \vert - 1 < \vert S \vert$ by induction we have
 $$
-\begin{align*}
+\begin{aligned}
 size(f) & = \left ( \sum_{\substack{(s',t') \in E\\ s' \in S', t' \in T'}} f(s',t') \right ) - \left ( \sum_{\substack{(t',s') \in E\\ s' \in S', t' \in T'}} f(t',s') \right )\\
 & = \left ( \sum_{\substack{(s',\overline{t}) \in E\\ s' \in S', \overline{t} \in T}} f(s',\overline{t}) + \sum_{\substack{(s',s^{\ast}) \in E\\ s' \in S'}} f(s',s^{\ast}) \right ) - \left ( \sum_{\substack{(\overline{t},s') \in E\\ s' \in S', \overline{t} \in T}} f(\overline{t},s') + \sum_{\substack{(s^{\ast}, s') \in E\\ s' \in S'}} f(s^{\ast}, s') \right )\\
 & = \left ( \sum_{\substack{(s',\overline{t}) \in E\\ s' \in S', \overline{t} \in T}} f(s',\overline{t}) - \sum_{\substack{(\overline{t},s') \in E\\ s' \in S', \overline{t} \in T}} f(\overline{t},s') \right ) + \left ( \sum_{\substack{(s',s^{\ast}) \in E\\ s' \in S'}} f(s',s^{\ast}) - \sum_{\substack{(s^{\ast}, s') \in E\\ s' \in S'}} f(s^{\ast}, s') \right)\\
 & = \left ( \sum_{\substack{(s',\overline{t}) \in E\\ s' \in S', \overline{t} \in T}} f(s',\overline{t}) - \sum_{\substack{(\overline{t},s') \in E\\ s' \in S', \overline{t} \in T}} f(\overline{t},s') \right ) + \left ( \sum_{\substack{(s^{\ast}, \overline{t}) \in E\\ \overline{t} \in T}} f(s^{\ast}, \overline{t}) - \sum_{\substack{(\overline{t},s^{\ast}) \in E\\ \overline{t} \in T}} f(\overline{t},s^{\ast}) \right)\\
 & = \left ( \sum_{\substack{(s',t') \in E\\ s' \in S, t' \in T}} f(s',t') \right ) - \left ( \sum_{\substack{(t',s') \in E\\ s' \in S, t' \in T}} f(t',s') \right )\\
 & = flow^f(S,T)
-\end{align*}
+\end{aligned}
 $$
 giving the desired result for $(S, T)$.
 

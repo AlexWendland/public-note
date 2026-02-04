@@ -61,7 +61,7 @@ A word is accepted by an NFA if any of these forked computation paths end in an 
 > - We have $\Sigma = \{0, 1\}$.
 > - We define $\delta$ by:
 > $$
-> \begin{align*}
+> \begin{aligned}
 > \delta(A, 0) &= \{A\} \\
 > \delta(A, 1) &= \{A, B\} \\
 > \delta(A, e) &= \{\} \\
@@ -72,7 +72,7 @@ A word is accepted by an NFA if any of these forked computation paths end in an 
 > \delta(C, 1) &= \{D\} \\
 > \delta(C, e) &= \{\} \\
 > \delta(D, -) &= \{\} \\
-> \end{align*}
+> \end{aligned}
 > $$
 > - The start state is $A$.
 > - The accepting states are $\{D\}$.
@@ -98,10 +98,10 @@ To construct an NFA from a regular expression we need to show how the regular ex
 > Then let $\delta_C(q,s) = \delta_X(q,s)$ for all $q \in Q_X$.
 > So all that remains to be defined is on $start$.
 > $$
-> \begin{align*}
+> \begin{aligned}
 > \delta_C(start, \epsilon) &= \{q_A, q_B\}\\
 > \delta_C(start, s) &= \{\} & \mbox{for all } s \in \Sigma
-> \end{align*}
+> \end{aligned}
 > $$
 >
 > To show $C$ generates the same language as $A \vert B$ we need to show both $L_{C} \subset L_{A \vert B}$ but also $L_{A\vert B} \subset L_{C}$.
@@ -129,10 +129,10 @@ To construct an NFA from a regular expression we need to show how the regular ex
 > Let $\delta_C(q,-) = \delta_X(q,-)$ for all $q \in Q_C \backslash A_A$.
 > Then define $\delta_C$ on $A_A$ as:
 > $$
-> \begin{align*}
+> \begin{aligned}
 > \delta_C(q, s) &=\delta_A(q,s) & \mbox{for } q \in A_A \mbox{ and } s \in \Sigma\\
 > \delta_C(q, \epsilon) &= \delta_A(q,\epsilon) \cup \{q_B\} & \mbox{for } q \in A_A
-> \end{align*}
+> \end{aligned}
 > $$
 >
 > Then $L_{AB} \subset L_C$ as any concatenated word of $AB$ can follow their paths in A and B with a joining $(a, q_B, \epsilon)$ edge for $a \in A_A$.
@@ -149,12 +149,12 @@ To construct an NFA from a regular expression we need to show how the regular ex
 >
 > Now define $\delta_B(q,-) = \delta_A(q,-)$ for all $q \in Q_B \backslash (A_A \cup \{q_A\})$ then define:
 > $$
-> \begin{align*}
+> \begin{aligned}
 > \delta_B(q_A, s) &= \delta(q_A, s) & \mbox{for } s \in \Sigma\\
 > \delta_B(q_A, \epsilon) &= \delta(q_A, \epsilon) \cup A_A\\
 > \delta_B(q, s) &= \delta(q, s) & \mbox{for } q \in A_A \mbox{ and } s \in \Sigma\\
 > \delta_B(q, \epsilon) &= \delta(q, \epsilon) \cup \{q_A\} & \mbox{for } q \in A_A
-> \end{align*}
+> \end{aligned}
 > $$
 >
 > Suppose we have a word in $A*$; then we can realize all subwords in $A$ as paths in $Q_A$.

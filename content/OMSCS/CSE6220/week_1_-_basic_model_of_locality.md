@@ -79,11 +79,11 @@ If we can perfectly overlap these the overall run time would be $T \geq \max(T_{
 We can reformulate this in terms of the idealised run time $T_{comp}$:
 
 $$
-\begin{align*}
+\begin{aligned}
 T & \geq \max(T_{comp}, T_{mem}) \\
 & \geq \tau W(n) \cdot \max \left ( 1, \frac{ \alpha / \tau }{W / (L Q(n,Z,L))} \right ) \\
 & \geq \tau W(n) \cdot \max \left ( 1, \frac{ B / I(n, Z, L) } \right )\\
-\end{align*}
+\end{aligned}
 $$
 
 In this we defined a new term $B := \alpha / \tau$ ops/word, what we will call the 'machine balance'.

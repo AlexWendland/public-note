@@ -112,13 +112,13 @@ c_j = \left ( \bigvee_{i \in c_j^+} x_i \right ) \lor \left ( \bigvee_{i \in c_j
 $$
 Then lets look at
 $$
-\begin{align*}
+\begin{aligned}
 \mathbb{P}(w_j = 1) & = 1 - \mathbb{P}(w_j = 0)\\
 & = 1 - \left [ \prod_{i \in c_j^+} (1 - \hat{y_i^{\ast}}) \cdot \prod_{i \in c_j^-} \hat{y_i^{\ast}} \right ]\\
 & \geq 1 - \left [\frac{1}{k} \left( \sum_{i \in c_j^+} (1 - \hat{y_i^{\ast}}) + \sum_{i \in c_j^-} \hat{y_i^{\ast}}  \right ) \right ]^k & \mbox{by the AM-GM inequality} \\
 & \geq 1 - \left [ 1 - \frac{1}{k} \left ( \sum_{i \in c_j^+} \hat{y_i^{\ast}} + \sum_{i \in c_j^-} (1 - \hat{y_i^{\ast}}) \right ) \right ]\\
 & \geq 1 - \left [ 1 - \frac{\hat{z_j^{\ast}}}{k} \right ]^k & \mbox{as } \sum_{i \in c_j^+} \hat{y_i^{\ast}} + \sum_{i \in c_j^-} (1 - \hat{y_i^{\ast}}) \geq \hat{z_j^{\ast}}\\
-\end{align*}
+\end{aligned}
 $$
 Here comes a little bit of horrible functional analysis. For a fixed $k \in \mathbb{N}$ we claim
 $$
@@ -139,11 +139,11 @@ Whereas the right hand side is linear with respect to $a$. Therefore we have the
 So we can continue
 
 $$
-\begin{align*}
+\begin{aligned}
 \mathbb{P}(w_j = 1) & \geq 1 - \left [ 1 - \frac{\hat{z_j^{\ast}}}{k} \right ]^k\\
 & \geq \left ( 1 - \left [ 1 - \frac{1}{k} \right ]^k \right ) \hat{z_j^{\ast}}\\
 & \geq \left ( 1 - \frac{1}{e} \right )\hat{z_j^{\ast}}
-\end{align*}
+\end{aligned}
 $$
 where this last step comes from the [Taylor expansion](../../notes/taylor_expansion.md) for $e^{-x}$
 $$

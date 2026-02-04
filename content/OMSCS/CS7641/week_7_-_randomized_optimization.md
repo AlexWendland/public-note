@@ -110,20 +110,20 @@ p_{\pi}(a) = \prod_{i = 1}^n p(a_i \vert a_{\pi(i)})
 $$
 here we are making the assumption when $\pi(i) = \emptyset$ we do the right thing. Moreover we are assuming we are using the real distribution $p$.
 $$
-\begin{align*}
+\begin{aligned}
 D_{KL}(p \vert \vert p_{\pi}) = & \sum_{a \in A}^n p(a) \left [ \ \log(p(a)) - \log(p_{\pi}(a)) \ \right ]\\
 = & - \left ( - \sum_{a \in A} p(a) \log(p(a)) \right ) + \left ( - \sum_{a \in A} p(a) \log(\prod_{i=1}^n p(a_i \vert a_{\pi(i)})) \right )\\
 = & - H(p) + \sum_{i=1}^n \left (- \sum_{a \in A} p(a)\log(p(a_i \vert a_{\pi(i)})) \right ) & \mbox{by log and Entropy}\\
 = & - H(p) + \sum_{i=1}^n \left (- \sum_{a_i \in A_i} \sum_{a_{\pi(i)} \in A_{\pi(i)}} p(a_i, a_{\pi(i)})\log(p(a_i \vert a_{\pi(i)})) \right ) & \mbox{by marginalisation}\\
 = & - H(p) + \sum_{i=1}^n H(a_i \vert a_{\pi(i)})
-\end{align*}
+\end{aligned}
 $$
 Where $H(a_i \vert a_{\pi(i)})$ is [Conditional entropy](../../notes/conditional_entropy.md). Then as $-H(p)$ doesn't depend on $\pi$ when looking for a maximum $\pi$ we can ignore it. Though as it is mathematically convenient we will add $- \sum_{i=1}^n h(a_i)$. All together this is
 $$
-\begin{align*}
+\begin{aligned}
 \min_{\pi} J_{\pi} & = \left ( - \sum_{i=1}^n H(a_i) + \sum_{i=1}^n H(a_i \vert a_{\pi(i)}) \right )\\
 & = \sum_{i = 1}^n - I(a_i, a_{\pi(i)}) & \mbox{by definition of mutual information}\\
-\end{align*}
+\end{aligned}
 $$
 Where $I(a_i, a_{\pi(i)})$ is [Mutual information](../../notes/mutual_information.md). We get a cool result here before we had $p(a_i \vert a_{\pi(i)})$ is which is directional but $I(a_i,\pi(a_i))$ is not as [Mutual information is symmetric](../../notes/mutual_information_is_symmetric.md).
 

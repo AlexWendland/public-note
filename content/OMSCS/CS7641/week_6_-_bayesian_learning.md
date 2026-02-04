@@ -87,7 +87,7 @@ Suppose:
 
 Now lets try to compute the [maximum likelihood estimation](../../notes/maximum_likelihood_estimation_(mle).md) for our [hypothesis space](../../notes/modelling_paradigm.md) $H$.
 $$
-\begin{align*}
+\begin{aligned}
 h_{MLE} & = \mbox{arg}\max_{h \in H} \mathbb{P}[T \vert h]\\
 & = \mbox{arg}\max_{h \in H} \prod_{t \in T} \mathbb{P}[t \vert h] & \mbox{as each } \epsilon \mbox{ is i.i.id}\\
 & = \mbox{arg}\max_{h \in H} \prod_{t \in T} \frac{1}{\sigma \sqrt{2\pi}} \exp \left [ - \frac{1}{2} \left ( \frac{b_i - h(a_i)}{\sigma} \right )^2 \right ] & \mbox{normal distribution}\\
@@ -96,7 +96,7 @@ h_{MLE} & = \mbox{arg}\max_{h \in H} \mathbb{P}[T \vert h]\\
 & = \mbox{arg}\max_{h \in H} \sum_{t \in T} - \left (b_i - h(a_i) \right )^2 & \mbox{no change in argmax}\\
 & = \mbox{arg}\min_{h \in H} \sum_{t \in T} \left (b_i - h(a_i) \right )^2 & \mbox{negative max is min}\\
 & = \mbox{arg}\min_{h \in H} mse(h,T) & \mbox{definition of MSE.}
-\end{align*}
+\end{aligned}
 $$
 So this shows that [finding the maximum likelihood estimation for normally distributed noise is the same as minimising mean squared error](../../notes/finding_the_maximum_likelihood_estimation_for_normally_distributed_noise_is_the_same_as_minimising_mean_squared_error.md).
 
@@ -111,12 +111,12 @@ This shows that the loss function we use really relates to the noise we have in 
 
 Now assume we have a prior distribution on our [hypothesis space](../../notes/modelling_paradigm.md) $H$ such that $\mathbb{P}[h]$ is higher when it is a simpler explanation. For some [training data](../../notes/training_data.md) $T$ lets look at the [maximum a posteriori probability estimate](../../notes/maximum_a_posteriori_probability_estimate_(map).md)
 $$
-\begin{align*}
+\begin{aligned}
 h_{MAP} = & \mbox{arg}\max_{h \in H}  \ \mathbb{P}[T \vert h]\mathbb{P}[h]\\
 = & \mbox{arg}\max_{h \in H} \left [ \ \log\left ( \mathbb{P}[T \vert h]\right ) + \log \left ( \mathbb{P}[h] \right ) \ \right ] & \mbox{by taking logs}\\
 = & \mbox{arg}\min_{h \in H} \left [ \ -\log\left ( \mathbb{P}[T \vert h]\right ) - \log \left ( \mathbb{P}[h] \right ) \ \right ] & \mbox{negative max is min}\\
 = & \mbox{arg}\min_{h \in H} \left [ \ \mbox{length}[T \vert h] + \mbox{length}[h] \ \right ] & \mbox{by the definition of length}\\
-\end{align*}
+\end{aligned}
 $$
 here we have a pay off. Longer length explanations in $\mbox{length}[h]$ may lead better explanations of $T$ by the hypothesis. Though this will have to be worth in increase in length of that hypothesis. This is [Occam's razor](../../notes/occam's_razor.md) in an equation.
 

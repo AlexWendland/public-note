@@ -61,10 +61,10 @@ This is really saying that asymptotically (what mathematicians really care about
 The corollary follows from the lemma fairly simply.
 
 $$
-\begin{align*}
+\begin{aligned}
 Q_{LRU}(n,Z,L) &\leq 2 Q_{OPT} \left ( n, \frac{Z}{2}, L \right ) & \mbox{from the lemma}\\
 & \leq O(Q_{OPT}(n,Z,L)) & \mbox{from the assumption}
-\end{align*}
+\end{aligned}
 $$
 
 As $Q$ is always positive this gives us the required $Q_{LRU}(n,Z,L) = O(Q_{OPT}(n,Z, L))$.

@@ -2,6 +2,14 @@
 {{- /* Adapted from hugo-admonitions by oreo-dtx-lab (MIT License) */}}
 {{- /* https://github.com/oreo-dtx-lab/hugo-admonitions */}}
 
+{{- /* Workaround: goldmark's passthrough extension ($$...$$) inside blockquotes
+       preserves '> ' prefixes on inner lines because passthrough captures raw text
+       after the opening delimiter, bypassing blockquote '>' stripping.
+       Any remaining '\n> ' in .Text at this point is an artifact — legitimate nested
+       blockquotes have already been rendered as <blockquote> tags, and '>' inside
+       <pre><code> is HTML-encoded as '&gt;'. Safe to strip. */}}
+{{- $cleanedText := safeHTML (strings.Replace (printf "%s" .Text) "\n> " "\n") }}
+
 {{- if eq .Type "alert" -}}
   {{- /* This is an Admonition */}}
 
@@ -95,7 +103,7 @@
         <span class="flex-grow">{{ $title }}</span>
         <span class="inline-block ml-2 font-bold transition-transform group-[[open]]:rotate-90">›</span>
       </summary>
-      {{- with .Text }}
+      {{- with $cleanedText }}
       <div class="px-4 py-3 bg-surface-0 text-text">
         {{ . }}
       </div>
@@ -110,7 +118,7 @@
         </div>
         <span class="flex-grow">{{ $title }}</span>
       </div>
-      {{- with .Text }}
+      {{- with $cleanedText }}
       <div class="px-4 py-3 bg-surface-0 text-text">
         {{ . }}
       </div>
@@ -121,6 +129,6 @@
 {{- else -}}
   {{- /* This is a standard blockquote */}}
   <blockquote class="border-l-4 border-mauve bg-surface-0 pl-4 py-2 mb-4 italic text-subtext-1">
-    {{ .Text }}
+    {{ $cleanedText }}
   </blockquote>
 {{- end -}}

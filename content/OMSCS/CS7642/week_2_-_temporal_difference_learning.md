@@ -48,10 +48,10 @@ We estimate $V^{\pi}(s)$ by averaging the _actual returns_ $G_t(s)$ observed fro
 
 If we have $t-1$ previous estimates for the value of state $s$, say $V_1(s), V_2(s), \ldots, V_{t-1}(s)$, and we observe a new return $G_t(s)$ for state $s$ in the current episode, a simple way to update our estimate $V_t(s)$ is via an incremental average:
 $$
-\begin{align*}
+\begin{aligned}
 V_t(s) & = \frac{(t-1) V_{t-1}(s) + G_t(s)}{t}\\
 & = V_{t-1}(s) + \frac{1}{t} \left ( G_t(s) - V_{t-1}(s) \right )
-\end{align*}
+\end{aligned}
 $$
 This update moves the estimate $V_t(s)$ a fraction of the way towards the newly observed return $G_t(s)$ by the difference between them (thus the name!) multiplied by a factor of $1/t$. The weighting factor of $1/t$ was only an artifact of using equal weighting between each run, however we can update this to be more general.
 $$
@@ -128,13 +128,13 @@ $$
 
 To see why the update rule is equivalent, let's assume some state $s$ was the start of the episode and never visited again.
 $$
-\begin{align*}
+\begin{aligned}
 V_{new}(s) & = V_{old}(s) + \sum_{n=0}^{\infty} \alpha_t (r_n + \gamma V_{old}(s_n) - V_{old}(s_{n-1})) e_n(s)\\
 & = V_{old}(s) + \alpha_t \sum_{n=1}^{\infty} (r_n + \gamma V_{old}(s_n) - V_{old}(s_{n-1})) \gamma^{n-1}\\
 & = V_{old}(s) + \alpha_t \sum_{n=1}^{\infty} (\gamma^{n-1}r_n + \gamma^n V_{old}(s_n) - \gamma^{n-1} V_{old}(s_{n-1}))\\
 & = V_{old}(s) + \alpha_t \left ( \left (\sum_{n=1}^{\infty} \gamma^{n-1} r_n \right) + \left( \sum_{n=1}^{\infty} \gamma^n V_{old}(s_n) \right ) - \left (V_{old}(s_0) + \sum_{n=1}^{\infty} \gamma^n V_{old}(s_{n}) \right ) \right )\\
 & = V_{old}(s) + \alpha_t (G_t(s) - V_{old}(s))\\
-\end{align*}
+\end{aligned}
 $$
 
 This generalizes to work for states that are revisited and matches the every visit definition of $G_t(s)$.

@@ -21,7 +21,7 @@ type: lemma
 This comes from direct calculation.
 
 $$
-\begin{align*}
+\begin{aligned}
 h_{MLE} & = \mbox{arg}\max_{h \in H} \mathbb{P}[T \vert h]\\
 & = \mbox{arg}\max_{h \in H} \prod_{t \in T} \mathbb{P}[t \vert h] & \mbox{as each } \epsilon \mbox{ is i.i.d.}\\
 & = \mbox{arg}\max_{h \in H} \prod_{t \in T} \frac{1}{\sigma \sqrt{2\pi}} \exp \left [ - \frac{1}{2} \left ( \frac{b_i - h(a_i)}{\sigma} \right )^2 \right ] & \mbox{normal distribution}\\
@@ -30,5 +30,5 @@ h_{MLE} & = \mbox{arg}\max_{h \in H} \mathbb{P}[T \vert h]\\
 & = \mbox{arg}\max_{h \in H} \sum_{t \in T} - \left (b_i - h(a_i) \right )^2 & \mbox{no change in argmax}\\
 & = \mbox{arg}\min_{h \in H} \sum_{t \in T} \left (b_i - h(a_i) \right )^2 & \mbox{negative max is min}\\
 & = \mbox{arg}\min_{h \in H} mse(h,T) & \mbox{definition of MSE.}
-\end{align*}
+\end{aligned}
 $$

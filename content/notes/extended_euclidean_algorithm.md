@@ -43,10 +43,10 @@ We run `extended_euclidean(y,x mod y)` lets set $x = z$ mod $y$ as $z < y$ we ge
 Now write
 $$x = c \cdot y + z$$
 where $c = floor(x/y)$. Then calculate
-$$\begin{align*} b' x + (a' - cb')y & = b'(c \cdot y + z) + (a' - cb')y\\
+$$\begin{aligned} b' x + (a' - cb')y & = b'(c \cdot y + z) + (a' - cb')y\\
 & = b' c y + b' z + a' y - c b' y\\
 & = b' z + a' y\\
-& = d \end{align*}$$
+& = d \end{aligned}$$
 giving what is required.
 
 Thus we get the result by induction.

@@ -63,9 +63,9 @@ Note $E$ is a function of the weights in this example.
 Then we can find a local derivative to decide on the best direction to reduce the weights.
 
 $$
-\begin{align*}
+\begin{aligned}
 \frac{\partial E}{\partial w_i} & = \frac{1}{2} \sum_{(x,y) \in T} -2 (y-a) \frac{\partial a}{\partial w_i}\\
-& = - \sum_{(x,y) \in T} (y-a) x_i \end{align*}
+& = - \sum_{(x,y) \in T} (y-a) x_i \end{aligned}
 $$
 This is very similar to the [perceptron rule](../../notes/perceptron_rule.md). Now to completely the training using this we would travel in the opposite of the direction of found by this [derivative](../../notes/differentiation.md). This method is called [Gradient decent](../../notes/gradient_decent.md).
 

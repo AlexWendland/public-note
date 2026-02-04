@@ -33,11 +33,11 @@ Reminder of the below notation.
 
 Within the [Bellman equation](../../notes/bellman_equation.md), if we take what is within the brackets and set it to a new function $Q(s,a)$ (the quality of taking action $a$ in state $s$), we derive the following set of equations.
 $$
-\begin{align*}
+\begin{aligned}
 V(s) & = \max_{a \in A_s} Q(s,a)\\
 Q(s,a) & = R(s,a) + \gamma \sum_{s' \in S} T(s,a,s') V(s')\\
 & = R(s,a) + \gamma \sum_{s' \in S} T(s,a,s') \max_{a' \in A_{s'}} Q(s',a')
-\end{align*}
+\end{aligned}
 $$
 The motivation for doing this will come later; however, intuitively this form will be more useful when you do not have access to $T(s,a,s')$ and $R(s,a)$ directly. Instead, you can only sample experience data.
 
@@ -46,11 +46,11 @@ The motivation for doing this will come later; however, intuitively this form wi
 We can apply a similar trick to derive a third form of the [Bellman equation](../../notes/bellman_equation.md); this time we just set $C(s,a)$ to be the summation within the definition of $Q(s,a)$.
 
 $$
-\begin{align*}
+\begin{aligned}
 Q(s,a) & = R(s,a) + C(s,a)\\
 C(s,a) & = \gamma \sum_{s' \in S} T(s,a,s') \max_{a' \in A_{s'}} Q(s',a')\\
 & = \gamma \sum_{s' \in S} T(s,a,s') \max_{a' \in A_{s'}} R(s',a') + C(s',a')
-\end{align*}
+\end{aligned}
 $$
 
 Each of these will enable us to do reinforcement learning in different circumstances - but notice how they relate to one another.

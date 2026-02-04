@@ -22,10 +22,10 @@ As [the flow across any st-cut is equal to the value of the flow itself](the_flo
 $$flow^f(S,T) = size(f).$$
 So we have
 $$
-\begin{align*}
+\begin{aligned}
 capacity(S,T) & = flow^f(S,T)\\
 \sum_{\substack{(s',t') \in E\\ s' \in S, t' \in T}} c(s',t') & =  \left ( \sum_{\substack{(s',t') \in E\\ s' \in S, t' \in T}} f(s',t') \right ) - \left ( \sum_{\substack{(t',s') \in E\\ s' \in S, t' \in T}} f(t',s') \right ).\\
-\end{align*}
+\end{aligned}
 $$
 Given $0 \leq f(v,w) \leq c(v,w)$ for $(v,w) \in E$. This gives that $f(s', t') = c(s',t')$ for any $(s',t') \in E$ and $f(t', s') = 0$ $(t',s') \in E$ with $s' \in S$ and $T' \in T$.
 

@@ -146,10 +146,10 @@ Therefore we work out that the LIS for this sequence is 6 as that is the maximum
 >To calculate the Run time of solution lets break these sub-functions into parts $get\_last\_best\_solution\_less\_than\_current\_value$ goes through all past entries and run some checks, then it takes a max over that set of entries. This takes at most $O(2k)$ operations so,
 >$$O(get\_last\_best\_solution\_less\_than\_current\_value(k)) = O(k)$$
 >Now lets look at $length\_of\_the\_longest\_increasing\_subsequence(n)$ this loops through all $n$ elements running $get\_last\_best\_solution\_less\_than\_current\_value$ on a list of size $k$ where $k$ is the value of the element right now. Lastly it finds the max of a list of length $n$ which is $O(n)$, so:
->$$\begin{align*}
+>$$\begin{aligned}
 >O(length\_of\_the\_longest\_increasing\_subsequence(n)) & = \sum_{k=0}^{n-1} O(k) + O(n)\\
 >& = O((n-1)n/2) + O(n)\\
->& = O(n^2)\end{align*}$$
+>& = O(n^2)\end{aligned}$$
 >giving the run time of this algorithm to be $O(n^2)$.
 
 # Largest common subsequence (LCS)

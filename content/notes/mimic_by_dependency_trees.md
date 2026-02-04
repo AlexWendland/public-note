@@ -16,11 +16,11 @@ We assume the [domain](function_domain.md) of our problem breaks up $A = \oplus_
 
 To do this we need to calculate $\mathbb{P}[X_i = a_i]$ for all $1 \leq i \leq n$, $\mathbb{P}[X_i = a_i, X_j = a_j]$, and $\mathbb{P}[X_i=a_i \vert X_j = a_j]$ for each $1 \leq i < j \leq n$. If we have samples $P, F \subset A$ of pass fails respectively this is simply
 $$
-\begin{align*}
+\begin{aligned}
 \mathbb{P}[X_i = a_i] = & \frac{\vert \{x \in P \vert x_i = a_i\} \vert}{\vert P \vert + \vert F \vert}\\
 \mathbb{P}[X_i = a_i, X_j = a_j] = & \frac{\vert \{x \in P \vert x_i = a_i, x_j = a_j\} \vert}{\vert P \vert + \vert F \vert}\\
 \mathbb{P}[X_i=a_i \vert X_j = a_j] = & \frac{\vert \{x \in P \vert x_i = a_i, x_j = a_j\} \vert}{\vert \{x \in P \cup F \vert x_j = a_j\} \vert}\\
-\end{align*}
+\end{aligned}
 $$
 however there are more advanced technique you can apply here.
 
