@@ -32,13 +32,13 @@ Given a grammar $G$ we say a word $w$ is in the language, $w \in L(G)$, if there
 > We need to work out if $ID \ast ID + ID$ belongs to the language.
 > We can decompose this statement using the above rules as:
 > $$
-> \begin{align*}
+> \begin{aligned}
 > S \Rightarrow & S + S\\
 > \Rightarrow & S \ast S + S\\
 > \Rightarrow & ID \ast S + S\\
 > \Rightarrow & ID \ast ID + S\\
 > \Rightarrow & ID \ast ID + ID
-> \end{align*}
+> \end{aligned}
 > $$
 > This represents the graph below:
 > ![derivation tree](../../../static/images/derivation_graph_example.png)
@@ -74,7 +74,7 @@ Whilst there are other strategies to pick which node to expand next, these are n
 > Now consider the word $0 \ast 1 + 1$.
 > This has two parse trees given by:
 > $$
-> \begin{align*}
+> \begin{aligned}
 > S \Rightarrow & S + S\\
 > \Rightarrow & S \ast S + S\\
 > \Rightarrow & 0 \ast S + S\\
@@ -86,7 +86,7 @@ Whilst there are other strategies to pick which node to expand next, these are n
 > \Rightarrow & 0 \ast S + S\\
 > \Rightarrow & 0 \ast 1 + S\\
 > \Rightarrow & 0 \ast 1 + 1
-> \end{align*}
+> \end{aligned}
 > $$
 > These trees are different due to the starting node changing symbol.
 
@@ -111,7 +111,7 @@ Therefore, we deploy a couple of tricks to resolve ambiguity:
 > - $\text{factor} \rightarrow \text{number} \mid ( \text{expression} )$
 > Now suppose we want to parse the expression $4 \ast 5 + 6$.
 > $$
-> \begin{align*}
+> \begin{aligned}
 > \langle\text{exp}\rangle \Rightarrow & \langle\text{exp}\rangle \, \langle\text{addop}\rangle \, \langle\text{exp}\rangle\\
 > \Rightarrow & \langle\text{term}\rangle \, \langle\text{addop}\rangle \, \langle\text{exp}\rangle\\
 > \Rightarrow & \langle\text{term}\rangle \, \langle\text{mulop}\rangle \, \langle\text{term}\rangle \, \langle\text{addop}\rangle \, \langle\text{exp}\rangle\\
@@ -121,7 +121,7 @@ Therefore, we deploy a couple of tricks to resolve ambiguity:
 > \Rightarrow & 4 \ast 5 + \langle\text{exp}\rangle\\
 > \Rightarrow & 4 \ast 5 + \langle\text{term}\rangle\\
 > \Rightarrow & 4 \ast 5 + 6\\
-> \end{align*}
+> \end{aligned}
 > $$
 > Notice that here we could not go directly to $\langle\text{term}\rangle$ as there would be no way back to $\langle\text{exp}\rangle$ without using parentheses.
 > This eliminates the ambiguity between the $\ast$ and $+$ operators.
