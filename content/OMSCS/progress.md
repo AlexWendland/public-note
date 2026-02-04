@@ -46,8 +46,8 @@ type: plan
 
 # Feb 9-15 (F&B) [ ]
 
-- [ ] CS8803 P1L5
-- [ ] CS8803 P1L6
+- [x] CS8803 P1L5
+- [x] CS8803 P1L6
 - [x] CS8803 Prj1 (Feb 9)
 
 - [x] CSE6220 Lab 0 (Feb 9)
@@ -119,7 +119,7 @@ type: plan
 - [ ] CSE6220 Lab 3 (Apr 6)
 - [ ] CSE6220 Distributed Memory sorting
 
-# Apr 13-19 [ ]
+# Apr 13-19 (coventry half marathon) [ ]
 
 - [ ] CS8803 P4L2
 
