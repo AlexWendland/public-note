@@ -57,7 +57,7 @@ We call this the parsing table.
 
 > [!example] Bracket matching parsing table
 > To continue the example above we had the following parsing table:
-> 
+>
 > | M[X][T] | ( | ) | $ |
 > | ------- | - | - | - |
 > | S | S -> (S) S | S -> epsilon | S -> epsilon |
@@ -178,7 +178,7 @@ We have included the code to generate this below.
 
 ```pseudocode
 generateFollowSets(G, First) {
-  for each non-terminal X { 
+  for each non-terminal X {
     set Follow(X) = {} if X is not the start symbol else {$}
   }
   while there are changes to any Follow(X) {

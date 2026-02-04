@@ -72,6 +72,7 @@ This is a academic notes repository. Apply these conventions:
 - Capitalisation: Please check headers and sections (such as call out blocks) are correctly capitalised.
 Words at the start of headers should be capitalised but words that follow should not be unless they are a proper noun.
 - Callouts: Please check that the syntax is correct and uses one of the types detailed below.
+- latex: Please replace any use of `\begin{align*}` or `\end{align*}` with `\begin{aligned}` or `\end{aligned}` respectively.
 
 > [!note] This is what a callout looks like
 > This is the subtext.

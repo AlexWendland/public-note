@@ -44,7 +44,7 @@ This proves that [3-SAT](k-satisfiability_problem_(k-sat_problem).md) is [NP-com
 
 ## Clause reduction
 
-> [!tldr] Clause reduction
+> [!lemma] Clause reduction
 > Given a clause
 > $$ C = \bigvee_{i = 1}^k l_i$$
 > with literals $l_i$ in our $n$ variables. We define the reduction
