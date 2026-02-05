@@ -3,7 +3,7 @@ aliases:
   - prime
   - primes
 created: 2023-10-10
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2026-02-05
 tags:
@@ -11,8 +11,8 @@ tags:
 title: Prime
 type: definition
 ---
->[!definition] Prime
->An element $p$ is prime if it is non-zero, non-unit where if $p \vert mn$ then $p \vert m$ or $p \vert n$.
+> [!definition] Prime
+> An element $p$ is prime if it is non-zero, non-unit where if $p \mid mn$ then $p \mid m$ or $p \mid n$.
 
 # Theory
 

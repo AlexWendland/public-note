@@ -1,7 +1,7 @@
 ---
 aliases:
 created: 2023-12-03
-date_checked: 2026-01-28
+date_checked: 2026-02-05
 draft: false
 last_edited: 2026-02-05
 tags:
@@ -19,5 +19,3 @@ type: lemma
 > \vdots & \vdots & \vdots\\
 > \cdots & \pi & \cdots\\
 > \end{array}\right ).$$
-
-# Proof

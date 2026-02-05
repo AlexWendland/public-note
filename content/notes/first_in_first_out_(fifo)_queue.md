@@ -2,7 +2,7 @@
 aliases:
   - FIFO
 created: 2024-06-15
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2026-02-05
 tags:
@@ -10,6 +10,6 @@ tags:
 title: First in first out (FIFO) queue
 type: data structure
 ---
->[!definition] First in first out (FIFO) queue
->This a traditional queue the person that joined first is the first person to get served.
+> [!definition] First in first out (FIFO) queue
+> This is a traditional queue - the person that joined first is the first person to get served.
 

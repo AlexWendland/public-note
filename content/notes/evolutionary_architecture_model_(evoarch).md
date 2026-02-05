@@ -3,7 +3,7 @@ aliases:
   - EvoArch
   - Evolutionary Architecture model
 created: 2024-05-23
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2026-02-05
 tags:
@@ -11,19 +11,19 @@ tags:
 title: Evolutionary Architecture model (EvoArch)
 type: definition
 ---
->[!definition] Evolutionary Architecture model (EvoArch)
+> [!definition] Evolutionary Architecture model (EvoArch)
 > This is a model built to explain the [Internet protocol stack hourglass shape](internet_protocol_stack_hourglass_shape.md). It builds a [DAG](directed_acyclic_graph_(dag).md) in discrete time steps $G_i = (V_i,E_i)$ over time $i \in \mathbb{N}$ to model the [protocols](protocol_(networks).md) in the [OSI model](open_systems_interconnection_(osi)_model.md).
 > - Define a set of layers $L$,
 > - Each vertex $v \in V_i$ gets mapped to a layer $l(v) \in L$,
 > - Each edge $(u,v) \in E_i$ has $l(v) = l(u) +1$ and describes the relationship protocol $v$ can use protocol $u$ as its lower level protocol.
 > - We define the set of parents of a node $S_i(v) = \{u \in V_i \vert (u,v) \in E_i\}$ to be substrates.
-> - The children of node $P_i(u) = \{v \in V_i \vert (u,v) \in E_i\}$ we define to be its Product.
-> - Each layer $l \in L$ has a generality probability associated to it, $s(l) \in [0,1]$. This determine the probability a higher level protocol will depend on a new protocol in this layer in the future. For each $v \in V_i$ where $l(v) > 1$ for each $u \in V_i \backslash V_{i+1}$ where $l(u) = l(v) +1$ then $(u,v) \in E_i$ with probability $s(l)$.
+> - The children of node $P_i(u) = \{v \in V_i \vert (u,v) \in E_i\}$ we define to be its products.
+> - Each layer $l \in L$ has a generality probability associated to it, $s(l) \in [0,1]$. This determines the probability a higher level protocol will depend on a new protocol at this layer in the future. For each $v \in V_i$ where $l(v) > 1$ for each $u \in V_i \backslash V_{i+1}$ where $l(u) = l(v) - 1$ then $(u,v) \in E_i$ with probability $s(l)$.
 > - Each node $v \in V$ has a value at time $i$, $v_i(v)$, this is defined by the product of that node i.e. $v_i(v) = f(P_i(v))$.
-> - There is a competitor threshold $c \in [0,1]$ that defines to competitors for nodes
+> - There is a competitor threshold $c \in [0,1]$ that defines competitors for nodes
 > $$C_i(v) = \{u \in V_i \vert l(u) = l(v) \ \land \ \frac{\vert P(v) \cap P(u)\vert}{\vert P(u) \vert} > 1\}.$$
 > - Nodes die if their competitors have too much value. This also kills upstream nodes if they only depended on that node for its layer.
-> - Nodes also get added randomly to the graph as a percentage of the total size of the current network. Though this can very depending on the implementation
+> - Nodes also get added randomly to the graph as a percentage of the total size of the current network. Though this can vary depending on the implementation
 >
 > To update this model we do the following steps.
 > 1. Introduce new nodes to the model.

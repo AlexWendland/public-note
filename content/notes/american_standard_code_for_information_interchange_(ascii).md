@@ -2,7 +2,7 @@
 aliases:
   - ASCII
 created: 2024-05-23
-date_checked:
+date_checked: 2026-02-05
 draft: true
 last_edited: 2026-02-05
 tags: []

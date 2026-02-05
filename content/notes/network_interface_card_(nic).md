@@ -3,7 +3,7 @@ aliases:
   - NIC
   - network interface card
 created: 2024-05-22
-date_checked:
+date_checked: 2026-02-05
 draft: true
 last_edited: 2026-02-05
 tags: []
@@ -12,4 +12,3 @@ type: definition
 ---
 >[!definition] Network Interface Card (NIC)
 >Definition here
-

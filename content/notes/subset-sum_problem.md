@@ -2,7 +2,7 @@
 aliases:
   - subset-sum problem
 created: 2023-11-12
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2026-02-05
 tags:
@@ -15,7 +15,7 @@ type: problem
 >[!definition] Subset-sum problem
 >Given positive integers $a_1, \ldots, a_n$ and $t$, is there a subset $S \subset \{1, \ldots, n\}$ where
 >$$\sum_{i \in S} a_i = t$$
->if such a subset exists output it, otherwise return no.
+>If such a subset exists, output it; otherwise, return no.
 
 # Solutions
 

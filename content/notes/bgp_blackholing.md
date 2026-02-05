@@ -1,7 +1,7 @@
 ---
 aliases:
 created: 2024-07-21
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2026-02-05
 tags:
@@ -10,7 +10,7 @@ tags:
 title: BGP Blackholing
 type: definition
 ---
->[!definition] BGP Blackholing
+> [!definition] BGP Blackholing
 >This is a method of initiating [blackholing](blackholing_(bh).md) in the event of a [DDoS](distributed_denial-of-service_(ddos).md) attack using an upstream service.
 >
 >This works in the following stages:
@@ -18,26 +18,26 @@ type: definition
 >2. **Propagation**: The upstream provider or [IXP](internet_exchange_points_(ixps).md) then advertises a more specific prefix and modifies the next-hop address to divert the traffic to a null interface.
 >3. **Blackhole Community**: The blackholing message is tagged with a specific [BGP Communities](bgp_communities.md) attribute to differentiate it from regular routing updates. This is normally the community 666.
 >
->There are two main ways this is implement.
+>There are two main ways this is implemented.
 >
 >1. **Using an Upstream Provider**:
 >    - The victim network announces a blackholing message to its upstream provider, specifying the attacked IP and the blackholing community.
 >    - The provider then recognises this message and sets the next-hop field to a blackholing IP, effectively discarding all traffic to the attacked IP.
 >
->![Bgp Bh Provider](../../static/images/bgp_bh_provider.png)
+>![BGP BH provider](../../static/images/bgp_bh_provider.png)
 >
 >2. **Using an Internet Exchange Point (IXP)**:
 >    - If the victim network is part of an IXP, it sends a blackholing message to the IXP route server.
 >    - The route server then propagates this message to all connected IXP member networks, which drop the traffic to the blackholed IP.
 >
->![Bgp Bh Ixp](../../static/images/bgp_bh_ixp.png)
+>![BGP BH IXP](../../static/images/bgp_bh_ixp.png)
 >
->Key Benefits of BGP Blackholing:
+>Key benefits of BGP blackholing:
 >- **Effective Mitigation**: Stops high-volume attacks close to their source, preventing them from reaching and overwhelming the target.
 >- **Scalability**: Can be implemented quickly by upstream providers or [IXPs](internet_exchange_points_(ixps).md) to protect multiple networks.
 >- **Cost-Efficiency**: Reduces the need for expensive [DDoS](distributed_denial-of-service_(ddos).md) mitigation services by leveraging existing [BGP](border_gateway_protocol_(bgp).md) infrastructure.
 >
->Challenges and Considerations:
+>Challenges and considerations:
 >
 >- **Collateral Damage**: Legitimate traffic to the blackholed IP is also dropped, which can disrupt normal operations.
 >- **Coordination**: Effective implementation requires coordination and trust between the victim network and its upstream providers or IXPs.

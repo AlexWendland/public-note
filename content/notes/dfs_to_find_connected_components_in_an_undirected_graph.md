@@ -1,7 +1,7 @@
 ---
 aliases:
 created: 2023-09-28
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2026-02-05
 tags:
@@ -10,7 +10,7 @@ title: DFS to find connected components in an undirected graph
 type: algorithm
 ---
 
-To solve the following problem.
+To solve the following problem:
 [Statement](find_connected_components_in_an_undirected_graph.md#statement)
 
 We can use the following [DFS](depth-first_search_(dfs).md) algorithm.
@@ -35,7 +35,7 @@ Explore(z)
     connected_component_number(z) = connected_component
     visited(z) = True
     for all (z, w) in E
-      if not visited(w)
+      if not visited(w) then
         Explore(w)
 ```
 

@@ -1,7 +1,7 @@
 ---
 aliases:
 created: 2025-06-29
-date_checked: 2026-01-29
+date_checked: 2026-02-05
 draft: false
 last_edited: 2026-02-05
 tags:
@@ -26,7 +26,7 @@ My main takeaway from *The 4-Hour Work Week* was this: work is the solution to a
 So let's frame the problem correctly. I need about £2,500/month after tax to live like I do now in London (expensive city, I'm lazy about cooking). If I want this lifestyle for my whole life but only work until 65, I need to earn roughly £4,050/month after tax.
 
 > [!note] For the nerds
->See the appendix for the detailed math on how I got to £4,050/month - it's just basic arithmetic but I found working through the numbers really helpful for thinking about this stuff.
+> See the appendix for the detailed math on how I got to £4,050/month - it's just basic arithmetic but I found working through the numbers really helpful for thinking about this stuff.
 
 More money is always good - but only if the cost is right.
 
@@ -60,10 +60,11 @@ The graph is simple with two axes: income against your weighted work hours. At e
 I should acknowledge this assumes I have choices - I'm privileged to have in-demand skills, good health, and low responsibilities. But even with limited options, the core question remains: what trade-off between money and hours makes sense for you?
 
 This is simple enough but doesn't really account for decisions like:
-- Should I do a PhD: low pay, high hours but as I can say, it sets you up well.
+- Should I do a PhD: low pay, high hours but as I'd say, it sets you up well.
 - Should I risk it all on that start up: Large payout ... maybe.
 - Graduate jobs: If I can survive the grind then I'll make it to a cushy job eventually.
-In the past I have had the 'grid it out' mindset for the "growth".
+
+In the past I have had the 'grind it out' mindset for the "growth".
 
 # But here's the thing about "growth"
 
@@ -74,13 +75,13 @@ I can sink lots of time into things. I did this during my undergrad because I th
 Same with my PhD. It was transformational - I lost weight, had my first partner, made great friends, started to build an actual personality and first listened to philosophy. But I was always focused on getting the PhD itself, which again felt cheap when it happened (thanks, COVID). What I loved was the journey, not the destination.
 
 > [!quote] My PhD examiner
->If this was a real viva (PhD exam) I would make you ...
+> If this was a real viva (PhD exam) I would make you ...
 
 I have been reading Stoic and Taoist philosophy recently. Stoics teach you can only control your actions, not outcomes. Taoists talk about wu wei - going with the natural flow rather than forcing outcomes. Both suggest obsessing over destinations you can't control is a recipe for suffering.
 
 **The career capital trap**: We're constantly told to "invest in our careers" - take the boring job that teaches skills, network strategically, build our "brand." But what if you spend years building capital for a career you end up hating? What if the industry changes? (Hey AI!) What if you change?
 
-**Growth is just change**: People use "growth" like it's inherently positive, but growth is just change. If you need to go left, growing up doesn't help you. When we want to change, the best way is to change in a direction that lets us do more of what we already like doing.
+**Growth is just change**: People use "growth" like it's inherently positive, but growth is just change. If you need to go left, growing upwards doesn't help you. When we want to change, the best way is to change in a direction that lets us do more of what we already like doing.
 
 **The path of least resistance isn't lazy**: Maybe choosing what feels right now, what you actually enjoy doing, isn't short-sighted. Maybe it's wisdom. You know you'll take at least two steps in that direction. You don't know if you'll reach some imagined destination.
 
@@ -130,8 +131,8 @@ Then multiplied by 0.7 puts me at 23.15 hours per week.
 
 ## Average UK salaries
 
-It is good to be grounded in reality - when working some jobs normality feels a long way off. Personally I find the following calculator useful:
+It is good to be grounded in reality - when working some jobs, normality feels a long way off. Personally I find the following calculator useful:
 
-> [Giving what we can](https://www.givingwhatwecan.org/how-rich-am-i)
+> [Giving What We Can](https://www.givingwhatwecan.org/how-rich-am-i)
 
-For the number in the graph, I used [plumplot](https://www.plumplot.co.uk/London-salary-and-unemployment.html) which I put in to the [UK tax calculator](https://www.gov.uk/estimate-income-tax) and added 5% as employer contributions to your pension.
+For the numbers in the graph, I used [plumplot](https://www.plumplot.co.uk/London-salary-and-unemployment.html) which I put into the [UK tax calculator](https://www.gov.uk/estimate-income-tax) and added 5% as employer contributions to your pension.

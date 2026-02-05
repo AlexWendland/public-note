@@ -1,7 +1,7 @@
 ---
 aliases:
 created: 2024-07-21
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2026-02-05
 tags:
@@ -20,8 +20,7 @@ type: definition
 >	1. [Type-0 hijacking](type-0_hijacking.md)
 >	2. [Type-N hijacking](type-n_hijacking.md)
 >	3. [Type-U hijacking](type-u_hijacking.md)
->3.  **Classification by Data-Plane traffic manipulation**: In this class of attacks, the attacker intercepts traffic between two users and manipulates it.
+>3. **Classification by Data-Plane traffic manipulation**: In this class of attacks, the attacker intercepts traffic between two users and manipulates it.
 >	1. [Blackholing attack](blackholing_attack.md)
 >	2. [Man-in-the-middle attack (MM)](man-in-the-middle_attack_(mm).md)
 >	3. [Imposture attack (IM)](imposture_attack_(im).md)
-
