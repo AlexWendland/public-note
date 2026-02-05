@@ -3,7 +3,7 @@ aliases:
 created: 2023-10-09
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags:
   - programming
 title: Modular inverse problem
@@ -11,7 +11,7 @@ type: problem
 ---
 # Statement
 
->[!tldr] Modular inverse problem
+>[!definition] Modular inverse problem
 >Given 2 $n$-bit integers $x, N \geq 0$ what is $x^{-1}$ mod $N$.
 
 # Solutions

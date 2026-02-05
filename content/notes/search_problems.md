@@ -5,12 +5,12 @@ aliases:
 created: 2023-10-24
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags: []
 title: Search problems
 type: definition
 ---
->[!tldr] Search problem
+>[!definition] Search problem
 >A problem is a *search problem* if we can verify a solution in [polynomial time](polynomial_time.md).
 >
 >Formally:

@@ -5,13 +5,13 @@ aliases:
 created: 2024-05-21
 date_checked:
 draft: false
-last_edited: 2024-05-21
+last_edited: 2026-02-05
 tags:
   - networks
 title: Internet Protocol Stack (IPS) 5 layers
 type: definition
 ---
->[!tldr] Internet Protocol Stack (IPS) 5 layers
+>[!definition] Internet Protocol Stack (IPS) 5 layers
 >The IPS stack is a model of how communication should work over the internet. It is structured into 5 different layers:
 >1. Application layer
 >2. Transport Layer

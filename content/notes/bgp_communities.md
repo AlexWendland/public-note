@@ -3,13 +3,13 @@ aliases:
 created: 2024-07-21
 date_checked:
 draft: false
-last_edited: 2024-07-21
+last_edited: 2026-02-05
 tags:
   - networks
 title: BGP Communities
 type: definition
 ---
->[!tldr] BGP Communities
+>[!definition] BGP Communities
 >A **BGP (Border Gateway Protocol) community** is a mechanism used to group multiple routes together to simplify routing policies and facilitate route management.
 >
 >1. **Tagging Mechanism**: [BGP](border_gateway_protocol_(bgp).md) communities are essentially tags or labels that can be applied to routes, allowing routers to apply certain policies to all routes with a specific community tag.

@@ -4,13 +4,13 @@ aliases:
 created: 2023-10-02
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags:
   - maths
 title: Residual Network (flow)
 type: definition
 ---
->[!tldr] Residual Network
+>[!definition] Residual Network
 >Let $(G, c, s, t)$ be a [flow network](flow_network.md) and $f$ be a [flow](flow.md). Further assume $G$ has no dual edges. Define the $G^f = (V,E^f)$ where
 >$$E^f = \{(v,w) \in E \vert f(v,w) < c(v,w)\} \cup \{(w,v) \vert (v,w) \in E, f(v,w) > 0\}$$
 >and capacity

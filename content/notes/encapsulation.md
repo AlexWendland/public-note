@@ -6,12 +6,12 @@ aliases:
 created: 2024-05-23
 date_checked:
 draft: false
-last_edited: 2024-05-23
+last_edited: 2026-02-05
 tags: []
 title: Encapsulation
 type: definition
 ---
->[!tldr] Encapsulation
+>[!definition] Encapsulation
 >Once an application has generated some data *encapsulation* is the process of wrapping that data with headers so it can traverse through the internet to make it to it's destination.
 >
 >[Layer 4](layer_4_transport.md) takes the data and adds the source and destination [ports](port.md) to the data to make it a *[segment](segment.md)*.

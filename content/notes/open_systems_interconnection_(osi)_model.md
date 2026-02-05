@@ -5,13 +5,13 @@ aliases:
 created: 2024-05-21
 date_checked:
 draft: false
-last_edited: 2024-05-21
+last_edited: 2026-02-05
 tags:
   - networks
 title: Open Systems interconnection (OSI) model
 type: definition
 ---
->[!tldr] Open Systems interconnection (OSI) model
+>[!definition] Open Systems interconnection (OSI) model
 >The OSI model was presented by the [International Organisation for Standardisation (ISO)](international_organisation_for_standardisation_(iso).md) for how networks should be structured. Its ultimate goal is to gaurentee safe communication between two hosts that may or may not be on the same [network](network.md). It has 7 layers each with a different responsibility.
 >1. [Physical layer](layer_1_physical.md),
 >2. [Data Link layer](layer_2_data_link.md),

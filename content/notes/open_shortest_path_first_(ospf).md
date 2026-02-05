@@ -5,13 +5,13 @@ aliases:
 created: 2024-06-08
 date_checked:
 draft: false
-last_edited: 2024-06-08
+last_edited: 2026-02-05
 tags:
   - networks
 title: Open Shortest Path First (OSPF)
 type: definition
 ---
->[!tldr] Open Shortest Path First (OSPF)
+>[!definition] Open Shortest Path First (OSPF)
 >The OSPF [protocol](protocol_(networks).md) is a [intradomain routing](intradomain_routing.md) algorithm suggested as an improvement on [RIP](routing_information_protocol_(rip).md) for [ISP](internet_service_provider_(isp).md). This is a [link-state](link-state_routing_algorithms.md) algorithm that uses hierarchy to do [route summarization](route_summarization.md). It operates over one [autonomous system](autonomous_system_(as).md).
 >
 >In OSPF a single router is selected as the *backbone router* this is where all [AS](autonomous_system_(as).md) externally facing [routers](router.md) connect to.

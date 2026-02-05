@@ -5,11 +5,11 @@ aliases:
 created: 2024-05-22
 date_checked:
 draft: true
-last_edited: 2024-05-22
+last_edited: 2026-02-05
 tags: []
 title: Network Interface Card (NIC)
 type: definition
 ---
->[!tldr] Network Interface Card (NIC)
+>[!definition] Network Interface Card (NIC)
 >Definition here
 

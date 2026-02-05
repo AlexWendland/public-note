@@ -4,7 +4,7 @@ aliases:
 created: 2024-07-27
 date_checked: 2026-02-05
 draft: false
-last_edited: 2024-07-27
+last_edited: 2026-02-05
 tags:
   - networks
 title: Bitrate adaption

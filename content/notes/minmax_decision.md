@@ -5,12 +5,12 @@ aliases:
 created: 2024-04-06
 date_checked:
 draft: false
-last_edited: 2024-04-06
+last_edited: 2026-02-05
 tags:
   - game-theory
 title: Minmax decision
 type: definition
 ---
->[!tldr] Minmax decision
+>[!definition] Minmax decision
 >If you choose to minmax, you want to minimise the maximum loss. In terms of gain you want to maximise the minimum gains, which is why it is sometimes referred to maximin.
 

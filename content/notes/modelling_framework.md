@@ -4,14 +4,14 @@ aliases:
 created: 2024-01-11
 date_checked:
 draft: false
-last_edited: 2024-01-11
+last_edited: 2026-02-05
 tags:
   - machine-learning
   - statistics
 title: Modelling framework
 type: definition
 ---
->[!tldr] Modelling framwork
+>[!definition] Modelling framwork
 >Suppose we have some [random variable](random_variable.md) we want to predict $Y$ (over a space $B$) and some set of features or predictors in $A$ to make predictions of $Y$ this are sampled from a [random variable](random_variable.md) $X$. You assume there is some relationship between $Y$ and $X$ given by
 >$$Y = f(X) + \epsilon.$$
 >Where $\epsilon$ is some [Irreducible error](irreducible_error.md) within our system and $f: A \rightarrow B$.

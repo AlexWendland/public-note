@@ -3,7 +3,7 @@ aliases: []
 created: 2023-08-20
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags:
   - programming
 title: When to Use Error Codes and Exceptions

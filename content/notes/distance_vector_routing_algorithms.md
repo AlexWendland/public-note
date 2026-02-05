@@ -4,13 +4,13 @@ aliases:
 created: 2024-06-02
 date_checked:
 draft: false
-last_edited: 2024-06-02
+last_edited: 2026-02-05
 tags:
   - networks
 title: Distance vector routing algorithms
 type: definition
 ---
->[!tldr] Distance vector routing algorithms
+>[!definition] Distance vector routing algorithms
 >Distance vector routing is a distributed [routing](routing.md) algorithm. It uses the [Bellman-Ford algorithm](bellman-ford_algorithm.md) but in a distributed manner.
 >
 >For this was assume all [routers](router.md) know the routers they are directly connected to - within a [network](network.md) they have an interface to. They also know the network cost of communicating with their neighbours.

@@ -3,12 +3,12 @@ aliases:
 created: 2024-05-21
 date_checked:
 draft: false
-last_edited: 2024-05-21
+last_edited: 2026-02-05
 tags:
   - networks
 title: Repeater
 type: definition
 ---
->[!tldr] Repeater
+>[!definition] Repeater
 > A repeater is any device that just repeats any message it receives. Normally it has 2 [ports](port.md) if a message comes in one [port](port.md) it gets repeated on the other.
 

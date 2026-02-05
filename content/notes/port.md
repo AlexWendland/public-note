@@ -8,13 +8,13 @@ aliases:
 created: 2024-05-21
 date_checked:
 draft: false
-last_edited: 2024-05-21
+last_edited: 2026-02-05
 tags:
   - networks
 title: Port
 type: definition
 ---
->[!tldr] Port
+>[!definition] Port
 >A port is just a number that the [host](host_(networks).md) associates to an application. Ports break down into 3 groups
 >1. 0-1023 are well known ports,
 >2. 1024-49151 are user or registered ports, and

@@ -6,13 +6,13 @@ aliases:
 created: 2023-08-31
 date_checked:
 draft: false
-last_edited: 2023-12-03
+last_edited: 2026-02-05
 tags:
   - maths
 title: Matrix
 type: definition
 ---
->[!tldr] Matrix
+>[!definition] Matrix
 >A matrix $A$ of size $n \times m$ over a [ring](ring.md) $\mathbb{F}$ (for simplicity think $\mathbb{R}$), for $n, m \in \mathbb{Z}_{>0}$ is a collection of $nm$ elements $a_{i,j} \in \mathbb{F}$ with $1 \leq i \leq n$ and $1 \leq j \leq m$. This is usually represented as a rectangle of numbers
 >$$
 > A = \left ( \begin{array}

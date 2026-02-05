@@ -5,7 +5,7 @@ course_name: Computer Networks
 created: 2024-05-19
 date_checked: 2026-01-29
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-02-05
 tags:
   - OMSCS
 title: Week 0 - Assumed knowledge

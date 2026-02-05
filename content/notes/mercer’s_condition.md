@@ -3,11 +3,11 @@ aliases:
 created: 2024-02-02
 date_checked:
 draft: true
-last_edited: 2024-02-02
+last_edited: 2026-02-05
 tags: []
 title: "Mercer\u2019s condition"
 type: definition
 ---
->[!tldr] Mercer’s condition
+>[!definition] Mercer’s condition
 >Definition here
 

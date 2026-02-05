@@ -6,7 +6,7 @@ aliases:
 created: 2023-11-03
 date_checked:
 draft: false
-last_edited: 2023-11-13
+last_edited: 2026-02-05
 tags:
   - programming
 title: Max independent set problem (graph)
@@ -14,7 +14,7 @@ type: problem
 ---
 # Statement
 
->[!tldr] Max independent set problem
+>[!definition] Max independent set problem
 >Given a [undirected graph](graph.md) $G = (V,E)$ what is the size of the largest [independent set](independent_set_(graph).md) in $G$?
 
 # Solutions

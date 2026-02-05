@@ -4,7 +4,7 @@ aliases:
 created: 2023-10-03
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags:
   - programming
 title: Min st-cut problem
@@ -12,7 +12,7 @@ type: problem
 ---
 # Statement
 
->[!tldr] Min st-cut
+>[!definition] Min st-cut
 >Given a [flow network](flow_network.md) $(G, c, s, t)$ what is the [st-cut](st-cut.md) $(L, R)$ with minimum capacity.
 
 # Solutions

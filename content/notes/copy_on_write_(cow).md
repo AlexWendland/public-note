@@ -4,7 +4,7 @@ aliases:
 created: 2025-03-23
 date_checked: 2026-02-05
 draft: false
-last_edited: 2025-03-23
+last_edited: 2026-02-05
 tags:
   - OS
 title: Copy on write (COW)

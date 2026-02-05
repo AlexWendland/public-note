@@ -5,7 +5,7 @@ aliases:
 created: 2024-07-24
 date_checked: 2026-02-05
 draft: false
-last_edited: 2024-07-24
+last_edited: 2026-02-05
 tags:
   - networks
 title: Voice over IP (VoIP)

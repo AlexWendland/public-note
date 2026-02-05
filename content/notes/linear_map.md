@@ -4,11 +4,11 @@ aliases:
 created: 2024-03-09
 date_checked:
 draft: true
-last_edited: 2024-03-09
+last_edited: 2026-02-05
 tags: []
 title: Linear map
 type: definition
 ---
->[!tldr] Linear map
+>[!definition] Linear map
 >Definition here
 

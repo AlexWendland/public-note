@@ -3,13 +3,13 @@ aliases:
 created: 2024-07-21
 date_checked:
 draft: false
-last_edited: 2024-07-21
+last_edited: 2026-02-05
 tags:
   - networks
 title: ASwatch
 type: definition
 ---
->[!tldr] ASwatch
+>[!definition] ASwatch
 >ASwatch is a system that identifies malicious [Autonomous system (AS)](autonomous_system_(as).md) by analysing their routing behaviour, focusing specifically on "bulletproof" networks run by cybercriminals. Unlike other approaches that might rely on data from network traffic or content, ASwatch exclusively examines control plane information, which pertains to how networks route data.
 >
 >**Bulletproof Networks**: These are malicious networks that change upstream providers frequently and connect with shady networks to avoid detection. They display distinct interconnection patterns and control plane behaviors compared to legitimate networks.

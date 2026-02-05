@@ -6,7 +6,7 @@ aliases:
 created: 2023-09-30
 date_checked:
 draft: false
-last_edited: 2023-11-12
+last_edited: 2026-02-05
 tags:
   - programming
 title: Satisfiability problem (SAT problem)
@@ -14,7 +14,7 @@ type: problem
 ---
 # Statement
 
->[!tldr] Sat Problem
+>[!definition] Sat Problem
 >Given a [boolean function](boolean_function.md) $f$ in [CNF](conjunctive_normal_form_(cnf).md) with $n$ variables and $m$ clauses. Is there a true/false assignment to the $n$ variables that satisfies $f$. If yes then output it, otherwise say no.
 
 # Solutions

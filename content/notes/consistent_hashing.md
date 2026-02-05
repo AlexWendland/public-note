@@ -3,13 +3,13 @@ aliases:
 created: 2024-07-27
 date_checked: 2026-02-05
 draft: false
-last_edited: 2024-07-27
+last_edited: 2026-02-05
 tags:
   - computer-science
 title: Consistent hashing
 type: definition
 ---
-> [!tldr] Consistent hashing
+> [!definition] Consistent hashing
 > Consistent hashing is a distributed hash table that tends to balance load between multiple servers. In this, we will use nodes to mean the hash bins and IDs to mean elements that are being hashed. This is achieved by assigning roughly the same number of IDs to each node and requires little movement when nodes join or leave the hash table.
 > To understand the main idea, consider a circle where we will assign IDs and nodes a number on this circle.
 > ![Consistent Hashing](../../static/images/consistent_hashing.png)

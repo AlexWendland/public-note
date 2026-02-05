@@ -3,7 +3,7 @@ aliases:
 created: 2023-09-29
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags:
   - programming
 title: DFS for finding strongly connected components

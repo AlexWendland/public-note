@@ -4,14 +4,14 @@ aliases:
 created: 2024-01-17
 date_checked:
 draft: false
-last_edited: 2024-01-17
+last_edited: 2026-02-05
 tags:
   - maths
   - machine-learning
 title: Polynomial regression
 type: definition
 ---
->[!tldr] Polynomial regression
+>[!definition] Polynomial regression
 > In the [modelling framework](modelling_framework.md) saying we are doing *polynomial regression* is saying that we are picking the [modelling paradigm](modelling_paradigm.md) of functions of the form
 > $$f(x) = c_0 + \sum_{p \in \Delta_n^k}^n c_{p} x^p$$
 > where

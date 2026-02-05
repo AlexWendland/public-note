@@ -3,13 +3,13 @@ aliases:
 created: 2024-05-23
 date_checked:
 draft: false
-last_edited: 2024-05-23
+last_edited: 2026-02-05
 tags:
   - networks
 title: Client-Server model
 type: definition
 ---
->[!tldr] Client-Server model
+>[!definition] Client-Server model
 >The client-server model is a distributed application structure with two roles. There are [servers](server.md) providing resources and [clients](client.md) requesting them. For example, a web-server follows the client server model. The user of the browser is the client and the server providing web-pages is the server.
 >
 >Advantages

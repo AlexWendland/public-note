@@ -4,11 +4,11 @@ aliases:
 created: 2024-02-21
 date_checked:
 draft: true
-last_edited: 2024-02-21
+last_edited: 2026-02-05
 tags: []
 title: Probability density function
 type: definition
 ---
->[!tldr] Probability density function
+>[!definition] Probability density function
 >Definition here
 

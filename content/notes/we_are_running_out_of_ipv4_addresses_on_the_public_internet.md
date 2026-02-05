@@ -4,7 +4,7 @@ aliases:
 created: 2024-05-27
 date_checked:
 draft: true
-last_edited: 2024-05-27
+last_edited: 2026-02-05
 tags:
   - networks
 title: We are running out of IPv4 addresses on the pubic internet

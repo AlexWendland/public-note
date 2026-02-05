@@ -4,12 +4,12 @@ aliases:
 created: 2024-01-31
 date_checked:
 draft: true
-last_edited: 2024-01-31
+last_edited: 2026-02-05
 tags:
   - maths
 title: Tangent vector
 type: definition
 ---
->[!tldr] Tangent line
+>[!definition] Tangent line
 >Definition here
 

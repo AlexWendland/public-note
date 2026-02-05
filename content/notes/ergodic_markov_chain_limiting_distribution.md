@@ -3,7 +3,7 @@ aliases:
 created: 2023-12-03
 date_checked: 2026-01-28
 draft: false
-last_edited: 2026-01-28
+last_edited: 2026-02-05
 tags:
   - maths
 title: Ergodic Markov chain limiting distribution

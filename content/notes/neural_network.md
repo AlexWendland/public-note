@@ -9,12 +9,12 @@ aliases:
 created: 2024-01-20
 date_checked:
 draft: false
-last_edited: 2024-01-20
+last_edited: 2026-02-05
 tags: []
 title: Neural network
 type: definition
 ---
->[!tldr] Neural networks
+>[!definition] Neural networks
 >A *neural network* consists of the following information:
 >- A [directed acyclic graph](directed_acyclic_graph_(dag).md) $N = (V,E)$ where the source vertices are called the *input layer* $I \subset V$ and the sink vertices are called the *output layer* $O \subset V$,  and
 >- For each $v \in V \backslash I$ we have a [perceptron](perceptron_(neural_network).md) $p_v: \mathbb{R}^{\vert In(v) \vert} \rightarrow\mathbb{R}$.

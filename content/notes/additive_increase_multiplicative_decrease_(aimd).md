@@ -4,13 +4,13 @@ aliases:
 created: 2024-05-29
 date_checked:
 draft: false
-last_edited: 2024-05-29
+last_edited: 2026-02-05
 tags:
   - networks
 title: Additive increase Multiplicative Decrease (AIMD)
 type: definition
 ---
->[!tldr] Additive increase Multiplicative Decrease (AIMD)
+>[!definition] Additive increase Multiplicative Decrease (AIMD)
 >This is a method of probe-and-adjust that some [TCP](transmission_control_protocol_(tcp).md) implementations use.
 >-  Every [RTT](round_trip_time_(rtt).md) it wants to increase the window size by 1.
 >- If there is congestion on the network it halves the window size.

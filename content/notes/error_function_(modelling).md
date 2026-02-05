@@ -5,13 +5,13 @@ aliases:
 created: 2024-01-20
 date_checked:
 draft: false
-last_edited: 2024-01-20
+last_edited: 2026-02-05
 tags:
   - machine-learning
 title: Error function (modelling)
 type: definition
 ---
->[!tldr] Error function (modelling)
+>[!definition] Error function (modelling)
 >In the [modelling framework](modelling_framework.md) the *error function* determines how good the current model $\hat{f}$ is at fitting the [training data](training_data.md) $T$. This is a function maps from our parameter space to some evaluation space, usually $\mathbb{R}$ - if we let $o$ be the objective function it normally takes the form
 >$$E(w) = \sum_{(x,y) \in T} o(f(x), y).$$
 >Though this depends on our learning method.

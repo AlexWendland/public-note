@@ -4,13 +4,13 @@ aliases:
 created: 2025-04-13
 date_checked: 2026-01-29
 draft: false
-last_edited: 2025-04-13
+last_edited: 2026-02-05
 tags:
   - OS
 title: Network file system (NFS)
 type: definition
 ---
->[!tldr] Network file system (NFS)
+>[!definition] Network file system (NFS)
 >This is a [distributed file system](distributed_file_system_(dfs).md) developed by Sun. This uses [Remote Procedure Calls (RPC)](remote_procedure_calls_(rpc).md) to communicate between servers and client. When the client opens a request to a file, it creates a virtual file descriptor which contains details about the server and file. This is used by the client to read/write to the server. If the server dies that descriptor returns an error so the client knows there was an issue with the request.
 >![NFS Architecture](../../static/images/nfs_architecture.png)
 

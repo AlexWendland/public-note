@@ -4,11 +4,11 @@ aliases:
 created: 2024-01-20
 date_checked:
 draft: true
-last_edited: 2024-01-20
+last_edited: 2026-02-05
 tags: []
 title: Tangent function (tan)
 type: definition
 ---
->[!tldr] Tangent function
+>[!definition] Tangent function
 >Definition here
 

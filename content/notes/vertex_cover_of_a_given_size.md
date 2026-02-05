@@ -3,7 +3,7 @@ aliases:
 created: 2023-11-03
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags:
   - programming
   - graph-theory
@@ -12,7 +12,7 @@ type: problem
 ---
 # Statement
 
->[!tldr] Vertex cover of a given size
+>[!definition] Vertex cover of a given size
 >Given an [undirected graph](graph.md) $G = (V,E)$ and a positive integer $g > 0$, is there a [vertex cover](vertex_cover.md) using at most $g$ vertices, if so what is it?
 
 # Solutions

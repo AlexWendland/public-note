@@ -3,7 +3,7 @@ aliases:
 created: 2023-10-05
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags:
   - programming
 title: Image segmentation by max flow
@@ -24,7 +24,7 @@ Therefore to maximise $w(F,B)$ we could instead minimise
 $$w'(F,B) = \sum_{u \in B} f(u) + \sum_{v \in F} b(v) + \sum_{(v,u) \in cut(F,B)} p(u,v).$$
 ## New problem
 
->[!tldr] Image segmentation altered
+>[!definition] Image segmentation altered
 >Given an undirected graph $G = (V,E)$ with weights:
 >- for each $v \in V$, $f(v), b(v) \geq 0$, and
 >- for each $e \in E$, $p(e) \geq 0$.

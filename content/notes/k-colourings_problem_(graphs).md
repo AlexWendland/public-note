@@ -4,7 +4,7 @@ aliases:
 created: 2023-11-02
 date_checked:
 draft: false
-last_edited: 2023-11-16
+last_edited: 2026-02-05
 tags:
   - programming
 title: k-colourings problem (graphs)
@@ -12,7 +12,7 @@ type: problem
 ---
 # Statement
 
->[!tldr] $k$-colourings problem (graphs)
+>[!definition] $k$-colourings problem (graphs)
 >Given an [undirected graph](graph.md) $G = (V,E)$ and integer $k > 0$. Does $G$ have a [proper vertex colouring](proper_vertex_colouring.md) using $k$-colours, if it does output the colouring and if not say so.
 
 # Solutions

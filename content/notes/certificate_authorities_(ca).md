@@ -6,11 +6,11 @@ aliases:
 created: 2024-07-22
 date_checked:
 draft: true
-last_edited: 2024-07-22
+last_edited: 2026-02-05
 tags: []
 title: Certificate authorities (CA)
 type: definition
 ---
->[!tldr] Certificate authorities (CA)
+>[!definition] Certificate authorities (CA)
 >Definition here
 

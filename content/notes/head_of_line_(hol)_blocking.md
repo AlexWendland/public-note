@@ -4,13 +4,13 @@ aliases:
 created: 2024-06-15
 date_checked:
 draft: false
-last_edited: 2024-06-15
+last_edited: 2026-02-05
 tags:
   - networks
 title: Head of line (HOL) blocking
 type: definition
 ---
->[!tldr] Head of line (HOL) blocking
+>[!definition] Head of line (HOL) blocking
 >In the [switching fabric](switching_fabric.md), head of line blocking happens when all inputs want to connect to the same output line. Then each of the queues are blocked whilst these requests get served. This can slow down [switching fabric](switching_fabric.md) especially if inputs also have messages for other outputs that could get served.
 >![Head Of Line Blocking](../../static/images/head_of_line_blocking.png)
 

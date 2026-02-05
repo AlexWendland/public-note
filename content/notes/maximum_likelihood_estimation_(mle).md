@@ -8,14 +8,14 @@ aliases:
 created: 2024-02-20
 date_checked:
 draft: false
-last_edited: 2024-02-20
+last_edited: 2026-02-05
 tags:
   - statistics
   - machine-learning
 title: Maximum likelihood estimation (MLE)
 type: definition
 ---
->[!tldr] Maximum likelihood estimation (MLE)
+>[!definition] Maximum likelihood estimation (MLE)
 >Suppose we have a [hypothesis space](modelling_paradigm.md) $H$ and we want to pick the best hypothesis given some data $D$. The *maximum likelihood estimation* is
 >$$h_{MLE} = \mbox{arg}\max_{h \in H} \ \mathbb{P}[D \ \vert \ h].$$
 

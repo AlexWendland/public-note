@@ -5,7 +5,7 @@ course_name: Introduction to Graduate Algorithms
 created: 2023-10-09
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags:
   - OMSCS
 title: Week 8 - Modular Arithmetic
@@ -31,7 +31,7 @@ It is quite easy to calculate $x^{2k}$ (mod $N$) as you recursively calculate $(
 
 # Multiplicative inverse problem
 
->[!tldr] Modular multiplicative inverses
+>[!definition] Modular multiplicative inverses
 >The multiplicative inverse of $z$ mod $N$ is $0 \leq x < N$ such that $x \cdot z = 1$.
 
 This may not exist if $N$ is not prime.

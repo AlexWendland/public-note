@@ -3,11 +3,11 @@ aliases:
 created: 2024-04-07
 date_checked:
 draft: true
-last_edited: 2024-04-07
+last_edited: 2026-02-05
 tags: []
 title: Convex hull
 type: definition
 ---
->[!tldr] Convex hull
+>[!definition] Convex hull
 >Definition here
 

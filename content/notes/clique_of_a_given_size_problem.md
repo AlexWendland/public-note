@@ -3,7 +3,7 @@ aliases:
 created: 2023-11-03
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags:
   - programming
   - graph-theory
@@ -12,7 +12,7 @@ type: problem
 ---
 # Statement
 
->[!tldr] Clique of a given size problem
+>[!definition] Clique of a given size problem
 >Given an [undirected graph](graph.md) $G = (V,E)$ and a positive integer $g > 0$. Does there exist a [clique](clique_(graph).md) of size at least $g$ if so what is it?
 
 # Solutions

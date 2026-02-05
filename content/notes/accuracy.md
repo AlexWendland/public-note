@@ -3,14 +3,14 @@ aliases:
 created: 2024-02-02
 date_checked:
 draft: false
-last_edited: 2024-02-02
+last_edited: 2026-02-05
 tags:
   - machine-learning
   - statistics
 title: Accuracy
 type: definition
 ---
->[!tldr] Accuracy
+>[!definition] Accuracy
 >Suppose we some model $\hat{f}$ predicting $f$. For some [test data](testing_data.md) $T$ we define
 >$$\mbox{Accuracy}(f, T) = \frac{\vert \vert x \in T \vert \hat{f}(x) = f(x) \vert \vert}{\vert T \vert}. $$
 

@@ -7,13 +7,13 @@ aliases:
 created: 2024-07-22
 date_checked:
 draft: false
-last_edited: 2024-07-22
+last_edited: 2026-02-05
 tags:
   - networks
 title: DNS records
 type: definition
 ---
->[!tldr] DNS records
+>[!definition] DNS records
 >This is the response from a [DNS](domain_name_system_(dns).md) server. This comes in a question/answer format as bellow. Typically these 4 vales:
 >- Domain name: The name of the domain requested.
 >- [TTL](time_to_live_(ttl).md): How long the response should be cached for by other DNS servers.

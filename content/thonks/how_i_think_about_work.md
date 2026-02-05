@@ -3,7 +3,7 @@ aliases:
 created: 2025-06-29
 date_checked: 2026-01-29
 draft: false
-last_edited: 2025-06-29
+last_edited: 2026-02-05
 tags:
   - finance
   - work

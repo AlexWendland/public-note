@@ -5,7 +5,7 @@ course_name: Compilers - Theory and Practice
 created: '2026-02-03'
 date_checked: '2026-02-05'
 draft: false
-last_edited: '2026-02-03'
+last_edited: 2026-02-05
 tags:
   - OMSCS
 title: Week 5 - Recursive Descent Parsing

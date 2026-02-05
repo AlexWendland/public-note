@@ -4,7 +4,7 @@ aliases:
 created: 2024-09-05
 date_checked: 2026-02-05
 draft: false
-last_edited: 2024-09-05
+last_edited: 2026-02-05
 tags:
   - OS
 title: Spurious wakeups

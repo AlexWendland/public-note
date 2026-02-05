@@ -3,7 +3,7 @@ aliases:
 created: 2023-09-28
 date_checked: 2026-01-29
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-02-05
 tags:
   - programming
 title: Find connected components in an undirected graph

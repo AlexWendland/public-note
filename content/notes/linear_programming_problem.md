@@ -4,7 +4,7 @@ aliases:
 created: 2023-11-07
 date_checked:
 draft: false
-last_edited: 2023-11-12
+last_edited: 2026-02-05
 tags:
   - programming
 title: Linear programming problem
@@ -12,7 +12,7 @@ type: problem
 ---
 # Statement
 
->[!tldr] Linear programme problem
+>[!definition] Linear programme problem
 >Given a [linear programme](linear_programme.md) what is an $x \in \mathbb{R}^n$ that achieves an optimal solution if it exists.
 
 # Solutions

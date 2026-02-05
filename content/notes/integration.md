@@ -4,11 +4,11 @@ aliases:
 created: 2024-02-16
 date_checked:
 draft: true
-last_edited: 2024-02-16
+last_edited: 2026-02-05
 tags: []
 title: Integration
 type: definition
 ---
->[!tldr] Integration
+>[!definition] Integration
 >Definition here
 

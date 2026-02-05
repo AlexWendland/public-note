@@ -6,14 +6,14 @@ aliases:
 created: 2024-02-02
 date_checked:
 draft: false
-last_edited: 2024-02-02
+last_edited: 2026-02-05
 tags:
   - machine-learning
   - maths
 title: Kernel trick
 type: definition
 ---
->[!tldr] Kernel trick
+>[!definition] Kernel trick
 >Suppose we are in the [modelling framework](modelling_framework.md) with training data $T \subset A \times B$. When using [SVMs](support_vector_machines_(svm).md) we want to find a [hyperplane](hyperplane.md) that [linearly separates](linearly_separable.md) the data - though this might not be possible for the current embedding of $T$ in $A$. Though it might be possible for a map
 >$$\Phi: A \rightarrow A'.$$
 >The *kernel trick* is to define a kernel of similarity

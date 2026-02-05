@@ -3,13 +3,13 @@ aliases: []
 created: 2024-04-06
 date_checked:
 draft: false
-last_edited: 2024-04-06
+last_edited: 2026-02-05
 tags:
   - machine-learning
 title: Epsilon-greedy exploration
 type: definition
 ---
->[!tldr] Epsilon-greedy exploration
+>[!definition] Epsilon-greedy exploration
 >$\epsilon$-greedy exploration is a way of choosing actions in [Q-learning](q-learning.md). For a sequence $\epsilon: \mathbb{N} \rightarrow [0,1]$ at time step $t \in \mathbb{N}$ you choose action
 >$$\hat{\pi}_t(s) = \begin{cases} \mbox{arg}\max_{a \in A_s} Q(s,a) & \mbox{with probability } 1 - \epsilon_t\\ a & \mbox{for } a \in A_s \mbox{with probability } \frac{\epsilon}{\vert A_s \vert}\end{cases}$$
 

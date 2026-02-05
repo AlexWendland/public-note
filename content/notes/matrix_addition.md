@@ -4,11 +4,11 @@ aliases:
 created: 2023-12-03
 date_checked:
 draft: true
-last_edited: 2023-12-03
+last_edited: 2026-02-05
 tags: []
 title: Matrix addition
 type: definition
 ---
->[!tldr] Matrix addition
+>[!definition] Matrix addition
 >Definition here
 

@@ -6,13 +6,13 @@ aliases:
 created: 2024-09-04
 date_checked: 2026-02-05
 draft: false
-last_edited: 2024-09-04
+last_edited: 2026-02-05
 tags:
   - OS
 title: Mutex
 type: definition
 ---
->[!tldr] Mutex
+>[!definition] Mutex
 > A *mutex* is a lock on some shared operation between [threads](thread.md). For example accessing shared memory. To do the operation you must obtain the mutex (if some other [thread](thread.md) has the mutex you enter a wait state). The mutex is just a [data structure](data_structure.md) consisting of at least:
 > - Status of the mutex,
 > - Current mutex owner, and

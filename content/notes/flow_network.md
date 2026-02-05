@@ -4,13 +4,13 @@ aliases:
 created: 2023-10-02
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags:
   - programming
 title: Flow network
 type: definition
 ---
->[!tldr] Flow network
+>[!definition] Flow network
 >A flow network contains the following data:
 >- A [directed graph](directed_graph.md) $G = (V,E)$,
 >- An edge weighting $c: E \rightarrow \mathbb{R}_{\geq0}$ called the capacity,

@@ -4,13 +4,13 @@ aliases:
 created: 2023-10-02
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags:
   - programming
 title: Flow
 type: definition
 ---
->[!tldr] Flow
+>[!definition] Flow
 >Given a [flow network](flow_network.md) $(G, c, s, t)$ a flow is an allocation $f: E \rightarrow \mathbb{R}_{\geq0}$ such that the following holds:
 >
 >- capacity constraint: $f(e) \leq c(e)$ for all $e \in E$, and

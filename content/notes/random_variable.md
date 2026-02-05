@@ -6,11 +6,11 @@ aliases:
 created: 2024-01-11
 date_checked:
 draft: true
-last_edited: 2024-01-11
+last_edited: 2026-02-05
 tags: []
 title: Random variable
 type: definition
 ---
->[!tldr] Random variable
+>[!definition] Random variable
 >Definition here
 

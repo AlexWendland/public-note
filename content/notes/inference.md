@@ -3,11 +3,11 @@ aliases:
 created: 2023-09-09
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags:
   - maths
 title: Inference
 type: definition
 ---
->[!tldr] Inference
+>[!definition] Inference
 >In the [modelling framework](modelling_framework.md) for a function $f: A \rightarrow B$ an *inference* about $f$ is some understanding of its True form. For example, if $A$ was a companies revenue and expenditure and $f$ was the profit function, an inference would be that $f$ is revenue minus expenditure.

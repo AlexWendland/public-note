@@ -4,13 +4,13 @@ aliases:
 created: 2024-05-21
 date_checked:
 draft: false
-last_edited: 2024-05-21
+last_edited: 2026-02-05
 tags:
   - networks
 title: Routing
 type: definition
 ---
->[!tldr] Routing
+>[!definition] Routing
 >The process of routing is getting a [packet](packets.md) the network associated to its [IP address](internet_protocol_(ip).md). To do this all routers store a [routing table](routing_table.md) which maps the tuple of an IP address and a [network mask](network_mask.md) to either a interface or a IP address.
 >
 >There are two types of routing [Intradomain routing](intradomain_routing.md), how routers exchange information within the same [Autonomous system (AS)](autonomous_system_(as).md), and [interdomain routing](interdomain_routing.md) how routes get shared between [Autonomous system (AS)](autonomous_system_(as).md).

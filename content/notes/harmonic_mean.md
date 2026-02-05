@@ -4,11 +4,11 @@ aliases:
 created: 2024-02-02
 date_checked:
 draft: true
-last_edited: 2024-02-02
+last_edited: 2026-02-05
 tags: []
 title: Harmonic mean
 type: definition
 ---
->[!tldr] Harmonic mean
+>[!definition] Harmonic mean
 >Definition here
 

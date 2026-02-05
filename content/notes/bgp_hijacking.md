@@ -3,14 +3,14 @@ aliases:
 created: 2024-07-21
 date_checked:
 draft: false
-last_edited: 2024-07-21
+last_edited: 2026-02-05
 tags:
   - networks
   - security
 title: BGP Hijacking
 type: definition
 ---
->[!tldr] BGP Hijacking
+>[!definition] BGP Hijacking
 >This is a class of attacks that use the [BGP](border_gateway_protocol_(bgp).md) [protocol](protocol_(networks).md) as its method of attack. This falls into 3 categories:
 >1. **Classification by Affected Prefix**: In this class of hijacking attacks, we are primarily concerned with the IP prefixes that are advertised by BGP.
 >	1. [Exact prefix hijacking](exact_prefix_hijacking.md)

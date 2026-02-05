@@ -5,13 +5,13 @@ aliases:
 created: 2024-07-21
 date_checked:
 draft: false
-last_edited: 2024-07-21
+last_edited: 2026-02-05
 tags:
   - networks
 title: Fast-Flux Service Networks (FFSN)
 type: definition
 ---
->[!tldr] Fast-Flux Service Networks (FFSN)
+>[!definition] Fast-Flux Service Networks (FFSN)
 >Fast-Flux Service Networks (FFSN) extend the principles of [Round robin DNS (RRDNS)](round_robin_dns_(rrdns).md) and [Content delivery network (CDN)](content_delivery_network_(cdn).md) to enhance resilience and scalability, but they are often exploited by spammers and cybercriminals. FFSNs employ a technique where [DNS](domain_name_system_(dns).md) responses rapidly change, featuring a very short [Time to live (TTL)](time_to_live_(ttl).md) compared to RRDNS and CDNs. Each DNS lookup returns a different set of IP addresses from a larger pool of compromised machines.
 >
 >These compromised machines, known as flux agents, act as intermediaries between the user's request and the main control server (mothership), which hosts the actual content. When a user makes a request to a domain hosted on an FFSN, the DNS lookup provides several IP addresses of these flux agents. After the TTL expires, a new lookup returns a different set of IP addresses, complicating efforts to shut down malicious activities.

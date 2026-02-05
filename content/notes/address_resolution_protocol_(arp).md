@@ -4,13 +4,13 @@ aliases:
 created: 2024-05-21
 date_checked:
 draft: false
-last_edited: 2024-05-21
+last_edited: 2026-02-05
 tags:
   - networks
 title: Address Resolution Protocol (ARP)
 type: definition
 ---
->[!tldr] Address Resolution Protocol (ARP)
+>[!definition] Address Resolution Protocol (ARP)
 > This [protocol](protocol_(networks).md) is used to update a [nodes](node_(ipv6).md) [ARP cache](arp_cache.md) within a [network](network.md). When this node needs to send [packet](packets.md) to a address within its network (as identified by the [network mask](network_mask.md)) but that entry is missing from the [ARP cache](arp_cache.md) it does the following.
 > - It [broadcasts](broadcast_(networks).md) a [frame](frame_(networks).md) with its [IP address](internet_protocol_(ip).md) and [MAC address](mac_address.md) as the source and the [IP address](internet_protocol_(ip).md) and the [all f's address](broadcast_(networks).md) as the destination.
 > - All hosts on the network receive this [frame](frame_(networks).md).

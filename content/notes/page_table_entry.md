@@ -4,13 +4,13 @@ aliases:
 created: 2025-03-22
 date_checked: 2026-02-05
 draft: false
-last_edited: 2025-03-22
+last_edited: 2026-02-05
 tags:
   - OS
 title: Page table entry
 type: definition
 ---
-> [!tldr] Page table entry
+> [!definition] Page table entry
 >A *page table entry* is indexed by the [virtual page number](virtual_page_number_(vpn).md) and contains the [physical frame number](physical_frame_number_(pfn).md) which is how the mapping between the two is carried out. However, the entry also contains some other management fields such as:
 >- Present: If mapping is still valid or not. As the [frame](memory_frame.md) may have been reclaimed.
 >- Dirty: If the [frame](memory_frame.md) has been written to. For example if it represents something on disk we know it still needs to be copied down to disk.

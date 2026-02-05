@@ -7,13 +7,13 @@ aliases:
 created: 2023-10-12
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags:
   - programming
 title: Linked lists
 type: data structure
 ---
->[!tldr] Linked list
+>[!definition] Linked list
 >A linked list stores a collect of elements of the same data type. The data structure consists of a set of sequential nodes. Each node has the following information
 >1. The element we are storing at this position, and
 >2. A pointer to the next node.

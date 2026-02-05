@@ -5,7 +5,7 @@ course_name: Computer Networks
 created: 2024-06-08
 date_checked:
 draft: false
-last_edited: 2024-06-08
+last_edited: 2026-02-05
 tags:
   - OMSCS
 title: Week 4 - AS relationships and interdomain routing

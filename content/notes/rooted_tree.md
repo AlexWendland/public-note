@@ -4,14 +4,14 @@ aliases:
 created: 2024-01-10
 date_checked:
 draft: false
-last_edited: 2024-01-10
+last_edited: 2026-02-05
 tags:
   - graph-theory
   - maths
 title: Rooted tree
 type: definition
 ---
->[!tldr] Rooted tree
+>[!definition] Rooted tree
 >A *rooted tree* is a [tree](tree_(graph).md) $(V, E)$ with a *root* vertex $r \in V$. This is sometimes represented as $(T = (V,E), r)$.
 >In a rooted tree
 >- $r \in V$ is not considered a [leaf vertex](leaf_(graph).md),

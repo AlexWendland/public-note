@@ -3,12 +3,12 @@ aliases:
 created: 2024-04-03
 date_checked:
 draft: false
-last_edited: 2024-04-03
+last_edited: 2026-02-05
 tags:
   - machine-learning
 title: Gridworld
 type: definition
 ---
->[!tldr] Gridworld
+>[!definition] Gridworld
 >A Grid world is any set of states that can be modelled as $S \subset \mathbb{Z}^n$. Where states can only transition to adjacent states in the grid system.
 

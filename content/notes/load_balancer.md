@@ -5,11 +5,11 @@ aliases:
 created: 2024-07-19
 date_checked:
 draft: true
-last_edited: 2024-07-19
+last_edited: 2026-02-05
 tags: []
 title: Load balancer
 type: definition
 ---
->[!tldr] Load balancers
+>[!definition] Load balancers
 >Definition here
 

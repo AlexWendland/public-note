@@ -5,7 +5,7 @@ course_name: Machine Learning
 created: 2024-01-18
 date_checked:
 draft: false
-last_edited: 2024-01-18
+last_edited: 2026-02-05
 tags:
   - OMSCS
 title: Week 2 - Neural networks

@@ -5,13 +5,13 @@ aliases:
 created: 2024-05-22
 date_checked:
 draft: false
-last_edited: 2024-05-22
+last_edited: 2026-02-05
 tags:
   - networks
 title: Socket
 type: definition
 ---
->[!tldr] Socket
+>[!definition] Socket
 >A socket is the collection of 3 bits of information:
 >- A transport protocol such as [TCP](transmission_control_protocol_(tcp).md) or [UDP](user_datagram_protocol_(udp).md),
 >- An [Internet Protocol (IPv4)](internet_protocol_(ipv4).md), and

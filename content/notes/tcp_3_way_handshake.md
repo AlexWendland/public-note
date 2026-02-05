@@ -3,13 +3,13 @@ aliases:
 created: 2024-05-27
 date_checked:
 draft: false
-last_edited: 2024-05-27
+last_edited: 2026-02-05
 tags:
   - networks
 title: TCP 3 way handshake
 type: definition
 ---
->[!tldr] TCP 3 way handshake
+>[!definition] TCP 3 way handshake
 >[TCP](transmission_control_protocol_(tcp).md) starts a connection with a 3 way handshake to parse enough information to start the [duplex](duplex.md) communication:
 >- The connecting [host](host_(networks).md) sends an empty synchronise message with the SYN [bit](bit.md) set to 1. It sets the initial sequence for the messages this host will be sending `client_isn`.
 >- The receiving [host](host_(networks).md) sends an empty synchronise-acknowledgement message with the SYN and ACK [bit](bit.md) set to 1. It sets the initial sequence number for the messages this host will be sending `server_isn` with the acknowledgement header set to `client_isn + 1`.

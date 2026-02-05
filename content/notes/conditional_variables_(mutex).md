@@ -5,13 +5,13 @@ aliases:
 created: 2024-09-04
 date_checked: 2026-02-05
 draft: false
-last_edited: 2024-09-04
+last_edited: 2026-02-05
 tags:
   - OS
 title: Conditional variables (Mutex)
 type: definition
 ---
-> [!tldr] Conditional variables (Mutex)
+> [!definition] Conditional variables (Mutex)
 > A [mutex](mutex.md) may need special operations applied upon some condition being met. (For example, processing a list when it is full.) To implement this, we use a [data structure](data_structure.md) called a conditional variable that holds at least:
 > - A reference to the [mutex](mutex.md) it is related to, and
 > - A list of waiting [threads](thread.md).

@@ -3,7 +3,7 @@ aliases:
 created: 2023-11-03
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags:
   - programming
   - graph-theory
@@ -12,7 +12,7 @@ type: problem
 ---
 # Statement
 
->[!tldr] Minimum vertex cover problem
+>[!definition] Minimum vertex cover problem
 >Given an [undirected graph](graph.md) $G = (V,E)$ provide a [vertex cover](vertex_cover.md) of smallest size.
 
 # Solutions

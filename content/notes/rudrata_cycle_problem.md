@@ -3,7 +3,7 @@ aliases:
 created: 2023-11-15
 date_checked:
 draft: false
-last_edited: 2023-11-15
+last_edited: 2026-02-05
 tags:
   - programming
   - graph-theory
@@ -12,7 +12,7 @@ type: problem
 ---
 # Statement
 
->[!tldr] Rudrata cycle problem
+>[!definition] Rudrata cycle problem
 >Given a [graph](graph.md) $G = (V,E)$, what is a [Rudrata cycle](rudrata_cycle.md) if it exists?
 
 # Solutions

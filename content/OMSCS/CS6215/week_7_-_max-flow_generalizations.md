@@ -5,7 +5,7 @@ course_name: Introduction to Graduate Algorithms
 created: 2023-10-07
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags:
   - OMSCS
 title: Week 7 - Max-flow Generalizations
@@ -13,7 +13,7 @@ type: lecture
 week: 7
 ---
 
->[!tldr] [Max flow](../../notes/max_flow_problem.md) with demands
+>[!definition] [Max flow](../../notes/max_flow_problem.md) with demands
 >Let $(G=(V,E), c, s, t)$ be a [flow network](../../notes/flow_network.md) and assume we are provided with demands $d(e) \geq 0$ for $e \in E$. A flow $f$ is called feasible if
 >$$d(e) \leq f(e) \leq c(e).$$
 >Is there a feasible flow? If so what is the maximum feasible flow?

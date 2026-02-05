@@ -5,7 +5,7 @@ course_name: Graduate introduction to Operating Systems
 created: 2025-03-24
 date_checked: 2026-02-05
 draft: false
-last_edited: 2025-03-24
+last_edited: 2026-02-05
 tags:
   - OMSCS
 title: Week 9 - Inter-process communication

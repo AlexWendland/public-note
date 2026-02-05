@@ -3,13 +3,13 @@ aliases:
 created: 2024-05-29
 date_checked:
 draft: false
-last_edited: 2024-05-29
+last_edited: 2026-02-05
 tags:
   - networks
 title: TCP Reno
 type: definition
 ---
->[!tldr] TCP Reno
+>[!definition] TCP Reno
 >This is the classical [Congestion control in TCP](congestion_control_in_tcp.md). It starts the window size to be 1 packets big. It uses [AIMD](additive_increase_multiplicative_decrease_(aimd).md) with two different signals.
 >- If a message is waited on 3 times, it halves the congestion window in [AIMD](additive_increase_multiplicative_decrease_(aimd).md).
 >- If it reaches a timeout window (i.e. no message is received for a given length of time). It resets the congestion window back to 1.

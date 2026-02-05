@@ -3,13 +3,13 @@ aliases:
 created: 2024-05-29
 date_checked:
 draft: false
-last_edited: 2024-05-29
+last_edited: 2026-02-05
 tags:
   - networks
 title: TCP CUBIC
 type: definition
 ---
->[!tldr] TCP CUBIC
+>[!definition] TCP CUBIC
 > In networks with large bandwidth or a long delay [TCP Reno](tcp_reno.md) yields low network utilisation. TCP CUBIC is the more efficient implementation used within the linux kernal.
 >CUBIC still uses a reset for a timeout and halves when it gets a triple unacknowledged message. Though this implementation uses two different features to [TCP Reno](tcp_reno.md):
 >- A cubic polynomial increase function.

@@ -3,14 +3,14 @@ aliases:
 created: 2024-07-23
 date_checked:
 draft: false
-last_edited: 2024-07-23
+last_edited: 2026-02-05
 tags:
   - networks
   - security
 title: Iris
 type: definition
 ---
->[!tldr] Iris
+>[!definition] Iris
 >This is a system that detects [DNS censorship](dns_censorship.md). It does this by comparing the responses of open [DNS](domain_name_system_(dns).md) resolvers on the internet. This is done in a multi-step process as shown below.
 >![Iris Methodology](../../static/images/iris_methodology.png)
 >This first looks for open [DNS](domain_name_system_(dns).md) resolvers that are part of the internet infrastructure (i.e. not home routers that are sometimes open due to misconfiguration).

@@ -3,11 +3,11 @@ aliases:
 created: 2024-03-10
 date_checked:
 draft: true
-last_edited: 2024-03-10
+last_edited: 2026-02-05
 tags: []
 title: Covariance matrix
 type: definition
 ---
->[!tldr] Covariance matrix
+>[!definition] Covariance matrix
 >Definition here
 

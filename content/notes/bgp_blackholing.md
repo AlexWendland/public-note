@@ -3,14 +3,14 @@ aliases:
 created: 2024-07-21
 date_checked:
 draft: false
-last_edited: 2024-07-21
+last_edited: 2026-02-05
 tags:
   - networks
   - security
 title: BGP Blackholing
 type: definition
 ---
->[!tldr] BGP Blackholing
+>[!definition] BGP Blackholing
 >This is a method of initiating [blackholing](blackholing_(bh).md) in the event of a [DDoS](distributed_denial-of-service_(ddos).md) attack using an upstream service.
 >
 >This works in the following stages:

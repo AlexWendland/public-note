@@ -6,13 +6,13 @@ aliases:
 created: 2024-06-13
 date_checked:
 draft: false
-last_edited: 2024-06-13
+last_edited: 2026-02-05
 tags:
   - programming
 title: Trie
 type: data structure
 ---
->[!tldr] Trie
+>[!definition] Trie
 >A *trie* or *prefix tree* is used for associating words in a given alphabet $A$ to some values in $X$.
 >- This is given by a directed rooted [tree](tree_(graph).md) $(T = (V, E), r)$.
 >- An edge letter map $a: E \rightarrow A$, where $a(v,u) = a(v,w) \Rightarrow u = v$.

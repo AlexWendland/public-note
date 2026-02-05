@@ -3,14 +3,14 @@ aliases:
 created: 2024-07-21
 date_checked:
 draft: false
-last_edited: 2024-07-21
+last_edited: 2026-02-05
 tags:
   - networks
   - security
 title: BGP Flowspec
 type: definition
 ---
->[!tldr] BGP Flowspec
+>[!definition] BGP Flowspec
 >[BGP](border_gateway_protocol_(bgp).md) Flowspec is an extension of [BGP](border_gateway_protocol_(bgp).md) designed to allow the creation and propagation of detailed traffic flow filtering rules. These rules can be applied across different [ASs](autonomous_system_(as).md).
 >
 >The following table shows the available components to select a flow:

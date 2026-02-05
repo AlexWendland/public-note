@@ -5,13 +5,13 @@ aliases:
 created: 2024-05-23
 date_checked:
 draft: false
-last_edited: 2024-05-23
+last_edited: 2026-02-05
 tags:
   - networks
 title: Evolutionary Architecture model (EvoArch)
 type: definition
 ---
->[!tldr] Evolutionary Architecture model (EvoArch)
+>[!definition] Evolutionary Architecture model (EvoArch)
 > This is a model built to explain the [Internet protocol stack hourglass shape](internet_protocol_stack_hourglass_shape.md). It builds a [DAG](directed_acyclic_graph_(dag).md) in discrete time steps $G_i = (V_i,E_i)$ over time $i \in \mathbb{N}$ to model the [protocols](protocol_(networks).md) in the [OSI model](open_systems_interconnection_(osi)_model.md).
 > - Define a set of layers $L$,
 > - Each vertex $v \in V_i$ gets mapped to a layer $l(v) \in L$,

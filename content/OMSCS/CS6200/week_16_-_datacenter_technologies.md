@@ -5,7 +5,7 @@ course_name: Graduate introduction to Operating Systems
 created: 2025-04-13
 date_checked: 2026-01-29
 draft: false
-last_edited: 2025-04-13
+last_edited: 2026-02-05
 tags:
   - OMSCS
 title: Week 16 - Datacenter technologies

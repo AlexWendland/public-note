@@ -4,13 +4,13 @@ aliases:
 created: 2024-03-10
 date_checked:
 draft: false
-last_edited: 2024-03-10
+last_edited: 2026-02-05
 tags:
   - probability
 title: Variance
 type: definition
 ---
->[!tldr] Variance
+>[!definition] Variance
 >For some [random variable](random_variable.md) $X$ given by the [probability density function](probability_density_function.md) $f: D \rightarrow \mathbb{R}$ and [expectation](expected_value.md) $\mu = \mathbb{E}[X]$ the *variance* is
 >$$\int_{D} (x - \mu)^2f(x) \ dx.$$
 >It is the square of the [standard deviation](standard_deviation.md).

@@ -4,12 +4,12 @@ aliases:
 created: 2024-06-13
 date_checked:
 draft: true
-last_edited: 2024-06-13
+last_edited: 2026-02-05
 tags:
   - networks
 title: Time to live (TTL)
 type: definition
 ---
->[!tldr] Time to live (TTL)
+>[!definition] Time to live (TTL)
 >Definition here
 

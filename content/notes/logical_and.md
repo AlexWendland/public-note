@@ -3,14 +3,14 @@ aliases:
 created: 2024-01-11
 date_checked:
 draft: false
-last_edited: 2024-01-11
+last_edited: 2026-02-05
 tags:
   - logic
   - maths
 title: Logical and
 type: definition
 ---
->[!tldr] Logical and
+>[!definition] Logical and
 >This is a [boolean function](boolean_function.md) regularly expressed as $\land: \{T, F\}^2 \rightarrow \{T, F\}$ which is only true if both its inputs are.
 >
 >This can be generalised to more inputs where all inputs must be true for it to be true.

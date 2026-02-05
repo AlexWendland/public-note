@@ -5,14 +5,14 @@ aliases:
 created: 2024-04-03
 date_checked:
 draft: false
-last_edited: 2024-04-03
+last_edited: 2026-02-05
 tags:
   - probability
   - machine-learning
 title: Markov decision process
 type: definition
 ---
->[!tldr] Markov decision process
+>[!definition] Markov decision process
 >A Markov decision process is defined by the following data:
 >- A set $S$ of states,
 >- A set of actions $A$ (which might be dependent on the state i.e. for each state $s \in S$ we have a set $A(s) \subset A$),

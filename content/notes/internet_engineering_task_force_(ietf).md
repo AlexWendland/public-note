@@ -5,7 +5,7 @@ aliases:
 created: 2024-07-19
 date_checked:
 draft: false
-last_edited: 2024-07-19
+last_edited: 2026-02-05
 tags:
   - networks
   - organisation
@@ -13,7 +13,7 @@ title: Internet engineering task force (IETF)
 type: definition
 ---
 
->[!tldr] Internet engineering task force (IETF)
+>[!definition] Internet engineering task force (IETF)
 >The **Internet Engineering Task Force (IETF)** is an open standards organization that develops and promotes voluntary internet standards, particularly those related to the TCP/IP protocol suite. Founded in 1986, it operates through a collaborative process involving working groups and discussions, primarily conducted via mailing lists and periodic meetings.
 >
 >**Key Activities:**

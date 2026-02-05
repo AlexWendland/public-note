@@ -5,13 +5,13 @@ aliases:
 created: 2024-05-23
 date_checked:
 draft: false
-last_edited: 2024-05-23
+last_edited: 2026-02-05
 tags:
   - networks
 title: Internet Service Provider (ISP)
 type: definition
 ---
->[!tldr] Internet Service Provider (ISP)
+>[!definition] Internet Service Provider (ISP)
 >An *internet service provider* (ISP) is a company that provides individuals and organizations access to the [Internet](internet.md) and other related services.
 >
 >There are different size internet service providers and the lines between them are not always clear:

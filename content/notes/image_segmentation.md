@@ -3,7 +3,7 @@ aliases:
 created: 2023-10-04
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags:
   - programming
 title: Image Segmentation
@@ -11,7 +11,7 @@ type: problem
 ---
 # Statement
 
->[!tldr] Image Segmentation
+>[!definition] Image Segmentation
 >Given an undirected graph $G = (V,E)$ with weights:
 >- for each $v \in V$, $f(v), b(v) \geq 0$, and
 >- for each $e \in E$, $p(e) \geq 0$.

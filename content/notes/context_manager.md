@@ -4,7 +4,7 @@ aliases:
 created: 2024-09-04
 date_checked: 2026-02-05
 draft: true
-last_edited: 2024-09-04
+last_edited: 2026-02-05
 tags:
   - python
 title: Context manager

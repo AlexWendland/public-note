@@ -4,11 +4,11 @@ aliases:
 created: 2024-01-31
 date_checked:
 draft: true
-last_edited: 2024-01-31
+last_edited: 2026-02-05
 tags: []
 title: Quadratic programming problem
 type: definition
 ---
->[!tldr] Quadratic programming problem
+>[!definition] Quadratic programming problem
 >Definition here
 

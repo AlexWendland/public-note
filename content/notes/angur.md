@@ -3,14 +3,14 @@ aliases:
 created: 2024-07-23
 date_checked:
 draft: false
-last_edited: 2024-07-23
+last_edited: 2026-02-05
 tags:
   - networks
   - security
 title: Angur
 type: definition
 ---
->[!tldr] Angur
+>[!definition] Angur
 >This is a system that monitors for censorship through connectivity disruptions. It uses two internet protocols:
 >
 >1. **IP ID**: This uses the [IPv4](internet_protocol_(ipv4).md) field for the packet ID. Which is a 16-[bit](bit.md) field used to identify packets that are fragmented. (There is an analogous [IPv6](internet_protocol_(ipv6).md) field on the fragmentation extension header - though in this protocol you should not fragment [packets](packets.md).) Normally servers keep a count of the packets they have sent and increment the IP ID by one for each subsequent packet.

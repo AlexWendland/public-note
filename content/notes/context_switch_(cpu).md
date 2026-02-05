@@ -5,7 +5,7 @@ aliases:
 created: 2024-08-26
 date_checked: 2026-02-05
 draft: false
-last_edited: 2024-08-26
+last_edited: 2026-02-05
 tags:
   - OS
 title: Context switch (CPU)

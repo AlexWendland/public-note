@@ -5,14 +5,14 @@ aliases:
 created: 2024-01-10
 date_checked:
 draft: false
-last_edited: 2024-01-10
+last_edited: 2026-02-05
 tags:
   - maths
   - algorithms
 title: Decision tree
 type: definition
 ---
->[!tldr] Decision tree
+>[!definition] Decision tree
 >Suppose you have two sets $A$ and $B$. A *decision tree* is a representation of a function $f: A \rightarrow B$, it is comprised of,
 >- a [rooted tree](rooted_tree.md) $(T = (P \cup L,E), r)$,
 >- for each parent $p \in P$ mapping $f_p : A \rightarrow Child(p)$, and

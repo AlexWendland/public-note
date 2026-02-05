@@ -5,13 +5,13 @@ aliases:
 created: 2023-10-10
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags:
   - maths
 title: Prime
 type: definition
 ---
->[!tldr] Prime
+>[!definition] Prime
 >An element $p$ is prime if it is non-zero, non-unit where if $p \vert mn$ then $p \vert m$ or $p \vert n$.
 
 # Theory

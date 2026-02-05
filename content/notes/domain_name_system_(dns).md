@@ -9,13 +9,13 @@ aliases:
 created: 2024-05-23
 date_checked:
 draft: false
-last_edited: 2024-05-23
+last_edited: 2026-02-05
 tags:
   - networks
 title: Domain Name System (DNS)
 type: definition
 ---
->[!tldr] Domain Name System (DNS)
+>[!definition] Domain Name System (DNS)
 >The domain name systems main function is to translate a human readable domain name into an [IP address](internet_protocol_(ip).md). It is in essence a massive distributed database across many server.
 >This distributed database uses different [DNS records](dns_records.md) and a hierarchy of servers.
 >- **Root DNS servers**: There are 13 mainly located in North America which are a network of replicated servers.

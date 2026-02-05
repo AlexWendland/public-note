@@ -4,13 +4,13 @@ aliases:
 created: 2024-05-22
 date_checked:
 draft: false
-last_edited: 2024-05-22
+last_edited: 2026-02-05
 tags:
   - networks
 title: Transmission Control Protocol (TCP)
 type: definition
 ---
->[!tldr] Transmission Control Protocol (TCP)
+>[!definition] Transmission Control Protocol (TCP)
 >The transmission control protocol is a [layer 4](layer_4_transport.md) [protocol](protocol_(networks).md) that allows for [multiplexing](multiplexing.md) and a [duplex](duplex.md) communication channel. It is defined in [RFC793](https://www.ietf.org/rfc/rfc793.txt). This is a connection orientated [protocol](protocol_(networks).md) which establishes a connection with [TCP 3 way handshake](tcp_3_way_handshake.md) and closes connections with the [TCP connection teardown](tcp_connection_teardown.md). This gaurentees the following features.
 >- [reliability](reliable_transmission_of_tcp_messages.md): every message will be received and acknowledge or it will be redelivered,
 >- ordered delivery: messages have a sequence number and will only be parsed to the [Application layer](layer_7_application.md) in order,

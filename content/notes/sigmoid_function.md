@@ -4,14 +4,14 @@ aliases:
 created: 2024-01-20
 date_checked:
 draft: false
-last_edited: 2024-01-20
+last_edited: 2026-02-05
 tags:
   - machine-learning
   - maths
 title: Sigmoid function
 type: definition
 ---
->[!tldr] Sigmoid function
+>[!definition] Sigmoid function
 >The *sigmoid* function $\sigma: \mathbb{R} \rightarrow (0,1)$ is an attempt to continuously approximate the [binary step](binary_step.md) activation function
 >$$\sigma(x) = \frac{1}{1+e^{-x}}.$$
 

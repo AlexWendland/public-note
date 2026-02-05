@@ -3,14 +3,14 @@ aliases:
 created: 2024-07-21
 date_checked:
 draft: false
-last_edited: 2024-07-21
+last_edited: 2026-02-05
 tags:
   - networks
   - security
 title: ARTEMIS
 type: definition
 ---
->[!tldr] ARTEMIS
+>[!definition] ARTEMIS
 >ARTEMIS is a system designed to detect and mitigate [BGP Hijacking](bgp_hijacking.md), operated locally by network operators to protect their own prefixes. The system is based on several key ideas and [can be found in this paper](https://www.inspire.edu.gr/wp-content/pdfs/artemis_TON2018.pdf).
 >
 >This works in the following way.

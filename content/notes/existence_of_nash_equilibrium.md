@@ -3,7 +3,7 @@ aliases:
 created: 2024-04-06
 date_checked: 2026-01-29
 draft: false
-last_edited: 2025-12-05
+last_edited: 2026-02-05
 tags:
   - game-theory
 title: Existence of Nash equilibrium

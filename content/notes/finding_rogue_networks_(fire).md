@@ -3,13 +3,13 @@ aliases:
 created: 2024-07-21
 date_checked:
 draft: false
-last_edited: 2024-07-21
+last_edited: 2026-02-05
 tags:
   - networks
 title: Finding rouge networks (FIRE)
 type: definition
 ---
->[!tldr] Finding rouge networks (FIRE)
+>[!definition] Finding rouge networks (FIRE)
 >The FIRE (FInding Rogue nEtworks) system is designed to monitor the Internet for rogue networks—networks primarily used for malicious activities such as phishing, hosting spam pages, and distributing pirated software. It utilises three main data sources to identify potential rogue networks:
 >
 >1. **Botnet Command and Control Providers**:

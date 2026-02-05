@@ -3,12 +3,12 @@ aliases:
 created: 2024-01-11
 date_checked:
 draft: true
-last_edited: 2024-01-11
+last_edited: 2026-02-05
 tags:
   - machine-learning
 title: Bias (modelling)
 type: definition
 ---
->[!tldr] Bias (modelling)
+>[!definition] Bias (modelling)
 >
 

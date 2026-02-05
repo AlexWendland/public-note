@@ -3,13 +3,13 @@ aliases:
 created: 2024-04-07
 date_checked:
 draft: false
-last_edited: 2024-04-07
+last_edited: 2026-02-05
 tags:
   - game-theory
 title: Stochastic games
 type: definition
 ---
->[!tldr] Stochastic games
+>[!definition] Stochastic games
 >A Stochastic game is defined by the following data:
 >- A number of players $n$,
 >- A set $S$ of states the game can be in (normally thought of as $n$ tuples),

@@ -4,13 +4,13 @@ aliases:
 created: 2024-05-23
 date_checked:
 draft: false
-last_edited: 2024-05-23
+last_edited: 2026-02-05
 tags:
   - networks
 title: Dynamic Host Configuration Protocol (DHCP)
 type: definition
 ---
->[!tldr] Dynamic Host Configuration Protocol (DHCP)
+>[!definition] Dynamic Host Configuration Protocol (DHCP)
 >To connect to the internet you need 4 bits of information:
 >- Your [Internet Protocol (IPv4)](internet_protocol_(ipv4).md),
 >- Your [network mask](network_mask.md),

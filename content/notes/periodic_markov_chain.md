@@ -5,13 +5,13 @@ aliases:
 created: 2023-12-03
 date_checked:
 draft: false
-last_edited: 2023-12-03
+last_edited: 2026-02-05
 tags:
   - maths
   - probability
 title: Periodic Markov chain
 type: definition
 ---
->[!tldr] Periodic Markov chain
+>[!definition] Periodic Markov chain
 >A [Markov chain](markov_chain.md) is said to be *periodic* if it has a [periodic state](periodic_state_(markov_chain).md) and *aperiodic* otherwise.
 

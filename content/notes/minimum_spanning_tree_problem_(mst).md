@@ -5,7 +5,7 @@ aliases:
 created: 2023-10-01
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-02-05
 tags:
   - programming
 title: Minimum Spanning Tree problem (MST)
@@ -13,7 +13,7 @@ type: problem
 ---
 # Statement
 
->[!tldr] Minimum Spanning Tree problem
+>[!definition] Minimum Spanning Tree problem
 >Given an [undirected graph](graph.md) $G = (V,E)$ with weights $w: E \rightarrow \mathbb{R}$ can you find a [spanning](spanning_subgraph.md) [tree](tree_(graph).md) $T = (V, E')$ with minimum weight
 >$$w(T) = \sum_{e \in E'} w(e).$$
 
