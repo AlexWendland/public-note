@@ -115,7 +115,7 @@ These [Markov chains](../../notes/markov_chain.md) have the desired property.
 
 They also have the observed limiting form.
 
-[Statement](../../notes/ergodic_markov_chain_limiting_distrubution.md#statement)
+[Statement](../../notes/ergodic_markov_chain_limiting_distribution.md#statement)
 
 # What is the [stationary distribution](../../notes/stationary_distribution_(markov_chains).md)?
 

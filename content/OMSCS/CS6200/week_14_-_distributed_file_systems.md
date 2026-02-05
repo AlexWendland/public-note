@@ -3,7 +3,7 @@ aliases:
 course_code: CS6200
 course_name: Graduate introduction to Operating Systems
 created: 2024-12-31
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2024-12-31
 tags:
@@ -62,12 +62,12 @@ This means:
 - Low latency operations on cached files,
 - Server load is reduced in comparison to the fully remote model,
 - Server is aware of what clients are doing,
-- Server has control into whihc accesses can be permitted, however
+- Server has control into which accesses can be permitted, however
 - The server is a lot more complex to handle all these consistency mechanisms.
 
 # State management
 
-The server can either be stateful or stateless this has implications on the design of the server.
+The server can either be stateful or stateless; this has implications on the design of the server.
 
 ## Stateless
 
@@ -95,7 +95,7 @@ For example, if two clients have the file F cached locally. When one of them upd
 - Write-update: Update the cache of the second client.
 - Write-invalidate: Alert the client to delete their cache.
 
-However with [DFS](../../notes/depth-first_search_(dfs).md) we have much larger network latency than in [CPU](../../notes/central_processing_unit_(cpu).md) so the question about when this happens is important:
+However with [distributed file systems](../../notes/distributed_file_system_(dfs).md) we have much larger network latency than in [processor memory](../../notes/central_processing_unit_(cpu).md) so the question about when this happens is important:
 
 - Does the client notify the server when changes happen, or
 - Does the server poll for changes in the local cache.
@@ -127,7 +127,7 @@ The server can implement *transactions* so that all edits to a file are atomic a
 When choosing a type of semantics it is important to understand the file access patterns:
 
 - How often are files shared,
-- How often are files written too,
+- How often are files written to,
 - Importance of consistent view, or
 - Does the access pattern change based on the type of file? Does it change for directories?
 
@@ -139,12 +139,12 @@ Replication is the process of keeping copies of the same file on multiple machin
 - availability, and
 - fault tolerance.
 
-Though you need to then not only keep consistency between the client and the server but also between the servers. This means writes become more complicated as they need to handle synchronicity. There a multiple different methods to handle this:
+Though you need to then not only keep consistency between the client and the server but also between the servers. This means writes become more complicated as they need to handle synchronisation. There are multiple different methods to handle this:
 
 - Writes get sent to all machines (slow), or
 - Write to one and propagate to others.
 
-Machines will need to keep in sync with each other, however when there is a descrepency there must be a method to bring everyone back together, e.g. voting.
+Machines will need to keep in sync with each other, however when there is a discrepancy there must be a method to bring everyone back together, e.g. voting.
 
 # Partitioning
 
@@ -166,14 +166,14 @@ This application has changed over the years, NFSv3 is stateless whilst NFSv4 is 
 
 - It uses session-based caching.
 - The server gets periodic updates from the client, every 3 seconds for files and 30 seconds for directories.
-	- Directory change less, and are easier to merge.
+	- Directories change less, and are easier to merge.
 - When a client checks a file out it avoids the update checks for that file.
 - It uses lease-based locks. These are time bounded and need to be extended or released within that window.
 - There are reader/writer locks with the ability to upgrade from read to write.
 
 # Sprite distributed file system
 
-Whilst not a production [distributed file system](../../notes/distributed_file_system_(dfs).md) like [NFS](../../notes/network_file_system_(nfs).md) the sprite network was a research file system. However it was built and used in Berkley and the design decisions were based of traces of network usage within real use cases. The collected the following data on their use case:
+Whilst not a production [distributed file system](../../notes/distributed_file_system_(dfs).md) like [NFS](../../notes/network_file_system_(nfs).md), the Sprite network was a research file system. However it was built and used in Berkeley and the design decisions were based on traces of network usage within real use cases. They collected the following data on their use case:
 
 - 33% of all file accesses are writes.
 	- -> Caching is ok, but write-through semantics is not sufficient.

@@ -43,7 +43,7 @@ These are ones where the workers are specialised to some kind of logic. This mea
 
 However, this adds considerable complexity to the front-end. As workers now are different the load balancer needs to keep track of which workers can do what. When increased demand comes to the system scaling up is not as simple as adding more workers you need to work out what workers are needed.
 
-![Hetrogeneous Architectures](../../../static/images/hetrogeneous_architectures.png)
+![Hetrogeneous Architectures](../../../static/images/heterogeneous_architectures.png)
 
 ## Cloud computing
 

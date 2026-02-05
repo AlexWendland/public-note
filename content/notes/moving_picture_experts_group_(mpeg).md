@@ -1,7 +1,7 @@
 ---
 aliases:
 created: 2024-07-27
-date_checked:
+date_checked: 2026-02-05
 draft: true
 last_edited: 2024-07-27
 tags:
@@ -10,6 +10,6 @@ tags:
 title: Moving Picture Experts Group (MPEG)
 type: definition
 ---
->[!tldr] Moving Picture Experts Group (MPEG)
+>[!definition] Moving Picture Experts Group (MPEG)
 >Definition here
 

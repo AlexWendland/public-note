@@ -24,7 +24,7 @@ type: definition
 >5. Additional [PTR](dns_records.md) and [TLS](transport_layer_security_(tls).md) scanning - this is to allow inconsistencies due to virtual hosting to be resolved.
 >
 > After the dataset is gathered we then calculate two types of metrics:
-> - **Consistency metrics**: Checking if the same look up in different locations provides different responses for [IP address](internet_protocol_(ip).md), [AS](autonomous_system_(as).md), [HTTP](hyper_text_transfer_protocol_(http).md) content, ect.
+> - **Consistency metrics**: Checking if the same look up in different locations provides different responses for [IP address](internet_protocol_(ip).md), [AS](autonomous_system_(as).md), [HTTP](hypertext_transfer_protocol_(http).md) content, ect.
 > - **Independent verifiable metrics**: These are metrics that use other datasets to verify they are correct such as [HTTPS](hypertext_transfer_protocol_secure_(https).md) certificates.
 >
 > If both of these metrics are satisfied then the response is considered correct otherwise it is labelled as incorrect.

@@ -3,7 +3,7 @@ aliases:
 course_code: CS6200
 course_name: Graduate introduction to Operating Systems
 created: 2025-03-24
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2025-03-24
 tags:
@@ -18,14 +18,14 @@ week: 9
 # Message based IPC
 
 Message based [IPC](../../notes/inter-process_communication_(ipc).md) opens two ports (not necessarily in the networking sense) one in each process. Then the kernel is used to move the messages between the two ports. Examples of this are:
-- Pipes: A stream of bytes between the process - no structured messages. This is used when connecting stdin to stdout of a process when you 'pipe' them in a terminal.
-- Message queues: A queue of structured messages that the processes can pop one at a time. In [linux](../../notes/linux.md) there two APIs for this SystemV and [POSIX](../../notes/portable_operating_system_interface_(posix).md).
+- Pipes: A stream of bytes between the process - no structured messages. This is used when connecting stdin to stdout of a process when you pipe them in a terminal.
+- Message queues: A queue of structured messages that the processes can pop one at a time. In [linux](../../notes/linux.md) there are two APIs for this: SystemV and [POSIX](../../notes/portable_operating_system_interface_(posix).md).
 - Network sockets: Uses the same interface as connecting to a network port. Normally the [operating system](../../notes/operating_system_(os).md) optimizes this process by skipping some overhead of the network protocols.
-Message based [IPC](../../notes/inter-process_communication_(ipc).md) is simple to use as the kernel handles the [synchronization](../../notes/synchronization.md) but come with overhead as the message has to be copied between processes and involves [context switches](../../notes/context_switch_(cpu).md) to communicate with the kernel.
+Message based [IPC](../../notes/inter-process_communication_(ipc).md) is simple to use as the kernel handles the [synchronization](../../notes/synchronization.md) but comes with overhead as the message has to be copied between processes and involves [context switches](../../notes/context_switch_(cpu).md) to communicate with the kernel.
 
 # Shared Memory IPC
 
- This form of [IPC](../../notes/inter-process_communication_(ipc).md) maps a bit of memory into both processes. After it is mapped in neither processes need to go through the kernel to communicate. However that means both processes need [synchronization](../../notes/synchronization.md) to ensure they don't over-write one another. They also need to establish a shared protocol on how to communicate.
+This form of [IPC](../../notes/inter-process_communication_(ipc).md) maps a bit of memory into both processes. After it is mapped in neither processes need to go through the kernel to communicate. However that means both processes need [synchronization](../../notes/synchronization.md) to ensure they don't over-write one another. They also need to establish a shared protocol on how to communicate.
 
 The main APIs here are: SystemV and [POSIX](../../notes/portable_operating_system_interface_(posix).md).
 
@@ -42,7 +42,7 @@ In comparison to SysV [POSIX](../../notes/portable_operating_system_interface_(p
 
 ## Synchronization
 
-As multiple processes can now access the same memory we need to be able to coordinate read and writes.
+As multiple processes can now access the same memory we need to be able to coordinate reads and writes.
 
 Pthreads [mutexes](../../notes/mutex.md) and [conditional variables](../../notes/conditional_variables_(mutex).md) can be used for this but we will need to share their data structures in the shared memory to be accessed by both processes.
 

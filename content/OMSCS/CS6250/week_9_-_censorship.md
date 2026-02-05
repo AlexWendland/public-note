@@ -155,7 +155,7 @@ Good method to measure censorship require different vantage points on the intern
 
 The most direct way of censorship is to block access to the whole or parts of the internet at the [IP](../../notes/internet_protocol_(ip).md) level. The main methods to do this are:
 - **Physically disconnecting infrastructure**: If the network is sufficiently small then you could take down the access points to the internet. This is hard however, as normally this infrastructure is distributed.
-- **Router disruption**: Abusing the [BGP](../../notes/boarder_gateway_protocol_(bgp).md) to change the routes that are offered or removing them completely. This is fairly easy to detect as you would be able to notice the change in routing behaviour.
+- **Router disruption**: Abusing the [BGP](../../notes/border_gateway_protocol_(bgp).md) to change the routes that are offered or removing them completely. This is fairly easy to detect as you would be able to notice the change in routing behaviour.
 - **Packet filtering**: Such as what a [firewall](../../notes/firewall.md) or a [switch](../../notes/switch.md) does but on the level on of the whole network. This can be harder to detect as you would need to probe for these [IP address](../../notes/internet_protocol_(ip).md) or the paths packets follow.
 
 [Angur](../../notes/angur.md)

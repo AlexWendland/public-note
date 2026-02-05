@@ -3,7 +3,7 @@ aliases:
 course_code: CS6200
 course_name: Graduate introduction to Operating Systems
 created: 2025-02-10
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2025-02-10
 tags:
@@ -20,23 +20,23 @@ week: 6
 
 ![Threading Comparison](../../../static/images/threading_comparison.png)
 
-When choosing a model for threading it is important to pick the metric you care about before deciding on implementation. In the example above the server would prefer the pipeline as it is cheaper in terms of CPU time whereas for clients they would prefer the boss-worker model as it reduced average order time completion.
+When choosing a model for threading it is important to pick the metric you care about before deciding on implementation. In the example above the server would prefer the pipeline as it is cheaper in terms of CPU time whereas for clients they would prefer the boss-worker model as it reduces average order time completion.
 
 ## Metric
 
-A metric is a measurement standard. I needs to be a measurable and quantifiable property of the system we are interested in that can be used to evaluate the system behavior.
+A metric is a measurement standard. It needs to be a measurable and quantifiable property of the system we are interested in that can be used to evaluate the system behavior.
 
 Some examples are:
 - Execution time: The amount of time it takes to complete a job.
 - Throughput: The amount of jobs completed per unit of time. This measures the actual work done.
 - Request rate: The amount of requests received per unit of time. This represents how many requests the system can accept but not necessarily complete.
-- Resource utilization: How much of the CPU time is idling or memory used, ect.
+- Resource utilization: How much of the CPU time is idling or memory used, etc.
 - Wait time: The average amount of time spent waiting to start a request.
-- Platform efficiency: How well I can utilize the resources within my platform.
-- Performance / currency spent: This is useful when comparing different hardware choices for a data center.
+- Platform efficiency: How well one can utilise the resources within one's platform.
+- Performance / cost: This is useful when comparing different hardware choices for a data centre.
 - Performance / Watts: This is useful when considering environmental impacts of your operation.
 - Percentage of SLA violations: The amount of requests that violate your service level agreement with your users.
-- Client perceived performance: For example with videos human can't see more than 30 frames per second - therefore maintaining it at that would give a good client perceived performance. More frames per second than that will not increase their perception of performance.
+- Client perceived performance: For example with videos humans can't see more than 30 frames per second - therefore maintaining it at that would give a good client perceived performance. More frames per second than that will not increase their perception of performance.
 - Aggregate performance: Normally you care about balancing off different factors against one another so taking an average is useful here.
 
 To evaluate impacts of changes on our metrics we build a test bed to see the impact of changes we are making:
@@ -56,11 +56,11 @@ The steps within a file server have different needs - some may be CPU bound such
 
 ## Multi-processing
 
-We implement this by simply take a working single process single threaded implementation for the webserver. Then spin up multiple processes for this. This has the following payoffs:
+We implement this by simply taking a working single process single threaded implementation for the webserver. Then spin up multiple processes for this. This has the following payoffs:
 - Simple in terms of coding.
 - High overheads to context switch.
 - High memory usage for different [PCB](../../notes/process_control_block_(pcb).md).
-- Complicated to make is share resources like a bound port, or file handlers.
+- Complicated to make it share resources like a bound port, or file handlers.
 
 ## Simple multi-threading approach
 
@@ -87,14 +87,14 @@ This model has some payoffs also:
 
 ![Async Io Operations](../../../static/images/async_io_operations.png)
 
-The main drawback of asyncronous I/O operations is the need to poll open file descriptors for responses. To get around this we can use helper-functions that run on a thread that will handle the blocking I/O operations and put an event on the event dispatcher after they have completed.
+The main drawback of asynchronous I/O operations is the need to poll open file descriptors for responses. To get around this we can use helper-functions that run on a thread that will handle the blocking I/O operations and put an event on the event dispatcher after they have completed.
 
 ![Helper Functions](../../../static/images/helper_functions.png)
 
-Note: In the paper it suggestions using processes for this - however as discussed before it is faster to use threads.
+Note: In the paper it suggests using processes for this - however as discussed before it is faster to use threads.
 
 This has the following payoffs:
-- resolves portability limitations of basic event-driven model.
+- Resolves portability limitations of basic event-driven model.
 - Smaller footprint than regular worker threads.
 - Limited applicability in other services.
 - Event routing in multiple CPU systems can be complicated.
@@ -136,7 +136,7 @@ In this comparison they choose:
 	- Connection rate, requests/time
 
 They evaluated these metrics on file size:
-- larger file size can be ammortized per connection, so can achieve higher bandwidth.
+- Larger file size can be amortised per connection, so can achieve higher bandwidth.
 - Larger file size means more work per connection so lower connection rate.
 
 ### Best case

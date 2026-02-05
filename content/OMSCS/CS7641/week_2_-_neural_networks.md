@@ -67,12 +67,12 @@ $$
 \frac{\partial E}{\partial w_i} & = \frac{1}{2} \sum_{(x,y) \in T} -2 (y-a) \frac{\partial a}{\partial w_i}\\
 & = - \sum_{(x,y) \in T} (y-a) x_i \end{aligned}
 $$
-This is very similar to the [perceptron rule](../../notes/perceptron_rule.md). Now to completely the training using this we would travel in the opposite of the direction of found by this [derivative](../../notes/differentiation.md). This method is called [Gradient decent](../../notes/gradient_decent.md).
+This is very similar to the [perceptron rule](../../notes/perceptron_rule.md). Now to completely the training using this we would travel in the opposite of the direction of found by this [derivative](../../notes/differentiation.md). This method is called [Gradient decent](../../notes/gradient_descent.md).
 
-[Gradient decent](../../notes/gradient_decent.md)
+[Gradient decent](../../notes/gradient_descent.md)
 # Comparison
 
-Whilst the [perceptron rule](../../notes/perceptron_rule.md) [converges in finite time for linear separable datasets](../../notes/the_perceptron_rule_using_binary_step_converges_in_finite_time_if_the_dataset_is_linearly_separable.md) it is unstable on datasets that are not [linearly separable](../../notes/linearly_separable.md). The advantage of [gradient decent](../../notes/gradient_decent.md) is that it is stable on all datasets but it has the issue of converging only to local minimum.
+Whilst the [perceptron rule](../../notes/perceptron_rule.md) [converges in finite time for linear separable datasets](../../notes/the_perceptron_rule_using_binary_step_converges_in_finite_time_if_the_dataset_is_linearly_separable.md) it is unstable on datasets that are not [linearly separable](../../notes/linearly_separable.md). The advantage of [gradient decent](../../notes/gradient_descent.md) is that it is stable on all datasets but it has the issue of converging only to local minimum.
 
 # Sigmoid function
 
@@ -82,13 +82,13 @@ Where this function looks similar to the [binary step](../../notes/binary_step.m
 $$\frac{d \sigma}{d a} = \sigma(a) (1 - \sigma(a))$$
 Which shows the function is relative stable when $\sigma(a)$ is close to either $0$ or $1$ but will have the largest change when it is close to $1/2$.
 
-This allow us to use [gradient decent](../../notes/gradient_decent.md) on a [perceptron](../../notes/perceptron_(neural_network).md) that is using the [Sigmoid function](../../notes/sigmoid_function.md) as its [activation function](../../notes/activation_function.md).
+This allow us to use [gradient decent](../../notes/gradient_descent.md) on a [perceptron](../../notes/perceptron_(neural_network).md) that is using the [Sigmoid function](../../notes/sigmoid_function.md) as its [activation function](../../notes/activation_function.md).
 
 # Neural network
 
 [Neural network](../../notes/neural_network.md)
 
-If we use the [Sigmoid function](../../notes/sigmoid_function.md) for each of the [perceptrons](../../notes/perceptron_(neural_network).md) [activation function](../../notes/activation_function.md) or some other [differentiable](../../notes/differentiation.md) [activation function](../../notes/activation_function.md) - the function this neural network represents is also [differentiable](../../notes/differentiation.md). In this case we can run [gradient decent](../../notes/gradient_decent.md) which in this case is called [Backward propagation of errors (Back propagation)](../../notes/backward_propagation_of_errors_(back_propagation).md).
+If we use the [Sigmoid function](../../notes/sigmoid_function.md) for each of the [perceptrons](../../notes/perceptron_(neural_network).md) [activation function](../../notes/activation_function.md) or some other [differentiable](../../notes/differentiation.md) [activation function](../../notes/activation_function.md) - the function this neural network represents is also [differentiable](../../notes/differentiation.md). In this case we can run [gradient decent](../../notes/gradient_descent.md) which in this case is called [Backward propagation of errors (Back propagation)](../../notes/backward_propagation_of_errors_(back_propagation).md).
 
 [Backward propagation of errors (Back propagation)](../../notes/backward_propagation_of_errors_(back_propagation).md)
 

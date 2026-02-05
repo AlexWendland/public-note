@@ -25,7 +25,7 @@ Duplication of effort, more covert coupling, and additional overhead.
 • Describe each layer of the OSI model.
 [OSI](../../notes/open_systems_interconnection_(osi)_model.md)
 • Provide examples of popular protocols at each layer of the five-layered Internet model.
-[HTTP](../../notes/hyper_text_transfer_protocol_(http).md)
+[HTTP](../../notes/hypertext_transfer_protocol_(http).md)
 [TCP](../../notes/transmission_control_protocol_(tcp).md)
 [ARP](../../notes/address_resolution_protocol_(arp).md)
 • What is encapsulation, and how is it used in a layered model?
@@ -106,7 +106,7 @@ The first version of this structure was the [OSI model](../../notes/open_systems
 
 [Application layer](../../notes/layer_7_application.md)
 
-This is where a lot of the popular [protocols](../../notes/protocol_(networks).md) operate such as [HTTP](../../notes/hyper_text_transfer_protocol_(http).md), [SMTP](../../notes/simple_mail_transfer_protocol_(smtp).md), [FTP](../../notes/file_transfer_protocol_(ftp).md), or [DNS](../../notes/domain_name_system_(dns).md). This controls the application specific command.
+This is where a lot of the popular [protocols](../../notes/protocol_(networks).md) operate such as [HTTP](../../notes/hypertext_transfer_protocol_(http).md), [SMTP](../../notes/simple_mail_transfer_protocol_(smtp).md), [FTP](../../notes/file_transfer_protocol_(ftp).md), or [DNS](../../notes/domain_name_system_(dns).md). This controls the application specific command.
 
 [Presentation layer](../../notes/layer_6_presentation.md)
 

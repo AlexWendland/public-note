@@ -98,7 +98,7 @@ type: plan
 
 - [ ] CS6035 Web security (Mar 22)
 
-# Mar 23-29 (Kew marathon) [ ]
+# Mar 23-29 (Kew half-marathon) [ ]
 
 - [ ] CS8803 P3L3
 

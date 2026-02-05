@@ -11,7 +11,7 @@ type: algorithm
 ---
 
 To solve the following problem.
-[Statement](find_connected_components_in_a_undirected_graph.md#statement)
+[Statement](find_connected_components_in_an_undirected_graph.md#statement)
 
 We can use the following [DFS](depth-first_search_(dfs).md) algorithm.
 

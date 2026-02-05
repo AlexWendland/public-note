@@ -53,7 +53,7 @@ The control plane refers to the implementation of the [router](../../notes/route
 
 Here we depict what happens when a [packet](../../notes/packets.md) arrives at the router.
 
-![Router Arcitecture](../../../static/images/router_arcitecture.png)
+![Router Arcitecture](../../../static/images/router_architecture.png)
 
 The most time sensitive operations are lookup, switching and scheduling.
 
@@ -120,7 +120,7 @@ Here we denote prefixes in 3 ways.
 
 ## Variable length prefixes
 
-In the early days of the [Internet](../../notes/internet.md) there were fixed length prefixes. Though this drove the problem that [we are running out of IPv4 addresses on the pubic internet](../../notes/we_are_running_out_of_ipv4_addresses_on_the_pubic_internet.md).
+In the early days of the [Internet](../../notes/internet.md) there were fixed length prefixes. Though this drove the problem that [we are running out of IPv4 addresses on the pubic internet](../../notes/we_are_running_out_of_ipv4_addresses_on_the_public_internet.md).
 
 ## Better lookup algorithms
 
@@ -371,7 +371,7 @@ If a packet arrives and the bucket does not have enough tokens we have two optio
 
 This leads to very different traffic throughput on the router.
 
-![Token Bcuket Traffic](../../../static/images/token_bcuket_traffic.png)
+![Token Bcuket Traffic](../../../static/images/token_bucket_traffic.png)
 
 # Leaky bucket
 

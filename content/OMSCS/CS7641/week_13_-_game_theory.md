@@ -116,7 +116,7 @@ This could be used to get [Nash equilibrium](../../notes/nash_equilibrium.md).
 
 Though this doesn't guarantee finding it. Though there is always a [Nash equilibrium](../../notes/nash_equilibrium.md) in finite games.
 
-[Existance of Nash equilibrium](../../notes/existance_of_nash_equilibrium.md)
+[Existance of Nash equilibrium](../../notes/existence_of_nash_equilibrium.md)
 
 >[!Note]
 >Normally the best way to get out of the prisoners dilemma is to change the structure of the game.

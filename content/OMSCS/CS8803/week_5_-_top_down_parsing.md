@@ -3,8 +3,8 @@ aliases:
 course_code: CS8803 O08
 course_name: Compilers - Theory and Practice
 created: '2026-02-03'
-date_checked:
-draft: true
+date_checked: '2026-02-05'
+draft: false
 last_edited: '2026-02-03'
 tags:
   - OMSCS
@@ -89,7 +89,7 @@ To state the algorithm to generate this parsing table we need a couple of defini
 ## First sets
 
 For a symbol `X` we define the first set `First(X)` to be the set of first tokens (terminal symbols) that strings derived from `X` can start with.
-To generate `First(X)` we need to look at each rule for $X$ such as $X -> X_1 X_2 \ldots X_n$ (note this rule does not contain any $\vert$ in it - we take optionals to generate multiple rules) and determine which tokens could start this rule.
+To generate `First(X)` we need to look at each rule for $X$ such as $X -> X_1 X_2 \ldots X_n$ (Note this rule does not contain any $\vert$ in it - we take optionals to generate multiple rules) and determine which tokens could start this rule.
 So we apply the following rules to generate `First(X)`:
 
 1. If `X` is a terminal symbol (including $\epsilon$) then $First(X) = \{X\}$.
@@ -167,7 +167,7 @@ Also $Follow(X)$ is only defined for non-terminals.
 >
 > - Follow(S) = {$} by the first rule.
 >
-> - Follow(A) = First(B) - {epsilon} =  {b} by the second rule.
+> - Follow(A) = First(B) - {epsilon} = {b} by the second rule.
 >
 > - Follow(B) = (First(C) - {epsilon}) U Follow(S) = {c, $} by the second and third rule.
 >
@@ -240,7 +240,7 @@ If $X$ is nullable (`First(w)` contains `epsilon`) and the token $t$ can follow 
 > | C | - | - | (C -> c) | (C -> epsilon) |
 > | S | (S -> ABC) | (S -> ABC) | - | - |
 
-Sometimes when calculating this it can be handy to use a 3rd concept called `Predict` which is all the tokens a rule can be applied to.
+Sometimes when calculating this it can be handy to use a third concept called `Predict` which is all the tokens a rule can be applied to.
 
 $$
 \text{Predict}(X \rightarrow w) = \begin{cases}

@@ -5,17 +5,17 @@ aliases:
   - kernel mode
   - user mode
 created: 2024-08-26
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2024-08-26
 tags:
   - computer-science
   - OS
-title: Proccess modes
+title: Process modes
 type: definition
 ---
->[!tldr] Process modes
->Processes normally has at least 2 modes.
+>[!note] Process modes
+>Processes normally have at least 2 modes.
 > - Kernel mode: Which has privileged access to hardware resources.
 > - User mode: Must access resources through the [OS](operating_system_(os).md) via [system calls](system_call.md).
 >

@@ -2,7 +2,7 @@
 aliases:
   - field
 created: 2024-08-17
-date_checked:
+date_checked: 2026-02-05
 draft: true
 last_edited: 2024-08-17
 tags:
@@ -10,6 +10,6 @@ tags:
 title: Field
 type: definition
 ---
->[!tldr] Field
+>[!definition] Field
 >Definition here
 

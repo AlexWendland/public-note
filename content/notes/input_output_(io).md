@@ -3,7 +3,7 @@ aliases:
   - IO
   - I/O
 created: 2024-08-26
-date_checked:
+date_checked: 2026-02-05
 draft: true
 last_edited: 2024-08-26
 tags:
@@ -12,6 +12,6 @@ tags:
 title: Input output (IO)
 type: definition
 ---
->[!tldr] Input output (IO)
+>[!definition] Input/output (I/O)
 >Definition here
 

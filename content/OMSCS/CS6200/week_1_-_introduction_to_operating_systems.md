@@ -3,12 +3,12 @@ aliases:
 course_code: CS6200
 course_name: Graduate introduction to Operating Systems
 created: 2024-08-26
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2024-08-26
 tags:
   - OMSCS
-title: Week 1 - Introduction to Operating systems
+title: Week 1 - Introduction to operating systems
 type: lecture
 week: 1
 ---
@@ -20,12 +20,12 @@ week: 1
 The [OS](../../notes/operating_system_(os).md) is a lot like a toyshop manager. They are required to:
 
 - Direct the operational resources
-	- Controls use of employees time,
+	- Controls the use of employees' time,
 	- Distribute tools and parts between workers
 - Enforces working policies
 	- Ensures fairness between workers,
 	- Make sure toys are made safely,
-	- How to cleans-up after the job has been completed.
+	- How to clean up after the job has been completed.
 - Mitigates difficulty of complex tasks
 	- Simplifies operations for each worker to do,
 	- Chooses optimal task allocation to improve performance.
@@ -50,8 +50,8 @@ In comparison an [OS](../../notes/operating_system_(os).md) does the following:
 		- Linux
 - Embedded
 	- Android
-		- A form of linux
-	- IOS
+		- A form of Linux
+	- iOS
 	- Symbian
 
 We will focus on Linux in this course.
@@ -75,7 +75,7 @@ Mechanisms:
 - allocate.
 
 Policies:
-- [Least-recently used (LRU)](least-recently_used_(lru).md),
+- [Least-recently used (LRU)](../../notes/least_recently_used_(lru).md),
 - [Earliest deadline first (EDF)](../../notes/earliest_deadline_first_(edf).md)
 
 ## Example: Memory management
@@ -94,11 +94,11 @@ Policies:
 
 # User/Kernel protection
 
-[Proccess modes](../../notes/proccess_modes.md)
+[Process modes](../../notes/process_modes.md)
 
 [Trap instruction](../../notes/trap_instruction.md)
 
-User mode application have to access hardware through system calls. The [OS](../../notes/operating_system_(os).md) can notify applications through signals.
+User mode applications have to access hardware through system calls. The [OS](../../notes/operating_system_(os).md) can notify applications through signals.
 
 # System call flow chart
 
@@ -109,32 +109,32 @@ User mode application have to access hardware through system calls. The [OS](../
 At first [OS](../../notes/operating_system_(os).md) included all the features within one monolithic application. This had the following advantages:
 - You have everything already, you do not need to go somewhere else, and
 - You can use compile time optimizations to improve efficiency.
-Though had the following downsides:
+However, it had the following downsides:
 - Lower customisation, portability and manageability,
 - Higher memory footprint to run the OS, and
 - Lower performance when you do not need all aspects of the OS.
 
-[OS](../../notes/operating_system_(os).md) such as LINUX instead have gone for a modular approach, where [OS](../../notes/operating_system_(os).md) applications have to conform to a standard interface for system calls. The user then can add the modules to the [OS](../../notes/operating_system_(os).md) that they want to use. This had the following advantages:
+[OS](../../notes/operating_system_(os).md) such as Linux instead have gone for a modular approach, where [OS](../../notes/operating_system_(os).md) applications have to conform to a standard interface for system calls. The user then can add the modules to the [OS](../../notes/operating_system_(os).md) that they want to use. This had the following advantages:
 - Easier to maintain as it is less code,
 - Smaller footprint in memory,
 - Less resources used to run the [OS](../../notes/operating_system_(os).md),
-Though comes with the following down sides:
-- Indirection can effect performance,
+However, it comes with the following downsides:
+- Indirection can affect performance,
 - Maintenance can be an issue as you rely on lots of different code bases that can introduce bugs.
 
-For embedded devices another architecture is common called a Micro-kernel. These typically only handle memory and process management. Though adds a standard Inter process communication call - as services such as file systems or disk drivers are now application level processes rather than handled by the OS. This has the following advantages:
+For embedded devices another architecture is common called a microkernel. These typically only handle memory and process management. However, it adds a standard inter-process communication call, as services such as file systems or disk drivers are now application level processes rather than handled by the OS. This has the following advantages:
 - They are normally a very small code base.
 - It is easy to verify behaviour, so you can be sure the [OS](../../notes/operating_system_(os).md) behaves well.
-Though they come with a lot of down sides:
-- They are not normally portable as they are designed for a specific bit of hardware.
-- Software development is more complex as they need to interact with difference processes that normally would be part of the [OS](../../notes/operating_system_(os).md).
+However, they come with a lot of downsides:
+- They are not normally portable as they are designed for specific hardware.
+- Software development is more complex as they need to interact with different processes that normally would be part of the [OS](../../notes/operating_system_(os).md).
 - There is lots of user/kernel crossing as they need to use the IPC a lot.
 
 ## Linux
 
-The linux [OS](../../notes/operating_system_(os).md) is built in a layer architecture to make it simpler to use.
+The Linux [OS](../../notes/operating_system_(os).md) is built in a layer architecture to make it simpler to use.
 
-![Linux Arcitecture](../../../static/images/linux_arcitecture.png)
+![Linux Architecture](../../../static/images/linux_architecture.png)
 
 The kernel itself has a couple of components that can all be switched out for specific users needs.
 
@@ -142,7 +142,7 @@ The kernel itself has a couple of components that can all be switched out for sp
 
 ## Mac
 
-Mac uses a micro-kernel for all low level operations with a BSD component provides a unix interface for the rest of the OS.
+Mac uses a microkernel for all low-level operations, with a BSD component that provides a UNIX interface for the rest of the OS.
 
 ![Mac Architecture](../../../static/images/mac_architecture.png)
 

@@ -3,7 +3,7 @@ aliases:
 course_code: CS6200
 course_name: Graduate introduction to Operating Systems
 created: 2025-03-09
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2025-03-09
 tags:
@@ -14,16 +14,16 @@ week: 8
 ---
 # Overview
 
-The operation system supports the abstraction of [virtual memory](../../notes/virtual_memory.md) for processes so it need to:
+The operating system supports the abstraction of [virtual memory](../../notes/virtual_memory.md) for processes so it needs to:
 - Map [virtual memory](../../notes/virtual_memory.md) onto [physical memory](../../notes/physical_memory.md).
 - Manage what should be in [physical memory](../../notes/physical_memory.md).
 - Validate memory access of processes.
 
 When we speak about memory there are two main abstractions [OS](../../notes/operating_system_(os).md) can use for memory:
-- [Paging system](../../notes/paging_system.md): This uses [memory pages](../../notes/memory_page.md) which fixes the size of the smallest unit that can be moved between memory locations. This is the currently the most popular way to manage memory.
+- [Paging system](../../notes/paging_system.md): This uses [memory pages](../../notes/memory_page.md) which fixes the size of the smallest unit that can be moved between memory locations. This is currently the most popular way to manage memory.
 - [Memory segmentation](../../notes/memory_segmentation.md): This uses [memory segments](../../notes/memory_segment.md) which have variable sizes.
 
-To support these memory mapping there are 3 bits of hardware that take a [virtual address](../../notes/virtual_memory.md) to a place on [RAM](../../notes/random_access_memory_(ram).md).
+To support these memory mappings there are 3 hardware components that take a [virtual address](../../notes/virtual_memory.md) to a place on [RAM](../../notes/random_access_memory_(ram).md).
 - [Memory Management Unit (MMU)](../../notes/memory_management_unit_(mmu).md): A component on the [CPU](../../notes/central_processing_unit_(cpu).md) that performs the mapping from [virtual memory](../../notes/virtual_memory.md) to [physical memory](../../notes/physical_memory.md). This is also responsible for raising faults for illegal access or accesses that require different permissions.
 - [Translation Lookaside Buffer (TLB)](../../notes/translation_lookaside_buffer_(tlb).md): A cache within the [MMU](../../notes/memory_management_unit_(mmu).md) to speed up address mappings.
 - [Memory controller](../../notes/memory_controller.md): A component that maps different sticks of [RAM](../../notes/random_access_memory_(ram).md) into one contiguous physical address space to be used by the [MMU](../../notes/memory_management_unit_(mmu).md).
@@ -34,17 +34,17 @@ To support these memory mapping there are 3 bits of hardware that take a [virtua
 
 [Page table](../../notes/page_table.md)
 
-Note here in [paging](../../notes/paging_system.md) that the physical address consists of a [virtual page number](../../notes/virtual_page_number_(vpn).md) with an offset.
+Note here in [paging](../../notes/paging_system.md) that the virtual address consists of a [virtual page number](../../notes/virtual_page_number_(vpn).md) with an offset.
 
 >[!warning] Offset index
 >The minimum addressable unit of memory is a [byte](../../notes/byte.md) not a [bit](../../notes/bit.md). So the offset within a [page](../../notes/memory_page.md) is given in [bytes](../../notes/byte.md).
 
-[Physical memory](../../notes/physical_memory.md) is only allocated to [virtual memory](../../notes/virtual_memory.md) when it is first referenced. This is identified by the operating system when a [physical memories](../../notes/physical_memory.md) location is not in a [page table](../../notes/page_table.md). When this happens the [operating system](../../notes/operating_system_(os).md) takes control and either allocates the memory or swaps something out of [RAM](../../notes/random_access_memory_(ram).md) to provide space for the new memory. This is called 'allocation on first touch'. When a [page](../../notes/memory_page.md) is removed from [RAM](../../notes/random_access_memory_(ram).md) this is called 'reclaimed'.
+[Physical memory](../../notes/physical_memory.md) is only allocated to [virtual memory](../../notes/virtual_memory.md) when it is first referenced. This is identified by the operating system when a [physical memory](../../notes/physical_memory.md) location is not in a [page table](../../notes/page_table.md). When this happens the [operating system](../../notes/operating_system_(os).md) takes control and either allocates the memory or swaps something out of [RAM](../../notes/random_access_memory_(ram).md) to provide space for the new memory. This is called 'allocation on first touch'. When a [page](../../notes/memory_page.md) is removed from [RAM](../../notes/random_access_memory_(ram).md) this is called 'reclaimed'.
 
 [Page table entry](../../notes/page_table_entry.md)
 
 
-The [MMU](../../notes/memory_management_unit_(mmu).md) uses the flags within the [page table entry](../../notes/page_table_entry.md) to determine if the [processes](../../notes/process.md) operation on that memory is valid. If not it raises a fault which triggers the kernels page fault handler.
+The [MMU](../../notes/memory_management_unit_(mmu).md) uses the flags within the [page table entry](../../notes/page_table_entry.md) to determine if the [process](../../notes/process.md)'s operation on that memory is valid. If not it raises a fault which triggers the kernel's page fault handler.
 
 # Page table size
 
@@ -81,7 +81,7 @@ Page sizes are determined by the [operating system](../../notes/operating_system
 >Suppose both of these processes use the first 2kB and last 1kB of memory. How large are the page tables and how many entries do they use?
 >
 >Notice as they both have 6 bit off sets the page size is $2^6 = 64$B. Therefore the first 2kB = $2^{11}$ B takes the first $2^{11}/2^{6}=2^5 = 32$ entries and the last 1kB takes the last $2^4 = 16$ entries.
->In the flat table the page table has 64 entries in which 48 are used. In the second example the fist table has 4 entries with only 3 of these being used, the second layer has 16 entries and in all 3 tables all of these are used.
+>In the flat table the page table has 64 entries in which 48 are used. In the second example the first table has 4 entries with only 3 of these being used, the second layer has 16 entries and in all 3 tables all of these are used.
 >You can see in the second example we had in total 52 page table entries with only 1 not used but in the first we had 64 entries with 16 not being used.
 
 # Inverted page tables
@@ -100,7 +100,7 @@ Normally [segmentation](../../notes/memory_segmentation.md) is used in conjuncti
 
 What is the correct page size? This depends on your application, normally page sizes come in 3 different buckets 'regular' about 4kB, 'large' about 2MB and 'huge' about 1GB.
 
-Larger page sizes means smaller [page tables](../../notes/page_table.md) as the offset does more of the work - however this can lead to [internal fragmentation](../../notes/internal_fragmentation.md). Therefore applications that are likely to need large contiguous blocks of memory such as databases are better off with larger or huge table sizes but applications that to store lots of small objects are better off with smaller page tables.
+Larger page sizes mean smaller [page tables](../../notes/page_table.md) as the offset does more of the work - however this can lead to [internal fragmentation](../../notes/internal_fragmentation.md). Therefore applications that are likely to need large contiguous blocks of memory such as databases are better off with larger or huge table sizes but applications that store lots of small objects are better off with smaller page tables.
 
 # Memory allocation
 
@@ -131,7 +131,7 @@ However, the objects the [linux](../../notes/linux.md) kernel normally stores ar
 
 - Pages that aren't going to be used in the future.
 	- Hard to tell in practice so we use heuristics.
-- History-based predictions such as [LRU](least-recently_used_(lru).md)
+- History-based predictions such as [LRU](../../notes/least-recently_used_(lru).md)
 	- Access bit in the [page table entry](../../notes/page_table_entry.md) can be used for this.
 - Pages that don't need to be written out.
 	- Dirty bit in the [page table entry](../../notes/page_table_entry.md) can be used for this.

@@ -48,7 +48,7 @@ We have already come across methods of doing filtering
 We have already come across some ways to do wrapping too
 - [Hill climbing](../../notes/hill_climbing.md),
 - [Random optimisation](week_7_-_randomized_optimization.md) more generally,
-- [Gradient decent](../../notes/gradient_decent.md),
+- [Gradient decent](../../notes/gradient_descent.md),
 - Forward search where we keep adding features until we don't get any better, and
 - Backward search where we keep removing features until the score starts to drop.
 

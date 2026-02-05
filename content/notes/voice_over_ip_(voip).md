@@ -3,7 +3,7 @@ aliases:
   - VoIP
   - Voice over IP
 created: 2024-07-24
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2024-07-24
 tags:
@@ -11,6 +11,6 @@ tags:
 title: Voice over IP (VoIP)
 type: definition
 ---
->[!tldr] Voice over IP (VoIP)
->This is a class of applications which offer phone like experience through the [Internet](internet.md). For example skype, google meets, or zoom.
+>[!note] Voice over IP (VoIP)
+>This is a class of applications which offer a phone-like experience through the [Internet](internet.md). For example Skype, Google Meet, or Zoom.
 

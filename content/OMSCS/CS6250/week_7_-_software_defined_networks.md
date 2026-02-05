@@ -127,7 +127,7 @@ There are 3 separate layers to the architecture:
 - **SDN controller**: The **SDN controller** is a logically centralized entity that acts as an **interface between the network elements and the network-control applications.**
 - **Network-control applications**: The network-control applications are programs that manage the underlying network by collecting information about the network elements with the help of SDN controller.
 
-![Sdn Arciteture](../../../static/images/sdn_arciteture.png)
+![Sdn Arciteture](../../../static/images/sdn_architecture.png)
 
 These components have two important interfaces.
 - Southbound API: Connecting the SDN controller to the SDN-Controlled switches.
@@ -191,7 +191,7 @@ An Industrial-Scale Software Defined Internet Exchange Point
 
 The figure below presents three perspectives of the SDN landscape: (a) a plane-oriented view, (b) the SDN layers, and (c) a system design perspective.
 
-![Sdn Planes Arcitecture](../../../static/images/sdn_planes_arcitecture.png)
+![Sdn Planes Arcitecture](../../../static/images/sdn_planes_architecture.png)
 
 Next we highlight the key features of an SDN.
 
@@ -391,7 +391,7 @@ Below is an example dependency graph for the [P4](../../notes/programming_protoc
 
 # SDX
 
-Routing using [BGP](../../notes/boarder_gateway_protocol_(bgp).md) has some serious limitations:
+Routing using [BGP](../../notes/border_gateway_protocol_(bgp).md) has some serious limitations:
 1. Routing only uses destination IP: We want customisation based in the traffic application or source IP.
 2. Little control over end-to-end paths: We can only speak to our neighbours or look at the as-path field.
 These could be addressed using [SDN](../../notes/software_defined_networks_(sdn).md).
@@ -402,7 +402,7 @@ This has been implemented in [IXPs](../../notes/internet_exchange_points_(ixps).
 - Traffic load balancing - The destination IP address can be rewritten based on any field in the packet header to balance the load.
 - Traffic redirection through [middleboxes](../../notes/middleboxes.md) - Targeted subsets of traffic can be redirected to [middleboxes](../../notes/middleboxes.md).
 
-At an [IXP](../../notes/internet_exchange_points_(ixps).md) each participant connects to the route server - there they get a virtual sdn switch where they decide the in/outbound rules for traffic leaving and entering their network. These do not effect other participants switches but does effect how traffic is routed through the [IXP](../../notes/internet_exchange_points_(ixps).md). This differs from a standard route server which uses [BGP](../../notes/boarder_gateway_protocol_(bgp).md) rules to control traffic form/to participant [AS](../../notes/autonomous_system_(as).md).
+At an [IXP](../../notes/internet_exchange_points_(ixps).md) each participant connects to the route server - there they get a virtual sdn switch where they decide the in/outbound rules for traffic leaving and entering their network. These do not effect other participants switches but does effect how traffic is routed through the [IXP](../../notes/internet_exchange_points_(ixps).md). This differs from a standard route server which uses [BGP](../../notes/border_gateway_protocol_(bgp).md) rules to control traffic form/to participant [AS](../../notes/autonomous_system_(as).md).
 
 This is written in Pyretic and example can be found below.
 

@@ -1,7 +1,7 @@
 ---
 aliases:
 created: 2025-03-23
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2025-03-23
 tags:
@@ -9,7 +9,7 @@ tags:
 title: Demand paging
 type: definition
 ---
->[!tldr] Demand paging
+>[!definition] Demand paging
 > As [virtual memory](virtual_memory.md) is far larger than [physical memory](physical_memory.md) to maximize resource usage the [operating system](operating_system_(os).md) will swap out memory in [RAM](random_access_memory_(ram).md) to some secondary storage like the disk. In doing so it updates the [page table entry](page_table_entry.md) to reflect this. If the memory is then accessed again it needs to pull it back off the secondary storage. It does this in the following way:
 > 1. Memory is referenced.
 > 2. The [MMU](memory_management_unit_(mmu).md) raises a trap to hand control to the [operating system](operating_system_(os).md).

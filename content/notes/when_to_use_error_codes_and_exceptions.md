@@ -11,7 +11,7 @@ type: opinion
 ---
 # HTTP Stack
 
-In the [HTTP](hyper_text_transfer_protocol_(http).md), status codes serve as a standardized way of communicating the result of a client's request to a server. These status codes are well-defined, universally understood, and cover a broad range of scenarios from success (`200 OK`) to client errors (`404 Not Found`) and server errors (`500 Internal Server Error`). Using status codes in [HTTP](hyper_text_transfer_protocol_(http).md) is important for interoperability, as multiple clients and servers across different platforms and languages interact with each other.
+In the [HTTP](hypertext_transfer_protocol_(http).md), status codes serve as a standardized way of communicating the result of a client's request to a server. These status codes are well-defined, universally understood, and cover a broad range of scenarios from success (`200 OK`) to client errors (`404 Not Found`) and server errors (`500 Internal Server Error`). Using status codes in [HTTP](hypertext_transfer_protocol_(http).md) is important for interoperability, as multiple clients and servers across different platforms and languages interact with each other.
 
 # Within Your Programs
 
@@ -30,4 +30,4 @@ Some modern languages and frameworks use a combination of both [error codes](err
 
 # Summary
 
-While [HTTP](hyper_text_transfer_protocol_(http).md) and similar protocols make effective use of [error codes](error_code.md) for cross-system communication, within your own programs, using [exceptions](exception.md) generally leads to cleaner, more maintainable code. However, the choice between [exceptions](exception.md) and [error codes](error_code.md) can also depend on the programming language, performance considerations, and specific use cases.
+While [HTTP](hypertext_transfer_protocol_(http).md) and similar protocols make effective use of [error codes](error_code.md) for cross-system communication, within your own programs, using [exceptions](exception.md) generally leads to cleaner, more maintainable code. However, the choice between [exceptions](exception.md) and [error codes](error_code.md) can also depend on the programming language, performance considerations, and specific use cases.

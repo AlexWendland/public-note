@@ -3,7 +3,7 @@ aliases:
 course_code: CS6200
 course_name: Graduate introduction to Operating Systems
 created: 2024-08-26
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2024-08-26
 tags:
@@ -20,7 +20,7 @@ week: 3
 # Visual metaphor
 
 Threads are like workers in a toy shop:
-- is an active entity
+- A thread is an active entity
 	- Executing unit of toy order
 - Works simultaneously with others
 	- many workers completing toy orders
@@ -47,7 +47,7 @@ Threads allow us to parallelise a process over multiple cores without incurring 
 
 Multi-threading on a single core also can be efficient. As one of the largest costs in [context switching](../../notes/context_switch_(cpu).md) is to remap the [address space](../../notes/address_space_(os).md) the time it takes to [context switch](../../notes/context_switch_(cpu).md) between [threads](../../notes/thread.md) is lower than that for [processes](../../notes/process.md). Therefore if you have [I/O](../../notes/input_output_(io).md) bound tasks using multi-threading can improve performance.
 
-# Downsides of mulitithreading
+# Downsides of multithreading
 
 Now threads have access to the same [virtual memory](../../notes/virtual_memory.md) they can perform operations on the same bit of memory which can lead to unintended outcomes. For example two threads incrementing a number leading to the number only being incremented by one.
 
@@ -67,10 +67,10 @@ Threads can also wake each other up.
 
 # Thread creation
 
-Threads interfaces are different between providers. In this course we follow on specific implementation.
+Threads interfaces are different between providers. In this course we follow one specific implementation.
 
 Threads have a data-structure that tracks their current state. Containing data like:
-- Tread ID,
+- Thread ID,
 - Process it belongs to,
 - [CPU register](../../notes/cpu_register.md),
 - [stack](../../notes/stack_(os).md),
@@ -98,7 +98,7 @@ We could put a [mutex](../../notes/mutex.md) on the resource operations though t
 - Any number of readers accessing it (counter > 0), or
 - A single writer accessing it (counter == -1).
 
-``` psuedocode
+```pseudocode
 Mutex: counter_mutex
 Condition: write_phase
 Condition: read_phase
@@ -123,7 +123,7 @@ lock(mutex){
 lock(mutex){
 	while (resource_counter != 0):
 		wait(mutex, write_phase)
-	resource_conter = -1
+	resource_counter = -1
 }
 // WRITE RESOURCE
 lock(mutex){
@@ -137,7 +137,7 @@ lock(mutex){
 >[!note] Use while on the condition in the critical section instead of if
 > There are multiple reasons this is best practice:
 > - This allows for multiple threads waiting on the same condition,
-> - Anyone thread might not be the first thread to access it after it has been released,
+> - Any thread might not be the first thread to access it after it has been released,
 > - The condition might have changed since it has been woken up.
 
 The critical sections follow a similar structure.
@@ -151,7 +151,7 @@ lock(mutex){
 }
 ```
 
-In this example the real critical code is not protected by a [mutex](../../notes/mutex.md) which is the reading and writing of the resource. This proxy variable pattern is common and follows a general stricture.
+In this example the real critical code is not protected by a [mutex](../../notes/mutex.md) which is the reading and writing of the resource. This proxy variable pattern is common and follows a general structure.
 
 ## Proxy variable pattern
 
@@ -178,7 +178,7 @@ lock(mutex){
 
 ## Common bugs with [mutexs](../../notes/mutex.md) and how to avoid them
 
-- Use clear names for mutexs and conditional variables so you know what they refer too.
+- Use clear names for mutexs and conditional variables so you know what they refer to.
 - Check you are locking and unlocking when accessing the resource.
 - Check you have matched lock and unlock blocks when using the proxy pattern.
 - Remember to use a single mutex for a single resource.
@@ -197,14 +197,14 @@ lock(mutex){
 
 This can sometimes be mitigated by moving the signal/broadcast out of the [mutex](../../notes/mutex.md) block.
 
-```psuedocode
+```pseudocode
 // WRITE RESOURCE WITH SPURIOUS WAKEUP
 lock(mutex){
 	resource_counter = 0
 	broadcast(read_phase)
 	signal(write_phase)
 }
-// WRITE RSOURCE WITHOUT SPURIOUS WAKEUP
+// WRITE RESOURCE WITHOUT SPURIOUS WAKEUP
 lock(mutex){
 	resource_counter = 0
 }
@@ -240,7 +240,7 @@ The concept of the [thread](../../notes/thread.md) exists at the kernel level an
 
 [Process](../../notes/process.md) threads sharing the same [kernel](../../notes/kernel.md) thread have their scheduling controlled by the processes thread manager (unbound threads). This means a lot more control for the process on how to schedule thous threads. Less reliance on the [OS](../../notes/operating_system_(os).md) features making it more portable. Less [OS](../../notes/operating_system_(os).md) calls which can speed up applications. Though this means if any of the [process](../../notes/process.md) threads block the kernel thread then all threads are blocked. The [OS](../../notes/operating_system_(os).md) is not aware of what the [process](../../notes/process.md) is doing and can not prioritise that thread using its normal polices.
 
-You can also take a hybrid approach that gets the best of both worlds but requires coordination between the kernel thread scheduler  and the process scheduler.
+You can also take a hybrid approach that gets the best of both worlds but requires coordination between the kernel thread scheduler and the process scheduler.
 
 # [Multi-threading](../../notes/multi-threading.md) patterns
 

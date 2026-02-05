@@ -3,7 +3,7 @@ aliases:
 course_code: CS6200
 course_name: Graduate introduction to Operating Systems
 created: 2024-09-04
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2024-09-04
 tags:
@@ -14,7 +14,7 @@ week: 4
 ---
 # Additional reading
 
-- ["An Introduction to Programming with Threads"](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-birrell-paper.pd)
+- ["An Introduction to Programming with Threads"](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-birrell-paper.pdf)
 - [PThreads Programming Resource](https://computing.llnl.gov/tutorials/pthreads/)
 
 # Background
@@ -37,7 +37,7 @@ int pthread_create(
 
 >[!note] Void is C's any type
 
-The first argument `thread` will be filled with the thread once it is created. (We will come back to `pthread_attr_t` later - if you pass `NULL` you will get default behaviour.) The third argument `start_routine` is a function to call this arguments `arg`. It will return the status code of the operation.
+The first argument `thread` will be filled with the thread once it is created. (We will come back to `pthread_attr_t` later - if you pass `NULL` you will get default behaviour.) The third argument `start_routine` is a function to call with argument `arg`. It will return the status code of the operation.
 
 This can be joined to the main thread using:
 ``` c
@@ -72,7 +72,7 @@ For example `pthread_attr_setjoinable`.
 
 Threads that are created from a parent need to be joined by that parent in order for them to be cleaned up by the [OS](../../notes/operating_system_(os).md). Though if the parent thread exits before this happens it can create zombie threads that can not be cleaned up.
 
-If you need to create a child thread that will outlive its parent then you can make it detachable. This means it is no longer needs to be joined to exit - it can instead use the following function.
+If you need to create a child thread that will outlive its parent then you can make it detachable. This means it no longer needs to be joined to exit - it can instead use the following function.
 ```c
 void pthread_exit()
 ```
@@ -155,7 +155,7 @@ int pthread_mutex_destroy(pthread_mutex_t *mutex);
 Another nice feature is the trylock which allows a thread to check if a mutex is free without getting blocked by it.
 
 ```c
-int pthread_mutex_trylock(pthread *mutex);
+int pthread_mutex_trylock(pthread_mutex_t *mutex);
 ```
 
 This will return 0 if it is free or `EBUSY` if not.

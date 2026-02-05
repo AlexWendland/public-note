@@ -74,7 +74,7 @@ These techniques have their roots in legitimate DNS-based techniques that legiti
 
 [Round robin DNS (RRDNS)](../../notes/round_robin_dns_(rrdns).md)
 
-[DSN-based content delivery](../../notes/dsn-based_content_delivery.md)
+[DSN-based content delivery](../../notes/dns-based_content_delivery.md)
 
 [Fast-Flux Service Networks (FFSN)](../../notes/fast-flux_service_networks_(ffsn).md)
 
@@ -82,7 +82,7 @@ These techniques have their roots in legitimate DNS-based techniques that legiti
 
 There are different approaches to detecting rouge networks. The most intuitive method is to see if they are hosting bad actors.
 
-[Finding rouge networks (FIRE)](../../notes/finding_rouge_networks_(fire).md)
+[Finding rouge networks (FIRE)](../../notes/finding_rogue_networks_(fire).md)
 
 The approach has a couple downsides:
 - It is infeasible to monitor all networks all the time.
@@ -122,12 +122,12 @@ This system predicts the likelihood of a security breach within an organisation 
 
 This system effectively uses external indicators of mismanagement, malicious activity, and past incidents to predict the probability of future breaches in an organization's network.
 
-# [BGP](../../notes/boarder_gateway_protocol_(bgp).md) hijacking
+# [BGP](../../notes/border_gateway_protocol_(bgp).md) hijacking
 
 [BGP Hijacking](../../notes/bgp_hijacking.md)
 
 There are different reasons attempt these attacks:
-- **Human error**: Accidental misconfiguration of routers can lead to this type of attack. E.g. China Telecom accidentally leaked a full [BGP](../../notes/boarder_gateway_protocol_(bgp).md) table that led to large-scale [Type-0 hijacking](../../notes/type-0_hijacking.md)
+- **Human error**: Accidental misconfiguration of routers can lead to this type of attack. E.g. China Telecom accidentally leaked a full [BGP](../../notes/border_gateway_protocol_(bgp).md) table that led to large-scale [Type-0 hijacking](../../notes/type-0_hijacking.md)
 - **Targeted attack**: This is normally done by someone trying to intercept network traffic and carry out a [Man-in-the-middle attack (MM)](../../notes/man-in-the-middle_attack_(mm).md), a [Type-N hijacking](../../notes/type-n_hijacking.md) or a [Type-U hijacking](../../notes/type-u_hijacking.md). E.g. Visa and Mastercard were hijacked by Russian networks in 2017 using this.
 - **High impact attack**: Here someone is obviously trying to cause wide spread outages. E.g. Pakistan Telecom in a [Type-0 hijacking](../../notes/type-0_hijacking.md) with a [Sub-prefix hijacking](../../notes/sub-prefix_hijacking.md), essentially [blackholing](../../notes/blackholing_(bh).md) all of YouTube’s services worldwide for nearly 2 hours.
 

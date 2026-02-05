@@ -3,7 +3,7 @@ aliases:
 course_code: CS6200
 course_name: Graduate introduction to Operating Systems
 created: 2025-02-09
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2025-02-09
 tags:
@@ -42,7 +42,7 @@ The kernel thread structure contains:
 - pointers to:
 	- the stack,
 	- associated LWP,
-	- processs, and
+	- process, and
 	- CPU structure.
 
 The LWP data structure contains:
@@ -57,9 +57,9 @@ The LWP data structure contains:
 
 ## Scheduling
 
-SunOS uses real time scheduling. On each CPU the highest priority kernal thread gets scheduled. Simultaneously the highest priority user thread gets scheduled on that LWP. If joint it uses round robin.
+SunOS uses real time scheduling. On each CPU the highest priority kernel thread gets scheduled. Simultaneously the highest priority user thread gets scheduled on that LWP. If joint it uses round robin.
 
-SunOS implements preemptive threads. This means as soon as a higher priority thread becomes runable it is scheduled immediately to be running on a CPU. This can cause strange reordering of threads where an event causing a change of executing thread may happen on another CPU which then effects the running thread on another CPU.
+SunOS implements preemptive threads. This means as soon as a higher priority thread becomes runnable it is scheduled immediately to be running on a CPU. This can cause strange reordering of threads where an event causing a change of executing thread may happen on another CPU which then affects the running thread on another CPU.
 
 ## System threads
 

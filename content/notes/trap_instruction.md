@@ -2,7 +2,7 @@
 aliases:
   - trap instruction
 created: 2024-08-26
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2024-08-26
 tags:
@@ -11,6 +11,6 @@ tags:
 title: Trap instruction
 type: definition
 ---
->[!tldr] Trap instruction
->A trap instruction is sent to when an application in [user mode](proccess_modes.md) tries to access hardware without using a [system call](system_call.md). This is passed to the [OS](operating_system_(os).md) to judge if the call was illegitimate or harmful. Whilst this is happening the process is stopped from doing anything else.
+>[!note] Trap instruction
+>A trap instruction is sent to when an application in [user mode](process_modes.md) tries to access hardware without using a [system call](system_call.md). This is passed to the [OS](operating_system_(os).md) to judge if the call was illegitimate or harmful. While this is happening, the process is stopped from doing anything else.
 

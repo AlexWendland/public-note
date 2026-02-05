@@ -12,5 +12,5 @@ title: Hypertext Transfer Protocol Secure (HTTPS)
 type: definition
 ---
 >[!tldr] Hypertext Transfer Protocol Secure (HTTPS)
->This is [HTTP](hyper_text_transfer_protocol_(http).md) using [TLS](transport_layer_security_(tls).md) encryption. This is sometimes refereed to as HTTP over TLS.
+>This is [HTTP](hypertext_transfer_protocol_(http).md) using [TLS](transport_layer_security_(tls).md) encryption. This is sometimes refereed to as HTTP over TLS.
 

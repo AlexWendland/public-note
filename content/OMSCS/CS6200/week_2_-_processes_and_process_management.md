@@ -3,7 +3,7 @@ aliases:
 course_code: CS6200
 course_name: Graduate introduction to Operating Systems
 created: 2024-08-26
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2024-08-26
 tags:
@@ -25,7 +25,7 @@ week: 2
 
 # Metaphor
 
-A process is line an order of toys:
+A process is like an order of toys:
 - State of execution:
 	- Completed,
 	- waiting, or
@@ -37,7 +37,7 @@ A process is line an order of toys:
 	- Sewing machine or
 	- glue gun.
 
-This is analogy to an [OS](../../notes/operating_system_(os).md) where a [process](../../notes/process.md) has:
+This is an analogy to an [OS](../../notes/operating_system_(os).md) where a [process](../../notes/process.md) has:
 - State of execution:
 	- Program counter, or
 	- Stack
@@ -73,18 +73,18 @@ Context switching is costly for two reasons:
 
 ## Process life cycle
 
-During a processes time it goes through multiple different stages.
+During a process's time it goes through multiple different stages.
 - New: Once the user issues a process that they want to start a [PCB](../../notes/process_control_block_(pcb).md) is made and it is admitted to the [CPU](../../notes/central_processing_unit_(cpu).md).
 - Ready: This is a [process](../../notes/process.md) that has something to do but is not being ran on the [CPU](../../notes/central_processing_unit_(cpu).md) yet.
-- Waiting: If the process has to wait on some event from the network or I/O then it will be moved into a waiting stating for that to finish.
+- Waiting: If the process has to wait on some event from the network or I/O then it will be moved into a waiting state for that to finish.
 - Running: It will have been [context switched](../../notes/context_switch_(cpu).md) onto and the [PCB](../../notes/process_control_block_(pcb).md) loaded into the [CPU register](../../notes/cpu_register.md).
-- Terminated: Once a process has exited or error-ed it moves state to terminated to be cleaned up.
+- Terminated: Once a process has exited or errored it moves state to terminated to be cleaned up.
 
 ![Process Life Cycle](../../../static/images/process_life_cycle.png)
 
 ## Creation
 
-When you start the computer the [OS](../../notes/operating_system_(os).md) starts a number of processes that have privileged access. These in tern create the application that you run on your computer. There are two [system calls](../../notes/system_call.md) to create a new [process](../../notes/process.md):
+When you start the computer the [OS](../../notes/operating_system_(os).md) starts a number of processes that have privileged access. These in turn create the application that you run on your computer. There are two [system calls](../../notes/system_call.md) to create a new [process](../../notes/process.md):
 - Fork: This creates an exact copy of the current process, including the [program counter](../../notes/program_counter_(pc).md).
 - Exec: This replaces a [processes](../../notes/process.md) [PCB](../../notes/process_control_block_(pcb).md) with that of a new program.
 The normal flow for a [process](../../notes/process.md) to start another one is to call fork followed by exec.
@@ -100,6 +100,7 @@ An efficient [OS](../../notes/operating_system_(os).md) wants to spend as much t
 There are two important decisions that you must take when deciding on the scheduler.
 - How long should processes run for?
 - What metrics to choose the next process to run?
+
 ## I/O scheduling
 
 When a process is stopped by an [IO](../../notes/input_output_(io).md) operation this is then handled by the [device driver](../../notes/device_driver.md) associated with that [IO](../../notes/input_output_(io).md) task. The [process](../../notes/process.md) will enter the waiting state until the [device driver](../../notes/device_driver.md) interrupts the [CPU](../../notes/central_processing_unit_(cpu).md) to let it know the operation has been completed and the [process](../../notes/process.md) can move back to the ready state. Though there are other ways this waiting state can end - for example a time out.
@@ -108,6 +109,6 @@ When a process is stopped by an [IO](../../notes/input_output_(io).md) operation
 
 # Inter-process communication
 
-As modern applications get more complex they are being structured to be multiple processes communicating with on another. However, the [OS](../../notes/operating_system_(os).md) is on purposely structured to isolate different applications from one another. Therefore they need to communicate to each other using [IPC](../../notes/inter-process_communication_(ipc).md)
+As modern applications get more complex they are being structured to be multiple processes communicating with one another. However, the [OS](../../notes/operating_system_(os).md) is purposely structured to isolate different applications from one another. Therefore they need to communicate to each other using [IPC](../../notes/inter-process_communication_(ipc).md)
 
 [IPC](../../notes/inter-process_communication_(ipc).md)

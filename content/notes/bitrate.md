@@ -2,7 +2,7 @@
 aliases:
   - bitrate
 created: 2024-07-27
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2024-07-27
 tags:
@@ -10,6 +10,6 @@ tags:
 title: Bitrate
 type: definition
 ---
->[!tldr] Bitrate
->This is the upload/download rate of some application it is normally measured it [bits](bit.md) per second (bps) though scales to kilobits per seconds (kbps) or megabits per second (Mbps).
+> [!tldr] Bitrate
+> This is the upload/download rate of some application. It is normally measured in [bits](bit.md) per second (bps), though it scales to kilobits per second (kbps) or megabits per second (Mbps).
 

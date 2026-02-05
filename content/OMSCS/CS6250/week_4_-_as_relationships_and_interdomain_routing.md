@@ -103,28 +103,28 @@ When an [AS](../../notes/autonomous_system_(as).md) decides which route to send 
 
 [Interdomain routing](../../notes/interdomain_routing.md)
 
-[Boarder gateway protocol (BGP)](../../notes/boarder_gateway_protocol_(bgp).md)
+[Boarder gateway protocol (BGP)](../../notes/border_gateway_protocol_(bgp).md)
 
-The goals of [BGP](../../notes/boarder_gateway_protocol_(bgp).md) are:
+The goals of [BGP](../../notes/border_gateway_protocol_(bgp).md) are:
 - **Scalability**: How do you maintain a routing table when the size of the internet is expanding.
 - **Expressing route policies**: How do we allow for [AS](../../notes/autonomous_system_(as).md) to control which routes to use and to broadcast.
 - **Cooperation**: To let [AS](../../notes/autonomous_system_(as).md) to make local decisions with the information they are provided.
-- **Security**: Whist not an initial design goal [BGP](../../notes/boarder_gateway_protocol_(bgp).md) did not include security as the internet has expanded it has become more important. This needs to protect [AS](../../notes/autonomous_system_(as).md) from malicious attacks, misconfiguration, and faults. This includes different protocols, registries for the domains an [AS](../../notes/autonomous_system_(as).md) owns, private keys for [AS](../../notes/autonomous_system_(as).md).
+- **Security**: Whist not an initial design goal [BGP](../../notes/border_gateway_protocol_(bgp).md) did not include security as the internet has expanded it has become more important. This needs to protect [AS](../../notes/autonomous_system_(as).md) from malicious attacks, misconfiguration, and faults. This includes different protocols, registries for the domains an [AS](../../notes/autonomous_system_(as).md) owns, private keys for [AS](../../notes/autonomous_system_(as).md).
 
-# The [BGP](../../notes/boarder_gateway_protocol_(bgp).md) [protocol](../../notes/protocol_(networks).md)
+# The [BGP](../../notes/border_gateway_protocol_(bgp).md) [protocol](../../notes/protocol_(networks).md)
 
-Two [routers](../../notes/router.md) connected over [BGP](../../notes/boarder_gateway_protocol_(bgp).md) are called BGP peers. They open a semi-permanent [TCP](../../notes/transmission_control_protocol_(tcp).md) connection where they exchange routes. There are two different varieties.
+Two [routers](../../notes/router.md) connected over [BGP](../../notes/border_gateway_protocol_(bgp).md) are called BGP peers. They open a semi-permanent [TCP](../../notes/transmission_control_protocol_(tcp).md) connection where they exchange routes. There are two different varieties.
 - iBGP: For internal communication about what external routes are available.
 - eBGP: For communicating with other [AS](../../notes/autonomous_system_(as).md).
 
-There are three important messages [BGP](../../notes/boarder_gateway_protocol_(bgp).md) has.
+There are three important messages [BGP](../../notes/border_gateway_protocol_(bgp).md) has.
 1. The **OPEN** message to start the conversation.
 2. The  **UPDATE** message that contains a change of available routes. This has two forms:
 	1. *Announcements* about new routes or updates to old routes.
 	2. *Withdrawls* messages about routes no longer available.
 3. The **KEEPALIVE** messages that keep the connection going.
 
-In the [BGP](../../notes/boarder_gateway_protocol_(bgp).md) the [routers](../../notes/router.md) exchange [IP prefixes](../../notes/subnets.md) that represent [subnets](../../notes/subnets.md) or collections of [subnets](../../notes/subnets.md) if the [router](../../notes/router.md) is using [route summarization](../../notes/route_summarization.md). For the routes agreed by the [AS](../../notes/autonomous_system_(as).md) the [router](../../notes/router.md) offers theses over [eBGP](../../notes/boarder_gateway_protocol_(bgp).md) and then shares the routes it has been offered over [iBGP](../../notes/boarder_gateway_protocol_(bgp).md).
+In the [BGP](../../notes/border_gateway_protocol_(bgp).md) the [routers](../../notes/router.md) exchange [IP prefixes](../../notes/subnets.md) that represent [subnets](../../notes/subnets.md) or collections of [subnets](../../notes/subnets.md) if the [router](../../notes/router.md) is using [route summarization](../../notes/route_summarization.md). For the routes agreed by the [AS](../../notes/autonomous_system_(as).md) the [router](../../notes/router.md) offers theses over [eBGP](../../notes/border_gateway_protocol_(bgp).md) and then shares the routes it has been offered over [iBGP](../../notes/border_gateway_protocol_(bgp).md).
 
 Messages passed between [AS](../../notes/autonomous_system_(as).md) have some special properties, two of which are:
 - **ASPATH**: A list of [ASN](../../notes/autonomous_system_number_(asn).md) for each [AS](../../notes/autonomous_system_(as).md) the route has passed through. This is helpful to avoid loops.
@@ -132,7 +132,7 @@ Messages passed between [AS](../../notes/autonomous_system_(as).md) have some sp
 
 # The router process
 
-We can model a [router](../../notes/router.md) running [BGP](../../notes/boarder_gateway_protocol_(bgp).md) as follows.
+We can model a [router](../../notes/router.md) running [BGP](../../notes/border_gateway_protocol_(bgp).md) as follows.
 
 ![Router Diagram](../../../static/images/router_diagram.png)
 
@@ -172,7 +172,7 @@ This reflects the preferences we discussed above, customer then peer then provid
 
 If an [AS](../../notes/autonomous_system_(as).md) has two routers connecting to a neighbours [AS](../../notes/autonomous_system_(as).md) which are offering some of the same routes. Knowing the forwarding tables of these routers may give a preference for how a neighbouring [AS](../../notes/autonomous_system_(as).md) forwards traffic through your network. This is controlled by setting a MED value (for example as the [IGP](../../notes/interior_gateway_protocol_(igp).md) cost to forward that traffic).
 
-# Challenges with [BGP](../../notes/boarder_gateway_protocol_(bgp).md): Misconfiguration and scalability
+# Challenges with [BGP](../../notes/border_gateway_protocol_(bgp).md): Misconfiguration and scalability
 
 Routers are vulnerable to misconfiguration and faults. This can lead to an excessively large number of updates leading to further faults from overloading the network. This can be mediated by limiting the size of the routing table.
 
@@ -229,15 +229,15 @@ Normally the terms of accessing do not forbid reselling of access to the [IXP](.
 
 ## How do route servers work
 
-Two [ASs](../../notes/autonomous_system_(as).md) in a [IXP](../../notes/internet_exchange_points_(ixps).md) to transfer route information need to establish a bilateral [BGP](../../notes/boarder_gateway_protocol_(bgp).md) connection. However with so many participants at an [IXP](../../notes/internet_exchange_points_(ixps).md) the number of open connections would be massive - which would not scale.
+Two [ASs](../../notes/autonomous_system_(as).md) in a [IXP](../../notes/internet_exchange_points_(ixps).md) to transfer route information need to establish a bilateral [BGP](../../notes/border_gateway_protocol_(bgp).md) connection. However with so many participants at an [IXP](../../notes/internet_exchange_points_(ixps).md) the number of open connections would be massive - which would not scale.
 
 ![Route Server Example](../../../static/images/route_server_example.png)
 
 Instead if the [IXP](../../notes/internet_exchange_points_(ixps).md) offers a route server [ASs](../../notes/autonomous_system_(as).md) connect to this single entity instead. This offers the following services:
 - It collects and shares routing information from its peers.
-- It execute [BGP](../../notes/boarder_gateway_protocol_(bgp).md) decisions and re-advertises the resulting information.
+- It execute [BGP](../../notes/border_gateway_protocol_(bgp).md) decisions and re-advertises the resulting information.
 
-The collection of addresses is called a Routing Information Base (RIB) which contains all [BGP](../../notes/boarder_gateway_protocol_(bgp).md) paths. There is a master RIB with all the information and an [AS](../../notes/autonomous_system_(as).md) specific RIB for each participant.
+The collection of addresses is called a Routing Information Base (RIB) which contains all [BGP](../../notes/border_gateway_protocol_(bgp).md) paths. There is a master RIB with all the information and an [AS](../../notes/autonomous_system_(as).md) specific RIB for each participant.
 
 Route servers maintain two types of route filters. Import route filters that allow [ASs](../../notes/autonomous_system_(as).md) to only advertise routes they should advertise. Export route filters which are triggered by member [ASs](../../notes/autonomous_system_(as).md) to restrict which other [IXP](../../notes/internet_exchange_points_(ixps).md) members can receive their routes.
 

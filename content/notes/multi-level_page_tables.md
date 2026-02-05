@@ -1,7 +1,7 @@
 ---
 aliases:
 created: 2025-03-22
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2025-03-22
 tags:
@@ -9,7 +9,7 @@ tags:
 title: Multi-level page tables
 type: definition
 ---
->[!tldr] Multi-level page tables
+> [!definition] Multi-level page tables
 > To reduce the memory overhead of a single large [page table](page_table.md), modern systems use a *hierarchical paging structure* called a _multi-level page table_. Instead of a single, flat table mapping all virtual pages to physical frames, the **multi-level approach** breaks this into a series of smaller **nested page tables**.
 >
 >At the top level, an **outer page table** contains pointers to **lower-level page tables**, continuing down the hierarchy until reaching the **final level** (the "inner page table"), which directly maps virtual pages to physical frames.

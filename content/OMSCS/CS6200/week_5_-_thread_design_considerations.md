@@ -3,12 +3,12 @@ aliases:
 course_code: CS6200
 course_name: Graduate introduction to Operating Systems
 created: 2025-02-09
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2025-02-09
 tags:
   - OMSCS
-title: Week 5 - Thread design Considerations
+title: Week 5 - Thread design considerations
 type: lecture
 week: 5
 ---
@@ -32,17 +32,17 @@ Key summary:
 
 ![thread_data_structures](../../../static/images/excalidraw/thread_data_structures.excalidraw.svg)
 
-In previous lecturers we spoke about a [Process control block (PCB)](../../notes/process_control_block_(pcb).md) as a single entity. However, when adding threads into the equation it is more convent to break this down into the bit.
+In previous lecturers we spoke about a [Process control block (PCB)](../../notes/process_control_block_(pcb).md) as a single entity. However, when adding threads into the equation it is more convenient to break this down into the bits.
 - The hard state that is shared by all threads - like the memory mapping,
 - the soft state that is shared by some threads like how to handle signals and system calls, and
 - the thread specific state like its current stack and registers.
 
 As we discussed previously the threading library (which can be different for each process) controls the mapping between the user threads and the kernel threads. The kernel threads are the 'real' threads from the perspective of the CPU - these get scheduled onto the CPU. The user threads are not known by the CPU, it is the responsibility of the threading library to map these onto the kernel threads to be executed. This can be done in multiple relationships that have upsides and downsides.
-- Many user threads to one kernel threads. This was mainly used by old programming languages, whilst allowing for some parallelism if one threads is mapped onto the kernel thread and uses an I/O operation it blocks all user threads.
-- 1:1, common in modern programming languages like pthreads in c. Allows for the most parallelism but decreases portability as it demands a lot of resources from the system it is running on and increases the amount of overhead as it needs a kernel operation to switch user level threads.
+- Many user threads to one kernel threads. This was mainly used by old programming languages, whilst allowing for some parallelism if one thread is mapped onto the kernel thread and uses an I/O operation it blocks all user threads.
+- 1:1, common in modern programming languages like pthreads in C. Allows for the most parallelism but decreases portability as it demands a lot of resources from the system it is running on and increases the amount of overhead as it needs a kernel operation to switch user level threads.
 - Many to many, balance between both - allows for parallelism whilst also making optimizations to not need so many context switches. Used in programming languages like go.
 
-The process control block go broken down into small components to increase:
+The process control block is broken down into small components to increase:
 - Scalability,
 - Reduce overheads,
 - Increase performance, and
@@ -51,7 +51,7 @@ The process control block go broken down into small components to increase:
 In a single [PCB](../../notes/process_control_block_(pcb).md) we have:
 - Large continuous data structure - decreasing scalability.
 - This is private for each entity such as thread - which increases overheads.
-- This needs to be saved and restored on each context swich - decreasing performance.
+- This needs to be saved and restored on each context switch - decreasing performance.
 - Would need to update the whole data structure for any change - making the structure less flexible.
 
 With the broken down state we:
@@ -79,7 +79,6 @@ Two key points:
 Key notes:
 - Resource usage is tracked per LWP this means to get the resource usage for a kernel-level thread, we need to traverse the linked list of LWP.
 - The kernel-level thread always has to be loaded in memory for access however the LWP does not. This allows for larger LWP support with a lower memory foot print.
--
 
 ![Sunos Fig 2](../../../static/images/SunOs_fig_2.png)
 
@@ -103,7 +102,7 @@ There are situations where actions on one CPU effect another, such as:
 
 ![Sync Related Issues](../../../static/images/sync_related_issues.png)
 
-Creation of threads takes a while so instead of destroying them it is efficient to reuse them. Therefore when a thread is marked for distruction:
+Creation of threads takes a while so instead of destroying them it is efficient to reuse them. Therefore when a thread is marked for destruction:
 - It is put on 'death row'
 - periodically a reaper thread destroys unused threads.
 - Otherwise when a new create call is made it reuses an old thread structure.
@@ -112,7 +111,7 @@ Creation of threads takes a while so instead of destroying them it is efficient 
 
 ![Difference Interrupts Signals](../../../static/images/difference_interrupts_signals.png)
 
-![Similar Interrupts Vs Singals](../../../static/images/similar_interrupts_vs_singals.png)
+![Similar Interrupts Vs Signals](../../../static/images/similar_interrupts_vs_signals.png)
 
 ### Interrupts
 
@@ -130,22 +129,22 @@ Creation of threads takes a while so instead of destroying them it is efficient 
 - When the signal is given if it is NOT masked then the current thread's execution counter is moved to the handling code.
 - Signals are defined by the OS.
 - Signals are either synchronous or asynchronous.
-	- Synchronous: Segmenation fault, dividing by 0, or sigkill sent from one thread to another.
+	- Synchronous: Segmentation fault, dividing by 0, or sigkill sent from one thread to another.
 	- Asynchronous: Sigkill from outside or sigalarm.
 
 ## Masking
 
-![Masking Interupts Signals](../../../static/images/masking_interupts_signals.png)
+![Masking Interrupts Signals](../../../static/images/masking_interrupts_signals.png)
 
 Switching immediately to handler code for either signals or interrupts can cause code to become incredibly complicated. For example if the code that is interrupted is holding a mutex, but the handler code needs another mutex it risks deadlocks within your system.
 
 The solution to this is to mask (i.e. block) certain signals/interrupts from happening around critical sections to stop this happening. Signals/interrupts when blocked get queued up.
 
-Interupt masks are per CPU. If a mask disables the interrupt, the hardware interrupt routing mechanism will not deliver interrupts to that CPU.
+Interrupt masks are per CPU. If a mask disables the interrupt, the hardware interrupt routing mechanism will not deliver interrupts to that CPU.
 
 On a multi-core system the interrupt is handled by whichever CPU has that interrupt unmasked. It is common practice to have a single core unmask the interrupts and be the main handler. This avoids overheads and instability on the other cores.
 
-Signal masks are per execution context. If the mask disables a signal, kernal sees the mask and will not interrupt the corresponding thread.
+Signal masks are per execution context. If the mask disables a signal, kernel sees the mask and will not interrupt the corresponding thread.
 
 There are two types of signals:
 - One-shot signals: If multiple signals are queued it is only guaranteed to run the handler at least once. Also user specific handlers must be re-enabled after execution otherwise we default back to the OS's handler.
@@ -163,15 +162,15 @@ The main downside to this is dynamic thread creation is quite costly. Therefore 
 ![Top Vs Bottom Thread Handling](../../../static/images/top_vs_bottom_thread_handling.png)
 
 There is a concept of top and bottom of the thread handler.
-- The top is the part that executes within the interupted thread.
+- The top is the part that executes within the interrupted thread.
 - The bottom is the part that executes within the spun out thread.
-	- In the bottom we can enable interupts that were disabled in the top - as it should be safe here to handle other signals.
+	- In the bottom we can enable interrupts that were disabled in the top - as it should be safe here to handle other signals.
 
 If we use a new thread instead of blocking signals whilst in the critical section we have the following changes:
 - It adds about 40 instructions per interrupt, and
-- It saves about 12 instructions per mutex opeation.
+- It saves about 12 instructions per mutex operation.
 
->[!note] Optimize for the common case
+> [!note] Optimize for the common case
 > As there are fewer interrupts than mutex operations this causes a net saving.
 
 ## User vs kernel masks

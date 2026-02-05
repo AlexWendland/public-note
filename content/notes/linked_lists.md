@@ -22,7 +22,7 @@ type: data structure
 >
 >The next pointer at the last node and the previous pointer at the first node are null.
 >
->Linked lists have [spacial complexity](spacial_complexity.md) of $O(n)$ but the also have overhead of $O(n)$ to store the additional points.
+>Linked lists have [spacial complexity](spatial_complexity.md) of $O(n)$ but the also have overhead of $O(n)$ to store the additional points.
 >
 >This has the following operations:
 >- Access: $O(n)$ by index

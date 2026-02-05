@@ -230,7 +230,7 @@ Some were already described above. Such as [ARP](../../notes/address_resolution_
 
 [Simple Mail Transfer Protocol (SMTP)](../../notes/simple_mail_transfer_protocol_(smtp).md)
 
-[Hyper Text Transfer Protocol (HTTP)](../../notes/hyper_text_transfer_protocol_(http).md)
+[Hyper Text Transfer Protocol (HTTP)](../../notes/hypertext_transfer_protocol_(http).md)
 
 [Secure Socket Layer (SSL)](../../notes/secure_socket_layer_(ssl).md)
 

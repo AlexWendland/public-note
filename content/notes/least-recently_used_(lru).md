@@ -3,15 +3,15 @@ aliases:
   - LRU
   - Least-recently used
 created: 2024-08-26
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2024-08-26
 tags:
-  - computer-sciecne
+  - computer-science
   - OS
 title: Least-recently used (LRU)
 type: definition
 ---
->[!tldr]  Least-recently used (LRU)
+> [!note] Least-recently used (LRU)
 >This is a policy that chooses to operate first on the least recently used element, such as memory.
 

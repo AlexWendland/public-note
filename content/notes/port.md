@@ -20,7 +20,7 @@ type: definition
 >2. 1024-49151 are user or registered ports, and
 >3. 49152-65535 are ephemeral ports.
 >
->Well known ports are used for system processes and protocols. For example port 80 is used by webservers for [HTTP](hyper_text_transfer_protocol_(http).md).
+>Well known ports are used for system processes and protocols. For example port 80 is used by webservers for [HTTP](hypertext_transfer_protocol_(http).md).
 >
 >Registered ports are used for user applications that need a port to work off of.
 >

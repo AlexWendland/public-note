@@ -2,7 +2,7 @@
 aliases:
   - garbage collection
 created: 2024-08-26
-date_checked:
+date_checked: 2026-02-05
 draft: true
 last_edited: 2024-08-26
 tags:
@@ -11,6 +11,6 @@ tags:
 title: Garbage collection (programming)
 type: definition
 ---
->[!tldr] Garbage collection (programming)
->Definition here
+> [!note] Garbage collection (programming)
+> Definition here
 

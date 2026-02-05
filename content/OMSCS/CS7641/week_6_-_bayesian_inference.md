@@ -116,7 +116,7 @@ Lets picture a [Bayesian network](../../notes/bayesian_network.md) with one root
 
 First lets draw the Naive Bayes Classifier diagram.
 
-![Naice Bayes](../../../static/images/excalidraw/Naice_Bayes.excalidraw.svg)
+![Naice Bayes](../../../static/images/excalidraw/Naive_Bayes.excalidraw.svg)
 
 This is a model for if the email is spam or not. Lets assume the probability of spam is $\mathbb{P}[Spam] = 0.4$. Then we have the [conditional probabilities](../../notes/conditional_probability.md) below.
 
@@ -150,7 +150,7 @@ We want to do this but not have to crack out the pen and paper every time.
 
 This is cool as,
 - Normally [Inference](../../notes/inference.md) is expensive to do, however in this case it makes it really cheap.
-- The model has few parameters so has low [spacial complexity](../../notes/spacial_complexity.md).
+- The model has few parameters so has low [spacial complexity](../../notes/spatial_complexity.md).
 - If you have sufficient data you can make very good estimates on these probabilities.
 - This connects [Inference](../../notes/inference.md) and [classification problems](../../notes/classification_problems.md).
 - Empirically widely successful.

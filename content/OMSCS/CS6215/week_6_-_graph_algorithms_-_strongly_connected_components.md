@@ -217,7 +217,7 @@ Suppose we want to find the strongly connected components of the graph $G$ below
 
 First we look at $G^R$ and run the [DFS to find path in an undirected graph](../../notes/dfs_to_find_path_in_an_undirected_graph.md) algorithm.
 
-![Reverse Strongly Connected Compoent Graph](../../../static/images/reverse_strongly_connected_compoent_graph.png)
+![Reverse Strongly Connected Compoent Graph](../../../static/images/reverse_strongly_connected_component_graph.png)
 
 This gives us $post : V \rightarrow \mathbb{N}$ - in this example we started at $C$ and did a fairly random vertex ordering.
 

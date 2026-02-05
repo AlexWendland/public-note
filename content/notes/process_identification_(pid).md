@@ -2,7 +2,7 @@
 aliases:
   - PID
 created: 2024-08-26
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2024-08-26
 tags:
@@ -10,6 +10,6 @@ tags:
 title: Process Identification (PID)
 type: definition
 ---
->[!tldr] Process Identification (PID)
->This is an ID associated to an executing process.
+>[!definition] Process Identification (PID)
+>This is an ID associated with an executing process.
 

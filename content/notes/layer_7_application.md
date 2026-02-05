@@ -12,4 +12,4 @@ title: Layer 7 Application
 type: definition
 ---
 >[!tldr] Layer 7 Application
->This layer determines what to do with this data. In a [HTTP](hyper_text_transfer_protocol_(http).md) web server these would be the key words get, post, head ect.
+>This layer determines what to do with this data. In a [HTTP](hypertext_transfer_protocol_(http).md) web server these would be the key words get, post, head ect.

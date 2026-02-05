@@ -35,7 +35,7 @@ type: definition
 >Key Benefits of BGP Blackholing:
 >- **Effective Mitigation**: Stops high-volume attacks close to their source, preventing them from reaching and overwhelming the target.
 >- **Scalability**: Can be implemented quickly by upstream providers or [IXPs](internet_exchange_points_(ixps).md) to protect multiple networks.
->- **Cost-Efficiency**: Reduces the need for expensive [DDoS](distributed_denial-of-service_(ddos).md) mitigation services by leveraging existing [BGP](boarder_gateway_protocol_(bgp).md) infrastructure.
+>- **Cost-Efficiency**: Reduces the need for expensive [DDoS](distributed_denial-of-service_(ddos).md) mitigation services by leveraging existing [BGP](border_gateway_protocol_(bgp).md) infrastructure.
 >
 >Challenges and Considerations:
 >

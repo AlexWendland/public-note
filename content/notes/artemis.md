@@ -16,7 +16,7 @@ type: definition
 >This works in the following way.
 >1. **Write a configuration File**: Lists all prefixes owned by the network, created by the network operator.
 >2. **BGP Updates Mechanism**: Receives updates from local routers and monitoring services.
->3. **Anomaly Detection**: Compares received [BGP](boarder_gateway_protocol_(bgp).md) updates against the configuration file to detect anomalies in prefixes and AS-PATH fields.
+>3. **Anomaly Detection**: Compares received [BGP](border_gateway_protocol_(bgp).md) updates against the configuration file to detect anomalies in prefixes and AS-PATH fields.
 >
 >ARTEMIS can detect different types of BGP prefix hijacking attacks by monitoring for unusual patterns in BGP announcements.
 >

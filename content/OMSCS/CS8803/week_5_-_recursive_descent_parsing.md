@@ -3,7 +3,7 @@ aliases:
 course_code: CS8803 O08
 course_name: Compilers - Theory and Practice
 created: '2026-02-03'
-date_checked:
+date_checked: '2026-02-05'
 draft: false
 last_edited: '2026-02-03'
 tags:
@@ -18,11 +18,11 @@ We can classify parsers into two types:
 
 - LR Bottom up parsers:
   - L: Scan left to right.
-  - R: Traces right most derivation of the input string - starts from the end of the sentence.
+  - R: Traces rightmost derivation of the input string - starts from the end of the sentence.
   - This is bottom up as we start from the sentence and work our way back to the start symbol.
 - LL Top down parsers:
   - L: Scan left to right.
-  - L: Traces left most derivation of the input string - starts from the beginning of the sentence.
+  - L: Traces leftmost derivation of the input string - starts from the beginning of the sentence.
   - This is top down as we start from the start symbol and work our way forward to the sentence.
 
 Within both types of parsers there is a dimension which reflects their efficiency.
@@ -42,10 +42,10 @@ Non-deterministic are not time efficient to be used in practice.
 # Recursive Descent Parsing
 
 During this lecture we will cover a simple parser called recursive descent parsing - this is a deterministic LL(1) parser.
-For non-terminal variables such as IDs, integers etc we process them using a rule that we will pick by looking ahead.
+For terminal symbols such as IDs, integers etc we process them using a rule that we will pick by looking ahead.
 If the later tokens match this rule we consume them otherwise we throw an error.
 
-![Recursive Descent Parsing overview](../../../static/images/resursive_decent_parsing_overview.png)
+![Recursive Descent Parsing overview](../../../static/images/recursive_descent_parsing_overview.png)
 
 The output of the parser is an Abstract Syntax Tree (AST).
 
@@ -159,15 +159,15 @@ Here we just set whatever optional ending we have to be a new symbol which is ei
 
 # Left and Right Recursion
 
-So far in all our examples we have 'right recursion'.
-This means we have examples like $A -> a A$ the recursive element is on the right.
+So far in all our examples we have right recursion.
+This means we have examples like $A \to a A$ where the recursive element is on the right.
 This helps us writing a parser as we can process all the tokens before we reach the recursive element.
-Whereas with left recursion (e.g. $A -> A a$) we would hit an infinite loop of a function calling itself (this will become clearer later on).
+Whereas with left recursion (e.g. $A \to A a$) we would hit an infinite loop of a function calling itself (this will become clearer later on).
 Therefore we need a way to convert left recursive statements into right recursive ones.
 To do this we 'shift' the expression by one - creating a new intermediate symbol.
 
 > [!example] Simple left recursion
-> Suppose we have a left recursive statement like $E -> E '+' T | T$ - how can we rewrite this as a right recursive statement?
+> Suppose we have a left recursive statement like $E \to E \text{ } '+' \text{ } T \mid T$ - how can we rewrite this as a right recursive statement?
 > ```
 > E -> T E'
 > E' -> '+' T E' | \epsilon
@@ -181,7 +181,7 @@ Lastly to limit the lookahead needed to determine the rule we need to collapse c
 To do this we again use a substitution rule.
 
 > [!example] Common prefix contraction
-> Suppose we have a rule like $A -> uv | uw$ - how can we rewrite this to remove the common prefix?
+> Suppose we have a rule like $A \to uv \mid uw$ - how can we rewrite this to remove the common prefix?
 > ```
 > A -> u A'
 > A' -> v | w

@@ -149,7 +149,7 @@ To render the stored content correctly we need to make sure we do not drop any p
 
 ![Internet Picture](../../../static/images/internet_picture.png)
 
-# How we got to [HTTP](../../notes/hyper_text_transfer_protocol_(http).md)
+# How we got to [HTTP](../../notes/hypertext_transfer_protocol_(http).md)
 
 When streaming platforms were originally envisioned they wanted all the intelligence to be kept in a stateful server - with the client doing minimal work.
 
@@ -160,11 +160,11 @@ However, this would:
 - Handle state in a scalable service.
 - Navigate firewalls and middleboxes.
 
-Instead the [HTTP](../../notes/hyper_text_transfer_protocol_(http).md) protocol was already well used and understood by network participants. Here the server can be stateless and just provide the content the client requests. This had the following advantages:
+Instead the [HTTP](../../notes/hypertext_transfer_protocol_(http).md) protocol was already well used and understood by network participants. Here the server can be stateless and just provide the content the client requests. This had the following advantages:
 - Servers can be stateless.
 - Providers could use already established [CDNs](../../notes/content_delivery_network_(cdn).md)
-- [HTTP](../../notes/hyper_text_transfer_protocol_(http).md) messages were already understood in firewalls and middleboxes.
-This meant that the original plan was abandoned and people moved to [HTTP](../../notes/hyper_text_transfer_protocol_(http).md).
+- [HTTP](../../notes/hypertext_transfer_protocol_(http).md) messages were already understood in firewalls and middleboxes.
+This meant that the original plan was abandoned and people moved to [HTTP](../../notes/hypertext_transfer_protocol_(http).md).
 
 ![Video Application Logic](../../../static/images/video_application_logic.png)
 
@@ -191,7 +191,7 @@ There is a lot of variation with playing videos:
 
 [Bitrate](../../notes/bitrate.md)
 
-Therefore a single [bitrate](../../notes/bitrate.md) would not handle this . Therefore normally producers make encodings for different required [bitrates](../../notes/bitrate.md)for streaming, such as 250 kbps, 500 kbps, 1.5 Mbps, 3 Mbps. Then we us [bitrate adaption](../../notes/bitrate_adaption.md) to adjust the provided quality to the user depending on network and device requirements.
+Therefore a single [bitrate](../../notes/bitrate.md) would not handle this . Therefore normally producers make encodings for different required [bitrates](../../notes/bitrate.md)for streaming, such as 250 kbps, 500 kbps, 1.5 Mbps, 3 Mbps. Then we us [bitrate adaption](../../notes/bitrate_adaptation.md) to adjust the provided quality to the user depending on network and device requirements.
 
 To find out these quality ranges and the URLs for each download - when clients first connect to a server they download a manifest file with details all this.
 
@@ -201,7 +201,7 @@ To find out these quality ranges and the URLs for each download - when clients f
 
 1. Low or no rebuffering: where the video stalls.
 2. High video quality.
-3. Low video quality variations: i.e. a change in the video quality caused by [bitrate adaption](../../notes/bitrate_adaption.md).
+3. Low video quality variations: i.e. a change in the video quality caused by [bitrate adaption](../../notes/bitrate_adaptation.md).
 4. Low startup latency: The time spent in the filling state.
 
 These quality of service metrics are competing with eachother, for example having the best quality video at all points might mean you need to change the video quality regularly and might risk rebuffering. A larger buffer might reduce rebuffering chance but will make startup slower. To reduce the startup latency you could start with lower quality video. Therefore it is critical to understand the payoffs between them.
@@ -240,7 +240,7 @@ Suppose the user initially starts with no competition then someone comes and dow
 
 ![Dash Under Graph](../../../static/images/DASH_under_graph.png)
 
-What happens in this case it we incrementally step down to the lowest quality video as the [bitrate adaption](../../notes/bitrate_adaption.md) and [TCP](../../notes/transmission_control_protocol_(tcp).md) congestion window work together to drive down the videos share of the network.
+What happens in this case it we incrementally step down to the lowest quality video as the [bitrate adaption](../../notes/bitrate_adaptation.md) and [TCP](../../notes/transmission_control_protocol_(tcp).md) congestion window work together to drive down the videos share of the network.
 
 First note [DASH](../../notes/dynamic_adaptive_streaming_over_http_(dash).md) has an on off pattern as described above.
 
@@ -256,7 +256,7 @@ This is a problem for [DASH](../../notes/dynamic_adaptive_streaming_over_http_(d
 
 There is a competing strategy which varies the [bitrate](../../notes/bitrate.md) based on the buffer size. The avoids the need to predict the network speed.
 
-![Buffer Size Bitrate Adaption](../../../static/images/buffer_size_bitrate_adaption.png)
+![Buffer Size Bitrate Adaption](../../../static/images/buffer_size_bitrate_adaptation.png)
 
 Though comes with its own challenges.
 

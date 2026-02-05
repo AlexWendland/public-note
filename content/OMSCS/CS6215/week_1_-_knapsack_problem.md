@@ -179,7 +179,7 @@ for b = 0 -> B
 return k(B)
 ```
 
-The run time of the algorithm is still $O(nb)$ but it's [spacial complexity](../../notes/spacial_complexity.md) has reduced.
+The run time of the algorithm is still $O(nb)$ but it's [spacial complexity](../../notes/spatial_complexity.md) has reduced.
 
 ## Tracing the solution
 

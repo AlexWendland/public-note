@@ -2,7 +2,7 @@
 aliases:
   - PCB
 created: 2024-08-26
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2024-08-26
 tags:
@@ -11,7 +11,7 @@ tags:
 title: Process control block (PCB)
 type: definition
 ---
->[!tldr] Process control block (PCB)
+>[!note] Process control block (PCB)
 >A *Process control block* is a data structure that holds the state for a [process](process.md). This includes but is not limited to:
 >- [Process Identification (PID)](process_identification_(pid).md),
 >	- Of both the process and its parent if that exists.
@@ -21,7 +21,7 @@ type: definition
 >- Memory management information,
 >- Scheduling information,
 >- Accounting information,
->	- SPU usage, elapsed time, user/system time.
+>	- CPU usage, elapsed time, user/system time.
 >- I/O status
 >- Process privileges, and
 >- Process metadata.

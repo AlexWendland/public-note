@@ -30,7 +30,7 @@ If you think of features in analogy to language there is two problems when using
 
 # Principle component analysis
 
-[Principle component analysis](../../notes/principle_component_analysis.md)
+[Principle component analysis](../../notes/principal_component_analysis.md)
 
 # Independent component analysis
 
@@ -38,11 +38,11 @@ If you think of features in analogy to language there is two problems when using
 
 [Cocktail party problem](../../notes/cocktail_party_problem.md)
 
-# Comparison of [ICA](../../notes/independent_component_analysis.md) and [PCA](../../notes/principle_component_analysis.md)
+# Comparison of [ICA](../../notes/independent_component_analysis.md) and [PCA](../../notes/principal_component_analysis.md)
 
-These both do different things. Notice if we have a set of [i.i.d.](../../notes/independent_identically_distributed_samples.md) [random variables](../../notes/random_variable.md) from the [Central limit theorem](../../notes/central_limit_theorem.md) if they set is large enough their sum will look [normally distributed](../../notes/normal_distribution.md) which will provide an axis that maximises [variance](../../notes/variance.md). Therefore [PCA](../../notes/principle_component_analysis.md) might cut a through a line of their addition whereas [ICA](../../notes/independent_component_analysis.md) will want to separate them.
+These both do different things. Notice if we have a set of [i.i.d.](../../notes/independent_identically_distributed_samples.md) [random variables](../../notes/random_variable.md) from the [Central limit theorem](../../notes/central_limit_theorem.md) if they set is large enough their sum will look [normally distributed](../../notes/normal_distribution.md) which will provide an axis that maximises [variance](../../notes/variance.md). Therefore [PCA](../../notes/principal_component_analysis.md) might cut a through a line of their addition whereas [ICA](../../notes/independent_component_analysis.md) will want to separate them.
 
-Whilst [ICA](../../notes/independent_component_analysis.md) solves the [Cocktail party problem](../../notes/cocktail_party_problem.md) very well, [PCA](../../notes/principle_component_analysis.md) is very poor at it. [PCA](../../notes/principle_component_analysis.md)'s goal is to find the most shared features whereas [ICA](../../notes/independent_component_analysis.md) finds the features that splits the data apart. For example on faces, [ICA](../../notes/independent_component_analysis.md) finds noses, eyes, chins whereas [PCA](../../notes/principle_component_analysis.md) find brightness or the average face first.
+Whilst [ICA](../../notes/independent_component_analysis.md) solves the [Cocktail party problem](../../notes/cocktail_party_problem.md) very well, [PCA](../../notes/principal_component_analysis.md) is very poor at it. [PCA](../../notes/principal_component_analysis.md)'s goal is to find the most shared features whereas [ICA](../../notes/independent_component_analysis.md) finds the features that splits the data apart. For example on faces, [ICA](../../notes/independent_component_analysis.md) finds noses, eyes, chins whereas [PCA](../../notes/principal_component_analysis.md) find brightness or the average face first.
 
 We can use [ICA](../../notes/independent_component_analysis.md) to understand our data on what separates points the best however [ICA](../../notes/independent_component_analysis.md) is not the most efficient algorithm. Though the understanding of your data it provides you can then use to implement more efficient algorithms. For example on documents [ICA](../../notes/independent_component_analysis.md) picks out topics or on nature pictures [ICA](../../notes/independent_component_analysis.md) picks out edges. Both of which there are better algorithms to find.
 

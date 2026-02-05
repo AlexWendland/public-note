@@ -4,7 +4,7 @@ aliases:
   - Program counter
   - program counter
 created: 2024-08-26
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2024-08-26
 tags:
@@ -13,6 +13,6 @@ tags:
 title: Program counter (PC)
 type: definition
 ---
->[!tldr] Program counter (PC)
+> [!tldr] Program counter (PC)
 >The program counter points to the next instruction to be executed by a [process](process.md).
 

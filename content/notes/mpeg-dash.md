@@ -1,7 +1,7 @@
 ---
 aliases:
 created: 2024-07-27
-date_checked:
+date_checked: 2026-02-05
 draft: false
 last_edited: 2024-07-27
 tags:
@@ -9,6 +9,6 @@ tags:
 title: MPEG-DASH
 type: definition
 ---
->[!tldr] MPEG-DASH
+>[!note] MPEG-DASH
 >This is the [Moving Picture Experts Group (MPEG)](moving_picture_experts_group_(mpeg).md) implementation of [DASH](dynamic_adaptive_streaming_over_http_(dash).md).
 
