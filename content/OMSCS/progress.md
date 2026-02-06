@@ -44,19 +44,19 @@ type: plan
 
 - [x] CS6035 Machine Learning (Feb 8)
 
-# Feb 9-15 (F&B) [ ]
+# Feb 9-15 (F&B) [x]
 
 - [x] CS8803 P1L5
 - [x] CS8803 P1L6
 - [x] CS8803 Prj1 (Feb 9)
 
 - [x] CSE6220 Lab 0 (Feb 9)
-- [ ] CSE6220 Scans and list Ranking
-- [ ] CSE6220 Scaling on GPUs
+- [x] CSE6220 Scans and list Ranking
+- [x] CSE6220 Scaling on GPUs
 
 # Feb 16-22 [ ]
 
-- [ ] CS8803 P2L1
+- [x] CS8803 P2L1
 
 - [ ] CSE6220 Tree computations
 
@@ -65,7 +65,7 @@ type: plan
 # Feb 23-Mar 1 [ ]
 
 - [ ] CS8803 P2L2
-- [ ] CS8803 HW2 (Feb 23)
+- [x] CS8803 HW2 (Feb 23)
 
 - [ ] CSE6220 Shared memory parallel BFS
 

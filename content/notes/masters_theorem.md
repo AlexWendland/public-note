@@ -2,7 +2,7 @@
 aliases:
 created: 2023-09-07
 date_checked:
-draft: true
+draft: false
 last_edited: 2023-11-11
 tags:
   - maths
@@ -15,13 +15,10 @@ type: lemma
 >for constants $a \geq 1$, $b > 1$, and $d > 0$. Let $c_{crit} = \log_b(a)$ with $f$ asymptotically positive. Then the following statements are true:
 > - **Case 1**: If $f(n) = O(n^{c})$ for some $c < c_{crit}$, then $T(n) = \Theta(n^{\log_b(a)})$.
 > - **Case 2**: If $f(n) = \Theta(n^{c_{crit}}\log^k(n))$
-> 	- **Case 2a**: for $k > -1$, then $T(n) = \Theta(n^{c_{crit}}\log^{k+1}(n))$.
-> 	- **Case 2b**: for $k = -1$, then $T(n) = \Theta(n^{c_{crit}}\log(\log(n)))$.
-> 	- **Case 2c**: for $k < -1$, then $T(n) = \Theta(n^{c_{crit}})$.
+>	- **Case 2a**: for $k > -1$, then $T(n) = \Theta(n^{c_{crit}}\log^{k+1}(n))$.
+>	- **Case 2b**: for $k = -1$, then $T(n) = \Theta(n^{c_{crit}}\log(\log(n)))$.
+>	- **Case 2c**: for $k < -1$, then $T(n) = \Theta(n^{c_{crit}})$.
 > - **Case 3**: If $f(n) = \Omega(n^{c})$ for some $c > c_{crit}$ then $T(n) = \Theta(f(n))$.
-
-> [!warning] NEED TO REVIEW THIS!
-
 
 ## Links
 
