@@ -60,7 +60,7 @@ type: plan
 
 - [ ] CSE6220 Tree computations
 
-- [ ] CS6035 Binary Exploitation (Feb 22)
+- [x] CS6035 Binary Exploitation (Feb 22)
 
 # Feb 23-Mar 1 [ ]
 

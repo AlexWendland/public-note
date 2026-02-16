@@ -28,6 +28,7 @@
     pkgs.git-lfs
     pkgs.docker
     pkgs.hugo
+    pkgs.graphviz
     # Dependencies for node-canvas (required by excalidraw_export)
     pkgs.pkg-config
     pkgs.cairo
@@ -72,6 +73,33 @@
 
     echo ""
     echo "✓ Exported diagram(s) to static/images/excalidraw/"
+  '';
+
+  scripts.graphviz-compile.exec = ''
+    #!/bin/bash
+    set -e
+
+    # Create output directory if it doesn't exist
+    mkdir -p static
+    mkdir -p static/images
+    mkdir -p static/images/graphviz
+
+    echo "Exporting Graphviz diagrams to SVG..."
+
+    # Check if there are any .gv files to process
+    if ls graphviz/*.gv 1> /dev/null 2>&1; then
+      # Export all .gv files to .svg using dot
+      for file in graphviz/*.gv; do
+        filename=$(basename "$file")
+        echo "  Processing $filename..."
+        dot -Tsvg "$file" -o "static/images/graphviz/$filename.svg"
+      done
+
+      echo ""
+      echo "✓ Exported diagram(s) to static/images/graphviz/"
+    else
+      echo "No .gv files found in graphviz/ directory"
+    fi
   '';
 
   scripts.check.exec = ''
