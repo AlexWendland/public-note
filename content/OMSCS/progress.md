@@ -54,11 +54,11 @@ type: plan
 - [x] CSE6220 Scans and list Ranking
 - [x] CSE6220 Scaling on GPUs
 
-# Feb 16-22 [ ]
+# Feb 16-22 [x]
 
 - [x] CS8803 P2L1
 
-- [ ] CSE6220 Tree computations
+- [x] CSE6220 Tree computations
 
 - [x] CS6035 Binary Exploitation (Feb 22)
 
@@ -67,14 +67,13 @@ type: plan
 - [ ] CS8803 P2L2
 - [x] CS8803 HW2 (Feb 23)
 
-- [ ] CSE6220 Shared memory parallel BFS
+- [x] CSE6220 Shared memory parallel BFS
 
 # Mar 2-8 [ ]
 
 - [ ] CS8803 P2L3
 
-- [ ] CSE6220 Lab 1 (Mar 2)
-- [ ] CSE6220 Revise
+- [x] CSE6220 Lab 1 (Mar 2)
 
 - [ ] CS6035 RSA Cryptography (Mar 8)
 
@@ -83,6 +82,7 @@ type: plan
 - [ ] CS8803 P3L1
 - [ ] CS8803 Prj2 (Mar 9)
 
+- [ ] CSE6220 Revise
 - [ ] CSE6220 Mid-term (Mar 12-16)
 
 - [ ] CS6035 API Security (Mar 15)
