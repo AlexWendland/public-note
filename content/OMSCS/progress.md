@@ -62,9 +62,9 @@ type: plan
 
 - [x] CS6035 Binary Exploitation (Feb 22)
 
-# Feb 23-Mar 1 [ ]
+# Feb 23-Mar 1 [x]
 
-- [ ] CS8803 P2L2
+- [x] CS8803 P2L2
 - [x] CS8803 HW2 (Feb 23)
 
 - [x] CSE6220 Shared memory parallel BFS
