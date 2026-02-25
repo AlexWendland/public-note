@@ -69,13 +69,13 @@ type: plan
 
 - [x] CSE6220 Shared memory parallel BFS
 
-# Mar 2-8 [ ]
+# Mar 2-8 [x]
 
-- [ ] CS8803 P2L3
+- [x] CS8803 P2L3
 
 - [x] CSE6220 Lab 1 (Mar 2)
 
-- [ ] CS6035 RSA Cryptography (Mar 8)
+- [x] CS6035 RSA Cryptography (Mar 8)
 
 # Mar 9-15 (Barcelona) [ ]
 
@@ -111,7 +111,7 @@ type: plan
 
 - [ ] CS6035 Log4 shell (Apr 5)
 
-# Apr 6-12 [ ]
+# Apr 6-12 (Germany) [ ]
 
 - [ ] CS8803 P4L1
 - [ ] CS8803 HW4 (Apr 6)
