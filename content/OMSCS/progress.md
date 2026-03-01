@@ -92,7 +92,6 @@ type: plan
 - [ ] CS8803 P3L2
 - [ ] CS8803 HW3 (Mar 16)
 
-- [ ] CSE6220 Lab 2 (Mar 16)
 - [ ] CSE6220 Intro to distributed memory
 - [ ] CSE6220 Intro MPI
 
@@ -115,8 +114,8 @@ type: plan
 
 - [ ] CS8803 P4L1
 - [ ] CS8803 HW4 (Apr 6)
+- [ ] CSE6220 Lab 2 (Apr 6)
 
-- [ ] CSE6220 Lab 3 (Apr 6)
 - [ ] CSE6220 Distributed Memory sorting
 
 # Apr 13-19 (coventry half marathon) [ ]
@@ -142,6 +141,6 @@ type: plan
 - [ ] CS8803 Prj4 (Apr 27)
 - [ ] CS8803 Final exam (May 1-5)
 
-- [ ] CSE6220 Lab 4 (Apr 27)
+- [ ] CSE6220 Lab 3 (Apr 27)
 - [ ] CSE6220 Final exam (May 2-5)
 
