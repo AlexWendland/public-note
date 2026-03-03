@@ -79,8 +79,8 @@ type: plan
 
 # Mar 9-15 (Barcelona) [ ]
 
-- [ ] CS8803 P3L1
-- [ ] CS8803 Prj2 (Mar 9)
+- [x] CS8803 P3L1
+- [x] CS8803 Prj2 (Mar 9)
 
 - [ ] CSE6220 Revise
 - [ ] CSE6220 Mid-term (Mar 12-16)
