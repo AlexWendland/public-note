@@ -4,7 +4,7 @@ course_code: CS8803 O08
 course_name: Compilers - Theory and Practice
 created: '2026-02-20'
 date_checked:
-draft: true
+draft: false
 last_edited: '2026-02-20'
 tags:
   - OMSCS
@@ -39,7 +39,7 @@ Then to split a linear representation into basic blocks read the program down st
 > 2. i = 1
 > 3. t1 = 2 ^ prod
 > 4. prod = t1
-> 5. t2 = i + 1 
+> 5. t2 = i + 1
 > 6. i = t2
 > 7. if i <= 20 goto 3
 > 8. ...
@@ -62,7 +62,7 @@ Then to split a linear representation into basic blocks read the program down st
 > There is a directed edge between two basic blocks if one of the following rules is met:
 >
 > - Rule A: There is directed edge from block B1 to B2 if the last statement of B1 branches to block B2 - blocks B1 and B2 can be the same.
-> 
+>
 > - Rule B: There is a directed edge from block B1 to B2 if B2 immediately follows from B1 and B1 does not end in a unconditional branching operation.
 >
 > It is possible that there maybe two edges between blocks B1 and B2, in this case we label these edges for the different reasons they enter the block to distinguish them.

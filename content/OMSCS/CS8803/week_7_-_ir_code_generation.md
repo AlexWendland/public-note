@@ -4,7 +4,7 @@ course_code: CS8803 O08
 course_name: Compilers - Theory and Practice
 created: '2026-02-20'
 date_checked: '2026-02-20'
-draft: true
+draft: false
 last_edited: '2026-02-20'
 tags:
   - OMSCS
@@ -202,7 +202,7 @@ if (exp1 || exp2) {
 }
 ```
 
-Instead of calculating the whole of `exp1 || exp2` we can skip `exp2` if `exp1` is true. 
+Instead of calculating the whole of `exp1 || exp2` we can skip `exp2` if `exp1` is true.
 
 ```
 true_path = new_label()

@@ -72,7 +72,7 @@ The formal definition below captures this with modular arithmetic to handle rota
 >
 > - $a_{k+i \pmod{n}} \geq a_{k+i+1 \pmod{n}}$ for all $j \leq i < n$.
 >
-> Here the $k$ parameter allows for 'wrap arounds' whereas $j$ is the 'peak' element.
+> Here the $k$ parameter allows for 'wrap around' whereas $j$ is the 'peak' element.
 
 The reasons bitonic sequences are interesting is they are very easy to sort!
 To prove this though, we will need a couple of lemmas.

@@ -18,6 +18,7 @@ In this lecture, we will look at how to speed up algorithms run on trees through
 # Root finder
 
 It is useful to express a tree as an array - which I for one find counter intuitive!
+(Mainly because lots of times to speed up array operations like binary search - it is useful to think of the array as a tree!).
 Suppose we have a [tree](/content/notes/tree_%28graph%29.md) $T$ if we label the vertices of the tree $0 \ldots n-1$ then we can define an array $A$ of length $n$ by $A[i]$ to be $i$'s parent with it being empty if there is no parent.
 
 > [!example] Example

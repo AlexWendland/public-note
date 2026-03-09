@@ -149,5 +149,3 @@ Then in the best case we could solve this problem with $O(\log_2(n) / \log_2(L))
 
 This can be realised by using a [B-tree](../../notes/b_tree.md) to store the keys.
 If we set the key size of the B-tree to be $L$ then we only need exactly the depth of the tree I/O reads which is $O(\log_L(n))$!
-
-

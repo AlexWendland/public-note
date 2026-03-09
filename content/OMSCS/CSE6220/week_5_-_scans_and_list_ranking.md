@@ -185,7 +185,9 @@ segmented_scan(A[0,n-1], F[0,n-1], op):
 > rank(A) = [0,1,2,3,4,5,6,7,8,9,10,11]
 > ```
 
-**Connection to scans**: List ranking is equivalent to computing an add-scan over the sequence `[0,1,1,1,...,1]` along the linked list. If we had random access (arrays), this would be trivially parallelizable using our parallel scan algorithm.
+> [!note] Connection to scans
+> List ranking is equivalent to computing an add-scan over the sequence `[0,1,1,1,...,1]` along the linked list.
+> If we had random access (arrays), this would be trivially parallelizable using our parallel scan algorithm.
 
 Serially we can do the dumb thing of walking the list and indexing the elements as we went along.
 We can also use a scan to solve this issue by creating an auxiliary list with 0 in the first element and 1 in the rest and doing a add-scan on that.
@@ -205,7 +207,7 @@ Then an array pool consists of two arrays of size $m > n$:
 > Building an array pool from a linked list requires at least one O(n) sequential traversal to walk the list and populate the arrays.
 > This upfront sequential cost is worthwhile when:
 > 1. **Multiple operations**: The conversion cost is amortized across many parallel operations on the same structure
-> 2. **Pointer jumping**: We can parallelize even the conversion itself using pointer jumping (the technique shown below), though this trades work efficiency (O(n log n) work) for parallelism (O(log² n) span)
+> 2. **Pointer jumping**: We can parallelize even the conversion itself using pointer jumping (the technique shown below), though this trades work efficiency ($O(n log n)$ work) for parallelism ($O(log^2 n)$ span)
 > 3. **Data structure choice**: In practice, if you need parallelism, start with array-based structures. The real lesson here is understanding *why* linked lists are fundamentally problematic for parallel algorithms.
 
 > [!example] Array pool
@@ -220,7 +222,7 @@ Then an array pool consists of two arrays of size $m > n$:
 > values = [3,9,8,5,6,8,7,8 ,3,1,  ,1 ,0 ,  ]
 > next   = [1,2,5, ,9,6,3,12,0,7,  ,4 ,8 ,  ]
 > ```
-> Where the starting index is 12.
+> Where the starting index is 11.
 
 ## Jump
 
@@ -237,7 +239,7 @@ To do this we introduce a new operation 'jump' intuitively this double the index
 > next   = [1,2,5, ,9,6,3,12,0,7 ,  ,4 ,8 ,  ]
 > jump   = [2,5,6, ,7,3, ,8 ,1,12,  ,9 ,0 ,  ]
 > ```
-> Where we now have two starting indexes 12 and 5.
+> Where we now have two starting indexes 11 and 4.
 
 The creation of the jump list can be parallelised as to define it for $i$ we only need the values of $next$.
 
@@ -304,7 +306,7 @@ This means that we are not work optimal with the naive algorithm only having $W(
 > [!note] Work-span trade-off
 > The parallel list ranking algorithm demonstrates a fundamental trade-off in parallel computing:
 > - **Sequential**: O(n) work, O(n) span (no parallelism)
-> - **Parallel (array pool + pointer jumping)**: O(n log n) work, O(log² n) span
+> - **Parallel (array pool + pointer jumping)**: $O(n log n)$ work, $O(log^2 n)$ span
 >
 > We sacrifice work efficiency (doing more total operations) to achieve parallelism. This trade-off is worthwhile when:
 > 1. You have sufficient processors to exploit the parallelism
