@@ -4,7 +4,7 @@ course_code: CS8803 O08
 course_name: Compilers - Theory and Practice
 created: '2026-03-03'
 date_checked: '2026-03-05'
-draft: true
+draft: false
 last_edited: '2026-03-03'
 tags:
   - OMSCS
