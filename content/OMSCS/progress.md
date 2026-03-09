@@ -82,15 +82,15 @@ type: plan
 - [x] CS8803 P3L1
 - [x] CS8803 Prj2 (Mar 9)
 
-- [ ] CSE6220 Revise
+- [x] CSE6220 Revise
 - [ ] CSE6220 Mid-term (Mar 12-16)
 
-- [ ] CS6035 API Security (Mar 15)
+- [x] CS6035 API Security (Mar 15)
 
 # Mar 16-22 [ ]
 
-- [ ] CS8803 P3L2
-- [ ] CS8803 HW3 (Mar 16)
+- [x] CS8803 P3L2
+- [x] CS8803 HW3 (Mar 16)
 
 - [ ] CSE6220 Intro to distributed memory
 - [ ] CSE6220 Intro MPI
