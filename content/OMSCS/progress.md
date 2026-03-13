@@ -77,13 +77,13 @@ type: plan
 
 - [x] CS6035 RSA Cryptography (Mar 8)
 
-# Mar 9-15 (Barcelona) [ ]
+# Mar 9-15 (Barcelona) [x]
 
 - [x] CS8803 P3L1
 - [x] CS8803 Prj2 (Mar 9)
 
 - [x] CSE6220 Revise
-- [ ] CSE6220 Mid-term (Mar 12-16)
+- [x] CSE6220 Mid-term (Mar 12-16)
 
 - [x] CS6035 API Security (Mar 15)
 
