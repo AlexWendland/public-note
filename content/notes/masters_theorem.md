@@ -9,7 +9,8 @@ tags:
 title: Masters theorem
 type: lemma
 ---
->[!important] Masters theorem
+
+>[!lemma] Masters theorem
 >Given a $T$ a recurrence relation of the form
 >$$T(n) = a T(\frac{n}{b}) + f(n), \mbox{ with } T(1) = d$$
 >for constants $a \geq 1$, $b > 1$, and $d > 0$. Let $c_{crit} = \log_b(a)$ with $f$ asymptotically positive. Then the following statements are true:
