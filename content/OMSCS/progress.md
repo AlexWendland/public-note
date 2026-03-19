@@ -106,7 +106,8 @@ type: plan
 - [ ] CS8803 P3L4
 - [ ] CS8803 Prj3 (Mar 30)
 
-- [ ] CSE6220 Topology and Distributed Dense Matrix Multiply
+- [x] CSE6220 Topology
+- [ ] CSE6220 Distributed Dense Matrix Multiply
 
 - [ ] CS6035 Log4 shell (Apr 5)
 
