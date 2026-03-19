@@ -87,15 +87,15 @@ type: plan
 
 - [x] CS6035 API Security (Mar 15)
 
-# Mar 16-22 [ ]
+# Mar 16-22 [x]
 
 - [x] CS8803 P3L2
 - [x] CS8803 HW3 (Mar 16)
 
-- [ ] CSE6220 Intro to distributed memory
-- [ ] CSE6220 Intro MPI
+- [x] CSE6220 Intro to distributed memory
+- [x] CSE6220 Intro MPI
 
-- [ ] CS6035 Web security (Mar 22)
+- [x] CS6035 Web security (Mar 22)
 
 # Mar 23-29 (Kew half-marathon) [ ]
 
@@ -110,7 +110,7 @@ type: plan
 
 - [ ] CS6035 Log4 shell (Apr 5)
 
-# Apr 6-12 (Germany) [ ]
+# Apr 6-12  [ ]
 
 - [ ] CS8803 P4L1
 - [ ] CS8803 HW4 (Apr 6)
@@ -118,7 +118,7 @@ type: plan
 
 - [ ] CSE6220 Distributed Memory sorting
 
-# Apr 13-19 (coventry half marathon) [ ]
+# Apr 13-19 (Coventry half marathon) [ ]
 
 - [ ] CS8803 P4L2
 
@@ -126,7 +126,7 @@ type: plan
 
 - [ ] CS6035 Database security (Apr 19)
 
-# Apr 20-26 [ ]
+# Apr 20-26 (Germany) [ ]
 
 - [ ] CS8803 Revise
 
