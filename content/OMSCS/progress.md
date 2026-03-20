@@ -103,7 +103,7 @@ type: plan
 
 # Mar 30-Apr 5 [ ]
 
-- [ ] CS8803 P3L4
+- [x] CS8803 P3L4
 - [ ] CS8803 Prj3 (Mar 30)
 
 - [x] CSE6220 Topology
