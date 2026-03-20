@@ -3,7 +3,7 @@ aliases:
 course_code: CS8803 O08
 course_name: Compilers - Theory and Practice
 created: '2026-03-20'
-date_checked:
+date_checked: '2026-03-20'
 draft: false
 last_edited: '2026-03-20'
 tags:
@@ -13,7 +13,7 @@ type: lecture
 week: 11
 ---
 
-In the middle of the compiler we look at making the code more optimal in terms of run time, resource usage, and code size whilst keeping the same functionality.
+In the middle of the compiler we look at making the code more optimal in terms of runtime, resource usage, and code size whilst keeping the same functionality.
 There are multiple ways we can do this:
 
 - Discover and propagate some constant values,
@@ -28,40 +28,40 @@ There are multiple ways we can do this:
 
 - Encode commonly used patterns in efficient forms.
 
-We do this in a static manner (i.e. we can only look at the source of the code we don't see runtime behaviour) to do this we use control flow analysis and data flow analysis.
+We do this in a static manner (i.e. we can only look at the source of the code; we don't see runtime behaviour). To do this we use control flow analysis and data flow analysis.
 
 > [!note] Never optimal
-> There is no such thing as optimal code, due to the vary requirements on code, we are doing optimizations but knowing we will never be optimal.
+> There is no such thing as optimal code, due to the various requirements on code, we are doing optimisations but knowing we will never be optimal.
 
-As there are many ways to optimize code we may have multiple steps here, where the ir output of one step is fed into the next step.
+As there are many ways to optimise code we may have multiple steps here, where the IR output of one step is fed into the next step.
 
 # Code redundancy
 
 > [!definition] Redundant expression
-> An expression is redundant if and only if along every path from the procedure's entry, it has been evaluated and its constituent sub expressions have not be redefined.
+> An expression is redundant if and only if along every path from the procedure's entry, it has been evaluated and its constituent sub-expressions have not been redefined.
 
 If expressions are redundant we can use their previous computation instead of redoing the calculation.
 
 ## Local Value Numbering (LVN)
 
-Lets first optimise at the basic block level by linearly going through each block.
+Let's first optimise at the basic block level by linearly going through each block.
 The simple idea here is to assign a value $v(e)$ to each expression, then use this to check for redundancy.
 We do this using a hash table $v$ and a hash function.
 For constants and variables we have a method to generate a unique value for these.
 For operations such as `t = op a, b` we take the hash of `<op, v(a), v(b)>` and assign this as the new value of `t`.
 This gives us the following fact:
 
-> For two expressions `e1` and `e2` we have `v(e1) = v(e2)` if and only if expressions `e1` and `e2` always have the same value.
+> For two expressions `e1` and `e2` within a basic block, if `v(e1) = v(e2)` then expressions `e1` and `e2` are syntactically equivalent and will compute the same value (assuming no intervening redefinitions).
 
 Therefore we can use the value function to check for redundancy.
 We will linearly go through the code and where we find the value of the expression is already in our hash table we use assignment rather than recalculating the value.
 
 There are further optimisations we can add into this step:
 
-- If we have an operand on two constant values, we can replace this with a new constant and add it to the data section - replacing the expression with a load operation for the new constant.
+- If we have an operation on two constant values, we can replace this with a new constant and add it to the data section - replacing the expression with a load operation for the new constant.
 This is called constant folding.
 
-- Handle algebraic identities like left-shifting by 1 is the same as multiplying by 2, ect.
+- Handle algebraic identities like left-shifting by 1 is the same as multiplying by 2, etc.
 This includes sorting the operands for commutative or associative operations.
 
 - Handle special cases of operators such as multiplication by 1 or adding 0.
@@ -90,9 +90,9 @@ This includes sorting the operands for commutative or associative operations.
 > c = t1
 > ```
 
-In the above example we use a temporary variable to get around a taking on a new value half way through - we could instead use a 'single assignment form' where each new assignment gives a variable a new form.
+In the above example we use a temporary variable to get around `a` taking on a new value half way through. An alternative approach that simplifies analysis and enables more powerful optimisations is **single static assignment (SSA) form**, where each new assignment gives a variable a new name. This makes data flow explicit and is fundamental to many compiler optimisations.
 
-## Super local Value Numbering (SVN)
+## Super-local Value Numbering (SVN)
 
 The previous technique only operated over a single block.
 However, for blocks with a single predecessor it is easy to expand out the technique above to larger sub-graphs of the control flow graph.
@@ -111,9 +111,9 @@ Making the algorithm exactly as you would expect - doing a kind of depth first s
 
 ```
 // Input:
-//   controlFlowGraph: The control flow graph where the blocks contain the code we need to trasform.
+//   controlFlowGraph: The control flow graph where the blocks contain the code we need to transform.
 //   root: The root block of the EBB we are analysing.
-// Ouput:
+// Output:
 //   Inplace transforms the control flow graph
 SVN(controlFlowGraph, root) {
   workList <- [root]
@@ -129,7 +129,7 @@ SVNIterator( block, controlFlowGraph, parentTable, workList) {
   for (block, childBlock) in controlFlowGraph:
     if childBlock has only one predecessor:
       SVNIterator( childBlock, controlFlowGraph, thisTable, workList)
-    else if s has not be processed yet:
+    else if childBlock has not been processed yet:
       workList.append(childBlock)
   unallocate thisTable
 }
@@ -173,3 +173,5 @@ Using SSA we would get:
 This expands to larger examples like below.
 
 ![SSA example](../../../static/images/SSA_example.png)
+
+In the example above, we see how SSA handles multiple control flow paths with $\phi$ functions at join points. Each variable has a unique version number, and the $\phi$ functions merge different versions that arrive from different paths. This makes the data flow graph explicit and enables powerful analyses.

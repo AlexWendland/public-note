@@ -3,7 +3,7 @@ aliases:
 course_code: CS8803 O08
 course_name: Compilers - Theory and Practice
 created: '2026-03-20'
-date_checked:
+date_checked: '2026-03-20'
 draft: true
 last_edited: '2026-03-20'
 tags:
@@ -23,15 +23,15 @@ In this lecture, we will learn how to map from the IR to the target instruction 
 > - Control flow instructions, and
 > - Coprocessor instructions for concurrency.
 
-There are two main types of ISA's:
+There are two main types of ISAs:
 
-- Reduced instruction set computer (RISC): As the name suggests, this is a simple set of instructions optimized for control.
+- Reduced instruction set computer (RISC): As the name suggests, this is a simple set of instructions optimised for control.
 It uses the load-store model where only the load and store instructions operate on memory.
 The reduced set of instructions means the complexity is in the compiler rather than the hardware.
 
-- Complex instruction set computer (CISC): This has a large set of instructions that combine multiple lower level instructions.
-Lots of different instructions operate on memory so the cost of each operation might be harder to work out.
-This pushes the complexity into the processor to optimise which makes simpler compilers.
+- Complex instruction set computer (CISC): This has a large set of instructions that combine multiple lower-level instructions.
+Lots of different instructions operate on memory, so the cost of each operation might be harder to work out.
+This pushes the complexity into the processor, which allows simpler compilers.
 
 > [!note] Historical note
 > CISC historically was the dominant type of instruction set, allowing programs to reduce their size and memory footprint.
@@ -43,12 +43,12 @@ This pushes the complexity into the processor to optimise which makes simpler co
 There are normally multiple ways to go from your IR to ISA.
 Therefore it is important to choose the optimal path.
 Each instruction in the target ISA comes with a size and time cost.
-Therefore it is usual for your to try multiple different approaches and measure the performance of the output.
+Therefore it is usual for you to try multiple different approaches and measure the performance of the output.
 To do this we associate a cost with each instruction and then measure the cumulative cost of all instructions to pick a translation.
-Normally this cost is cycles but it is impossible to do this completely accurately as we need to make assumptions about what is in cache ect.
+Normally this cost is cycles, but it is impossible to do this completely accurately as we need to make assumptions about what is in cache, etc.
 
 > [!example] Swapping two variables of the same type
-> Suppose we want to swap the values of rx and ry there are two ways to do this.
+> Suppose we want to swap the values of rx and ry. There are two ways to do this.
 > ```
 > mov rx, rt
 > mov ry, rx
@@ -62,13 +62,13 @@ Normally this cost is cycles but it is impossible to do this completely accurate
 > xor rx, rx
 > ```
 > This uses a cheeky trick that `xor a a` is 0 and `xor 0 a` is a.
-> This way `ry = ry xor ( rx xor ry) = rx` and `rx = rx xor (rx xor ry) = ry`.
-> Using a conventional processor the first way will be faster but use an additional registers.
-> This is where payoffs come in - normally having an additional register rather than going to memory over the long term will be faster but only if you need more registers.
+> This way `ry = ry xor (rx xor ry) = rx` and `rx = rx xor (rx xor ry) = ry`.
+> Using a conventional processor, the first way will be faster but uses an additional register.
+> This is where trade-offs come in - if you have spare registers, the first approach is better, but if you're short on registers the XOR trick avoids needing memory.
 
 ## Tree representation
 
-The first step of the translation is to take our IR and represent it as a operation tree - similar to our AST.
+The first step of the translation is to take our IR and represent it as an operation tree - similar to our AST.
 
 > [!example] IR to tree
 > Suppose we have the following IR:
@@ -98,26 +98,22 @@ To then implement this tiling we write down the instructions associated with the
 
 ## Dynamic programming
 
-As we get larger trees and lots of different options at each node, we will find solution space gets very large.
-This is where dynamic programming and memorization comes into play.
-We can solve the solutions on smaller sub-problems and use those solutions to help us come up with larger solution.
+As we get larger trees and lots of different options at each node, we will find the solution space gets very large.
+This is where dynamic programming and memoisation comes into play.
+We can solve the solutions on smaller sub-problems and use those solutions to help us come up with a larger solution.
 
-This can be implemented in a ad-hoc manner for you particular problem, however there are many generic solutions to this problem such as:
+This can be implemented in an ad-hoc manner for your particular problem. However, there are many generic solutions to this problem, such as:
 
-- burg,
-
+- BURG,
 - Twig,
-
 - BEG, and
-
-- Bottom Up Rewrite System (BURS).
+- Bottom-Up Rewrite System (BURS).
 
 # Modern processors
 
-Cost in modern processors that use tools such as:
+Determining cost in modern processors is complicated by features such as:
 
 - Pipelining: Allowing parts of different instructions to overlap.
-
 - Superscalar: Some operations can be executed in parallel.
 
-Means that the cost of instructions is very difficult to work out and very much depends on the architecture as above.
+This means that the cost of instructions is very difficult to work out and depends heavily on the architecture.
