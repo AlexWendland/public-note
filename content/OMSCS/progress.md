@@ -101,22 +101,22 @@ type: plan
 
 - [x] CS8803 P3L3
 
-# Mar 30-Apr 5 [ ]
+# Mar 30-Apr 5 [x]
 
 - [x] CS8803 P3L4
-- [ ] CS8803 Prj3 (Mar 30)
+- [x] CS8803 Prj3 (Mar 30)
 
 - [x] CSE6220 Topology
-- [ ] CSE6220 Distributed Dense Matrix Multiply
+- [x] CSE6220 Distributed Dense Matrix Multiply
 
-- [ ] CS6035 Log4 shell (Apr 5)
+- [x] CS6035 Log4 shell (Apr 5)
 
 # Apr 6-12  [ ]
 
 - [ ] CS8803 P4L1
-- [ ] CS8803 HW4 (Apr 6)
-- [ ] CSE6220 Lab 2 (Apr 6)
+- [x] CS8803 HW4 (Apr 6)
 
+- [x] CSE6220 Lab 2 (Apr 6)
 - [ ] CSE6220 Distributed Memory sorting
 
 # Apr 13-19 (Coventry half marathon) [ ]
