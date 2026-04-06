@@ -113,7 +113,7 @@ type: plan
 
 # Apr 6-12  [ ]
 
-- [ ] CS8803 P4L1
+- [x] CS8803 P4L1
 - [x] CS8803 HW4 (Apr 6)
 
 - [x] CSE6220 Lab 2 (Apr 6)
