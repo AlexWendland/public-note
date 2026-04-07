@@ -123,7 +123,7 @@ type: plan
 
 - [ ] CS8803 P4L2
 
-- [ ] CSE6220 Distributed BFS
+- [x] CSE6220 Distributed BFS
 
 - [ ] CS6035 Database security (Apr 19)
 
@@ -132,7 +132,7 @@ type: plan
 - [ ] CS8803 Revise
 
 - [ ] CSE6220 Graph partitioning
-- [ ] CSE6220 Conclusion
+- [x] CSE6220 Conclusion
 - [ ] CSE6220 Revise
 
 - [ ] CS6035 Malware Analysis (Apr 26)

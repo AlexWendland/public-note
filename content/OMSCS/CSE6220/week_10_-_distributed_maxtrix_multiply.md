@@ -4,7 +4,7 @@ course_code: CSE6220
 course_name: Introduction to High Performance Computing
 created: '2026-04-02'
 date_checked:
-draft: true
+draft: false
 last_edited: '2026-04-02'
 tags:
   - OMSCS
@@ -49,7 +49,7 @@ However, this is written for a p-ram system - how can we distribute this?
 You can picture this algorithm like a cube $U$ of size $m \times n \times k$.
 This has 3 kinds of sides $m \times k$, $n \times k$ and $m \times n$, which will represent $A$, $B$, $C$ respectively.
 Then the point within the cube $U(i, j, l)$ will represent the multiplication $A_{i,l} B_{l,j}$.
-Therefore, $C_{i,j} = C_{i,j} + \sum_{l=1}^k U(i,j,l)$ which is the sum of a column through this square. 
+Therefore, $C_{i,j} = C_{i,j} + \sum_{l=1}^k U(i,j,l)$ which is the sum of a column through this square.
 
 ![Matrix multiply cube](../../../static/images/matrix_multiply_cube.png)
 
@@ -71,7 +71,7 @@ Here we made the assumption that they overlap but more generally there is the be
 This maximum is achieved on perfect overlap like in the square above
 
 $$
-\vert I \vert = \sqrt{(r \cdot s) \cdot (s \cdot t) \cdot (r \cdot t)} = r \cdot s \cdot t. 
+\vert I \vert = \sqrt{(r \cdot s) \cdot (s \cdot t) \cdot (r \cdot t)} = r \cdot s \cdot t.
 $$
 
 # Linear network
@@ -86,7 +86,7 @@ To do this it will need access to one chunk of $A$ but all chunks of $B$.
 Therefore, we will give each machine their chunk of $A$ and rotate chunks of $B$ between them.
 
 ```
-// Input: 
+// Input:
 //   A, B, C: n x n matrices (not all machines will start with all this data)
 //   P: number of machines
 //   r: Rank of this machine
@@ -158,7 +158,7 @@ Then node $(a,b)$ needs to see $n \times n/\sqrt{P}$ of $A$ and $n/\sqrt{P} \tim
 Then we delegate out the matrix $A$ and $B$ along the nodes where data is relevant, each node broadcasts the strips one by one and each node makes the local updates required.
 
 ```
-// Input: 
+// Input:
 //   A, B, C: n x n matrices (not all machines will start with all this data)
 //   sqrt(P): number of machines in each row/column.
 //   a,b: The position of this machine in the grid.
