@@ -111,13 +111,13 @@ type: plan
 
 - [x] CS6035 Log4 shell (Apr 5)
 
-# Apr 6-12  [ ]
+# Apr 6-12  [x]
 
 - [x] CS8803 P4L1
 - [x] CS8803 HW4 (Apr 6)
 
 - [x] CSE6220 Lab 2 (Apr 6)
-- [ ] CSE6220 Distributed Memory sorting
+- [x] CSE6220 Distributed Memory sorting
 
 # Apr 13-19 (Coventry half marathon) [ ]
 
@@ -143,5 +143,6 @@ type: plan
 - [ ] CS8803 Final exam (May 1-5)
 
 - [ ] CSE6220 Lab 3 (Apr 27)
+- [ ] CSE6220 Extra Credit Lab (Apr 27)
 - [ ] CSE6220 Final exam (May 2-5)
 
