@@ -119,30 +119,30 @@ type: plan
 - [x] CSE6220 Lab 2 (Apr 6)
 - [x] CSE6220 Distributed Memory sorting
 
-# Apr 13-19 (Coventry half marathon) [ ]
+# Apr 13-19 (Coventry half marathon) [x]
 
-- [ ] CS8803 P4L2
+- [x] CS8803 P4L2
 
 - [x] CSE6220 Distributed BFS
 
-- [ ] CS6035 Database security (Apr 19)
+- [x] CS6035 Database security (Apr 19)
 
-# Apr 20-26 (Germany) [ ]
+# Apr 20-26 (Germany) [x]
 
-- [ ] CS8803 Revise
+- [x] CS8803 Revise
 
-- [ ] CSE6220 Graph partitioning
+- [x] CSE6220 Graph partitioning
 - [x] CSE6220 Conclusion
-- [ ] CSE6220 Revise
+- [x] CSE6220 Revise
 
-- [ ] CS6035 Malware Analysis (Apr 26)
+- [x] CS6035 Malware Analysis (Apr 26)
 
 # Apr 27-May 3
 
-- [ ] CS8803 Prj4 (Apr 27)
+- [x] CS8803 Prj4 (Apr 27)
 - [ ] CS8803 Final exam (May 1-5)
 
-- [ ] CSE6220 Lab 3 (Apr 27)
-- [ ] CSE6220 Extra Credit Lab (Apr 27)
+- [x] CSE6220 Lab 3 (Apr 27)
+- [x] CSE6220 Extra Credit Lab (Apr 27)
 - [ ] CSE6220 Final exam (May 2-5)
 
