@@ -5,7 +5,7 @@ course_name: Introduction to High Performance Computing
 created: '2026-03-19'
 date_checked: '2026-03-19'
 draft: false
-last_edited: '2026-03-19'
+last_edited: 2026-03-20
 tags:
   - OMSCS
 title: Week 8 - Distributed memory model
@@ -90,7 +90,7 @@ Here to use message passing we have the asynchronous operations:
 - `wait(handle)`: This waits for the handle to be ready or you can provide a null handle which waits for all handles to be ready.
 This just tells us that the `buf` is now safe to use again.
 
-> [!NOTE] Handles
+> [!note] Handles
 > Just because we have called sendAsync or recvAsync, does not mean the data has been sent or received.
 > You must wait for that to happen before interacting with buf again.
 

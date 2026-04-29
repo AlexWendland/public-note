@@ -1,10 +1,10 @@
 ---
 aliases:
-checked: false
 created: '2026-02-13'
+date_checked:
 draft: false
-last_edited: '2026-02-13'
-tags:
+last_edited: 2026-02-16
+tags: []
 title: Postorder traversal
 type: definition
 ---

@@ -5,7 +5,7 @@ course_name: Compilers - Theory and Practice
 created: '2026-02-05'
 date_checked:
 draft: true
-last_edited: '2026-02-05'
+last_edited: 2026-04-29
 tags:
   - OMSCS
 title: Week 6 - Semantic Analysis
@@ -84,7 +84,7 @@ In reality, both attribute grammars and ad-hoc techniques are used in practice.
 > number.val = - list.val if sign.neg else list.val
 > ```
 > Then when evaluating the expression `-1010` we get the following tree:
-> 
+>
 > ```
 > number()
 > │       number.val = - 10 (calculated from children)

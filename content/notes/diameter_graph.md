@@ -1,10 +1,10 @@
 ---
 aliases:
-checked: false
 created: '2026-02-19'
+date_checked:
 draft: false
 last_edited: '2026-02-19'
-tags:
+tags: []
 title: Diameter (graph)
 type: definition
 ---

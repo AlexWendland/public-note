@@ -5,7 +5,7 @@ course_name: Introduction to High Performance Computing
 created: '2026-02-06'
 date_checked:
 draft: false
-last_edited: '2026-02-06'
+last_edited: 2026-03-09
 tags:
   - OMSCS
 title: Week 5 - Scans and list ranking
@@ -108,7 +108,7 @@ For elements that need to be moved the add-scan array's value at that index is t
 >
 > Output array:    = [3,1,1,2,3]
 > ```
-> Here if we assume 1 indexing, then if `A[i]` needs to be moved into the output its position is `add-scan(A <= 3)[i]`. 
+> Here if we assume 1 indexing, then if `A[i]` needs to be moved into the output its position is `add-scan(A <= 3)[i]`.
 
 This means we can parallelise the allocation step.
 

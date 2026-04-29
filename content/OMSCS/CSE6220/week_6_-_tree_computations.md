@@ -5,7 +5,7 @@ course_name: Introduction to High Performance Computing
 created: '2026-02-12'
 date_checked:
 draft: false
-last_edited: '2026-02-12'
+last_edited: 2026-03-09
 tags:
   - OMSCS
 title: Week 6 - Tree computations
@@ -149,7 +149,7 @@ To extend back out we now undo the removals in reverse pulling the value back do
 > Ind2   = [0,0,1,0,0,0,1,0 ,0,1,  ,0 ,0 ,  ]
 > ```
 > Then we remove this independent set and push forward its values.
-> ``` 
+> ```
 > index  = [0,1,2,3,4,5,6,7 ,8,9,10,11,12,13]
 > next_1 = [1,2,5, ,9,6,3,12,0,7,  ,4 ,8 ,  ]
 > rank_1 = [1,1,1,1,1,1,1,1 ,1,1,  ,0 ,1 ,  ]
@@ -259,11 +259,11 @@ Here we describe a tree by a set of vertices $V$ and a map $A: V \rightarrow \ma
 
 Then we can define the euler tour using the 'successor function'.
 To define this let $d_v = \vert A(v) \vert$ and then label $A(v)$ by $u^v_i$ for $i \in [0, \ldots, d_v - 1]$ - which contains the ordering.
-Then define the successor function $s: E(T) \rightarrow E(T)$ by $s(u^v_i, v) = (v, u^v_{i + 1 \mod d_v})$. 
+Then define the successor function $s: E(T) \rightarrow E(T)$ by $s(u^v_i, v) = (v, u^v_{i + 1 \mod d_v})$.
 For example $s(0, 1) = s(u^1_3, v = 1) = s(1, u^1_{0}) = (1, 4)$.
 Due to the switching of roles from u and v if we repeatedly apply the successor function we perform a Euler tour of the graph.
 
 > [!warning] Additional information
-> With just the adjacency list representation of a graph we can not repeatedly apply $s(e)$ in a $O(1)$ fashion - as we would need to search each adjacency list for the related vertex index. 
+> With just the adjacency list representation of a graph we can not repeatedly apply $s(e)$ in a $O(1)$ fashion - as we would need to search each adjacency list for the related vertex index.
 > However, we can enrich this representation with a map from each edge (u,v) (i.e. the index of $v$ in $A(u)$) to the index of (v,u) (i.e. the index of $u$ in $A(v)$) making iterative calls to the successor function run in $O(1)$.
 

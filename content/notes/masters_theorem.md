@@ -3,7 +3,7 @@ aliases:
 created: 2023-09-07
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-03-13
 tags:
   - maths
 title: Masters theorem
