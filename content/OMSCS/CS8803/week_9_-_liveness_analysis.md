@@ -13,7 +13,8 @@ type: lecture
 week: 9
 ---
 
-In this lecture, we move from the front end (whose task it was to generate the IR and check the code for user errors) to the backend (whose need is to optimise the code and produce machine code for the target architecture).
+In this lecture, we move from the front end (whose task it was to check the code for user errors and generate the IR) to the middle-end and back-end.
+The middle-end optimises the IR in a machine-independent way, while the back-end converts it into machine code for the target architecture.
 The first part of this builds on the control flow graph in the previous lecture.
 We need to study 'liveness analysis' the study of what variables are used where.
 This will enable us to optimise for register allocation.
