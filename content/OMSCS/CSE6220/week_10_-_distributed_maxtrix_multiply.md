@@ -134,7 +134,7 @@ $$
 This algorithm has efficiency:
 
 $$
-E_{1D} = \frac{S_{1D}(n,P)}{P} = \frac{1}{\max(1, \frac{\alpha P^2}{2\tau n^3} + \frac{\beta P}{2 \tau n}}.
+E_{1D} = \frac{S_{1D}(n,P)}{P} = \frac{1}{\max(1, \frac{\alpha P^2}{2\tau n^3} + \frac{\beta P}{2 \tau n})}.
 $$
 
 This is then constant when $n = \Omega(P)$ (by making the $\alpha$ term grow like $1/P$ and the $\beta$ term constant).
@@ -150,7 +150,7 @@ We need to store 4 arrays of size $n/P \cdot n$ so we use $M(n,P) = 4 \frac{n^2}
 # 2-d network (Summa algorithm)
 
 Suppose we have a square $P$ and which has a square grid topology of $\sqrt{P} \times \sqrt{P}$ nodes and $\sqrt{P} \vert n$ (with all the dimensions equal to $n$ again).
-Let each node $(a,b)$ be responsible for a block of $C$ $C_{(a,b)} = $\{C_{i,j}\}_{i = an/\sqrt{P}, \ldots, (a+1)n/\sqrt{P} - 1}^{j = bn/\sqrt{P}, \ldots, (b+1)n/\sqrt{P} - 1}$.
+Let each node $(a,b)$ be responsible for a block of $C$ $C_{(a,b)} = \{C_{i,j}\}_{i = an/\sqrt{P}, \ldots, (a+1)n/\sqrt{P} - 1}^{j = bn/\sqrt{P}, \ldots, (b+1)n/\sqrt{P} - 1}$.
 Then node $(a,b)$ needs to see $n \times n/\sqrt{P}$ of $A$ and $n/\sqrt{P} \times n$ of $B$ - it will do this in strips of size $s \times n/\sqrt{P}$.
 
 ![Summa idea](../../../static/images/summa_idea.png)
