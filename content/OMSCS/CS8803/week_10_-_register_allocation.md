@@ -129,7 +129,10 @@ optimisticRegisterAllocation(I, c, k) {
   St = stack()
   R = V(I)
   while (R is not empty) {
-    let v have smallest degree in I|R (I restricted to the vertices in R) with the lowest split cost c(v)
+    if there exists a vertex of degree <= k in I|R:
+      let v be a vertex of degree <= k in I|R.
+    else:
+      let v be the vertex in R with lowest spill cost
     St.push(v)
     R.remove(v)
   }
