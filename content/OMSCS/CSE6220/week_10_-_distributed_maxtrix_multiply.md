@@ -121,11 +121,11 @@ Then the nodes computation time is $T_{comp}(n,P) = 2 \tau n^3 / P$, as it is co
 
 In this case a single node communicates $(n/P)n$ data $P-1$ times so we get it spends $T_{comm} = O(P \alpha + \beta n^2)$ time communicating.
 
-For the total running time of the algorithm, as we are overlapping the communication with the computation we get $T_{1D}(n,P) = \max (2 \tau n^3/P, \alphaP + \beta n^2)$.
+For the total running time of the algorithm, as we are overlapping the communication with the computation we get $T_{1D}(n,P) = \max (2 \tau n^3/P, \alpha P + \beta n^2)$.
 This means we have speedup:
 
 $$
-S_{1D} = \frac{T_{\ast}(n)}{T_{1D}(n,P)} = \frac{2\tau n^3}{\max (2\tau n^3/P, \alpha P + \beta n^2)} = \frac{P}{\max(1, \frac{\alpha P^2}{2\tau n^3} + \frac{\beta P}{2 \tau n}}.
+S_{1D} = \frac{T_{\ast}(n)}{T_{1D}(n,P)} = \frac{2\tau n^3}{\max (2\tau n^3/P, \alpha P + \beta n^2)} = \frac{P}{\max(1, \frac{\alpha P^2}{2\tau n^3} + \frac{\beta P}{2 \tau n})}.
 $$
 
 > [!definition] Parallel Efficiency
@@ -134,7 +134,7 @@ $$
 This algorithm has efficiency:
 
 $$
-E_{1D} = \frac{S_{1D}(n,P}}{P} = \frac{1}{\max(1, \frac{\alpha P^2}{2\tau n^3} + \frac{\beta P}{2 \tau n}}.
+E_{1D} = \frac{S_{1D}(n,P)}{P} = \frac{1}{\max(1, \frac{\alpha P^2}{2\tau n^3} + \frac{\beta P}{2 \tau n}}.
 $$
 
 This is then constant when $n = \Omega(P)$ (by making the $\alpha$ term grow like $1/P$ and the $\beta$ term constant).

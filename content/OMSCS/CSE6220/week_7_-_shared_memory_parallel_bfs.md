@@ -158,7 +158,7 @@ The algorithm is work optimal, though the proof is not covered in the lecture—
 This means that $W(G) = O(\vert V \vert + \vert E \vert)$.
 
 For the span analysis:
-- The number of levels in the graph is given by the graph's [diameter](diameter_graph.md) $d(G)$
+- The number of levels in the graph is given by the graph's [diameter](../../notes/diameter_graph.md) $d(G)$
 - The size of any level is bounded by $\vert V \vert$, therefore we have at most $\log(\vert V \vert)$ levels of recursion in ProcessLevel
 - The base case runs a par-for over the neighbours of vertices, which contributes $\log(\vert E \vert)$ to the span
 
