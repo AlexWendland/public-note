@@ -60,7 +60,7 @@ So if we could go between these two schemes at a switch over point we could redu
 ![Transpose bitonic merge](../../../static/images/transpose_bitonic_merge.png)
 
 > [!warning] Simplified idea
-> Note that the picture only works when $n = 2p$; however, we can generalise this with other schemes to 'patch' over the gaps so we always go between schemes which only need to communicate within nodes.
+> Note that the picture only works when $n = p^2$; however, we can generalise this with other schemes to 'patch' over the gaps so we always go between schemes which only need to communicate within nodes.
 
 To calculate the communication costs of the transpose where every node needs to send to every other node a $1/p$'th of its data, that is $n/p^2$.
 We get the following costs:

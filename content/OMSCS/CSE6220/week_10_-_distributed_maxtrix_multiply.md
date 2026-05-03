@@ -208,7 +208,7 @@ Lets again look at the 3 important aspects:
 - Time spent on communication, and
 - Amount of memory used.
 
-For the compute each node multiplies and adds each $n \times n/sqrt(P)$ block to give a $n/\sqrt(P) \times n/\sqrt(P)$ block which by Loomis-Whitney theorem gives us $T_{comp} = 2 \tau n^3/P$.
+For the compute each node multiplies and adds each $n \times n/\sqrt{P}$ block to give a $n/\sqrt{P} \times n/\sqrt{P}$ block which by Loomis-Whitney theorem gives us $T_{comp} = 2 \tau n^3/P$.
 
 For communication - it depends on if we use a tree or bucket algorithm to broadcast the data.
 For the tree algorithm we get:
@@ -235,7 +235,7 @@ Giving us an isoefficency of $n = \theta(\sqrt{P}\log(P))$.
 However, using the bucketing algorithm we get:
 
 $$
-E_{bucket}(n,P} = \frac{1}{1 + \frac{\alpha P^2}{2 \tau n^2} + \frac{\beta \sqrt{P}}{2 \tau n}}
+E_{bucket}(n,P) = \frac{1}{1 + \frac{\alpha P^2}{2 \tau n^2} + \frac{\beta \sqrt{P}}{2 \tau n}}
 $$
 
 Which apparently leads to an isoefficiency of $n = \Omega(P^{5/6})$ (I don't exactly know why ....).
