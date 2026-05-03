@@ -98,7 +98,7 @@ ker_lin(G, V_1, V_2):
 17.     if cum_gain > max_gain:
 18.       max_gain = cum_gain
 19.       max_gain_step = i
-20.   if max_gain_step = -1:
+20.   if max_gain_step <= 0:
 21.     break
 22.   C -= max_gain
 23.   A = {a_i | 0 <= i <= max_gain_step}, B = {b_i | 0 <= i <= max_gain_step}
