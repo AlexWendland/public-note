@@ -2,7 +2,7 @@
 aliases:
   - OMSCS
 created: 2026-01-19
-date_checked: 2026-01-29
+date_checked: 
 draft: true
 last_edited: 2026-04-28
 tags:
@@ -12,137 +12,119 @@ title: Plan
 type: plan
 ---
 
-# Jan 12-18 [x]
+# 1: May 18-24 [ ]
 
-- [x] CS8803 P1L1
+- [ ] CS6422 Welcome
+- [ ] CS6422 Module 1
+- [ ] CS6422 Module 2
+- [ ] CS6422 Paper 1
 
-- [x] CSE6220 Basic model of Locality
+- [ ] CS7643 Lesson 1
 
-# Jan 19-25 [x]
+# 2: May 25-31 [ ]
 
-- [x] CS8803 P1L2
+- [ ] CS6422 Module 3
+- [ ] CS6422 Module 4
+- [ ] CS6422 05/27 Syllabus Quiz
+- [ ] CS6422 05/31 Programming Assignment 1
+- [ ] CS6422 Paper 2
 
-- [x] CSE6220 Algorithmic Time
-- [x] CSE6220 I/O avoiding
-- [x] CSE6220 Cache-oblivious algorithms
+- [ ] CS7643 Lesson 2
+- [x] CS7643 05/26 Quiz 0
+- [ ] CS7643 05/26 Problem set
 
-- [x] CS6035 Man in the Middle (Jan 25)
+# 3: June 1-7 [ ]
 
-# Jan 26-Feb 1 (Board games) [x]
+- [ ] CS6422 Module 5
+- [ ] CS6422 Module 6
+- [ ] CS6422 Paper 3
+- [ ] CS6422 06/06 OH quiz 1
 
-- [x] CS8803 P1L3
+- [ ] CS7643 Lesson 3
+- [ ] CS7643 Lesson 4 (Optional)
+- [ ] CS7643 06/01 Quiz 1
 
-- [x] CSE6220 Intro to work-span
+# 4: June 8-14 (Jelly weekend) [ ]
 
-# Feb 2-8 [x]
+- [ ] CS6422 Module 7
+- [ ] CS6422 Module 8
+- [ ] CS6422 Paper 4
+- [ ] CS6422 06/14 Exercise sheet 1
+- [ ] CS6422 06/14 Programming Assignment 2
 
-- [x] CS8803 P1L4
-- [x] CS8803 HW1 (Feb 3)
+- [ ] CS7643 Lesson 5
+- [ ] CS7643 Lesson 6
+- [ ] CS7643 06/08 Assignment 1
 
-- [x] CSE6220 Intro to OpenMP
-- [x] CSE6220 Comparison-based Sorting
+# 5: June 15-21 [ ]
 
-- [x] CS6035 Machine Learning (Feb 8)
+- [ ] CS6422 Midterm
 
-# Feb 9-15 (F&B) [x]
+- [ ] CS7643 Lesson 7
+- [ ] CS7643 Lesson 8
+- [ ] CS7643 06/15 Quiz 2
 
-- [x] CS8803 P1L5
-- [x] CS8803 P1L6
-- [x] CS8803 Prj1 (Feb 9)
+# 6: June 22-28 [ ]
 
-- [x] CSE6220 Lab 0 (Feb 9)
-- [x] CSE6220 Scans and list Ranking
-- [x] CSE6220 Scaling on GPUs
+- [ ] CS6422 Module 9
+- [ ] CS6422 06/28 Programming Assignment 3
+- [ ] CS6422 06/27 OH quiz 2
+- [ ] CS6422 Paper 5
 
-# Feb 16-22 [x]
+- [ ] CS7643 Lesson 9
+- [ ] CS7643 Lesson 10
+- [ ] CS7643 06/22 Quiz 3
+- [ ] CS7643 06/26 Project Proposal
 
-- [x] CS8803 P2L1
+# 7: June 29 - July 5 [ ]
 
-- [x] CSE6220 Tree computations
+- [ ] CS6422 Module 10
+- [ ] CS6422 Paper 6
+- [ ] CS6422 Paper 7
 
-- [x] CS6035 Binary Exploitation (Feb 22)
+- [ ] CS7643 Lesson 11
+- [ ] CS7643 Lesson 12
+- [ ] CS7643 06/29 Assignment 2
 
-# Feb 23-Mar 1 [x]
+# 8: July 6-12 (New life party) [ ]
 
-- [x] CS8803 P2L2
-- [x] CS8803 HW2 (Feb 23)
+- [ ] CS6422 Module 11
+- [ ] CS6422 Module 12
+- [ ] CS6422 07/12 Programming Assignment 4
+- [ ] CS6422 07/11 OH quiz 3
+- [ ] CS6422 Paper 8
+- [ ] CS6422 Paper 9
 
-- [x] CSE6220 Shared memory parallel BFS
+- [ ] CS7643 Lesson 13
+- [ ] CS7643 Lesson 14
+- [ ] CS7643 Lesson 15
+- [ ] CS7643 07/06 Quiz 4
 
-# Mar 2-8 [x]
+# 9: July 13-19 [ ]
 
-- [x] CS8803 P2L3
+- [ ] CS6422 Module 13
+- [ ] CS6422 07/19 Exercise sheet 2
+- [ ] CS6422 Paper 10
 
-- [x] CSE6220 Lab 1 (Mar 2)
+- [ ] CS7643 Lesson 16
+- [ ] CS7643 Lesson 17
 
-- [x] CS6035 RSA Cryptography (Mar 8)
+# 10: July 20-26 [ ]
 
-# Mar 9-15 (Barcelona) [x]
+- [ ] CS6422 Module 14
+- [ ] CS6422 07/26 Programming Assignment 5
+- [ ] CS6422 07/25 OH quiz 4
+- [ ] CS6422 Paper 11
+- [ ] CS6422 Paper 12
 
-- [x] CS8803 P3L1
-- [x] CS8803 Prj2 (Mar 9)
+- [ ] CS7643 Lesson 18
+- [ ] CS7643 07/20 Assignment 3
 
-- [x] CSE6220 Revise
-- [x] CSE6220 Mid-term (Mar 12-16)
+# 11: July 27- August 2 [ ]
 
-- [x] CS6035 API Security (Mar 15)
+- [ ] CS6422 Final Exam
 
-# Mar 16-22 [x]
-
-- [x] CS8803 P3L2
-- [x] CS8803 HW3 (Mar 16)
-
-- [x] CSE6220 Intro to distributed memory
-- [x] CSE6220 Intro MPI
-
-- [x] CS6035 Web security (Mar 22)
-
-# Mar 23-29 (Kew half-marathon) [x]
-
-- [x] CS8803 P3L3
-
-# Mar 30-Apr 5 [x]
-
-- [x] CS8803 P3L4
-- [x] CS8803 Prj3 (Mar 30)
-
-- [x] CSE6220 Topology
-- [x] CSE6220 Distributed Dense Matrix Multiply
-
-- [x] CS6035 Log4 shell (Apr 5)
-
-# Apr 6-12  [x]
-
-- [x] CS8803 P4L1
-- [x] CS8803 HW4 (Apr 6)
-
-- [x] CSE6220 Lab 2 (Apr 6)
-- [x] CSE6220 Distributed Memory sorting
-
-# Apr 13-19 (Coventry half marathon) [x]
-
-- [x] CS8803 P4L2
-
-- [x] CSE6220 Distributed BFS
-
-- [x] CS6035 Database security (Apr 19)
-
-# Apr 20-26 (Germany) [x]
-
-- [x] CS8803 Revise
-
-- [x] CSE6220 Graph partitioning
-- [x] CSE6220 Conclusion
-- [x] CSE6220 Revise
-
-- [x] CS6035 Malware Analysis (Apr 26)
-
-# Apr 27-May 3
-
-- [x] CS8803 Prj4 (Apr 27)
-- [ ] CS8803 Final exam (May 1-5)
-
-- [x] CSE6220 Lab 3 (Apr 27)
-- [x] CSE6220 Extra Credit Lab (Apr 27)
-- [ ] CSE6220 Final exam (May 2-5)
+- [ ] CS7643 Lesson 19
+- [ ] CS7643 07/27 Quiz 5
+- [ ] CS7643 08/03 Final Project
 
