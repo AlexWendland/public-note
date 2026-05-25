@@ -31,7 +31,8 @@ type: plan
 
 - [ ] CS7643 Lesson 2
 - [x] CS7643 05/26 Quiz 0
-- [ ] CS7643 05/26 Problem set
+- [x] CS7643 05/26 Problem set
+- [ ] CS7643 06/01 Quiz 1
 
 # 3: June 1-7 [ ]
 
@@ -42,7 +43,7 @@ type: plan
 
 - [ ] CS7643 Lesson 3
 - [ ] CS7643 Lesson 4 (Optional)
-- [ ] CS7643 06/01 Quiz 1
+- [ ] CS7643 06/08 Assignment 1
 
 # 4: June 8-14 (Jelly weekend) [ ]
 
@@ -54,7 +55,7 @@ type: plan
 
 - [ ] CS7643 Lesson 5
 - [ ] CS7643 Lesson 6
-- [ ] CS7643 06/08 Assignment 1
+- [ ] CS7643 06/15 Quiz 2
 
 # 5: June 15-21 [ ]
 
@@ -62,7 +63,7 @@ type: plan
 
 - [ ] CS7643 Lesson 7
 - [ ] CS7643 Lesson 8
-- [ ] CS7643 06/15 Quiz 2
+- [ ] CS7643 06/22 Quiz 3
 
 # 6: June 22-28 [ ]
 
@@ -73,8 +74,8 @@ type: plan
 
 - [ ] CS7643 Lesson 9
 - [ ] CS7643 Lesson 10
-- [ ] CS7643 06/22 Quiz 3
 - [ ] CS7643 06/26 Project Proposal
+- [ ] CS7643 06/29 Assignment 2
 
 # 7: June 29 - July 5 [ ]
 
@@ -84,7 +85,7 @@ type: plan
 
 - [ ] CS7643 Lesson 11
 - [ ] CS7643 Lesson 12
-- [ ] CS7643 06/29 Assignment 2
+- [ ] CS7643 07/06 Quiz 4
 
 # 8: July 6-12 (New life party) [ ]
 
@@ -98,7 +99,6 @@ type: plan
 - [ ] CS7643 Lesson 13
 - [ ] CS7643 Lesson 14
 - [ ] CS7643 Lesson 15
-- [ ] CS7643 07/06 Quiz 4
 
 # 9: July 13-19 [ ]
 
@@ -108,6 +108,7 @@ type: plan
 
 - [ ] CS7643 Lesson 16
 - [ ] CS7643 Lesson 17
+- [ ] CS7643 07/20 Assignment 3
 
 # 10: July 20-26 [ ]
 
@@ -118,13 +119,12 @@ type: plan
 - [ ] CS6422 Paper 12
 
 - [ ] CS7643 Lesson 18
-- [ ] CS7643 07/20 Assignment 3
+- [ ] CS7643 07/27 Quiz 5
 
 # 11: July 27- August 2 [ ]
 
 - [ ] CS6422 Final Exam
 
 - [ ] CS7643 Lesson 19
-- [ ] CS7643 07/27 Quiz 5
 - [ ] CS7643 08/03 Final Project
 
