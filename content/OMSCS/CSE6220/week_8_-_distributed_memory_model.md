@@ -268,8 +268,8 @@ The idea behind this algorithm is each process passes on the information they go
 allGather(In[1:m], Out[1:m][1:P]):
   Out[1:m][RANK] = In[1:m]
   for i = 0 to P-1:
-    sendAsync(Out[1:m][RANK+i], RANK+1 % P)
-    recvAsync(Out[1:m][RANK+i+1], RANK-1 % P)
+    sendAsync(Out[1:m][RANK+i], RANK-1 % P)
+    recvAsync(Out[1:m][RANK+i+1], RANK+1 % P)
     wait(*)
 ```
 
