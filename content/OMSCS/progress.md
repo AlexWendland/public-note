@@ -14,8 +14,8 @@ type: plan
 
 # 1: May 18-24 [ ]
 
-- [ ] CS6422 Welcome
-- [ ] CS6422 Module 1
+- [x] CS6422 Welcome
+- [x] CS6422 Module 1
 - [ ] CS6422 Module 2
 - [ ] CS6422 Paper 1
 
@@ -25,7 +25,7 @@ type: plan
 
 - [ ] CS6422 Module 3
 - [ ] CS6422 Module 4
-- [ ] CS6422 05/27 Syllabus Quiz
+- [x] CS6422 05/27 Syllabus Quiz
 - [ ] CS6422 05/31 Programming Assignment 1
 - [ ] CS6422 Paper 2
 
