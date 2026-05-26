@@ -36,6 +36,8 @@
     pkgs.pixman
     pkgs.giflib
     pkgs.libjpeg
+
+    pkgs.poppler-utils
   ];
 
   scripts.lecture.exec = "uv run scripts/lecture.py";

@@ -16,8 +16,8 @@ type: plan
 
 - [x] CS6422 Welcome
 - [x] CS6422 Module 1
-- [ ] CS6422 Module 2
-- [ ] CS6422 Paper 1
+- [x] CS6422 Module 2
+- [x] CS6422 Paper 1
 
 - [ ] CS7643 Lesson 1
 
