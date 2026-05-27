@@ -23,7 +23,7 @@ type: plan
 
 # 2: May 25-31 [ ]
 
-- [ ] CS6422 Module 3
+- [x] CS6422 Module 3
 - [ ] CS6422 Module 4
 - [x] CS6422 05/27 Syllabus Quiz
 - [ ] CS6422 05/31 Programming Assignment 1
