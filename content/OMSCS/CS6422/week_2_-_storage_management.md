@@ -4,8 +4,8 @@ course_code: CS6422
 course_name: Database Systems Implementations
 created: '2026-05-26'
 date_checked: '2026-05-27'
-draft: true
-last_edited: '2026-05-26'
+draft: false
+last_edited: '2026-05-27'
 tags:
   - OMSCS
 title: Week 2 - Storage Management
@@ -38,13 +38,13 @@ class Field {
   size_t data_s_len;
 
 public:
-  Field(int i) : type(INT) { 
+  Field(int i) : type(INT) {
     data_length = sizeof(int);
     data = std::make_unique<char[]>(data_length);
     std::memcpy(data.get(), &i, data_length);
   }
 
-  Field(float f) : type(FLOAT) { 
+  Field(float f) : type(FLOAT) {
     data_length = sizeof(float);
     data = std::make_unique<char[]>(data_length);
     std::memcpy(data.get(), &f, data_length);
@@ -78,15 +78,15 @@ public:
 
   FieldType getType() const { return type; }
 
-  int asInt() const { 
+  int asInt() const {
     return *reinterpret_cast<int*>(data.get());
   }
 
-  float asFloat() const { 
+  float asFloat() const {
     return *reinterpret_cast<float*>(data.get());
   }
 
-  std::string asString() const { 
+  std::string asString() const {
     return std::string(data.get());
   }
 

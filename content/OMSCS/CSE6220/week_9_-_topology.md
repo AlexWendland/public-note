@@ -5,7 +5,7 @@ course_name: Introduction to High Performance Computing
 created: '2026-03-19'
 date_checked:
 draft: false
-last_edited: 2026-03-20
+last_edited: 2026-04-29
 tags:
   - OMSCS
 title: Week 9 - Topology

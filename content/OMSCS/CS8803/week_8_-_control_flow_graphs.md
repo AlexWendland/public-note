@@ -5,7 +5,7 @@ course_name: Compilers - Theory and Practice
 created: '2026-02-20'
 date_checked:
 draft: false
-last_edited: 2026-03-09
+last_edited: 2026-04-29
 tags:
   - OMSCS
 title: Week 8 - Control flow graphs

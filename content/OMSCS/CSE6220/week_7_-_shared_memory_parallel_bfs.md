@@ -5,7 +5,7 @@ course_name: Introduction to High Performance Computing
 created: '2026-02-19'
 date_checked:
 draft: false
-last_edited: 2026-03-09
+last_edited: 2026-05-02
 tags:
   - OMSCS
 title: Week 7 - Shared memory parallel BFS

@@ -4,9 +4,9 @@ aliases:
 course_code: CS7643
 course_name: Deep Learning
 created: 2026-05-21
-date_checked: 
+date_checked:
 draft: false
-last_edited: 2026-05-21
+last_edited: 2026-05-22
 tags:
   - OMSCS
   - maths
