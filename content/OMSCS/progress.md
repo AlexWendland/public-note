@@ -2,9 +2,9 @@
 aliases:
   - OMSCS
 created: 2026-01-19
-date_checked: 
+date_checked:
 draft: true
-last_edited: 2026-04-28
+last_edited: 2026-05-27
 tags:
   - OMSCS
   - education
@@ -24,7 +24,7 @@ type: plan
 # 2: May 25-31 [ ]
 
 - [x] CS6422 Module 3
-- [ ] CS6422 Module 4
+- [x] CS6422 Module 4
 - [x] CS6422 05/27 Syllabus Quiz
 - [ ] CS6422 05/31 Programming Assignment 1
 - [ ] CS6422 Paper 2
