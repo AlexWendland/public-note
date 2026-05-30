@@ -12,21 +12,21 @@ title: Plan
 type: plan
 ---
 
-# 1: May 18-24 [ ]
+# 1: May 18-24 [x]
 
 - [x] CS6422 Welcome
 - [x] CS6422 Module 1
 - [x] CS6422 Module 2
 - [x] CS6422 Paper 1
 
-- [ ] CS7643 Lesson 1
+- [x] CS7643 Lesson 1
 
 # 2: May 25-31 [ ]
 
 - [x] CS6422 Module 3
 - [x] CS6422 Module 4
 - [x] CS6422 05/27 Syllabus Quiz
-- [ ] CS6422 05/31 Programming Assignment 1
+- [x] CS6422 05/31 Programming Assignment 1
 - [ ] CS6422 Paper 2
 
 - [ ] CS7643 Lesson 2
