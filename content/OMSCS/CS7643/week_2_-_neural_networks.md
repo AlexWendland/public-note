@@ -4,7 +4,7 @@ course_code: CS7643
 course_name: Deep Learning
 created: '2026-05-30'
 date_checked:
-draft: true
+draft: false
 last_edited: '2026-05-30'
 tags:
   - OMSCS
@@ -67,7 +67,7 @@ Then our recursive algorithm assumes:
 
 2. We can calculate local gradients $\frac{\partial h^l}{\partial h^{l-1}}$ and $\frac{\partial h^l}{\partial W_l}$.
 
-3. Using step 1 and 2 we can derive 
+3. Using step 1 and 2 we can derive
 
 $$
 \frac{\partial L}{\partial h^{l-1}} = \frac{\partial L}{\partial h^l} \frac{\partial h^l}{\partial h^{l-1}}

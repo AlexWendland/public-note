@@ -4,7 +4,7 @@ course_code: CS6422
 course_name: Database Systems Implementations
 created: '2026-06-01'
 date_checked: '2026-06-01'
-draft: true
+draft: false
 last_edited: '2026-06-01'
 tags:
   - OMSCS
@@ -82,7 +82,7 @@ public:
       auto evictedPageId = policy->evict();
       if(evictedPageId != INVALID_VALUE){
         std::cout << "Evicting page " << evictedPageId << "\n";
-        storage_manager.flush(evictedPageId, 
+        storage_manager.flush(evictedPageId,
                               pageMap[evictedPageId]);
         pageMap.erase(evictedPageId);
       }
@@ -210,7 +210,7 @@ public:
     if (pageQueueFIFO.empty()) {
       evictedPageId = pageQueueLRU.front();
       pageQueueLRU.pop_front();
-    } else {
+    } else{
       evictedPageId = pageQueueFIFO.front();
       pageQueueFIFO.pop_front();
     }

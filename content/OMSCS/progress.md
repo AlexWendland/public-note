@@ -37,7 +37,7 @@ type: plan
 # 3: June 1-7 [ ]
 
 - [x] CS6422 Module 5
-- [ ] CS6422 Module 6
+- [x] CS6422 Module 6
 - [ ] CS6422 Paper 3
 - [ ] CS6422 06/06 OH quiz 1
 
