@@ -134,6 +134,7 @@ Following Catppuccin's semantic guidelines:
 | `definition` | Teal | Definitions and foundational concepts |
 | `quote` | Sapphire | Quotations and citations |
 | `question` | Sky | Questions and inquiries |
+| `reminder` | Rosewater | Reminders from other notes |
 
 #### Foldable Admonitions
 
