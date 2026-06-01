@@ -162,7 +162,7 @@ To add a new admonition type (e.g., `theorem`):
 }}
 ```
 
-Available icons are in `themes/personal/layouts/partials/admonitions/icons/`. Common choices:
+Available icons are in `layouts/partials/admonitions/icons/`. Common choices:
 - `lightbulb-solid.svg` - ideas, insights
 - `file-pen-solid.svg` - notes, writing
 - `circle-exclamation-solid.svg` - important, alerts
