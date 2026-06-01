@@ -29,10 +29,10 @@ type: plan
 - [x] CS6422 05/31 Programming Assignment 1
 - [ ] CS6422 Paper 2
 
-- [ ] CS7643 Lesson 2
+- [x] CS7643 Lesson 2
 - [x] CS7643 05/26 Quiz 0
 - [x] CS7643 05/26 Problem set
-- [ ] CS7643 06/01 Quiz 1
+- [x] CS7643 06/01 Quiz 1
 
 # 3: June 1-7 [ ]
 
