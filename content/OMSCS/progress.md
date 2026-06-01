@@ -21,13 +21,13 @@ type: plan
 
 - [x] CS7643 Lesson 1
 
-# 2: May 25-31 [ ]
+# 2: May 25-31 [x]
 
 - [x] CS6422 Module 3
 - [x] CS6422 Module 4
 - [x] CS6422 05/27 Syllabus Quiz
 - [x] CS6422 05/31 Programming Assignment 1
-- [ ] CS6422 Paper 2
+- [x] CS6422 Paper 2
 
 - [x] CS7643 Lesson 2
 - [x] CS7643 05/26 Quiz 0
@@ -36,7 +36,7 @@ type: plan
 
 # 3: June 1-7 [ ]
 
-- [ ] CS6422 Module 5
+- [x] CS6422 Module 5
 - [ ] CS6422 Module 6
 - [ ] CS6422 Paper 3
 - [ ] CS6422 06/06 OH quiz 1
