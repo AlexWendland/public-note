@@ -34,28 +34,28 @@ type: plan
 - [x] CS7643 05/26 Problem set
 - [x] CS7643 06/01 Quiz 1
 
-# 3: June 1-7 [ ]
+# 3: June 1-7 [x]
 
 - [x] CS6422 Module 5
 - [x] CS6422 Module 6
-- [ ] CS6422 Paper 3
-- [ ] CS6422 06/06 OH quiz 1
+- [x] CS6422 Paper 3
+- [-] CS6422 06/06 OH quiz 1
 
-- [ ] CS7643 Lesson 3
-- [ ] CS7643 Lesson 4 (Optional)
-- [ ] CS7643 06/08 Assignment 1
+- [x] CS7643 Lesson 3
+- [x] CS7643 Lesson 4 (Optional)
+- [x] CS7643 06/08 Assignment 1
 
 # 4: June 8-14 (Jelly weekend) [ ]
 
+- [ ] CS6422 06/14 Exercise sheet 1
 - [ ] CS6422 Module 7
 - [ ] CS6422 Module 8
-- [ ] CS6422 Paper 4
-- [ ] CS6422 06/14 Exercise sheet 1
 - [ ] CS6422 06/14 Programming Assignment 2
+- [ ] CS6422 Paper 4
 
 - [ ] CS7643 Lesson 5
-- [ ] CS7643 Lesson 6
 - [ ] CS7643 06/15 Quiz 2
+- [ ] CS7643 Lesson 6
 
 # 5: June 15-21 [ ]
 
