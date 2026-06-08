@@ -53,7 +53,7 @@ type: plan
 - [ ] CS6422 06/14 Programming Assignment 2
 - [ ] CS6422 Paper 4
 
-- [ ] CS7643 Lesson 5
+- [x] CS7643 Lesson 5
 - [ ] CS7643 06/15 Quiz 2
 - [ ] CS7643 Lesson 6
 

@@ -3,7 +3,7 @@ aliases:
 course_code: CS7643
 course_name: Deep Learning
 created: '2026-06-06'
-date_checked: '2026-06-06'
+date_checked: '2026-06-08'
 draft: true
 last_edited: '2026-06-06'
 tags:
@@ -27,7 +27,7 @@ The decisions we need to make are:
 
 - Architecture of the network: How many layers, what sizes should these layers have, and which activation functions.
 
-- Data considerations: Should we normalise the data, can we use the current data to get more.
+- Data considerations: Should we normalise the data, can we augment the current data for more samples.
 
 - Training and optimisations: What should the start values of our parameters be, how can we stop the model getting stuck.
 
@@ -41,7 +41,7 @@ There are good starting points for designing your architecture:
 
 1. Be guided by the type of data you are using, understanding its structure can help you decide what architecture to use.
 
-2. The literature may have good ideas about what is important about the data type you are working with, such as CNN's for pictures or transformers for series.
+2. The literature may have good ideas about what is important about the data type you are working with, such as CNNs for pictures or transformers for sequential data.
 
 3. Understanding the flow of gradients through different modules.
 
@@ -51,7 +51,7 @@ So you should consider the following for non-linear layers:
 
 - The min/max of the output.
 
-- How it behaves on the input and what you would like the output to look like.
+- How it behaves on inputs and what you would like the output to look like.
 
 - Gradients:
 
@@ -70,14 +70,14 @@ So you should consider the following for non-linear layers:
 >
 > - Min/max: 0 and 1.
 > - Output is always positive.
-> - It 'saturates' at the end—i.e., really large values all become the same and really negative values also become the same.
+> - It saturates at the end—that is, really large values all map to nearly the same output and really negative values also map to nearly the same output.
 > - Gradients:
 >   - Vanishes at the extremes, meaning those values will be slow to change.
 >   - Gradient is always positive (between 0 and 0.25).
 > - Computationally 'large' with the exponential value.
 >
 > These gradient features actually cause a lot of problems.
-> The small gradient on the extremes means that it will reduce the learning of not only this layer but all further layers behind it.
+> The small gradient at the extremes means that it will reduce the learning in not only this layer but also all preceding layers.
 > Secondly, being always positive forces the same sign on the weight updates as if we have a $h_i = W a_{i-1}$ then:
 > $$
 > \frac{\partial h_i}{\partial W} = a_{i-1}
@@ -98,12 +98,12 @@ So you should consider the following for non-linear layers:
 > This gives us:
 >
 > - Min/max: -1 and 1.
-> - The function is centered around 0: Meaning it can flip the sign of the inputs based on this.
+> - The function is centred around 0, meaning it can flip the sign of the inputs based on this.
 > - It 'saturates' at the extremes.
 > - Gradients:
 >   - Vanishes at both extremes.
 >   - Always positive between 0 and 1.
-> - Computationally heavy to compute.
+> - Computationally expensive.
 >
 > This still has some of the downsides of the sigmoid function but the negative values allows for the forward pass weights to change in opposite directions.
 
@@ -126,7 +126,7 @@ So you should consider the following for non-linear layers:
 > [!example] Leaky ReLU
 > The Leaky ReLU function is given by:
 > $$
-> \text{Leaky ReLU}(x) = \max(\alpha x, x), \text{ where } 0 < \alpha << 1
+> \text{Leaky ReLU}(x) = \max(\alpha x, x), \text{ where } 0 < \alpha \ll 1
 > $$
 >
 > - Min/max: -infinity and infinity.
@@ -150,12 +150,12 @@ There is no single best activation function but some rules of thumb are:
 # Initialisation
 
 The initial values of the weights for training influence the speed of convergence.
-At the most trivial side if you start close to a good local minima then convergence is very fast.
-However, less trivially if you start with very large parameters the activation function will be saturated in this values and learning will be slow.
-In comparison, starting with small values means we utilise the maximum of the activation functions gradient.
+On the trivial side, if you start close to a good local minimum then convergence is very fast.
+However, less trivially, if you start with very large parameters the activation function will be saturated at these values and learning will be slow.
+In comparison, starting with small values means we utilise the maximum of the activation function's gradient.
 Another non-trivial example is if the weights are all the same or carry the same sign; it is hard for it to break out of moving in lock step.
 
-A good starting point is to initialize weights following a normal distribution $N(\mu, \sigma)$.
+A good starting point is to initialise weights following a normal distribution $N(\mu, \sigma)$.
 If we keep $\mu = 0$ and $\sigma = 0.01$ then our weights are small and uncorrelated, avoiding all the problems given in the previous paragraph.
 
 In deeper networks this might not be sufficient.
@@ -163,7 +163,7 @@ As activation function derivatives are normally very small and these compound, t
 This leads to very small updates each step.
 However, larger initialisation risks saturation so we need to balance these two factors.
 
-Ideally we would like to keep the variance of the activation function the same throughout the layers.
+Ideally we would like to keep the variance of the activations the same throughout the layers.
 There is a theoretically optimal way to do this for tanh - for a layer with $n_j$ input values and $n_{j+1}$ output values we should initialise weights using:
 
 $$
@@ -173,7 +173,7 @@ $$
 Practically however, empirical data showed that:
 
 $$
-N(0,1) \frac{1}{n_j}
+N\!\left(0,\, \frac{1}{n_j}\right)
 $$
 
 works just as well.
@@ -182,15 +182,15 @@ For different activation functions you need different analysis.
 For example with ReLU we can use:
 
 $$
-N(0,1) \sqrt{\frac{1}{n_j/2}}
+N\!\left(0,\, \frac{2}{n_j}\right)
 $$
 
-In summary, activation matters and is influenced by the activation functions we are using.
+In summary, initialisation matters and is influenced by the activation functions we are using.
 Too small a gradient will lead to slow learning and convergence.
 
 # Data processing
 
-From traditional machine learning normalisation of the data is common practice.
+From traditional machine learning, normalisation of the data is a common practice.
 For deep learning this can be done as well - here we can subtract the mean and divide by the standard deviation.
 We can do this in an unconditional way.
 You can also do principal component analysis (PCA) but it is uncommon to do so.
@@ -224,7 +224,7 @@ Normalisation is particularly important before non-linear layers as we would lik
 
 # Optimisation
 
-When we are optimising we are trying to deduce the loss with respect to the parameters of our model.
+When we are optimising we are trying to reduce the loss with respect to the parameters of our model.
 This generates us a 'loss surface' where the domain is the parameter space and the target is the loss.
 
 Traditionally it was assumed that bad local minima were the main cause for sub-optimal training performance.
@@ -240,7 +240,7 @@ With the larger issues being:
 ## Momentum
 
 The issue of getting stuck in saddle points is due to us following the steepest gradient descent update method.
-This means when we get stuck in a saddle point its hard to escape.
+This means when we get stuck in a saddle point it's hard to escape.
 So instead of just moving in the direction of the steepest descent we use momentum, or we keep the velocity of us moving in the last direction to try to 'ride over' saddle points.
 This is implemented by adding a new velocity term:
 
@@ -253,8 +253,8 @@ Where $\beta$ is a momentum term and $\alpha$ is the learning rate.
 
 ## Nesterov Momentum
 
-This is a slightly different approach where we move in the velocities direction first and then sample the gradient.
-Then we move additionally in the gradients direction:
+This is a slightly different approach where we move in the direction of the velocity first and then sample the gradient.
+Then we actually move in the weight space in the gradient's direction:
 
 $$
 \begin{aligned}
@@ -267,7 +267,7 @@ $$
 > [!note] Only one update to the weights
 > Notice here that we throw away the weight update $\hat{w}$ and only apply the updated velocity to the real weights.
 
-This method allows us to correct overshooting minima before we do it—if we detect we are going to go up the other way we slow down before hitting the bottom.
+This method allows us to correct overshooting minima before we do it—if we detect that we are going to overshoot in the other direction we slow down before hitting the bottom.
 
 ## Second Order Derivatives
 
@@ -286,7 +286,7 @@ This can impact training performance.
 ## Per-parameter learning rates
 
 To account for different size gradients in different directions we can have a learning rate for each parameter.
-This 'normalises' changes.
+This normalises the learning rate across parameters.
 There are multiple algorithms that implement this:
 
 - Adagrad,
@@ -295,7 +295,7 @@ There are multiple algorithms that implement this:
 
 - Adam.
 
-These algorithms have actually been shown to be less effective that SGD with momentum but it requires a lot more tuning to get right.
+These algorithms have actually been shown to be less effective than SGD with momentum but they require a lot less tuning to get right.
 
 ### RMSProp
 
@@ -316,7 +316,7 @@ Where $\alpha$ is the learning rate, $\beta$ is the decay factor and $\epsilon$ 
 
 ### Adam
 
-We can combine Adagrad with momentum to get a fairly popular update method.
+We can combine RMSProp with momentum to get a fairly popular update method.
 
 $$
 \begin{aligned}
@@ -367,21 +367,22 @@ We increase the loss function based on the size of the parameters of our model.
 > L_{EN}(W) = L(x, y, W) + \alpha \vert W \vert + \beta \vert W \vert^2
 > $$
 
-This tends to force our model to have mostly zero value weights and focus on increasing only a couple of weights that have a large impact on our model.
-This is particularly important in deep learning where we have lots of parameters.
+L1 regularisation in particular tends to induce sparsity — forcing most weights to zero and concentrating signal in a small number of high-impact weights.
+L2 regularisation instead penalises large weights evenly, keeping them small but not sparse.
+Both are particularly important in deep learning where we have lots of parameters.
 
 ## Dropout regularisation
 
-The weighted regularisations don't stop the model relying heavily on one feature to determine the outcome.
+Weight-based regularisations don't stop the model relying heavily on one feature to determine the outcome.
 This is not explicitly stopped by requiring lower weight values.
 Therefore, we instead can use a technique called dropout.
 
-The basic idea is we will 'block' certain neurons on each layer whilst we train over one batch.
+The basic idea is we will block certain neurons on each layer whilst we train over one batch.
 This means these will get zero value and not carry the gradient back.
 We change the set that get blocked each training batch.
-This ensures we can't rely too heavily on any bit of the network for our discrimination—ensuring an evenly utilised network.
+This ensures we can't rely too heavily on any part of the network for our discrimination—ensuring an evenly utilised network.
 
-This does come with a slight downside though—when we test we use all neurons so the total value at each input is increased.
+This does come with a slight downside though—when we test we use all neurons so the total activation at each output is increased.
 To accommodate this we can either scale down the weights at test time or during the training we can do it.
 Functionally this is done by keeping the ratio of neurons dropped out fixed.
 
@@ -410,7 +411,7 @@ This forces our models to be robust and avoid over fitting on the data.
 
 # Process of training
 
-Training a network is hard, and takes a lot of baby sitting.
+Training a network is hard and requires constant monitoring.
 Therefore it is useful to print out a lot of data to check what is happening as it trains.
 
 - Loss and accuracy curves.
@@ -431,7 +432,7 @@ You should also always plot both the training and validation losses to check for
 Though this can also check for underfitting, where they stay very close together; in this case your model might not be expressive enough.
 
 Normally the loss function is not really what you care about—it will be instead some other metric.
-Sometimes the relationship between the loss and the metric you really care about can be complicated and may require you to re-evaluate the loss function.
+Sometimes the relationship between the loss and the metric you really care about can be complicated and may require you to reevaluate the loss function.
 
 ## Hyperparameter tuning
 
