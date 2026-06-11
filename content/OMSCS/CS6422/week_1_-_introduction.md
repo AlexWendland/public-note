@@ -30,7 +30,9 @@ There are multiple issues with this approach.
 >
 > This comparison is most relevant for **OLTP** (Online Transaction Processing) workloads — many small, concurrent read/write transactions (e.g. banking, e-commerce, medical records), where a relational database is the right tool.
 >
-> For **OLAP** (Online Analytical Processing) workloads — large-scale, read-heavy analytics over huge datasets — a different answer has emerged. Modern data lakehouse formats such as Apache Iceberg store data in flat files (e.g. Parquet) but layer ACID transactions (via snapshot isolation), fast query optimisation (via partition pruning and column-level statistics), and schema evolution on top. In this setting cross-table referential integrity matters less, denormalisation is often preferred to avoid expensive joins, and avoiding the overhead of a relational engine (row locking, B-tree maintenance) is a feature rather than a limitation.
+> For **OLAP** (Online Analytical Processing) workloads — large-scale, read-heavy analytics over huge datasets — a different answer has emerged.
+> Modern data lakehouse formats such as Apache Iceberg store data in flat files (e.g. Parquet) but layer ACID transactions (via snapshot isolation), fast query optimisation (via partition pruning and column-level statistics), and schema evolution on top.
+> In this setting cross-table referential integrity matters less, denormalisation is often preferred to avoid expensive joins, and avoiding the overhead of a relational engine (row locking, B-tree maintenance) is a feature rather than a limitation.
 
 ## Data redundancy
 
@@ -79,7 +81,10 @@ This uses the table abstraction which stores data in a tabular format with pre-s
 > [!note] Relation in relational
 > A relation is a term within set theory — a set of n-tuples — and is what a table is. Each row is a tuple.
 >
-> More precisely, a relation $R$ is defined over a set of **domains** $S_1, S_2, \ldots, S_n$. A domain is the *pool of all possible values* for a type of data (e.g. all valid part numbers, all possible weights). Each column draws its values from one domain. Multiple columns in the same relation can share the same domain — e.g. a `component` table might have two columns both drawn from the `part` domain. When this happens, **role names** are used to disambiguate them.
+> More precisely, a relation $R$ is defined over a set of **domains** $S_1, S_2, \ldots, S_n$.
+> A domain is the *pool of all possible values* for a type of data (e.g. all valid part numbers, all possible weights).
+> Each column draws its values from one domain. Multiple columns in the same relation can share the same domain — e.g. a `component` table might have two columns both drawn from the `part` domain.
+> When this happens, **role names** are used to disambiguate them.
 >
 > The **degree** of a relation is its number of columns: degree 1 = unary, degree 2 = binary, degree 3 = ternary, degree n = n-ary.
 >
@@ -97,7 +102,8 @@ He identified three specific *data dependencies* that existing (tree/network) sy
 
 - **Ordering dependence**: programs assume data is stored in a particular physical order — if that order changes, programs break.
 - **Indexing dependence**: programs rely on specific indices existing; adding or removing an index breaks them.
-- **Access path dependence**: programs must follow specific named paths through a tree or network structure to traverse data. Codd identifies a concrete failure called the **connection trap**: following all paths from a given node in a network model gives *incorrect* results unless the target relation happens to be the natural composition of the others — something that cannot be guaranteed in general.
+- **Access path dependence**: programs must follow specific named paths through a tree or network structure to traverse data.
+Codd identifies a concrete failure called the **connection trap**: following all paths from a given node in a network model gives *incorrect* results unless the target relation happens to be the natural composition of the others — something that cannot be guaranteed in general.
 
 The relational model eliminates all three by separating the *logical* design of data (the tables and columns the data owner defines) from the *physical* design (how data is stored and indexed on disk).
 The logical layer is expressed in SQL, which does not require a general programming background (though it does require familiarity with query syntax and domain knowledge).
@@ -117,8 +123,11 @@ This makes changes to fields easier to propagate through other tables as well.
 > [!note] Strong vs weak redundancy
 > Codd distinguishes two types of redundancy that can exist even in a relational model:
 >
-> - **Strong redundancy**: A relation whose projection is *derivable from other relations at all times*. This is always detectable and represents true duplication. It is sometimes retained intentionally so that legacy programs referencing old relation names continue to work.
-> - **Weak redundancy**: A relation whose projection is not derivable from other members independently but is *always a projection of some join* of other relations. This is inherent in the logical needs of users and cannot be removed by the system.
+> - **Strong redundancy**: A relation whose projection is *derivable from other relations at all times*.
+> This is always detectable and represents true duplication.
+> It is sometimes retained intentionally so that legacy programs referencing old relation names continue to work.
+> - **Weak redundancy**: A relation whose projection is not derivable from other members independently but is *always a projection of some join* of other relations.
+> This is inherent in the logical needs of users and cannot be removed by the system.
 >
 > So relational databases eliminate *unnecessary* redundancy but some redundancy is logically unavoidable.
 
@@ -197,7 +206,8 @@ The normalisation procedure works as follows:
 Operators function over tables (or sets of relations/tuples).
 There are standardised operations which we will use in this course, described below in terms of generic relational algebra rather than any specific SQL dialect.
 
-- *SELECT* ($\pi$): Selects specific columns from a table, **removing duplicate rows** from the result so the output is a valid relation. Formally $\pi_L(R)$ where $L$ is the list of column indices to keep.
+- *SELECT* ($\pi$): Selects specific columns from a table, **removing duplicate rows** from the result so the output is a valid relation.
+Formally $\pi_L(R)$ where $L$ is the list of column indices to keep.
 
 - *WHERE* ($\sigma$): Filters the rows of a table based on some specific conditions.
 
@@ -205,7 +215,8 @@ There are standardised operations which we will use in this course, described be
 
 - *AGG (aggregation)* ($\gamma_{agg}$): Aggregates values defined by a GROUP BY clause - common operations include SUM, COUNT, MIN, MAX, and AVG.
 
-- *JOIN* ($\bowtie$): Links two tables together based on a common key. Formally the **natural join** $R * S = \{(a, b, c) : R(a, b) \wedge S(b, c)\}$ — combines on a shared domain. Two relations are *joinable* if such a combining relation exists.
+- *JOIN* ($\bowtie$): Links two tables together based on a common key. Formally the **natural join** $R * S = \{(a, b, c) : R(a, b) \wedge S(b, c)\}$ — combines on a shared domain.
+Two relations are *joinable* if such a combining relation exists.
 
 - *COMPOSITION* ($R \cdot S$): A derived operation — join two relations then project away the shared joining column: $R \cdot S = \pi_{1s}(R * S)$.
 
