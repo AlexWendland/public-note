@@ -62,7 +62,7 @@ type: plan
 - [ ] CS6422 Midterm
 
 - [x] CS7643 Lesson 7
-- [ ] CS7643 Lesson 8
+- [x] CS7643 Lesson 8
 - [ ] CS7643 06/22 Quiz 3
 
 # 6: June 22-28 [ ]

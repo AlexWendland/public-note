@@ -4,7 +4,7 @@ course_code: CS7643
 course_name: Deep Learning
 created: '2026-06-12'
 date_checked: '2026-06-12'
-draft: true
+draft: false
 last_edited: '2026-06-12'
 tags:
   - OMSCS
@@ -20,7 +20,7 @@ In this week, we will focus on how to calculate the backward pass for convolutio
 Remember that the definition of a CNN for a kernel $K$ of size $K_1 \times K_2$ going from input $i$ to output $O$ is:
 
 $$
-O(x,y) = K \ast I(x,y) = \sum_{i=0}^{K_1 - 1} \sum_{j=0}^{K_2 - 1} I(x + i,y + j)K(i,j) 
+O(x,y) = K \ast I(x,y) = \sum_{i=0}^{K_1 - 1} \sum_{j=0}^{K_2 - 1} I(x + i,y + j)K(i,j)
 $$
 
 Then let's calculate
