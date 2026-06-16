@@ -48,7 +48,7 @@ type: plan
 # 4: June 8-14 (Jelly weekend) [ ]
 
 - [x] CS6422 06/14 Exercise sheet 1
-- [ ] CS6422 Module 7
+- [x] CS6422 Module 7
 - [ ] CS6422 Module 8
 - [x] CS6422 06/14 Programming Assignment 2
 - [ ] CS6422 Paper 4
@@ -63,7 +63,7 @@ type: plan
 
 - [x] CS7643 Lesson 7
 - [x] CS7643 Lesson 8
-- [ ] CS7643 06/22 Quiz 3
+- [x] CS7643 06/22 Quiz 3
 
 # 6: June 22-28 [ ]
 
