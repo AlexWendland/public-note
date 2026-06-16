@@ -28,7 +28,6 @@ Then let's calculate
 $$
 \begin{aligned}
 \frac{\partial L}{\partial K(a,b)} = & \sum_{x = 0}^{H - K_1} \sum_{y=0}^{W - K_2} \frac{\partial L}{\partial O(x,y)} \frac{\partial O(x,y)}{\partial K(a,b)}\\
- = & \sum_{x = 0}^{H - K_1} \sum_{y=0}^{W - K_2} \frac{\partial L}{\partial O(x,y)} \frac{\partial O(x,y)}{\partial K(a,b)}\\
 = & \sum_{x = 0}^{H - K_1} \sum_{y=0}^{W - K_2} \frac{\partial L}{\partial O(x,y)} \frac{\partial}{\partial K(a,b)} \sum_{i=0}^{K_1 - 1} \sum_{j=0}^{K_2 - 1} I(x + i,y + j)K(i,j) \\
 = & \sum_{x = 0}^{H - K_1} \sum_{y=0}^{W - K_2} \frac{\partial L}{\partial O(x,y)} I(x + a,y + b) \\
 = & \left(\frac{\partial L}{\partial O} \ast I\right)(a,b) \\

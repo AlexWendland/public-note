@@ -101,6 +101,8 @@ However for the de-convolutional layers it might be advantageous to have learnab
 > 100 & 50 & 110\\
 > 25 & 25 & 10\\
 > \end{bmatrix} \!,\! \begin{bmatrix} 1 & -1\\ 2 & -2\\ \end{bmatrix} \right) \rightarrow
+> $$
+> $$
 > \begin{bmatrix}
 > 120 & -120 + 150 & -150 + 120 & -120 \\
 > 2*120 + 100 & -2*120 + 2*150 -100 + 50 & -2*150 + 2*120 - 50 + 110 & -2*120 - 110 \\
@@ -239,7 +241,7 @@ Similar to YOLO, we have the issue of needing different sizes and scales for the
 So we use a similar technique where in each point in the box we have multiple anchor boxes of different sizes.
 That means we get lots of output scores for each anchor box at each location.
 
-![Faster R-CNN with anchor boxes](../../../static/images/faster_r-cnn_anchor_boxes.png)
+![Faster R-CNN with anchor boxes](../../../static/images/fast_r-cnn_anchor_boxes.png)
 
 ### Mask R-CNN
 
