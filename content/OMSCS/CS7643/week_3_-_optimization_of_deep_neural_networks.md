@@ -5,7 +5,7 @@ course_name: Deep Learning
 created: '2026-06-06'
 date_checked: '2026-06-08'
 draft: false
-last_edited: '2026-06-06'
+last_edited: 2026-06-16
 tags:
   - OMSCS
 title: Week 3 - Optimization of Deep Neural Networks

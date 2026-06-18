@@ -5,7 +5,7 @@ course_name: Introduction to Graduate Algorithms
 created: 2023-09-11
 date_checked:
 draft: false
-last_edited: 2023-11-11
+last_edited: 2026-06-18
 tags:
   - OMSCS
 title: Week 3 - Solving Recurrences

@@ -5,7 +5,7 @@ course_name: Introduction to High Performance Computing
 created: '2026-02-12'
 date_checked:
 draft: false
-last_edited: 2026-05-02
+last_edited: 2026-05-27
 tags:
   - OMSCS
 title: Week 6 - Tree computations

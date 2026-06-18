@@ -5,7 +5,7 @@ course_name: Deep Learning
 created: '2026-05-29'
 date_checked: '2026-05-30'
 draft: false
-last_edited: '2026-05-29'
+last_edited: 2026-06-01
 tags:
   - OMSCS
 title: Week 1 - Linear Classifiers and Gradient Descent

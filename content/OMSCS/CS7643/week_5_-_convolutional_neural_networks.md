@@ -5,7 +5,7 @@ course_name: Deep Learning
 created: '2026-06-12'
 date_checked: '2026-06-12'
 draft: false
-last_edited: '2026-06-12'
+last_edited: 2026-06-16
 tags:
   - OMSCS
 title: Week 5 - Convolutional Neural Networks

@@ -47,7 +47,7 @@ static constexpr size_t MAX_SLOTS = 100;   // Fixed number of slots
 static constexpr uint16_t INVALID_VALUE = std::numeric_limits<uint16_t>::max(); // Sentinel value (should be max)
 
 struct Slot {
-  bool empty = true;                 // Is the slot empty?    
+  bool empty = true;                 // Is the slot empty?
   uint16_t offset = INVALID_VALUE;    // Offset of the slot within the page
   uint16_t length = INVALID_VALUE;    // Length of the slot
 };
@@ -91,7 +91,7 @@ public:
     size_t slot_itr = 0;
     Slot* slot_array = reinterpret_cast<Slot*>(page_data.get());
     for (; slot_itr < MAX_SLOTS; slot_itr++) {
-      if (slot_array[slot_itr].empty == true and 
+      if (slot_array[slot_itr].empty == true and
         slot_array[slot_itr].length >= tuple_size) {
         break;
       }
@@ -131,8 +131,8 @@ public:
     }
 
     // Copy serialized data into the page
-    std::memcpy(page_data.get() + offset, 
-                serializedTuple.c_str(), 
+    std::memcpy(page_data.get() + offset,
+                serializedTuple.c_str(),
                 tuple_size);
 
     return true;
@@ -238,7 +238,7 @@ public:
 
   // Write a page to disk
   void flush(uint16_t page_id) {
-    size_t page_offset = page_id * PAGE_SIZE;        
+    size_t page_offset = page_id * PAGE_SIZE;
 
     // Move the write pointer
     fileStream.seekp(page_offset, std::ios::beg);

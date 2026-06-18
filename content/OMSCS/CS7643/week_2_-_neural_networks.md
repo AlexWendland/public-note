@@ -5,7 +5,7 @@ course_name: Deep Learning
 created: '2026-05-30'
 date_checked:
 draft: false
-last_edited: '2026-05-30'
+last_edited: 2026-06-01
 tags:
   - OMSCS
 title: Week 2 - Neural Networks

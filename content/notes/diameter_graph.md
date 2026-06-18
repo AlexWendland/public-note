@@ -3,7 +3,7 @@ aliases:
 created: '2026-02-19'
 date_checked:
 draft: false
-last_edited: 2026-04-29
+last_edited: 2026-05-27
 tags: []
 title: Diameter (graph)
 type: definition

@@ -5,7 +5,7 @@ course_name: Deep Learning
 created: '2026-06-15'
 date_checked:
 draft: false
-last_edited: '2026-06-15'
+last_edited: 2026-06-16
 tags:
   - OMSCS
 title: Week 7 - Advanced Computer Vision Architectures

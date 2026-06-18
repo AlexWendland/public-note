@@ -5,7 +5,7 @@ course_name: Introduction to High Performance Computing
 created: '2026-04-02'
 date_checked:
 draft: false
-last_edited: 2026-05-03
+last_edited: 2026-05-27
 tags:
   - OMSCS
 title: Week 10 - Distributed Maxtrix Multiply

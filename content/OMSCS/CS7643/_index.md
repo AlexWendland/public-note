@@ -6,7 +6,7 @@ course_name: Deep Learning
 created: 2026-05-21
 date_checked:
 draft: false
-last_edited: 2026-05-22
+last_edited: 2026-05-27
 tags:
   - OMSCS
   - maths

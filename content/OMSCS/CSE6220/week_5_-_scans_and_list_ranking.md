@@ -5,7 +5,7 @@ course_name: Introduction to High Performance Computing
 created: '2026-02-06'
 date_checked:
 draft: false
-last_edited: 2026-04-29
+last_edited: 2026-05-27
 tags:
   - OMSCS
 title: Week 5 - Scans and list ranking

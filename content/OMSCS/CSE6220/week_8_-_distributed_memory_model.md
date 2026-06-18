@@ -5,7 +5,7 @@ course_name: Introduction to High Performance Computing
 created: '2026-03-19'
 date_checked: '2026-03-19'
 draft: false
-last_edited: 2026-05-25
+last_edited: 2026-05-27
 tags:
   - OMSCS
 title: Week 8 - Distributed memory model
