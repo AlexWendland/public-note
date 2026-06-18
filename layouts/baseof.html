@@ -26,11 +26,12 @@
             <div class="hidden lg:block sticky top-6 self-start">
                 {{- partial "sidebar.html" . -}}
             </div>
-            <main class="flex-1 min-w-0">
+            <main class="flex-1 min-w-0" data-pagefind-body>
                 {{- block "main" . }}{{- end }}
             </main>
         </div>
     </div>
     {{- partial "footer.html" . -}}
+    {{- partial "search-modal.html" . -}}
 </body>
 </html>

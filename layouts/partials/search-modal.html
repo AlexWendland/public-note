@@ -1,0 +1,85 @@
+{{- /* Search modal — opened by #search-btn in navbar.html */ -}}
+
+{{- /* Overlay — is itself the scroll container */ -}}
+<div id="search-overlay"
+     class="fixed inset-0 z-50 hidden overflow-y-auto"
+     role="dialog" aria-modal="true" aria-label="Search">
+
+  {{- /* Backdrop — fixed so it doesn't scroll with content */ -}}
+  <div id="search-backdrop" class="fixed inset-0 bg-crust/80 backdrop-blur-sm pointer-events-none"></div>
+
+  {{- /* Scroll content wrapper — clicking empty space closes modal */ -}}
+  <div class="flex min-h-full justify-center px-4 pt-24 pb-16"
+       id="search-dismiss">
+    {{- /* Modal card */ -}}
+    <div class="relative z-10 w-full max-w-2xl h-fit" id="search-card">
+      <div id="pagefind-search"
+           style="
+             --pagefind-ui-scale: 0.9;
+             --pagefind-ui-primary: #74c7ec;
+             --pagefind-ui-text: #cdd6f4;
+             --pagefind-ui-background: #313244;
+             --pagefind-ui-border: #45475a;
+             --pagefind-ui-tag: #45475a;
+             --pagefind-ui-border-width: 1px;
+             --pagefind-ui-border-radius: 8px;
+             --pagefind-ui-font: 'Comic Neue', sans-serif;
+           ">
+      </div>
+    </div>
+  </div>
+</div>
+
+{{- /* Pagefind UI assets — only exist after `hugo && npx pagefind --site public` */ -}}
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+(function () {
+  let ui = null;
+
+  function openSearch() {
+    const overlay = document.getElementById('search-overlay');
+    if (!overlay) return;
+    overlay.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+
+    if (!ui && typeof PagefindUI !== 'undefined') {
+      ui = new PagefindUI({
+        element: '#pagefind-search',
+        showSubResults: true,
+        resetStyles: false,
+      });
+    }
+
+    setTimeout(function () {
+      const input = overlay.querySelector('input[type=text]');
+      if (input) input.focus();
+    }, 50);
+  }
+
+  function closeSearch() {
+    const overlay = document.getElementById('search-overlay');
+    if (!overlay) return;
+    overlay.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('search-btn')
+      ?.addEventListener('click', openSearch);
+    document.getElementById('search-dismiss')
+      ?.addEventListener('click', function (e) {
+        if (!document.getElementById('search-card')?.contains(e.target)) {
+          closeSearch();
+        }
+      });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeSearch();
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        openSearch();
+      }
+    });
+  });
+})();
+</script>
