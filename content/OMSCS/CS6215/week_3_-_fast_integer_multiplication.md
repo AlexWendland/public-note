@@ -10,7 +10,7 @@ tags:
   - OMSCS
 title: Week 3 - Fast Integer Multiplication
 type: lecture
-week: '3'
+week: 3
 ---
 
 > [!definition] Multiplying $n$-bit integers problem

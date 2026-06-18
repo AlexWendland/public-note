@@ -7,6 +7,10 @@
   </div>
   {{- end }}
 
-  {{- partial "page-list.html" (dict "title" "Section" "pages" .Pages "showDate" true) }}
+  {{- $pages := .Pages -}}
+  {{- if eq .Type "course" -}}
+    {{- $pages = .Pages.ByParam "week" -}}
+  {{- end -}}
+  {{- partial "page-list.html" (dict "title" "Section" "pages" $pages "showDate" true) }}
 </article>
 {{ end }}

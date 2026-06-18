@@ -10,7 +10,7 @@ tags:
   - OMSCS
 title: Week 3 - Solving Recurrences
 type: lecture
-week: '3'
+week: 3
 ---
 # $T(n) = 4T\left (\frac{n}{2}\right ) + O(n)$
 

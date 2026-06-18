@@ -10,7 +10,7 @@ tags:
   - OMSCS
 title: Week 11 - Linear Programming
 type: lecture
-week:
+week: 11
 ---
 
 In broad terms a [linear programme](../../notes/linear_programme.md) is an optimisation problem of a [linear](../../notes/linear_function.md) function where there are [linear](../../notes/linear_function.md) bounds on the variables.

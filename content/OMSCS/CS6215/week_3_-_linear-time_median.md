@@ -10,7 +10,7 @@ tags:
   - OMSCS
 title: Week 3 - Linear-Time Median
 type: lecture
-week: '3'
+week: 3
 ---
 
 > [!definition] Median list problem

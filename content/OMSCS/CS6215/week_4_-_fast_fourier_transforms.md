@@ -10,7 +10,7 @@ tags:
   - OMSCS
 title: Week 4 - Fast Fourier Transforms
 type: lecture
-week: '4'
+week: 4
 ---
 
 > [!definition] Polynomial multiplication problem

@@ -10,7 +10,7 @@ tags:
   - OMSCS
 title: Week 6 - Graph algorithms - strongly connected components
 type: lecture
-week: '6'
+week: 6
 ---
 # DFS - not the sofa seller!
 

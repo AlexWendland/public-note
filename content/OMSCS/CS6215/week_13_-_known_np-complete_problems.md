@@ -10,7 +10,7 @@ tags:
   - OMSCS
 title: Week 13 - Known NP-complete problems
 type: exercise
-week: 9
+week: 13
 ---
 # Week 13 - NP-complete problems
 

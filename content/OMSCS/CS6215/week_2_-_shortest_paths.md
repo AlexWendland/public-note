@@ -10,7 +10,7 @@ tags:
   - OMSCS
 title: Week 2 - Shortest Paths
 type: lecture
-week: '2'
+week: 2
 ---
 
 > [!definition] Shortest path problem

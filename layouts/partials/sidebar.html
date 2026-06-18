@@ -74,8 +74,12 @@
         </li>
       {{- end -}}
 
-      {{/* Leaf pages */}}
-      {{- range $currentSection.RegularPages -}}
+      {{/* Leaf pages — sort by week for course sections, default order otherwise */}}
+      {{- $pages := $currentSection.RegularPages -}}
+      {{- if eq $currentSection.Type "course" -}}
+        {{- $pages = $currentSection.RegularPages.ByParam "week" -}}
+      {{- end -}}
+      {{- range $pages -}}
         <li>
           <a href="{{ .RelPermalink }}"
              title="{{ .Title }}"
