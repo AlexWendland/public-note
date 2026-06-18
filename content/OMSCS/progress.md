@@ -45,13 +45,13 @@ type: plan
 - [x] CS7643 Lesson 4 (Optional)
 - [x] CS7643 06/08 Assignment 1
 
-# 4: June 8-14 (Jelly weekend) [ ]
+# 4: June 8-14 (Jelly weekend) [x]
 
 - [x] CS6422 06/14 Exercise sheet 1
 - [x] CS6422 Module 7
 - [x] CS6422 Module 8
 - [x] CS6422 06/14 Programming Assignment 2
-- [ ] CS6422 Paper 4
+- [x] CS6422 Paper 4
 
 - [x] CS7643 Lesson 5
 - [x] CS7643 06/15 Quiz 2
