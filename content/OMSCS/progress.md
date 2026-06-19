@@ -57,9 +57,9 @@ type: plan
 - [x] CS7643 06/15 Quiz 2
 - [x] CS7643 Lesson 6
 
-# 5: June 15-21 [ ]
+# 5: June 15-21 [x]
 
-- [ ] CS6422 Midterm
+- [x] CS6422 Midterm
 
 - [x] CS7643 Lesson 7
 - [x] CS7643 Lesson 8

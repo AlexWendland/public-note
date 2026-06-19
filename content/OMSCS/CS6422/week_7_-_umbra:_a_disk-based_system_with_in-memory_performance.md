@@ -21,7 +21,7 @@ Umbra is an evolution of the pure in-memory database HyPer towards a system that
 Pure in-memory databases (like HyPer) store all data in RAM and never page to disk. This gives excellent performance but has two problems:
 
 1. **RAM growth has stalled** — commodity servers plateau around 2 TB, beyond which cost grows disproportionately.
-2. **SSDs are now cheap and fast** — a 2 TB NVMe SSD costs ~$500 and reads at 3.5 GB/s. The equivalent DRAM costs ~$20,000 (40× more).
+2. **SSDs are now cheap and fast** — a 2 TB NVMe SSD costs ~\$500 and reads at 3.5 GB/s. The equivalent DRAM costs ~\$20,000 (40× more).
 
 The goal of Umbra: in-memory performance when the working set fits in RAM, graceful SSD fallback when it doesn't — with minimal overhead for the common case.
 
