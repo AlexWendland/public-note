@@ -3,11 +3,11 @@ course_code: CS6422
 course_name: Database Systems Implementations
 created: '2026-06-18'
 date_checked: '2026-06-18'
-draft: true
+draft: false
 last_edited: '2026-06-18'
 tags:
   - OMSCS
-title: 'Week 5 - Operating System Support for Database Management'
+title: Week 5 - Operating System Support for Database Management
 type: lecture
 week: 5
 ---
