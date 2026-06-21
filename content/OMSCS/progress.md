@@ -67,7 +67,7 @@ type: plan
 
 # 6: June 22-28 [ ]
 
-- [ ] CS6422 Module 9
+- [x] CS6422 Module 9
 - [ ] CS6422 06/28 Programming Assignment 3
 - [ ] CS6422 06/27 OH quiz 2
 - [ ] CS6422 Paper 5
