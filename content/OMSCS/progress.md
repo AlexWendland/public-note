@@ -68,14 +68,14 @@ type: plan
 # 6: June 22-28 [ ]
 
 - [x] CS6422 Module 9
-- [ ] CS6422 06/28 Programming Assignment 3
-- [ ] CS6422 06/27 OH quiz 2
+- [x] CS6422 06/28 Programming Assignment 3
+- [-] CS6422 06/27 OH quiz 2
 - [ ] CS6422 Paper 5
 
-- [ ] CS7643 Lesson 9
-- [ ] CS7643 Lesson 10
-- [ ] CS7643 06/26 Project Proposal
-- [ ] CS7643 06/29 Assignment 2
+- [x] CS7643 Lesson 9
+- [x] CS7643 Lesson 10
+- [x] CS7643 06/26 Project Proposal
+- [x] CS7643 06/29 Assignment 2
 
 # 7: June 29 - July 5 [ ]
 
@@ -92,7 +92,7 @@ type: plan
 - [ ] CS6422 Module 11
 - [ ] CS6422 Module 12
 - [ ] CS6422 07/12 Programming Assignment 4
-- [ ] CS6422 07/11 OH quiz 3
+- [-] CS6422 07/11 OH quiz 3
 - [ ] CS6422 Paper 8
 - [ ] CS6422 Paper 9
 
