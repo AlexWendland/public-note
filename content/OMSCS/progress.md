@@ -83,7 +83,7 @@ type: plan
 - [ ] CS6422 Paper 6
 - [ ] CS6422 Paper 7
 
-- [ ] CS7643 Lesson 11
+- [x] CS7643 Lesson 11
 - [ ] CS7643 Lesson 12
 - [ ] CS7643 07/06 Quiz 4
 
