@@ -84,7 +84,7 @@ type: plan
 - [ ] CS6422 Paper 7
 
 - [x] CS7643 Lesson 11
-- [ ] CS7643 Lesson 12
+- [x] CS7643 Lesson 12
 - [ ] CS7643 07/06 Quiz 4
 
 # 8: July 6-12 (New life party) [ ]
