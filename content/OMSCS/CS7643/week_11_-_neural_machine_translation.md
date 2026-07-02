@@ -4,7 +4,7 @@ course_code: CS7643
 course_name: Deep Learning
 created: '2026-07-01'
 date_checked: '2026-07-01'
-draft: true
+draft: false
 last_edited: '2026-07-01'
 tags:
   - OMSCS
