@@ -65,36 +65,31 @@ type: plan
 - [x] CS7643 Lesson 8
 - [x] CS7643 06/22 Quiz 3
 
-# 6: June 22-28 [ ]
+# 6: June 22-28 [x]
 
 - [x] CS6422 Module 9
 - [x] CS6422 06/28 Programming Assignment 3
 - [-] CS6422 06/27 OH quiz 2
-- [ ] CS6422 Paper 5
 
 - [x] CS7643 Lesson 9
 - [x] CS7643 Lesson 10
 - [x] CS7643 06/26 Project Proposal
 - [x] CS7643 06/29 Assignment 2
 
-# 7: June 29 - July 5 [ ]
+# 7: June 29 - July 5 [x]
 
-- [ ] CS6422 Module 10
-- [ ] CS6422 Paper 6
-- [ ] CS6422 Paper 7
+- [x] CS6422 Module 10
 
 - [x] CS7643 Lesson 11
 - [x] CS7643 Lesson 12
-- [ ] CS7643 07/06 Quiz 4
+- [x] CS7643 07/06 Quiz 4
 
 # 8: July 6-12 (New life party) [ ]
 
 - [ ] CS6422 Module 11
 - [ ] CS6422 Module 12
-- [ ] CS6422 07/12 Programming Assignment 4
+- [x] CS6422 07/12 Programming Assignment 4
 - [-] CS6422 07/11 OH quiz 3
-- [ ] CS6422 Paper 8
-- [ ] CS6422 Paper 9
 
 - [ ] CS7643 Lesson 13
 - [ ] CS7643 Lesson 14
@@ -104,7 +99,6 @@ type: plan
 
 - [ ] CS6422 Module 13
 - [ ] CS6422 07/19 Exercise sheet 2
-- [ ] CS6422 Paper 10
 
 - [ ] CS7643 Lesson 16
 - [ ] CS7643 Lesson 17
@@ -114,7 +108,13 @@ type: plan
 
 - [ ] CS6422 Module 14
 - [ ] CS6422 07/26 Programming Assignment 5
-- [ ] CS6422 07/25 OH quiz 4
+- [-] CS6422 07/25 OH quiz 4
+- [ ] CS6422 Paper 5
+- [ ] CS6422 Paper 6
+- [ ] CS6422 Paper 7
+- [ ] CS6422 Paper 8
+- [ ] CS6422 Paper 9
+- [ ] CS6422 Paper 10
 - [ ] CS6422 Paper 11
 - [ ] CS6422 Paper 12
 
