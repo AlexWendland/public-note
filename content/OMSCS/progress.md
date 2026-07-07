@@ -86,7 +86,7 @@ type: plan
 
 # 8: July 6-12 (New life party) [ ]
 
-- [ ] CS6422 Module 11
+- [x] CS6422 Module 11
 - [ ] CS6422 Module 12
 - [x] CS6422 07/12 Programming Assignment 4
 - [-] CS6422 07/11 OH quiz 3
