@@ -94,7 +94,7 @@ type: plan
 
 # 9: July 13-19 [ ]
 
-- [ ] CS6422 Module 13
+- [x] CS6422 Module 13
 - [ ] CS6422 07/19 Exercise sheet 2
 
 - [ ] CS7643 07/20 Assignment 3
