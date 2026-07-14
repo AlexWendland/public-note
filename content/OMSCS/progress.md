@@ -101,7 +101,7 @@ type: plan
 
 # 10: July 20-26 [ ]
 
-- [ ] CS6422 Module 14
+- [x] CS6422 Module 14
 - [ ] CS6422 07/26 Programming Assignment 5
 - [-] CS6422 07/25 OH quiz 4
 

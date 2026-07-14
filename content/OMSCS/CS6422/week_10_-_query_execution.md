@@ -4,7 +4,7 @@ course_code: CS6422
 course_name: Database Systems Implementations
 created: '2026-07-07'
 date_checked: '2026-07-07'
-draft: true
+draft: false
 last_edited: '2026-07-07'
 tags:
   - OMSCS
