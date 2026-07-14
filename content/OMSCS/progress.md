@@ -84,24 +84,19 @@ type: plan
 - [x] CS7643 Lesson 12
 - [x] CS7643 07/06 Quiz 4
 
-# 8: July 6-12 (New life party) [ ]
+# 8: July 6-12 (New life party) [x]
 
 - [x] CS6422 Module 11
-- [ ] CS6422 Module 12
+- [x] CS6422 Module 12
 - [x] CS6422 07/12 Programming Assignment 4
 - [-] CS6422 07/11 OH quiz 3
 
-- [ ] CS7643 Lesson 13
-- [ ] CS7643 Lesson 14
-- [ ] CS7643 Lesson 15
 
 # 9: July 13-19 [ ]
 
 - [ ] CS6422 Module 13
 - [ ] CS6422 07/19 Exercise sheet 2
 
-- [ ] CS7643 Lesson 16
-- [ ] CS7643 Lesson 17
 - [ ] CS7643 07/20 Assignment 3
 
 # 10: July 20-26 [ ]
@@ -109,6 +104,17 @@ type: plan
 - [ ] CS6422 Module 14
 - [ ] CS6422 07/26 Programming Assignment 5
 - [-] CS6422 07/25 OH quiz 4
+
+- [ ] CS7643 Lesson 13
+- [ ] CS7643 Lesson 14
+- [ ] CS7643 Lesson 15
+- [ ] CS7643 Lesson 16
+- [ ] CS7643 Lesson 17
+- [ ] CS7643 Lesson 18
+- [ ] CS7643 07/27 Quiz 5
+
+# 11: July 27- August 2 [ ]
+
 - [ ] CS6422 Paper 5
 - [ ] CS6422 Paper 6
 - [ ] CS6422 Paper 7
@@ -117,12 +123,6 @@ type: plan
 - [ ] CS6422 Paper 10
 - [ ] CS6422 Paper 11
 - [ ] CS6422 Paper 12
-
-- [ ] CS7643 Lesson 18
-- [ ] CS7643 07/27 Quiz 5
-
-# 11: July 27- August 2 [ ]
-
 - [ ] CS6422 Final Exam
 
 - [ ] CS7643 Lesson 19
