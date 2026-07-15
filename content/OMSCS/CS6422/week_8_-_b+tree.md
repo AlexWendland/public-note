@@ -28,7 +28,7 @@ The solution to this is to use an ordered index - which in this course we implem
 # B+ tree
 
 A B+ tree is a balanced tree where each node can have at most some fixed number $F$ of children - called the fan out.
-This means the hight of the tree is always $\ceil \log_F(n) \ceil$.
+This means the hight of the tree is always $\ciel \log_F(n) \ciel$.
 The keys for the values in the nodes must be linearly order.
 The tree has two kinds of nodes - internal nodes and leaf nodes.
 

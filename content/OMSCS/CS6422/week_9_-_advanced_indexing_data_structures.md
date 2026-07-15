@@ -35,6 +35,7 @@ Lets contrast this to a B+ tree.
 Suppose we have average length of a key as $L$ and the number of the keys as $N$.
 
 | | Patricia Trie | B+ Tree |
+| --- | --- | --- |
 | Insert | O(L) | O(log N) |
 | Search | O(L) | O(log N) |
 | Space | O(N*L) | O(N) |
