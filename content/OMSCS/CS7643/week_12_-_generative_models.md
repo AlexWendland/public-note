@@ -23,7 +23,7 @@ Lots of the methods to do this fix the model and use log likelihoods e.g. once w
 $$
 \begin{align*}
 \theta^{\ast} = & \text{arg}\max_{\theta} \prod_{i=1}^m p_{model} \left( x^{(i)} ; \theta \right)\\
-= & \text{arg}\max_{\theta} \log \prod_{i=1}^m p_{model}(x^{(i)} ; \theta)
+= & \text{arg}\max_{\theta} \log \prod_{i=1}^m p_{model}(x^{(i)} ; \theta)\\
 = & \text{arg}\max_{\theta} \sum_{i=1}^m \log p_{model}(x^{(i)} ; \theta)
 \end{align*}
 $$
@@ -133,7 +133,7 @@ This has also been applied to videos and generating deep fakes.
 
 An autoencoder consists of a encoder (Q) and decoder (P) architecture with a low dimension embedding in the middle.
 
-![Autoencoder](../../../static/images/autoencoder.png)
+![Autoencoder](../../../static/images/autoencoders.png)
 
 You can then train this using a loss function between the input image and the output image.
 

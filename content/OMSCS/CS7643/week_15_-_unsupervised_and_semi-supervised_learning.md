@@ -176,7 +176,7 @@ The issue with unsupervised/self-supervised learning is we have no loss function
 One of the simplest loss functions we can do is run data through a neural network to reconstruct the original data.
 We can do this with an autoencoder network to learn lower dimensional embeddings of the input data.
 
-![Unsupervised Autoencoder](../../../static/images/unsupervised_autoencoder.png)
+![Unsupervised Autoencoder](../../../static/images/unsupervised_auto_encoder.png)
 
 Then we can use the low dimension embedding it creates on other tasks such as classification or clustering.
 
