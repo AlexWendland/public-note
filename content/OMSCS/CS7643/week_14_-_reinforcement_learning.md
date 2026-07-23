@@ -70,7 +70,7 @@ To define a 'good policy' we need to decide if we want to maximise the next rewa
 To do this we use the discount factor $\gamma$ to exponentially weight future rewards.
 This enables us to define the optimum policy:
 $$
-\pi^*(s) = \argmax_{\pi} \mathbb{E} \left [ \sum_{t \geq 0} \gamma^t r_t \vert \pi \right ]
+\pi^*(s) = \text{arg}\max_{\pi} \mathbb{E} \left [ \sum_{t \geq 0} \gamma^t r_t \vert \pi \right ]
 $$
 In other words pick the best policy to maximise the expected rewards where each future reward is discounted by $\gamma^t$ for time step $t$.
 This means $\gamma$ encodes whether our agent prefers short term rewards over long term rewards.
@@ -97,7 +97,7 @@ We have an optimal state action value function defined as $Q^* = Q^{\pi^*}$.
 
 The optimal policy, value function and Q function can all be defined from one another.
 $$
-V^*(s) = \max_{a \in A} Q^*(s,a), \qquad \pi^*(s) = \argmax_{a \in A} Q^*(s,a).
+V^*(s) = \max_{a \in A} Q^*(s,a), \qquad \pi^*(s) = \text{arg}\max_{a \in A} Q^*(s,a).
 $$
 This enables us to recursively expand the $Q$ function.
 $$
@@ -183,7 +183,7 @@ To get around the first challenge we use an $\epsilon$-greedy policy.
 That is defined as follows:
 $$
 \pi_{\epsilon}(s) = \begin{cases}
-\argmax_{a \in A} Q(s,a) & \text{with probability } 1 - \epsilon\\
+\text{arg}\max_{a \in A} Q(s,a) & \text{with probability } 1 - \epsilon\\
 \text{random action} & \text{with probability } \epsilon
 \end{cases}
 $$

@@ -22,9 +22,9 @@ This is actually a hard task to do.
 Lots of the methods to do this fix the model and use log likelihoods e.g. once we parameterise our model using parameters $\theta$ we look for:
 $$
 \begin{align*}
-\theta^{\ast} = & \argmax_{\theta} \prod_{i=1}^m p_{model} \left( x^{(i)} ; \theta \right)\\
-= & \argmax_{\theta} \log \prod_{i=1}^m p_{model}(x^{(i)} ; \theta)
-= & \argmax_{\theta} \sum_{i=1}^m \log p_{model}(x^{(i)} ; \theta)
+\theta^{\ast} = & \text{arg}\max_{\theta} \prod_{i=1}^m p_{model} \left( x^{(i)} ; \theta \right)\\
+= & \text{arg}\max_{\theta} \log \prod_{i=1}^m p_{model}(x^{(i)} ; \theta)
+= & \text{arg}\max_{\theta} \sum_{i=1}^m \log p_{model}(x^{(i)} ; \theta)
 \end{align*}
 $$
 The one strange thing about this output is given you have a fixed model with fixed parameters when you are generating a picture of a cat - won't it always be the same?
