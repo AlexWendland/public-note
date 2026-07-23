@@ -4,7 +4,7 @@ course_code: CS7643
 course_name: Deep Learning
 created: '2026-07-22'
 date_checked: '2026-07-22'
-draft: true
+draft: false
 last_edited: '2026-07-22'
 tags:
   - OMSCS
@@ -72,7 +72,7 @@ This enables us to define the optimum policy:
 $$
 \pi^*(s) = \argmax_{\pi} \mathbb{E} \left [ \sum_{t \geq 0} \gamma^t r_t \vert \pi \right ]
 $$
-In other words pick the best policy to maximise the expected rewards where each future reward is discounted by $\gamma^t$ for time step $t$. 
+In other words pick the best policy to maximise the expected rewards where each future reward is discounted by $\gamma^t$ for time step $t$.
 This means $\gamma$ encodes whether our agent prefers short term rewards over long term rewards.
 
 ## State value function
@@ -127,7 +127,7 @@ Using the Bellman equations we can derive an algorithm for finding an optimal va
 3. Return $V^*(s)$
 ```
 
-You can do the same for Q-function 
+You can do the same for Q-function
 
 ```pseudocode
 1. Initialize Q^*(s,a) = 0 for all states $s$.
